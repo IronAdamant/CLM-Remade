@@ -1,0 +1,6 @@
+# DLC independence: Silenced Electrical Striker, the last non-spawn legendary needing Automatron.
+# Its projectile exploded into Automatron's DLC01ChainLightningExplosion. CLM's own
+# A1ALMEXP_Custom_Explosion_ChainLightningExplosion has identical data (force 400, radius 400/500, no damage) and now
+# uses the base-game electrical explosion model. The sound joins the other lightning beams on the base-game arc sound.
+field.set | A1ALMPROJ_Variant_Type_Striking_Lightning | DNAM\Explosion | @A1ALMEXP_Custom_Explosion_ChainLightningExplosion
+field.set | A1ALMPROJ_Variant_Type_Striking_Lightning | DNAM\Sound | @TRPElectricalArcFire

@@ -8,8 +8,17 @@
 - The **Untouchable** legendaries and perks (and Brutish, Burning Rage, Constantly Flamin' Cloaked) and the
   **auto-stimpak** effects used Far Harbor scripts, so they silently needed Far Harbor. They now use CLM's own copies,
   which behave identically.
-- **Alien-Tech'd, Harshly Shocking, Jupiter's Wrathful, Shockgun Surgeon's** and **Seekin' (Flame)** now use
-  base-game sounds (electrical arc and incendiary fly-by) instead of Automatron's. They still use Automatron models.
+- These no longer need any DLC; they used DLC sounds or models, now replaced with base-game ones (so they **look and
+  sound different** - reports welcome):
+  - **Alien-Tech'd, Harshly Shocking, Jupiter's Wrathful, Shockgun Surgeon's, Silenced Electrical Striker**:
+    base-game electrical arc beam and crackle instead of Automatron's lightning gun.
+  - **Rebounding** (all four): base-game electrical explosion instead of Automatron's chain lightning.
+  - **Seekin' (Flame)**: base-game fiery rocket instead of Automatron's sentry flamer projectile.
+  - **Nuka-Infused** (all four): fire a Nuka Grenade instead of a Nuka-World paddle ball. Explosions: Quantum = blue
+    pulse burst, Cherry = red-orange fireball, Cola = soda-like spray.
+  - **Lobbin' (HalluciGen Grenade)**: base-game gas grenade instead of Nuka-World's.
+  - **Feral ghoul spawns**: base-game Nuka Grenade instead of Nuka-World's.
+- Automatron and Nuka-World are now only used by their creature-spawning legendaries.
 
 ### New
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.
