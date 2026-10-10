@@ -2,9 +2,12 @@
 
 Laser colour in Fallout 4 comes from small gradient textures (colour lookup tables) used by the effect
 shaders, not from the models. For each colour this script:
-  - rotates the hue of the vanilla red gradients (main + ring), keeping their brightness, white-hot core and fade;
-  - copies the vanilla red beam and muzzle-flash models with the gradient paths pointed at the new textures;
-  - rescales the beam shader's brightness for the colour's luminance (red is dark, so vanilla boosts it 20x).
+  - rotates the hue of the vanilla red gradients (main, ring, impact wave), keeping their brightness,
+    white-hot core and fade;
+  - copies the vanilla red beam and muzzle-flash models with the gradient paths pointed at the new textures,
+    and rescales the beam shader's brightness for the colour's luminance (red is dark, so vanilla boosts it 20x);
+  - copies the vanilla light-blue impact models (white-based, unlike the red ones whose shaders carry a red
+    tint) with their gradients pointed at the new textures.
 
 Usage (needs AgentCreationKit on PYTHONPATH and the game installed):
     python tools/assets/laser_colors.py --game "D:/Steam/steamapps/common/Fallout 4" --out data
@@ -27,6 +30,7 @@ BS = chr(92)
 # name: hue rotation in degrees from vanilla red
 COLORS = {'Green': 120, 'Purple': 275, 'Gold': 48, 'Orange': 24, 'Pink': 320, 'DeepBlue': 225}
 VANILLA_RED_LIGHT = (255, 17, 17)   # WeapLightLaserBeam
+VANILLA_RED_DECAL = (236, 70, 70)   # LaserRedSmallImpact decal colour
 RED_BEAM_SCALE = 20.0               # LaserRifleBeamRed.nif main shader brightness
 
 
@@ -71,8 +75,8 @@ def beam_scale(degrees: float) -> float:
     return max(2.0, round(RED_BEAM_SCALE * luminance(1, 0, 0) / luminance(r, g, b), 2))
 
 
-def light_color(degrees: float) -> tuple[int, int, int]:
-    r, g, b = (c / 255 for c in VANILLA_RED_LIGHT)
+def rotate_rgb(rgb: tuple[int, int, int], degrees: float) -> tuple[int, int, int]:
+    r, g, b = (c / 255 for c in rgb)
     hh, s, v = colorsys.rgb_to_hsv(r, g, b)
     return tuple(round(c * 255) for c in colorsys.hsv_to_rgb((hh + degrees / 360) % 1, s, v))
 
@@ -103,25 +107,40 @@ def main():
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         extract_general(data / 'Fallout4 - Meshes.ba2',
-                        ['meshes' + BS + 'effects' + BS + n for n in ('laserriflebeamred.nif', 'muzlaserrifle01.nif')], tmp)
+                        ['meshes' + BS + 'effects' + BS + n for n in ('laserriflebeamred.nif', 'muzlaserrifle01.nif',
+                                                                    'impactlaserltbluesmall.nif', 'impactlaserbluevsshell.nif')], tmp)
         for ba2 in sorted(data.glob('Fallout4 - Textures*.ba2')):
-            extract_textures(ba2, [grad_path(n) for n in ('WepLaserRed01Grad.dds', 'WepLaserRedRingGrad.dds')], tmp)
+            extract_textures(ba2, [grad_path(n) for n in ('WepLaserRed01Grad.dds', 'WepLaserRedRingGrad.dds',
+                                                          'LaserImpactWaveGrad.dds')], tmp)
         beam = (tmp / 'Meshes' / 'Effects' / 'LaserRifleBeamRed.nif').read_bytes()
         muzzle = (tmp / 'Meshes' / 'Effects' / 'MuzLaserRifle01.nif').read_bytes()
         main_grad = read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / 'WepLaserRed01Grad.dds')
         ring_grad = read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / 'WepLaserRedRingGrad.dds')
+        wave_grad = read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / 'LaserImpactWaveGrad.dds')
+        impact_small = (tmp / 'Meshes' / 'Effects' / 'ImpactLaserLtBlueSmall.nif').read_bytes()
+        impact_shell = (tmp / 'Meshes' / 'Effects' / 'ImpactLaserBlueVsShell.nif').read_bytes()
 
     for name, deg in COLORS.items():
         gdir = out / 'Textures' / 'Effects' / 'Gradients' / 'CLM'
         write_dds_bgra(gdir / f'WepLaser{name}01Grad.dds', rotate_hue(main_grad, deg))
         write_dds_bgra(gdir / f'WepLaser{name}RingGrad.dds', rotate_hue(ring_grad, deg))
+        write_dds_bgra(gdir / f'LaserImpactWave{name}Grad.dds', rotate_hue(wave_grad, deg))
         swaps = {grad_path('WepLaserRed01Grad.dds'): grad_path(f'WepLaser{name}01Grad.dds', clm=True),
                  grad_path('WepLaserRedRingGrad.dds'): grad_path(f'WepLaser{name}RingGrad.dds', clm=True)}
         mdir = out / 'Meshes' / 'Effects' / 'CLM'
         mdir.mkdir(parents=True, exist_ok=True)
         (mdir / f'LaserRifleBeam{name}.nif').write_bytes(patched_model(beam, swaps, beam_scale(deg)))
         (mdir / f'MuzLaserRifle{name}.nif').write_bytes(patched_model(muzzle, swaps))
-        print(f'{name:9} hue +{deg:3}  beam brightness {beam_scale(deg):5}  light RGB {light_color(deg)}')
+        blue = {}
+        for prefix in ('textures', 'Textures'):
+            gp = lambda n, p=prefix: BS.join([p, 'Effects', 'Gradients', n])
+            blue[gp('WepLaserLtBlue01Grad.dds')] = grad_path(f'WepLaser{name}01Grad.dds', clm=True)
+            blue[gp('WepLaserLtBlueRingGrad.dds')] = grad_path(f'WepLaser{name}RingGrad.dds', clm=True)
+            blue[gp('LaserImpactWaveLtBlueGrad.dds')] = grad_path(f'LaserImpactWave{name}Grad.dds', clm=True)
+        (mdir / f'ImpactLaser{name}Small.nif').write_bytes(patched_model(impact_small, blue))
+        (mdir / f'ImpactLaser{name}VsShell.nif').write_bytes(patched_model(impact_shell, blue))
+        print(f'{name:9} hue +{deg:3}  beam brightness {beam_scale(deg):5}  light RGB {rotate_rgb(VANILLA_RED_LIGHT, deg)}'
+              f'  decal RGB {rotate_rgb(VANILLA_RED_DECAL, deg)}')
 
 
 if __name__ == '__main__':
