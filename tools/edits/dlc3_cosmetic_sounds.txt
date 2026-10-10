@@ -1,0 +1,12 @@
+# DLC independence: legendaries that only borrowed an Automatron *sound* now use base-game sounds.
+# Lightning beams (Alien-Tech'd, Harshly Shocking, Jupiter's Wrathful, Shockgun Surgeon's): the Automatron lightning
+# rifle sound -> the base game's electrical arc trap firing sound.
+field.set | A1ALMPROJ_Variant_Type_AlienTechd_Beam_Lightning | DNAM\Sound | @TRPElectricalArcFire
+field.set | A1ALMPROJ_Variant_Type_JupitersWrath_Beam_Lightning | DNAM\Sound | @TRPElectricalArcFire
+field.set | A1ALMPROJ_Variant_Type_ShotgunSurgeon_Beam_Lightning | DNAM\Sound | @TRPElectricalArcFire
+# Seekin' (Flame): the Automatron sentry-flamer projectile sound -> the base game's incendiary round fly-by.
+field.set | A1ALMPROJ_Variant_Type_Missile_Seeker_SentryFlamerProjectile | DNAM\Sound | @FXProjectileBulletByIncendiary
+
+# Leftover: the self-radiation enchantment (an Automatron effect) is unused since Salvaged Assaultron's Beaming
+# dropped it. Nothing references it (checked against every record), so it goes.
+rec.delete | A1ALMEnch_Constant_Effect_Detrimental_Effect_SelfDamageRad
