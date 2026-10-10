@@ -1,0 +1,14 @@
+# Decision 1 (author, 2026-10-10): One Punch Man's - "strong but playable".
+# The text promised strength x100, jump 10x, run 100x; the armour gave no strength, jump 2x, run 1.5x.
+# 100x run speed breaks movement and world loading, so: Strength +100, jump 10x, run 3x, and the text says so.
+# Jump magnitude follows the mod's own scale (Jumpy (100%) = 2.0, i.e. magnitude = jump multiplier).
+# SpeedMult's base is 100, so +200 = 3x.
+
+# effect #8 = Jump Height Mult, #9 = Movement Speed Mult
+effect.magnitude | A1ALMEnch_Constant_Effect_Custom_Effect_OnePunchMans | 8 | 10
+effect.magnitude | A1ALMEnch_Constant_Effect_Custom_Effect_OnePunchMans | 9 | 200
+# new effect #11: Fortify Strength +100 (copied from #9, which has no conditions)
+effect.add | A1ALMEnch_Constant_Effect_Custom_Effect_OnePunchMans | 9 | @A1ALMMGEF_Fortify_SPECIAL_Strength
+effect.magnitude | A1ALMEnch_Constant_Effect_Custom_Effect_OnePunchMans | 11 | 100
+
+text.set | A1ALMOMOD_Legendary_Armor_OnePunchMans | DESC | Massively increases your strength (+100). You jump ten times higher and run three times faster. Like Saitama, you're immune to everything. Life's boring without a worthy foe, eh?

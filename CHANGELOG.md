@@ -22,6 +22,7 @@
 
 ### Fixed: legendaries that did not work
 - **One Punch Man's** no longer knocks over the wearer when equipped. Punches still send enemies flying.
+- **One Punch Man's** now gives what it promises, within what the game can handle: Strength +100 (it gave none), 10x jump height (was 2x) and 3x run speed (was 1.5x). The description no longer promises 100x speed, which breaks movement and world loading.
 - **God Father's** now launches the enemies you hit (it used to target the wearer).
 - **Cheater's (weapon)** now actually ignores armour (100% penetration).
 - **Cheater's (armor)** now gives the 90% explosion resistance its description promised.
