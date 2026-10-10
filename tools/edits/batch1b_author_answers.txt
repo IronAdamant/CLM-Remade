@@ -1,0 +1,21 @@
+# Batch 1b: the author's answers to the questions left by batch 1 (2026-10-10).
+
+# 1. Room Clearing widens spread (the effects already do); drop the contradictory "35% more accurate".
+#    Text is the spec: "20 extra projectiles" (it added 19).
+text.replace | A1ALMOMOD_Legendary_Weapon_RoomClearing | DESC | 35% Spread, 35%  Range | 35% Spread, 35% Range
+text.replace | A1ALMOMOD_Legendary_Weapon_RoomClearing | DESC | turns your projectiles into explosives. 35% more accurate. | turns your projectiles into explosives.
+prop.set | A1ALMOMOD_Legendary_Weapon_RoomClearing | NumProjectiles | ADD | 20
+
+# 2. The +40 energy damage on Savage (Limited) and Caged Savage goes into their text.
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Savage | DESC | 4x damage, | 4x damage, +40 energy damage,
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Caged_Savage | DESC | 4x damage, | 4x damage, +40 energy damage,
+
+# 3. Suppressin' gets its own 3x damage perk. Its 20% proc used the shared "Increase Damage 300%" perk (x4).
+rec.copy | A1ALMPERK_Legendary_Hidden_Weapon_IncreaseDamage_300P | A1ALMPERK_Legendary_Hidden_Weapon_IncreaseDamage_3x_Suppressing
+text.set | A1ALMPERK_Legendary_Hidden_Weapon_IncreaseDamage_3x_Suppressing | FULL | CLM: Increase Damage 3x (Suppressin' - Hidden)
+text.set | A1ALMPERK_Legendary_Hidden_Weapon_IncreaseDamage_3x_Suppressing | DESC | You deal 3x damage to your targets.
+field.set | A1ALMPERK_Legendary_Hidden_Weapon_IncreaseDamage_3x_Suppressing | Effects\[0]\Function Parameters\EPFD\Float | 3.0
+rec.copy | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_300P | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_3x_Suppressing
+text.set | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_3x_Suppressing | FULL | CLM Perk: Increase Damage 3x (Suppressin')
+field.set | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_3x_Suppressing | Magic Effect Data\DATA\Perk to Apply | @A1ALMPERK_Legendary_Hidden_Weapon_IncreaseDamage_3x_Suppressing
+field.set | A1ALMEnch_Constant_Effect_Penetrating_Suppressing | Effects\[1]\EFID | @A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_3x_Suppressing
