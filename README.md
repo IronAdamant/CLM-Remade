@@ -21,8 +21,8 @@ history doubles as a changelog of the 2.0 overhaul.
 
 ## Requirements
 
-Fallout 4 with **all six DLC**: Automatron, Far Harbor, Nuka-World, Wasteland Workshop, Contraptions Workshop and
-Vault-Tec Workshop. The plugin lists every one of them as a master.
+Fallout 4 with **Automatron, Far Harbor, Nuka-World and Contraptions Workshop**. (Version 1.09 also required
+Wasteland Workshop and Vault-Tec Workshop, but never used anything from them.)
 
 ## License
 
