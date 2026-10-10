@@ -122,8 +122,10 @@ def patched_model(src: bytes, swaps: dict[str, str], beam_scale_value: float | N
 
 # Add-on nodes: shared particle effects (sparks, smoke, impact wave) that models attach by a global index,
 # defined by ADDN records. The vanilla laser models point at red (or light-blue) add-ons, so each colour gets its
-# own. Indexes are global across the game and all mods: CLM uses 5565000+ (its Nexus mod ID) to avoid clashes.
-ADDON_BASE = 5565000
+# own. Indexes are global across the game and all mods. Official content stays below 1000 in per-DLC blocks
+# (base 0-283, Automatron 400s, Far Harbor 550s, Nuka-World 600s, Contraptions 800s, Vault-Tec 900s, Creation Club
+# 353-399). An earlier build used 5565000+ and the game crashed, so CLM uses the small free block 1500-1599.
+ADDON_BASE = 1500
 ADDON_KINDS = {  # kind: (vanilla light-blue ADDN index it replaces, source model, how it gets its colour)
     'MuzSparks': (64, 'MPSMuzSparksLaser02LtBlue.nif', 'tint'),
     'ImpactSparks': (66, 'MPSLaserImpactSparksLtBlue.nif', 'tint'),

@@ -3,7 +3,7 @@
 
   Laser effect models attach shared particle effects (muzzle sparks, impact sparks, impact smoke, impact wave)
   by a global add-on index, defined by ADDN records. tools/assets/laser_colors.py points each colour's models at
-  indexes 5565000 + colour*10 + kind (CLM's Nexus mod ID keeps them clear of other mods); this script creates the
+  indexes 1500 + colour*10 + kind (a free block above all official content, which stays below 1000); this script creates the
   matching ADDN records as copies of the vanilla light-blue ones. The colour/kind numbering here must match
   COLORS and ADDON_KINDS in laser_colors.py. Safe to re-run.
 }
@@ -12,7 +12,7 @@ unit CLMEnergizedLaserAddons;
 const
   TargetFile = '{{TARGET}}';
   OutDir = '{{OUT}}';
-  AddonBase = 5565000;
+  AddonBase = 1500;
 
 var
   log: TStringList;
