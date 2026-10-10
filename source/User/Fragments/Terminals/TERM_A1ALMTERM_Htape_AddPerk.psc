@@ -1404,6 +1404,14 @@ EndFunction
 ;BEGIN FRAGMENT Fragment_Terminal_176
 Function Fragment_Terminal_176(ObjectReference akTerminalRef)
 ;BEGIN CODE
+Game.GetPlayer().RemovePerk(A1ALMPERK_Legendary_Armor_GreaterLockPicking_5x)
+;END CODE
+EndFunction
+;END FRAGMENT
+
+;BEGIN FRAGMENT Fragment_Terminal_177
+Function Fragment_Terminal_177(ObjectReference akTerminalRef)
+;BEGIN CODE
 Game.GetPlayer().RemovePerk(A1ALMPERK_Legendary_Armor_GreaterGunBashing_5x)
 ;END CODE
 EndFunction

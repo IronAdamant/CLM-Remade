@@ -1,0 +1,7 @@
+# Batch 1d: perk holotape - Greater Lockpicking (5x) could never be removed (audit section F).
+# Menu item 176 "Remove Perk - Greater Lockpicking (5x)" ran a fragment that removed Greater Gunbashing, and item 177
+# "Remove Perk - Greater Gunbashing (5x)" had no fragment at all. The script source is fixed in
+# source/User/Fragments/Terminals/TERM_A1ALMTERM_Htape_AddPerk.psc (176 removes Lockpicking, new 177 removes
+# Gunbashing); the terminal must also list fragment 177 or the game never calls it.
+# Entry #175 of the fragment list is fragment 176 (the list skips 177); copy it for 177.
+list.add | A1ALMTERM_Holotape_Perk_Add_RM | VMAD\Script Fragments\Fragments | 175 | Fragment Index=177 ; FragmentName=Fragment_Terminal_177
