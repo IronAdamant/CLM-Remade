@@ -11,6 +11,9 @@ variants, balanced or OP).
 ## Layout
 
 - `docs/DESIGN.md` - how the mod works: naming, the configuration system, and techniques learned building it.
+- `source/` - Papyrus sources (`.psc`) for the scripts in `data/SCRIPTS`. The 1.09 sources were lost; the terminal
+  fragments were recovered from the compiled scripts by `tools/papyrus/rebuild_fragments.py` and verified to
+  recompile to identical code.
 - `data/` - everything that ships, laid out like the game's `Data` folder: the plugin plus the loose files that get
   packed into `Custom Legendary Modifications Remade - Main.ba2` (scripts, facegen mesh) and `- Textures.ba2`.
 
