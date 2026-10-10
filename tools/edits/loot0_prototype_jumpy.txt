@@ -1,0 +1,75 @@
+# Loot mode, prototype (2026-10-10): tests the two core mechanisms on one family before generating the rest.
+#  1. Unlock holotape: a BOOK with "Add Perk" (how vanilla magazines work - no script, so PlayStation-safe).
+#     Picking it up grants a hidden perk; recipes that check that perk then appear.
+#  2. Loose mod: a MISC item linked from the legendary's LNAM, like vanilla loose mods. Holding it should let the
+#     legendary be attached at a workbench, consuming the item. Vanilla legendaries never have one, hence the test.
+
+# --- hidden unlock perk (copy of an empty, hidden vanilla magazine perk) ---
+rec.copy | PerkMagPicket05 | A1ALMPERK_Unlock_Jumpy
+text.set | A1ALMPERK_Unlock_Jumpy | FULL | CLM Unlocked: Jumpy
+field.remove | A1ALMPERK_Unlock_Jumpy | . | FNAM
+
+# --- unlock holotape (copy of a magazine, made scriptless and holotape-looking) ---
+rec.copy | PerkMagMassSurgicalJournal09 | A1ALMBOOK_Unlock_Jumpy
+text.set | A1ALMBOOK_Unlock_Jumpy | FULL | CLM Holotape: Jumpy
+field.remove | A1ALMBOOK_Unlock_Jumpy | . | VMAD
+field.remove | A1ALMBOOK_Unlock_Jumpy | . | FIMD
+field.remove | A1ALMBOOK_Unlock_Jumpy | . | KWDA
+field.remove | A1ALMBOOK_Unlock_Jumpy | . | KSIZ
+field.remove | A1ALMBOOK_Unlock_Jumpy | . | INAM
+field.remove | A1ALMBOOK_Unlock_Jumpy | . | PTRN
+field.remove | A1ALMBOOK_Unlock_Jumpy | Model | MODS
+field.remove | A1ALMBOOK_Unlock_Jumpy | Model | MODT
+field.set | A1ALMBOOK_Unlock_Jumpy | Model\MODL | Props\Holotape_Prop.nif
+field.set | A1ALMBOOK_Unlock_Jumpy | DNAM\Teaches | @A1ALMPERK_Unlock_Jumpy
+
+# --- unlocked recipes: copies of the costly recipes, shown only with the unlock perk ---
+rec.copy | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked
+rec.copy | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked
+rec.copy | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked
+rec.copy | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked
+rec.copy | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked
+rec.copy | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked
+# Both existing conditions become "HasPerk unlock == 1" (the second is a harmless duplicate for now; it becomes
+# the loot-mode check when the mode switch is built).
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked | Conditions\[0]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked | Conditions\[0]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked | Conditions\[0]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked | Conditions\[1]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked | Conditions\[1]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked | Conditions\[1]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked | Conditions\[0]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked | Conditions\[0]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked | Conditions\[0]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked | Conditions\[1]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked | Conditions\[1]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked | Conditions\[1]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked | Conditions\[0]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked | Conditions\[0]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked | Conditions\[0]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked | Conditions\[1]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked | Conditions\[1]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150_Unlocked | Conditions\[1]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked | Conditions\[0]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked | Conditions\[0]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked | Conditions\[0]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked | Conditions\[1]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked | Conditions\[1]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200_Unlocked | Conditions\[1]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked | Conditions\[0]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked | Conditions\[0]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked | Conditions\[0]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked | Conditions\[1]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked | Conditions\[1]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250_Unlocked | Conditions\[1]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked | Conditions\[0]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked | Conditions\[0]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked | Conditions\[0]\CTDA\Comparison Value | 1
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked | Conditions\[1]\CTDA\Function | HasPerk
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked | Conditions\[1]\CTDA\Parameter #1 | @A1ALMPERK_Unlock_Jumpy
+field.set | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300_Unlocked | Conditions\[1]\CTDA\Comparison Value | 1
+
+# --- loose mod for Jumpy (100%) ---
+rec.copy | miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100
+text.set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100 | FULL | CLM: Jumpy (100%)
+field.add | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100
