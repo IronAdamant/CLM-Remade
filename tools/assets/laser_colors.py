@@ -82,15 +82,24 @@ def rotate_rgb(rgb: tuple[int, int, int], degrees: float) -> tuple[int, int, int
 
 
 def patched_model(src: bytes, swaps: dict[str, str], beam_scale_value: float | None = None) -> bytes:
+    """Copy a vanilla effect model: swap gradient paths, neutralise baked-in tints, optionally rescale the beam.
+
+    The effect shader multiplies the gradient colour by its base colour, so a tinted base colour leaks into every
+    recolour (the vanilla muzzle flash's glow has a red-orange base, which turned purple into red in game).
+    Bethesda's own light-blue impact models use white there, so any tinted base colour is set to white.
+    """
     n = Nif(src)
     for old, new in swaps.items():
         n.replace_sized_string(old, new)
-    if beam_scale_value is not None:
-        for i, t, s, e in n.block_ranges():
-            if t == 'BSEffectShaderProperty':
-                d = parse_effect_shader(bytes(n.data[s:e]))
-                if d['color_scale'] == RED_BEAM_SCALE:
-                    struct.pack_into('<f', n.data, s + d['color_offset'] + 16, beam_scale_value)
+    for i, t, s, e in n.block_ranges():
+        if t != 'BSEffectShaderProperty':
+            continue
+        d = parse_effect_shader(bytes(n.data[s:e]))
+        r, g, b, a = d['base_color']
+        if max(r, g, b) - min(r, g, b) > 0.05:  # tinted, not grey/white
+            struct.pack_into('<3f', n.data, s + d['color_offset'], 1.0, 1.0, 1.0)
+        if beam_scale_value is not None and d['color_scale'] == RED_BEAM_SCALE:
+            struct.pack_into('<f', n.data, s + d['color_offset'] + 16, beam_scale_value)
     out = bytes(n.data)
     chk = Nif(out)
     assert chk.blocks_offset + sum(chk.sizes) + 8 == len(out), 'block table mismatch'
