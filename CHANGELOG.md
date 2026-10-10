@@ -8,9 +8,8 @@
 - The **Untouchable** legendaries and perks (and Brutish, Burning Rage, Constantly Flamin' Cloaked) and the
   **auto-stimpak** effects used Far Harbor scripts, so they silently needed Far Harbor. They now use CLM's own copies,
   which behave identically.
-- **Alien-Tech'd, Harshly Shocking, Jupiter's Wrathful, Shockgun Surgeon's** and **Seekin' (Flame)** only used
-  Automatron sounds; they now use base-game sounds (electrical arc and incendiary fly-by), so they no longer need
-  Automatron.
+- **Alien-Tech'd, Harshly Shocking, Jupiter's Wrathful, Shockgun Surgeon's** and **Seekin' (Flame)** now use
+  base-game sounds (electrical arc and incendiary fly-by) instead of Automatron's. They still use Automatron models.
 
 ### New
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.
