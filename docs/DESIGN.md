@@ -46,9 +46,11 @@ The **Perk Holotape** adds and removes CLM's perk versions of legendaries. Each 
 
 ## Why the legendary slot shows up
 
-Vanilla weapons and armor already have the `ap_Legendary` attach point, but the workbench hides it because the keyword
-has no name. CLM's only edit to a base-game record gives `ap_Legendary` a name ("Not Legendary"), which makes the slot
-visible. Any mod that also edits that keyword and loads later can hide the slot again.
+CLM's only edit to a base-game record gives the `ap_Legendary` attach-point keyword a name ("Not Legendary"). The
+workbench appears to show an attach slot only when its keyword has a name, which is what makes the legendary slot
+visible (teaLz's Legendary Modification uses the same approach). A mod that also edits that keyword and loads later can
+hide the slot again; players reported fixing missing CLM recipes by changing load order. *(Still to be confirmed with
+an in-game test.)*
 
 ## Techniques worth knowing
 
