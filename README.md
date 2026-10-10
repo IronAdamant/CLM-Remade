@@ -10,6 +10,7 @@ variants, balanced or OP).
 
 ## Layout
 
+- `docs/DESIGN.md` - how the mod works: naming, the configuration system, and techniques learned building it.
 - `data/` - everything that ships, laid out like the game's `Data` folder: the plugin plus the loose files that get
   packed into `Custom Legendary Modifications Remade - Main.ba2` (scripts, facegen mesh) and `- Textures.ba2`.
 
