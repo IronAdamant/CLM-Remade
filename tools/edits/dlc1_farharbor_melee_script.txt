@@ -1,0 +1,15 @@
+# DLC independence: the 11 "melee hit" effects (Untouchable x11 - used by Brutish, Burning Rage, Constantly Flamin' Cloaked
+# and the Untouchable legendaries/perks) ran Far Harbor's DLC03:dlc03_Legendary_OnMeleeEffect. They now run CLM's
+# A1ALMMGEF_OnMeleeEffect (source/User), which compiles to identical code. Property names match, so each effect keeps
+# its spell, chance and cooldown.
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Disarm | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_CryoFreeze | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Fire | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Poison | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Rad | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Knockdown | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Spook | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Pacify | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Paralyze | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Frenzy | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
+field.set | A1ALMMGEF_Constant_Effect_OnMeleeHits_Electrified | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnMeleeEffect
