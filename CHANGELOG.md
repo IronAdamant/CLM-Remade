@@ -3,8 +3,13 @@
 ## Unreleased (work in progress towards 2.0)
 
 ### Requirements
-- No longer requires the **Wasteland Workshop** or **Vault-Tec Workshop** DLC. The mod never used anything from them.
-  Still required: Automatron, Far Harbor, Nuka-World and Contraptions Workshop.
+- The main mod now needs only **Far Harbor** and **Contraptions Workshop** (1.09 needed all six DLC).
+  Wasteland Workshop and Vault-Tec Workshop were never used.
+- The creature-spawning legendaries that use DLC creatures moved to optional add-ons, one per DLC:
+  `CLM - Automatron.esp` (13), `CLM - Far Harbor.esp` (9), `CLM - Nuka-World.esp` (12). They are ESL-flagged and
+  follow the configuration holotape (free/costly, spawn legendaries on/off) like the rest of the mod.
+  **Upgrading from 1.09:** gear that already has one of these 34 spawning legendaries attached loses it; take them off
+  at a workbench before updating, or re-craft them with the add-on installed.
 - The **Untouchable** legendaries and perks (and Brutish, Burning Rage, Constantly Flamin' Cloaked) and the
   **auto-stimpak** effects used Far Harbor scripts, so they silently needed Far Harbor. They now use CLM's own copies,
   which behave identically.
@@ -18,7 +23,6 @@
     pulse burst, Cherry = red-orange fireball, Cola = soda-like spray.
   - **Lobbin' (HalluciGen Grenade)**: base-game gas grenade instead of Nuka-World's.
   - **Feral ghoul spawns**: base-game Nuka Grenade instead of Nuka-World's.
-- Automatron and Nuka-World are now only used by their creature-spawning legendaries.
 
 ### New
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.

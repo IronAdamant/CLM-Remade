@@ -107,3 +107,16 @@ Two lessons from testing:
   crash; 1511-1564 works.
 - **Texture paths are case-insensitive.** Vanilla models mix `textures\Effects` and `textures\effects`, so path
   replacement must ignore case. The generator refuses to write a model that still points at a vanilla colour.
+
+## DLC add-ons (2.0)
+
+Creature-spawning legendaries that use DLC creatures live in ESL-flagged add-ons (`CLM - <DLC>.esp`), each with
+masters Fallout4.esm, its DLC and the main plugin. Their recipes reuse the main plugin's configuration globals, so
+the holotape controls them too. `tools/xedit/move_to_addon.pas` builds an add-on from a list in `tools/addons/`:
+it copies the records as new ones, re-points links between the copies, verifies no copy still points at an
+original, and only then deletes the originals. New files start their object IDs at 0x800 (IDs below 0x800 are
+reserved; an ESL must stay within 0x800-0xFFF).
+
+A legendary can depend on a DLC in two ways: a reference to a DLC record (visible as a master) or a model/texture
+path into a DLC archive (not visible as a master). Dependency checks must look at both.
+

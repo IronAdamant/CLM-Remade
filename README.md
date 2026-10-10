@@ -24,8 +24,17 @@ history doubles as a changelog of the 2.0 overhaul.
 
 ## Requirements
 
-Fallout 4 with **Automatron, Far Harbor, Nuka-World and Contraptions Workshop**. (Version 1.09 also required
-Wasteland Workshop and Vault-Tec Workshop, but never used anything from them.)
+The main plugin, `Custom Legendary Modifications Remade.esp`, needs Fallout 4 with **Far Harbor** and
+**Contraptions Workshop**. (Version 1.09 required all six DLC.)
+
+Optional add-ons, each adding the creature-spawning legendaries that use that DLC's creatures. Install the ones for
+the DLC you own, after the main plugin. They are ESL-flagged, so they do not use a load-order slot:
+
+| Add-on | Needs |
+|---|---|
+| `CLM - Automatron.esp` | Automatron (13 robot spawns) |
+| `CLM - Far Harbor.esp` | Far Harbor (9 creature and Trapper spawns) |
+| `CLM - Nuka-World.esp` | Nuka-World (12 creature and raider spawns) |
 
 ## License
 
