@@ -68,14 +68,23 @@ begin
 
   if nErr = 0 then begin
     // 2. new ESL-flagged plugin with its masters
-    nf := AddNewFileName(AddonFile, True);
-    // New files start their object counter at 1, but IDs below 0x800 are reserved and an ESL must use
-    // 0x800-0xFFF: start at 0x800 before any record is added.
-    SetElementNativeValues(ElementByIndex(nf, 0), 'HEDR\Next Object ID', $800);
+    // Reuse the add-on if it is already loaded (run with --also-load), otherwise create it.
+    nf := nil;
+    for i := 0 to FileCount - 1 do
+      if GetFileName(FileByIndex(i)) = AddonFile then
+        nf := FileByIndex(i);
+    if Assigned(nf) then
+      log.Add('appending to existing ' + GetFileName(nf))
+    else begin
+      nf := AddNewFileName(AddonFile, True);
+      // New files start their object counter at 1, but IDs below 0x800 are reserved and an ESL must use
+      // 0x800-0xFFF: start at 0x800 before any record is added.
+      SetElementNativeValues(ElementByIndex(nf, 0), 'HEDR\Next Object ID', $800);
+      log.Add('created ' + GetFileName(nf));
+    end;
     AddMasterIfMissing(nf, 'Fallout4.esm');
     AddMasterIfMissing(nf, DlcMaster);
     AddMasterIfMissing(nf, TargetFile);
-    log.Add('created ' + GetFileName(nf) + ' masters: Fallout4.esm, ' + DlcMaster + ', ' + TargetFile);
 
     // 3. copy
     for i := 0 to olds.Count - 1 do begin

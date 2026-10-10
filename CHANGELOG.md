@@ -3,26 +3,18 @@
 ## Unreleased (work in progress towards 2.0)
 
 ### Requirements
-- The main mod now needs only **Far Harbor** and **Contraptions Workshop** (1.09 needed all six DLC).
-  Wasteland Workshop and Vault-Tec Workshop were never used.
-- The creature-spawning legendaries that use DLC creatures moved to optional add-ons, one per DLC:
-  `CLM - Automatron.esp` (13), `CLM - Far Harbor.esp` (9), `CLM - Nuka-World.esp` (12). They are ESL-flagged and
-  follow the configuration holotape (free/costly, spawn legendaries on/off) like the rest of the mod.
-  **Upgrading from 1.09:** gear that already has one of these 34 spawning legendaries attached loses it; take them off
-  at a workbench before updating, or re-craft them with the add-on installed.
+- **The main mod no longer needs any DLC** - just Fallout 4. (1.09 needed all six.)
+- Legendaries that use a DLC's creatures, art or effects moved to optional add-ons, one per DLC. Install the ones for
+  the DLC you own; they are ESL-flagged (no load-order slot) and follow the configuration holotape like the rest:
+  - `CLM - Automatron.esp`: 13 robot spawns.
+  - `CLM - Far Harbor.esp`: 9 creature and Trapper spawns, Paintball x6, Trappin' x4, Moby-Dick's, Silenced Harpoon
+    Striker.
+  - `CLM - Nuka-World.esp`: 12 creature and raider spawns.
+  - `CLM - Contraptions.esp`: Pyrotechnical x9, Weather Altering x3.
+  - **Upgrading from 1.09:** gear that already has one of these legendaries attached loses it unless the matching
+    add-on is installed (then re-craft it). Take them off at a workbench before updating if unsure.
 - The **Untouchable** legendaries and perks (and Brutish, Burning Rage, Constantly Flamin' Cloaked) and the
-  **auto-stimpak** effects used Far Harbor scripts, so they silently needed Far Harbor. They now use CLM's own copies,
-  which behave identically.
-- These no longer need any DLC; they used DLC sounds or models, now replaced with base-game ones (so they **look and
-  sound different** - reports welcome):
-  - **Alien-Tech'd, Harshly Shocking, Jupiter's Wrathful, Shockgun Surgeon's, Silenced Electrical Striker**:
-    base-game electrical arc beam and crackle instead of Automatron's lightning gun.
-  - **Rebounding** (all four): base-game electrical explosion instead of Automatron's chain lightning.
-  - **Seekin' (Flame)**: base-game fiery rocket instead of Automatron's sentry flamer projectile.
-  - **Nuka-Infused** (all four): fire a Nuka Grenade instead of a Nuka-World paddle ball. Explosions: Quantum = blue
-    pulse burst, Cherry = red-orange fireball, Cola = soda-like spray.
-  - **Lobbin' (HalluciGen Grenade)**: base-game gas grenade instead of Nuka-World's.
-  - **Feral ghoul spawns**: base-game Nuka Grenade instead of Nuka-World's.
+  **auto-stimpak** effects used Far Harbor scripts; they now use CLM's own copies, which behave identically.
 
 ### New
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.

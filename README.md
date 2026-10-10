@@ -24,17 +24,18 @@ history doubles as a changelog of the 2.0 overhaul.
 
 ## Requirements
 
-The main plugin, `Custom Legendary Modifications Remade.esp`, needs Fallout 4 with **Far Harbor** and
-**Contraptions Workshop**. (Version 1.09 required all six DLC.)
+The main plugin, `Custom Legendary Modifications Remade.esp`, needs only **Fallout 4** - no DLC. (Version 1.09
+required all six DLC.)
 
-Optional add-ons, each adding the creature-spawning legendaries that use that DLC's creatures. Install the ones for
-the DLC you own, after the main plugin. They are ESL-flagged, so they do not use a load-order slot:
+Optional add-ons hold the legendaries that use a DLC's creatures, art or effects. Install the ones for the DLC you
+own, after the main plugin. They are ESL-flagged, so they do not use a load-order slot:
 
-| Add-on | Needs |
-|---|---|
-| `CLM - Automatron.esp` | Automatron (13 robot spawns) |
-| `CLM - Far Harbor.esp` | Far Harbor (9 creature and Trapper spawns) |
-| `CLM - Nuka-World.esp` | Nuka-World (12 creature and raider spawns) |
+| Add-on | Needs | Legendaries |
+|---|---|---|
+| `CLM - Automatron.esp` | Automatron | 13 robot spawns |
+| `CLM - Far Harbor.esp` | Far Harbor | 9 creature and Trapper spawns, Paintball x6, Trappin' x4, Moby-Dick's, Silenced Harpoon Striker |
+| `CLM - Nuka-World.esp` | Nuka-World | 12 creature and raider spawns |
+| `CLM - Contraptions.esp` | Contraptions Workshop | Pyrotechnical x9, Weather Altering x3 |
 
 ## License
 

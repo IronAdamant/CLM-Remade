@@ -110,8 +110,8 @@ Two lessons from testing:
 
 ## DLC add-ons (2.0)
 
-Creature-spawning legendaries that use DLC creatures live in ESL-flagged add-ons (`CLM - <DLC>.esp`), each with
-masters Fallout4.esm, its DLC and the main plugin. Their recipes reuse the main plugin's configuration globals, so
+The main plugin depends on Fallout4.esm only. Legendaries that use a DLC's creatures, art or effects live in
+ESL-flagged add-ons (`CLM - <DLC>.esp`), each with masters Fallout4.esm, its DLC and the main plugin. Their recipes reuse the main plugin's configuration globals, so
 the holotape controls them too. `tools/xedit/move_to_addon.pas` builds an add-on from a list in `tools/addons/`:
 it copies the records as new ones, re-points links between the copies, verifies no copy still points at an
 original, and only then deletes the originals. New files start their object IDs at 0x800 (IDs below 0x800 are

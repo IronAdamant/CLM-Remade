@@ -1,0 +1,4 @@
+# Leftover from 1.09 (no legendary uses it): a "spawn Child of Atom" projectile + explosion placing Far Harbor's
+# Children of Atom. Kept intact (pending the author's decision on leftovers) but moved out of the main plugin.
+A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_ChildOfAtom
+A1ALMEXP_Custom_Spawning_Effect_Human_UnfriendlyFaction_ChildofAtom
