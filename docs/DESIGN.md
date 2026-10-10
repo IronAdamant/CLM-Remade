@@ -86,3 +86,24 @@ Without scripts (the PlayStation version cannot use any), these could not be bui
 - Reflecting damage back at attackers (Advanced Titanium shipped with 5% damage reduction instead)
 
 Several of these can be done with Papyrus scripts on PC and Xbox.
+
+## Coloured lasers (2.0)
+
+A laser's colour is spread across several places, and all of them have to change together or the vanilla colour
+leaks through. `tools/assets/laser_colors.py` generates everything from the game's own red laser files:
+
+- **Gradient textures** (32x32 colour lookups) drive the beam, muzzle flash and impact colours. New colours are the
+  vanilla red gradients with the hue rotated, which keeps the white-hot core and fade.
+- **Shader base colour** multiplies the gradient. The vanilla muzzle flash has a red-orange base colour baked in, so
+  it must be set to white or every colour comes out red.
+- **Add-on nodes** (ADDN records) are shared particle effects (sparks, smoke, impact wave) that models attach by a
+  global index, so swapping texture paths never reaches them. Each colour has its own four, at indexes
+  1500 + colour*10 + kind.
+- **Light** (LIGH) and **impact data set** (IPDS/IPCT, including the decal colour) are records, set per colour by the
+  scripts in `tools/xedit/`.
+
+Two lessons from testing:
+- **Keep ADDN indexes small.** All official content uses indexes below 1000. A build that used 5565000+ made the game
+  crash; 1511-1564 works.
+- **Texture paths are case-insensitive.** Vanilla models mix `textures\Effects` and `textures\effects`, so path
+  replacement must ignore case. The generator refuses to write a model that still points at a vanilla colour.
