@@ -1,0 +1,202 @@
+# Batch 1: fixes from the 2026 audit (private AUDIT.md sections C, F, G).
+# Rule agreed with the author: the description is the spec; numbers change to match the text.
+# Exception: legendaries whose range is far above the text keep their range and get the text rewritten.
+# Convention in CLM's data: "Nx damage" = MUL+ADD (N-1); "X% less/more" = MUL+ADD -/+X/100.
+# Apply with: python -m ack xedit run apply_edits "Custom Legendary Modifications Remade.esp" --param EDITS=<this file> [--save]
+
+# --- Broken properties -------------------------------------------------------------------------------
+
+# Salvaged Assaultron's Beaming: an enchantment was stored in the fire-rate property. Author: drop the self-rad drawback.
+prop.remove | A1ALMOMOD_Legendary_Weapon_Assaultrons | Speed
+
+# Generically 80s Action Hero's: fire rate, spread and recoil were SET to negative values.
+# Text: -30% fire rate, -30% recoil, -25% accurate (i.e. 25% more spread).
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | Speed | MUL+ADD | -0.3
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelMinConeDegrees | MUL+ADD | 0.25
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelMaxConeDegrees | MUL+ADD | 0.25
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelConeIncreasePerShot#1 | MUL+ADD | 0.25
+prop.remove | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelConeIncreasePerShot#2
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelConeDecreasePerSec | MUL+ADD | -0.25
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.3
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelRecoilMinDegPerShot | MUL+ADD | -0.3
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelRecoilHipMult | MUL+ADD | -0.3
+prop.set | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | AimModelRecoilArcRotateDeg | MUL+ADD | -0.3
+
+# Silently Savage (Limited): fire rate SET to 2 and then multiplied (about 5x). Text: 150% fire rate.
+prop.remove | A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Silent_Savage | Speed#1
+
+# Advanced Recoilless: MaxRange ADD 3.5 added 3.5 game units. Text: 300% range.
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_AdvancedRecoilless | MinRange | MUL+ADD | 3.0
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_AdvancedRecoilless | MaxRange | MUL+ADD | 3.0
+
+# Room Clearing: fire rate and range used ADD. Text: 35% spread, 35% range, -30% fire rate.
+prop.set | A1ALMOMOD_Legendary_Weapon_RoomClearing | Speed | MUL+ADD | -0.3
+prop.set | A1ALMOMOD_Legendary_Weapon_RoomClearing | MinRange | MUL+ADD | 0.35
+prop.set | A1ALMOMOD_Legendary_Weapon_RoomClearing | MaxRange | MUL+ADD | 0.35
+prop.set | A1ALMOMOD_Legendary_Weapon_RoomClearing | AimModelMaxConeDegrees | MUL+ADD | 0.35
+
+# Burning Hellish: range set twice; recoil SET. Text: 75% less recoil, 50% more accuracy and range.
+prop.remove | A1ALMOMOD_Legendary_Weapon_BurningHellish | MinRange#1
+prop.set | A1ALMOMOD_Legendary_Weapon_BurningHellish | MaxRange | MUL+ADD | 0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_BurningHellish | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_BurningHellish | AimModelRecoilMinDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_BurningHellish | AimModelRecoilArcDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_BurningHellish | AimModelRecoilArcRotateDeg | MUL+ADD | -0.75
+prop.add | A1ALMOMOD_Legendary_Weapon_BurningHellish | AimModelMinConeDegrees | MUL+ADD | -0.5 | A1ALMOMOD_Legendary_Weapon_RoomClearing
+prop.add | A1ALMOMOD_Legendary_Weapon_BurningHellish | AimModelMaxConeDegrees | MUL+ADD | -0.5 | A1ALMOMOD_Legendary_Weapon_RoomClearing
+
+# Mr. Freeze's: no cryo damage at all (its effects had zero duration). Text: 60 points of freezing damage.
+prop.add | A1ALMOMOD_Legendary_Weapon_MrFreezes | DamageTypeValues | ADD | 60 | A1ALMOMOD_Legendary_Weapon_Assaultrons | 00060A83
+
+# --- "X% less recoil / more accurate" implemented as SET to a fixed value -------------------------------
+
+# Destroyer's (all four tiers): text 75% less recoil.
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Base | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Base | AimModelRecoilMinDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Base | AimModelRecoilHipMult | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Base | AimModelRecoilArcDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Base | AimModelRecoilArcRotateDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x | AimModelRecoilMinDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x | AimModelRecoilHipMult | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x | AimModelRecoilArcDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x | AimModelRecoilArcRotateDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x | AimModelRecoilMinDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x | AimModelRecoilHipMult | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x | AimModelRecoilArcDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x | AimModelRecoilArcRotateDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_4x | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_4x | AimModelRecoilMinDegPerShot | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_4x | AimModelRecoilHipMult | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_4x | AimModelRecoilArcDeg | MUL+ADD | -0.75
+prop.set | A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_4x | AimModelRecoilArcRotateDeg | MUL+ADD | -0.75
+
+# Many Barreled Optimised: text 50% less recoil.
+prop.set | A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized | AimModelRecoilMinDegPerShot | MUL+ADD | -0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized | AimModelRecoilHipMult | MUL+ADD | -0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized | AimModelRecoilArcDeg | MUL+ADD | -0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized | AimModelRecoilArcRotateDeg | MUL+ADD | -0.5
+
+# Nearly Recoilless: text 80% less recoil and 80% more accurate.
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelRecoilMaxDegPerShot | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelRecoilMinDegPerShot | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelRecoilHipMult | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelRecoilArcDeg | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelRecoilArcRotateDeg | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelMinConeDegrees | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelMaxConeDegrees | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelConeIncreasePerShot | MUL+ADD | -0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | AimModelConeIronSightsMultiplier | MUL+ADD | -0.8
+
+# Hydra's (all four): fire rate used ADD; "40% increased recoil" was SET to -0.4.
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_Base | Speed | MUL+ADD | -0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_Base | AimModelRecoilMaxDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_Base | AimModelRecoilMinDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_Base | AimModelRecoilArcDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_Base | AimModelRecoilArcRotateDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantA | Speed | MUL+ADD | -0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantA | AimModelRecoilMaxDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantA | AimModelRecoilMinDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantA | AimModelRecoilArcDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantA | AimModelRecoilArcRotateDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantB | Speed | MUL+ADD | -0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantB | AimModelRecoilMaxDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantB | AimModelRecoilMinDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantB | AimModelRecoilArcDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantB | AimModelRecoilArcRotateDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantC | Speed | MUL+ADD | -0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantC | AimModelRecoilMaxDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantC | AimModelRecoilMinDegPerShot | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantC | AimModelRecoilArcDeg | MUL+ADD | 0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantC | AimModelRecoilArcRotateDeg | MUL+ADD | 0.4
+
+# --- Signs, duplicates and smaller mismatches -------------------------------------------------------------
+
+# Suppressin': text -40% fire rate and 10% increased recoil; both signs were flipped.
+prop.set | A1ALMOMOD_Legendary_Weapon_Suppressing | Speed | MUL+ADD | -0.4
+prop.set | A1ALMOMOD_Legendary_Weapon_Suppressing | AimModelRecoilMaxDegPerShot | MUL+ADD | 0.1
+prop.set | A1ALMOMOD_Legendary_Weapon_Suppressing | AimModelRecoilMinDegPerShot | MUL+ADD | 0.1
+prop.set | A1ALMOMOD_Legendary_Weapon_Suppressing | AimModelRecoilHipMult | MUL+ADD | 0.1
+prop.set | A1ALMOMOD_Legendary_Weapon_Suppressing | AimModelRecoilArcDeg | MUL+ADD | 0.1
+prop.set | A1ALMOMOD_Legendary_Weapon_Suppressing | AimModelRecoilArcRotateDeg | MUL+ADD | 0.1
+
+# Zeus Crafted: text "less 50% AP" but AP cost went up; stray extra energy damage on top of 3x damage.
+prop.set | A1ALMOMOD_Legendary_Weapon_ZeusCrafted | AttackActionPointCost | MUL+ADD | -0.5
+prop.remove | A1ALMOMOD_Legendary_Weapon_ZeusCrafted | DamageTypeValues[dtEnergy]#1
+
+# Performance Center: +25% energy damage applied twice (text: +25% damage).
+prop.remove | A1ALMOMOD_Legendary_Weapon_Custom_PerformanceCenter | DamageTypeValues[dtEnergy]#2
+
+# Thumpin': text "halved fire rate" was not implemented.
+prop.add | A1ALMOMOD_Legendary_Weapon_Thumping_Base | Speed | MUL+ADD | -0.5 | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_AdvancedRecoilless
+
+# Super Shotgunnin': text 10 additional ammo, 80% range.
+prop.set | A1ALMOMOD_Legendary_Weapon_SuperShotgunning | AmmoCapacity | ADD | 10
+prop.set | A1ALMOMOD_Legendary_Weapon_SuperShotgunning | MinRange | MUL+ADD | 0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_SuperShotgunning | MaxRange | MUL+ADD | 0.8
+
+# Range split across min/max around the stated value; set both to the text.
+prop.set | A1ALMOMOD_Legendary_Weapon_ImprovedPerformanceCenter | MinRange | MUL+ADD | 0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_ImprovedPerformanceCenter | MaxRange | MUL+ADD | 0.8
+prop.set | A1ALMOMOD_Legendary_Weapon_Reclaimers | MinRange | MUL+ADD | 0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_Reclaimers | MaxRange | MUL+ADD | 0.5
+prop.set | A1ALMOMOD_Legendary_Weapon_Operators_Balanced | MinRange | MUL+ADD | 0.2
+prop.set | A1ALMOMOD_Legendary_Weapon_Operators_Balanced | MaxRange | MUL+ADD | 0.2
+
+# Havoc (all eight): "Speed ADD 0" does nothing.
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Base_Bullets | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Base_Bullets_Limited | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Variant_LtBlueLaser | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Variant_LtBlueLaser_Limited | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Variant_Plasma | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Variant_Plasma_Limited | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser | Speed
+prop.remove | A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser_Limited | Speed
+
+# Brutish: +20 Damage Resistance applied twice (text: 20+ to all resistances); "7x armor health" not implemented.
+effect.remove | A1ALMEnch_Constant_Effect_Custom_Effect_Brutish | 11
+prop.add | A1ALMOMOD_Legendary_Armor_Brutish | Health | MUL+ADD | 6.0 | A1ALMOMOD_Legendary_Armor_WarCarrying
+
+# --- Range far above the text: keep the range, rewrite the text (author's decision) -------------------------
+
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_DeadlyAccurate_70P | DESC | 70% accuracy and 70% range | 70% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Caged_Savage | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_ConvertOperators | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_DeadlyAccurate | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_DeathlySilenced | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_MurderouslySilenced | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Savage | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Savage | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Silent_Savage | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_SpecialOps | DESC | 100% accuracy and 100% range | 100% accuracy and massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_SpeedilyEnhanced | DESC | 100% range | massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Range | DESC | 100% range | massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_AdvancedAmmunition | DESC | 100% range | massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Nearly80P | DESC | 100% range | massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Operators_Enhanced | DESC | 100% range | massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Thumping_Base | DESC | with 100% range | with massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Thumping_Variant_Vicious | DESC | with 100% range | with massively increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Communicating | DESC | 40% Range | greatly increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Slayer_Base | DESC | 95% increased range | greatly increased range
+text.replace | A1ALMOMOD_Legendary_Weapon_Slayer_Base_Silenced | DESC | 95% increased range | greatly increased range
+
+# --- Configuration holotape: Free version's Balanced page had swapped labels and copy-pasted responses ------
+menu.set | A1ALMTERM_Holotape_Config_Balanced_Selection_Free_RM | 2 | ITXT | Set to 1 / OP and Balanced legendaries together.
+menu.set | A1ALMTERM_Holotape_Config_Balanced_Selection_Free_RM | 2 | RNAM | Setting to 1....
+menu.set | A1ALMTERM_Holotape_Config_Balanced_Selection_Free_RM | 3 | ITXT | Set to 0 / Balanced CLM legendaries only
+menu.set | A1ALMTERM_Holotape_Config_Balanced_Selection_Free_RM | 3 | RNAM | Setting to 0....
+
+# --- Typos in player-visible text -----------------------------------------------------------------------------
+text.replace | A1ALMOMOD_Legendary_Armor_AlienNanoCoated | DESC | recieve | receive
+text.replace | A1ALMOMOD_Legendary_Weapon_Generically80sActionHero | DESC | recieved | received
+text.replace | A1ALMOMOD_Legendary_Weapon_HighVelocityFulllTitanium | DESC | acccuracy.. | accuracy.
+text.replace | A1ALMPERK_Legendary_Armor_NegateDamageWhileNotMoving80P | DESC | recieve | receive
+text.replace | A1ALMPERK_Legendary_Hidden_Armor_NegateDamageWhileNotMoving80P | DESC | recieve | receive
+text.replace | A1ALMPERK_Legendary_Armor_NegateExplosionDamageWhileNotMoving80P | DESC | you will recieve 80% less damage from all weapon sources | you will receive 80% less damage from all explosive sources
+text.replace | A1ALMPERK_Legendary_Armor_NegateExplosionDamage90P | DESC | recieve | receive
+text.replace | A1ALMPERK_Legendary_Armor_NegateWeapnxExplosionDamage30P | DESC | recieve | receive
+text.replace | A1ALMPERK_Legendary_Armor_Cheat_Invulnerability | DESC | literallly | literally
+text.replace | A1ALMEnch_Constant_Effect_Impact_Landing_Basic | FULL | (Basic] | (Basic)
+text.set | A1ALMMESS_Emergecy_Variant_Heal | FULL | Emergency Healing!
