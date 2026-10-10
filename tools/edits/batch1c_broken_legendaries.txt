@@ -1,0 +1,27 @@
+# Batch 1c: legendaries whose effects never applied (audit section G, "cast-type mismatch").
+# An enchantment and its effect must agree on cast type and target. A fire-and-forget/touch effect inside a
+# constant/self enchantment hits the wearer; a constant/self effect inside an on-hit enchantment never applies.
+
+# One Punch Man's (armor): already punches enemies away through its "Punching (Push)" perk effect (#11).
+# The stray Push Actor Away effect (#9) applied to the wearer: players reported being ragdolled when equipping it.
+effect.remove | A1ALMEnch_Constant_Effect_Custom_Effect_OnePunchMans | 9
+
+# God Father's (armor): Grand Slam (#8) and Push Actor Away (#9) sat on the armor itself, so they targeted the wearer.
+# Use the working on-hit route instead: the "Punching (Push)" perk effect, which casts Grand Slam on what you hit.
+field.set | A1ALMEnch_Constant_Effect_Custom_Effect_GodFathers | Effects\[8]\EFID | @A1ALMMGEF_Constant_Effect_Perk_Punching_Push
+effect.remove | A1ALMEnch_Constant_Effect_Custom_Effect_GodFathers | 9
+
+# Cheater's (weapon): 100% armour penetration (#9) was a self/perk effect inside the on-hit enchantment, so it never
+# applied. Move it to its own constant enchantment, the same one Suppressin' uses.
+effect.remove | A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Cheaters | 9
+prop.add | A1ALMOMOD_Legendary_Weapon_Cheaters | Enchantments | ADD | 431 | A1ALMOMOD_Legendary_Weapon_Suppressing | @A1ALMEnch_Constant_Effect_Penetrating_100P
+
+# Cheater's (armor): its text promises 90% explosion resistance, which it never had. CLM's "Explosive Resistant (90%)"
+# perk is the holotape perk, so the armour gets a hidden copy (removing the armour must not strip a holotape perk).
+rec.copy | A1ALMPERK_Legendary_Armor_NegateExplosionDamage90P | A1ALMPERK_Legendary_Hidden_Armor_NegateExplosionDamage90P
+text.set | A1ALMPERK_Legendary_Hidden_Armor_NegateExplosionDamage90P | FULL | CLM: Explosive Resistant (90% - Hidden)
+field.set | A1ALMPERK_Legendary_Hidden_Armor_NegateExplosionDamage90P | DATA\Hidden | True
+rec.copy | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_NoFallDamage | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_ExplosionResist_90P
+text.set | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_ExplosionResist_90P | FULL | CLM Perk: Explosive Resistant (90%)
+field.set | A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_ExplosionResist_90P | Magic Effect Data\DATA\Perk to Apply | @A1ALMPERK_Legendary_Hidden_Armor_NegateExplosionDamage90P
+effect.add | A1ALMEnch_Constant_Effect_Custom_Effect_Cheaters | 8 | @A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_ExplosionResist_90P
