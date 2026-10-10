@@ -5,6 +5,9 @@
 ### Requirements
 - No longer requires the **Wasteland Workshop** or **Vault-Tec Workshop** DLC. The mod never used anything from them.
   Still required: Automatron, Far Harbor, Nuka-World and Contraptions Workshop.
+- The **Untouchable** legendaries and perks (and Brutish, Burning Rage, Constantly Flamin' Cloaked) and the
+  **auto-stimpak** effects used Far Harbor scripts, so they silently needed Far Harbor. They now use CLM's own copies,
+  which behave identically.
 
 ### New
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.

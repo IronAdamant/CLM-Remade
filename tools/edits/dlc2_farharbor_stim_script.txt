@@ -1,0 +1,4 @@
+# DLC independence: the two auto-stimpak effects ran Far Harbor's DLC03:dlc03_Legendary_OnHealthUseStim.
+# They now run CLM's A1ALMMGEF_OnHealthUseStim (source/User), which compiles to identical code.
+field.set | A1ALMMGEF_Constant_Effect_Custom_Effect_HealLikeStimpak | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnHealthUseStim
+field.set | A1ALMMGEF_Constant_Effect_Custom_Effect_HealLikeStimpak_Balanced | VMAD\Scripts\[0]\ScriptName | A1ALMMGEF_OnHealthUseStim
