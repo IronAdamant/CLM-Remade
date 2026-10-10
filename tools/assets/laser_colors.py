@@ -16,6 +16,7 @@ Prints the light colour to use for each colour's LIGH record.
 from __future__ import annotations
 
 import argparse
+import re
 import colorsys
 import struct
 import tempfile
@@ -81,29 +82,60 @@ def rotate_rgb(rgb: tuple[int, int, int], degrees: float) -> tuple[int, int, int
     return tuple(round(c * 255) for c in colorsys.hsv_to_rgb((hh + degrees / 360) % 1, s, v))
 
 
-def patched_model(src: bytes, swaps: dict[str, str], beam_scale_value: float | None = None) -> bytes:
-    """Copy a vanilla effect model: swap gradient paths, neutralise baked-in tints, optionally rescale the beam.
+def patched_model(src: bytes, swaps: dict[str, str], beam_scale_value: float | None = None,
+                  tint: tuple[float, float, float] | None = None, addons: dict[int, int] | None = None) -> bytes:
+    """Copy a vanilla effect model: swap gradient paths, fix base colours, optionally rescale the beam and
+    repoint add-on nodes.
 
     The effect shader multiplies the gradient colour by its base colour, so a tinted base colour leaks into every
     recolour (the vanilla muzzle flash's glow has a red-orange base, which turned purple into red in game).
-    Bethesda's own light-blue impact models use white there, so any tinted base colour is set to white.
+    Tinted base colours are set to `tint` if given (spark add-ons colour themselves this way), otherwise white.
+    `addons` remaps BSValueNode add-on indexes (shared particle effects the model attaches at runtime).
     """
     n = Nif(src)
     for old, new in swaps.items():
         n.replace_sized_string(old, new)
     for i, t, s, e in n.block_ranges():
+        if t == 'BSValueNode' and addons:
+            value_at = e - 5  # BSValueNode ends with: int value, byte flags
+            value, = struct.unpack_from('<i', n.data, value_at)
+            if value in addons:
+                struct.pack_into('<i', n.data, value_at, addons[value])
         if t != 'BSEffectShaderProperty':
             continue
         d = parse_effect_shader(bytes(n.data[s:e]))
         r, g, b, a = d['base_color']
         if max(r, g, b) - min(r, g, b) > 0.05:  # tinted, not grey/white
-            struct.pack_into('<3f', n.data, s + d['color_offset'], 1.0, 1.0, 1.0)
+            struct.pack_into('<3f', n.data, s + d['color_offset'], *(tint or (1.0, 1.0, 1.0)))
         if beam_scale_value is not None and d['color_scale'] == RED_BEAM_SCALE:
             struct.pack_into('<f', n.data, s + d['color_offset'] + 16, beam_scale_value)
     out = bytes(n.data)
     chk = Nif(out)
     assert chk.blocks_offset + sum(chk.sizes) + 8 == len(out), 'block table mismatch'
+    # Guard: a recoloured model must not keep any vanilla red / light-blue colour lookup.
+    leftover = sorted({p for _, _, p in chk.sized_strings()
+                       if 'gradients' in p.lower() and BS + 'CLM' + BS not in p and re.search(r'red|ltblue', p, re.I)})
+    if leftover:
+        raise RuntimeError(f'vanilla colour gradients left in model: {leftover}')
     return out
+
+
+# Add-on nodes: shared particle effects (sparks, smoke, impact wave) that models attach by a global index,
+# defined by ADDN records. The vanilla laser models point at red (or light-blue) add-ons, so each colour gets its
+# own. Indexes are global across the game and all mods: CLM uses 5565000+ (its Nexus mod ID) to avoid clashes.
+ADDON_BASE = 5565000
+ADDON_KINDS = {  # kind: (vanilla light-blue ADDN index it replaces, source model, how it gets its colour)
+    'MuzSparks': (64, 'MPSMuzSparksLaser02LtBlue.nif', 'tint'),
+    'ImpactSparks': (66, 'MPSLaserImpactSparksLtBlue.nif', 'tint'),
+    'ImpactSmoke': (65, 'MPSSmokeLaserImpactLtBlue.nif', 'gradient'),
+    'ImpactWave': (62, 'MPSLaserWaveImpactLtBlue.nif', 'gradient'),
+}
+RED_MUZZLE_SPARKS_ADDON = 37  # MPSMuzSparksLaser02, referenced by the vanilla red muzzle flash
+VANILLA_RED_SPARKS = (255, 64, 64)  # MPSLaserImpactSparks base colour (1.0, 0.25, 0.25)
+
+
+def addon_index(colour_no: int, kind: str) -> int:
+    return ADDON_BASE + colour_no * 10 + list(ADDON_KINDS).index(kind) + 1
 
 
 def main():
@@ -113,43 +145,65 @@ def main():
     a = ap.parse_args()
     data, out = Path(a.game) / 'Data', Path(a.out)
 
+    def eff(n):
+        return 'meshes' + BS + 'effects' + BS + n.lower()
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        extract_general(data / 'Fallout4 - Meshes.ba2',
-                        ['meshes' + BS + 'effects' + BS + n for n in ('laserriflebeamred.nif', 'muzlaserrifle01.nif',
-                                                                    'impactlaserltbluesmall.nif', 'impactlaserbluevsshell.nif')], tmp)
+        models = ['LaserRifleBeamRed.nif', 'MuzLaserRifle01.nif', 'ImpactLaserLtBlueSmall.nif',
+                  'ImpactLaserBlueVsShell.nif'] + [src for _, src, _ in ADDON_KINDS.values()]
+        extract_general(data / 'Fallout4 - Meshes.ba2', [eff(m) for m in models], tmp)
+        grad_names = ('WepLaserRed01Grad', 'WepLaserRedRingGrad', 'LaserImpactWaveGrad', 'SmokeLaserMuzFlash01Grad')
         for ba2 in sorted(data.glob('Fallout4 - Textures*.ba2')):
-            extract_textures(ba2, [grad_path(n) for n in ('WepLaserRed01Grad.dds', 'WepLaserRedRingGrad.dds',
-                                                          'LaserImpactWaveGrad.dds')], tmp)
-        beam = (tmp / 'Meshes' / 'Effects' / 'LaserRifleBeamRed.nif').read_bytes()
-        muzzle = (tmp / 'Meshes' / 'Effects' / 'MuzLaserRifle01.nif').read_bytes()
-        main_grad = read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / 'WepLaserRed01Grad.dds')
-        ring_grad = read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / 'WepLaserRedRingGrad.dds')
-        wave_grad = read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / 'LaserImpactWaveGrad.dds')
-        impact_small = (tmp / 'Meshes' / 'Effects' / 'ImpactLaserLtBlueSmall.nif').read_bytes()
-        impact_shell = (tmp / 'Meshes' / 'Effects' / 'ImpactLaserBlueVsShell.nif').read_bytes()
+            extract_textures(ba2, [grad_path(n + '.dds') for n in grad_names], tmp)
+        mesh = {m: (tmp / 'Meshes' / 'Effects' / m).read_bytes() for m in models}
+        grads = {n: read_dds_bgra(tmp / 'Textures' / 'Effects' / 'Gradients' / (n + '.dds')) for n in grad_names}
 
-    for name, deg in COLORS.items():
-        gdir = out / 'Textures' / 'Effects' / 'Gradients' / 'CLM'
-        write_dds_bgra(gdir / f'WepLaser{name}01Grad.dds', rotate_hue(main_grad, deg))
-        write_dds_bgra(gdir / f'WepLaser{name}RingGrad.dds', rotate_hue(ring_grad, deg))
-        write_dds_bgra(gdir / f'LaserImpactWave{name}Grad.dds', rotate_hue(wave_grad, deg))
-        swaps = {grad_path('WepLaserRed01Grad.dds'): grad_path(f'WepLaser{name}01Grad.dds', clm=True),
-                 grad_path('WepLaserRedRingGrad.dds'): grad_path(f'WepLaser{name}RingGrad.dds', clm=True)}
-        mdir = out / 'Meshes' / 'Effects' / 'CLM'
-        mdir.mkdir(parents=True, exist_ok=True)
-        (mdir / f'LaserRifleBeam{name}.nif').write_bytes(patched_model(beam, swaps, beam_scale(deg)))
-        (mdir / f'MuzLaserRifle{name}.nif').write_bytes(patched_model(muzzle, swaps))
+    gdir = out / 'Textures' / 'Effects' / 'Gradients' / 'CLM'
+    mdir = out / 'Meshes' / 'Effects' / 'CLM'
+    mdir.mkdir(parents=True, exist_ok=True)
+    table = []
+    for no, (name, deg) in enumerate(COLORS.items(), start=1):
+        write_dds_bgra(gdir / f'WepLaser{name}01Grad.dds', rotate_hue(grads['WepLaserRed01Grad'], deg))
+        write_dds_bgra(gdir / f'WepLaser{name}RingGrad.dds', rotate_hue(grads['WepLaserRedRingGrad'], deg))
+        write_dds_bgra(gdir / f'LaserImpactWave{name}Grad.dds', rotate_hue(grads['LaserImpactWaveGrad'], deg))
+        write_dds_bgra(gdir / f'SmokeLaserMuzFlash{name}Grad.dds', rotate_hue(grads['SmokeLaserMuzFlash01Grad'], deg))
+
+        def clm(n):
+            return grad_path(n, clm=True)
+
+        red = {grad_path('WepLaserRed01Grad.dds'): clm(f'WepLaser{name}01Grad.dds'),
+               grad_path('WepLaserRedRingGrad.dds'): clm(f'WepLaser{name}RingGrad.dds')}
         blue = {}
         for prefix in ('textures', 'Textures'):
-            gp = lambda n, p=prefix: BS.join([p, 'Effects', 'Gradients', n])
-            blue[gp('WepLaserLtBlue01Grad.dds')] = grad_path(f'WepLaser{name}01Grad.dds', clm=True)
-            blue[gp('WepLaserLtBlueRingGrad.dds')] = grad_path(f'WepLaser{name}RingGrad.dds', clm=True)
-            blue[gp('LaserImpactWaveLtBlueGrad.dds')] = grad_path(f'LaserImpactWave{name}Grad.dds', clm=True)
-        (mdir / f'ImpactLaser{name}Small.nif').write_bytes(patched_model(impact_small, blue))
-        (mdir / f'ImpactLaser{name}VsShell.nif').write_bytes(patched_model(impact_shell, blue))
+            def gp(n, p=prefix):
+                return BS.join([p, 'Effects', 'Gradients', n])
+            blue[gp('WepLaserLtBlue01Grad.dds')] = clm(f'WepLaser{name}01Grad.dds')
+            blue[gp('WepLaserLtBlueRingGrad.dds')] = clm(f'WepLaser{name}RingGrad.dds')
+            blue[gp('LaserImpactWaveLtBlueGrad.dds')] = clm(f'LaserImpactWave{name}Grad.dds')
+            blue[gp('SmokeLaserMuzFlashLtBlueGrad.dds')] = clm(f'SmokeLaserMuzFlash{name}Grad.dds')
+        idx = {kind: addon_index(no, kind) for kind in ADDON_KINDS}
+        blue_addons = {vanilla: idx[kind] for kind, (vanilla, _, _) in ADDON_KINDS.items()}
+        sparks_tint = tuple(c / 255 for c in rotate_rgb(VANILLA_RED_SPARKS, deg))
+
+        (mdir / f'LaserRifleBeam{name}.nif').write_bytes(
+            patched_model(mesh['LaserRifleBeamRed.nif'], red, beam_scale(deg)))
+        (mdir / f'MuzLaserRifle{name}.nif').write_bytes(
+            patched_model(mesh['MuzLaserRifle01.nif'], red, addons={RED_MUZZLE_SPARKS_ADDON: idx['MuzSparks']}))
+        (mdir / f'ImpactLaser{name}Small.nif').write_bytes(
+            patched_model(mesh['ImpactLaserLtBlueSmall.nif'], blue, addons=blue_addons))
+        (mdir / f'ImpactLaser{name}VsShell.nif').write_bytes(
+            patched_model(mesh['ImpactLaserBlueVsShell.nif'], blue, addons=blue_addons))
+        for kind, (vanilla, src, mode) in ADDON_KINDS.items():
+            model = patched_model(mesh[src], blue, tint=sparks_tint if mode == 'tint' else None)
+            (mdir / f'MPS{kind}{name}.nif').write_bytes(model)
+            table.append(','.join([name, kind, str(idx[kind]), BS.join(['Effects', 'CLM', f'MPS{kind}{name}.nif']),
+                                   str(vanilla)]))
         print(f'{name:9} hue +{deg:3}  beam brightness {beam_scale(deg):5}  light RGB {rotate_rgb(VANILLA_RED_LIGHT, deg)}'
-              f'  decal RGB {rotate_rgb(VANILLA_RED_DECAL, deg)}')
+              f'  decal RGB {rotate_rgb(VANILLA_RED_DECAL, deg)}  add-ons {min(idx.values())}-{max(idx.values())}')
+    # Machine-readable add-on table for the xEdit script that creates the ADDN records.
+    Path(__file__).with_name('laser_addons.csv').write_text(
+        'colour,kind,index,model,replaces_vanilla\n' + '\n'.join(table) + '\n', encoding='utf8')
 
 
 if __name__ == '__main__':
