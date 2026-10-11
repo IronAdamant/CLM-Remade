@@ -47,6 +47,9 @@ ITEMS = {
                  'Hide the legendaries that spawn creatures and people.'),
     'low':      ('A1ALMSET_DropLow', 'CLM Setting: Low drop rate', 'Loot mode: legendaries drop extremely rarely.'),
     'high':     ('A1ALMSET_DropHigh', 'CLM Setting: Higher drop rate', 'Loot mode: legendaries drop generously.'),
+    'picker':   ('A1ALMSET_PickerMode', 'CLM Setting: Picker mode',
+                 'The workbench shows only the legendary families you pick here, under the CLM Armour, Spawns and '
+                 'Weapon categories (tools/config/picker.py).'),
 }
 # mutually exclusive settings: crafting one takes the other back
 EXCLUSIVE = {'free': 'loot', 'loot': 'free', 'low': 'high', 'high': 'low'}
@@ -66,6 +69,8 @@ CONFIG_MENU = [
     (9, 'Show perk-style legendaries', [('noperk', False)], [('noperk', True)]),
     (10, 'Hide spawning legendaries', [('nospawn', True)], [('nospawn', False)]),
     (11, 'Show spawning legendaries', [('nospawn', False)], [('nospawn', True)]),
+    (13, 'Picker mode - show only the families picked at a chemistry station', [('picker', True)], [('picker', False)]),
+    (14, 'Picker mode off - show every family', [('picker', False)], [('picker', True)]),
 ]
 RATE_MENU = [
     (1, 'Low - extremely rare drops', [('low', True), ('high', False)], [('low', False)]),

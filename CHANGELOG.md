@@ -36,6 +36,11 @@
   - Free crafting / Loot mode (with neither: Costly, legendaries cost components).
   - Show OP legendaries, Show variants, Hide perk-style legendaries, Hide spawning legendaries.
   - Loot mode only: Low or Higher drop rate (with neither: Standard).
+- **Legendary Picker** (setting "Picker mode", off by default): too many legendaries at the workbench? Turn it on and
+  the workbench shows only the families you pick. At a chemistry station, pick families under the "CLM Armour",
+  "CLM Spawns" and "CLM Weapon" categories (e.g. CLM Weapon: Damage > Hurtin'): each pick is a weightless "CLM Pick"
+  item; drop it to hide that family again. Your other settings still apply (OP, variants...). Families that are
+  entirely OP are also gathered under "CLM OP" and need Show OP. Works on every platform.
 - **New games start Costly and Balanced**: OP legendaries and variants hidden until you turn them on. No "Starting
   Configuration" step any more.
 - **Upgrading from 1.09:** your holotape settings are converted into setting items once, on the first load (PC and
