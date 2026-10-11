@@ -84,6 +84,8 @@
 - **Configuration holotape (Free version):** the Balanced page had its two options' labels swapped.
 
 ### Fixed: other
+- **Explosions no longer kill you at close range** (reported on Nexus): legendaries that put an explosion on every bullet or beam used missile-sized blasts (BioReactive (Nuclear) a full Fat Man). They now use the same blast size as the vanilla Explosive legendary, with the same damage: High Explosive, Explosively Penetratin', Viciously Thumpin', Havoc (all), Ultima Hecate's, Garm's, Explosively Striking, Jupiter's Wrathful and BioReactive Explosive (all).
+- **Shavka's Explosive Striking** on weapons now warns, like the armour version, that its melee explosions can hurt you.
 - Removed 1.09 leftovers that nothing used (unfinished drafts, duplicates of existing effects, the CQC test). No legendary changed.
 - **Costly version:** Untouchable (Freeze), Concentratin' Intensely (and Brief), Slightly Freezing and Mr. Freeze's cost nothing to craft. They now cost the same as their closest sibling (Untouchable (Fire), Concentratin' Harder / (Brief), Chilling, Prometheus' Fiery).
 - The mod's archive no longer replaces 24 of the game's own scripts with old 2017 copies (one was F4SE's version,

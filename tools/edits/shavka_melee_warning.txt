@@ -1,0 +1,9 @@
+# Shavka's Explosive Striking explodes on every melee hit, right next to you, so it can hurt you (Nexus complaint
+# #5). The armour versions already warned; the weapon versions now say the same.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Base_Explosive | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Cryo | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Fire | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Gauss | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Nuclear | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Plasma | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
+text.replace | A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Pulse | DESC | You cause explosion when you strike your enemies. | You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.
