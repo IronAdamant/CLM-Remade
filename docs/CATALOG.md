@@ -86,12 +86,17 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BrutalResist "CLM: Brut
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Brutish "CLM: Brutish" [ENCH:0836783B] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Brutish (, )
     A1ALMMGEF_Constant_Effect_Fx_FireShield: Light, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Constant_Effect_Custom_Effect_SelfImmolation: Light, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 5.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Fortify_Effect_Carry_Weight: Value Modifier CarryWeight, magnitude 40.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Damage: Value Modifier DamageResist, magnitude 20.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Effect_Melee_Damage: Value Modifier MeleeDamage, magnitude 25.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Fortify_Resistance_Fire: Value Modifier FireResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Constant_Effect_Perk_Punching_Fire: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Apply Combat Hit Spell / Select Spell
       values: A1ALMSPELL_Hostile_Custom_Effect_Punching_Fire "CLM: Punchin
@@ -99,8 +104,10 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Brutish "CLM: Brutish" 
         A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 100.000000, duration 5 (Fire and Forget, Touch)
         A1ALMMGEF_Target_Effect_Hostile_Disintegration_Fire: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
           script AttachAshPile
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Constant_Effect_OnMeleeHits_Fire: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
       script A1ALMMGEF_OnMeleeEffect
+      if GetHealthPercentage [10100000] 0.800000
     A1ALMMGEF_Constant_Effect_OnAllHits_SelfHeal_Base: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       script A1ALMMGEF_OnMeleeCLMEffect
     A1ALMMGEF_Fortify_Resistance_Cryo: Value Modifier FrostResist, magnitude 20.000000, duration 0 (Constant Effect, Self)
@@ -119,11 +126,16 @@ Health MUL+ADD 6.000000 / 0.000000
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BurningRage "CLM: Burning Rage" [ENCH:082FC946] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_BurningRage (, )
     A1ALMMGEF_Constant_Effect_Fx_FireShield: Light, magnitude 1.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Fortify_Effect_Heal_Rate: Value Modifier HealRate, magnitude 30.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Fortify_Resistance_Damage: Value Modifier DamageResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Fortify_Resistance_Fire: Value Modifier FireResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Constant_Effect_OnMeleeHits_Fire: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
       script A1ALMMGEF_OnMeleeEffect
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Constant_Effect_Perk_Punching_Fire: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Apply Combat Hit Spell / Select Spell
       values: A1ALMSPELL_Hostile_Custom_Effect_Punching_Fire "CLM: Punchin
@@ -131,8 +143,11 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BurningRage "CLM: Burni
         A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 100.000000, duration 5 (Fire and Forget, Touch)
         A1ALMMGEF_Target_Effect_Hostile_Disintegration_Fire: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
           script AttachAshPile
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Fortify_Effect_Melee_Damage: Value Modifier MeleeDamage, magnitude 25.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Constant_Effect_Custom_Effect_SelfImmolation: Light, magnitude 0.000000, duration 10 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.500000
 ```
 
 ### CLM: Camouflaged (Always)  `A1ALMOMOD_Legendary_Armor_Camouflaged_All`
@@ -159,6 +174,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Undetectable_Crouch "CLM Perk: Undete
       entry point: Mod Detection Sneak Skill / Set Value
       entry point: Set Undetectable / Set Value
       values: 1.000000; 0.000000; 0.000000; 1000.000000
+      if IsSneaking [10000000] 1.000000
 ```
 
 ### CLM: Cheater's  `A1ALMOMOD_Legendary_Armor_Cheaters`
@@ -271,15 +287,25 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Escapist "CLM: Escapist
       entry point: Mod Detection Movement / Multiply Value
       entry point: Mod Detection Sneak Skill / Add Value
       values: 0.500000; 50.000000
+      if GetHealthPercentage [10000000] 0.150000
+      if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Undetectable_Ghostly_All: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Ignore Running During Detection / Set Value
       entry point: Mod Detection Movement / Set Value
       entry point: Mod Detection Sneak Skill / Set Value
       entry point: Set Undetectable / Set Value
       values: 1.000000; 0.000000; 0.000000; 1.000000
+      if GetHealthPercentage [10000000] 0.150000
+      if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 5.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.150000
+      if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ShadowArmorEffect: Value Modifier ArmorShadowHide, magnitude 15.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.150000
+      if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ArmorQuietEffect: Value Modifier ArmorQuietMod, magnitude 10.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [10000000] 0.150000
+      if IsSprinting [10000000] 1.000000
 ```
 
 ### CLM: Shavka's Explosive Striking  `A1ALMOMOD_Legendary_Armor_ExplosiveMelee_Base_Explosive`
@@ -381,6 +407,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_Faction_BoS "CLM: 
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_WeaponDamage_25P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 1.250000
+      if GetInFaction(BrotherhoodofSteelFaction) [10000000] 1.000000
 ```
 
 ### CLM: Institute's Damaging  `A1ALMOMOD_Legendary_Armor_FactionalDamage_25P_Institute`
@@ -391,6 +418,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_Faction_Institute 
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_WeaponDamage_25P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 1.250000
+      if GetInFaction(InstituteFaction) [10000000] 1.000000
 ```
 
 ### CLM: Minutemen's Damaging  `A1ALMOMOD_Legendary_Armor_FactionalDamage_25P_Minutemen`
@@ -401,6 +429,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_Faction_Minutemen 
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_WeaponDamage_25P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 1.250000
+      if GetInFaction(MinutemenFaction) [10000000] 1.000000
 ```
 
 ### CLM: Railroad's Damaging  `A1ALMOMOD_Legendary_Armor_FactionalDamage_25P_Railroad`
@@ -411,6 +440,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_Faction_Railroad "
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_WeaponDamage_25P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 1.250000
+      if GetInFaction(RailroadFaction) [10000000] 1.000000
 ```
 
 ### CLM: Fiddlin'  `A1ALMOMOD_Legendary_Armor_Fiddling`
@@ -451,7 +481,9 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_ConstantFlamingCloaked 
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed300_ConstantEffect_SlowTime "CLM: Flash" [ENCH:0816F427] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed300_ConstantEffect_SlowTime (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 300.000000, duration 0 (Constant Effect, Self)
+      if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_SlowTime: Slow Time, magnitude 0.010000, duration 0 (Constant Effect, Self)
+      if IsSprinting [10000000] 1.000000
 ```
 
 ### CLM: Flyin'  `A1ALMOMOD_Legendary_Armor_Flying`
@@ -488,6 +520,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Generically80sActionHer
       entry point: Mod Incoming Battery Damage / Set Value
       entry point: Mod Incoming Explosion Damage / Set Value
       values: 0.000000; 0.000000; 0.010000; 0.000000; 0.000000; 0.000000
+      if GetRandomPercent [00100000] 15.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ReflectDamage: Value Modifier ReflectDamage, magnitude 10.000000, duration 0 (Constant Effect, Self)
 ```
 
@@ -565,6 +598,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Chameleon "CLM: Chamele
       entry point: Mod Detection Movement / Multiply Value
       entry point: Mod Detection Sneak Skill / Add Value
       values: 0.500000; 50.000000
+      if IsMoving [10000000] 0.000000
+      if IsSneaking [10000000] 1.000000
 Health MUL+ADD 4.000000 / 0.000000
 ```
 
@@ -582,6 +617,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_TargetingHud "Targeting
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_TargetingHud_Tactical "Targeting HUD" [ENCH:0833CC54] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_TargetingHud_Tactical (, )
     MGEF PA_TargetingHUD_Cloak (vanilla) magnitude 1000.000000 duration 1
+      if IsInCombat(0) [10010000] 1.000000
+      if GetInIronSights(NULL) [10010000] 1.000000
 ```
 
 ### CLM: Handy  `A1ALMOMOD_Legendary_Armor_Handy`
@@ -829,6 +866,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_NightlyTraining "CLM: N
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_NightlyTraining (, )
     A1ALMMGEF_Constant_Effect_FS_Script_EmergencyHeal: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       script LegendaryMagicEffectSlowTimeScript
+      if ShouldAttackKill(NULL) [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_NightlyTraining: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Apply Combat Hit Spell / Select Spell
       entry point: Apply Combat Hit Spell / Select Spell
@@ -843,6 +881,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_NightlyTraining "CLM: N
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bouncing: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Ricochet Chance / Set Value
       values: 100.000000
+      if GetRandomPercent [00100000] 10.000000
     A1ALMMGEF_Fortify_SPECIAL_Endurance: Value Modifier Endurance, magnitude 2.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_SPECIAL_Strength: Value Modifier Strength, magnitude 2.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Cryo: Value Modifier FrostResist, magnitude 100.000000, duration 0 (Constant Effect, Self)
@@ -862,6 +901,7 @@ Health MUL+ADD 4.000000 / 0.000000
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_100WhileAim "CLM: Fortify Effect [100% Movement Speed]" [ENCH:081D5D13] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed_100WhileAim (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 100.000000, duration 0 (Constant Effect, Self)
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Nimble (150%)  `A1ALMOMOD_Legendary_Armor_Nimble_150`
@@ -870,6 +910,7 @@ Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_100WhileAim "CLM: Fortif
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_150WhileAim "CLM: Fortify Effect [150% Movement Speed]" [ENCH:081D5D15] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed_150WhileAim (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 150.000000, duration 0 (Constant Effect, Self)
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Nimble (200%)  `A1ALMOMOD_Legendary_Armor_Nimble_200`
@@ -878,6 +919,7 @@ Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_150WhileAim "CLM: Fortif
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_200WhileAim "CLM: Fortify Effect [200% Movement Speed]" [ENCH:081D5D17] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed_200WhileAim (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 200.000000, duration 0 (Constant Effect, Self)
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Nimble (250%)  `A1ALMOMOD_Legendary_Armor_Nimble_250`
@@ -886,6 +928,7 @@ Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_200WhileAim "CLM: Fortif
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_250WhileAim "CLM: Fortify Effect [250% Movement Speed]" [ENCH:081D5D19] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed_250WhileAim (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 250.000000, duration 0 (Constant Effect, Self)
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Nimble (300%)  `A1ALMOMOD_Legendary_Armor_Nimble_300`
@@ -894,6 +937,7 @@ Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_250WhileAim "CLM: Fortif
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_300WhileAim "CLM: Fortify Effect [300% Movement Speed]" [ENCH:081D5D1B] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed_300WhileAim (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 300.000000, duration 0 (Constant Effect, Self)
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Nimble (50%)  `A1ALMOMOD_Legendary_Armor_Nimble_50`
@@ -902,6 +946,7 @@ Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_300WhileAim "CLM: Fortif
 Enchantments ADD A1ALMEnch_Fortify_Effect_MovementSpeed_50WhileAim "CLM: Fortify Effect [50% Movement Speed]" [ENCH:081D5D1D] / 431
   ENCH A1ALMEnch_Fortify_Effect_MovementSpeed_50WhileAim (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 50.000000, duration 0 (Constant Effect, Self)
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### Not Legendary  `A1ALMOMOD_Legendary_Armor_NotALegendary`
@@ -972,6 +1017,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_PowerArmor_BatteryRate_Cheaters "CLM:
 Enchantments ADD A1ALMEnch_Constant_Effect_PowerArmor_BatteryRate_Normal_Cond_WhileAttacked "CLM: Power Armor Battery Regen (Normal - Only under attacked)" [ENCH:08244E36] / 431
   ENCH A1ALMEnch_Constant_Effect_PowerArmor_BatteryRate_Normal_Cond_WhileAttacked (, )
     A1ALMMGEF_Fortify_Effect_Power_Armor_Battery_Regen: Value Modifier PowerArmorBattery, magnitude 2.500000, duration 0 (Constant Effect, Self)
+      if GetAttacked [10000000] 1.000000
 ```
 
 ### CLM: Battery Regeneratin' (Normal)  `A1ALMOMOD_Legendary_Armor_PABattery_Regen_Normal`
@@ -1771,13 +1817,25 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Shield_Constant "CLM: C
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Shield_Emergency "CLM: Emergency Force Field" [ENCH:082F4085] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Shield_Emergency (, )
     A1ALMMGEF_Constant_Effect_Fx_FireShield: Light, magnitude 120.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [00100000] 0.300000
+      if IsInCombat(0) [10000000] 1.000000
     A1ALMMGEF_Fortify_Resistance_Damage: Value Modifier DamageResist, magnitude 90.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [00100000] 0.300000
+      if IsInCombat(0) [10000000] 1.000000
     A1ALMMGEF_Fortify_Resistance_Radiation_Exposure: Value Modifier RadResistExposure, magnitude 100.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [00100000] 0.300000
+      if IsInCombat(0) [10000000] 1.000000
     A1ALMMGEF_Fortify_Resistance_Radiation_Ingestion: Value Modifier RadResistIngestion, magnitude 100.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [00100000] 0.300000
+      if IsInCombat(0) [10000000] 1.000000
     A1ALMMGEF_Fortify_Resistance_Cryo: Value Modifier FrostResist, magnitude 100.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [00100000] 0.300000
+      if IsInCombat(0) [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bouncing: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Ricochet Chance / Set Value
       values: 100.000000
+      if GetHealthPercentage [00100000] 0.300000
+      if IsInCombat(0) [10000000] 1.000000
 ```
 
 ### CLM: Glow  `A1ALMOMOD_Legendary_Armor_Shield_Glow`
@@ -1794,8 +1852,11 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Glowing "CLM: Glowing" 
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Stealth "CLM: Stealth" [ENCH:082E7354] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Stealth (, )
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 5.000000, duration 0 (Constant Effect, Self)
+      if IsSneaking [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ShadowArmorEffect: Value Modifier ArmorShadowHide, magnitude 15.000000, duration 0 (Constant Effect, Self)
+      if IsSneaking [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ArmorQuietEffect: Value Modifier ArmorQuietMod, magnitude 10.000000, duration 0 (Constant Effect, Self)
+      if IsSneaking [10000000] 1.000000
 ```
 
 ### CLM: Super-Tankin'  `A1ALMOMOD_Legendary_Armor_SuperTanking`
@@ -1992,7 +2053,9 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_WidowMakersSight "CLM: 
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_WidowMakersSight "CLM: Widowmaker's Sight (Aim)" [ENCH:0829E916] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_WidowMakersSight (, )
     MGEF ReconScopeEquippedEffect (vanilla) magnitude 0.000000 duration 0
+      if GetInIronSights(NULL) [10000000] 1.000000
     MGEF PA_TargetingHUD_Cloak (vanilla) magnitude 1000.000000 duration 1
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Enduring  `A1ALMOMOD_Legendary_Armor_WillofEndurance`
@@ -2015,6 +2078,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_WillofEndurance "CLM: E
       entry point: Mod Incoming Weapon Damage / Set Value
       values: 0.300000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ReflectDamage: Value Modifier ReflectDamage, magnitude 30.000000, duration 0 (Constant Effect, Self)
+      if GetRandomPercent [00100000] 30.000000
 Health MUL+ADD 4.000000 / 0.000000
 ```
 
@@ -2140,8 +2204,11 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_AlienTechd_Beam_Lightning [PROJ:08
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_AngryNerds "CLM: Angry Nerd's" [ENCH:083566A2] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_AngryNerds (, )
     A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 40.000000, duration 10 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 40.000000
     A1ALMMGEF_Target_Effect_Hostile_Cold: Value Modifier AnimationMult, magnitude 40.000000, duration 10 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 40.000000
     A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 40.000000, duration 10 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 40.000000
     A1ALMMGEF_Target_Effect_Hostile_Cripple_100p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
 OverrideProjectile SET A1ALMPROJ_Variant_Type_AngryNerds_Arrow_Pencil_Base "CLM: Harpoon" [PROJ:083566A3] / 431
@@ -2170,7 +2237,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Annihilating "CLM: Annihilatin
       values: 1000.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Annihilating "CLM: Annihilating" [ENCH:08327619] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Annihilating (, )
-    A1ALMMGEF_Target_Effect_Hostile_BloodDrain: Absorb Health, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_DrainOnHit_25: Script, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_DrainOnHitScript
     A1ALMMGEF_Target_Effect_Hostile_Bleed: Value Modifier Health, magnitude 5.000000, duration 5 (Fire and Forget, Touch)
     A1ALMMGEF_Target_Effect_Hostile_Frenzy: Frenzy, magnitude 9999.000000, duration 10 (Fire and Forget, Touch)
 ReloadSpeed MUL+ADD 2.500000 / 0.000000
@@ -2353,10 +2421,13 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_BloodyMessMaxCombined "CLM
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Weapon_Burning "CLM: Burning" [ENCH:08316434] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Weapon_Burning (, )
     A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 5.000000, duration 5 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
     A1ALMMGEF_Target_Effect_Hostile_Disintegration_Fire: Script, magnitude 0.000000, duration 5 (Fire and Forget, Touch)
       script AttachAshPile
+      if GetRandomPercent [00100000] 10.000000
     A1ALMMGEF_Target_Effect_Hostile_IncendiaryBurn: Value Modifier Health, magnitude 5.000000, duration 5 (Fire and Forget, Touch)
       script IncendiaryBurnSCRIPT
+      if GetRandomPercent [00100000] 10.000000
 ```
 
 ### CLM: Burning Hellish  `A1ALMOMOD_Legendary_Weapon_BurningHellish`
@@ -2396,6 +2467,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Explosion_Variant_Caps "CL
   ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Explosion_Variant_Caps (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_Variant_Caps: Script, magnitude 15.000000, duration 15 (Fire and Forget, Touch)
       script FortuneFinderCapsScript
+      if GetLastHitCritical [10000000] 1.000000
 ```
 
 ### CLM: Cheater's  `A1ALMOMOD_Legendary_Weapon_Cheaters`
@@ -3779,7 +3851,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Plasma [PROJ:082492
 ```
 
 ### CLM: Shavka's Explosive Striking  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Base_Explosive`
-> You cause explosion when you strike your enemies. (Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too. (Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Base_Explosive "CLM: Explosive Strikin'" [ENCH:08485AED] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Base_Explosive (, )
@@ -3788,7 +3860,7 @@ Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_B
 ```
 
 ### CLM: Shavka's Explosive Striking (Cryo)  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Cryo`
-> You cause explosion when you strike your enemies.(Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.(Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Cryo "CLM: Explosive Strikin' (Cryo)" [ENCH:08485AEE] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Cryo (, )
@@ -3797,7 +3869,7 @@ Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_V
 ```
 
 ### CLM: Shavka's Explosive Striking (Fire)  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Fire`
-> You cause explosion when you strike your enemies.(Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too.(Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Fire "CLM: Explosive Strikin' (Fire)" [ENCH:08485AF0] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Fire (, )
@@ -3806,7 +3878,7 @@ Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_V
 ```
 
 ### CLM: Shavka's Explosive Striking (Gauss)  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Gauss`
-> You cause explosion when you strike your enemies. (Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too. (Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Gauss "CLM: Explosive Strikin' (Gauss)" [ENCH:08485AF2] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Gauss (, )
@@ -3815,7 +3887,7 @@ Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_V
 ```
 
 ### CLM: Shavka's Explosive Striking (Nuclear)  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Nuclear`
-> You cause explosion when you strike your enemies. (Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too. (Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Nuclear "CLM: Explosive Strikin' (Nuclear)" [ENCH:08485AF4] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Nuclear (, )
@@ -3824,7 +3896,7 @@ Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_V
 ```
 
 ### CLM: Shavka's Explosive Striking (Plasma)  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Plasma`
-> You cause explosion when you strike your enemies. (Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too. (Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Plasma "CLM: Explosive Strikin' (Plasma)" [ENCH:08485AF6] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Plasma (, )
@@ -3833,7 +3905,7 @@ Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_V
 ```
 
 ### CLM: Shavka's Explosive Striking (Pulse)  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Variant_Pulse`
-> You cause explosion when you strike your enemies. (Disclaimer: May not work on PS4 due to custom scripts)
+> You cause explosion when you strike your enemies. Warning: This is risky to use as this can harm you too. (Disclaimer: May not work on PS4 due to custom scripts)
 ```
 Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Pulse "CLM: Explosive Strikin' (Pulse)" [ENCH:08485AF8] / 431
   ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Variant_Pulse (, )
@@ -3855,8 +3927,8 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_ExplosivelyStriking_Gauss [PR
 Speed MUL+ADD 2.500000 / 0.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_FaceBusting "CLM: Face Bustin'" [ENCH:0832FEF1] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_FaceBusting (, )
-    A1ALMMGEF_Target_Effect_Hostile_ExplodeOnContact: Script, magnitude 100.000000, duration 0 (Fire and Forget, Touch)
-      script ExplodeOnContactScript
+    A1ALMMGEF_Target_Effect_Hostile_ExplodeAfterDeath: Script, magnitude 100.000000, duration 1 (Fire and Forget, Touch)
+      script A1ALMMGEF_ExplodeAfterDeathScript
     A1ALMMGEF_Target_Effect_Hostile_Cripple_100p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
 ```
@@ -3871,6 +3943,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Forcible "CLM: Forc
     A1ALMMGEF_Target_Effect_Hostile_Cripple_50p: Script, magnitude 100.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
     A1ALMMGEF_Target_Effect_Hostile_Stagger: Stagger, magnitude 100.000000, duration 5 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 50.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_50P "CLM: Cripple Targets (50%)" [ENCH:082E7341] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_50P (, )
     A1ALMMGEF_Target_Effect_Hostile_Cripple_50p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
@@ -3895,6 +3968,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Forcible "CLM: Forc
     A1ALMMGEF_Target_Effect_Hostile_Cripple_50p: Script, magnitude 100.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
     A1ALMMGEF_Target_Effect_Hostile_Stagger: Stagger, magnitude 100.000000, duration 5 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 50.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_50P "CLM: Cripple Targets (50%)" [ENCH:082E7341] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_50P (, )
     A1ALMMGEF_Target_Effect_Hostile_Cripple_50p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
@@ -3919,6 +3993,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Forcible "CLM: Forc
     A1ALMMGEF_Target_Effect_Hostile_Cripple_50p: Script, magnitude 100.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
     A1ALMMGEF_Target_Effect_Hostile_Stagger: Stagger, magnitude 100.000000, duration 5 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 50.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_100P "CLM: Cripple Targets (100%)" [ENCH:08345521] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_100P (, )
     A1ALMMGEF_Target_Effect_Hostile_Cripple_100p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
@@ -4546,7 +4621,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_JupitersWrath_Beam_Lightning [PROJ
 ### CLM: Keltas' Flawed Factorium  `A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Flawed`
 > Your weapon turns into mini factory, creating it's own inifinite ammo. Does not affect your projectile and you won't need to reload, though your weapon will shoot 25% slower and the damage will be 50% weaker due to the flawed process within the weapon. (WARNING: I recommend you try it on mod weapons. Vanilla weapons will always cause crashes regardless. Try Refilling legendaries instead for them).
 ```
-Speed MUL+ADD -0.500000 / 0.000000
+Speed MUL+ADD -0.250000 / 0.000000
 AttackDamage MUL+ADD -0.500000 / 0.000000
 Ammo SET NULL - Null Reference [00000000] / 0
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / -0.500000
@@ -4626,6 +4701,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_LiarsCompedium "CLM
     A1ALMMGEF_Target_Effect_Demoralize: Demoralize, magnitude 9999.000000, duration 3 (Fire and Forget, Touch)
     A1ALMMGEF_Target_Effect_Hostile_Frenzy: Frenzy, magnitude 9999.000000, duration 30 (Fire and Forget, Touch)
     A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 5.000000, duration 20 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Stagger: Stagger, magnitude 1.000000, duration 0 (Fire and Forget, Touch)
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / -0.250000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / -0.250000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / -0.250000
@@ -4798,6 +4874,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_ExplodeOnContact_1P "CLM: E
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_ExplodeOnContact_1P (, )
     A1ALMMGEF_Target_Effect_Hostile_ExplodeOnContact: Script, magnitude 100.000000, duration 0 (Fire and Forget, Touch)
       script ExplodeOnContactScript
+      if GetRandomPercent [00100000] 1.000000
 ```
 
 ### CLM: MIRV Converted  `A1ALMOMOD_Legendary_Weapon_MIRV`
@@ -5068,6 +5145,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Custom_Effect_Target_Hostile_Purgi
     A1ALMMGEF_Target_Effect_Hostile_Cripple_20p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
     A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 15.000000, duration 10 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 1.000000
     A1ALMMGEF_Target_Effect_Demoralize: Demoralize, magnitude 1000.000000, duration 5 (Fire and Forget, Touch)
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_Base "CLM: Bleed" [ENCH:082FC94C] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_Base (, )
@@ -5103,6 +5181,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_ExplosivelyPushing "CLM: E
     A1ALMMGEF_Target_Effect_Hostile_PushActorAway: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
       script PushActorAwayScript
     A1ALMMGEF_Target_Hostile_Effect_Damage_HealthOnContact: Value Modifier Health, magnitude 50.000000, duration 0 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 25.000000
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Push_Missile_ExplosivelyPushing [PROJ:0831A8B4] / 431
   PROJ type Missile, speed 4500.000000, gravity 0.350000
     explosion 1 (vanilla)
@@ -5155,7 +5234,8 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Frenzy_Target "CLM:
     A1ALMMGEF_Target_Effect_Hostile_Frenzy: Frenzy, magnitude 9999.000000, duration 10 (Fire and Forget, Touch)
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Vampiric "CLM: Vampiric" [ENCH:0818D304] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Vampiric (, )
-    A1ALMMGEF_Target_Effect_Hostile_BloodDrain: Absorb Health, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_DrainOnHit_25: Script, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_DrainOnHitScript
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_Base "CLM: Bleed" [ENCH:082FC94C] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_Base (, )
     A1ALMMGEF_Target_Effect_Hostile_Bleed: Value Modifier Health, magnitude 5.000000, duration 5 (Fire and Forget, Touch)
@@ -5231,6 +5311,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_RasSpherical_Missile_Base [PROJ:08
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Electrical_Raydens "CLM: Rayden's" [ENCH:082FC976] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Electrical_Raydens (, )
     A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+      if GetLastHitCritical [10000000] 1.000000
 ```
 
 ### CLM: Rebounding (Bullet)  `A1ALMOMOD_Legendary_Weapon_Rebounding_Variant_Bullet`
@@ -5288,7 +5369,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_HarderBash_100P "CLM: H
       values: 2.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Custom_Effect_Target_Hostile_Reclaimer "CLM: Reclaimer's" [ENCH:083633D5] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Custom_Effect_Target_Hostile_Reclaimer (, )
-    A1ALMMGEF_Target_Effect_Hostile_BloodDrain: Absorb Health, magnitude 1.000000, duration 0 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_DrainOnHit_1: Script, magnitude 1.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_DrainOnHitScript
 ReloadSpeed MUL+ADD 0.400000 / 0.000000
 ```
 
@@ -5888,7 +5970,12 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_RoidRaging "CLM: Ro
       script LegendaryOnHitCrippleScript
     A1ALMMGEF_Target_Effect_Hostile_GrandSlam_100P: Script, magnitude 100.000000, duration 0 (Fire and Forget, Touch)
       script DN070_WorldSeriesBatEffectScript
-    A1ALMMGEF_Target_Hostile_Effect_Damage_HealthOnContact: Value Modifier Health, magnitude 10000.000000, duration 0 (Fire and Forget, Touch)
+      if GetLastHitCritical [10000000] 1.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_RoidRaging_Damage "CLM: Roid Ragin' (10x)" [ENCH:084AC788] / 431
+  ENCH A1ALMEnch_Constant_Effect_RoidRaging_Damage (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_10x_RoidRaging: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      values: 10.000000
 ```
 
 ### CLM: Room Clearing  `A1ALMOMOD_Legendary_Weapon_RoomClearing`
@@ -5986,6 +6073,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Seeker_CryoProjectile "CLM
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Seeker_Plasma "CLM: Seeker effects (Plasma)" [ENCH:081F3B82] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Seeker_Plasma (, )
     MGEF StaggerEffect (vanilla) magnitude 1000.000000 duration 3
+      if GetRandomPercent [00100000] 10.000000
     A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green_Melt: Script, magnitude 0.000000, duration 5 (Fire and Forget, Touch)
       script AttachAshPile
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Seeker_PlasmaProjectileLarge "CLM: Plasma (Large) Projectle (Seeking)" [PROJ:081F3B78] / 431
@@ -6237,6 +6325,7 @@ SoundLevel SET Silent / 00 00 00 00
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_SlightlyFreeze "CLM: Popsicle" [ENCH:08316437] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_SlightlyFreeze (, )
     A1ALMMGEF_Target_Effect_Hostile_Slow_Cryo: Value Modifier AnimationMult, magnitude 99.000000, duration 3 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 40.000000
 ```
 
 ### CLM: Explosively Penetratin'  `A1ALMOMOD_Legendary_Weapon_SpikeSniper`
@@ -6369,19 +6458,16 @@ AimModelRecoilHipMult MUL+ADD 0.100000 / 0.000000
 AimModelRecoilArcDeg MUL+ADD 0.100000 / 0.000000
 AimModelRecoilArcRotateDeg MUL+ADD 0.100000 / 0.000000
 AimModelConeIronSightsMultiplier MUL+ADD -0.100000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Penetrating_100P "CLM: Penetrating (100%)" [ENCH:082C503A] / 431
-  ENCH A1ALMEnch_Constant_Effect_Penetrating_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Penetrating_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Target Damage Resistance / Multiply Value
-      values: 0.000000
 Enchantments ADD A1ALMEnch_Constant_Effect_Penetrating_Suppressing "CLM: Suppressing" [ENCH:083700FD] / 431
   ENCH A1ALMEnch_Constant_Effect_Penetrating_Suppressing (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Penetrating_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Target Damage Resistance / Multiply Value
       values: 0.000000
+      if GetRandomPercent [00100000] 10.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Damage_3x_Suppressing: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 3.000000
+      if GetRandomPercent [00100000] 20.000000
 ```
 
 ### CLM: Synthesised Flawed Factorium  `A1ALMOMOD_Legendary_Weapon_SynthFactorium_Flawed`
@@ -6505,6 +6591,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_Critical "CLM
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_Critical (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Time_Slow_SlowTime: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       script LegendaryMagicEffectSlowTimeScript
+      if GetLastHitCritical [10000000] 1.000000
 ```
 
 ### CLM: Concentratin' (Brief)  `A1ALMOMOD_Legendary_Weapon_Time_Base_Slow_3s`
@@ -6570,6 +6657,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_TitansWrath "CLM: Titan
     A1ALMMGEF_Fortify_SPECIAL_Strength: Value Modifier Strength, magnitude 2.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Effect_Unarmed_Damage: Value Modifier UnarmedDamage, magnitude 50.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Constant_Effect_Custom_Effect_ReflectDamage: Value Modifier ReflectDamage, magnitude 1000.000000, duration 0 (Constant Effect, Self)
+      if IsMeleeAttacking [10000000] 1.000000
 Health MUL+ADD 5.000000 / 0.000000
 ```
 
@@ -6655,7 +6743,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Penetrating_30P "CLM: Penetrating (30
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Vampiric "CLM: Vampiric" [ENCH:0818D304] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Vampiric (, )
-    A1ALMMGEF_Target_Effect_Hostile_BloodDrain: Absorb Health, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_DrainOnHit_25: Script, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_DrainOnHitScript
 ```
 
 ### CLM: Reaper's Embrace:  `A1ALMOMOD_Legendary_Weapon_Vampiric_Variant_ReapersEmbrace`
@@ -6664,7 +6753,8 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Vampiric "CLM: Vamp
 AttackDamage MUL+ADD 0.500000 / 0.000000
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_ReapersEmbrace "CLM: Reaper's Embrace" [ENCH:08334375] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_ReapersEmbrace (, )
-    A1ALMMGEF_Target_Effect_Hostile_BloodDrain: Absorb Health, magnitude 50.000000, duration 0 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_DrainOnHit_50: Script, magnitude 50.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_DrainOnHitScript
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 0.500000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 0.500000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 0.500000
@@ -6683,7 +6773,11 @@ MaxRange MUL+ADD 110.000000 / 0.000000
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_WidowMakers_Tactical "CLM: Widowmaker's" [ENCH:08352239] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_WidowMakers_Tactical (, )
     MGEF PA_TargetingHUD_Cloak (vanilla) magnitude 1000.000000 duration 1
+      if IsInCombat(0) [10010000] 1.000000
+      if GetInIronSights(NULL) [10010000] 1.000000
     MGEF ReconScopeEquippedEffect (vanilla) magnitude 0.000000 duration 0
+      if IsInCombat(0) [10010000] 1.000000
+      if GetInIronSights(NULL) [10010000] 1.000000
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -6704,6 +6798,7 @@ Enchantments ADD A1ALMEnch_Constant_effect_Custom_Effect_Widowmaking "CLM: Widow
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Aiim_WeaponDamage_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 2.000000
+      if GetInIronSights(NULL) [10000000] 1.000000
 ```
 
 ### CLM: Woundingly Enraging  `A1ALMOMOD_Legendary_Weapon_WoundinglyEnraging`

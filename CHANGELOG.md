@@ -49,6 +49,11 @@
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.
 
 ### Fixed: legendaries that did not work
+- **Chance-based effects now trigger.** 1.09 checked its random chances in a way that was never (or almost never) true, so these chances never fired: Burning (10% to set on fire), Forcible, Deadlier and Lethally Forcible (50% stagger), Slightly Freezing (40% freeze), Seekin' (Plasma), Lucky Drawin' (1% instant kill), Explosively Pushing (Ranged), Roid Ragin' (25%), Suppressin' (10% / 20%), Angry Nerd's (40%), Purely Purging, Generic 80s Action Hero's (15% no damage), Enduring (deflect) and Nightly Training (deflect).
+- **Roid Ragin'**: its 25% chance now does 10x damage, as described (it was a flat instant kill).
+- **Suppressin'**: it ignored armour on every hit; now 10% of the time, as described.
+- **Keltas' Flawed Factorium** fires 25% slower, as described (it was 50%).
+- **Liar's Compedium** now also stuns (staggers) its targets, as described.
 - **Vampiric** (and Raging, Annihilating, Reaper's Embrace, Reclaimer's) now heals you on every hit. It used to heal only when the target survived the hit, so kills (molerats, radroaches...) gave nothing.
 - **Face Bustin'** no longer kills everything in one hit: targets now blow apart only if the hit killed them, as its description says.
 - **One Punch Man's** no longer knocks over the wearer when equipped. Punches still send enemies flying.

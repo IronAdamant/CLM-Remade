@@ -87,8 +87,17 @@ class Catalog:
 
     def effects(self, block: str, depth: int) -> list[str]:
         lines = []
-        for m in re.finditer(r'EFID - Base Effect = (\S+).*?Magnitude = ([\d.\-]+).*?Duration = (\d+)', block, re.S):
+        # each effect: EFID, its EFIT values, then any conditions (CTDA) until the next EFID
+        for chunk in re.split(r'\n\s+Effect\n', block)[1:]:
+            m = re.search(r'EFID - Base Effect = (\S+).*?Magnitude = ([\d.\-]+).*?Duration = (\d+)', chunk, re.S)
+            if not m:
+                continue
             lines += self.mgef(m.group(1), m.group(2), m.group(3), depth)
+            for c in re.finditer(r'Type = ([01]+)\n.*?Comparison Value = ([\d.\-]+)\n.*?Function = (\S+)'
+                                 r'(?:\n.*?Parameter #1 = (\S+))?', chunk, re.S):
+                lines.append(f'{"  " * (depth + 1)}if {c.group(3)}'
+                             f'{"(" + c.group(4) + ")" if c.group(4) and c.group(4) != "00" else ""} '
+                             f'[{c.group(1)}] {c.group(2)}')
         return lines
 
     def spell(self, edid: str, depth: int) -> list[str]:
