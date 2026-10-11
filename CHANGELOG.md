@@ -5,7 +5,7 @@
 ### Requirements
 - **The main mod no longer needs any DLC** - just Fallout 4. (1.09 needed all six.)
 - Legendaries that use a DLC's creatures, art or effects moved to optional add-ons, one per DLC. Install the ones for
-  the DLC you own; they are ESL-flagged (no load-order slot) and follow the configuration holotape like the rest:
+  the DLC you own; they are ESL-flagged (no load-order slot) and follow your settings like the rest:
   - `CLM - Automatron.esp`: 13 robot spawns.
   - `CLM - Far Harbor.esp`: 9 creature and Trapper spawns, Paintball x6, Trappin' x4, Moby-Dick's, Silenced Harpoon
     Striker.
@@ -112,7 +112,6 @@
 ### Fixed: holotapes
 - **Perk holotape:** Greater Lockpicking (5x) can now be removed. Choosing to remove it used to remove Greater
   Gunbashing instead, and removing Gunbashing did nothing.
-- **Configuration holotape (Free version):** the Balanced page had its two options' labels swapped.
 
 ### Fixed: other
 - **Explosions no longer kill you at close range** (reported on Nexus): legendaries that put an explosion on every bullet or beam used missile-sized blasts (BioReactive (Nuclear) a full Fat Man). They now use the same blast size as the vanilla Explosive legendary, with the same damage: High Explosive, Explosively Penetratin', Viciously Thumpin', Havoc (all), Ultima Hecate's, Garm's, Explosively Striking, Jupiter's Wrathful and BioReactive Explosive (all).
