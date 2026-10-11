@@ -219,7 +219,8 @@ Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
 	EndIf
 EndEvent
 
-Function OnMCMMenuOpen(string asModName)
+; MCM sends this event without arguments
+Function OnMCMMenuOpen()
 	Sync()
 	MCM.RefreshMenu()
 EndFunction
@@ -388,6 +389,9 @@ EndFunction
 
 ; before the add-on is removed: everything back to items (the way CLM works without F4SE)
 Function PrepareUninstall()
+	{MCM_GLOBAL}.SetValue(0)
+	SetHolotapes(true)
+	MCM.SetModSettingBool(ModName, "bHolotapes:Settings", true)
 	Actor player = Game.GetPlayer()
 	int i = 0
 	While i < SettingItems.Length
@@ -410,8 +414,8 @@ Function PrepareUninstall()
 		EndIf
 		i += 1
 	EndWhile
-	{MCM_GLOBAL}.SetValue(0)
-	SetHolotapes(true)
+	MCM.RefreshMenu()
+	Debug.Notification("CLM: settings and picks are items again; holotapes are back.")
 	Debug.MessageBox("CLM: your settings and picks are items again (Misc), and the holotapes are back. You can now remove CLM - MCM.")
 EndFunction
 
