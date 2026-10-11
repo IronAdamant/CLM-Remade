@@ -49,6 +49,8 @@
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.
 
 ### Fixed: legendaries that did not work
+- **Bird Shootin'** no longer turns any gun into a machine gun (it set the fire rate to 7.5x, which its text never promised). It is 50% heavier instead, as described.
+- **Scopes no longer go out of control** with Aim Stabilized, Widowmaker's / Tracker's sights or Critically Hurtin' (they added a value far outside the game's range). Aim Stabilized (50%) made aim less steady; it now steadies it by 50%, and the 100% versions by 100%, on the same scale as the vanilla Stabilized mod.
 - **Weapon effects no longer spread to other weapons or stay on** (reported on Nexus: slow time never turning off, damage and ammo effects on weapons you did not mod). A weapon legendary's hidden bonuses now work only while a weapon carrying that legendary is equipped. Armour legendaries are unaffected. Weapons you already modded get the fix automatically.
 - **Chance-based effects now trigger.** 1.09 checked its random chances in a way that was never (or almost never) true, so these chances never fired: Burning (10% to set on fire), Forcible, Deadlier and Lethally Forcible (50% stagger), Slightly Freezing (40% freeze), Seekin' (Plasma), Lucky Drawin' (1% instant kill), Explosively Pushing (Ranged), Roid Ragin' (25%), Suppressin' (10% / 20%), Angry Nerd's (40%), Purely Purging, Generic 80s Action Hero's (15% no damage), Enduring (deflect) and Nightly Training (deflect).
 - **Roid Ragin'**: its 25% chance now does 10x damage, as described (it was a flat instant kill).

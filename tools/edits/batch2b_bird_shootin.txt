@@ -1,0 +1,6 @@
+# Bird Shootin' (2016 report: "machine-gun fire rate and the recoil of an elephant gun"): its text promises up to
+# 10 projectiles, much more recoil, more noise and "heavier, so you take longer to aim" - but it also set the fire
+# rate to 7.5x (Speed SET 7.5), which the text never mentions, and had no weight change. The fire-rate SET goes; the
+# weapon becomes 50% heavier (Weight MUL+ADD 0.5, the property Heavily Ordnanced uses).
+prop.remove | A1ALMOMOD_Legendary_Weapon_BirdShootin | Speed
+prop.add | A1ALMOMOD_Legendary_Weapon_BirdShootin | Weight | MUL+ADD | 0.5 | A1ALMOMOD_Legendary_Weapon_HeavilyOrdnanced
