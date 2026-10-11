@@ -9,6 +9,7 @@ the mod needs goes into the main plugin's two archives (the DLC add-ons are plug
 The Creation Kit's Bethesda.net upload looks for the Xbox versions as "- Main_xbox.ba2" and "- Textures_xbox.ba2"
 (XBoxDDS textures, Xbox compression). Output in dist/:
     PC/      the main plugin + PC archives, and the add-ons            (Bethesda.net PC uploads)
+    PlayStation/  plugins only (tools/release/playstation.py)        (Bethesda.net PS4/PS5 uploads)
     Xbox/    the main plugin + _xbox archives, and the add-ons         (Bethesda.net Xbox uploads)
     CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod as packed archives (BA2, default) or
                                loose files (for mod tools / players who prefer loose), ticks the add-ons for the
@@ -192,6 +193,8 @@ def main():
         for f in sorted(MCM_SOURCE.glob('*.psc')):
             z.write(f, f'F4SE Menu/Scripts/Source/User/{f.name}')
     shutil.rmtree(tmp)
+    import playstation                                  # dist/PlayStation: plugins only, no scripts or assets
+    playstation.build(game)
     for f in sorted(DIST.rglob('*')):
         if f.is_file():
             print(f'{f.relative_to(DIST)}  {f.stat().st_size // 1024} KB')

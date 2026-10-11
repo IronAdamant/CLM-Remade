@@ -1,0 +1,7 @@
+Over 540 legendary effects for weapons and armour: craft them at the workbench or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, movement and stealth effects, and some gloriously overpowered ones. No DLC required; DLC legendaries are optional add-ons.
+
+Settings: make "CLM Setting" items at any chemistry station (CLM Settings). Carry one = on, drop it = off. Picker mode shows only the families you pick there.
+
+Loot mode: legendaries drop from enemies. Also make the CLM Loot Manual (CLM Settings) once; if nothing drops, drop it and pick it up.
+
+PlayStation version: no scripts or new assets allowed, so the new laser colours and the Kellogg spawn are left out, Untouchable and Shavka's Explosive Striking have no effect, and a few legendaries work slightly differently (see their descriptions).

@@ -85,9 +85,9 @@ from the pause menu (Mod Config > Custom Legendary Modifications) instead of hol
 WHY THE CHEMISTRY STATION?
 In 1.09 the settings were menus on the holotape, run by scripts. PlayStation mods are not allowed custom scripts,
 so on PS4 the holotape did nothing and part of the mod could not be set up. Settings as items crafted at a
-chemistry station need no scripts at all, so in 2.0 they work the same on PC, Xbox and PlayStation. It is a
-compromise for PlayStation players: on PC alone, a script extender (F4SE) menu would have been the nicer way - so
-PC players can have that too: see F4SE MENU above.
+chemistry station need no scripts at all, so in 2.0 they work the same on PC, Xbox and PlayStation. The chemistry
+station is the way for everyone without a script extender: Xbox and PlayStation players, and PC players who do not
+use F4SE. PC players with F4SE can use a menu instead: see F4SE MENU above.
 
 
 LOOT MODE
@@ -104,6 +104,19 @@ NOTES
 - Refilling legendaries and the Factoriums (Keltas', Synthesised) refill your magazine; they do not work together
   with rank 4 of the Scrounger perk.
 - Shavka's Explosive Striking (weapon and armour) explodes on melee hits, close to you: it can hurt you too.
+
+
+PLAYSTATION VERSION
+PlayStation mods cannot use scripts or new assets, so this version differs a little:
+- Settings are made at any chemistry station (CLM Settings); there are no holotapes.
+- Loot mode: also make the CLM Loot Manual (CLM Settings) once to start getting drops. If nothing drops, drop the
+  manual and pick it up again.
+- Left out: the new laser colours (Energized and Disintegratin' Green, Purple, Gold, Orange, Pink, Deep Blue) and
+  the Kellogg spawn.
+- Vampiric and its family heal on every hit except killing blows. Auto-Medical and Aid Patch regenerate health
+  quickly while you are low instead of using stimpaks. Face Bustin' does not blow targets apart.
+- Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin' and Sadistic Brawlers do nothing on PlayStation
+  (their effect is a script); a few others lose one scripted part. Their descriptions say so.
 
 
 UPGRADING FROM 1.09
