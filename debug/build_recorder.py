@@ -8,6 +8,7 @@ re-run this after adding loose mods, unlock holotapes, unlock perks or configura
 - items: A1ALMMISC_LooseMod_* and A1ALMMISC_Unlock_* (unlock holotapes)
 - perks: A1ALMPERK_Unlock_*
 - globals: every GLOB in the main plugin
+- actor values: VALUES below (vanilla), to see legendaries take effect on the player
 Then compiles the script (debug build, traces kept), installs the .pex into Data/Scripts, and keeps copies of the
 plugin and .pex in debug/. Turn Papyrus logging on with `python -m ack papyrus-log on`; read the log with
 debug/read_log.py.
@@ -26,6 +27,8 @@ MAIN = 'Custom Legendary Modifications Remade.esp'
 RECORDER = 'CLM - Debug Recorder.esp'
 QUEST = 'A1ALMDBG_Recorder'
 SCRIPT = 'A1ALMDBG_RecorderScript'
+VALUES = ['JumpHeightMult', 'SpeedMult', 'Strength', 'DamageResist', 'EnergyResist', 'RadResistExposure',
+          'CarryWeight']  # not Health/ActionPoints: they change constantly in play
 
 
 def watch_lists(main_path: Path, ack: Path) -> tuple[list[str], list[str], list[str]]:
@@ -54,7 +57,8 @@ def spec(items: list[str], perks: list[str], globs: list[str]) -> str:
         f'set | {QUEST} | DNAM\\Flags | 1',  # Start Game Enabled
         f'script | {QUEST} | {SCRIPT}',
     ]
-    for name, values in (('WatchItems', items), ('WatchPerks', perks), ('WatchGlobals', globs)):
+    for name, values in (('WatchItems', items), ('WatchPerks', perks), ('WatchGlobals', globs),
+                         ('WatchValues', VALUES)):
         if values:
             lines.append(f'prop | {QUEST} | {SCRIPT} | {name} | Array of Object | {arr(values)}')
         else:  # drop a list left over from an earlier build (its records may be gone)

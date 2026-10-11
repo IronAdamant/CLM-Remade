@@ -5,6 +5,7 @@ Writes to Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log (needs Papyrus 
 - every change in how many of each watched CLM item the player carries (loose mods, unlock holotapes);
 - every unlock perk gained or lost;
 - every change to a CLM configuration global (what the configuration holotape sets);
+- every change to the player's watched actor values (e.g. jump height, speed: shows a legendary taking effect);
 - workbench and Pip-Boy menus opening and closing (the game pauses scripts in most menus, so changes made inside
   one are logged just after it closes).
 Vanilla Papyrus cannot read names, so forms are logged by ID: tools/debug/read_log.py translates them.}
@@ -12,12 +13,14 @@ Vanilla Papyrus cannot read names, so forms are logged by ID: tools/debug/read_l
 Form[] Property WatchItems Auto Const
 Perk[] Property WatchPerks Auto Const
 GlobalVariable[] Property WatchGlobals Auto Const
+ActorValue[] Property WatchValues Auto Const
 float Property Interval = 0.5 Auto Const
 
 string LogName = "CLM"
 int[] itemCounts
 bool[] perkStates
 float[] globalValues
+float[] actorValues
 bool started
 
 Event OnInit()
@@ -63,6 +66,7 @@ Function Snapshot()
 	itemCounts = new int[0]
 	perkStates = new bool[0]
 	globalValues = new float[0]
+	actorValues = new float[0]
 	int i = 0
 	While i < WatchItems.Length
 		int n = player.GetItemCount(WatchItems[i])
@@ -86,6 +90,13 @@ Function Snapshot()
 		float v = WatchGlobals[i].GetValue()
 		globalValues.Add(v)
 		Log("  global " + WatchGlobals[i] + " = " + v)
+		i += 1
+	EndWhile
+	i = 0
+	While i < WatchValues.Length
+		float v = player.GetValue(WatchValues[i])
+		actorValues.Add(v)
+		Log("  actor value " + WatchValues[i] + " = " + v)
 		i += 1
 	EndWhile
 EndFunction
@@ -124,6 +135,15 @@ Function Check()
 		If v != globalValues[i]
 			Log("global " + WatchGlobals[i] + ": " + globalValues[i] + " -> " + v)
 			globalValues[i] = v
+		EndIf
+		i += 1
+	EndWhile
+	i = 0
+	While i < WatchValues.Length
+		float v = player.GetValue(WatchValues[i])
+		If v != actorValues[i]
+			Log("actor value " + WatchValues[i] + ": " + actorValues[i] + " -> " + v)
+			actorValues[i] = v
 		EndIf
 		i += 1
 	EndWhile
