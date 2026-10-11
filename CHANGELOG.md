@@ -67,6 +67,7 @@
   colour (new green, purple, gold, orange, pink and deep blue ash and glow). Before, they disintegrated in the base
   gun's colour, so a green laser on an Institute gun still left blue ash. **Disintegratin' (Green)** now really
   disintegrates in green (it used the plasma "goo" effect); Disintegratin' (Meltin') keeps the goo.
+- **Disintegratin' in five new colours:** Purple, Gold, Orange, Pink and Deep Blue, matching the laser colours.
 
 ### Fixed: legendaries that did not work
 - **Bird Shootin'** no longer turns any gun into a machine gun (it set the fire rate to 7.5x, which its text never promised). It is 50% heavier instead, as described.

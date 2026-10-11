@@ -6,7 +6,7 @@ Writes tools/loot/loot_plan.csv (what the generator reads) and docs/LOOT_PLAN.md
 
 Families: one unlock holotape each. Editor IDs give most families (families.py); THEMES below merges single
 legendaries and small families that do the same kind of thing, judged from their effects.
-Tiers (author's decision, 2026-10-10): OP = the author's own OP flag (costly recipe requires A1ALMABALANCED);
+Tiers (author's decision, 2026-10-10): OP = the author's own OP flag (costly recipe requires Show OP);
 everything else common / uncommon / rare by power:
 - variant families with numbers (Jumpy 50-300%, Hurtin' 100-500%...): non-OP members split into thirds by strength;
 - spawns: random creatures common, legendary ones uncommon, bosses and uniques rare;

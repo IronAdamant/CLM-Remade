@@ -1896,11 +1896,21 @@ set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Blue | FULL | CLM
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Blue | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Blue | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Blue
 copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Blue | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Blue_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_DeepBlue
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_DeepBlue | FULL | CLM: Disintegratin' (Deep Blue)
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_DeepBlue | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_DeepBlue | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_DeepBlue
+copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_DeepBlue | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_DeepBlue_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Fire
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Fire | FULL | CLM: Disintegratin' (Fire)
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Fire | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Fire | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Fire
 copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Fire | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Fire_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Gold
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Gold | FULL | CLM: Disintegratin' (Gold)
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Gold | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Gold | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Gold
+copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Gold | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Gold_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Green
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Green | FULL | CLM: Disintegratin' (Green)
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Green | DATA\Value | 200
@@ -1911,6 +1921,21 @@ set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Green_Melt | FULL
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Green_Melt | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Green_Melt | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Green_Melt
 copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Green_Melt | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Green_Melt_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Orange
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Orange | FULL | CLM: Disintegratin' (Orange)
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Orange | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Orange | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Orange
+copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Orange | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Orange_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Pink
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Pink | FULL | CLM: Disintegratin' (Pink)
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Pink | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Pink | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Pink
+copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Pink | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Pink_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple | FULL | CLM: Disintegratin' (Purple)
+set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple
+copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Elements_Base_Fire
 set | A1ALMMISC_LooseMod_Weapon_Elements_Base_Fire | FULL | CLM: Prometheus' Fiery
 set | A1ALMMISC_LooseMod_Weapon_Elements_Base_Fire | DATA\Value | 1500

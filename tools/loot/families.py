@@ -3,7 +3,8 @@
     python tools/loot/families.py --ack "D:/Coding Projects/AgentCreationKit" --data "D:/Steam/steamapps/common/Fallout 4/Data"
 
 Writes tools/loot/legendaries.csv: one row per legendary with its plugin, editor ID, name, family (from the editor
-ID), kind (weapon/armor), OP flag (its costly recipe requires A1ALMABALANCED == 1), and its recipe's total component
+ID), kind (weapon/armor), OP flag (its costly recipe requires the Show OP setting item A1ALMSET_ShowOP; before
+settings became items, 2026-10-12, A1ALMABALANCED == 1), and its recipe's total component
 count (a rough cost signal; the author priced recipes by power). Prints the families with their members.
 """
 from __future__ import annotations
@@ -19,7 +20,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 PLUGINS = ['Custom Legendary Modifications Remade.esp', 'CLM - Automatron.esp', 'CLM - Far Harbor.esp',
            'CLM - Nuka-World.esp', 'CLM - Contraptions.esp']
-FN_GET_GLOBAL_VALUE = 74
+FN_GET_ITEM_COUNT = 47
 SKIP = {'A1ALMOMOD_Legendary_Weapon_NotALegendary', 'A1ALMOMOD_Legendary_Armor_NotALegendary'}
 
 
@@ -85,10 +86,10 @@ def main():
     for name in PLUGINS:
         p = Plugin.load(Path(a.data) / name)
         own = {r.formid: r for r in p.records() if p.is_own(r.formid)}
-        balanced = next((r.formid for r in own.values() if r.edid == 'A1ALMABALANCED'), None)
-        if balanced is None:  # add-ons use the main plugin's global (master index 2)
+        show_op = next((r.formid for r in own.values() if r.edid == 'A1ALMSET_ShowOP'), None)
+        if show_op is None:  # add-ons use the main plugin's setting item
             main = Plugin.load(Path(a.data) / PLUGINS[0])
-            balanced = (main.by_edid('A1ALMABALANCED').formid & 0xFFFFFF) | (p.masters.index(PLUGINS[0]) << 24)
+            show_op = (main.by_edid('A1ALMSET_ShowOP').formid & 0xFFFFFF) | (p.masters.index(PLUGINS[0]) << 24)
         recipes = defaultdict(list)
         for r in own.values():
             if r.sig == 'COBJ' and r.get('CNAM'):
@@ -102,8 +103,8 @@ def main():
                 if c.edid.endswith('FREE') or c.edid.endswith('_Unlocked'):
                     continue
                 for s in c.subrecords:
-                    if s.sig == 'CTDA' and struct.unpack_from('<H', s.data, 8)[0] == FN_GET_GLOBAL_VALUE \
-                            and struct.unpack_from('<I', s.data, 12)[0] == balanced:
+                    if s.sig == 'CTDA' and struct.unpack_from('<H', s.data, 8)[0] == FN_GET_ITEM_COUNT \
+                            and struct.unpack_from('<I', s.data, 12)[0] == show_op:
                         op = True
                 fv = c.get('FVPA')
                 if fv:

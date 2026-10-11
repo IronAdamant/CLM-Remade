@@ -5,7 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft. Families whose legendaries need a DLC keep their holotape in that DLC's add-on.
 
-**576 legendaries in 112 families.** Tiers: common 129, uncommon 215, rare 47, OP 185.
+**581 legendaries in 112 families.** Tiers: common 129, uncommon 220, rare 47, OP 185.
 
 Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
 
@@ -23,7 +23,7 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Concentratin' | main | Concentratin' (Brief) (common); Time Father's Bashful (Brief) (common); Concentratin' Intensely (Brief) (uncommon); Critically Concentratin' (uncommon); Concentratin' Harder (OP); Concentratin' Intensely (OP); Time Father's Bashful (OP) |
 | Curios | main | Lorenzo's Legendary Artificial (uncommon); Medic's (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); Liar's Compedium (OP) |
 | Destroyer's | main | Destroyer's (OP); Destroyer's (3x) (OP); Destroyer's (4x) (OP); Destroyer's (5x) (OP) |
-| Disintegratin' | main | Disintegratin' (Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Red) (uncommon) |
+| Disintegratin' | main | Disintegratin' (Blue) (uncommon); Disintegratin' (Deep Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Gold) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Orange) (uncommon); Disintegratin' (Pink) (uncommon); Disintegratin' (Purple) (uncommon); Disintegratin' (Red) (uncommon) |
 | Elemental | main | Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
 | Energized | main | Energized (Blue Laser) (common); Energized (Deep Blue Laser) (common); Energized (Gauss) (common); Energized (Gold Laser) (common); Energized (Green Laser) (common); Energized (Orange Laser) (common); Energized (Pink Laser) (common); Energized (Plasma) (common); Energized (Purple Laser) (common); Energized (Red Laser) (common) |
 | Energy | main | Improved Plasma Infused (common); Overchargin' (uncommon); Apotheistic (OP); Searing (OP) |
