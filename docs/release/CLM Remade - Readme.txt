@@ -88,6 +88,9 @@ UPGRADING FROM 1.09
 COMPATIBILITY
 CLM adds its own legendary modifications and recipes and does not change vanilla records, so it works alongside
 most mods. The loot mode adds drops through a perk on the player, so it works with enemies from other mods too.
+- Legendary Effect Overhaul (LEO): compatible, any load order (checked with LEO 2.1.3). CLM's legendaries use the
+  normal legendary slot (LEO calls it "L1"); LEO's extra slots are for LEO's own effects. Both loot systems can run
+  together. Crafting Framework patches made for 1.09 are not needed and no longer apply.
 
 
 CREDITS

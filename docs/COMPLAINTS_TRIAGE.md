@@ -29,7 +29,7 @@ Statuses: **Fixed in 2.0** (with the commit or change), **To fix** (confirmed fr
 | 15 | Everything craftable for free | By design | The Free version. 2.0's holotape and readme say so, and Costly is one choice away. |
 | 16, 17 | Missing masters, "something is missing" | Fixed in 2.0 | The main plugin needs no DLC; DLC content is in optional add-ons. |
 | 18 | No no-DLC build | Fixed in 2.0 | As above. |
-| 19 | Crafting Framework patches are dead | Note | Mention Legendary Effect Overhaul (LEO) compatibility on the mod page once checked. |
+| 19 | Crafting Framework patches are dead | Done | Checked with LEO 2.1.3 (2026-10-12): no conflicts (LEO only names ap_Legendary "L1" and DamageDamageResistEffect); note in readme and Nexus text. |
 | 20 | Stealth field stops human companions fighting | Test in game | Handy's "stealth field" is the Ghostly (Crouch) perk set (detection entry points). Test with a companion. |
 | 21 | One Punch ragdolls the player | Fixed in 2.0 | Batch 1c; also now gives what its text promises. |
 | 22 | Face Bustin' one-shots everything | Fixed in 2.0 | Confirmed: its "explode after death" uses vanilla's ExplodeOnContactScript, which dismembers and calls Kill() on every hit. Replace with an effect that only blows apart targets the hit killed. |
