@@ -17,32 +17,6 @@ remove | A1ALMMISC_Catalyst_Armor | KWDA
 remove | A1ALMMISC_Catalyst_Armor | KSIZ
 set | A1ALMMISC_Catalyst_Armor | DATA\Value | 1000
 set | A1ALMMISC_Catalyst_Armor | DATA\Weight | 0.1
-new | GLOB | A1ALMLOOT_Common_Outer
-new | GLOB | A1ALMLOOT_Common_Inner
-new | GLOB | A1ALMLOOT_Uncommon_Outer
-new | GLOB | A1ALMLOOT_Uncommon_Inner
-new | GLOB | A1ALMLOOT_Rare_Outer
-new | GLOB | A1ALMLOOT_Rare_Inner
-new | GLOB | A1ALMLOOT_OP_Outer
-new | GLOB | A1ALMLOOT_OP_Inner
-new | GLOB | A1ALMLOOT_Holotape_Outer
-new | GLOB | A1ALMLOOT_Holotape_Inner
-new | GLOB | A1ALMLOOT_Catalyst_Outer
-new | GLOB | A1ALMLOOT_Catalyst_Inner
-new | GLOB | A1ALMLOOTRATE
-copy | @A1ALMTERM_Holotape_Config_Free_RM | A1ALMTERM_Holotape_Config_LootRate
-remove | A1ALMTERM_Holotape_Config_LootRate | VMAD
-set | A1ALMTERM_Holotape_Config_LootRate | FULL | (CLM) Terminal - Loot drop rate
-set | A1ALMTERM_Holotape_Config_LootRate | NAM0 | CLM Terminal - Loot drop rate
-set | A1ALMTERM_Holotape_Config_LootRate | WNAM | How often CLM loot drops from each enemy you kill (starred legendary enemies roll 10 times). Low: common 0.5%, uncommon 0.2%, rare 0.05%, OP 0.01%, holotape 0.1%, Legendary Core 0.02%. Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1%, holotape 0.5%, Legendary Core 0.2%. Higher: common 25%, uncommon 15%, rare 8%, OP 5%, holotape 5%, Legendary Core 3%.
-menuclear | A1ALMTERM_Holotape_Config_LootRate
-menu | A1ALMTERM_Holotape_Config_LootRate | 1 | Low - extremely rare drops | - | -
-menu | A1ALMTERM_Holotape_Config_LootRate | 2 | Standard - the intended rate | - | -
-menu | A1ALMTERM_Holotape_Config_LootRate | 3 | Higher - generous drops | - | -
-script | A1ALMTERM_Holotape_Config_LootRate | A1ALMLoot_RateTerminalScript
-prop | A1ALMTERM_Holotape_Config_LootRate | A1ALMLoot_RateTerminalScript | Outer | Array of Object | @A1ALMLOOT_Common_Outer,@A1ALMLOOT_Uncommon_Outer,@A1ALMLOOT_Rare_Outer,@A1ALMLOOT_OP_Outer,@A1ALMLOOT_Holotape_Outer,@A1ALMLOOT_Catalyst_Outer
-prop | A1ALMTERM_Holotape_Config_LootRate | A1ALMLoot_RateTerminalScript | Inner | Array of Object | @A1ALMLOOT_Common_Inner,@A1ALMLOOT_Uncommon_Inner,@A1ALMLOOT_Rare_Inner,@A1ALMLOOT_OP_Inner,@A1ALMLOOT_Holotape_Inner,@A1ALMLOOT_Catalyst_Inner
-prop | A1ALMTERM_Holotape_Config_LootRate | A1ALMLoot_RateTerminalScript | Rate | Object | @A1ALMLOOTRATE
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_Unlock_Armor_BouncingAndJedi
 set | A1ALMMISC_Unlock_Armor_BouncingAndJedi | FULL | CLM Holotape: Bouncing and Jedi (Armour)
 set | A1ALMMISC_Unlock_Armor_BouncingAndJedi | Model\MODL | Props\Holotape_Prop.nif
@@ -3458,25 +3432,54 @@ set | A1ALMMISC_LooseMod_Weapon_Reclaimers | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Weapon_Reclaimers | LNAM | @A1ALMMISC_LooseMod_Weapon_Reclaimers
 copy | @co_A1ALMOMOD_Legendary_Weapon_Reclaimers | co_A1ALMOMOD_Legendary_Weapon_Reclaimers_Unlocked
 new | LVLI | A1ALMLL_Pool_Common
-new | LVLI | A1ALMLL_Gate_Common
-new | LVLI | A1ALMLL_Drop_Common
+new | LVLI | A1ALMLL_Gate_Common_Low
+new | LVLI | A1ALMLL_Drop_Common_Low
+new | LVLI | A1ALMLL_Gate_Common_Standard
+new | LVLI | A1ALMLL_Drop_Common_Standard
+new | LVLI | A1ALMLL_Gate_Common_Higher
+new | LVLI | A1ALMLL_Drop_Common_Higher
 new | LVLI | A1ALMLL_Pool_Uncommon
-new | LVLI | A1ALMLL_Gate_Uncommon
-new | LVLI | A1ALMLL_Drop_Uncommon
+new | LVLI | A1ALMLL_Gate_Uncommon_Low
+new | LVLI | A1ALMLL_Drop_Uncommon_Low
+new | LVLI | A1ALMLL_Gate_Uncommon_Standard
+new | LVLI | A1ALMLL_Drop_Uncommon_Standard
+new | LVLI | A1ALMLL_Gate_Uncommon_Higher
+new | LVLI | A1ALMLL_Drop_Uncommon_Higher
 new | LVLI | A1ALMLL_Pool_Rare
-new | LVLI | A1ALMLL_Gate_Rare
-new | LVLI | A1ALMLL_Drop_Rare
+new | LVLI | A1ALMLL_Gate_Rare_Low
+new | LVLI | A1ALMLL_Drop_Rare_Low
+new | LVLI | A1ALMLL_Gate_Rare_Standard
+new | LVLI | A1ALMLL_Drop_Rare_Standard
+new | LVLI | A1ALMLL_Gate_Rare_Higher
+new | LVLI | A1ALMLL_Drop_Rare_Higher
 new | LVLI | A1ALMLL_Pool_OP
-new | LVLI | A1ALMLL_Gate_OP
-new | LVLI | A1ALMLL_Drop_OP
+new | LVLI | A1ALMLL_Gate_OP_Low
+new | LVLI | A1ALMLL_Drop_OP_Low
+new | LVLI | A1ALMLL_Gate_OP_Standard
+new | LVLI | A1ALMLL_Drop_OP_Standard
+new | LVLI | A1ALMLL_Gate_OP_Higher
+new | LVLI | A1ALMLL_Drop_OP_Higher
 new | LVLI | A1ALMLL_Pool_Holotape
-new | LVLI | A1ALMLL_Gate_Holotape
-new | LVLI | A1ALMLL_Drop_Holotape
+new | LVLI | A1ALMLL_Gate_Holotape_Low
+new | LVLI | A1ALMLL_Drop_Holotape_Low
+new | LVLI | A1ALMLL_Gate_Holotape_Standard
+new | LVLI | A1ALMLL_Drop_Holotape_Standard
+new | LVLI | A1ALMLL_Gate_Holotape_Higher
+new | LVLI | A1ALMLL_Drop_Holotape_Higher
 new | LVLI | A1ALMLL_Pool_Catalyst
-new | LVLI | A1ALMLL_Gate_Catalyst
-new | LVLI | A1ALMLL_Drop_Catalyst
-new | LVLI | A1ALMLL_Drop_Normal
-new | LVLI | A1ALMLL_Drop_Legendary
+new | LVLI | A1ALMLL_Gate_Catalyst_Low
+new | LVLI | A1ALMLL_Drop_Catalyst_Low
+new | LVLI | A1ALMLL_Gate_Catalyst_Standard
+new | LVLI | A1ALMLL_Drop_Catalyst_Standard
+new | LVLI | A1ALMLL_Gate_Catalyst_Higher
+new | LVLI | A1ALMLL_Drop_Catalyst_Higher
+new | LVLI | A1ALMLL_Drop_Normal_Low
+new | LVLI | A1ALMLL_Drop_Legendary_Low
+new | LVLI | A1ALMLL_Drop_Normal_Standard
+new | LVLI | A1ALMLL_Drop_Legendary_Standard
+new | LVLI | A1ALMLL_Drop_Normal_Higher
+new | LVLI | A1ALMLL_Drop_Legendary_Higher
+prunerecords | A1ALMLL_
 new | PERK | A1ALMPERK_Loot
 new | QUST | A1ALMQUST_Loot
 set | A1ALMQUST_Loot | FULL | CLM Loot (Custom Legendary Modifications Remade.esp)
@@ -3485,6 +3488,7 @@ script | A1ALMQUST_Loot | A1ALMLoot_GrantPerkScript
 prop | A1ALMQUST_Loot | A1ALMLoot_GrantPerkScript | LootPerk | Object | @A1ALMPERK_Loot
 prunerecords | A1ALMMISC_Unlock_
 prunerecords | A1ALMMISC_LooseMod_
+prunerecords | A1ALMLOOT
 
 file | CLM - Automatron.esp
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_Unlock_Weapon_SpawnAutomatronRobots
@@ -3561,22 +3565,47 @@ set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_Automatron_SentryBotLege
 set | A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_SentryBotLegendary | LNAM | @A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_Automatron_SentryBotLegendary
 copy | @co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_SentryBotLegendary | co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_SentryBotLegendary_Unlocked
 new | LVLI | A1ALMAutomatronLL_Pool_Common
-new | LVLI | A1ALMAutomatronLL_Gate_Common
-new | LVLI | A1ALMAutomatronLL_Drop_Common
+new | LVLI | A1ALMAutomatronLL_Gate_Common_Low
+new | LVLI | A1ALMAutomatronLL_Drop_Common_Low
+new | LVLI | A1ALMAutomatronLL_Gate_Common_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_Common_Standard
+new | LVLI | A1ALMAutomatronLL_Gate_Common_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_Common_Higher
 new | LVLI | A1ALMAutomatronLL_Pool_Uncommon
-new | LVLI | A1ALMAutomatronLL_Gate_Uncommon
-new | LVLI | A1ALMAutomatronLL_Drop_Uncommon
+new | LVLI | A1ALMAutomatronLL_Gate_Uncommon_Low
+new | LVLI | A1ALMAutomatronLL_Drop_Uncommon_Low
+new | LVLI | A1ALMAutomatronLL_Gate_Uncommon_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_Uncommon_Standard
+new | LVLI | A1ALMAutomatronLL_Gate_Uncommon_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_Uncommon_Higher
 new | LVLI | A1ALMAutomatronLL_Pool_Rare
-new | LVLI | A1ALMAutomatronLL_Gate_Rare
-new | LVLI | A1ALMAutomatronLL_Drop_Rare
+new | LVLI | A1ALMAutomatronLL_Gate_Rare_Low
+new | LVLI | A1ALMAutomatronLL_Drop_Rare_Low
+new | LVLI | A1ALMAutomatronLL_Gate_Rare_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_Rare_Standard
+new | LVLI | A1ALMAutomatronLL_Gate_Rare_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_Rare_Higher
 new | LVLI | A1ALMAutomatronLL_Pool_OP
-new | LVLI | A1ALMAutomatronLL_Gate_OP
-new | LVLI | A1ALMAutomatronLL_Drop_OP
+new | LVLI | A1ALMAutomatronLL_Gate_OP_Low
+new | LVLI | A1ALMAutomatronLL_Drop_OP_Low
+new | LVLI | A1ALMAutomatronLL_Gate_OP_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_OP_Standard
+new | LVLI | A1ALMAutomatronLL_Gate_OP_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_OP_Higher
 new | LVLI | A1ALMAutomatronLL_Pool_Holotape
-new | LVLI | A1ALMAutomatronLL_Gate_Holotape
-new | LVLI | A1ALMAutomatronLL_Drop_Holotape
-new | LVLI | A1ALMAutomatronLL_Drop_Normal
-new | LVLI | A1ALMAutomatronLL_Drop_Legendary
+new | LVLI | A1ALMAutomatronLL_Gate_Holotape_Low
+new | LVLI | A1ALMAutomatronLL_Drop_Holotape_Low
+new | LVLI | A1ALMAutomatronLL_Gate_Holotape_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_Holotape_Standard
+new | LVLI | A1ALMAutomatronLL_Gate_Holotape_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_Holotape_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_Normal_Low
+new | LVLI | A1ALMAutomatronLL_Drop_Legendary_Low
+new | LVLI | A1ALMAutomatronLL_Drop_Normal_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_Legendary_Standard
+new | LVLI | A1ALMAutomatronLL_Drop_Normal_Higher
+new | LVLI | A1ALMAutomatronLL_Drop_Legendary_Higher
+prunerecords | A1ALMAutomatronLL_
 new | PERK | A1ALMAutomatronPERK_Loot
 new | QUST | A1ALMAutomatronQUST_Loot
 set | A1ALMAutomatronQUST_Loot | FULL | CLM Loot (CLM - Automatron.esp)
@@ -3725,22 +3754,47 @@ set | A1ALMMISC_LooseMod_Weapon_Trapping_Variant_Caltrop_Poisoned | DATA\Value |
 set | A1ALMOMOD_Legendary_Weapon_Trapping_Variant_Caltrop_Poisoned | LNAM | @A1ALMMISC_LooseMod_Weapon_Trapping_Variant_Caltrop_Poisoned
 copy | @co_A1ALMOMOD_Legendary_Weapon_Trapping_Variant_Caltrop_Poisoned | co_A1ALMOMOD_Legendary_Weapon_Trapping_Variant_Caltrop_Poisoned_Unlocked
 new | LVLI | A1ALMFarHarborLL_Pool_Common
-new | LVLI | A1ALMFarHarborLL_Gate_Common
-new | LVLI | A1ALMFarHarborLL_Drop_Common
+new | LVLI | A1ALMFarHarborLL_Gate_Common_Low
+new | LVLI | A1ALMFarHarborLL_Drop_Common_Low
+new | LVLI | A1ALMFarHarborLL_Gate_Common_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_Common_Standard
+new | LVLI | A1ALMFarHarborLL_Gate_Common_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_Common_Higher
 new | LVLI | A1ALMFarHarborLL_Pool_Uncommon
-new | LVLI | A1ALMFarHarborLL_Gate_Uncommon
-new | LVLI | A1ALMFarHarborLL_Drop_Uncommon
+new | LVLI | A1ALMFarHarborLL_Gate_Uncommon_Low
+new | LVLI | A1ALMFarHarborLL_Drop_Uncommon_Low
+new | LVLI | A1ALMFarHarborLL_Gate_Uncommon_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_Uncommon_Standard
+new | LVLI | A1ALMFarHarborLL_Gate_Uncommon_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_Uncommon_Higher
 new | LVLI | A1ALMFarHarborLL_Pool_Rare
-new | LVLI | A1ALMFarHarborLL_Gate_Rare
-new | LVLI | A1ALMFarHarborLL_Drop_Rare
+new | LVLI | A1ALMFarHarborLL_Gate_Rare_Low
+new | LVLI | A1ALMFarHarborLL_Drop_Rare_Low
+new | LVLI | A1ALMFarHarborLL_Gate_Rare_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_Rare_Standard
+new | LVLI | A1ALMFarHarborLL_Gate_Rare_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_Rare_Higher
 new | LVLI | A1ALMFarHarborLL_Pool_OP
-new | LVLI | A1ALMFarHarborLL_Gate_OP
-new | LVLI | A1ALMFarHarborLL_Drop_OP
+new | LVLI | A1ALMFarHarborLL_Gate_OP_Low
+new | LVLI | A1ALMFarHarborLL_Drop_OP_Low
+new | LVLI | A1ALMFarHarborLL_Gate_OP_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_OP_Standard
+new | LVLI | A1ALMFarHarborLL_Gate_OP_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_OP_Higher
 new | LVLI | A1ALMFarHarborLL_Pool_Holotape
-new | LVLI | A1ALMFarHarborLL_Gate_Holotape
-new | LVLI | A1ALMFarHarborLL_Drop_Holotape
-new | LVLI | A1ALMFarHarborLL_Drop_Normal
-new | LVLI | A1ALMFarHarborLL_Drop_Legendary
+new | LVLI | A1ALMFarHarborLL_Gate_Holotape_Low
+new | LVLI | A1ALMFarHarborLL_Drop_Holotape_Low
+new | LVLI | A1ALMFarHarborLL_Gate_Holotape_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_Holotape_Standard
+new | LVLI | A1ALMFarHarborLL_Gate_Holotape_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_Holotape_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_Normal_Low
+new | LVLI | A1ALMFarHarborLL_Drop_Legendary_Low
+new | LVLI | A1ALMFarHarborLL_Drop_Normal_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_Legendary_Standard
+new | LVLI | A1ALMFarHarborLL_Drop_Normal_Higher
+new | LVLI | A1ALMFarHarborLL_Drop_Legendary_Higher
+prunerecords | A1ALMFarHarborLL_
 new | PERK | A1ALMFarHarborPERK_Loot
 new | QUST | A1ALMFarHarborQUST_Loot
 set | A1ALMFarHarborQUST_Loot | FULL | CLM Loot (CLM - Far Harbor.esp)
@@ -3828,22 +3882,47 @@ set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_RadRatLargeLegendary | D
 set | A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadRatLargeLegendary | LNAM | @A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_RadRatLargeLegendary
 copy | @co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadRatLargeLegendary | co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadRatLargeLegendary_Unlocked
 new | LVLI | A1ALMNukaWorldLL_Pool_Common
-new | LVLI | A1ALMNukaWorldLL_Gate_Common
-new | LVLI | A1ALMNukaWorldLL_Drop_Common
+new | LVLI | A1ALMNukaWorldLL_Gate_Common_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_Common_Low
+new | LVLI | A1ALMNukaWorldLL_Gate_Common_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_Common_Standard
+new | LVLI | A1ALMNukaWorldLL_Gate_Common_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_Common_Higher
 new | LVLI | A1ALMNukaWorldLL_Pool_Uncommon
-new | LVLI | A1ALMNukaWorldLL_Gate_Uncommon
-new | LVLI | A1ALMNukaWorldLL_Drop_Uncommon
+new | LVLI | A1ALMNukaWorldLL_Gate_Uncommon_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_Uncommon_Low
+new | LVLI | A1ALMNukaWorldLL_Gate_Uncommon_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_Uncommon_Standard
+new | LVLI | A1ALMNukaWorldLL_Gate_Uncommon_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_Uncommon_Higher
 new | LVLI | A1ALMNukaWorldLL_Pool_Rare
-new | LVLI | A1ALMNukaWorldLL_Gate_Rare
-new | LVLI | A1ALMNukaWorldLL_Drop_Rare
+new | LVLI | A1ALMNukaWorldLL_Gate_Rare_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_Rare_Low
+new | LVLI | A1ALMNukaWorldLL_Gate_Rare_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_Rare_Standard
+new | LVLI | A1ALMNukaWorldLL_Gate_Rare_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_Rare_Higher
 new | LVLI | A1ALMNukaWorldLL_Pool_OP
-new | LVLI | A1ALMNukaWorldLL_Gate_OP
-new | LVLI | A1ALMNukaWorldLL_Drop_OP
+new | LVLI | A1ALMNukaWorldLL_Gate_OP_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_OP_Low
+new | LVLI | A1ALMNukaWorldLL_Gate_OP_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_OP_Standard
+new | LVLI | A1ALMNukaWorldLL_Gate_OP_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_OP_Higher
 new | LVLI | A1ALMNukaWorldLL_Pool_Holotape
-new | LVLI | A1ALMNukaWorldLL_Gate_Holotape
-new | LVLI | A1ALMNukaWorldLL_Drop_Holotape
-new | LVLI | A1ALMNukaWorldLL_Drop_Normal
-new | LVLI | A1ALMNukaWorldLL_Drop_Legendary
+new | LVLI | A1ALMNukaWorldLL_Gate_Holotape_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_Holotape_Low
+new | LVLI | A1ALMNukaWorldLL_Gate_Holotape_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_Holotape_Standard
+new | LVLI | A1ALMNukaWorldLL_Gate_Holotape_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_Holotape_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_Normal_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_Legendary_Low
+new | LVLI | A1ALMNukaWorldLL_Drop_Normal_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_Legendary_Standard
+new | LVLI | A1ALMNukaWorldLL_Drop_Normal_Higher
+new | LVLI | A1ALMNukaWorldLL_Drop_Legendary_Higher
+prunerecords | A1ALMNukaWorldLL_
 new | PERK | A1ALMNukaWorldPERK_Loot
 new | QUST | A1ALMNukaWorldQUST_Loot
 set | A1ALMNukaWorldQUST_Loot | FULL | CLM Loot (CLM - Nuka-World.esp)
@@ -3931,22 +4010,47 @@ set | A1ALMMISC_LooseMod_Weapon_WeatherAlter_Rain | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_WeatherAlter_Rain | LNAM | @A1ALMMISC_LooseMod_Weapon_WeatherAlter_Rain
 copy | @co_A1ALMOMOD_Legendary_Weapon_WeatherAlter_Rain | co_A1ALMOMOD_Legendary_Weapon_WeatherAlter_Rain_Unlocked
 new | LVLI | A1ALMContraptionsLL_Pool_Common
-new | LVLI | A1ALMContraptionsLL_Gate_Common
-new | LVLI | A1ALMContraptionsLL_Drop_Common
+new | LVLI | A1ALMContraptionsLL_Gate_Common_Low
+new | LVLI | A1ALMContraptionsLL_Drop_Common_Low
+new | LVLI | A1ALMContraptionsLL_Gate_Common_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_Common_Standard
+new | LVLI | A1ALMContraptionsLL_Gate_Common_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_Common_Higher
 new | LVLI | A1ALMContraptionsLL_Pool_Uncommon
-new | LVLI | A1ALMContraptionsLL_Gate_Uncommon
-new | LVLI | A1ALMContraptionsLL_Drop_Uncommon
+new | LVLI | A1ALMContraptionsLL_Gate_Uncommon_Low
+new | LVLI | A1ALMContraptionsLL_Drop_Uncommon_Low
+new | LVLI | A1ALMContraptionsLL_Gate_Uncommon_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_Uncommon_Standard
+new | LVLI | A1ALMContraptionsLL_Gate_Uncommon_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_Uncommon_Higher
 new | LVLI | A1ALMContraptionsLL_Pool_Rare
-new | LVLI | A1ALMContraptionsLL_Gate_Rare
-new | LVLI | A1ALMContraptionsLL_Drop_Rare
+new | LVLI | A1ALMContraptionsLL_Gate_Rare_Low
+new | LVLI | A1ALMContraptionsLL_Drop_Rare_Low
+new | LVLI | A1ALMContraptionsLL_Gate_Rare_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_Rare_Standard
+new | LVLI | A1ALMContraptionsLL_Gate_Rare_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_Rare_Higher
 new | LVLI | A1ALMContraptionsLL_Pool_OP
-new | LVLI | A1ALMContraptionsLL_Gate_OP
-new | LVLI | A1ALMContraptionsLL_Drop_OP
+new | LVLI | A1ALMContraptionsLL_Gate_OP_Low
+new | LVLI | A1ALMContraptionsLL_Drop_OP_Low
+new | LVLI | A1ALMContraptionsLL_Gate_OP_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_OP_Standard
+new | LVLI | A1ALMContraptionsLL_Gate_OP_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_OP_Higher
 new | LVLI | A1ALMContraptionsLL_Pool_Holotape
-new | LVLI | A1ALMContraptionsLL_Gate_Holotape
-new | LVLI | A1ALMContraptionsLL_Drop_Holotape
-new | LVLI | A1ALMContraptionsLL_Drop_Normal
-new | LVLI | A1ALMContraptionsLL_Drop_Legendary
+new | LVLI | A1ALMContraptionsLL_Gate_Holotape_Low
+new | LVLI | A1ALMContraptionsLL_Drop_Holotape_Low
+new | LVLI | A1ALMContraptionsLL_Gate_Holotape_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_Holotape_Standard
+new | LVLI | A1ALMContraptionsLL_Gate_Holotape_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_Holotape_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_Normal_Low
+new | LVLI | A1ALMContraptionsLL_Drop_Legendary_Low
+new | LVLI | A1ALMContraptionsLL_Drop_Normal_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_Legendary_Standard
+new | LVLI | A1ALMContraptionsLL_Drop_Normal_Higher
+new | LVLI | A1ALMContraptionsLL_Drop_Legendary_Higher
+prunerecords | A1ALMContraptionsLL_
 new | PERK | A1ALMContraptionsPERK_Loot
 new | QUST | A1ALMContraptionsQUST_Loot
 set | A1ALMContraptionsQUST_Loot | FULL | CLM Loot (CLM - Contraptions.esp)

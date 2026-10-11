@@ -5,8 +5,8 @@ there. Vanilla (Bethesda) scripts work, so most effects are fine. Checked 2026-1
 record uses (`docs/CATALOG.md`, `tools/audit/catalog.py`): 40 of the main plugin's 522 legendaries depend on a CLM
 script; the DLC add-ons' legendaries use none. Re-check before release if legendaries or scripts change.
 
-Plan agreed for 2.0 (not built yet): settings move to items crafted at the chemistry station ("Option 2"), so the
-configuration works on every platform; the holotape stays on PC and Xbox as a front end.
+Built 2026-10-12 (tools/config/settings.py): settings are items crafted at the chemistry station ("CLM Settings"), so
+the configuration works on every platform; the holotape stays on PC and Xbox as a front end that gives and takes them.
 
 ## Legendaries that need a CLM script
 
@@ -23,10 +23,11 @@ Undecided: leave the "does not work" group (about 30) out of the PS build, or sh
 
 ## Systems that need a CLM script
 
-- Configuration holotape menus and the quest that gives the holotape: replaced by chemistry station settings (Option 2).
-- Loot mode: drops themselves need no script. Giving the player the loot perk (scripted quest) and the drop-rate menu
-  need scriptless versions: the perk from a "book" item (as vanilla magazines grant perks - seen working in the first
-  loot prototype, to confirm when crafted), the rates as settings items read by the drop perk's conditions.
+- Configuration: done - setting items, no script needed. The holotape (and the quest that gives it), and the one-time
+  conversion of 1.09 settings, are scripts: PC/Xbox conveniences only.
+- Loot mode: drops, drop rates and unlocking need no script. Still scripted: giving the player the hidden loot perk
+  (a start-game quest). PlayStation needs a scriptless way: the perk from a "book" item (as vanilla magazines grant
+  perks - seen working in the first loot prototype; to confirm when crafted, e.g. crafted with the Loot mode setting).
 
 ---
 

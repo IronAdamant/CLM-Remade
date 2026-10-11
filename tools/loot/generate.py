@@ -6,16 +6,18 @@ Builds into the plugins in the game's Data folder (main plugin and add-ons), saf
 - per family: an unlock holotape (MISC, weightless). Carrying it shows the family's unlocked recipes.
 - per legendary: a loose mod (MISC, linked from the legendary's LNAM like vanilla loose mods) and an unlocked recipe
   (copy of the costly recipe) with conditions
-      GetGlobalValue(A1ALMAFREE) == 4                 loot mode (the holotape's "No-craft" setting)
+      GetItemCount(A1ALMSET_ModeLoot) >= 1             loot mode (setting item, tools/config/settings.py)
       GetItemCount(family holotape) >= 1   OR         unlocked...
       GetItemCount(loose mod) >= 1                    ...or the player found this legendary
   (the engine groups ORs before ANDs). OP recipes also take one catalyst (weapon or armour).
 - two OP catalysts (weapon, armour).
-- drop lists: per kind of drop (common, uncommon, rare, OP, holotape, catalyst) a pool, gated twice by global chance-none
-  values (Outer, Inner: 1% x 1% gives 0.01% steps for the Low / Standard / Higher drop-rate settings). Add-on pools
-  get an extra fixed gate for their share of the legendaries, so installing an add-on does not raise drop rates.
-- a hidden perk per plugin with two "Add Leveled List On Death" entries (in loot mode; normal targets get one roll,
-  targets with EncTypeLegendary ten), granted by a start-game quest running A1ALMLoot_GrantPerkScript.
+- drop lists: per kind of drop (common, uncommon, rare, OP, holotape, catalyst) a pool, and per drop-rate setting
+  (Low / Standard / Higher) a gate and a drop list with fixed chance-none values (Outer, Inner: 1% x 1% gives 0.01%
+  steps). Add-on pools get an extra fixed gate for their share of the legendaries, so installing an add-on does not
+  raise drop rates. No globals or scripts: the rate is a setting item, so it works on PlayStation too.
+- a hidden perk per plugin with six "Add Leveled List On Death" entries: per drop rate (checked with the rate setting
+  items), normal targets get one roll and targets with EncTypeLegendary ten; only while the loot setting item is
+  carried. Granted by a start-game quest running A1ALMLoot_GrantPerkScript.
 
 Steps: write tools/loot/build_spec.txt and run AgentCreationKit's builder (creates/updates records), then write the
 parts xEdit makes awkward directly with ack.plugin (conditions, leveled lists, globals, perk entries), then check
@@ -26,7 +28,6 @@ from __future__ import annotations
 import argparse
 import csv
 import re
-import shutil
 import struct
 import subprocess
 import sys
@@ -55,22 +56,11 @@ RATES = {
     'Higher':   {'Common': (75, 0), 'Uncommon': (85, 0), 'Rare': (92, 0), 'OP': (95, 0),
                  'Holotape': (95, 0), 'Catalyst': (97, 0)},
 }
-DEFAULT_RATE = 'Standard'
+RATE_LIST = ['Low', 'Standard', 'Higher']
+SETTING_LOOT, SETTING_LOW, SETTING_HIGH = 'A1ALMSET_ModeLoot', 'A1ALMSET_DropLow', 'A1ALMSET_DropHigh'
 LEGENDARY_ROLLS = 10
 ENC_TYPE_LEGENDARY = 0x001CF26C  # Fallout4.esm keyword on legendary actors
 SCRIPT = 'A1ALMLoot_GrantPerkScript'
-RATE_SCRIPT = 'A1ALMLoot_RateTerminalScript'
-CONFIG_TERM = 'A1ALMTERM_Holotape_Config_RM'          # the holotape's main configuration menu
-RATE_TERM = 'A1ALMTERM_Holotape_Config_LootRate'      # new: drop-rate submenu
-LOOT_ITEM_TEXT = ('Loot version - Hunt for legendaries', 'Loot mode is on.',
-                  'Loot mode is on. CLM legendaries are no longer crafted from the start: they drop from the enemies '
-                  'you kill, as loose mods you can attach at any workbench. Starred legendary enemies drop far more.\n\n'
-                  'CLM holotapes drop too: carry one to craft its whole family of legendaries. OP legendaries also '
-                  'need a Legendary Core (weapon or armour) to craft.\n\n'
-                  'Set how often things drop under "Loot version - Drop rate". To go back to crafting everything, '
-                  'run a Starting Configuration on the Free or Costly version page.')
-RATE_ITEM = (4, 'Loot version - Drop rate', 'Loot drop rate')
-RATE_NAMES = {1: 'Low', 2: 'Standard', 3: 'Higher'}
 
 FN_GET_ITEM_COUNT, FN_GET_GLOBAL_VALUE, FN_HAS_KEYWORD = 47, 74, 560
 OP_EQ, OP_GE, FLAG_OR = 0 << 5, 3 << 5, 0x01
@@ -104,68 +94,11 @@ def pct(outer: int, inner: int) -> str:
 def rate_welcome() -> str:
     lines = [f'How often CLM loot drops from each enemy you kill (starred legendary enemies roll {LEGENDARY_ROLLS} '
              'times).']
-    for name in RATE_NAMES.values():
+    for name in RATE_LIST:
         r = RATES[name]
         lines.append(f'{name}: common {pct(*r["Common"])}, uncommon {pct(*r["Uncommon"])}, rare {pct(*r["Rare"])}, '
                      f'OP {pct(*r["OP"])}, holotape {pct(*r["Holotape"])}, Legendary Core {pct(*r["Catalyst"])}.')
     return ' '.join(lines)
-
-
-def write_rate_script() -> Path:
-    """The drop-rate terminal's script, generated from RATES so the menu and the drop lists always agree."""
-    out = [f'Scriptname {RATE_SCRIPT} extends Terminal',
-           '{CLM loot mode: the drop-rate menu. Items 1-3 set the chance-none globals that gate the drop lists.',
-           'Generated by tools/loot/generate.py from its RATES table - edit that, not this file.}', '',
-           'GlobalVariable[] Property Outer Auto Const Mandatory',
-           '{Outer gates, in the order: ' + ', '.join(KINDS) + '}',
-           'GlobalVariable[] Property Inner Auto Const Mandatory',
-           'GlobalVariable Property Rate Auto Const Mandatory',
-           '{0 Low, 1 Standard, 2 Higher}', '',
-           'Event OnMenuItemRun(int auiMenuItemID, ObjectReference akTerminalRef)']
-    for item, name in RATE_NAMES.items():
-        out.append(f'\t{"If" if item == 1 else "ElseIf"} auiMenuItemID == {item}')
-        for i, kind in enumerate(KINDS):
-            o, n = RATES[name][kind]
-            out += [f'\t\tOuter[{i}].SetValue({o})', f'\t\tInner[{i}].SetValue({n})']
-        out += [f'\t\tRate.SetValue({item - 1})', f'\t\tDebug.Notification("CLM loot drop rate: {name}")']
-    out += ['\tEndIf', 'EndEvent', '']
-    path = REPO / 'source' / 'User' / f'{RATE_SCRIPT}.psc'
-    path.write_text('\n'.join(out), encoding='utf8')
-    return path
-
-
-def update_config_menu(main, Subrecord, rate_term: int) -> None:
-    """Configuration menu: item 3 ("No-craft version / WIP" in 1.09) becomes the loot-mode item, and item 4 opens the
-    drop-rate submenu (added once)."""
-    term = main.by_edid(CONFIG_TERM)
-    subs = term.subrecords
-    item_of = []  # (start index of each menu item, its ITID)
-    for i, s in enumerate(subs):
-        if s.sig == 'ITXT':
-            item_of.append([i, None])
-        elif s.sig == 'ITID' and item_of:
-            item_of[-1][1] = struct.unpack('<H', s.data)[0]
-    starts = [i for i, _ in item_of] + [len(subs)]
-    for k, (start, item) in enumerate(item_of):
-        if item != 3:
-            continue
-        for i in range(start, starts[k + 1]):
-            text = {'ITXT': LOOT_ITEM_TEXT[0], 'RNAM': LOOT_ITEM_TEXT[1], 'UNAM': LOOT_ITEM_TEXT[2]}.get(subs[i].sig)
-            if text is not None:
-                subs[i].data = text.encode('cp1252') + b'\0'
-    if all(item != RATE_ITEM[0] for _, item in item_of):
-        # the last item ends at the first subrecord after it that is not part of a menu item
-        end = starts[-2]
-        while end < len(subs) and subs[end].sig in ('ITXT', 'RNAM', 'ANAM', 'ITID', 'TNAM', 'UNAM', 'VNAM',
-                                                     'CTDA', 'CIS1', 'CIS2', 'INAM', 'SNAM', 'BSIZ'):
-            end += 1
-        subs[end:end] = [Subrecord('ITXT', RATE_ITEM[1].encode('cp1252') + b'\0'),
-                         Subrecord('RNAM', RATE_ITEM[2].encode('cp1252') + b'\0'),
-                         Subrecord('ANAM', b'\x04'), Subrecord('ITID', struct.pack('<H', RATE_ITEM[0])),
-                         Subrecord('TNAM', struct.pack('<I', rate_term))]
-        isiz = next(s for s in subs if s.sig == 'ISIZ')
-        isiz.data = struct.pack('<I', struct.unpack('<I', isiz.data)[0] + 1)
-    term.mark_dirty()
 
 
 # ---------------------------------------------------------------------------------------------- step 1: spec
@@ -199,23 +132,6 @@ def write_spec(plan: list[dict], data: Path, ack: Path) -> Path:
                       f'set | {edid} | Model\\MODL | {model}', f'remove | {edid} | Model\\MODT',
                       f'remove | {edid} | KWDA', f'remove | {edid} | KSIZ',
                       f'set | {edid} | DATA\\Value | 1000', f'set | {edid} | DATA\\Weight | 0.1']
-            for kind in KINDS:
-                for half in ('Outer', 'Inner'):
-                    s.append(f'new | GLOB | A1ALMLOOT_{kind}_{half}')
-            s.append('new | GLOB | A1ALMLOOTRATE')
-            s += [f'copy | @A1ALMTERM_Holotape_Config_Free_RM | {RATE_TERM}', f'remove | {RATE_TERM} | VMAD',
-                  f'set | {RATE_TERM} | FULL | (CLM) Terminal - Loot drop rate',
-                  f'set | {RATE_TERM} | NAM0 | CLM Terminal - Loot drop rate',
-                  f'set | {RATE_TERM} | WNAM | {rate_welcome()}', f'menuclear | {RATE_TERM}']
-            for item, label in ((1, 'Low - extremely rare drops'), (2, 'Standard - the intended rate'),
-                                (3, 'Higher - generous drops')):
-                s.append(f'menu | {RATE_TERM} | {item} | {label} | - | -')
-            s += [f'script | {RATE_TERM} | {RATE_SCRIPT}',
-                  f'prop | {RATE_TERM} | {RATE_SCRIPT} | Outer | Array of Object | ' +
-                  ','.join(f'@A1ALMLOOT_{k}_Outer' for k in KINDS),
-                  f'prop | {RATE_TERM} | {RATE_SCRIPT} | Inner | Array of Object | ' +
-                  ','.join(f'@A1ALMLOOT_{k}_Inner' for k in KINDS),
-                  f'prop | {RATE_TERM} | {RATE_SCRIPT} | Rate | Object | @A1ALMLOOTRATE']
         for (kind, fam), home in sorted(families.items()):
             if home != plugin:
                 continue
@@ -234,15 +150,20 @@ def write_spec(plan: list[dict], data: Path, ack: Path) -> Path:
         for kind in KINDS:
             if plugin != MAIN and kind == 'Catalyst':
                 continue
-            for part in ('Pool', 'Gate', 'Drop'):
-                s.append(f'new | LVLI | {pre}LL_{part}_{kind}')
-        s += [f'new | LVLI | {pre}LL_Drop_Normal', f'new | LVLI | {pre}LL_Drop_Legendary',
+            s.append(f'new | LVLI | {pre}LL_Pool_{kind}')
+            for rate in RATE_LIST:
+                s += [f'new | LVLI | {pre}LL_Gate_{kind}_{rate}', f'new | LVLI | {pre}LL_Drop_{kind}_{rate}']
+        for rate in RATE_LIST:
+            s += [f'new | LVLI | {pre}LL_Drop_Normal_{rate}', f'new | LVLI | {pre}LL_Drop_Legendary_{rate}']
+        s += [f'prunerecords | {pre}LL_',          # the single-rate lists from before drop rates became setting items
               f'new | PERK | {pre}PERK_Loot',
               f'new | QUST | {pre}QUST_Loot', f'set | {pre}QUST_Loot | FULL | CLM Loot ({plugin})',
               f'set | {pre}QUST_Loot | DNAM\\Flags | 1',  # Start Game Enabled
               f'script | {pre}QUST_Loot | {SCRIPT}',
               f'prop | {pre}QUST_Loot | {SCRIPT} | LootPerk | Object | @{pre}PERK_Loot',
               'prunerecords | A1ALMMISC_Unlock_', 'prunerecords | A1ALMMISC_LooseMod_']
+        if plugin == MAIN:
+            s.append('prunerecords | A1ALMLOOT')   # the drop-rate globals from before drop rates became setting items
     path = HERE / 'build_spec.txt'
     path.write_text('\n'.join(s) + '\n', encoding='utf8')
     return path
@@ -304,13 +225,6 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
         rec.subrecords[:] = [edid] + subs
         rec.mark_dirty()
 
-    # globals (main): defaults = Standard
-    for kind in KINDS:
-        for half, value in zip(('Outer', 'Inner'), RATES[DEFAULT_RATE][kind]):
-            set_subs(main.by_edid(f'A1ALMLOOT_{kind}_{half}'),
-                     [Subrecord('FNAM', b'f'), Subrecord('FLTV', struct.pack('<f', value))])
-    set_subs(main.by_edid('A1ALMLOOTRATE'), [Subrecord('FNAM', b'f'), Subrecord('FLTV', struct.pack('<f', 1))])
-
     counts = defaultdict(int)  # tier -> legendaries in all plugins, for add-on shares
     for r in plan:
         counts[r['tier']] += 1
@@ -327,10 +241,9 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
             rec = p.by_edid(f'co_{r["edid"]}_Unlocked')
             hol = ref(name, holotape_edid(r['kind'], r['family']))
             loose = ref(name, loose_edid(r['edid']))
-            free = ref(name, 'A1ALMAFREE')
             subs = [s for s in rec.subrecords if s.sig != 'CTDA']
             at = next(i for i, s in enumerate(subs) if s.sig == 'CNAM')  # conditions go before CNAM
-            subs[at:at] = [Subrecord('CTDA', ctda(OP_EQ, 4.0, FN_GET_GLOBAL_VALUE, free)),
+            subs[at:at] = [Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, ref(name, SETTING_LOOT))),
                            Subrecord('CTDA', ctda(OP_GE | FLAG_OR, 1.0, FN_GET_ITEM_COUNT, hol)),
                            Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, loose))]
             if r['tier'] == 'OP':
@@ -354,7 +267,7 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
                 pools['Holotape'].append((ref(name, holotape_edid(kind, fam)), 1))
         if name == MAIN:
             pools['Catalyst'] = [(ref(name, e), 1) for e, _, _ in CATALYSTS.values()]
-        drops = []
+        drops = defaultdict(list)   # rate -> drop lists
         for kind, items in pools.items():
             if name != MAIN and kind == 'Catalyst':
                 continue
@@ -363,33 +276,40 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
                 n_all = total_fams if kind == 'Holotape' else counts[kind if kind == 'OP' else kind.lower()]
                 share = 100 - round(100 * len(items) / n_all) if n_all else 100
             set_subs(p.by_edid(f'{pre}LL_Pool_{kind}'), lvli(Subrecord, items, LVLF_ALL_LEVELS, chance_none=share))
-            set_subs(p.by_edid(f'{pre}LL_Gate_{kind}'), lvli(Subrecord, [(ref(name, f'{pre}LL_Pool_{kind}'), 1)],
-                                                              LVLF_ALL_LEVELS, glob=ref(name, f'A1ALMLOOT_{kind}_Inner')))
-            set_subs(p.by_edid(f'{pre}LL_Drop_{kind}'), lvli(Subrecord, [(ref(name, f'{pre}LL_Gate_{kind}'), 1)],
-                                                              LVLF_ALL_LEVELS, glob=ref(name, f'A1ALMLOOT_{kind}_Outer')))
-            if items:
-                drops.append(ref(name, f'{pre}LL_Drop_{kind}'))
-        set_subs(p.by_edid(f'{pre}LL_Drop_Normal'),
-                 lvli(Subrecord, [(d, 1) for d in drops], LVLF_ALL_LEVELS | LVLF_USE_ALL))
-        set_subs(p.by_edid(f'{pre}LL_Drop_Legendary'),
-                 lvli(Subrecord, [(d, LEGENDARY_ROLLS) for d in drops],
-                      LVLF_ALL_LEVELS | LVLF_USE_ALL | LVLF_EACH_IN_COUNT))
-        # perk: hidden, one rank; two "Add Leveled List On Death" entries
-        free = ref(name, 'A1ALMAFREE')
+            for rate in RATE_LIST:
+                outer, inner = RATES[rate][kind]
+                gate, drop = f'{pre}LL_Gate_{kind}_{rate}', f'{pre}LL_Drop_{kind}_{rate}'
+                set_subs(p.by_edid(gate), lvli(Subrecord, [(ref(name, f'{pre}LL_Pool_{kind}'), 1)], LVLF_ALL_LEVELS,
+                                               chance_none=inner))
+                set_subs(p.by_edid(drop), lvli(Subrecord, [(ref(name, gate), 1)], LVLF_ALL_LEVELS, chance_none=outer))
+                if items:
+                    drops[rate].append(ref(name, drop))
+        for rate in RATE_LIST:
+            set_subs(p.by_edid(f'{pre}LL_Drop_Normal_{rate}'),
+                     lvli(Subrecord, [(d, 1) for d in drops[rate]], LVLF_ALL_LEVELS | LVLF_USE_ALL))
+            set_subs(p.by_edid(f'{pre}LL_Drop_Legendary_{rate}'),
+                     lvli(Subrecord, [(d, LEGENDARY_ROLLS) for d in drops[rate]],
+                          LVLF_ALL_LEVELS | LVLF_USE_ALL | LVLF_EACH_IN_COUNT))
+        # perk: hidden, one rank; per drop rate two "Add Leveled List On Death" entries (normal, legendary target)
+        loot, low, high = (ref(name, e) for e in (SETTING_LOOT, SETTING_LOW, SETTING_HIGH))
+        rate_conds = {'Low': [ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, low)],
+                      'Standard': [ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, low), ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, high)],
+                      'Higher': [ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, low), ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, high)]}
         subs = [Subrecord('FULL', f'CLM Loot ({name})'.encode('cp1252') + b'\0'), Subrecord('DESC', b'\0'),
                 Subrecord('DATA', bytes([0, 0, 1, 0, 1]))]  # trait, level, ranks, playable, hidden
-        for entry_id, (legendary, drop) in enumerate(((0, f'{pre}LL_Drop_Normal'), (1, f'{pre}LL_Drop_Legendary'))):
+        entries = [(rate, legendary, f'{pre}LL_Drop_{"Legendary" if legendary else "Normal"}_{rate}')
+                   for rate in RATE_LIST for legendary in (0, 1)]
+        for entry_id, (rate, legendary, drop) in enumerate(entries):
             subs += [Subrecord('PRKE', bytes([2, 0, 0])),           # entry point, rank 0, priority 0
                      Subrecord('DATA', bytes([9, 8, 2])),           # Add Leveled List On Death, Add Leveled List, 2 tabs
                      Subrecord('PRKC', b'\0'),                      # tab 0: perk owner (the player)
-                     Subrecord('CTDA', ctda(OP_EQ, 4.0, FN_GET_GLOBAL_VALUE, free)),
+                     Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, loot)),
+                     *[Subrecord('CTDA', c) for c in rate_conds[rate]],
                      Subrecord('PRKC', b'\1'),                      # tab 1: the target
                      Subrecord('CTDA', ctda(OP_EQ, float(legendary), FN_HAS_KEYWORD, ENC_TYPE_LEGENDARY)),
                      Subrecord('EPFT', b'\3'), Subrecord('EPFB', struct.pack('<H', entry_id)),
                      Subrecord('EPFD', struct.pack('<I', ref(name, drop))), Subrecord('PRKF', b'')]
         set_subs(p.by_edid(f'{pre}PERK_Loot'), subs)
-        if name == MAIN:
-            update_config_menu(main, Subrecord, ref(name, RATE_TERM))
         p.save(data / name)
         print(f'{name}: {len(mine)} unlocked recipes, pools ' +
               ', '.join(f'{k} {len(v)}' for k, v in pools.items()))
@@ -404,18 +324,11 @@ def main():
     ack, data = Path(a.ack), Path(a.game) / 'Data'
     sys.path.insert(0, str(ack))
     plan = load_plan()
-    rate = write_rate_script()
-    subprocess.run([sys.executable, str(REPO / 'tools' / 'papyrus' / 'compile.py'), '--game', a.game, rate.stem],
-                   check=True)
-    shutil.copy(REPO / 'data' / 'SCRIPTS' / f'{rate.stem}.pex', data / 'Scripts' / f'{rate.stem}.pex')
     if not a.raw_only:
         spec = write_spec(plan, data, ack)
         print(f'spec: {sum(1 for _ in spec.open())} lines')
         run_build(spec, data, ack)
     write_raw(plan, data, ack)
-    # the drop-rate menu was rebuilt: hide-when-selected conditions for every configuration terminal again
-    subprocess.run([sys.executable, str(REPO / 'tools' / 'edits' / 'terminal_hide_selected.py'), str(data / MAIN)],
-                   check=True, capture_output=True)
 
 
 if __name__ == '__main__':

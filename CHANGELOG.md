@@ -29,22 +29,33 @@
   - **Focused (Brief)** (armour): time slows for three seconds when you aim, with any weapon.
   - **Stealth Boy'd** (armour, OP): a permanent Stealth Boy field.
   - **Custom Spawning: Random Legendary Radroach:** the one insect that had no legendary version.
-- **Configuration holotape shows only real choices:** an option disappears while it is the active setting (e.g. "Set
-  to 1" while already 1, Starting Configuration while everything is already at its starting values, the current
-  loot drop rate), and comes back when you pick another one.
-- **Loot mode** (configuration holotape: "Loot version - Hunt for legendaries"; was "No-craft version / WIP" in
-  1.09, now finished). CLM legendaries stop being craftable from the start and drop instead, from any enemy you kill
+- **Settings are now items, and work on every platform** (PlayStation included: 1.09's holotape menus were scripts,
+  which PlayStation strips). Each setting is a weightless "CLM Setting" item: carry it and the setting is on, drop
+  it and it is off. Craft them for free at any **chemistry station, under "CLM Settings"**, or (PC and Xbox) use the
+  configuration holotape, which now gives and takes the same items. Settings:
+  - Free crafting / Loot mode (with neither: Costly, legendaries cost components).
+  - Show OP legendaries, Show variants, Hide perk-style legendaries, Hide spawning legendaries.
+  - Loot mode only: Low or Higher drop rate (with neither: Standard).
+- **New games start Costly and Balanced**: OP legendaries and variants hidden until you turn them on. No "Starting
+  Configuration" step any more.
+- **Upgrading from 1.09:** your holotape settings are converted into setting items once, on the first load (PC and
+  Xbox).
+- **The holotape shows only real choices:** an option disappears while it is already the active setting and comes
+  back when you pick another one. Its menus are now one page.
+- **Loot mode** (setting "Loot mode", or the holotape's "Loot version - Hunt for legendaries"; was "No-craft
+  version / WIP" in 1.09, now finished). CLM legendaries stop being craftable from the start and drop instead, from any enemy you kill
   (vanilla, DLC or modded), with starred legendary enemies dropping far more:
   - **Loose mods:** every legendary can drop as an item. Attach it at a workbench; it is used up instead of
     components.
   - **CLM holotapes:** 112 of them, one per family of legendaries (e.g. Jumpy, Cold, Savage). Carry one to craft its
     whole family.
   - **Legendary Cores:** rare items (one for weapons, one for armour) needed to craft OP legendaries.
-  - **Drop rate:** "Loot version - Drop rate" offers Low, Standard (default) and Higher. Rarity tiers (common,
+  - **Drop rate:** Standard by default; the Low and Higher drop rate settings (or the holotape's "Loot version -
+    Drop rate") change it. Rarity tiers (common,
     uncommon, rare, OP) are listed in docs/LOOT_PLAN.md. With Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1%
     per kill.
   - DLC legendaries drop only with their add-on installed, without raising the overall drop rate.
-  - To go back to crafting, run a Starting Configuration on the Free or Costly version page.
+  - To go back to crafting, drop the Loot mode setting (or pick Free or Costly on the holotape).
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.
 

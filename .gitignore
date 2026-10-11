@@ -4,3 +4,4 @@ work/
 # Machine-specific paths (game, FO4Edit, MO2)
 config.local.*
 dist/
+__pycache__/
