@@ -21,6 +21,12 @@ the configuration works on every platform; the holotape stays on PC and Xbox as 
 
 Undecided: leave the "does not work" group (about 30) out of the PS build, or ship it with this note.
 
+## Effects that need new assets (PlayStation mods may not add assets)
+
+- Coloured lasers (Energized Green / Purple / Gold / Orange / Pink / Deep Blue) and their coloured disintegration
+  (textures\Effects\Gradients\CLM, meshes\Effects\CLM). A PlayStation build would keep the vanilla Red and Blue
+  only, and Disintegratin' (Green) would go back to the plasma goo.
+
 ## Systems that need a CLM script
 
 - Configuration: done - setting items, no script needed. The holotape (and the quest that gives it), and the one-time

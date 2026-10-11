@@ -63,6 +63,10 @@
   - To go back to crafting, drop the Loot mode setting (or pick Free or Costly on the holotape).
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.
+- **Coloured disintegration:** an Energized laser's critical kills now turn enemies to glowing ash in the laser's
+  colour (new green, purple, gold, orange, pink and deep blue ash and glow). Before, they disintegrated in the base
+  gun's colour, so a green laser on an Institute gun still left blue ash. **Disintegratin' (Green)** now really
+  disintegrates in green (it used the plasma "goo" effect); Disintegratin' (Meltin') keeps the goo.
 
 ### Fixed: legendaries that did not work
 - **Bird Shootin'** no longer turns any gun into a machine gun (it set the fire rate to 7.5x, which its text never promised). It is 50% heavier instead, as described.
