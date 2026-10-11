@@ -2,7 +2,7 @@ CUSTOM LEGENDARY MODIFICATIONS REMADE 2.0
 by Deadmansprice
 
 Over 570 legendary effects for weapons and armour: craft them at the workbench, or hunt for them as loot.
-Everything is set up in game with the (CLM) Configuration Holotape.
+Everything is set up in game, at any chemistry station (or with the configuration holotape on PC and Xbox).
 
 
 REQUIREMENTS
@@ -22,15 +22,49 @@ By hand: copy the files into Fallout 4's Data folder and enable the plugins.
 
 
 GETTING STARTED
-You receive the (CLM) Configuration Holotape when you leave Vault 111 (at once, if your save is already past it).
-Play it from the Pip-Boy:
-- Free version: every legendary is craftable for free. Choose "Starting Configuration" first.
-- Costly version: legendaries cost components. Choose "Starting Configuration" first.
-- Loot version - Hunt for legendaries: legendaries are no longer crafted from the start; they drop as loot.
-- Loot version - Drop rate: Low, Standard or Higher.
-The category pages switch groups of legendaries on and off (perk variants, spawning, variants, OP or balanced only).
-An option disappears while it is the active setting, so the menu only shows real choices.
+Nothing to set up: a new game starts with Costly crafting and balanced legendaries (no OP ones, no variants).
 Legendaries are attached at a weapons or armour workbench, in the "Legendary" slot.
+
+
+SETTINGS AND THE CHEMISTRY STATION - PLEASE READ
+CLM's settings are items, not menu switches. This is new in 2.0 and it is not obvious, so:
+- Every setting is a weightless "CLM Setting: ..." item in the Misc tab of your Pip-Boy.
+  CARRY IT = the setting is on. DROP IT (or store or sell it) = the setting is off. Carry none = the defaults.
+- Make them for free at any chemistry station, in the "CLM Settings" category:
+    Free crafting            legendaries cost nothing
+    Loot mode                legendaries drop from enemies instead of being crafted (see LOOT MODE)
+    Show OP legendaries      also show the overpowered ones
+    Show variants            show every strength and variant of each legendary
+    Hide perk-style / Hide spawning legendaries
+    Picker mode              see LEGENDARY PICKER
+    Low / Higher drop rate   loot mode only
+- A setting you already carry is not offered again. Free crafting and Loot mode replace each other: making one
+  takes the other back (the same for the two drop rates).
+- PC and Xbox: the (CLM) Configuration Holotape (you get it when you leave Vault 111) does the same from your
+  Pip-Boy: it gives and takes the setting items for you. Use whichever you like.
+- The chemistry station and the workbench do not refresh while you are using them. After making or dropping a
+  setting, leave the station and use it again to see the change (until then, things may show greyed out).
+- If a category or recipe seems to be missing, check your Misc tab: you may be carrying a setting that hides it
+  (Loot mode hides crafting and the picker), or already carry the item it makes.
+
+
+LEGENDARY PICKER
+Too many legendaries at the workbench? Make "CLM Setting: Picker mode". The workbench then shows only the
+families of legendaries you pick:
+- At the chemistry station, open a "CLM Armour: ...", "CLM Spawns: ..." or "CLM Weapon: ..." category and make
+  the pick you want, e.g. CLM Weapon: Damage > "CLM Pick: Hurtin' (Weapon)". The workbench now shows Hurtin'.
+- Picks are weightless items too: drop one to hide its family again. Carry as many as you like.
+- Your other settings still apply: without Show OP, OP-only families cannot be picked; without Show variants you
+  see each family's main strengths. Families that are entirely OP are also gathered under "CLM OP".
+- Drop Picker mode to see everything again.
+
+
+WHY THE CHEMISTRY STATION?
+In 1.09 the settings were menus on the holotape, run by scripts. PlayStation mods are not allowed custom scripts,
+so on PS4 the holotape did nothing and part of the mod could not be set up. Settings as items crafted at a
+chemistry station need no scripts at all, so in 2.0 they work the same on PC, Xbox and PlayStation. It is a
+compromise for PlayStation players: on PC alone, a script extender (F4SE) menu would have been the nicer way, and
+an optional F4SE version for PC is planned for later.
 
 
 LOOT MODE
@@ -39,12 +73,14 @@ LOOT MODE
 - CLM holotapes drop too, one per family of legendaries. Carry one to craft its whole family.
 - OP legendaries also need a Legendary Core (weapon or armour) to craft. Cores are rare drops.
 - Standard drop rate, per kill: common 3%, uncommon 1%, rare 0.3%, OP 0.1%.
-- To go back to crafting, run a Starting Configuration on the Free or Costly version page.
+- Turn it on with "CLM Setting: Loot mode"; drop it (or make Free crafting) to go back to crafting.
+- Drop rate: carry "Low drop rate" or "Higher drop rate"; with neither, Standard.
 
 
 UPGRADING FROM 1.09
 - The DLC legendaries moved to the add-ons: gear with one of them attached loses it unless you install the matching
   add-on. If unsure, take them off at a workbench before updating.
+- Your holotape settings are turned into setting items on the first load (PC and Xbox).
 - Some legendaries were fixed to do what their description says, and a few very strong ones are now marked OP.
   See the changelog on the mod page.
 

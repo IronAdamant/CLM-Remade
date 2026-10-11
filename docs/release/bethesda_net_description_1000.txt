@@ -3,8 +3,8 @@ Over 570 legendary effects for weapons and armour: craft them at the workbench o
 2.0 is a full overhaul of the 2017 mod:
 - No DLC required. DLC legendaries are in optional add-ons (one per DLC).
 - Loot mode: legendaries drop from anything you kill; holotapes unlock whole families; OP legendaries need a rare Legendary Core. Drop rate Low, Standard or Higher.
-- 15 new legendaries, coloured lasers, dozens of fixes.
+- Legendary Picker, 15 new legendaries, coloured lasers, many fixes.
 
-The (CLM) Configuration Holotape arrives when you leave Vault 111. Pick Free, Costly or Loot, then Starting Configuration, and attach legendaries in the Legendary slot of a workbench.
+Settings are items: make "CLM Setting" items at a chemistry station (CLM Settings). Carry one = on, drop it = off. Settings and picker work without scripts, so they work on PlayStation too. Attach legendaries in a workbench's Legendary slot.
 
-Upgrading from 1.09: gear with a DLC legendary loses it unless you install that add-on.
+1.09 users: gear with a DLC legendary loses it unless you install that add-on.
