@@ -17,6 +17,9 @@
   **auto-stimpak** effects used Far Harbor scripts; they now use CLM's own copies, which behave identically.
 
 ### New
+- **Configuration holotape shows only real choices:** an option disappears while it is the active setting (e.g. "Set
+  to 1" while already 1, Starting Configuration while everything is already at its starting values, the current
+  loot drop rate), and comes back when you pick another one.
 - **Loot mode** (configuration holotape: "Loot version - Hunt for legendaries"; was "No-craft version / WIP" in
   1.09, now finished). CLM legendaries stop being craftable from the start and drop instead, from any enemy you kill
   (vanilla, DLC or modded), with starred legendary enemies dropping far more:

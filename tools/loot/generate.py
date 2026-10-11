@@ -413,6 +413,9 @@ def main():
         print(f'spec: {sum(1 for _ in spec.open())} lines')
         run_build(spec, data, ack)
     write_raw(plan, data, ack)
+    # the drop-rate menu was rebuilt: hide-when-selected conditions for every configuration terminal again
+    subprocess.run([sys.executable, str(REPO / 'tools' / 'edits' / 'terminal_hide_selected.py'), str(data / MAIN)],
+                   check=True, capture_output=True)
 
 
 if __name__ == '__main__':
