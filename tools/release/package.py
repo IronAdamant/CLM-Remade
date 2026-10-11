@@ -10,8 +10,10 @@ The Creation Kit's Bethesda.net upload looks for the Xbox versions as "- Main_xb
 (XBoxDDS textures, Xbox compression). Output in dist/:
     PC/      the main plugin + PC archives, and the add-ons            (Bethesda.net PC uploads)
     Xbox/    the main plugin + _xbox archives, and the add-ons         (Bethesda.net Xbox uploads)
-    CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod and ticks the add-ons for the DLC
-                               the player has
+    CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod, ticks the add-ons for the DLC the
+                               player has, and offers the optional F4SE menu (mcm/data: "CLM - MCM", needs F4SE and
+                               Mod Configuration Menu; loose files, as MCM reads its menu from loose files). Nexus
+                               only: the Bethesda.net uploads (PC/, Xbox/) never include it.
 The debug recorder (debug/) is a testing tool and never packaged.
 """
 from __future__ import annotations
@@ -35,6 +37,8 @@ ADDONS = [  # (plugin, DLC master, what it adds)
     ('CLM - Contraptions.esp', 'DLCworkshop02.esm', 'Pyrotechnical and Weather Altering'),
 ]
 README = REPO / 'docs' / 'release' / 'CLM Remade - Readme.txt'
+MCM_DATA = REPO / 'mcm' / 'data'
+MCM_SOURCE = REPO / 'mcm' / 'source'
 
 
 def stage(tmp: Path) -> Path:
@@ -61,7 +65,7 @@ def fomod(version: str) -> tuple[str, str]:
   <Name>Custom Legendary Modifications Remade</Name>
   <Author>Deadmansprice</Author>
   <Version>{version}</Version>
-  <Description>Over 570 legendary effects to craft at the workbench, or to hunt for as loot, configured in game with a holotape.</Description>
+  <Description>Over 570 legendary effects to craft at the workbench, or to hunt for as loot. Set up at any chemistry station, with a holotape, or (optional, F4SE) from the pause menu.</Description>
   <Groups><element>Weapons</element><element>Armour</element><element>Gameplay</element></Groups>
 </fomod>
 """
@@ -93,6 +97,19 @@ def fomod(version: str) -> tuple[str, str]:
         <group name="Add-ons for the DLC you own (each needs its DLC)" type="SelectAny">
           <plugins order="Explicit">
 {chr(10).join(plugins)}
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
+    <installStep name="F4SE menu (PC)">
+      <optionalFileGroups order="Explicit">
+        <group name="Optional: set CLM up from the pause menu" type="SelectAny">
+          <plugins order="Explicit">
+            <plugin name="CLM - MCM">
+              <description>Needs F4SE and Mod Configuration Menu (MCM). Puts every CLM setting and the perk holotape's 110 perks in the pause menu (Mod Config), replacing the configuration and perk holotapes (they can be turned back on in the menu). Works on the same setting items as the chemistry station. Skip this without F4SE.</description>
+              <files><folder source="F4SE Menu" destination="" priority="0"/></files>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
           </plugins>
         </group>
       </optionalFileGroups>
@@ -129,6 +146,11 @@ def main():
         z.write(README, f'Core/{README.name}')
         for plugin, _, _ in ADDONS:
             z.write(DIST / 'PC' / plugin, f'Add-ons/{plugin}')
+        for f in sorted(MCM_DATA.rglob('*')):        # the optional F4SE menu, loose
+            if f.is_file():
+                z.write(f, f'F4SE Menu/{f.relative_to(MCM_DATA).as_posix()}')
+        for f in sorted(MCM_SOURCE.glob('*.psc')):
+            z.write(f, f'F4SE Menu/Scripts/Source/User/{f.name}')
     shutil.rmtree(tmp)
     for f in sorted(DIST.rglob('*')):
         if f.is_file():
