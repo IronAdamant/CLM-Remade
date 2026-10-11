@@ -72,6 +72,7 @@
 - **Configuration holotape (Free version):** the Balanced page had its two options' labels swapped.
 
 ### Fixed: other
+- **Costly version:** Untouchable (Freeze), Concentratin' Intensely (and Brief), Slightly Freezing and Mr. Freeze's cost nothing to craft. They now cost the same as their closest sibling (Untouchable (Fire), Concentratin' Harder / (Brief), Chilling, Prometheus' Fiery).
 - The mod's archive no longer replaces 24 of the game's own scripts with old 2017 copies (one was F4SE's version,
   which could cause problems without F4SE, e.g. on Xbox).
 - Typos in several descriptions.

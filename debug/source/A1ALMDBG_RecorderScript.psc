@@ -32,8 +32,25 @@ Event OnInit()
 	started = True
 	Debug.OpenUserLog(LogName)
 	Log("recorder started")
+	Register()
+	Snapshot()
+	StartTimer(Interval)
+EndEvent
+
+Event Actor.OnPlayerLoadGame(Actor akSender)
+	Debug.OpenUserLog(LogName)  ; user logs close when the game quits; reopening an open one is harmless
+	Log("game loaded")
+	Register()
+	Snapshot()
+	StartTimer(Interval)
+EndEvent
+
+; Event registrations, repeated on every load: a save made with an older recorder build keeps that build's
+; registrations, and OnInit does not run again for an already started quest.
+Function Register()
 	Actor player = Game.GetPlayer()
 	legendaryKeyword = Game.GetFormFromFile(0x001CF26C, "Fallout4.esm") as Keyword  ; EncTypeLegendary
+	RemoveAllInventoryEventFilters()
 	int i = 0
 	While i < WatchItems.Length
 		AddInventoryEventFilter(WatchItems[i])
@@ -46,16 +63,7 @@ Event OnInit()
 	RegisterForMenuOpenCloseEvent("ExamineMenu")     ; weapon/armour workbench
 	RegisterForMenuOpenCloseEvent("PipboyMenu")
 	RegisterForMenuOpenCloseEvent("TerminalMenu")    ; includes holotapes played on the Pip-Boy
-	Snapshot()
-	StartTimer(Interval)
-EndEvent
-
-Event Actor.OnPlayerLoadGame(Actor akSender)
-	Debug.OpenUserLog(LogName)  ; user logs close when the game quits; reopening an open one is harmless
-	Log("game loaded")
-	Snapshot()
-	StartTimer(Interval)
-EndEvent
+EndFunction
 
 Event ObjectReference.OnItemAdded(ObjectReference akSender, Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer)
 	Log("item gained " + aiItemCount + " x " + akBaseItem + " from " + akSourceContainer + " (now " + akSender.GetItemCount(akBaseItem) + ")")
