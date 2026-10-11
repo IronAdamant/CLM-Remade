@@ -21,8 +21,8 @@ Statuses: **Fixed in 2.0** (with the commit or change), **To fix** (confirmed fr
 | 7 | Mr. Freeze's is visual only | Fixed in 2.0 | Batch 1c: its 60 cryo damage now applies. Now also costs components (Freeze recipe fix). |
 | 8 | Time-slow never turns off | To fix | Same mechanism as #2 (hidden perks); fix together, then test. |
 | 9 | Shotguns lose spread, even vanilla ones | Not CLM | CLM does not touch any weapon, aim model or vanilla OMOD. |
-| 10 | Raging slows you to a crawl | Test in game | Raging has no movement or weight effect in its data. Its text also promises vampiric healing it does not have (see the description pass). |
-| 11 | Burning Hellish recoil | By design + To fix | Recoil is cut 75%, as the text says. But "100 burning damage" adds only 1 fire damage: fix in the description pass. |
+| 10 | Raging slows you to a crawl | Test in game | Raging has no movement or weight effect in its data. (Its vampiric healing exists; it shares #6's fix.) |
+| 11 | Burning Hellish recoil | By design | Recoil is cut 75%, as the text says, and its 100 burning damage is there (25 per second for 4 s). |
 | 12 | Deadly Accurate disappeared | Fixed in 2.0 | It exists (Recoilless family, OP). Gear tagged by an older build lost it in a 2017 update. |
 | 13 | Only some effects next to Legendary Modification | Not CLM | Another mod's list. |
 | 14 | Effects never drop from legendary enemies | Fixed in 2.0 | Loot mode: every legendary drops, starred enemies roll ten times. |
@@ -32,7 +32,7 @@ Statuses: **Fixed in 2.0** (with the commit or change), **To fix** (confirmed fr
 | 19 | Crafting Framework patches are dead | Note | Mention Legendary Effect Overhaul (LEO) compatibility on the mod page once checked. |
 | 20 | Stealth field stops human companions fighting | Test in game | Handy's "stealth field" is the Ghostly (Crouch) perk set (detection entry points). Test with a companion. |
 | 21 | One Punch ragdolls the player | Fixed in 2.0 | Batch 1c; also now gives what its text promises. |
-| 22 | Face Bustin' one-shots everything | To fix | In 2.0 it only makes attacks faster: its promised 100% cripple and explode-on-death are missing. Now OP. |
+| 22 | Face Bustin' one-shots everything | To fix | Confirmed: its "explode after death" uses vanilla's ExplodeOnContactScript, which dismembers and calls Kill() on every hit. Replace with an effect that only blows apart targets the hit killed. |
 | 23 | Hazmat does not stop rads | Test in game | Biological Hazmat zeroes incoming spell magnitude and rad health loss; environmental radiation needs a real test. |
 | 24 | Nuka-Infused fires the wrong bottle | Fixed in 2.0 | Rebuilt on the base-game Nuka Grenade. |
 | 25 | Second legendary slot (2LM) | Not CLM | Other mods' slots. |
@@ -46,7 +46,13 @@ Statuses: **Fixed in 2.0** (with the commit or change), **To fix** (confirmed fr
 ## The description pass (batch 2)
 
 Batch 1 checked every number in every description (214 of 233 matched; the rest were fixed). It did not check
-for promised effects that are missing altogether. `tools/audit/promises.py` flags 113 candidates; confirmed so
-far: Roid Ragin' (only its attack speed exists), Face Bustin', Burning Hellish (100 fire damage -> 1), Raging and
-Reaper's Embrace (no healing), Woundingly Enraging (no rage), Keltas' Flawed Factorium (50% slower, text 25%).
-Every flag gets a manual look; real gaps are fixed so the effect matches the text, as decided for batch 1.
+for promised effects that are missing altogether. `tools/audit/promises.py` flags candidates from the catalog.
+(A first catalog version skipped every second property and produced 113 flags, several of them wrong - e.g.
+Burning Hellish, Raging and Reaper's Embrace are fine. The catalog now checks its own property counts against the
+plugin's; 37 flags remain, most of them wording.) Confirmed gaps:
+
+- **Face Bustin'**: kills on every hit (see #22).
+- **Roid Ragin'**: "25% to do 10x damage" is 10,000 damage on every hit; "flying on critical" happens on every hit.
+- **Rayden's Fury**, **Carbonatin'**: effects meant for critical hits fire on every hit / kill.
+- **Keltas' Flawed Factorium**: 50% slower; the text says 25%.
+- **Liar's Compedium**: promises a stun it does not have.

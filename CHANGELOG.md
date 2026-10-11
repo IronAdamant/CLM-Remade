@@ -49,6 +49,8 @@
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.
 
 ### Fixed: legendaries that did not work
+- **Vampiric** (and Raging, Annihilating, Reaper's Embrace, Reclaimer's) now heals you on every hit. It used to heal only when the target survived the hit, so kills (molerats, radroaches...) gave nothing.
+- **Face Bustin'** no longer kills everything in one hit: targets now blow apart only if the hit killed them, as its description says.
 - **One Punch Man's** no longer knocks over the wearer when equipped. Punches still send enemies flying.
 - Now flagged **OP** (hidden when the configuration holotape is set to "Balanced only"), as they are as strong as other OP legendaries: Savage, Savage (Limited), Silently Savage (Limited), Caged Savage, Deathly Silenced, Murderously Silenced, all eight Havoc variants, Performance Center, Burning Hellish, Face Bustin', One Punch Man's and Searing.
 - **One Punch Man's** now gives what it promises, within what the game can handle: Strength +100 (it gave none), 10x jump height (was 2x) and 3x run speed (was 1.5x). The description no longer promises 100x speed, which breaks movement and world loading.

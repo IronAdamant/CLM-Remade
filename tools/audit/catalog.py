@@ -43,9 +43,11 @@ class Catalog:
     def props(self, omod: str) -> list[tuple[str, str, str, str]]:
         b = self.r['OMOD'][omod]
         out = []
-        for m in re.finditer(r'\n\s+Property\n((?:\s{8,}.*\n)+)', b + '\n'):
-            p = m.group(1)
-            out.append((field(p, 'Function Type'), field(p, 'Property'), field(p, 'Value 1'), field(p, 'Value 2')))
+        # each property starts at a line that is just "Property"; its fields follow until the next one
+        parts = re.split(r'\n\s+Property\n', '\n' + b.split('\n    Properties\n', 1)[-1] + '\n')[1:]
+        for p in parts:
+            out.append((field('\n' + p, 'Function Type'), field('\n' + p, 'Property'), field('\n' + p, 'Value 1'),
+                        field('\n' + p, 'Value 2')))
         return out
 
     def perk(self, edid: str, depth: int) -> list[str]:
