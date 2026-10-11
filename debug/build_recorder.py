@@ -5,7 +5,7 @@
 Makes `CLM - Debug Recorder.esp` (ESL; masters Fallout4.esm and the main plugin): one start-game-enabled quest
 running A1ALMDBG_RecorderScript. Its watch lists are generated from the main plugin in the game's Data folder, so
 re-run this after adding loose mods, unlock holotapes, unlock perks or configuration globals:
-- items: A1ALMMISC_LooseMod_* and A1ALMBOOK_Unlock_*
+- items: A1ALMMISC_LooseMod_* and A1ALMMISC_Unlock_* (unlock holotapes)
 - perks: A1ALMPERK_Unlock_*
 - globals: every GLOB in the main plugin
 Then compiles the script (debug build, traces kept), installs the .pex into Data/Scripts, and keeps copies of the
@@ -33,7 +33,7 @@ def watch_lists(main_path: Path, ack: Path) -> tuple[list[str], list[str], list[
     from ack.plugin import Plugin
     p = Plugin.load(main_path)
     own = [r for r in p.records() if p.is_own(r.formid)]
-    items = sorted(r.edid for r in own if r.edid.startswith(('A1ALMMISC_LooseMod_', 'A1ALMBOOK_Unlock_')))
+    items = sorted(r.edid for r in own if r.edid.startswith(('A1ALMMISC_LooseMod_', 'A1ALMMISC_Unlock_')))
     perks = sorted(r.edid for r in own if r.edid.startswith('A1ALMPERK_Unlock_'))
     globs = sorted(r.edid for r in own if r.sig == 'GLOB')
     return items, perks, globs

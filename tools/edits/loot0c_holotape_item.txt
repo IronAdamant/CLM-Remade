@@ -1,0 +1,19 @@
+# Loot mode prototype, round 3 (2026-10-11). Second in-game test (debug recorder log + screenshots):
+# - Recipes failing a HasPerk condition are not hidden: the workbench lists them greyed out with "Requires <perk>".
+#   Only non-perk conditions hide a recipe. The author wants locked legendaries hidden until unlocked.
+# - The magazine-style holotape granted its perk but stayed in the inventory anyway.
+# So the unlock becomes "carrying the family's holotape": a plain, weightless MISC item, checked with GetItemCount
+# (a non-perk condition, so locked recipes stay hidden). No script: works on every platform. The magazine-style
+# BOOK and its perk are removed. Conditions are rewritten by loot0c_conditions.py (CTDA bytes written directly).
+
+rec.copy | miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_Unlock_Jumpy
+text.set | A1ALMMISC_Unlock_Jumpy | FULL | CLM Holotape: Jumpy
+field.remove | A1ALMMISC_Unlock_Jumpy | . | KWDA
+field.remove | A1ALMMISC_Unlock_Jumpy | . | KSIZ
+field.remove | A1ALMMISC_Unlock_Jumpy | Model | MODT
+field.set | A1ALMMISC_Unlock_Jumpy | Model\MODL | Props\Holotape_Prop.nif
+field.set | A1ALMMISC_Unlock_Jumpy | DATA\Weight | 0
+field.set | A1ALMMISC_Unlock_Jumpy | DATA\Value | 25
+
+rec.delete | A1ALMBOOK_Unlock_Jumpy
+rec.delete | A1ALMPERK_Unlock_Jumpy

@@ -18,8 +18,14 @@ string LogName = "CLM"
 int[] itemCounts
 bool[] perkStates
 float[] globalValues
+bool started
 
 Event OnInit()
+	; a start-game-enabled quest runs OnInit twice (as it is created and as it starts): record once
+	If started
+		Return
+	EndIf
+	started = True
 	Debug.OpenUserLog(LogName)
 	Log("recorder started")
 	Snapshot()
