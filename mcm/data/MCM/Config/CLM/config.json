@@ -1,0 +1,1216 @@
+{
+  "modName": "CLM",
+  "displayName": "Custom Legendary Modifications",
+  "minMcmVersion": 2,
+  "content": [
+    {
+      "text": "Custom Legendary Modifications Remade",
+      "type": "section"
+    },
+    {
+      "text": "Settings: crafting mode, OP legendaries, variants, Legendary Picker, loot drop rate.",
+      "type": "text"
+    },
+    {
+      "text": "CLM Perks / Cheat Perks: add or remove the perks of the perk holotape.",
+      "type": "text"
+    }
+  ],
+  "pages": [
+    {
+      "pageDisplayName": "Settings",
+      "content": [
+        {
+          "text": "<font color='#AAAAAA'>These are the same settings as the \"CLM Setting\" items you can make at a chemistry station: changing one here gives or takes that item, and this page always shows what you carry.</font>",
+          "type": "text"
+        },
+        {
+          "text": "Crafting",
+          "type": "section"
+        },
+        {
+          "text": "Crafting mode",
+          "type": "dropdown",
+          "id": "iCrafting:Settings",
+          "help": "Costly: legendaries cost components. Free: they cost nothing. Loot mode: they drop from enemies instead (carry a CLM holotape to craft its family; OP ones need a Legendary Core).",
+          "valueOptions": {
+            "options": [
+              "Costly",
+              "Free",
+              "Loot mode"
+            ],
+            "sourceType": "ModSettingInt"
+          }
+        },
+        {
+          "text": "Loot mode drop rate",
+          "type": "dropdown",
+          "id": "iDropRate:Settings",
+          "help": "How often loot mode drops legendaries. Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1% per kill.",
+          "valueOptions": {
+            "options": [
+              "Low",
+              "Standard",
+              "Higher"
+            ],
+            "sourceType": "ModSettingInt"
+          }
+        },
+        {
+          "text": "What the workbench shows",
+          "type": "section"
+        },
+        {
+          "text": "Show OP legendaries",
+          "type": "switcher",
+          "id": "bShowOP:Settings",
+          "help": "Also show the overpowered legendaries.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Show variants",
+          "type": "switcher",
+          "id": "bShowVariants:Settings",
+          "help": "Show every strength and variant of each legendary.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Hide perk-style legendaries",
+          "type": "switcher",
+          "id": "bHidePerk:Settings",
+          "help": "Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...).",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Hide spawning legendaries",
+          "type": "switcher",
+          "id": "bHideSpawn:Settings",
+          "help": "Hide the legendaries that spawn creatures and people.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Picker mode",
+          "type": "switcher",
+          "id": "bPicker:Settings",
+          "help": "The workbench shows only the families you pick at a chemistry station (CLM Armour / Spawns / Weapon categories).",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Holotapes",
+          "type": "section"
+        },
+        {
+          "text": "Holotapes",
+          "type": "switcher",
+          "id": "bHolotapes:Settings",
+          "help": "This menu replaces the configuration and perk holotapes. Turn this on to get both holotapes (and their recipes) back anyway.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "CLM Perks",
+      "content": [
+        {
+          "text": "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without wearing the armour (the perk holotape's options).</font>",
+          "type": "text"
+        },
+        {
+          "text": "Untouchable",
+          "type": "section"
+        },
+        {
+          "text": "Untouchable (Spooky)",
+          "type": "switcher",
+          "id": "bPerk1:Perks",
+          "help": "Add or remove the perk \"Untouchable (Spooky)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Rad)",
+          "type": "switcher",
+          "id": "bPerk2:Perks",
+          "help": "Add or remove the perk \"Untouchable (Rad)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Poison)",
+          "type": "switcher",
+          "id": "bPerk3:Perks",
+          "help": "Add or remove the perk \"Untouchable (Poison)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Paralyze)",
+          "type": "switcher",
+          "id": "bPerk4:Perks",
+          "help": "Add or remove the perk \"Untouchable (Paralyze)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Pacified)",
+          "type": "switcher",
+          "id": "bPerk5:Perks",
+          "help": "Add or remove the perk \"Untouchable (Pacified)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Knockdown)",
+          "type": "switcher",
+          "id": "bPerk6:Perks",
+          "help": "Add or remove the perk \"Untouchable (Knockdown)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Frenzy)",
+          "type": "switcher",
+          "id": "bPerk7:Perks",
+          "help": "Add or remove the perk \"Untouchable (Frenzy)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Freeze)",
+          "type": "switcher",
+          "id": "bPerk8:Perks",
+          "help": "Add or remove the perk \"Untouchable (Freeze)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Fire)",
+          "type": "switcher",
+          "id": "bPerk9:Perks",
+          "help": "Add or remove the perk \"Untouchable (Fire)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Shock)",
+          "type": "switcher",
+          "id": "bPerk10:Perks",
+          "help": "Add or remove the perk \"Untouchable (Shock)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Untouchable (Disarm)",
+          "type": "switcher",
+          "id": "bPerk11:Perks",
+          "help": "Add or remove the perk \"Untouchable (Disarm)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy",
+          "type": "section"
+        },
+        {
+          "text": "Speedy (50%)",
+          "type": "switcher",
+          "id": "bPerk13:Perks",
+          "help": "Add or remove the perk \"Speedy (50%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy (100%)",
+          "type": "switcher",
+          "id": "bPerk14:Perks",
+          "help": "Add or remove the perk \"Speedy (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy (150%)",
+          "type": "switcher",
+          "id": "bPerk15:Perks",
+          "help": "Add or remove the perk \"Speedy (150%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy (200%)",
+          "type": "switcher",
+          "id": "bPerk16:Perks",
+          "help": "Add or remove the perk \"Speedy (200%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy (250%)",
+          "type": "switcher",
+          "id": "bPerk17:Perks",
+          "help": "Add or remove the perk \"Speedy (250%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy (300%)",
+          "type": "switcher",
+          "id": "bPerk18:Perks",
+          "help": "Add or remove the perk \"Speedy (300%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumpy",
+          "type": "section"
+        },
+        {
+          "text": "Jumpy (50%)",
+          "type": "switcher",
+          "id": "bPerk19:Perks",
+          "help": "Add or remove the perk \"Jumpy (50%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumpy (100%)",
+          "type": "switcher",
+          "id": "bPerk20:Perks",
+          "help": "Add or remove the perk \"Jumpy (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumpy (150%)",
+          "type": "switcher",
+          "id": "bPerk21:Perks",
+          "help": "Add or remove the perk \"Jumpy (150%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumpy (200%)",
+          "type": "switcher",
+          "id": "bPerk22:Perks",
+          "help": "Add or remove the perk \"Jumpy (200%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumpy (250%)",
+          "type": "switcher",
+          "id": "bPerk23:Perks",
+          "help": "Add or remove the perk \"Jumpy (250%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumpy (300%)",
+          "type": "switcher",
+          "id": "bPerk24:Perks",
+          "help": "Add or remove the perk \"Jumpy (300%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Slow Time Aim",
+          "type": "section"
+        },
+        {
+          "text": "Slow Time Aim (3s)",
+          "type": "switcher",
+          "id": "bPerk28:Perks",
+          "help": "Add or remove the perk \"Slow Time Aim (3s)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Slow Time Aim (20s)",
+          "type": "switcher",
+          "id": "bPerk29:Perks",
+          "help": "Add or remove the perk \"Slow Time Aim (20s)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Freeze Time Aim",
+          "type": "section"
+        },
+        {
+          "text": "Freeze Time Aim (3s)",
+          "type": "switcher",
+          "id": "bPerk30:Perks",
+          "help": "Add or remove the perk \"Freeze Time Aim (3s)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Freeze Time Aim (20s)",
+          "type": "switcher",
+          "id": "bPerk31:Perks",
+          "help": "Add or remove the perk \"Freeze Time Aim (20s)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Freeze Time Bash",
+          "type": "section"
+        },
+        {
+          "text": "Freeze Time Bash (3s)",
+          "type": "switcher",
+          "id": "bPerk32:Perks",
+          "help": "Add or remove the perk \"Freeze Time Bash (3s)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Freeze Time Bash (20s)",
+          "type": "switcher",
+          "id": "bPerk33:Perks",
+          "help": "Add or remove the perk \"Freeze Time Bash (20s)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Refilling",
+          "type": "section"
+        },
+        {
+          "text": "Refilling (10%)",
+          "type": "switcher",
+          "id": "bPerk39:Perks",
+          "help": "Add or remove the perk \"Refilling (10%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Refilling (50%)",
+          "type": "switcher",
+          "id": "bPerk40:Perks",
+          "help": "Add or remove the perk \"Refilling (50%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching",
+          "type": "section"
+        },
+        {
+          "text": "Punching (Spook)",
+          "type": "switcher",
+          "id": "bPerk43:Perks",
+          "help": "Add or remove the perk \"Punching (Spook)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Rad)",
+          "type": "switcher",
+          "id": "bPerk44:Perks",
+          "help": "Add or remove the perk \"Punching (Rad)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Poison)",
+          "type": "switcher",
+          "id": "bPerk45:Perks",
+          "help": "Add or remove the perk \"Punching (Poison)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Paralyze)",
+          "type": "switcher",
+          "id": "bPerk46:Perks",
+          "help": "Add or remove the perk \"Punching (Paralyze)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Frenzy)",
+          "type": "switcher",
+          "id": "bPerk47:Perks",
+          "help": "Add or remove the perk \"Punching (Frenzy)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Freeze)",
+          "type": "switcher",
+          "id": "bPerk48:Perks",
+          "help": "Add or remove the perk \"Punching (Freeze)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Fire)",
+          "type": "switcher",
+          "id": "bPerk49:Perks",
+          "help": "Add or remove the perk \"Punching (Fire)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Electrical)",
+          "type": "switcher",
+          "id": "bPerk50:Perks",
+          "help": "Add or remove the perk \"Punching (Electrical)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Disarm)",
+          "type": "switcher",
+          "id": "bPerk51:Perks",
+          "help": "Add or remove the perk \"Punching (Disarm)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching (Push)",
+          "type": "switcher",
+          "id": "bPerk52:Perks",
+          "help": "Add or remove the perk \"Punching (Push)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Penetrating",
+          "type": "section"
+        },
+        {
+          "text": "Penetrating (90%)",
+          "type": "switcher",
+          "id": "bPerk53:Perks",
+          "help": "Add or remove the perk \"Penetrating (90%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Penetrating (100%)",
+          "type": "switcher",
+          "id": "bPerk54:Perks",
+          "help": "Add or remove the perk \"Penetrating (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Explosive Resistant",
+          "type": "section"
+        },
+        {
+          "text": "Explosive Resistant (30%)",
+          "type": "switcher",
+          "id": "bPerk57:Perks",
+          "help": "Add or remove the perk \"Explosive Resistant (30%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Explosive Resistant (90%)",
+          "type": "switcher",
+          "id": "bPerk58:Perks",
+          "help": "Add or remove the perk \"Explosive Resistant (90%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unmoving Tank",
+          "type": "section"
+        },
+        {
+          "text": "Unmoving Tank (80% - Weapon)",
+          "type": "switcher",
+          "id": "bPerk60:Perks",
+          "help": "Add or remove the perk \"Unmoving Tank (80% - Weapon)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unmoving Tank (80% - Explosive)",
+          "type": "switcher",
+          "id": "bPerk61:Perks",
+          "help": "Add or remove the perk \"Unmoving Tank (80% - Explosive)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing",
+          "type": "section"
+        },
+        {
+          "text": "Impact Landing (Basic)",
+          "type": "switcher",
+          "id": "bPerk62:Perks",
+          "help": "Add or remove the perk \"Impact Landing (Basic)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing (Cryo)",
+          "type": "switcher",
+          "id": "bPerk63:Perks",
+          "help": "Add or remove the perk \"Impact Landing (Cryo)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing (Fire)",
+          "type": "switcher",
+          "id": "bPerk64:Perks",
+          "help": "Add or remove the perk \"Impact Landing (Fire)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing (Nuclear)",
+          "type": "switcher",
+          "id": "bPerk65:Perks",
+          "help": "Add or remove the perk \"Impact Landing (Nuclear)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing (Plasma)",
+          "type": "switcher",
+          "id": "bPerk66:Perks",
+          "help": "Add or remove the perk \"Impact Landing (Plasma)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing (Pulse)",
+          "type": "switcher",
+          "id": "bPerk67:Perks",
+          "help": "Add or remove the perk \"Impact Landing (Pulse)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unaffected",
+          "type": "section"
+        },
+        {
+          "text": "Unaffected (Explosives)",
+          "type": "switcher",
+          "id": "bPerk69:Perks",
+          "help": "Add or remove the perk \"Unaffected (Explosives)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unaffected (Rad)",
+          "type": "switcher",
+          "id": "bPerk70:Perks",
+          "help": "Add or remove the perk \"Unaffected (Rad)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unaffected (Poison)",
+          "type": "switcher",
+          "id": "bPerk71:Perks",
+          "help": "Add or remove the perk \"Unaffected (Poison)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unaffected (Electric)",
+          "type": "switcher",
+          "id": "bPerk72:Perks",
+          "help": "Add or remove the perk \"Unaffected (Electric)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unaffected (Acid)",
+          "type": "switcher",
+          "id": "bPerk73:Perks",
+          "help": "Add or remove the perk \"Unaffected (Acid)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Harder Bashing",
+          "type": "section"
+        },
+        {
+          "text": "Harder Bashing (100%)",
+          "type": "switcher",
+          "id": "bPerk75:Perks",
+          "help": "Add or remove the perk \"Harder Bashing (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Harder Bashing (250%)",
+          "type": "switcher",
+          "id": "bPerk76:Perks",
+          "help": "Add or remove the perk \"Harder Bashing (250%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Partial Immunity",
+          "type": "section"
+        },
+        {
+          "text": "Partial Immunity [50% - Radiation]",
+          "type": "switcher",
+          "id": "bPerk77:Perks",
+          "help": "Add or remove the perk \"Partial Immunity [50% - Radiation]\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Partial Immunity [50% - Explosives]",
+          "type": "switcher",
+          "id": "bPerk78:Perks",
+          "help": "Add or remove the perk \"Partial Immunity [50% - Explosives]\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Ghostly",
+          "type": "section"
+        },
+        {
+          "text": "Ghostly (Always)",
+          "type": "switcher",
+          "id": "bPerk88:Perks",
+          "help": "Add or remove the perk \"Ghostly (Always)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Ghostly (Crouch)",
+          "type": "switcher",
+          "id": "bPerk89:Perks",
+          "help": "Add or remove the perk \"Ghostly (Crouch)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Tracker's Sight",
+          "type": "section"
+        },
+        {
+          "text": "Tracker's Sight",
+          "type": "switcher",
+          "id": "bPerk90:Perks",
+          "help": "Add or remove the perk \"Tracker's Sight\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Tracker's Sight (Aim)",
+          "type": "switcher",
+          "id": "bPerk91:Perks",
+          "help": "Add or remove the perk \"Tracker's Sight (Aim)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lucky Hittin'",
+          "type": "section"
+        },
+        {
+          "text": "Lucky Hittin' (10%)",
+          "type": "switcher",
+          "id": "bPerk92:Perks",
+          "help": "Add or remove the perk \"Lucky Hittin' (10%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lucky Hittin' (25%)",
+          "type": "switcher",
+          "id": "bPerk93:Perks",
+          "help": "Add or remove the perk \"Lucky Hittin' (25%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lucky Hittin' (50%)",
+          "type": "switcher",
+          "id": "bPerk94:Perks",
+          "help": "Add or remove the perk \"Lucky Hittin' (50%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lucky Hittin' (75%)",
+          "type": "switcher",
+          "id": "bPerk95:Perks",
+          "help": "Add or remove the perk \"Lucky Hittin' (75%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking",
+          "type": "section"
+        },
+        {
+          "text": "Shavka's Explosive Striking",
+          "type": "switcher",
+          "id": "bPerk96:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking (Cryo)",
+          "type": "switcher",
+          "id": "bPerk97:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking (Cryo)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking (Fire)",
+          "type": "switcher",
+          "id": "bPerk98:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking (Fire)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking (Gauss)",
+          "type": "switcher",
+          "id": "bPerk99:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking (Gauss)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking (Nuke)",
+          "type": "switcher",
+          "id": "bPerk100:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking (Nuke)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking (Plasm)",
+          "type": "switcher",
+          "id": "bPerk101:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking (Plasm)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking (Pulse)",
+          "type": "switcher",
+          "id": "bPerk102:Perks",
+          "help": "Add or remove the perk \"Shavka's Explosive Striking (Pulse)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Other perks",
+          "type": "section"
+        },
+        {
+          "text": "Aim Stabilized (100%)",
+          "type": "switcher",
+          "id": "bPerk0:Perks",
+          "help": "Add or remove the perk \"Aim Stabilized (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Dangerously Focusing (2x)",
+          "type": "switcher",
+          "id": "bPerk12:Perks",
+          "help": "Add or remove the perk \"Dangerously Focusing (2x)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Chem Duration Boost (85%)",
+          "type": "switcher",
+          "id": "bPerk25:Perks",
+          "help": "Add or remove the perk \"Chem Duration Boost (85%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Undetectable",
+          "type": "switcher",
+          "id": "bPerk26:Perks",
+          "help": "Add or remove the perk \"Undetectable\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Sneaky",
+          "type": "switcher",
+          "id": "bPerk27:Perks",
+          "help": "Add or remove the perk \"Sneaky\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Fiery Strikes",
+          "type": "switcher",
+          "id": "bPerk34:Perks",
+          "help": "Add or remove the perk \"Fiery Strikes\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Sneak Bonuses",
+          "type": "switcher",
+          "id": "bPerk35:Perks",
+          "help": "Add or remove the perk \"Sneak Bonuses\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Flash",
+          "type": "switcher",
+          "id": "bPerk36:Perks",
+          "help": "Add or remove the perk \"Flash\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Silvertongued Businessman",
+          "type": "switcher",
+          "id": "bPerk37:Perks",
+          "help": "Add or remove the perk \"Silvertongued Businessman\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Sadistic Brawler's",
+          "type": "switcher",
+          "id": "bPerk38:Perks",
+          "help": "Add or remove the perk \"Sadistic Brawler's\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Spooky",
+          "type": "switcher",
+          "id": "bPerk41:Perks",
+          "help": "Add or remove the perk \"Spooky\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unfeeling",
+          "type": "switcher",
+          "id": "bPerk42:Perks",
+          "help": "Add or remove the perk \"Unfeeling\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Hardly Achin'",
+          "type": "switcher",
+          "id": "bPerk55:Perks",
+          "help": "Add or remove the perk \"Hardly Achin'\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Cat Tailed",
+          "type": "switcher",
+          "id": "bPerk56:Perks",
+          "help": "Add or remove the perk \"Cat Tailed\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Near Invincible Fortress",
+          "type": "switcher",
+          "id": "bPerk59:Perks",
+          "help": "Add or remove the perk \"Near Invincible Fortress\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Unbreakable Limbs",
+          "type": "switcher",
+          "id": "bPerk68:Perks",
+          "help": "Add or remove the perk \"Unbreakable Limbs\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Biological Hazmat",
+          "type": "switcher",
+          "id": "bPerk74:Perks",
+          "help": "Add or remove the perk \"Biological Hazmat\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Greater Lockpicking (5x)",
+          "type": "switcher",
+          "id": "bPerk79:Perks",
+          "help": "Add or remove the perk \"Greater Lockpicking (5x)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Greater Gunbashing [5x]",
+          "type": "switcher",
+          "id": "bPerk80:Perks",
+          "help": "Add or remove the perk \"Greater Gunbashing [5x]\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Great Sight",
+          "type": "switcher",
+          "id": "bPerk81:Perks",
+          "help": "Add or remove the perk \"Great Sight\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Exploding Fists",
+          "type": "switcher",
+          "id": "bPerk82:Perks",
+          "help": "Add or remove the perk \"Exploding Fists\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Combined Bloody Mess",
+          "type": "switcher",
+          "id": "bPerk83:Perks",
+          "help": "Add or remove the perk \"Combined Bloody Mess\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Bouncing",
+          "type": "switcher",
+          "id": "bPerk84:Perks",
+          "help": "Add or remove the perk \"Bouncing\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jedi Reflexes",
+          "type": "switcher",
+          "id": "bPerk85:Perks",
+          "help": "Add or remove the perk \"Jedi Reflexes\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jedi Reflexible Sprint",
+          "type": "switcher",
+          "id": "bPerk86:Perks",
+          "help": "Add or remove the perk \"Jedi Reflexible Sprint\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Bullet Escapist",
+          "type": "switcher",
+          "id": "bPerk87:Perks",
+          "help": "Add or remove the perk \"Bullet Escapist\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Cheat Perks",
+      "content": [
+        {
+          "text": "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without wearing the armour (the perk holotape's options).</font>",
+          "type": "text"
+        },
+        {
+          "text": "Perks",
+          "type": "section"
+        },
+        {
+          "text": "Full Invulnerability",
+          "type": "switcher",
+          "id": "bPerk103:Perks",
+          "help": "Add or remove the perk \"Full Invulnerability\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Cheat Father's",
+          "type": "switcher",
+          "id": "bPerk104:Perks",
+          "help": "Add or remove the perk \"Cheat Father's\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Refilling (100%)",
+          "type": "switcher",
+          "id": "bPerk105:Perks",
+          "help": "Add or remove the perk \"Refilling (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Combined Maximum Bloody Mess",
+          "type": "switcher",
+          "id": "bPerk106:Perks",
+          "help": "Add or remove the perk \"Combined Maximum Bloody Mess\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Dimensional Pocket",
+          "type": "switcher",
+          "id": "bPerk107:Perks",
+          "help": "Add or remove the perk \"Dimensional Pocket\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Pinpoint Accuracy",
+          "type": "switcher",
+          "id": "bPerk108:Perks",
+          "help": "Add or remove the perk \"Pinpoint Accuracy\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lucky Hittin' (100%)",
+          "type": "switcher",
+          "id": "bPerk109:Perks",
+          "help": "Add or remove the perk \"Lucky Hittin' (100%)\".",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        }
+      ]
+    }
+  ]
+}

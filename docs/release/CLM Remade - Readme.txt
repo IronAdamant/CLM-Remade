@@ -59,12 +59,23 @@ families of legendaries you pick:
 - Drop Picker mode to see everything again.
 
 
+F4SE MENU (OPTIONAL, PC ONLY)
+With F4SE and Mod Configuration Menu (MCM) installed, add the optional "CLM - MCM" download: everything is set
+from the pause menu (Mod Config > Custom Legendary Modifications) instead of holotapes.
+- Settings page: crafting mode (Costly / Free / Loot), drop rate, Show OP, Show variants, Hide perk-style /
+  spawning legendaries, Picker mode. It changes the same "CLM Setting" items as the chemistry station, so the menu,
+  the station and your inventory always agree.
+- CLM Perks / Cheat Perks pages: add or remove any of the perk holotape's 110 perks.
+- The holotapes are no longer given or craftable (and are taken back if you have them); turn "Holotapes" on in the
+  menu to have them anyway.
+
+
 WHY THE CHEMISTRY STATION?
 In 1.09 the settings were menus on the holotape, run by scripts. PlayStation mods are not allowed custom scripts,
 so on PS4 the holotape did nothing and part of the mod could not be set up. Settings as items crafted at a
 chemistry station need no scripts at all, so in 2.0 they work the same on PC, Xbox and PlayStation. It is a
-compromise for PlayStation players: on PC alone, a script extender (F4SE) menu would have been the nicer way, and
-an optional F4SE version for PC is planned for later.
+compromise for PlayStation players: on PC alone, a script extender (F4SE) menu would have been the nicer way - so
+PC players can have that too: see F4SE MENU above.
 
 
 LOOT MODE

@@ -41,6 +41,8 @@
   "CLM Spawns" and "CLM Weapon" categories (e.g. CLM Weapon: Damage > Hurtin'): each pick is a weightless "CLM Pick"
   item; drop it to hide that family again. Your other settings still apply (OP, variants...). Families that are
   entirely OP are also gathered under "CLM OP" and need Show OP. Works on every platform.
+- **Optional F4SE menu (PC):** with F4SE and Mod Configuration Menu, the "CLM - MCM" add-on puts every setting
+  and the perk holotape's 110 perks in the pause menu, replacing the holotapes (which can still be turned back on).
 - **New games start Costly and Balanced**: OP legendaries and variants hidden until you turn them on. No "Starting
   Configuration" step any more.
 - **Upgrading from 1.09:** your holotape settings are converted into setting items once, on the first load (PC and
@@ -110,6 +112,8 @@
 - **Savage (Limited), Caged Savage:** descriptions now mention their +40 energy damage.
 
 ### Fixed: holotapes
+- **Perk holotape:** "Add Perk -Jedi Reflexible Sprint" label fixed. All 110 perks checked: each has a working add and
+  remove.
 - **Perk holotape:** Greater Lockpicking (5x) can now be removed. Choosing to remove it used to remove Greater
   Gunbashing instead, and removing Gunbashing did nothing.
 
