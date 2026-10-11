@@ -9,4 +9,5 @@ set | A1ALMDBG_Recorder | FULL | CLM Debug Recorder
 set | A1ALMDBG_Recorder | DNAM\Flags | 1
 script | A1ALMDBG_Recorder | A1ALMDBG_RecorderScript
 prop | A1ALMDBG_Recorder | A1ALMDBG_RecorderScript | WatchItems | Array of Object | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100,@A1ALMMISC_Unlock_Jumpy
+propremove | A1ALMDBG_Recorder | A1ALMDBG_RecorderScript | WatchPerks
 prop | A1ALMDBG_Recorder | A1ALMDBG_RecorderScript | WatchGlobals | Array of Object | @A1ALMABALANCED,@A1ALMAFREE,@A1ALMAPERK,@A1ALMASPAWN,@A1ALMAVAR,@A1ALMAWPN

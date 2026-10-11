@@ -57,6 +57,8 @@ def spec(items: list[str], perks: list[str], globs: list[str]) -> str:
     for name, values in (('WatchItems', items), ('WatchPerks', perks), ('WatchGlobals', globs)):
         if values:
             lines.append(f'prop | {QUEST} | {SCRIPT} | {name} | Array of Object | {arr(values)}')
+        else:  # drop a list left over from an earlier build (its records may be gone)
+            lines.append(f'propremove | {QUEST} | {SCRIPT} | {name}')
     return '\n'.join(lines) + '\n'
 
 
