@@ -2,13 +2,14 @@ Scriptname A1ALMDBG_RecorderScript extends Quest
 {CLM debug recorder - for testing only, never shipped (lives in CLM - Debug Recorder.esp).
 Writes to Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log (needs Papyrus logging on in Fallout4Custom.ini):
 - the starting state, and the full state again on every game load;
-- every change in how many of each watched CLM item the player carries (loose mods, unlock holotapes);
-- every unlock perk gained or lost;
-- every change to a CLM configuration global (what the configuration holotape sets);
-- every change to the player's watched actor values (e.g. jump height, speed: shows a legendary taking effect);
-- workbench and Pip-Boy menus opening and closing (the game pauses scripts in most menus, so changes made inside
-  one are logged just after it closes).
-Vanilla Papyrus cannot read names, so forms are logged by ID: tools/debug/read_log.py translates them.}
+- every watched CLM item (loose mods, unlock holotapes, catalysts) the player gains or loses, with the container it
+  came from or went to and the new count;
+- every kill by the player, and whether the target was a starred legendary (to match drops to kills);
+- every watched perk gained or lost, every change to a CLM configuration global, and every change to the player's
+  watched actor values (e.g. jump height: shows a legendary taking effect);
+- workbench, Pip-Boy and terminal menus opening and closing (the game pauses scripts in most menus, so changes made
+  inside one are logged just after it closes).
+Vanilla Papyrus cannot read names, so forms are logged by ID: debug/read_log.py translates them.}
 
 Form[] Property WatchItems Auto Const
 Perk[] Property WatchPerks Auto Const
@@ -17,11 +18,11 @@ ActorValue[] Property WatchValues Auto Const
 float Property Interval = 0.5 Auto Const
 
 string LogName = "CLM"
-int[] itemCounts
 bool[] perkStates
 float[] globalValues
 float[] actorValues
 bool started
+Keyword legendaryKeyword
 
 Event OnInit()
 	; a start-game-enabled quest runs OnInit twice (as it is created and as it starts): record once
@@ -31,11 +32,21 @@ Event OnInit()
 	started = True
 	Debug.OpenUserLog(LogName)
 	Log("recorder started")
-	Snapshot()
-	RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
+	Actor player = Game.GetPlayer()
+	legendaryKeyword = Game.GetFormFromFile(0x001CF26C, "Fallout4.esm") as Keyword  ; EncTypeLegendary
+	int i = 0
+	While i < WatchItems.Length
+		AddInventoryEventFilter(WatchItems[i])
+		i += 1
+	EndWhile
+	RegisterForRemoteEvent(player, "OnItemAdded")
+	RegisterForRemoteEvent(player, "OnItemRemoved")
+	RegisterForRemoteEvent(player, "OnKill")
+	RegisterForRemoteEvent(player, "OnPlayerLoadGame")
 	RegisterForMenuOpenCloseEvent("ExamineMenu")     ; weapon/armour workbench
 	RegisterForMenuOpenCloseEvent("PipboyMenu")
 	RegisterForMenuOpenCloseEvent("TerminalMenu")    ; includes holotapes played on the Pip-Boy
+	Snapshot()
 	StartTimer(Interval)
 EndEvent
 
@@ -44,6 +55,22 @@ Event Actor.OnPlayerLoadGame(Actor akSender)
 	Log("game loaded")
 	Snapshot()
 	StartTimer(Interval)
+EndEvent
+
+Event ObjectReference.OnItemAdded(ObjectReference akSender, Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akSourceContainer)
+	Log("item gained " + aiItemCount + " x " + akBaseItem + " from " + akSourceContainer + " (now " + akSender.GetItemCount(akBaseItem) + ")")
+EndEvent
+
+Event ObjectReference.OnItemRemoved(ObjectReference akSender, Form akBaseItem, int aiItemCount, ObjectReference akItemReference, ObjectReference akDestContainer)
+	Log("item lost " + aiItemCount + " x " + akBaseItem + " to " + akDestContainer + " (now " + akSender.GetItemCount(akBaseItem) + ")")
+EndEvent
+
+Event Actor.OnKill(Actor akSender, Actor akVictim)
+	string kind = "normal"
+	If legendaryKeyword && akVictim.HasKeyword(legendaryKeyword)
+		kind = "LEGENDARY"
+	EndIf
+	Log("kill " + kind + " " + akVictim.GetActorBase() + " " + akVictim)
 EndEvent
 
 Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
@@ -63,14 +90,12 @@ EndEvent
 ; Record the current state in full and remember it.
 Function Snapshot()
 	Actor player = Game.GetPlayer()
-	itemCounts = new int[0]
 	perkStates = new bool[0]
 	globalValues = new float[0]
 	actorValues = new float[0]
 	int i = 0
 	While i < WatchItems.Length
 		int n = player.GetItemCount(WatchItems[i])
-		itemCounts.Add(n)
 		If n > 0
 			Log("  carrying " + n + " x " + WatchItems[i])
 		EndIf
@@ -101,22 +126,13 @@ Function Snapshot()
 	EndWhile
 EndFunction
 
-; Log anything that changed since the last check.
+; Log anything polled that changed since the last check (items are logged by their events instead).
 Function Check()
-	If itemCounts == None
+	If perkStates == None
 		Return
 	EndIf
 	Actor player = Game.GetPlayer()
 	int i = 0
-	While i < WatchItems.Length
-		int n = player.GetItemCount(WatchItems[i])
-		If n != itemCounts[i]
-			Log("item " + WatchItems[i] + ": " + itemCounts[i] + " -> " + n)
-			itemCounts[i] = n
-		EndIf
-		i += 1
-	EndWhile
-	i = 0
 	While i < WatchPerks.Length
 		bool has = player.HasPerk(WatchPerks[i])
 		If has != perkStates[i]

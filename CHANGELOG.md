@@ -17,6 +17,19 @@
   **auto-stimpak** effects used Far Harbor scripts; they now use CLM's own copies, which behave identically.
 
 ### New
+- **Loot mode** (configuration holotape: "Loot version - Hunt for legendaries"; was "No-craft version / WIP" in
+  1.09, now finished). CLM legendaries stop being craftable from the start and drop instead, from any enemy you kill
+  (vanilla, DLC or modded), with starred legendary enemies dropping far more:
+  - **Loose mods:** every legendary can drop as an item. Attach it at a workbench; it is used up instead of
+    components.
+  - **CLM holotapes:** 112 of them, one per family of legendaries (e.g. Jumpy, Cold, Savage). Carry one to craft its
+    whole family.
+  - **Legendary Cores:** rare items (one for weapons, one for armour) needed to craft OP legendaries.
+  - **Drop rate:** "Loot version - Drop rate" offers Low, Standard (default) and Higher. Rarity tiers (common,
+    uncommon, rare, OP) are listed in docs/LOOT_PLAN.md. With Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1%
+    per kill.
+  - DLC legendaries drop only with their add-on installed, without raising the overall drop rate.
+  - To go back to crafting, run a Starting Configuration on the Free or Costly version page.
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.
 
