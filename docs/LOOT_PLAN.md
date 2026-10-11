@@ -5,9 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft. Families whose legendaries need a DLC keep their holotape in that DLC's add-on.
 
-**561 legendaries in 112 families.** Tiers: common 127, uncommon 206, rare 65, OP 163.
-
-**For the author:** these are not flagged OP but are as strong as OP legendaries; in loot they are rare. Should they be flagged OP (which also hides them under "Balanced only")? Savage, Savage (Limited), Silently Savage (Limited), Caged Savage, Deathly Silenced, Murderously Silenced, Havoc (all 8), Performance Center, Burning Hellish, Face Bustin', One Punch Man's, Searing.
+**561 legendaries in 112 families.** Tiers: common 127, uncommon 206, rare 46, OP 182.
 
 Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouch) (unfinished draft, no recipe), ALM: A - Test (test item, stays craftable), CQC (unfinished draft, no recipe), ALM: A - Test (test item, stays craftable).
 
@@ -20,7 +18,7 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Backstabbing | main | Backstabbing (uncommon); Joker's Gas (uncommon) |
 | BioReactive Explosive | main | BioReactive Explosive (Cryo) (uncommon); BioReactive Explosive (Explosive) (uncommon); BioReactive Explosive (Fire) (uncommon); BioReactive Explosive (Nuclear) (uncommon); BioReactive Explosive (Plasma) (uncommon); BioReactive Explosive (Pulse) (uncommon) |
 | Bleeding | main | Lesser Bleeding (common); Greater Bleeding (uncommon); Woundingly Enraging (uncommon); Woundingly Instigating (uncommon) |
-| Brawn | main | Face Bustin' (rare); Grand Slam (Melee) (OP); Titan's Wrath (OP) |
+| Brawn | main | Face Bustin' (OP); Grand Slam (Melee) (OP); Titan's Wrath (OP) |
 | Cold | main | Slightly Freezing (common); Chilling (uncommon); Mr. Freeze's (OP) |
 | Concentratin' | main | Concentratin' (Brief) (common); Time Father's Bashful (Brief) (common); Concentratin' Intensely (Brief) (uncommon); Critically Concentratin' (uncommon); Concentratin' Harder (OP); Concentratin' Intensely (OP); Time Father's Bashful (OP) |
 | Curios | main | Lorenzo's Legendary Artificial (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); Liar's Compedium (OP) |
@@ -28,15 +26,15 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Disintegratin' | main | Disintegratin' (Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Red) (uncommon) |
 | Elemental | main | Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
 | Energized | main | Energized (Blue Laser) (common); Energized (Deep Blue Laser) (common); Energized (Gauss) (common); Energized (Gold Laser) (common); Energized (Green Laser) (common); Energized (Orange Laser) (common); Energized (Pink Laser) (common); Energized (Plasma) (common); Energized (Purple Laser) (common); Energized (Red Laser) (common) |
-| Energy | main | Improved Plasma Infused (common); Searing (rare); Apotheistic (OP) |
-| Fire | main | Burning (common); Incendiary Striking (common); Hinokagutsuchi (uncommon); Burning Hellish (rare) |
+| Energy | main | Improved Plasma Infused (common); Apotheistic (OP); Searing (OP) |
+| Fire | main | Burning (common); Incendiary Striking (common); Hinokagutsuchi (uncommon); Burning Hellish (OP) |
 | Forbidden (weapon) | main | Cheater's (OP); Suicidal (OP); Zeus Crafted (OP) |
 | Forcible | main | Forcible (uncommon); Deadlier Forcible (OP); Lethally Forcible (OP) |
 | Fury | main | Fury (OP); Wrathful (OP) |
 | Garm's | main | Garm's (OP); Garm's (Limited) (OP) |
 | Gauss conversions | main | Compressed Vortex Synthesized. (OP); Explosively Striking (OP); Street Cleaner's (OP); True Seeker (OP) |
 | Gunslingers | main | Generically 80s Action Hero's (uncommon); Gunslanger's (rare); Gunslinger's (OP) |
-| Havoc | main | Havoc (Blue Laser) (rare); Havoc (Blue Laser) (rare); Havoc (Bullets) (rare); Havoc (Bullets) (rare); Havoc (Plasma) (rare); Havoc (Plasma) (rare); Havoc (Red Laser) (rare); Havoc (Red Laser) (rare) |
+| Havoc | main | Havoc (Blue Laser) (OP); Havoc (Blue Laser) (OP); Havoc (Bullets) (OP); Havoc (Bullets) (OP); Havoc (Plasma) (OP); Havoc (Plasma) (OP); Havoc (Red Laser) (OP); Havoc (Red Laser) (OP) |
 | Heavy hitters | main | Devastating (common); Commando's (uncommon); Lucky Drawin' (uncommon); Widowmakin' (uncommon); Roid Ragin' (OP); Suppressin' (OP) |
 | Hurtin' | main | Hurtin' (100%) (common); Hurtin' (150%) (uncommon); Hurtin' (200%) (rare); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP) |
 | Hydra's Fang | main | Hydra's Bite (OP); Hydra's Fanged. (OP); Hydra's Serrated-fanged (OP); Hydra's Twin-fanged (OP) |
@@ -53,7 +51,7 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Operator's | main | Fiery Operator's (uncommon); Operator's Balanced (uncommon); Operator's Enhanced Arsenal (rare) |
 | Ordnance | main | Crazily Explosive (OP); Game Crashin' (OP); MIRV Converted (OP); Napalmin' (OP); Nukin' (OP) |
 | Paintball | Far Harbor | Paintball (Blue) (common); Paintball (Green) (common); Paintball (Orange) (common); Paintball (Red) (common); Paintball (White) (common); Paintball (Yellow) (common) |
-| Performance tuning | main | Compacted (common); Crippingly Rapid (common); Prototype Optimized (common); Hustlin' (uncommon); Performance Center (rare); Improved Performance Center (OP); Many Barreled Optimised (OP) |
+| Performance tuning | main | Compacted (common); Crippingly Rapid (common); Prototype Optimized (common); Hustlin' (uncommon); Improved Performance Center (OP); Many Barreled Optimised (OP); Performance Center (OP) |
 | Poison and acid | main | Acidic (common); Greater Poisoning (common) |
 | Pushing | main | Pushing (Ranged) (common); Explosively Pushing (Ranged) (uncommon) |
 | Pyrotechnical | Contraptions Workshop | Pyrotechnical (Blue) (common); Pyrotechnical (Gold) (common); Pyrotechnical (Green) (common); Pyrotechnical (Minutemen Flare) (common); Pyrotechnical (Pink) (common); Pyrotechnical (Red) (common); Pyrotechnical (Silver) (common); Pyrotechnical (Yellow) (common); Pyrotechnical (Crackle) (OP) |
@@ -64,7 +62,7 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Relentless | main | Communicatin' (uncommon); Purely Purging (OP); Raging (OP) |
 | Rocketin' | main | Rocketin' (uncommon); Rocketin' (Cryo) (uncommon); Rocketin' (Fire) (uncommon); Rocketin' (Plasma) (uncommon); Rocketin' (Pulse) (uncommon) |
 | RoomClearing | main | Room Clearing (OP) |
-| Savage | main | Caged Savage (rare); Deathly Silenced (rare); Murderously Silenced (rare); Savage (rare); Savage (Limited) (rare); Silently Savage (Limited) (rare); Special Operator's (OP) |
+| Savage | main | Caged Savage (OP); Deathly Silenced (OP); Murderously Silenced (OP); Savage (OP); Savage (Limited) (OP); Silently Savage (Limited) (OP); Special Operator's (OP) |
 | Scattering | main | Scattering (Blue Laser) (uncommon); Scattering (Plasma) (uncommon); Scattering (Red Laser) (uncommon) |
 | Seekin' | main | Seekin' (uncommon); Seekin' (Cryo) (uncommon); Seekin' (Flame) (uncommon); Seekin' (Plasma) (uncommon) |
 | Shavka's Explosive Striking | main | Shavka's Explosive Striking (uncommon); Shavka's Explosive Striking (Cryo) (uncommon); Shavka's Explosive Striking (Fire) (uncommon); Shavka's Explosive Striking (Gauss) (uncommon); Shavka's Explosive Striking (Nuclear) (uncommon); Shavka's Explosive Striking (Plasma) (uncommon); Shavka's Explosive Striking (Pulse) (uncommon) |
@@ -121,7 +119,7 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Lucky Hittin' | main | Lucky Hittin' (10%) (uncommon); Lucky Hittin' (25%) (rare); Lucky Hittin' (100%) (OP); Lucky Hittin' (50%) (OP); Lucky Hittin' (75%) (OP) |
 | Murderous | main | Murderous (x3) (uncommon); Murderous (x5) (OP) |
 | Nimble | main | Nimble (50%) (common); Nimble (100%) (uncommon); Nimble (150%) (rare); Nimble (200%) (OP); Nimble (250%) (OP); Nimble (300%) (OP) |
-| One Punch Man's | main | One Punch Man's (rare) |
+| One Punch Man's | main | One Punch Man's (OP) |
 | Plating | main | Ballistic Protection (Basic) (common); Titanium (common); Advanced Titanium (uncommon); Ballistic Protection (Advanced) (uncommon); Ballistic Protection (Master-crafted) (rare); Admantium (OP); Spooky (OP) |
 | Power armour | main | Battery Regeneratin' (Slow) (common); Damage Conversion (Power Armor) (uncommon); Battery Regeneratin' (Extreme) (OP); Battery Regeneratin' (Normal) (OP); Enduring (OP) |
 | Punching | main | Punching (Disarm) (uncommon); Punching (Electrical) (uncommon); Punching (Fire) (uncommon); Punching (Freeze) (uncommon); Punching (Frenzy) (uncommon); Punching (Paralyze) (uncommon); Punching (Poison) (uncommon); Punching (Push) (uncommon); Punching (Radiation) (uncommon); Punching (Spook) (uncommon) |

@@ -164,17 +164,12 @@ TIER = {
     'Energized (Green Laser)': 'common', 'Energized (Blue Laser)': 'common', 'Energized (Orange Laser)': 'common',
     'Energized (Pink Laser)': 'common', 'Energized (Purple Laser)': 'common', 'Energized (Red Laser)': 'common',
     'Energized (Plasma)': 'common',
-    # Recoilless / Savage: not flagged OP by the author but OP-level (see docs/LOOT_PLAN.md)
     'Recoilless': 'common', "Bone Crushin'": 'common', 'Savage': 'rare', 'Savage (Limited)': 'rare',
     'Silently Savage (Limited)': 'rare', 'Caged Savage': 'rare', 'Deathly Silenced': 'rare',
     'Murderously Silenced': 'rare', 'Havoc (Bullets)': 'rare', 'Havoc (Blue Laser)': 'rare', 'Havoc (Plasma)': 'rare',
     'Havoc (Red Laser)': 'rare',
     "Concentratin' (Brief)": 'common', "Time Father's Bashful (Brief)": 'common',
 }
-# Not flagged OP by the author, but as strong as OP ones: listed in docs/LOOT_PLAN.md for the author to decide.
-LOOKS_OP = ['Savage', 'Savage (Limited)', 'Silently Savage (Limited)', 'Caged Savage', 'Deathly Silenced',
-            'Murderously Silenced', 'Havoc (all 8)', 'Performance Center', 'Burning Hellish', "Face Bustin'",
-            "One Punch Man's", 'Searing']
 TIERS = ('common', 'uncommon', 'rare')
 RARE_SPAWN = re.compile(r'Boss|Behemoth|Queen|King|Kellog|Courser|Ghoulrilla|PALegendary|Glowing One', re.I)
 
@@ -258,9 +253,6 @@ def main():
         '',
         f'**{len(rows)} legendaries in {len(members)} families.** Tiers: ' +
         ', '.join(f'{t} {counts[t]}' for t in TIERS + ('OP',)) + '.',
-        '',
-        '**For the author:** these are not flagged OP but are as strong as OP legendaries; in loot they are rare. '
-        'Should they be flagged OP (which also hides them under "Balanced only")? ' + ', '.join(LOOKS_OP) + '.',
         '',
         'Left out of loot: ' + ', '.join(f"{clean(r['name'])} ({'test item, stays craftable' if r['family'] == 'Test' else 'unfinished draft, no recipe'})"
                                           for r in excluded) + '.',

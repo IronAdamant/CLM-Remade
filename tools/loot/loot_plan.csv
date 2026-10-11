@@ -102,7 +102,7 @@ Nimble,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor
 Nimble,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Nimble_200,Nimble (200%),OP,Custom Legendary Modifications Remade.esp
 Nimble,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Nimble_250,Nimble (250%),OP,Custom Legendary Modifications Remade.esp
 Nimble,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Nimble_300,Nimble (300%),OP,Custom Legendary Modifications Remade.esp
-One Punch Man's,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_OnePunchMans,One Punch Man's,rare,Custom Legendary Modifications Remade.esp
+One Punch Man's,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_OnePunchMans,One Punch Man's,OP,Custom Legendary Modifications Remade.esp
 Plating,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_BallisticProtection_50P,Ballistic Protection (Basic),common,Custom Legendary Modifications Remade.esp
 Plating,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Titanium,Titanium,common,Custom Legendary Modifications Remade.esp
 Plating,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_BallisticProtection_100P,Ballistic Protection (Advanced),uncommon,Custom Legendary Modifications Remade.esp
@@ -182,7 +182,7 @@ Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_We
 Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_GreaterBleeding,Greater Bleeding,uncommon,Custom Legendary Modifications Remade.esp
 Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_WoundinglyEnraging,Woundingly Enraging,uncommon,Custom Legendary Modifications Remade.esp
 Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_WoundinglyInstigating,Woundingly Instigating,uncommon,Custom Legendary Modifications Remade.esp
-Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_FaceBusting,Face Bustin',rare,Custom Legendary Modifications Remade.esp
+Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_FaceBusting,Face Bustin',OP,Custom Legendary Modifications Remade.esp
 Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_GrandSlam,Grand Slam (Melee),OP,Custom Legendary Modifications Remade.esp
 Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_TitansWrath,Titan's Wrath,OP,Custom Legendary Modifications Remade.esp
 Cold,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_SlightFreeze,Slightly Freezing,common,Custom Legendary Modifications Remade.esp
@@ -227,12 +227,12 @@ Energized,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_W
 Energized,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Energized_Laser_Red,Energized (Red Laser),common,Custom Legendary Modifications Remade.esp
 Energized,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Energized_Plasma,Energized (Plasma),common,Custom Legendary Modifications Remade.esp
 Energy,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_ImprovedPlasmaIInfused,Improved Plasma Infused,common,Custom Legendary Modifications Remade.esp
-Energy,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Searing,Searing,rare,Custom Legendary Modifications Remade.esp
 Energy,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Apotheistic,Apotheistic,OP,Custom Legendary Modifications Remade.esp
+Energy,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Searing,Searing,OP,Custom Legendary Modifications Remade.esp
 Fire,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Burning,Burning,common,Custom Legendary Modifications Remade.esp
 Fire,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_IncendiaryStriking,Incendiary Striking,common,Custom Legendary Modifications Remade.esp
 Fire,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Hinokagutsuchi,Hinokagutsuchi,uncommon,Custom Legendary Modifications Remade.esp
-Fire,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_BurningHellish,Burning Hellish,rare,Custom Legendary Modifications Remade.esp
+Fire,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_BurningHellish,Burning Hellish,OP,Custom Legendary Modifications Remade.esp
 Forbidden (weapon),weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Cheaters,Cheater's,OP,Custom Legendary Modifications Remade.esp
 Forbidden (weapon),weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Suicidal,Suicidal,OP,Custom Legendary Modifications Remade.esp
 Forbidden (weapon),weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_ZeusCrafted,Zeus Crafted,OP,Custom Legendary Modifications Remade.esp
@@ -250,14 +250,14 @@ Gauss conversions,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Leg
 Gunslingers,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Generically80sActionHero,Generically 80s Action Hero's,uncommon,Custom Legendary Modifications Remade.esp
 Gunslingers,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Gunslangers,Gunslanger's,rare,Custom Legendary Modifications Remade.esp
 Gunslingers,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Gunslinger,Gunslinger's,OP,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Base_Bullets,Havoc (Bullets),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Base_Bullets_Limited,Havoc (Bullets),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_LtBlueLaser,Havoc (Blue Laser),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_LtBlueLaser_Limited,Havoc (Blue Laser),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_Plasma,Havoc (Plasma),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_Plasma_Limited,Havoc (Plasma),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser,Havoc (Red Laser),rare,Custom Legendary Modifications Remade.esp
-Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser_Limited,Havoc (Red Laser),rare,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Base_Bullets,Havoc (Bullets),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Base_Bullets_Limited,Havoc (Bullets),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_LtBlueLaser,Havoc (Blue Laser),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_LtBlueLaser_Limited,Havoc (Blue Laser),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_Plasma,Havoc (Plasma),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_Plasma_Limited,Havoc (Plasma),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser,Havoc (Red Laser),OP,Custom Legendary Modifications Remade.esp
+Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser_Limited,Havoc (Red Laser),OP,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Devastating,Devastating,common,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Commandos,Commando's,uncommon,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_LucksDrawing,Lucky Drawin',uncommon,Custom Legendary Modifications Remade.esp
@@ -332,9 +332,9 @@ Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Le
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Crippingly_Rapid,Crippingly Rapid,common,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_PrototypeOptimized,Prototype Optimized,common,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Hustling,Hustlin',uncommon,Custom Legendary Modifications Remade.esp
-Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Custom_PerformanceCenter,Performance Center,rare,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_ImprovedPerformanceCenter,Improved Performance Center,OP,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized,Many Barreled Optimised,OP,Custom Legendary Modifications Remade.esp
+Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Custom_PerformanceCenter,Performance Center,OP,Custom Legendary Modifications Remade.esp
 Poison and acid,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Acidic,Acidic,common,Custom Legendary Modifications Remade.esp
 Poison and acid,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_NastierPoisoning,Greater Poisoning,common,Custom Legendary Modifications Remade.esp
 Pushing,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Pushing_Base_Basic,Pushing (Ranged),common,Custom Legendary Modifications Remade.esp
@@ -380,12 +380,12 @@ Rocketin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_W
 Rocketin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Rocketing_Variant_Plasma,Rocketin' (Plasma),uncommon,Custom Legendary Modifications Remade.esp
 Rocketin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Rocketing_Variant_Pulse,Rocketin' (Pulse),uncommon,Custom Legendary Modifications Remade.esp
 RoomClearing,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RoomClearing,Room Clearing,OP,Custom Legendary Modifications Remade.esp
-Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Caged_Savage,Caged Savage,rare,Custom Legendary Modifications Remade.esp
-Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Savage,Savage (Limited),rare,Custom Legendary Modifications Remade.esp
-Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Silent_Savage,Silently Savage (Limited),rare,Custom Legendary Modifications Remade.esp
-Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_DeathlySilenced,Deathly Silenced,rare,Custom Legendary Modifications Remade.esp
-Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_MurderouslySilenced,Murderously Silenced,rare,Custom Legendary Modifications Remade.esp
-Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Savage,Savage,rare,Custom Legendary Modifications Remade.esp
+Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Caged_Savage,Caged Savage,OP,Custom Legendary Modifications Remade.esp
+Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Savage,Savage (Limited),OP,Custom Legendary Modifications Remade.esp
+Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Limited_Variant_Silent_Savage,Silently Savage (Limited),OP,Custom Legendary Modifications Remade.esp
+Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_DeathlySilenced,Deathly Silenced,OP,Custom Legendary Modifications Remade.esp
+Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_MurderouslySilenced,Murderously Silenced,OP,Custom Legendary Modifications Remade.esp
+Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Savage,Savage,OP,Custom Legendary Modifications Remade.esp
 Savage,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_SpecialOps,Special Operator's,OP,Custom Legendary Modifications Remade.esp
 Scattering,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Scattering_Base_RedLaser,Scattering (Red Laser),uncommon,Custom Legendary Modifications Remade.esp
 Scattering,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Scattering_Variant_LtBlueLaser,Scattering (Blue Laser),uncommon,Custom Legendary Modifications Remade.esp
