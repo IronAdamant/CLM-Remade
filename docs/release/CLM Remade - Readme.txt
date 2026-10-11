@@ -6,7 +6,8 @@ Everything is set up in game, at any chemistry station (or with the configuratio
 
 
 REQUIREMENTS
-- Fallout 4. The main mod needs no DLC and no script extender (F4SE).
+- Fallout 4. The main mod needs no DLC and no script extender (F4SE). Works on every PC game version, the current
+  one and older ones (1.10.163 and earlier): its archives use the format both can read.
 - Optional add-ons, one per DLC, for the legendaries that use that DLC's creatures, art or effects:
     CLM - Automatron.esp     Automatron: robot-spawning legendaries
     CLM - Far Harbor.esp     Far Harbor: creature and Trapper spawns, Paintball, Trappin', Moby-Dick's,

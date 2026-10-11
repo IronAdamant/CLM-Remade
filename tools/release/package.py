@@ -15,6 +15,11 @@ The Creation Kit's Bethesda.net upload looks for the Xbox versions as "- Main_xb
                                Mod Configuration Menu; loose files, as MCM reads its menu from loose files). Nexus
                                only: the Bethesda.net uploads (PC/, Xbox/) never include it.
 The debug recorder (debug/) is a testing tool and never packaged.
+
+PC archives are stamped BA2 version 1. The Creation Kit's Archive2 (next-gen update, 2024) writes version 8, which
+game versions before that update (1.10.163 and older, still widely played) silently ignore - no scripts, no
+textures. Versions 1, 7 and 8 share the same layout for Fallout 4 (only the number differs) and the current game
+reads version 1, so v1 archives work on every PC version. Xbox archives stay as written (consoles are always current).
 """
 from __future__ import annotations
 
@@ -58,6 +63,15 @@ def archive2(game: Path, root: Path, folders: list[str], out: Path, fmt: str, co
                         f'-format={fmt}', f'-compression={compression}', '-quiet'], capture_output=True, text=True)
     if r.returncode != 0 or not out.exists():
         raise SystemExit(f'Archive2 failed for {out.name}:\n{r.stdout}\n{r.stderr}')
+
+
+def stamp_v1(path: Path) -> None:
+    """Mark a Fallout 4 BA2 as version 1 so pre-next-gen game versions load it (layout is unchanged)."""
+    with open(path, 'r+b') as f:
+        head = f.read(8)
+        assert head[:4] == b'BTDX' and int.from_bytes(head[4:8], 'little') in (1, 7, 8), (path, head)
+        f.seek(4)
+        f.write((1).to_bytes(4, 'little'))
 
 
 def fomod(version: str) -> tuple[str, str]:
@@ -134,6 +148,9 @@ def main():
         out = DIST / platform
         archive2(game, root, ['Scripts', 'Meshes'], out / f'{STEM} - Main{suffix}.ba2', 'General', comp)
         archive2(game, root, ['Textures'], out / f'{STEM} - Textures{suffix}.ba2', tex_fmt, comp)
+        if platform == 'PC':
+            for name in (f'{STEM} - Main.ba2', f'{STEM} - Textures.ba2'):
+                stamp_v1(out / name)
         for plugin in [MAIN] + [p for p, _, _ in ADDONS]:
             shutil.copy(DATA / plugin, out / plugin)
     zpath = DIST / f'CLM Remade {a.version}.zip'
