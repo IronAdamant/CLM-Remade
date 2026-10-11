@@ -1,0 +1,21 @@
+# Keltas' Factorium crashed vanilla weapons the moment they fired (author's own warning since 1.09; crash log
+# 2026-10-12: null read in WeaponFire). It set the weapon's Ammo to NULL; Energized does the same but also
+# overrides the projectile, which Keltas does not, so the game looks up a projectile through a missing ammo.
+# Author's decision: make it safe. Keep the ammo; the magazine refills itself when it runs dry (the same 100%
+# Refilling enchantment as Synthesised Factorium) and holds twice as many rounds (what sets Keltas apart).
+prop.remove | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Flawed | Ammo
+prop.remove | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Rapid | Ammo
+prop.remove | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Specialised | Ammo
+prop.remove | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Perfect | Ammo
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Flawed | Enchantments | ADD | 431 | A1ALMOMOD_Legendary_Weapon_SynthFactorium_Rapid | @A1ALMEnch_Constant_Effect_Perk_Refilling_100P
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Rapid | Enchantments | ADD | 431 | A1ALMOMOD_Legendary_Weapon_SynthFactorium_Rapid | @A1ALMEnch_Constant_Effect_Perk_Refilling_100P
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Specialised | Enchantments | ADD | 431 | A1ALMOMOD_Legendary_Weapon_SynthFactorium_Rapid | @A1ALMEnch_Constant_Effect_Perk_Refilling_100P
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Perfect | Enchantments | ADD | 431 | A1ALMOMOD_Legendary_Weapon_SynthFactorium_Rapid | @A1ALMEnch_Constant_Effect_Perk_Refilling_100P
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Flawed | AmmoCapacity | MUL+ADD | 1.0 | A1ALMOMOD_Legendary_Weapon_HeavilyOrdnanced
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Rapid | AmmoCapacity | MUL+ADD | 1.0 | A1ALMOMOD_Legendary_Weapon_HeavilyOrdnanced
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Specialised | AmmoCapacity | MUL+ADD | 1.0 | A1ALMOMOD_Legendary_Weapon_HeavilyOrdnanced
+prop.add | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Perfect | AmmoCapacity | MUL+ADD | 1.0 | A1ALMOMOD_Legendary_Weapon_HeavilyOrdnanced
+text.set | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Flawed | DESC | Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile, though your weapon will shoot 25% slower and the damage will be 50% weaker due to the flawed process within the weapon. (Does not work together with rank 4 of the Scrounger perk.)
+text.set | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Rapid | DESC | Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile. You reload faster due to significantly improved processes in the factorium, though not yet perfected. (Does not work together with rank 4 of the Scrounger perk.)
+text.set | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Specialised | DESC | Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile. Due to the specialized classified procedures, your weapon gains 100% accuracy and range and will not recoil per shot. (Does not work together with rank 4 of the Scrounger perk.)
+text.set | A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Perfect | DESC | Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile. The perfected process makes your weapon shoot 25% faster and deal double damage. (Does not work together with rank 4 of the Scrounger perk.)
