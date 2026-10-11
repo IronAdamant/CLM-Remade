@@ -6,7 +6,7 @@ Builds into the plugins in the game's Data folder (main plugin and add-ons), saf
 - per family: an unlock holotape (MISC, weightless). Carrying it shows the family's unlocked recipes.
 - per legendary: a loose mod (MISC, linked from the legendary's LNAM like vanilla loose mods) and an unlocked recipe
   (copy of the costly recipe) with conditions
-      GetItemCount(A1ALMSET_ModeLoot) >= 1             loot mode (setting item, tools/config/settings.py)
+      loot mode on (Loot mode item carried, or its global set by the F4SE menu - tools/config/settings.py)
       GetItemCount(family holotape) >= 1   OR         unlocked...
       GetItemCount(loose mod) >= 1                    ...or the player found this legendary
   (the engine groups ORs before ANDs). OP recipes also take one catalyst (weapon or armour).
@@ -204,6 +204,8 @@ def lvli(Subrecord, entries: list[tuple[int, int]], flags: int, chance_none: int
 def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
     from ack.plugin import Plugin
     from ack.plugin.records import Subrecord
+    sys.path.insert(0, str(REPO / 'tools' / 'config'))
+    from settings import ITEMS, setting_global, on_conds, off_conds   # not at import: settings imports this module
     main = Plugin.load(data / MAIN)
     plugins = {MAIN: main}
     for a in ADDONS:
@@ -219,6 +221,12 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
         r = main.by_edid(edid)
         assert r is not None, edid
         return (p.masters.index(MAIN) << 24) | (r.formid & 0xFFFFFF)
+
+    name = MAIN
+
+    def setting(key: str, on: bool) -> list[bytes]:
+        """setting on/off, as seen from the plugin being written (name)"""
+        return (on_conds if on else off_conds)(ref(name, ITEMS[key][0]), ref(name, setting_global(key)))
 
     def set_subs(rec, subs):
         edid = rec.subrecords[0]
@@ -243,7 +251,7 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
             loose = ref(name, loose_edid(r['edid']))
             subs = [s for s in rec.subrecords if s.sig != 'CTDA']
             at = next(i for i, s in enumerate(subs) if s.sig == 'CNAM')  # conditions go before CNAM
-            subs[at:at] = [Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, ref(name, SETTING_LOOT))),
+            subs[at:at] = [*[Subrecord('CTDA', d) for d in setting('loot', True)],
                            Subrecord('CTDA', ctda(OP_GE | FLAG_OR, 1.0, FN_GET_ITEM_COUNT, hol)),
                            Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, loose))]
             if r['tier'] == 'OP':
@@ -291,10 +299,9 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
                      lvli(Subrecord, [(d, LEGENDARY_ROLLS) for d in drops[rate]],
                           LVLF_ALL_LEVELS | LVLF_USE_ALL | LVLF_EACH_IN_COUNT))
         # perk: hidden, one rank; per drop rate two "Add Leveled List On Death" entries (normal, legendary target)
-        loot, low, high = (ref(name, e) for e in (SETTING_LOOT, SETTING_LOW, SETTING_HIGH))
-        rate_conds = {'Low': [ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, low)],
-                      'Standard': [ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, low), ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, high)],
-                      'Higher': [ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, low), ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, high)]}
+        rate_conds = {'Low': setting('low', True),
+                      'Standard': setting('low', False) + setting('high', False),
+                      'Higher': setting('low', False) + setting('high', True)}
         subs = [Subrecord('FULL', f'CLM Loot ({name})'.encode('cp1252') + b'\0'), Subrecord('DESC', b'\0'),
                 Subrecord('DATA', bytes([0, 0, 1, 0, 1]))]  # trait, level, ranks, playable, hidden
         entries = [(rate, legendary, f'{pre}LL_Drop_{"Legendary" if legendary else "Normal"}_{rate}')
@@ -303,7 +310,7 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
             subs += [Subrecord('PRKE', bytes([2, 0, 0])),           # entry point, rank 0, priority 0
                      Subrecord('DATA', bytes([9, 8, 2])),           # Add Leveled List On Death, Add Leveled List, 2 tabs
                      Subrecord('PRKC', b'\0'),                      # tab 0: perk owner (the player)
-                     Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, loot)),
+                     *[Subrecord('CTDA', c) for c in setting('loot', True)],
                      *[Subrecord('CTDA', c) for c in rate_conds[rate]],
                      Subrecord('PRKC', b'\1'),                      # tab 1: the target
                      Subrecord('CTDA', ctda(OP_EQ, float(legendary), FN_HAS_KEYWORD, ENC_TYPE_LEGENDARY)),

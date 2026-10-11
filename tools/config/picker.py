@@ -14,9 +14,10 @@ Selectors of families that are entirely OP are also listed under "CLM OP" (a rec
 in both) and need Show OP; families that are entirely spawning or perk-style follow those settings too. No scripts:
 works on PlayStation.
 
-Each workbench recipe gets, in front of its own conditions:
-    GetItemCount(Picker mode) == 0   OR
-    GetItemCount(family selector) >= 1
+Each workbench recipe gets, in front of its own conditions (each pick and Picker mode is also a global, set by the
+optional F4SE menu instead of carrying items; see tools/config/settings.py):
+    GetItemCount(Picker mode) == 0  OR  GetItemCount(family selector) >= 1  OR  GetGlobalValue(family pick) == 1
+    GetGlobalValue(Picker mode) == 0  OR  GetItemCount(family selector) >= 1  OR  GetGlobalValue(family pick) == 1
 """
 from __future__ import annotations
 
@@ -31,7 +32,8 @@ REPO = HERE.parents[1]
 sys.path.insert(0, str(REPO / 'tools' / 'loot'))
 sys.path.insert(0, str(HERE))
 import generate  # noqa: E402
-from settings import ITEMS, ctda, FN_GET_ITEM_COUNT, OP_EQ, OP_GE, FLAG_OR  # noqa: E402
+from settings import (ITEMS, ctda, FN_GET_ITEM_COUNT, FN_GET_GLOBAL_VALUE, OP_EQ, OP_GE, FLAG_OR,  # noqa: E402
+                      MCM_GLOBAL, setting_global, on_conds, off_conds)
 
 MAIN = generate.MAIN
 PLUGINS = [MAIN, *generate.ADDONS]
@@ -83,6 +85,11 @@ def keyword(category: str) -> str:
 
 def selector(kind: str, family: str) -> str:
     return f'A1ALMPICK_{kind.capitalize()}_{generate.slug(family)}'
+
+
+def pick_global(kind: str, family: str) -> str:
+    """The pick as a global (main plugin, every family): set by the F4SE menu"""
+    return f'A1ALMPICKG_{kind.capitalize()}_{generate.slug(family)}'
 
 
 def load_families() -> dict:
@@ -162,6 +169,8 @@ def write_raw(fams: dict, data: Path, ack: Path) -> None:
     selectors = {(name, ref(name, selector(*k), f['home'])) for k, f in fams.items() for name in plugins
                  if f['home'] in (name, MAIN)}
     picker = {name: ref(name, ITEMS['picker'][0]) for name in plugins}
+    picker_g = {name: ref(name, setting_global('picker')) for name in plugins}
+    pick_gs = {(name, ref(name, pick_global(*k))) for k in fams for name in plugins}
     needs = defaultdict(lambda: defaultdict(int))  # family -> settings key -> recipes requiring it
     total = defaultdict(int)
     changed = 0
@@ -177,16 +186,21 @@ def write_raw(fams: dict, data: Path, ack: Path) -> None:
             subs = c.subrecords
             conds = [s for s in subs if s.sig == 'CTDA']
             # drop earlier picker conditions (re-runs)
-            keep = [s for s in conds if not (struct.unpack_from('<H', s.data, 8)[0] == FN_GET_ITEM_COUNT and (
-                struct.unpack_from('<I', s.data, 12)[0] == picker[name] or
-                (name, struct.unpack_from('<I', s.data, 12)[0]) in selectors))]
+            def mine(s):
+                fn, p1 = struct.unpack_from('<H', s.data, 8)[0], struct.unpack_from('<I', s.data, 12)[0]
+                return fn == FN_GET_ITEM_COUNT and (p1 == picker[name] or (name, p1) in selectors) or                     fn == FN_GET_GLOBAL_VALUE and (p1 == picker_g[name] or (name, p1) in pick_gs)
+            keep = [s for s in conds if not mine(s)]
             total[fam] += 1
             for s in keep:
                 k = item_key.get((name, struct.unpack_from('<I', s.data, 12)[0]))
                 if k and struct.unpack_from('<H', s.data, 8)[0] == FN_GET_ITEM_COUNT:
                     needs[fam][(k, s.data[0] >> 5)] += 1
-            new = [Subrecord('CTDA', ctda(OP_EQ | FLAG_OR, 0.0, FN_GET_ITEM_COUNT, picker[name])),
-                   Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, ref(name, selector(*fam), fams[fam]['home'])))]
+            sel = ref(name, selector(*fam), fams[fam]['home'])
+            sel_g = ref(name, pick_global(*fam))
+            picked = [ctda(OP_GE | FLAG_OR, 1.0, FN_GET_ITEM_COUNT, sel), ctda(OP_EQ, 1.0, FN_GET_GLOBAL_VALUE, sel_g)]
+            new = [Subrecord('CTDA', d) for d in
+                   [ctda(OP_EQ | FLAG_OR, 0.0, FN_GET_ITEM_COUNT, picker[name])] + picked +
+                   [ctda(OP_EQ | FLAG_OR, 0.0, FN_GET_GLOBAL_VALUE, picker_g[name])] + picked]
             first = next(i for i, s in enumerate(subs) if s.sig == 'CTDA')
             rest = [s for s in subs if s.sig != 'CTDA']
             at = sum(1 for s in subs[:first] if s.sig != 'CTDA')
@@ -200,14 +214,15 @@ def write_raw(fams: dict, data: Path, ack: Path) -> None:
         p = plugins[home]
         item = ref(home, selector(kind, family), home)
         r = p.by_edid(f'co_{selector(kind, family)}')
-        conds = [ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, ref(home, ITEMS['picker'][0])),
-                 ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, item),
-                 ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, ref(home, ITEMS['loot'][0]))]
+        def setting(key: str, on: bool) -> list[bytes]:
+            return (on_conds if on else off_conds)(ref(home, ITEMS[key][0]), ref(home, setting_global(key)))
+        conds = [*setting('picker', True), ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, item), *setting('loot', False),
+                 ctda(OP_EQ, 0.0, FN_GET_GLOBAL_VALUE, ref(home, MCM_GLOBAL))]
         n = total[(kind, family)]
         all_op = n and needs[(kind, family)][('op', 3)] == n
-        for key, op, value in (('op', OP_GE, 1.0), ('noperk', OP_EQ, 0.0), ('nospawn', OP_EQ, 0.0)):
+        for key, op in (('op', OP_GE), ('noperk', OP_EQ), ('nospawn', OP_EQ)):
             if n and needs[(kind, family)][(key, op >> 5)] == n:
-                conds.append(ctda(op, value, FN_GET_ITEM_COUNT, ref(home, ITEMS[key][0])))
+                conds += setting(key, op == OP_GE)
         cats = [keyword(f['category'])] + ([keyword(OP_CATEGORY)] if all_op else [])
         text = (f'Show the {family.removeprefix("Spawn: ")} {"spawning " if family.startswith("Spawn: ") else ""}'
                 f'legendaries ({len(f["rows"])}) at the {"weapons" if kind == "weapon" else "armour"} workbench '

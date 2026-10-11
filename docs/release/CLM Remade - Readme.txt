@@ -64,11 +64,15 @@ F4SE MENU (OPTIONAL, PC ONLY)
 With F4SE and Mod Configuration Menu (MCM) installed, add the optional "CLM - MCM" download: everything is set
 from the pause menu (Mod Config > Custom Legendary Modifications) instead of holotapes.
 - Settings page: crafting mode (Costly / Free / Loot), drop rate, Show OP, Show variants, Hide perk-style /
-  spawning legendaries, Picker mode. It changes the same "CLM Setting" items as the chemistry station, so the menu,
-  the station and your inventory always agree.
+  spawning legendaries, Picker mode.
+- Legendary Picker page: switch on the families the workbench shows in Picker mode.
 - CLM Perks / Cheat Perks pages: add or remove any of the perk holotape's 110 perks.
+- Nothing to carry: no "CLM Setting" or "CLM Pick" items (any you already have are turned into menu settings), and
+  the chemistry station no longer lists them.
 - The holotapes are no longer given or craftable (and are taken back if you have them); turn "Holotapes" on in the
   menu to have them anyway.
+- Removing the add-on later? First press "Turn settings and picks back into items" (Settings page): everything goes
+  back to items, the chemistry station and the holotapes, as without F4SE.
 
 
 WHY THE CHEMISTRY STATION?

@@ -93,6 +93,27 @@ def ctda(op_flags: int, value: float, function: int, param1: int, run_on: int = 
     return struct.pack('<B3sfH2sIIIIi', op_flags, b'\0\0\0', value, function, b'\0\0', param1, 0, run_on, ref, -1)
 
 
+# F4SE menu (tools/config/mcm.py): each setting is also a global, so the menu needs no items in the inventory.
+# A setting is on when its item is carried OR its global is 1; off when neither. Without the menu every global stays
+# 0 and only the items count (Xbox, PlayStation). A1ALMMCM is 1 while the menu runs: the chemistry station then hides
+# the settings and picks (the menu has them).
+MCM_GLOBAL = 'A1ALMMCM'
+
+
+def setting_global(key: str) -> str:
+    return ITEMS[key][0].replace('A1ALMSET_', 'A1ALMSETG_')
+
+
+def on_conds(item: int, glob: int) -> list[bytes]:
+    """item carried OR global on (the engine groups ORs before ANDs)"""
+    return [ctda(OP_GE | FLAG_OR, 1.0, FN_GET_ITEM_COUNT, item), ctda(OP_EQ, 1.0, FN_GET_GLOBAL_VALUE, glob)]
+
+
+def off_conds(item: int, glob: int) -> list[bytes]:
+    """item not carried AND global off"""
+    return [ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, item), ctda(OP_EQ, 0.0, FN_GET_GLOBAL_VALUE, glob)]
+
+
 def build(ack: Path, spec_lines: list[str], extra: list[str] = ()) -> None:
     spec = HERE / 'settings.spec'
     spec.write_text('\n'.join(spec_lines) + '\n', encoding='utf8')
@@ -236,6 +257,8 @@ def cmd_items(ack: Path, game: Path) -> None:
                 conds.append(Subrecord('CTDA', ctda(OP_EQ, 0.0, FN_GET_ITEM_COUNT, fid(ITEMS[EXCLUSIVE[key]][0]))))
             if key in NEEDS:
                 conds.append(Subrecord('CTDA', ctda(OP_GE, 1.0, FN_GET_ITEM_COUNT, fid(ITEMS[NEEDS[key]][0]))))
+            if p.by_edid(MCM_GLOBAL) is not None:     # hidden while the F4SE menu runs
+                conds.append(Subrecord('CTDA', ctda(OP_EQ, 0.0, FN_GET_GLOBAL_VALUE, fid(MCM_GLOBAL))))
             r.subrecords[:] = [r.subrecords[0], *comps, Subrecord('DESC', text.encode('cp1252') + b'\0'), *conds,
                                Subrecord('CNAM', struct.pack('<I', item)), Subrecord('BNAM', struct.pack('<I', chem)),
                                Subrecord('FNAM', struct.pack('<I', kw.formid)), Subrecord('INTV', struct.pack('<HH', 1, 0))]
@@ -321,13 +344,77 @@ def cmd_conditions(ack: Path, game: Path) -> None:
         print(f'{name}: {changed} recipes now check setting items')
 
 
+def cmd_globals(ack: Path, game: Path) -> None:
+    """A global per setting and per pick (main plugin), A1ALMMCM; costly/FREE recipes' setting checks become
+    item-OR-global; chemistry station settings and picks hide while A1ALMMCM is 1. Then re-run tools/loot/generate.py
+    and tools/config/picker.py (they write their own conditions with on_conds/off_conds). Safe to re-run."""
+    sys.path.insert(0, str(ack))
+    from ack.plugin import Plugin
+    from ack.plugin.records import Subrecord
+    from picker import load_families, pick_global
+    data = game / 'Data'
+    fams = load_families()
+    globs = [MCM_GLOBAL] + [setting_global(k) for k in ITEMS] + [pick_global(*k) for k in sorted(fams)]
+    build(ack, [f'file | {MAIN}'] + [f'new | GLOB | {g}' for g in globs])
+
+    main_p = Plugin.load(data / MAIN)
+    for g in globs:
+        r = main_p.by_edid(g)
+        if r.get('FLTV') is None:   # new: 0 (an existing one keeps its value)
+            r.subrecords[:] = [r.subrecords[0], Subrecord('FNAM', b'f'), Subrecord('FLTV', struct.pack('<f', 0.0))]
+            r.mark_dirty()
+    for name in [MAIN] + ADDONS:
+        p = main_p if name == MAIN else Plugin.load(data / name)
+        idx = len(p.masters) if p is main_p else p.masters.index(MAIN)
+        see = lambda edid: (idx << 24) | (main_p.by_edid(edid).formid & 0xFFFFFF)
+        key_of = {see(ITEMS[k][0]): k for k in ITEMS if k != 'picker'}   # the picker writes its own
+        mcm = see(MCM_GLOBAL)
+        changed = 0
+        for c in p.records('COBJ'):
+            if not p.is_own(c.formid) or c.edid.endswith('_Unlocked'):
+                continue
+            subs = list(c.subrecords)
+            if c.edid.startswith(('co_A1ALMSET', 'co_A1ALMPICK')):     # chemistry station: hide with the menu
+                hide = ctda(OP_EQ, 0.0, FN_GET_GLOBAL_VALUE, mcm)
+                if not any(s.sig == 'CTDA' and s.data == hide for s in subs):
+                    at = next(i for i, s in enumerate(subs) if s.sig == 'CNAM')
+                    subs.insert(at, Subrecord('CTDA', hide))
+                    c.subrecords[:] = subs
+                    c.mark_dirty()
+                    changed += 1
+                continue
+            i, dirty = 0, False
+            while i < len(subs):
+                s = subs[i]
+                prev_or = i > 0 and subs[i - 1].sig == 'CTDA' and subs[i - 1].data[0] & FLAG_OR
+                if s.sig == 'CTDA' and struct.unpack_from('<H', s.data, 8)[0] == FN_GET_ITEM_COUNT \
+                        and not s.data[0] & FLAG_OR and not prev_or:
+                    k = key_of.get(struct.unpack_from('<I', s.data, 12)[0])
+                    if k is not None:
+                        glob = see(setting_global(k))
+                        has_glob = i + 1 < len(subs) and subs[i + 1].sig == 'CTDA' and \
+                            struct.unpack_from('<I', subs[i + 1].data, 12)[0] == glob
+                        if not has_glob:
+                            new = on_conds if s.data[0] >> 5 == OP_GE >> 5 else off_conds
+                            subs[i:i + 1] = [Subrecord('CTDA', d) for d in new(struct.unpack_from('<I', s.data, 12)[0], glob)]
+                            dirty = True
+                            i += 1
+                i += 1
+            if dirty:
+                c.subrecords[:] = subs
+                c.mark_dirty()
+                changed += 1
+        p.save(data / name)
+        print(f'{name}: {changed} recipes updated')
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--ack', required=True)
     ap.add_argument('--game', required=True)
-    ap.add_argument('step', choices=['items', 'conditions'])
+    ap.add_argument('step', choices=['items', 'conditions', 'globals'])
     a = ap.parse_args()
-    {'items': cmd_items, 'conditions': cmd_conditions}[a.step](Path(a.ack), Path(a.game))
+    {'items': cmd_items, 'conditions': cmd_conditions, 'globals': cmd_globals}[a.step](Path(a.ack), Path(a.game))
 
 
 if __name__ == '__main__':

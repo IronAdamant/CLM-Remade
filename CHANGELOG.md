@@ -41,8 +41,10 @@
   "CLM Spawns" and "CLM Weapon" categories (e.g. CLM Weapon: Damage > Hurtin'): each pick is a weightless "CLM Pick"
   item; drop it to hide that family again. Your other settings still apply (OP, variants...). Families that are
   entirely OP are also gathered under "CLM OP" and need Show OP. Works on every platform.
-- **Optional F4SE menu (PC):** with F4SE and Mod Configuration Menu, the "CLM - MCM" add-on puts every setting
-  and the perk holotape's 110 perks in the pause menu, replacing the holotapes (which can still be turned back on).
+- **Optional F4SE menu (PC, Nexus):** with F4SE and Mod Configuration Menu, the "CLM - MCM" add-on puts every
+  setting, the Legendary Picker and the perk holotape's 110 perks in the pause menu. Nothing to carry: settings and
+  picks become menu settings instead of items, and the holotapes are replaced (they can be turned back on). A button
+  turns everything back into items before the add-on is removed.
 - **New games start Costly and Balanced**: OP legendaries and variants hidden until you turn them on. No "Starting
   Configuration" step any more.
 - **Upgrading from 1.09:** your holotape settings are converted into setting items once, on the first load (PC and

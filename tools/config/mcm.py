@@ -3,16 +3,19 @@
     python tools/config/mcm.py --ack "D:/Coding Projects/AgentCreationKit" --game "D:/Steam/steamapps/common/Fallout 4" \
         --mcm "D:/Mod Organiser 2 Mod Files/mods/Mod Configuration Menu/Scripts/Source/User"
 
-Run after tools/config/settings.py. Builds mcm/data (shipped as the optional "CLM - MCM" download, PC only; needs F4SE
-and MCM) and copies it into the game's Data folder for testing:
+Run after tools/config/settings.py (items, globals), tools/loot/generate.py and tools/config/picker.py. Builds
+mcm/data (shipped as the optional "CLM - MCM" download, Nexus only; needs F4SE and MCM) and copies it into the
+game's Data folder for testing:
     CLM - MCM.esp                       ESL; one start-game quest running A1ALMMCMScript
     Scripts/A1ALMMCMScript.pex          from mcm/source/A1ALMMCMScript.psc (generated)
-    MCM/Config/CLM/config.json          the menu: Settings, CLM Perks, Cheat Perks
+    MCM/Config/CLM/config.json          the menu: Settings, Picker, CLM Perks, Cheat Perks
     MCM/Config/CLM/settings.ini         its defaults
-The menu works on the same setting items as the chemistry station and the holotape (tools/config/settings.py), so
-all three always agree: changing a menu option gives or takes the item; opening the menu (MCM's OnMCMMenuOpen, and
-the pause menu as a fallback) reads the items and perks the player really has. The perk pages add and remove the
-110 perks of the perk holotape (found from its terminal fragments).
+Every setting and every pick is also a global in the main plugin (tools/config/settings.py: a recipe accepts the item
+OR the global). The menu sets the globals, so F4SE players carry no setting or pick items: when it starts, and
+whenever the pause menu opens, any such items the player carries (made earlier at a chemistry station, or given by
+the holotape) become their globals. A1ALMMCM = 1 hides the chemistry station's settings and picks meanwhile. The
+"Before removing this add-on" button turns everything back into items and A1ALMMCM to 0, so a save stays usable
+without the add-on. The perk pages add and remove the 110 perks of the perk holotape (found from its fragments).
 
 Holotapes: the main plugin gets A1ALMHOLOTAPES (1). At 0 the configuration holotape is not given after Vault 111
 and neither holotape can be crafted. The add-on sets it to 0 when it starts (removing the holotapes if the player
@@ -32,7 +35,8 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
 sys.path.insert(0, str(HERE))
-from settings import ITEMS, ctda, OP_EQ  # noqa: E402
+from settings import ITEMS, ctda, OP_EQ, MCM_GLOBAL, setting_global  # noqa: E402
+from picker import CATEGORIES, load_families, selector, pick_global  # noqa: E402
 
 MAIN = 'Custom Legendary Modifications Remade.esp'
 ADDON = 'CLM - MCM.esp'
@@ -42,10 +46,12 @@ GLOBAL = 'A1ALMHOLOTAPES'
 HOLOTAPES = ['A1ALMTAPE_Holotape_Config', 'A1ALMTAPE_Holotape_Perk']
 HOLOTAPE_RECIPES = ['co_A1ALMTAPE_Holotape_Config', 'co_A1ALMTAPE_Holotape_Perk', 'co_A1ALMTAPE_Holotape_PerkFREE']
 PERK_TERMS = {'A1ALMTERM_Holotape_Perk_Add_RM': 'CLM Perks', 'A1ALMTERM_Holotape_Perk_Cheat_RM': 'Cheat Perks'}
+ADDON_NAMES = {'CLM - Automatron.esp': 'Automatron', 'CLM - Far Harbor.esp': 'Far Harbor',
+               'CLM - Nuka-World.esp': 'Nuka-World', 'CLM - Contraptions.esp': 'Contraptions'}
 FRAGMENTS = REPO / 'source' / 'User' / 'Fragments' / 'Terminals'
 OUT = REPO / 'mcm'
 FN_GET_GLOBAL_VALUE = 74
-KEYS = list(ITEMS)                # Settings[] order in the script
+KEYS = list(ITEMS)                # SettingItems[] / SettingGlobals[] order in the script
 
 
 def perk_list(p) -> list[tuple[str, str, str]]:
@@ -75,13 +81,15 @@ def family(name: str) -> str:
     return re.split(r' [(\[]', name)[0]
 
 
-def config_json(perks) -> dict:
-    def switch(text, sid, help_):
-        return {'text': text, 'type': 'switcher', 'id': sid, 'help': help_, 'valueOptions': {'sourceType': 'ModSettingBool'}}
+def switch(text, sid, help_):
+    return {'text': text, 'type': 'switcher', 'id': sid, 'help': help_, 'valueOptions': {'sourceType': 'ModSettingBool'}}
+
+
+def config_json(perks, picks, fams, quest_id: int) -> dict:
     settings = [
-        {'text': "<font color='#AAAAAA'>These are the same settings as the \"CLM Setting\" items you can make at a "
-                 'chemistry station: changing one here gives or takes that item, and this page always shows what you '
-                 'carry.</font>', 'type': 'text'},
+        {'text': "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and "
+                 "\"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into "
+                 'these settings.)</font>', 'type': 'text'},
         {'text': 'Crafting', 'type': 'section'},
         {'text': 'Crafting mode', 'type': 'dropdown', 'id': 'iCrafting:Settings',
          'help': 'Costly: legendaries cost components. Free: they cost nothing. Loot mode: they drop from enemies '
@@ -95,13 +103,32 @@ def config_json(perks) -> dict:
         switch('Show variants', 'bShowVariants:Settings', 'Show every strength and variant of each legendary.'),
         switch('Hide perk-style legendaries', 'bHidePerk:Settings', 'Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...).'),
         switch('Hide spawning legendaries', 'bHideSpawn:Settings', 'Hide the legendaries that spawn creatures and people.'),
-        switch('Picker mode', 'bPicker:Settings', 'The workbench shows only the families you pick at a chemistry station '
-               '(CLM Armour / Spawns / Weapon categories).'),
+        switch('Picker mode', 'bPicker:Settings', 'The workbench shows only the families turned on in the Legendary '
+               'Picker page.'),
         {'text': 'Holotapes', 'type': 'section'},
         switch('Holotapes', 'bHolotapes:Settings', 'This menu replaces the configuration and perk holotapes. Turn this on '
                'to get both holotapes (and their recipes) back anyway.'),
+        {'text': 'Before removing this add-on', 'type': 'section'},
+        {'text': 'Turn settings and picks back into items', 'type': 'button',
+         'help': 'Use this before uninstalling CLM - MCM: your settings and picks become "CLM Setting" / "CLM Pick" '
+                 'items again (as without F4SE), the chemistry station shows them again and the holotapes come back. '
+                 'Changing any option here afterwards switches the menu back on.',
+         'action': {'type': 'CallFunction', 'form': f'{ADDON}|{quest_id:X}', 'function': 'PrepareUninstall', 'params': []}},
     ]
-    pages = [{'pageDisplayName': 'Settings', 'content': settings}]
+    picker = [{'text': "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families "
+                       'turned on here. Your other settings still apply (OP, variants...).</font>', 'type': 'text'}]
+    for (kind, cat), names in CATEGORIES.items():
+        picker.append({'text': f'CLM {cat}', 'type': 'section'})
+        for n in names:
+            i = picks.index((kind, n))
+            f = fams[(kind, n)]
+            label = n.removeprefix('Spawn: ')
+            if f['home'] in ADDON_NAMES:
+                label += f' ({ADDON_NAMES[f["home"]]} add-on)'
+            picker.append(switch(label, f'bPick{i}:Picks', f'Show the {len(f["rows"])} {n} legendaries '
+                                 f'({"weapon" if kind == "weapon" else "armour"}) while Picker mode is on.'))
+    pages = [{'pageDisplayName': 'Settings', 'content': settings},
+             {'pageDisplayName': 'Legendary Picker', 'content': picker}]
     for page in PERK_TERMS.values():
         content = [{'text': "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without "
                             'wearing the armour (the perk holotape\'s options).</font>', 'type': 'text'}]
@@ -120,34 +147,45 @@ def config_json(perks) -> dict:
         pages.append({'pageDisplayName': page, 'content': content})
     return {'modName': MOD, 'displayName': 'Custom Legendary Modifications', 'minMcmVersion': 2,
             'content': [{'text': 'Custom Legendary Modifications Remade', 'type': 'section'},
-                        {'text': 'Settings: crafting mode, OP legendaries, variants, Legendary Picker, loot drop rate.',
+                        {'text': 'Settings: crafting mode, OP legendaries, variants, Picker mode, loot drop rate.',
                          'type': 'text'},
+                        {'text': 'Legendary Picker: the families the workbench shows in Picker mode.', 'type': 'text'},
                         {'text': 'CLM Perks / Cheat Perks: add or remove the perks of the perk holotape.', 'type': 'text'}],
             'pages': pages}
 
 
-def settings_ini(perks) -> str:
+def settings_ini(perks, picks) -> str:
     lines = ['[Settings]', 'iCrafting=0', 'iDropRate=1', 'bShowOP=0', 'bShowVariants=0', 'bHidePerk=0', 'bHideSpawn=0',
-             'bPicker=0', 'bHolotapes=0', '', '[Perks]'] + [f'bPerk{i}=0' for i in range(len(perks))]
+             'bPicker=0', 'bHolotapes=0', '', '[Picks]'] + [f'bPick{i}=0' for i in range(len(picks))] + \
+        ['', '[Perks]'] + [f'bPerk{i}=0' for i in range(len(perks))]
     return '\n'.join(lines) + '\n'
 
 
-def script_source(perks) -> str:
+def script_source(perks, pick_items: list[tuple[str, int]]) -> str:
     k = KEYS.index
-    s = f'''Scriptname {SCRIPT} extends Quest
+    lookup = '\n'.join(f'\t{"If" if i == 0 else "ElseIf"} aiIndex == {i}\n'
+                       f'\t\tReturn Game.GetFormFromFile(0x{fid:06X}, "{plugin}")'
+                       for i, (plugin, fid) in enumerate(pick_items))
+    return f'''Scriptname {SCRIPT} extends Quest
 {{CLM's MCM menu (optional F4SE add-on "CLM - MCM", needs F4SE and Mod Configuration Menu). Generated by
-tools/config/mcm.py. Settings are CLM's setting items (the same ones made at a chemistry station): changing a menu
-option gives or takes the item, and opening the menu reads what the player carries. Perk pages add and remove the
-perk holotape's perks.}}
+tools/config/mcm.py. Every CLM setting and pick is also a global: a recipe accepts the item or the global. The menu
+sets the globals, and turns any setting / pick items the player carries into them, so nothing is carried.
+PrepareUninstall turns everything back into items before the add-on is removed.}}
 
-MiscObject[] Property Settings Auto Const Mandatory
+MiscObject[] Property SettingItems Auto Const Mandatory
 {{In the order: {", ".join(KEYS)}}}
+GlobalVariable[] Property SettingGlobals Auto Const Mandatory
+{{Same order}}
+GlobalVariable[] Property PickGlobals Auto Const Mandatory
+{{In the order of the menu's bPick<n> settings; the pick items are found with PickItem}}
 Perk[] Property Perks Auto Const Mandatory
 {{In the order of the menu's bPerk<n> settings}}
 Form[] Property Holotapes Auto Const Mandatory
 {{Configuration holotape, perk holotape}}
 GlobalVariable Property {GLOBAL} Auto Const Mandatory
 {{1 = the holotapes are given and craftable, 0 = this menu replaces them}}
+GlobalVariable Property {MCM_GLOBAL} Auto Const Mandatory
+{{1 = this menu runs: the chemistry station hides the settings and picks}}
 
 string Property ModName = "{MOD}" AutoReadOnly
 
@@ -158,7 +196,9 @@ Event OnInit()
 		Return
 	EndIf
 	initialised = true
+	{MCM_GLOBAL}.SetValue(1)
 	SetHolotapes(false)
+	Absorb()
 	Setup()
 EndEvent
 
@@ -184,30 +224,65 @@ Function OnMCMMenuOpen(string asModName)
 	MCM.RefreshMenu()
 EndFunction
 
-; the menu shows what the player really has (items may have been made or dropped since)
-Function Sync()
+; setting and pick items the player carries (made at a chemistry station before, or from the holotape) -> globals
+Function Absorb()
+	If {MCM_GLOBAL}.GetValue() != 1
+		Return
+	EndIf
 	Actor player = Game.GetPlayer()
+	int i = 0
+	While i < SettingItems.Length
+		int n = player.GetItemCount(SettingItems[i])
+		If n > 0
+			player.RemoveItem(SettingItems[i], n, true)
+			SetSetting(i, true)
+		EndIf
+		i += 1
+	EndWhile
+	i = 0
+	While i < PickGlobals.Length
+		Form pick = PickItem(i)
+		If pick
+			int n = player.GetItemCount(pick)
+			If n > 0
+				player.RemoveItem(pick, n, true)
+				PickGlobals[i].SetValue(1)
+			EndIf
+		EndIf
+		i += 1
+	EndWhile
+EndFunction
+
+; the menu shows the real state
+Function Sync()
+	Absorb()
 	int crafting = 0
-	If Has({k("loot")})
+	If On({k("loot")})
 		crafting = 2
-	ElseIf Has({k("free")})
+	ElseIf On({k("free")})
 		crafting = 1
 	EndIf
 	MCM.SetModSettingInt(ModName, "iCrafting:Settings", crafting)
 	int rate = 1
-	If Has({k("low")})
+	If On({k("low")})
 		rate = 0
-	ElseIf Has({k("high")})
+	ElseIf On({k("high")})
 		rate = 2
 	EndIf
 	MCM.SetModSettingInt(ModName, "iDropRate:Settings", rate)
-	MCM.SetModSettingBool(ModName, "bShowOP:Settings", Has({k("op")}))
-	MCM.SetModSettingBool(ModName, "bShowVariants:Settings", Has({k("variants")}))
-	MCM.SetModSettingBool(ModName, "bHidePerk:Settings", Has({k("noperk")}))
-	MCM.SetModSettingBool(ModName, "bHideSpawn:Settings", Has({k("nospawn")}))
-	MCM.SetModSettingBool(ModName, "bPicker:Settings", Has({k("picker")}))
+	MCM.SetModSettingBool(ModName, "bShowOP:Settings", On({k("op")}))
+	MCM.SetModSettingBool(ModName, "bShowVariants:Settings", On({k("variants")}))
+	MCM.SetModSettingBool(ModName, "bHidePerk:Settings", On({k("noperk")}))
+	MCM.SetModSettingBool(ModName, "bHideSpawn:Settings", On({k("nospawn")}))
+	MCM.SetModSettingBool(ModName, "bPicker:Settings", On({k("picker")}))
 	MCM.SetModSettingBool(ModName, "bHolotapes:Settings", {GLOBAL}.GetValue() != 0)
 	int i = 0
+	While i < PickGlobals.Length
+		MCM.SetModSettingBool(ModName, "bPick" + i + ":Picks", PickGlobals[i].GetValue() == 1)
+		i += 1
+	EndWhile
+	Actor player = Game.GetPlayer()
+	i = 0
 	While i < Perks.Length
 		MCM.SetModSettingBool(ModName, "bPerk" + i + ":Perks", player.HasPerk(Perks[i]))
 		i += 1
@@ -215,28 +290,37 @@ Function Sync()
 EndFunction
 
 Function OnMCMSettingChange(string asModName, string asID)
+	{MCM_GLOBAL}.SetValue(1)
 	If asID == "iCrafting:Settings"
 		int v = MCM.GetModSettingInt(ModName, asID)
-		SetItem({k("free")}, v == 1)
-		SetItem({k("loot")}, v == 2)
+		SetSetting({k("free")}, v == 1)
+		SetSetting({k("loot")}, v == 2)
 	ElseIf asID == "iDropRate:Settings"
 		int v = MCM.GetModSettingInt(ModName, asID)
-		SetItem({k("low")}, v == 0)
-		SetItem({k("high")}, v == 2)
+		SetSetting({k("low")}, v == 0)
+		SetSetting({k("high")}, v == 2)
 	ElseIf asID == "bShowOP:Settings"
-		SetItem({k("op")}, MCM.GetModSettingBool(ModName, asID))
+		SetSetting({k("op")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bShowVariants:Settings"
-		SetItem({k("variants")}, MCM.GetModSettingBool(ModName, asID))
+		SetSetting({k("variants")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHidePerk:Settings"
-		SetItem({k("noperk")}, MCM.GetModSettingBool(ModName, asID))
+		SetSetting({k("noperk")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHideSpawn:Settings"
-		SetItem({k("nospawn")}, MCM.GetModSettingBool(ModName, asID))
+		SetSetting({k("nospawn")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bPicker:Settings"
-		SetItem({k("picker")}, MCM.GetModSettingBool(ModName, asID))
+		SetSetting({k("picker")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHolotapes:Settings"
 		SetHolotapes(MCM.GetModSettingBool(ModName, asID))
 	Else
 		int i = 0
+		While i < PickGlobals.Length
+			If asID == "bPick" + i + ":Picks"
+				SetPick(i, MCM.GetModSettingBool(ModName, asID))
+				Return
+			EndIf
+			i += 1
+		EndWhile
+		i = 0
 		While i < Perks.Length
 			If asID == "bPerk" + i + ":Perks"
 				If MCM.GetModSettingBool(ModName, asID)
@@ -251,17 +335,39 @@ Function OnMCMSettingChange(string asModName, string asID)
 	EndIf
 EndFunction
 
-bool Function Has(int aiIndex)
-	Return Game.GetPlayer().GetItemCount(Settings[aiIndex]) > 0
+bool Function On(int aiIndex)
+	Return SettingGlobals[aiIndex].GetValue() == 1 || Game.GetPlayer().GetItemCount(SettingItems[aiIndex]) > 0
 EndFunction
 
-Function SetItem(int aiIndex, bool abOn)
+; a setting is its global from now on; any item of it goes (it would keep the setting on)
+Function SetSetting(int aiIndex, bool abOn)
+	SettingGlobals[aiIndex].SetValue(abOn as int)
+	If abOn
+		If aiIndex == {k("free")}
+			SettingGlobals[{k("loot")}].SetValue(0)
+		ElseIf aiIndex == {k("loot")}
+			SettingGlobals[{k("free")}].SetValue(0)
+		ElseIf aiIndex == {k("low")}
+			SettingGlobals[{k("high")}].SetValue(0)
+		ElseIf aiIndex == {k("high")}
+			SettingGlobals[{k("low")}].SetValue(0)
+		EndIf
+	EndIf
 	Actor player = Game.GetPlayer()
-	int n = player.GetItemCount(Settings[aiIndex])
-	If abOn && n == 0
-		player.AddItem(Settings[aiIndex], 1, true)
-	ElseIf !abOn && n > 0
-		player.RemoveItem(Settings[aiIndex], n, true)
+	int n = player.GetItemCount(SettingItems[aiIndex])
+	If n > 0
+		player.RemoveItem(SettingItems[aiIndex], n, true)
+	EndIf
+EndFunction
+
+Function SetPick(int aiIndex, bool abOn)
+	PickGlobals[aiIndex].SetValue(abOn as int)
+	Form pick = PickItem(aiIndex)
+	If pick
+		int n = Game.GetPlayer().GetItemCount(pick)
+		If n > 0
+			Game.GetPlayer().RemoveItem(pick, n, true)
+		EndIf
 	EndIf
 EndFunction
 
@@ -279,8 +385,43 @@ Function SetHolotapes(bool abOn)
 		i += 1
 	EndWhile
 EndFunction
+
+; before the add-on is removed: everything back to items (the way CLM works without F4SE)
+Function PrepareUninstall()
+	Actor player = Game.GetPlayer()
+	int i = 0
+	While i < SettingItems.Length
+		If SettingGlobals[i].GetValue() == 1
+			SettingGlobals[i].SetValue(0)
+			If player.GetItemCount(SettingItems[i]) == 0
+				player.AddItem(SettingItems[i], 1, true)
+			EndIf
+		EndIf
+		i += 1
+	EndWhile
+	i = 0
+	While i < PickGlobals.Length
+		If PickGlobals[i].GetValue() == 1
+			PickGlobals[i].SetValue(0)
+			Form pick = PickItem(i)
+			If pick && player.GetItemCount(pick) == 0
+				player.AddItem(pick, 1, true)
+			EndIf
+		EndIf
+		i += 1
+	EndWhile
+	{MCM_GLOBAL}.SetValue(0)
+	SetHolotapes(true)
+	Debug.MessageBox("CLM: your settings and picks are items again (Misc), and the holotapes are back. You can now remove CLM - MCM.")
+EndFunction
+
+; pick item n (its plugin may be a DLC add-on that is not installed: then None)
+Form Function PickItem(int aiIndex)
+{lookup}
+	EndIf
+	Return None
+EndFunction
 '''
-    return s
 
 
 CONFIG_INIT = '''Scriptname A1ALMQuestConfigInit extends ReferenceAlias
@@ -329,18 +470,24 @@ def main():
     from ack.plugin.records import Subrecord
 
     perks = perk_list(Plugin.load(data / MAIN))
-    print(f'{len(perks)} perks')
+    fams = load_families()
+    picks = sorted(fams)
+    print(f'{len(perks)} perks, {len(picks)} picks')
 
     # 1. records: the holotape switch in the main plugin, the add-on's quest
-    items = ','.join('@' + ITEMS[k][0] for k in KEYS)
+    obj = lambda edids: ','.join('@' + e for e in edids)
     s = ['# Generated by tools/config/mcm.py', f'file | {MAIN}', f'new | GLOB | {GLOBAL}',
          f'file | {ADDON}', 'master | Fallout4.esm', f'master | {MAIN}',
          f'new | QUST | {QUEST}', f'set | {QUEST} | FULL | CLM Mod Configuration Menu',
          f'set | {QUEST} | DNAM\\Flags | 1', f'script | {QUEST} | {SCRIPT}',
-         f'prop | {QUEST} | {SCRIPT} | Settings | Array of Object | {items}',
-         f'prop | {QUEST} | {SCRIPT} | Perks | Array of Object | ' + ','.join('@' + e for _, e, _ in perks),
-         f'prop | {QUEST} | {SCRIPT} | Holotapes | Array of Object | ' + ','.join('@' + e for e in HOLOTAPES),
-         f'prop | {QUEST} | {SCRIPT} | {GLOBAL} | Object | @{GLOBAL}']
+         f'propremove | {QUEST} | {SCRIPT} | Settings',
+         f'prop | {QUEST} | {SCRIPT} | SettingItems | Array of Object | {obj(ITEMS[k][0] for k in KEYS)}',
+         f'prop | {QUEST} | {SCRIPT} | SettingGlobals | Array of Object | {obj(setting_global(k) for k in KEYS)}',
+         f'prop | {QUEST} | {SCRIPT} | PickGlobals | Array of Object | {obj(pick_global(*f) for f in picks)}',
+         f'prop | {QUEST} | {SCRIPT} | Perks | Array of Object | {obj(e for _, e, _ in perks)}',
+         f'prop | {QUEST} | {SCRIPT} | Holotapes | Array of Object | {obj(HOLOTAPES)}',
+         f'prop | {QUEST} | {SCRIPT} | {GLOBAL} | Object | @{GLOBAL}',
+         f'prop | {QUEST} | {SCRIPT} | {MCM_GLOBAL} | Object | @{MCM_GLOBAL}']
     spec = HERE / 'mcm.spec'
     spec.write_text('\n'.join(s) + '\n', encoding='utf8')
     cmd = [sys.executable, '-m', 'ack', 'xedit', 'run', 'build', MAIN, '--save', '--timeout', '600', '--param', f'SPEC={spec}']
@@ -351,12 +498,14 @@ def main():
     print(result.splitlines()[0])
     if ' 0 errors' not in result.splitlines()[0]:
         raise SystemExit('\n'.join(l for l in result.splitlines() if 'ERR' in l))
+    spec.unlink()
 
     # 2. raw (main plugin): the switch is 1; holotape recipes need it; a label typo on the perk holotape
     p = Plugin.load(data / MAIN)
     glob = p.by_edid(GLOBAL)
-    glob.subrecords[:] = [glob.subrecords[0], Subrecord('FNAM', b'f'), Subrecord('FLTV', struct.pack('<f', 1.0))]
-    glob.mark_dirty()
+    if glob.get('FLTV') is None:
+        glob.subrecords[:] = [glob.subrecords[0], Subrecord('FNAM', b'f'), Subrecord('FLTV', struct.pack('<f', 1.0))]
+        glob.mark_dirty()
     cond = ctda(OP_EQ, 1.0, FN_GET_GLOBAL_VALUE, glob.formid)
     for e in HOLOTAPE_RECIPES:
         r = p.by_edid(e)
@@ -371,11 +520,16 @@ def main():
             p.by_edid('A1ALMTERM_Holotape_Perk_Add_RM').mark_dirty()
     p.save(data / MAIN)
 
-    # 3. scripts
+    # 3. scripts (pick items are found by plugin and local ID, so the add-on needs no DLC add-on as a master)
+    pick_items = []
+    for f in picks:
+        home = fams[f]['home']
+        r = (p if home == MAIN else Plugin.load(data / home)).by_edid(selector(*f))
+        pick_items.append((home, r.formid & 0xFFFFFF))
     (REPO / 'source' / 'User' / 'A1ALMQuestConfigInit.psc').write_text(
         CONFIG_INIT.format(fid=glob.formid & 0xFFFFFF, main=MAIN), encoding='utf8')
     (OUT / 'source').mkdir(parents=True, exist_ok=True)
-    (OUT / 'source' / f'{SCRIPT}.psc').write_text(script_source(perks), encoding='utf8')
+    (OUT / 'source' / f'{SCRIPT}.psc').write_text(script_source(perks, pick_items), encoding='utf8')
     comp = REPO / 'tools' / 'papyrus' / 'compile.py'
     subprocess.run([sys.executable, str(comp), '--game', str(game), 'A1ALMQuestConfigInit'], check=True)
     subprocess.run([sys.executable, str(comp), '--game', str(game), '--f4se', str(OUT / 'source'), '--mcm', str(a.mcm),
@@ -383,17 +537,19 @@ def main():
     shutil.copy(REPO / 'data' / 'SCRIPTS' / 'A1ALMQuestConfigInit.pex', data / 'Scripts' / 'A1ALMQuestConfigInit.pex')
 
     # 4. the add-on's files: menu, plugin, script - into mcm/data and the game's Data folder
+    quest_id = Plugin.load(data / ADDON).by_edid(QUEST).formid & 0xFFF
     cfg = OUT / 'data' / 'MCM' / 'Config' / MOD
     cfg.mkdir(parents=True, exist_ok=True)
-    (cfg / 'config.json').write_text(json.dumps(config_json(perks), indent=2, ensure_ascii=False), encoding='utf8')
-    (cfg / 'settings.ini').write_text(settings_ini(perks), encoding='utf8')
+    (cfg / 'config.json').write_text(json.dumps(config_json(perks, picks, fams, quest_id), indent=2, ensure_ascii=False),
+                                     encoding='utf8')
+    (cfg / 'settings.ini').write_text(settings_ini(perks, picks), encoding='utf8')
     shutil.copy(data / ADDON, OUT / 'data' / ADDON)
     for f in (OUT / 'data').rglob('*'):
         if f.is_file() and f.name != ADDON:
             dest = data / f.relative_to(OUT / 'data')
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(f, dest)
-    print(f'{ADDON}: menu with {len(perks)} perks written to mcm/data and {data}')
+    print(f'{ADDON}: menu with {len(perks)} perks and {len(picks)} picks written to mcm/data and {data}')
 
 
 if __name__ == '__main__':

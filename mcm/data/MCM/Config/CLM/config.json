@@ -8,7 +8,11 @@
       "type": "section"
     },
     {
-      "text": "Settings: crafting mode, OP legendaries, variants, Legendary Picker, loot drop rate.",
+      "text": "Settings: crafting mode, OP legendaries, variants, Picker mode, loot drop rate.",
+      "type": "text"
+    },
+    {
+      "text": "Legendary Picker: the families the workbench shows in Picker mode.",
       "type": "text"
     },
     {
@@ -21,7 +25,7 @@
       "pageDisplayName": "Settings",
       "content": [
         {
-          "text": "<font color='#AAAAAA'>These are the same settings as the \"CLM Setting\" items you can make at a chemistry station: changing one here gives or takes that item, and this page always shows what you carry.</font>",
+          "text": "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and \"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into these settings.)</font>",
           "type": "text"
         },
         {
@@ -100,7 +104,7 @@
           "text": "Picker mode",
           "type": "switcher",
           "id": "bPicker:Settings",
-          "help": "The workbench shows only the families you pick at a chemistry station (CLM Armour / Spawns / Weapon categories).",
+          "help": "The workbench shows only the families turned on in the Legendary Picker page.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -114,6 +118,1106 @@
           "type": "switcher",
           "id": "bHolotapes:Settings",
           "help": "This menu replaces the configuration and perk holotapes. Turn this on to get both holotapes (and their recipes) back anyway.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Before removing this add-on",
+          "type": "section"
+        },
+        {
+          "text": "Turn settings and picks back into items",
+          "type": "button",
+          "help": "Use this before uninstalling CLM - MCM: your settings and picks become \"CLM Setting\" / \"CLM Pick\" items again (as without F4SE), the chemistry station shows them again and the holotapes come back. Changing any option here afterwards switches the menu back on.",
+          "action": {
+            "type": "CallFunction",
+            "form": "CLM - MCM.esp|800",
+            "function": "PrepareUninstall",
+            "params": []
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Legendary Picker",
+      "content": [
+        {
+          "text": "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families turned on here. Your other settings still apply (OP, variants...).</font>",
+          "type": "text"
+        },
+        {
+          "text": "CLM Armour: Defence",
+          "type": "section"
+        },
+        {
+          "text": "Plating",
+          "type": "switcher",
+          "id": "bPick20:Picks",
+          "help": "Show the 7 Plating legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Juggernaut",
+          "type": "switcher",
+          "id": "bPick14:Picks",
+          "help": "Show the 8 Juggernaut legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shields",
+          "type": "switcher",
+          "id": "bPick25:Picks",
+          "help": "Show the 3 Shields legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Immunities",
+          "type": "switcher",
+          "id": "bPick12:Picks",
+          "help": "Show the 10 Immunities legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Bouncing and Jedi",
+          "type": "switcher",
+          "id": "bPick0:Picks",
+          "help": "Show the 4 Bouncing and Jedi legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Forbidden (armour)",
+          "type": "switcher",
+          "id": "bPick8:Picks",
+          "help": "Show the 2 Forbidden (armour) legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Armour: Retaliation",
+          "type": "section"
+        },
+        {
+          "text": "Untouchable",
+          "type": "switcher",
+          "id": "bPick29:Picks",
+          "help": "Show the 11 Untouchable legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Punching",
+          "type": "switcher",
+          "id": "bPick22:Picks",
+          "help": "Show the 10 Punching legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shavka's Explosive Striking",
+          "type": "switcher",
+          "id": "bPick24:Picks",
+          "help": "Show the 7 Shavka's Explosive Striking legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Flaming",
+          "type": "switcher",
+          "id": "bPick7:Picks",
+          "help": "Show the 2 Flaming legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Brawlers",
+          "type": "switcher",
+          "id": "bPick1:Picks",
+          "help": "Show the 4 Brawlers legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Impact Landing",
+          "type": "switcher",
+          "id": "bPick13:Picks",
+          "help": "Show the 6 Impact Landing legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Armour: Movement",
+          "type": "section"
+        },
+        {
+          "text": "Jumpy and Flyin'",
+          "type": "switcher",
+          "id": "bPick15:Picks",
+          "help": "Show the 7 Jumpy and Flyin' legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speedy",
+          "type": "switcher",
+          "id": "bPick27:Picks",
+          "help": "Show the 9 Speedy legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Nimble",
+          "type": "switcher",
+          "id": "bPick18:Picks",
+          "help": "Show the 6 Nimble legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Combined Speed and Jump",
+          "type": "switcher",
+          "id": "bPick3:Picks",
+          "help": "Show the 6 Combined Speed and Jump legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Armour: Stealth and Sight",
+          "type": "section"
+        },
+        {
+          "text": "Ghostly and Camouflaged",
+          "type": "switcher",
+          "id": "bPick9:Picks",
+          "help": "Show the 10 Ghostly and Camouflaged legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Sight",
+          "type": "switcher",
+          "id": "bPick26:Picks",
+          "help": "Show the 5 Sight legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Steady aim",
+          "type": "switcher",
+          "id": "bPick28:Picks",
+          "help": "Show the 6 Steady aim legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Armour: Combat",
+          "type": "section"
+        },
+        {
+          "text": "Fisto's",
+          "type": "switcher",
+          "id": "bPick6:Picks",
+          "help": "Show the 12 Fisto's legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lucky Hittin'",
+          "type": "switcher",
+          "id": "bPick16:Picks",
+          "help": "Show the 5 Lucky Hittin' legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Murderous",
+          "type": "switcher",
+          "id": "bPick17:Picks",
+          "help": "Show the 2 Murderous legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Factional Damaging",
+          "type": "switcher",
+          "id": "bPick5:Picks",
+          "help": "Show the 4 Factional Damaging legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "One Punch Man's",
+          "type": "switcher",
+          "id": "bPick19:Picks",
+          "help": "Show the 1 One Punch Man's legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Armour: Survival",
+          "type": "section"
+        },
+        {
+          "text": "Healing",
+          "type": "switcher",
+          "id": "bPick11:Picks",
+          "help": "Show the 5 Healing legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Carrying",
+          "type": "switcher",
+          "id": "bPick2:Picks",
+          "help": "Show the 3 Carrying legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Enlightenment",
+          "type": "switcher",
+          "id": "bPick4:Picks",
+          "help": "Show the 4 Enlightenment legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Handiwork",
+          "type": "switcher",
+          "id": "bPick10:Picks",
+          "help": "Show the 4 Handiwork legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Power armour",
+          "type": "switcher",
+          "id": "bPick21:Picks",
+          "help": "Show the 5 Power armour legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Refilling",
+          "type": "switcher",
+          "id": "bPick23:Picks",
+          "help": "Show the 3 Refilling legendaries (armour) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Damage",
+          "type": "section"
+        },
+        {
+          "text": "Hurtin'",
+          "type": "switcher",
+          "id": "bPick53:Picks",
+          "help": "Show the 10 Hurtin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Heavy hitters",
+          "type": "switcher",
+          "id": "bPick52:Picks",
+          "help": "Show the 6 Heavy hitters legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Destroyer's",
+          "type": "switcher",
+          "id": "bPick39:Picks",
+          "help": "Show the 4 Destroyer's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Savage",
+          "type": "switcher",
+          "id": "bPick79:Picks",
+          "help": "Show the 7 Savage legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Forcible",
+          "type": "switcher",
+          "id": "bPick46:Picks",
+          "help": "Show the 3 Forcible legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Fury",
+          "type": "switcher",
+          "id": "bPick47:Picks",
+          "help": "Show the 2 Fury legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Slayer's",
+          "type": "switcher",
+          "id": "bPick85:Picks",
+          "help": "Show the 2 Slayer's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Backstabbing",
+          "type": "switcher",
+          "id": "bPick32:Picks",
+          "help": "Show the 2 Backstabbing legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Limb Breaker's",
+          "type": "switcher",
+          "id": "bPick57:Picks",
+          "help": "Show the 4 Limb Breaker's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Relentless",
+          "type": "switcher",
+          "id": "bPick76:Picks",
+          "help": "Show the 3 Relentless legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Forbidden (weapon)",
+          "type": "switcher",
+          "id": "bPick45:Picks",
+          "help": "Show the 4 Forbidden (weapon) legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "RoomClearing",
+          "type": "switcher",
+          "id": "bPick78:Picks",
+          "help": "Show the 1 RoomClearing legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Elemental",
+          "type": "section"
+        },
+        {
+          "text": "Elemental",
+          "type": "switcher",
+          "id": "bPick41:Picks",
+          "help": "Show the 8 Elemental legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Fire",
+          "type": "switcher",
+          "id": "bPick44:Picks",
+          "help": "Show the 4 Fire legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Cold",
+          "type": "switcher",
+          "id": "bPick36:Picks",
+          "help": "Show the 3 Cold legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shock",
+          "type": "switcher",
+          "id": "bPick83:Picks",
+          "help": "Show the 4 Shock legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Poison and acid",
+          "type": "switcher",
+          "id": "bPick69:Picks",
+          "help": "Show the 2 Poison and acid legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Bleeding",
+          "type": "switcher",
+          "id": "bPick34:Picks",
+          "help": "Show the 4 Bleeding legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Energy",
+          "type": "switcher",
+          "id": "bPick43:Picks",
+          "help": "Show the 4 Energy legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Alien tech",
+          "type": "switcher",
+          "id": "bPick30:Picks",
+          "help": "Show the 2 Alien tech legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Explosive Rounds",
+          "type": "section"
+        },
+        {
+          "text": "BioReactive Explosive",
+          "type": "switcher",
+          "id": "bPick33:Picks",
+          "help": "Show the 6 BioReactive Explosive legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Havoc",
+          "type": "switcher",
+          "id": "bPick51:Picks",
+          "help": "Show the 8 Havoc legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Rebounding",
+          "type": "switcher",
+          "id": "bPick74:Picks",
+          "help": "Show the 4 Rebounding legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Spikes",
+          "type": "switcher",
+          "id": "bPick102:Picks",
+          "help": "Show the 2 Spikes legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Garm's",
+          "type": "switcher",
+          "id": "bPick48:Picks",
+          "help": "Show the 2 Garm's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Ultima Hecate's",
+          "type": "switcher",
+          "id": "bPick108:Picks",
+          "help": "Show the 2 Ultima Hecate's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Liberty Prime's",
+          "type": "switcher",
+          "id": "bPick56:Picks",
+          "help": "Show the 2 Liberty Prime's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Launchers",
+          "type": "section"
+        },
+        {
+          "text": "Lobbin'",
+          "type": "switcher",
+          "id": "bPick58:Picks",
+          "help": "Show the 11 Lobbin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Mine launchin'",
+          "type": "switcher",
+          "id": "bPick61:Picks",
+          "help": "Show the 5 Mine launchin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Rocketin'",
+          "type": "switcher",
+          "id": "bPick77:Picks",
+          "help": "Show the 5 Rocketin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Rainman's",
+          "type": "switcher",
+          "id": "bPick73:Picks",
+          "help": "Show the 5 Rainman's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Splinterin'",
+          "type": "switcher",
+          "id": "bPick103:Picks",
+          "help": "Show the 6 Splinterin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Seekin'",
+          "type": "switcher",
+          "id": "bPick81:Picks",
+          "help": "Show the 4 Seekin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Ordnance",
+          "type": "switcher",
+          "id": "bPick66:Picks",
+          "help": "Show the 5 Ordnance legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Hydra's Fang",
+          "type": "switcher",
+          "id": "bPick54:Picks",
+          "help": "Show the 4 Hydra's Fang legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Nuka-Infused",
+          "type": "switcher",
+          "id": "bPick64:Picks",
+          "help": "Show the 4 Nuka-Infused legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Fun Launchers",
+          "type": "section"
+        },
+        {
+          "text": "Paintball (Far Harbor add-on)",
+          "type": "switcher",
+          "id": "bPick67:Picks",
+          "help": "Show the 6 Paintball legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Pyrotechnical (Contraptions add-on)",
+          "type": "switcher",
+          "id": "bPick71:Picks",
+          "help": "Show the 9 Pyrotechnical legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Trappin' (Far Harbor add-on)",
+          "type": "switcher",
+          "id": "bPick107:Picks",
+          "help": "Show the 4 Trappin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Weather Altering (Contraptions add-on)",
+          "type": "switcher",
+          "id": "bPick111:Picks",
+          "help": "Show the 3 Weather Altering legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Moby-Dick's (Far Harbor add-on)",
+          "type": "switcher",
+          "id": "bPick62:Picks",
+          "help": "Show the 1 Moby-Dick's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Lasers and Conversions",
+          "type": "section"
+        },
+        {
+          "text": "Energized",
+          "type": "switcher",
+          "id": "bPick42:Picks",
+          "help": "Show the 10 Energized legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Disintegratin'",
+          "type": "switcher",
+          "id": "bPick40:Picks",
+          "help": "Show the 10 Disintegratin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Gauss conversions",
+          "type": "switcher",
+          "id": "bPick49:Picks",
+          "help": "Show the 4 Gauss conversions legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Strikers",
+          "type": "switcher",
+          "id": "bPick104:Picks",
+          "help": "Show the 3 Strikers legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Scattering",
+          "type": "switcher",
+          "id": "bPick80:Picks",
+          "help": "Show the 3 Scattering legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Curios",
+          "type": "switcher",
+          "id": "bPick38:Picks",
+          "help": "Show the 5 Curios legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Handling",
+          "type": "section"
+        },
+        {
+          "text": "Performance tuning",
+          "type": "switcher",
+          "id": "bPick68:Picks",
+          "help": "Show the 7 Performance tuning legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Quicker",
+          "type": "switcher",
+          "id": "bPick72:Picks",
+          "help": "Show the 5 Quicker legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Automatic",
+          "type": "switcher",
+          "id": "bPick31:Picks",
+          "help": "Show the 2 Automatic legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Recoilless",
+          "type": "switcher",
+          "id": "bPick75:Picks",
+          "help": "Show the 9 Recoilless legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Marksman",
+          "type": "switcher",
+          "id": "bPick60:Picks",
+          "help": "Show the 6 Marksman legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Gunslingers",
+          "type": "switcher",
+          "id": "bPick50:Picks",
+          "help": "Show the 3 Gunslingers legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Operator's",
+          "type": "switcher",
+          "id": "bPick65:Picks",
+          "help": "Show the 3 Operator's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Multi-shot",
+          "type": "switcher",
+          "id": "bPick63:Picks",
+          "help": "Show the 4 Multi-shot legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Shotgun Surgeon's",
+          "type": "switcher",
+          "id": "bPick84:Picks",
+          "help": "Show the 10 Shotgun Surgeon's legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Ammo and Time",
+          "type": "section"
+        },
+        {
+          "text": "Keltas' Factorium",
+          "type": "switcher",
+          "id": "bPick55:Picks",
+          "help": "Show the 4 Keltas' Factorium legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Synthesised Factorium",
+          "type": "switcher",
+          "id": "bPick105:Picks",
+          "help": "Show the 4 Synthesised Factorium legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Concentratin'",
+          "type": "switcher",
+          "id": "bPick37:Picks",
+          "help": "Show the 7 Concentratin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Vampiric",
+          "type": "switcher",
+          "id": "bPick110:Picks",
+          "help": "Show the 4 Vampiric legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Utility",
+          "type": "switcher",
+          "id": "bPick109:Picks",
+          "help": "Show the 4 Utility legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Weapon: Melee",
+          "type": "section"
+        },
+        {
+          "text": "Shavka's Explosive Striking",
+          "type": "switcher",
+          "id": "bPick82:Picks",
+          "help": "Show the 7 Shavka's Explosive Striking legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Thumpin'",
+          "type": "switcher",
+          "id": "bPick106:Picks",
+          "help": "Show the 2 Thumpin' legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Brawn",
+          "type": "switcher",
+          "id": "bPick35:Picks",
+          "help": "Show the 3 Brawn legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Majestically Swaggering",
+          "type": "switcher",
+          "id": "bPick59:Picks",
+          "help": "Show the 2 Majestically Swaggering legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Pushing",
+          "type": "switcher",
+          "id": "bPick70:Picks",
+          "help": "Show the 2 Pushing legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Spawns: Creatures",
+          "type": "section"
+        },
+        {
+          "text": "Aliens",
+          "type": "switcher",
+          "id": "bPick86:Picks",
+          "help": "Show the 1 Spawn: Aliens legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Far Harbor creatures (Far Harbor add-on)",
+          "type": "switcher",
+          "id": "bPick89:Picks",
+          "help": "Show the 9 Spawn: Far Harbor creatures legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Ghouls",
+          "type": "switcher",
+          "id": "bPick91:Picks",
+          "help": "Show the 5 Spawn: Ghouls legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Insects",
+          "type": "switcher",
+          "id": "bPick92:Picks",
+          "help": "Show the 13 Spawn: Insects legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Mirelurks",
+          "type": "switcher",
+          "id": "bPick94:Picks",
+          "help": "Show the 8 Spawn: Mirelurks legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Nuka-World creatures (Nuka-World add-on)",
+          "type": "switcher",
+          "id": "bPick95:Picks",
+          "help": "Show the 3 Spawn: Nuka-World creatures legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Super mutants",
+          "type": "switcher",
+          "id": "bPick100:Picks",
+          "help": "Show the 7 Spawn: Super mutants legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Wasteland beasts",
+          "type": "switcher",
+          "id": "bPick101:Picks",
+          "help": "Show the 14 Spawn: Wasteland beasts legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "CLM Spawns: People and Robots",
+          "type": "section"
+        },
+        {
+          "text": "Automatron robots (Automatron add-on)",
+          "type": "switcher",
+          "id": "bPick87:Picks",
+          "help": "Show the 13 Spawn: Automatron robots legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Brotherhood of Steel",
+          "type": "switcher",
+          "id": "bPick88:Picks",
+          "help": "Show the 6 Spawn: Brotherhood of Steel legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Friendly robots",
+          "type": "switcher",
+          "id": "bPick90:Picks",
+          "help": "Show the 4 Spawn: Friendly robots legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Institute",
+          "type": "switcher",
+          "id": "bPick93:Picks",
+          "help": "Show the 4 Spawn: Institute legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Nuka-World gangs (Nuka-World add-on)",
+          "type": "switcher",
+          "id": "bPick96:Picks",
+          "help": "Show the 3 Spawn: Nuka-World gangs legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Raiders and gangs",
+          "type": "switcher",
+          "id": "bPick97:Picks",
+          "help": "Show the 11 Spawn: Raiders and gangs legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Railroad",
+          "type": "switcher",
+          "id": "bPick98:Picks",
+          "help": "Show the 1 Spawn: Railroad legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Robots",
+          "type": "switcher",
+          "id": "bPick99:Picks",
+          "help": "Show the 8 Spawn: Robots legendaries (weapon) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
