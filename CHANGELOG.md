@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased (work in progress towards 2.0)
+## 2.0.0 (2026-10-12)
 
 ### Requirements
 - **The main mod no longer needs any DLC** - just Fallout 4. (1.09 needed all six.)

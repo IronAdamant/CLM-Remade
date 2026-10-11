@@ -231,9 +231,9 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Perk_CriticallyHurtin "CLM: Criticall
       entry point: Mod My Critical Hit Chance / Multiply Value
       entry point: Mod VATS Attack Action Points / Multiply Value
       entry point: Mod Drawn Weapon Weight Speed Effect / Multiply Value
-      entry point: Mod Actor Scope Stability / Add Value
+      entry point: Mod Actor Scope Stability / Multiply Value
       entry point: Mod Bash Critical Chance / Multiply Value
-      values: 0.150000; 0.150000; 100.000000; 1000.000000; 0.150000
+      values: 0.150000; 0.150000; 100.000000; 2.000000; 0.150000
 ```
 
 ### CLM: Admantium  `A1ALMOMOD_Legendary_Armor_Damage_Immune_Melee`
@@ -1042,8 +1042,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_PowerArmor_BatteryRate_Slow "CLM: Pow
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 ```
 
 ### CLM: Aim Stabilized (50%)  `A1ALMOMOD_Legendary_Armor_PerkV_AimStabilized_50P`
@@ -1053,7 +1053,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_50P "CLM
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_50P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_50P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Actor Scope Stability / Multiply Value
-      values: 0.500000
+      values: 1.250000
 ```
 
 ### CLM: Constant Bouncing  `A1ALMOMOD_Legendary_Armor_PerkV_Bouncing`
@@ -2172,6 +2172,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Acid_Acidic "CLM: Acidic" [ENCH:08
 Speed MUL+ADD -0.300000 / 0.000000
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Incendiary_15DT "CLM: 15 fire damage over time" [ENCH:08449E72] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Incendiary_15DT (, )
     A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 15.000000, duration 10 (Fire and Forget, Touch)
@@ -2223,6 +2224,8 @@ MinRange MUL+ADD 7.000000 / 0.000000
 MaxRange MUL+ADD 10.000000 / 0.000000
 AmmoCapacity SET 3 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_HarderBash250P [KYWD:084AC78E] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_FortifyVATSMax [KYWD:084AC79E] / 431
 NumProjectiles ADD 1 / 0
 Enchantments ADD ench_mod_LegendaryAddCommonPerk [ENCH:001E684C] / 431
 Enchantments ADD ench_mod_ModLegendaryWeaponsDamageConsecutiveHits_Sender [ENCH:001EF48A] / 431
@@ -2395,7 +2398,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Pulse "
 ### CLM: Bird Shootin'  `A1ALMOMOD_Legendary_Weapon_BirdShootin`
 > Increases your projectile counts up to 10, turning it into shotgun-like weapon. Recoil is increased majorly. It is noisier and heavier, so you take longer to aim.
 ```
-Speed SET 7.500000 / 0.000000
+Weight MUL+ADD 0.500000 / 0.000000
 AimModelMinConeDegrees MUL+ADD 1.150000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 1.150000 / 0.000000
 AimModelRecoilMaxDegPerShot SET 7.500000 / 0.000000
@@ -2478,6 +2481,7 @@ MinRange MUL+ADD 700.000000 / 0.000000
 MaxRange MUL+ADD 1000.000000 / 0.000000
 AmmoCapacity ADD 10000 / 0
 AttackDamage MUL+ADD 1000.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_100P [KYWD:084AC7A3] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Cheaters "CLM: Cheater's" [ENCH:083387CA] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Cheaters (, )
     A1ALMMGEF_Target_Effect_Hostile_ExplodeOnContact: Script, magnitude 75.000000, duration 1 (Fire and Forget, Touch)
@@ -2521,9 +2525,10 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Chillling "CLM: Chi
 > Your weapon does 50% more damage and the sneak attack damage is tripled.
 ```
 AttackDamage MUL+ADD 0.500000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x "CLM Perk: Murderous (3x)" [ENCH:081A28D5] / 431
-  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_3x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_SneakBonusAttacks_3x [KYWD:084AC7A8] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x_W "CLM Perk: Murderous (3x)" [ENCH:084AC7B5] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_3x_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Sneak Attack Mult / Multiply Value
       values: 3.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 0.500000
@@ -2543,6 +2548,7 @@ Speed MUL+ADD 0.200000 / 0.000000
 MinRange MUL+ADD 3.000000 / 0.000000
 MaxRange MUL+ADD 4.500000 / 0.000000
 AmmoCapacity MUL+ADD 0.550000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_InverseHealth_Base [KYWD:084AC7A2] / 431
 Enchantments ADD ench_mod_ModLegendaryWeaponsDamageConsecutiveHits_Listener [ENCH:001EF48C] / 431
 Enchantments ADD ench_mod_ModLegendaryWeaponsDamageConsecutiveHits_Sender [ENCH:001EF48A] / 431
 Enchantments ADD ench_mod_LegendaryAddCommonPerk [ENCH:001E684C] / 431
@@ -2615,6 +2621,16 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Blue "CLM: D
       script AttachAshPile
 ```
 
+### CLM: Disintegratin' (Deep Blue)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_DeepBlue`
+> You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
+```
+CritEffect SET A1ALMSPEL_CritLaserDeepBlue [SPEL:084AC8F3] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_DeepBlue "CLM: Disintegration (Deep Blue)" [ENCH:084AC909] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_DeepBlue (, )
+    A1ALMMGEF_Target_Effect_Hostile_Disintegration_DeepBlue: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script AttachAshPile
+```
+
 ### CLM: Disintegratin' (Fire)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Fire`
 > You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
 ```
@@ -2625,11 +2641,21 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Fire "CLM: D
       script AttachAshPile
 ```
 
+### CLM: Disintegratin' (Gold)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Gold`
+> You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
+```
+CritEffect SET A1ALMSPEL_CritLaserGold [SPEL:084AC8E7] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Gold "CLM: Disintegration (Gold)" [ENCH:084AC8FA] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Gold (, )
+    A1ALMMGEF_Target_Effect_Hostile_Disintegration_Gold: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script AttachAshPile
+```
+
 ### CLM: Disintegratin' (Green)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Green`
 > You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
 ```
-CritEffect SET CritPlasma [SPEL:00139F8C] / 431
-Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green "CLM: Disintegration (Fire)" [ENCH:082E2EAD] / 431
+CritEffect SET A1ALMSPEL_CritLaserGreen [SPEL:084AC8DF] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green "CLM: Disintegration (Green)" [ENCH:082E2EAD] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green (, )
     A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
       script AttachAshPile
@@ -2642,6 +2668,36 @@ CritEffect SET CritMirelurkQueen [SPEL:001C6BCA] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green_Melt "CLM: Disintegration (Melting)" [ENCH:082E2EAE] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green_Melt (, )
     A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green_Melt: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script AttachAshPile
+```
+
+### CLM: Disintegratin' (Orange)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Orange`
+> You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
+```
+CritEffect SET A1ALMSPEL_CritLaserOrange [SPEL:084AC8EB] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Orange "CLM: Disintegration (Orange)" [ENCH:084AC8FF] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Orange (, )
+    A1ALMMGEF_Target_Effect_Hostile_Disintegration_Orange: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script AttachAshPile
+```
+
+### CLM: Disintegratin' (Pink)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Pink`
+> You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
+```
+CritEffect SET A1ALMSPEL_CritLaserPink [SPEL:084AC8EF] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Pink "CLM: Disintegration (Pink)" [ENCH:084AC904] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Pink (, )
+    A1ALMMGEF_Target_Effect_Hostile_Disintegration_Pink: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script AttachAshPile
+```
+
+### CLM: Disintegratin' (Purple)  `A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple`
+> You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)
+```
+CritEffect SET A1ALMSPEL_CritLaserPurple [SPEL:084AC8E3] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Purple "CLM: Disintegration (Purple)" [ENCH:084AC8F5] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Purple (, )
+    A1ALMMGEF_Target_Effect_Hostile_Disintegration_Purple: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
       script AttachAshPile
 ```
 
@@ -2669,6 +2725,7 @@ ReloadSpeed MUL+ADD 0.200000 / 0.000000
 ```
 MinRange MUL+ADD 7.000000 / 0.000000
 MaxRange MUL+ADD 10.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_FortifyVATSMax [KYWD:084AC79E] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P "CLM: Great Sight" [ENCH:081AB18D] / 431
   ENCH A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyVATSChanceMax: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -2681,6 +2738,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P "CLM: Grea
 ```
 Speed MUL+ADD 0.300000 / 0.000000
 AttackDamage MUL+ADD 0.250000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Fortify_LimbDamgeToTargets_15P [KYWD:084AC79F] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_Fortify_LimbDamage_15P "CLM Perk: Fortify Outgoing Limb Damage (15%)" [ENCH:081A6D36] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_Fortify_LimbDamage_15P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_LimbDamage_15P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -3451,6 +3509,7 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 5.000000
 ```
 Speed MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 1.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilHipMult MUL+ADD -0.750000 / 0.000000
@@ -3484,6 +3543,7 @@ AttackActionPointCost MUL+ADD 0.500000 / 0.000000
 ```
 Speed MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 2.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilHipMult MUL+ADD -0.750000 / 0.000000
@@ -3517,6 +3577,7 @@ AttackActionPointCost MUL+ADD 0.500000 / 0.000000
 ```
 Speed MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 3.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilHipMult MUL+ADD -0.750000 / 0.000000
@@ -3550,6 +3611,7 @@ AttackActionPointCost MUL+ADD 0.500000 / 0.000000
 ```
 Speed MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 4.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD -0.750000 / 0.000000
 AimModelRecoilHipMult MUL+ADD -0.750000 / 0.000000
@@ -3775,6 +3837,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Gauss [PROJ:0824929
 ```
 ImpactDataSet SET A1ALMIPDS_Laser_DeepBlue [IPDS:084AC297] / 431
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET A1ALMSPEL_CritLaserDeepBlue [SPEL:084AC8F3] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_DeepBlue [PROJ:084AC27C] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -3784,6 +3847,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_DeepBlue [PRO
 ```
 ImpactDataSet SET A1ALMIPDS_Laser_Gold [IPDS:084AC28E] / 431
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET A1ALMSPEL_CritLaserGold [SPEL:084AC8E7] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Gold [PROJ:084AC270] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -3793,6 +3857,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Gold [PROJ:08
 ```
 ImpactDataSet SET A1ALMIPDS_Laser_Green [IPDS:084AC288] / 431
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET A1ALMSPEL_CritLaserGreen [SPEL:084AC8DF] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Green [PROJ:084AC268] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -3801,6 +3866,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Green [PROJ:0
 > Transforms your weapon into an energy weapon. Your newly converted energy weapon will require new ammo appropriate for this converted weapon.
 ```
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET CritLaserLtBlue [SPEL:001E4506] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_LtBlue [PROJ:08249298] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
     explosion 1 (vanilla)
@@ -3811,6 +3877,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_LtBlue [PROJ:
 ```
 ImpactDataSet SET A1ALMIPDS_Laser_Orange [IPDS:084AC291] / 431
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET A1ALMSPEL_CritLaserOrange [SPEL:084AC8EB] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Orange [PROJ:084AC274] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -3820,6 +3887,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Orange [PROJ:
 ```
 ImpactDataSet SET A1ALMIPDS_Laser_Pink [IPDS:084AC294] / 431
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET A1ALMSPEL_CritLaserPink [SPEL:084AC8EF] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Pink [PROJ:084AC278] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -3829,6 +3897,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Pink [PROJ:08
 ```
 ImpactDataSet SET A1ALMIPDS_Laser_Purple [IPDS:084AC28B] / 431
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET A1ALMSPEL_CritLaserPurple [SPEL:084AC8E3] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Purple [PROJ:084AC26C] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -3837,6 +3906,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Purple [PROJ:
 > Transforms your weapon into an energy weapon. Your newly converted energy weapon will require new ammo appropriate for this converted weapon.
 ```
 Ammo SET AmmoFusionCell "Fusion Cell" [AMMO:000C1897] / 431
+CritEffect SET CritLaser [SPEL:000731B2] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Red [PROJ:08249297] / 431
   PROJ type Beam, speed 10000.000000, gravity 0.000000
 ```
@@ -4113,6 +4183,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Garm_Laser_LtBlue [PROJ:082FC
 ```
 Speed MUL+ADD -0.300000 / 0.000000
 AmmoCapacity MUL+ADD 0.500000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_NegateDamageWhileNotMoving30P [KYWD:084AC78F] / 431
 AimModelMinConeDegrees MUL+ADD 0.250000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.250000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.250000 / 0.000000
@@ -4124,7 +4195,7 @@ AimModelRecoilArcRotateDeg MUL+ADD -0.300000 / 0.000000
 NumProjectiles ADD 3 / 0
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Generically80sActionHero_Weapon "CLM: Generically 80s Action Hero" [ENCH:08352244] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Generically80sActionHero_Weapon (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_NegateDamageNoMove_30P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_NegateDamageNoMove_30P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Incoming Weapon Damage / Set Value
       values: 0.300000
 ```
@@ -4151,9 +4222,10 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_GreaterBleedi
 ```
 Speed MUL+ADD 0.750000 / 0.000000
 AttackDamage MUL+ADD 0.500000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x "CLM Perk: Murderous (3x)" [ENCH:081A28D5] / 431
-  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_3x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_SneakBonusAttacks_3x [KYWD:084AC7A8] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x_W "CLM Perk: Murderous (3x)" [ENCH:084AC7B5] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_3x_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_3x_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Sneak Attack Mult / Multiply Value
       values: 3.000000
 ReloadSpeed MUL+ADD 0.350000 / 0.000000
@@ -4171,6 +4243,7 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.500000
 > Automatic, recoilless, 30+ faster reload, furious, staggers and burns your targets. Increases your bash by 250+
 ```
 IsAutomatic SET True / True
+Keywords ADD A1ALMKW_WeaponPerk_Armor_HarderBash250P [KYWD:084AC78E] / 431
 AimModelRecoilMaxDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilMinDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilHipMult SET 0.000000 / 0.000000
@@ -4403,6 +4476,7 @@ Speed MUL+ADD -0.400000 / 0.000000
 MinRange MUL+ADD 0.800000 / 0.000000
 MaxRange MUL+ADD 0.700000 / 0.000000
 AmmoCapacity MUL+ADD 0.200000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_100P [KYWD:084AC7A3] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.350000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD -0.300000 / 0.000000
@@ -4454,6 +4528,7 @@ Speed MUL+ADD 2.500000 / 0.000000
 ```
 Speed MUL+ADD -0.400000 / 0.000000
 AmmoCapacity SET 6 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilArcDeg MUL+ADD 0.400000 / 0.000000
@@ -4475,6 +4550,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_HydrasFang_Base [PROJ:082C
 ```
 Speed MUL+ADD -0.400000 / 0.000000
 AmmoCapacity SET 6 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_40P [KYWD:084AC7A5] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilArcDeg MUL+ADD 0.400000 / 0.000000
@@ -4497,6 +4573,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_HydrasFang_Base [PROJ:082C
 ```
 Speed MUL+ADD -0.400000 / 0.000000
 AmmoCapacity SET 6 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_40P [KYWD:084AC7A5] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilArcDeg MUL+ADD 0.400000 / 0.000000
@@ -4519,6 +4596,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_HydrasFang_Base [PROJ:082C
 ```
 Speed MUL+ADD -0.400000 / 0.000000
 AmmoCapacity SET 6 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_40P [KYWD:084AC7A5] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD 0.400000 / 0.000000
 AimModelRecoilArcDeg MUL+ADD 0.400000 / 0.000000
@@ -4545,6 +4623,8 @@ Speed MUL+ADD 0.300000 / 0.000000
 MinRange MUL+ADD 0.800000 / 0.000000
 MaxRange MUL+ADD 0.800000 / 0.000000
 AttackDamage MUL+ADD 0.250000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_FortifyVATSMax [KYWD:084AC79E] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Fortify_LimbDamgeToTargets_15P [KYWD:084AC79F] / 431
 AimModelRecoilMaxDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilMinDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilHipMult SET 0.000000 / 0.000000
@@ -4598,6 +4678,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_IncendiaryStriking "CLM: Ra
 ### CLM: Instant Killin'  `A1ALMOMOD_Legendary_Weapon_InstantKilling`
 > Your attack damage, no matter the method used, is boosted to game-breaking levels: almost anything dies in one hit. It takes a will of a giant not to use this.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_InstantKill [KYWD:084AC7A7] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_InstantKill "CLM: Instant Killing" [ENCH:084AC745] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_InstantKill (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_InstantKill: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -4619,11 +4700,16 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_JupitersWrath_Beam_Lightning [PROJ
 ```
 
 ### CLM: Keltas' Flawed Factorium  `A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Flawed`
-> Your weapon turns into mini factory, creating it's own inifinite ammo. Does not affect your projectile and you won't need to reload, though your weapon will shoot 25% slower and the damage will be 50% weaker due to the flawed process within the weapon. (WARNING: I recommend you try it on mod weapons. Vanilla weapons will always cause crashes regardless. Try Refilling legendaries instead for them).
+> Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile, though your weapon will shoot 25% slower and the damage will be 50% weaker due to the flawed process within the weapon. (Does not work together with rank 4 of the Scrounger perk.)
 ```
 Speed MUL+ADD -0.250000 / 0.000000
+AmmoCapacity MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD -0.500000 / 0.000000
-Ammo SET NULL - Null Reference [00000000] / 0
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Scrounger Fill Ammo Chance / Set Value
+      values: 100.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / -0.500000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / -0.500000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / -0.500000
@@ -4635,11 +4721,16 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / -0.500000
 ```
 
 ### CLM: Keltas' Perfect Factorium  `A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Perfect`
-> Your weapon turns into mini factory, creating it's own inifinite ammo. Does not affect your projectile and you won't need to reload. (WARNING: I recommend you try it on mod weapons. Vanilla weapons will always cause crashes regardless. Try Refilling legendaries instead for them).
+> Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile. The perfected process makes your weapon shoot 25% faster and deal double damage. (Does not work together with rank 4 of the Scrounger perk.)
 ```
 Speed MUL+ADD 0.250000 / 0.000000
+AmmoCapacity MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 1.000000 / 0.000000
-Ammo SET NULL - Null Reference [00000000] / 0
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Scrounger Fill Ammo Chance / Set Value
+      values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 1.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 1.000000
@@ -4652,17 +4743,23 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 1.000000
 ```
 
 ### CLM: Keltas' Rapid Factorium  `A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Rapid`
-> Your weapon turns into mini factory, creating it's own inifinite ammo. Does not affect your projectile and you won't need to reload. You reload faster due to significantly improved processes in the factorium, though not yet perfected. (WARNING: I recommend you try it on mod weapons. Vanilla weapons will always cause crashes regardless. Try Refilling legendaries instead for them).
+> Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile. You reload faster due to significantly improved processes in the factorium, though not yet perfected. (Does not work together with rank 4 of the Scrounger perk.)
 ```
-Ammo SET NULL - Null Reference [00000000] / 0
+AmmoCapacity MUL+ADD 1.000000 / 0.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Scrounger Fill Ammo Chance / Set Value
+      values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
 ```
 
 ### CLM: Keltas' Specialised Factorium  `A1ALMOMOD_Legendary_Weapon_KeltasFactorium_Specialised`
-> Your weapon turns into mini factory, creating it's own inifinite ammo. Does not affect your projectile. Due to the specialized classified procedures, your weapon gains 100% accuracy and range and will not recoil per shot. (WARNING: I recommend you try it on mod weapons. Vanilla weapons will always cause crashes regardless. Try Refilling legendaries instead for them).
+> Your weapon turns into a mini factory, creating its own ammo: the magazine refills itself the moment it runs dry, so you won't need to reload, and it holds twice as many rounds. Does not affect your projectile. Due to the specialized classified procedures, your weapon gains 100% accuracy and range and will not recoil per shot. (Does not work together with rank 4 of the Scrounger perk.)
 ```
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
+AmmoCapacity MUL+ADD 1.000000 / 0.000000
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -4673,7 +4770,11 @@ AimModelRecoilMinDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Ammo SET NULL - Null Reference [00000000] / 0
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Scrounger Fill Ammo Chance / Set Value
+      values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
 ```
 
@@ -4931,6 +5032,7 @@ AimModelRecoilArcRotateDeg MUL+ADD -0.500000 / 0.000000
 ### CLM: Medic's  `A1ALMOMOD_Legendary_Weapon_Medics`
 > Your shots heal whoever they hit by 50 health, but your weapon deals 50% less damage. Patch up your companions in the middle of a fight.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_DecreaseDamage_50P [KYWD:084AC79D] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Beneficial_Heal "CLM: Heal targets" [ENCH:0842BFDE] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Beneficial_Heal (, )
     A1ALMMGEF_FaF_Beneficial_Target_Custom_Effect_RestoreHealth: Value Modifier Health, magnitude 50.000000, duration 0 (Fire and Forget, Touch)
@@ -5353,6 +5455,7 @@ Speed MUL+ADD 0.200000 / 0.000000
 MinRange MUL+ADD 0.500000 / 0.000000
 MaxRange MUL+ADD 0.500000 / 0.000000
 AmmoCapacity MUL+ADD 1.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_HarderBash100P [KYWD:084AC78D] / 431
 AimModelMinConeDegrees SET 0.200000 / 0.000000
 AimModelMaxConeDegrees SET 0.200000 / 0.000000
 AimModelConeIncreasePerShot SET 0.200000 / 0.000000
@@ -5391,6 +5494,7 @@ MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity ADD 50 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5400,11 +5504,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5424,6 +5528,7 @@ MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity ADD 50 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5433,11 +5538,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5458,6 +5563,7 @@ MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity ADD 50 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5467,11 +5573,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5538,6 +5644,7 @@ MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
 Keywords ADD HasSilencer [KYWD:001E05D6] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5548,11 +5655,11 @@ AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
 SoundLevel SET Silent / 00 00 00 00
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 ```
 
 ### CLM: Deadly Accurate  `A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_DeadlyAccurate`
@@ -5561,6 +5668,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CL
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AttackDamage MUL+ADD 0.250000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5570,11 +5678,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 0.250000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 0.250000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 0.250000
@@ -5591,6 +5699,7 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.250000
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AttackDamage MUL+ADD 0.250000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.300000 / 0.000000
 AimModelMaxConeDegrees SET 0.300000 / 0.000000
 AimModelConeIncreasePerShot SET 0.300000 / 0.000000
@@ -5600,11 +5709,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.300000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 0.250000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 0.250000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 0.250000
@@ -5625,6 +5734,7 @@ AmmoCapacity SET 0 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
 Keywords ADD HasSilencer [KYWD:001E05D6] / 431
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5635,11 +5745,11 @@ AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
 SoundLevel SET Silent / 00 00 00 00
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5657,6 +5767,9 @@ Speed MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 1.000000 / 0.000000
 Keywords ADD HasSilencer [KYWD:001E05D6] / 431
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Fortify_CritChance_100P [KYWD:084AC78B] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_FortifyVATSMax [KYWD:084AC79E] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_SneakBonusAttacks_5x [KYWD:084AC7AA] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5669,14 +5782,14 @@ AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
 NumProjectiles ADD 3 / 0
 SoundLevel SET Silent / 00 00 00 00
 CritEffect SET CritLaserLtBlue [SPEL:001E4506] / 431
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P "CLM: Fortify Crit Chance (100%)" [ENCH:08416A11] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyCritChance_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P_W "CLM: Fortify Crit Chance (100%)" [ENCH:084AC7B6] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyCritChance_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod My Critical Hit Chance / Add Value
       values: 1000.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x "CLM Perk: Murderous (5x)" [ENCH:081A28D6] / 431
-  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W "CLM Perk: Murderous (5x)" [ENCH:084AC7B4] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Sneak Attack Mult / Multiply Value
       values: 5.000000
 Enchantments ADD A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P "CLM: Great Sight" [ENCH:081AB18D] / 431
@@ -5708,6 +5821,9 @@ Speed MUL+ADD 1.000000 / 0.000000
 AttackDamage MUL+ADD 1.000000 / 0.000000
 Keywords ADD HasSilencer [KYWD:001E05D6] / 431
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Fortify_CritChance_100P [KYWD:084AC78B] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_FortifyVATSMax [KYWD:084AC79E] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_SneakBonusAttacks_5x [KYWD:084AC7AA] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5719,14 +5835,14 @@ AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
 NumProjectiles ADD 3 / 0
 SoundLevel SET Silent / 00 00 00 00
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P "CLM: Fortify Crit Chance (100%)" [ENCH:08416A11] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyCritChance_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P_W "CLM: Fortify Crit Chance (100%)" [ENCH:084AC7B6] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyCritChance_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod My Critical Hit Chance / Add Value
       values: 1000.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x "CLM Perk: Murderous (5x)" [ENCH:081A28D6] / 431
-  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W "CLM Perk: Murderous (5x)" [ENCH:084AC7B4] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Sneak Attack Mult / Multiply Value
       values: 5.000000
 Enchantments ADD A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P "CLM: Great Sight" [ENCH:081AB18D] / 431
@@ -5757,6 +5873,8 @@ AmmoCapacity SET 0 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
 Keywords ADD HasSilencer [KYWD:001E05D6] / 431
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_SneakBonusAttacks_5x [KYWD:084AC7AA] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5767,16 +5885,16 @@ AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
 SoundLevel SET Silent / 00 00 00 00
-Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x "CLM Perk: Murderous (5x)" [ENCH:081A28D6] / 431
-  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W "CLM Perk: Murderous (5x)" [ENCH:084AC7B4] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Sneak Attack Mult / Multiply Value
       values: 5.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5793,6 +5911,7 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 3.000000
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AttackDamage MUL+ADD 2.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees MUL+ADD -0.800000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD -0.800000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD -0.800000 / 0.000000
@@ -5802,11 +5921,11 @@ AimModelRecoilHipMult MUL+ADD -0.800000 / 0.000000
 AimModelRecoilArcDeg MUL+ADD -0.800000 / 0.000000
 AimModelRecoilArcRotateDeg MUL+ADD -0.800000 / 0.000000
 AimModelConeIronSightsMultiplier MUL+ADD -0.800000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 2.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 2.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 2.000000
@@ -5823,16 +5942,17 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 2.000000
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity ADD 100 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelRecoilMaxDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilMinDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 ```
 
 ### CLM: Savage  `A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Savage`
@@ -5843,6 +5963,7 @@ MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity SET 0 / 0
 AttackDamage MUL+ADD 3.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5852,11 +5973,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5873,6 +5994,7 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 3.000000
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AttackDamage MUL+ADD 3.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5882,11 +6004,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 3.000000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 3.000000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 3.000000
@@ -5904,6 +6026,7 @@ Speed MUL+ADD 0.500000 / 0.000000
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity SET 100 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -5913,11 +6036,11 @@ AimModelRecoilHipMult SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
 ```
 
 ### CLM: Rocketin'  `A1ALMOMOD_Legendary_Weapon_Rocketing_Base_Explosive`
@@ -5964,6 +6087,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Rocketing_Impact_Pulse "CL
 > 25% to do 10x damage, sends target flying on critical. 50% to cripple your targets. Doubles your attack speed.
 ```
 Speed MUL+ADD 1.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_IncreaseDamage_10x_RoidRaging [KYWD:084AC7A0] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_RoidRaging "CLM: Roid Ragin'" [ENCH:0832BA84] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_RoidRaging (, )
     A1ALMMGEF_Target_Effect_Hostile_Cripple_50p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
@@ -6023,7 +6147,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_LtBlue [PROJ:
 > Two shot. Will disintegrate your targets when not killed in one hit. Your weapon becomes energised, causing your projectiles to change..
 ```
 NumProjectiles ADD 1 / 0
-Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green "CLM: Disintegration (Fire)" [ENCH:082E2EAD] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green "CLM: Disintegration (Green)" [ENCH:082E2EAD] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green (, )
     A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
       script AttachAshPile
@@ -6115,6 +6239,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Beam_Lightning [PRO
 ### CLM: Shotgun Surgeon's I  `A1ALMOMOD_Legendary_Weapon_ShotgunSurgeons_Alpha_Basic`
 > Your weapon has 11 more pellets. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6133,6 +6258,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Push "CLM: Push Target Awa
 ### CLM: Institute Shotgun Surgeon's I  `A1ALMOMOD_Legendary_Weapon_ShotgunSurgeons_Alpha_LtBlueLaser`
 > Your weapon has 11 more pellets. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread. Your  weapon turns into an energy shotgun.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6154,6 +6280,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Beam_LtBlue [PROJ:0
 ### CLM: Plasma Shotgun Surgeon's I  `A1ALMOMOD_Legendary_Weapon_ShotgunSurgeons_Alpha_Plasma`
 > Your weapon has 11 more pellets. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread. Your  weapon turns into an energy shotgun.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6176,6 +6303,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Missile_Plasma [PRO
 ### CLM: Laser Shotgun Surgeon's I  `A1ALMOMOD_Legendary_Weapon_ShotgunSurgeons_Alpha_RedLaser`
 > Your weapon has 11 more pellets. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread. Your  weapon turns into an energy shotgun.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6198,6 +6326,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Beam_Red [PROJ:082C
 > Your weapon has 11 more pellets. Increased ammo capacity. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread.
 ```
 AmmoCapacity ADD 48 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6217,6 +6346,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Push "CLM: Push Target Awa
 > Your weapon has 11 more pellets. Increased ammo capacity. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread. Your  weapon turns into an energy shotgun.
 ```
 AmmoCapacity ADD 48 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6239,6 +6369,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Beam_LtBlue [PROJ:0
 > Your weapon has 11 more pellets. Increased ammo capacity. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread. Your  weapon turns into an energy shotgun.
 ```
 AmmoCapacity ADD 48 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6262,6 +6393,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Missile_Plasma [PRO
 > Your weapon has 11 more pellets. Increased ammo capacity. Your weapon can knock back your enemies and pierces their armor. It also has 30% wider spread. Your  weapon turns into an energy shotgun.
 ```
 AmmoCapacity ADD 48 / 0
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -6331,6 +6463,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_SlightlyFreeze "CLM
 ### CLM: Explosively Penetratin'  `A1ALMOMOD_Legendary_Weapon_SpikeSniper`
 > Explosive. 100% Penetrating
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_100P [KYWD:084AC7A3] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_Penetrating_100P "CLM: Penetrating (100%)" [ENCH:082C503A] / 431
   ENCH A1ALMEnch_Constant_Effect_Penetrating_100P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Penetrating_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -6452,6 +6585,8 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.250000
 Speed MUL+ADD -0.400000 / 0.000000
 MinRange MUL+ADD 0.800000 / 0.000000
 MaxRange MUL+ADD 0.700000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_IncreaseDamage_3x_Suppressing [KYWD:084AC7A1] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_100P [KYWD:084AC7A3] / 431
 AimModelRecoilMaxDegPerShot MUL+ADD 0.100000 / 0.000000
 AimModelRecoilMinDegPerShot MUL+ADD 0.100000 / 0.000000
 AimModelRecoilHipMult MUL+ADD 0.100000 / 0.000000
@@ -6475,9 +6610,10 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Penetrating_Suppressing "CLM: Suppres
 ```
 Speed MUL+ADD -0.500000 / 0.000000
 AttackDamage MUL+ADD -0.500000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
-  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Refilling100P [KYWD:084AC791] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W "CLM: Refilling 100%" [ENCH:084AC7B8] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Scrounger Fill Ammo Chance / Set Value
       values: 100.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / -0.500000
@@ -6495,9 +6631,10 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / -0.500000
 ```
 Speed MUL+ADD 0.250000 / 0.000000
 AttackDamage MUL+ADD 1.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
-  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Refilling100P [KYWD:084AC791] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W "CLM: Refilling 100%" [ENCH:084AC7B8] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Scrounger Fill Ammo Chance / Set Value
       values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
@@ -6514,9 +6651,10 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 1.000000
 ### CLM: Synthesised Rapid Factorium  `A1ALMOMOD_Legendary_Weapon_SynthFactorium_Rapid`
 > Your weapon turns into mini factory, creating it's own ammo after each reloads. Does not affect your projectile. You reload faster due to significantly improved processes in the factorium, though not yet perfected. (WARNING: Refilling does not work with Scroungers Perk 4 on.).
 ```
-Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
-  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Refilling100P [KYWD:084AC791] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W "CLM: Refilling 100%" [ENCH:084AC7B8] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Scrounger Fill Ammo Chance / Set Value
       values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
@@ -6527,6 +6665,7 @@ ReloadSpeed MUL+ADD 0.500000 / 0.000000
 ```
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Refilling100P [KYWD:084AC791] / 431
 AimModelMinConeDegrees SET 0.000000 / 0.000000
 AimModelMaxConeDegrees SET 0.000000 / 0.000000
 AimModelConeIncreasePerShot SET 0.000000 / 0.000000
@@ -6537,9 +6676,9 @@ AimModelRecoilMinDegPerShot SET 0.000000 / 0.000000
 AimModelRecoilArcDeg SET 0.000000 / 0.000000
 AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
 AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P "CLM: Refilling 100%" [ENCH:08334366] / 431
-  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W "CLM: Refilling 100%" [ENCH:084AC7B8] / 431
+  ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Scrounger Fill Ammo Chance / Set Value
       values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
@@ -6597,9 +6736,10 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_Critical "CLM
 ### CLM: Concentratin' (Brief)  `A1ALMOMOD_Legendary_Weapon_Time_Base_Slow_3s`
 > Time slows down for three seconds when you aim,
 ```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_3s "CLM: Focused (Brief)" [ENCH:082FC96D] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_3s (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Slow_3s: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_3s_W "CLM: Focused (Brief)" [ENCH:084AC7B7] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_3s_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Slow_3s_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Time_Slow_Aim_3s [KYWD:084AC798] / 431
 ```
 
 ### CLM: Time Father's Bashful  `A1ALMOMOD_Legendary_Weapon_Time_Variant_Bash_20s`
@@ -6608,6 +6748,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_3s "CLM: Focu
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Bash_20s "CLM: Time Bash (20s)" [ENCH:082FC964] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Bash_20s (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Bash_20s: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Time_Freeze_Bash_20s [KYWD:084AC795] / 431
 ```
 
 ### CLM: Time Father's Bashful (Brief)  `A1ALMOMOD_Legendary_Weapon_Time_Variant_Bash_3s`
@@ -6616,6 +6757,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Bash_20s "CLM: Tim
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Bash_3s "CLM: Time Bash (3s)" [ENCH:082FC965] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Bash_3s (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Bash_3s: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Time_Freeze_Bash_3s [KYWD:084AC796] / 431
 ```
 
 ### CLM: Concentratin' Intensely  `A1ALMOMOD_Legendary_Weapon_Time_Variant_Freeze_20s`
@@ -6624,6 +6766,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Bash_3s "CLM: Time
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Freeze_20s "CLM: Time Bash (20s)" [ENCH:082FC967] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Freeze_20s (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Freeze_20s: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Time_Freeze_Aim_20s [KYWD:084AC793] / 431
 ```
 
 ### CLM: Concentratin' Intensely (Brief)  `A1ALMOMOD_Legendary_Weapon_Time_Variant_Freeze_3s`
@@ -6632,6 +6775,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Freeze_20s "CLM: T
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Freeze_3s "CLM: Time Bash (3s)" [ENCH:082FC969] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Freeze_3s (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Freeze_3s: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Time_Freeze_Aim_3s [KYWD:084AC794] / 431
 ```
 
 ### CLM: Concentratin' Harder  `A1ALMOMOD_Legendary_Weapon_Time_Variant_Slow_20s`
@@ -6640,6 +6784,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Freeze_3s "CLM: Ti
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_20s "CLM: Slow Time (20s)" [ENCH:082FC96B] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Time_Slow_20s (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Time_Slow_20s: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Keywords ADD A1ALMKW_WeaponPerk_Armor_Time_Slow_Aim_20s [KYWD:084AC797] / 431
 ```
 
 ### CLM: Titan's Wrath  `A1ALMOMOD_Legendary_Weapon_TitansWrath`
@@ -6658,6 +6803,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_TitansWrath "CLM: Titan
     A1ALMMGEF_Fortify_Effect_Unarmed_Damage: Value Modifier UnarmedDamage, magnitude 50.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Constant_Effect_Custom_Effect_ReflectDamage: Value Modifier ReflectDamage, magnitude 1000.000000, duration 0 (Constant Effect, Self)
       if IsMeleeAttacking [10000000] 1.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_TitansWrath [KYWD:084AC79A] / 431
 Health MUL+ADD 5.000000 / 0.000000
 ```
 
@@ -6716,6 +6862,7 @@ OverrideProjectile SET A1ALMPROJ_Custom_TracerBeam_ExplodeOnImpact_MissileShellE
 ### CLM: VATS Penetratin'  `A1ALMOMOD_Legendary_Weapon_VATSPenetrating`
 > In V.A.T.S., your shots go through cover: you can target enemies behind objects, like the Penetrator perk.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Armor_VatsPenetrator_100P [KYWD:084AC79B] / 431
 Enchantments ADD A1ALMEnch_Constant_effect_Beneficial_Increase_VATSPenetrate_100P "CLM: VATS Penetrate (100%)" [ENCH:0841F2E0] / 431
   ENCH A1ALMEnch_Constant_effect_Beneficial_Increase_VATSPenetrate_100P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_VatsPenetrate_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -6726,6 +6873,8 @@ Enchantments ADD A1ALMEnch_Constant_effect_Beneficial_Increase_VATSPenetrate_100
 ### CLM: Vatastically Penetrating  `A1ALMOMOD_Legendary_Weapon_VATasticallyPenetrating`
 > Ignores 30% of the target's damage and energy resistance. Improved VATS chance.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_FortifyVATSMax [KYWD:084AC79E] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_30P [KYWD:084AC7A4] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P "CLM: Great Sight" [ENCH:081AB18D] / 431
   ENCH A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyVATSChanceMax: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -6770,6 +6919,8 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.500000
 ```
 MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 110.000000 / 0.000000
+Keywords ADD A1ALMKW_WeaponPerk_Armor_AimStabilize_100P [KYWD:084AC789] / 431
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_SneakBonusAttacks_5x [KYWD:084AC7AA] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_WidowMakers_Tactical "CLM: Widowmaker's" [ENCH:08352239] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_WidowMakers_Tactical (, )
     MGEF PA_TargetingHUD_Cloak (vanilla) magnitude 1000.000000 duration 1
@@ -6778,14 +6929,14 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_WidowMakers_Tactical "C
     MGEF ReconScopeEquippedEffect (vanilla) magnitude 0.000000 duration 0
       if IsInCombat(0) [10010000] 1.000000
       if GetInIronSights(NULL) [10010000] 1.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P "CLM: Aim Stabilized (100%)" [ENCH:0819E47E] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Actor Scope Stability / Add Value
-      values: 1000.000000
-Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x "CLM Perk: Murderous (5x)" [ENCH:081A28D6] / 431
-  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W "CLM: Aim Stabilized (100%)" [ENCH:084AC7B3] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_100P_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_100P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Actor Scope Stability / Multiply Value
+      values: 2.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W "CLM Perk: Murderous (5x)" [ENCH:084AC7B4] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x_W (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Sneak Attack Mult / Multiply Value
       values: 5.000000
 ```
@@ -6793,6 +6944,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x "CLM Perk: Murde
 ### CLM: Widowmakin'  `A1ALMOMOD_Legendary_Weapon_WidowMaking`
 > You cause 2x more damage when you aim.
 ```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Aim_IncreaseDamage_2x [KYWD:084AC79C] / 431
 Enchantments ADD A1ALMEnch_Constant_effect_Custom_Effect_Widowmaking "CLM: Widowmakin'" [ENCH:0833CC4C] / 431
   ENCH A1ALMEnch_Constant_effect_Custom_Effect_Widowmaking (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_Aiim_WeaponDamage_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)

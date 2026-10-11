@@ -5,6 +5,6 @@ Over 570 legendary effects for weapons and armour: craft them at the workbench o
 - Loot mode: legendaries drop from anything you kill; holotapes unlock whole families; OP legendaries need a rare Legendary Core. Drop rate Low, Standard or Higher.
 - Legendary Picker, 15 new legendaries, coloured lasers, many fixes.
 
-Settings are items: make "CLM Setting" items at a chemistry station (CLM Settings). Carry one = on, drop it = off. Settings and picker work without scripts, so they work on PlayStation too. Attach legendaries in a workbench's Legendary slot.
+Settings are items: make "CLM Setting" items at a chemistry station (CLM Settings). Carry one = on, drop it = off (or use the Configuration Holotape). Attach legendaries in a workbench's Legendary slot; armour ones need armour with a legendary slot.
 
 1.09 users: gear with a DLC legendary loses it unless you install that add-on.

@@ -10,8 +10,9 @@ The Creation Kit's Bethesda.net upload looks for the Xbox versions as "- Main_xb
 (XBoxDDS textures, Xbox compression). Output in dist/:
     PC/      the main plugin + PC archives, and the add-ons            (Bethesda.net PC uploads)
     Xbox/    the main plugin + _xbox archives, and the add-ons         (Bethesda.net Xbox uploads)
-    CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod, ticks the add-ons for the DLC the
-                               player has, and offers the optional F4SE menu (mcm/data: "CLM - MCM", needs F4SE and
+    CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod as packed archives (BA2, default) or
+                               loose files (for mod tools / players who prefer loose), ticks the add-ons for the
+                               DLC the player has, and offers the optional F4SE menu (mcm/data: "CLM - MCM", needs F4SE and
                                Mod Configuration Menu; loose files, as MCM reads its menu from loose files). Nexus
                                only: the Bethesda.net uploads (PC/, Xbox/) never include it.
 The debug recorder (debug/) is a testing tool and never packaged.
@@ -106,6 +107,24 @@ def fomod(version: str) -> tuple[str, str]:
     <folder source="Core" destination=""/>
   </requiredInstallFiles>
   <installSteps order="Explicit">
+    <installStep name="Files">
+      <optionalFileGroups order="Explicit">
+        <group name="How to install CLM's scripts, meshes and textures" type="SelectExactlyOne">
+          <plugins order="Explicit">
+            <plugin name="Packed archives (recommended)">
+              <description>Two BA2 archives next to the plugin. Works on every PC game version, current and older (1.10.163).</description>
+              <files><folder source="Packed" destination="" priority="0"/></files>
+              <typeDescriptor><type name="Recommended"/></typeDescriptor>
+            </plugin>
+            <plugin name="Loose files">
+              <description>The same files unpacked into Data (Scripts, Meshes, Textures), including the script sources. For players and mod tools that prefer loose files.</description>
+              <files><folder source="Loose" destination="" priority="0"/></files>
+              <typeDescriptor><type name="Optional"/></typeDescriptor>
+            </plugin>
+          </plugins>
+        </group>
+      </optionalFileGroups>
+    </installStep>
     <installStep name="DLC add-ons">
       <optionalFileGroups order="Explicit">
         <group name="Add-ons for the DLC you own (each needs its DLC)" type="SelectAny">
@@ -158,8 +177,12 @@ def main():
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED) as z:
         z.writestr('fomod/info.xml', info)
         z.writestr('fomod/ModuleConfig.xml', config)
-        for name in (MAIN, f'{STEM} - Main.ba2', f'{STEM} - Textures.ba2'):
-            z.write(DIST / 'PC' / name, f'Core/{name}')
+        z.write(DIST / 'PC' / MAIN, f'Core/{MAIN}')
+        for name in (f'{STEM} - Main.ba2', f'{STEM} - Textures.ba2'):
+            z.write(DIST / 'PC' / name, f'Packed/{name}')
+        for f in sorted(root.rglob('*')):              # the loose alternative: the staged Data folder
+            if f.is_file():
+                z.write(f, f'Loose/{f.relative_to(root).as_posix()}')
         z.write(README, f'Core/{README.name}')
         for plugin, _, _ in ADDONS:
             z.write(DIST / 'PC' / plugin, f'Add-ons/{plugin}')

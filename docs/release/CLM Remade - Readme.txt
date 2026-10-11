@@ -18,7 +18,11 @@ REQUIREMENTS
 
 
 INSTALLING
-Install with a mod manager (Vortex or Mod Organizer 2): the installer ticks the add-ons for the DLC you own.
+Install with a mod manager (Vortex or Mod Organizer 2). The installer asks:
+- Files: packed archives (recommended; two BA2 files, any PC game version) or loose files (the same files
+  unpacked, with the script sources).
+- DLC add-ons: it ticks the ones for the DLC you own.
+- F4SE menu (optional, PC): see F4SE MENU below. Skip it without F4SE and Mod Configuration Menu.
 By hand: copy the files into Fallout 4's Data folder and enable the plugins.
 
 
@@ -28,7 +32,8 @@ Legendaries are attached at a weapons or armour workbench, in the "Legendary" sl
 
 
 SETTINGS AND THE CHEMISTRY STATION - PLEASE READ
-CLM's settings are items, not menu switches. This is new in 2.0 and it is not obvious, so:
+CLM's settings are items, not menu switches. This is new in 2.0 and it is not obvious, so (with F4SE, the
+optional menu does all this for you instead: see F4SE MENU):
 - Every setting is a weightless "CLM Setting: ..." item in the Misc tab of your Pip-Boy.
   CARRY IT = the setting is on. DROP IT (or store or sell it) = the setting is off. Carry none = the defaults.
 - Make them for free at any chemistry station, in the "CLM Settings" category:
@@ -47,6 +52,8 @@ CLM's settings are items, not menu switches. This is new in 2.0 and it is not ob
   setting, leave the station and use it again to see the change (until then, things may show greyed out).
 - If a category or recipe seems to be missing, check your Misc tab: you may be carrying a setting that hides it
   (Loot mode hides crafting and the picker), or already carry the item it makes.
+- Armour legendaries are at the ARMOUR workbench, on pieces that have a legendary slot (armour pieces, not
+  clothing such as the Vault suit).
 
 
 LEGENDARY PICKER
@@ -91,6 +98,12 @@ LOOT MODE
 - Standard drop rate, per kill: common 3%, uncommon 1%, rare 0.3%, OP 0.1%.
 - Turn it on with "CLM Setting: Loot mode"; drop it (or make Free crafting) to go back to crafting.
 - Drop rate: carry "Low drop rate" or "Higher drop rate"; with neither, Standard.
+
+
+NOTES
+- Refilling legendaries and the Factoriums (Keltas', Synthesised) refill your magazine; they do not work together
+  with rank 4 of the Scrounger perk.
+- Shavka's Explosive Striking (weapon and armour) explodes on melee hits, close to you: it can hurt you too.
 
 
 UPGRADING FROM 1.09
