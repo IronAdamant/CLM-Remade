@@ -72,6 +72,8 @@ THEMES = {
     ('weapon', 'Assaultrons'): 'Curios', ('weapon', 'LiarsCompedium'): 'Curios',
     ('weapon', 'BloodyMessMaxed'): 'Utility', ('weapon', 'Silenced'): 'Utility', ('weapon', 'Beginner'): 'Utility',
     ('weapon', 'DevilsDue'): 'Utility',
+    ('weapon', 'InstantKilling'): 'Forbidden (weapon)', ('weapon', 'Medics'): 'Curios',
+    ('weapon', 'Overcharging'): 'Energy', ('weapon', 'VATSPenetrating'): 'Marksman',
     ('weapon', 'Cheaters'): 'Forbidden (weapon)', ('weapon', 'ZeusCrafted'): 'Forbidden (weapon)',
     ('weapon', 'Suicidal'): 'Forbidden (weapon)',
     # --- armour ---
@@ -92,6 +94,8 @@ THEMES = {
     ('armor', 'BurningRage'): 'Flaming', ('armor', 'FlamingCloaked'): 'Flaming',
     ('armor', 'Fiddling'): 'Handiwork', ('armor', 'Handy'): 'Handiwork',
     ('armor', 'SilverTonguedBusinessMan'): 'Handiwork', ('armor', 'DevilsDue'): 'Handiwork',
+    ('armor', 'ReloadSpeed'): 'Steady aim', ('armor', 'Focused'): 'Steady aim',
+    ('armor', 'MarathonRunning'): 'Speed',
     ('armor', 'AimStabilized'): 'Steady aim', ('armor', 'PinpointAccuracy'): 'Steady aim',
     ('armor', 'CriticallyHurtin'): 'Steady aim',
     ('armor', 'BallisticProtection'): 'Plating', ('armor', 'Titanium'): 'Plating', ('armor', 'Damage'): 'Plating',
@@ -169,6 +173,8 @@ TIER = {
     'Murderously Silenced': 'rare', 'Havoc (Bullets)': 'rare', 'Havoc (Blue Laser)': 'rare', 'Havoc (Plasma)': 'rare',
     'Havoc (Red Laser)': 'rare',
     "Concentratin' (Brief)": 'common', "Time Father's Bashful (Brief)": 'common',
+    # built from 1.09's unused pieces (2026-10-11)
+    "Lobbin' (Nuke Mine)": 'rare', 'Focused (Brief)': 'common', "VATS Penetratin'": 'common',
 }
 TIERS = ('common', 'uncommon', 'rare')
 RARE_SPAWN = re.compile(r'Boss|Behemoth|Queen|King|Kellog|Courser|Ghoulrilla|PALegendary|Glowing One', re.I)

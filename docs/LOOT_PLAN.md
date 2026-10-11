@@ -5,9 +5,9 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft. Families whose legendaries need a DLC keep their holotape in that DLC's add-on.
 
-**561 legendaries in 112 families.** Tiers: common 127, uncommon 206, rare 46, OP 182.
+**576 legendaries in 112 families.** Tiers: common 129, uncommon 215, rare 47, OP 185.
 
-Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouch) (unfinished draft, no recipe), ALM: A - Test (test item, stays craftable), CQC (unfinished draft, no recipe), ALM: A - Test (test item, stays craftable).
+Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
 
 ## Weapon families
 
@@ -21,14 +21,14 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Brawn | main | Face Bustin' (OP); Grand Slam (Melee) (OP); Titan's Wrath (OP) |
 | Cold | main | Slightly Freezing (common); Chilling (uncommon); Mr. Freeze's (OP) |
 | Concentratin' | main | Concentratin' (Brief) (common); Time Father's Bashful (Brief) (common); Concentratin' Intensely (Brief) (uncommon); Critically Concentratin' (uncommon); Concentratin' Harder (OP); Concentratin' Intensely (OP); Time Father's Bashful (OP) |
-| Curios | main | Lorenzo's Legendary Artificial (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); Liar's Compedium (OP) |
+| Curios | main | Lorenzo's Legendary Artificial (uncommon); Medic's (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); Liar's Compedium (OP) |
 | Destroyer's | main | Destroyer's (OP); Destroyer's (3x) (OP); Destroyer's (4x) (OP); Destroyer's (5x) (OP) |
 | Disintegratin' | main | Disintegratin' (Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Red) (uncommon) |
 | Elemental | main | Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
 | Energized | main | Energized (Blue Laser) (common); Energized (Deep Blue Laser) (common); Energized (Gauss) (common); Energized (Gold Laser) (common); Energized (Green Laser) (common); Energized (Orange Laser) (common); Energized (Pink Laser) (common); Energized (Plasma) (common); Energized (Purple Laser) (common); Energized (Red Laser) (common) |
-| Energy | main | Improved Plasma Infused (common); Apotheistic (OP); Searing (OP) |
+| Energy | main | Improved Plasma Infused (common); Overchargin' (uncommon); Apotheistic (OP); Searing (OP) |
 | Fire | main | Burning (common); Incendiary Striking (common); Hinokagutsuchi (uncommon); Burning Hellish (OP) |
-| Forbidden (weapon) | main | Cheater's (OP); Suicidal (OP); Zeus Crafted (OP) |
+| Forbidden (weapon) | main | Cheater's (OP); Instant Killin' (OP); Suicidal (OP); Zeus Crafted (OP) |
 | Forcible | main | Forcible (uncommon); Deadlier Forcible (OP); Lethally Forcible (OP) |
 | Fury | main | Fury (OP); Wrathful (OP) |
 | Garm's | main | Garm's (OP); Garm's (Limited) (OP) |
@@ -36,14 +36,14 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Gunslingers | main | Generically 80s Action Hero's (uncommon); Gunslanger's (rare); Gunslinger's (OP) |
 | Havoc | main | Havoc (Blue Laser) (OP); Havoc (Blue Laser) (OP); Havoc (Bullets) (OP); Havoc (Bullets) (OP); Havoc (Plasma) (OP); Havoc (Plasma) (OP); Havoc (Red Laser) (OP); Havoc (Red Laser) (OP) |
 | Heavy hitters | main | Devastating (common); Commando's (uncommon); Lucky Drawin' (uncommon); Widowmakin' (uncommon); Roid Ragin' (OP); Suppressin' (OP) |
-| Hurtin' | main | Hurtin' (100%) (common); Hurtin' (150%) (uncommon); Hurtin' (200%) (rare); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP) |
+| Hurtin' | main | Hurtin' (100%) (common); Hurtin' (150%) (uncommon); Hurtin' (200%) (rare); Hurtin' (1000%) (OP); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP) |
 | Hydra's Fang | main | Hydra's Bite (OP); Hydra's Fanged. (OP); Hydra's Serrated-fanged (OP); Hydra's Twin-fanged (OP) |
 | Keltas' Factorium | main | Keltas' Flawed Factorium (common); Keltas' Rapid Factorium (uncommon); Keltas' Specialised Factorium (uncommon); Keltas' Perfect Factorium (rare) |
 | Liberty Prime's | main | Liberty Prime's (OP); Liberty Prime's (Enraged mode) (OP) |
 | Limb Breaker's | main | Limb Breaker's (25%) (common); Limb Breaker's (50%) (common); Limb Breaker's (75%) (uncommon); Limb Breaker's (100%) (rare) |
-| Lobbin' | main | Lobbin' (Cryo Grenade) (uncommon); Lobbin' (Frag Grenade) (uncommon); Lobbin' (HalluciGen Grenade) (uncommon); Lobbin' (Molotov Cocktail) (uncommon); Lobbin' (Plasma Grenade) (uncommon); Lobbin' (Pulse Grenade) (uncommon) |
+| Lobbin' | main | Lobbin' (Cryo Grenade) (uncommon); Lobbin' (Cryo Mine) (uncommon); Lobbin' (Frag Grenade) (uncommon); Lobbin' (Frag Mine) (uncommon); Lobbin' (HalluciGen Grenade) (uncommon); Lobbin' (Molotov Cocktail) (uncommon); Lobbin' (Plasma Grenade) (uncommon); Lobbin' (Plasma Mine) (uncommon); Lobbin' (Pulse Grenade) (uncommon); Lobbin' (Pulse Mine) (uncommon); Lobbin' (Nuke Mine) (rare) |
 | Majestically Swaggering | main | Majestically Swaggering (OP); Majestically Swaggering (Dangerously) (OP) |
-| Marksman | main | Highlighting (common); Vatastically Penetrating (common); High Velocity Full Titanium (uncommon); Eagle Eyed (OP); Widowmaker's Sight (OP) |
+| Marksman | main | Highlighting (common); VATS Penetratin' (common); Vatastically Penetrating (common); High Velocity Full Titanium (uncommon); Eagle Eyed (OP); Widowmaker's Sight (OP) |
 | Mine launchin' | main | Sticky Cryo Mine launchin' (uncommon); Sticky Frag Mine launchin' (uncommon); Sticky Nuke Mine launchin' (uncommon); Sticky Plasma Mine launchin' (uncommon); Sticky Pulse Mine launchin' (uncommon) |
 | Moby-Dick's | Far Harbor | Moby-Dick's (uncommon) |
 | Multi-shot | main | Bird Shootin' (uncommon); Carbonatin' (rare); Four Shot (rare); High Explosive (rare) |
@@ -75,7 +75,7 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Spawn: Far Harbor creatures | Far Harbor | Custom Spawning: Creature/Hostile - Random Angler (common); Custom Spawning: Creature/Hostile - Random Fog Crawler (common); Custom Spawning: Creature/Hostile - Random Gulper (common); Custom Spawning: Creature/Hostile - Random Hermit Crab (common); Custom Spawning: Human/Hostile - Random Trapper (common); Custom Spawning: Creature/Hostile - Random Legendary Angler (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Fog Crawler (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Gulper (uncommon); Custom Spawning: Human/Hostile - Random Legendary Trapper (uncommon) |
 | Spawn: Friendly robots | main | Custom Spawning: Artificial/Neutral - Protectron (common); Custom Spawning: Artificial/Neutral - Random Eyebot (common); Custom Spawning: Artificial/Neutral - Random Mr. Handy (common); Custom Spawning: Artificial/Neutral - Random Legendary Protectron (uncommon) |
 | Spawn: Ghouls | main | Custom Spawning: Creature/Hostile - Random Feral Ghoul (common); Custom Spawning: Creature/Hostile - Random Legendary Feral Ghoul (uncommon); Custom Spawning: Creature/Hostile - Random Feral Ghoul Boss (rare); Custom Spawning: Creature/Hostile - Random Glowing One (rare); Custom Spawning: Creature/Hostile - Random Legendary Glowing One (rare) |
-| Spawn: Insects | main | Custom Spawning: Creature/Hostile - Random Bloatfly (common); Custom Spawning: Creature/Hostile - Random Bloodbug (common); Custom Spawning: Creature/Hostile - Random Glowing Radroach (common); Custom Spawning: Creature/Hostile - Random RadAnt (common); Custom Spawning: Creature/Hostile - Random Radroach (common); Custom Spawning: Creature/Hostile - Random Stingwing (common); Custom Spawning: Creature/Hostile - Random Swarm (common); Custom Spawning: Creature/Hostile - Random Legendary Bloatfly (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Bloodbug (uncommon); Custom Spawning: Creature/Hostile - Random Legendary RadAnt(Large) (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Stingwing (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Swarm (uncommon) |
+| Spawn: Insects | main | Custom Spawning: Creature/Hostile - Random Bloatfly (common); Custom Spawning: Creature/Hostile - Random Bloodbug (common); Custom Spawning: Creature/Hostile - Random Glowing Radroach (common); Custom Spawning: Creature/Hostile - Random RadAnt (common); Custom Spawning: Creature/Hostile - Random Radroach (common); Custom Spawning: Creature/Hostile - Random Stingwing (common); Custom Spawning: Creature/Hostile - Random Swarm (common); Custom Spawning: Creature/Hostile - Random Legendary Bloatfly (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Bloodbug (uncommon); Custom Spawning: Creature/Hostile - Random Legendary RadAnt(Large) (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Radroach (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Stingwing (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Swarm (uncommon) |
 | Spawn: Institute | main | Custom Spawning: Artificial/Institute - Random Synth (common); Custom Spawning: Artificial/Institute - Random Legendary Synth (uncommon); Custom Spawning: Artificial/Institute - Courser (rare); Custom Spawning: Artificial/Institute - Random Synth Boss (rare) |
 | Spawn: Mirelurks | main | Custom Spawning: Creature/Hostile - Random Mirelurk (common); Custom Spawning: Creature/Hostile - Random Mirelurk Crab (common); Custom Spawning: Creature/Hostile - Random Mirelurk Hunter (common); Custom Spawning: Creature/Hostile - Random Legendary Mirelurk Crab (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Mirelurk Hunter (uncommon); Custom Spawning: Creature/Hostile - Random Legendary Mirelurk King (rare); Custom Spawning: Creature/Hostile - Random Legendary Mirelurk Queen (rare); Custom Spawning: Creature/Hostile - Random Mirelurk King (rare) |
 | Spawn: Nuka-World creatures | Nuka-World | Custom Spawning: Creature/Hostile - Random Gatorclaw (common); Custom Spawning: Creature/Hostile - Random Nukalurk (common); Custom Spawning: Creature/Hostile - Random Ghoulrilla (rare) |
@@ -109,7 +109,7 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Fisto's | main | Fisto's (20%) (common); Fisto's (25%) (common); Fisto's (100%) (uncommon); Fisto's (50%) (uncommon); Fisto's (150%) (rare); Fisto's (200%) (OP); Fisto's (250%) (OP); Fisto's (300%) (OP); Fisto's (350%) (OP); Fisto's (400%) (OP); Fisto's (450%) (OP); Fisto's (500%) (OP) |
 | Flaming | main | Burning Rage (OP); Constantly Flamin' Cloaked (OP) |
 | Forbidden (armour) | main | Cheater's (OP); God Father's (OP) |
-| Ghostly and Camouflaged | main | Escapist's (uncommon); Stealth (uncommon); Camouflaged (Always) (OP); Camouflaged (Always) (OP); Camouflaged (Crouch) (OP); Camouflaged (Crouch) (OP); Ghostly (Always) (OP); Ghostly (Crouch) (OP); Resistively Ghostly (OP) |
+| Ghostly and Camouflaged | main | Escapist's (uncommon); Stealth (uncommon); Camouflaged (Always) (OP); Camouflaged (Always) (OP); Camouflaged (Crouch) (OP); Camouflaged (Crouch) (OP); Ghostly (Always) (OP); Ghostly (Crouch) (OP); Resistively Ghostly (OP); Stealth Boy'd (OP) |
 | Handiwork | main | Devil's Due (common); Fiddlin' (common); Handy (OP); Silver-Tongued Businessman (OP) |
 | Healing | main | Aid Patch (common); Auto-Medical (uncommon); Regenerative (uncommon); Long Livin' (OP); Ridiculously Absorbin' (OP) |
 | Immunities | main | Cat Tailed (common); Waterbreathing (common); Biological Hazmat (OP); Hawkin's Experimental (OP); Immunity (Acid) (OP); Immunity (Electric) (OP); Immunity (Explosion) (OP); Immunity (Limb Damage) (OP); Immunity (Poison) (OP); Immunity (Radiation) (OP) |
@@ -127,6 +127,6 @@ Left out of loot: Ghostly (Always) (unfinished draft, no recipe), Ghostly (Crouc
 | Shavka's Explosive Striking | main | Shavka's Explosive Striking (uncommon); Shavka's Explosive Striking (Cryo) (uncommon); Shavka's Explosive Striking (Fire) (uncommon); Shavka's Explosive Striking (Gauss) (uncommon); Shavka's Explosive Striking (Nuclear) (uncommon); Shavka's Explosive Striking (Plasma) (uncommon); Shavka's Explosive Striking (Pulse) (uncommon) |
 | Shields | main | Glow (uncommon); Shield (Constant) (OP); Shield (Emergency) (OP) |
 | Sight | main | Highlighting (common); Sensin' (common); Tactical Highlighting (uncommon); Tracker's Sight (uncommon); Tracker's Focused Sight (rare) |
-| Speedy | main | Speedy (50%) (common); Chronos' (uncommon); Speedy (100%) (uncommon); Speedy (150%) (rare); Flash (OP); Speedy (200%) (OP); Speedy (250%) (OP); Speedy (300%) (OP) |
-| Steady aim | main | Aim Stabilized (50%) (uncommon); Critically Hurtin' (uncommon); Aim Stabilized (100%) (OP); Pinpoint Accuracy (OP) |
+| Speedy | main | Speedy (50%) (common); Chronos' (uncommon); Marathon Runnin' (uncommon); Speedy (100%) (uncommon); Speedy (150%) (rare); Flash (OP); Speedy (200%) (OP); Speedy (250%) (OP); Speedy (300%) (OP) |
+| Steady aim | main | Focused (Brief) (common); Aim Stabilized (50%) (uncommon); Critically Hurtin' (uncommon); Quick Hands (50%) (uncommon); Aim Stabilized (100%) (OP); Pinpoint Accuracy (OP) |
 | Untouchable | main | Untouchable (Disarm) (uncommon); Untouchable (Fire) (uncommon); Untouchable (Freeze) (uncommon); Untouchable (Frenzy) (uncommon); Untouchable (Knockdown) (uncommon); Untouchable (Pacify) (uncommon); Untouchable (Paralyzed) (uncommon); Untouchable (Poison) (uncommon); Untouchable (Rad) (uncommon); Untouchable (Shock) (uncommon); Untouchable (Spook) (uncommon) |

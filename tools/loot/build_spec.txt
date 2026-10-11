@@ -1117,6 +1117,11 @@ set | A1ALMMISC_LooseMod_Armor_Undetectable_Variant_Ghostly_Crouch_Resistively |
 set | A1ALMMISC_LooseMod_Armor_Undetectable_Variant_Ghostly_Crouch_Resistively | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_Undetectable_Variant_Ghostly_Crouch_Resistively | LNAM | @A1ALMMISC_LooseMod_Armor_Undetectable_Variant_Ghostly_Crouch_Resistively
 copy | @co_A1ALMOMOD_Legendary_Armor_Undetectable_Variant_Ghostly_Crouch_Resistively | co_A1ALMOMOD_Legendary_Armor_Undetectable_Variant_Ghostly_Crouch_Resistively_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Undetectable_Variant_StealthBoy
+set | A1ALMMISC_LooseMod_Armor_Undetectable_Variant_StealthBoy | FULL | CLM: Stealth Boy'd
+set | A1ALMMISC_LooseMod_Armor_Undetectable_Variant_StealthBoy | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Armor_Undetectable_Variant_StealthBoy | LNAM | @A1ALMMISC_LooseMod_Armor_Undetectable_Variant_StealthBoy
+copy | @co_A1ALMOMOD_Legendary_Armor_Undetectable_Variant_StealthBoy | co_A1ALMOMOD_Legendary_Armor_Undetectable_Variant_StealthBoy_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_DevilsDue
 set | A1ALMMISC_LooseMod_Armor_DevilsDue | FULL | CLM: Devil's Due
 set | A1ALMMISC_LooseMod_Armor_DevilsDue | DATA\Value | 75
@@ -1597,6 +1602,11 @@ set | A1ALMMISC_LooseMod_Armor_Chronos | FULL | CLM: Chronos'
 set | A1ALMMISC_LooseMod_Armor_Chronos | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_Chronos | LNAM | @A1ALMMISC_LooseMod_Armor_Chronos
 copy | @co_A1ALMOMOD_Legendary_Armor_Chronos | co_A1ALMOMOD_Legendary_Armor_Chronos_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_MarathonRunning
+set | A1ALMMISC_LooseMod_Armor_PerkV_MarathonRunning | FULL | CLM: Marathon Runnin'
+set | A1ALMMISC_LooseMod_Armor_PerkV_MarathonRunning | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_PerkV_MarathonRunning | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_MarathonRunning
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_MarathonRunning | co_A1ALMOMOD_Legendary_Armor_PerkV_MarathonRunning_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_100
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_100 | FULL | CLM: Speedy (100%)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_100 | DATA\Value | 200
@@ -1627,6 +1637,11 @@ set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_300 | FULL | CLM: Speedy (300
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_300 | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Speed_300 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_300
 copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Speed_300 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Speed_300_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief
+set | A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief | FULL | CLM: Focused (Brief)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief | DATA\Value | 75
+set | A1ALMOMOD_Legendary_Armor_PerkV_Focused_Brief | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Focused_Brief | co_A1ALMOMOD_Legendary_Armor_PerkV_Focused_Brief_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_AimStabilized_50P
 set | A1ALMMISC_LooseMod_Armor_PerkV_AimStabilized_50P | FULL | CLM: Aim Stabilized (50%)
 set | A1ALMMISC_LooseMod_Armor_PerkV_AimStabilized_50P | DATA\Value | 200
@@ -1637,6 +1652,11 @@ set | A1ALMMISC_LooseMod_Armor_CriticallyHurtin | FULL | CLM: Critically Hurtin'
 set | A1ALMMISC_LooseMod_Armor_CriticallyHurtin | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_CriticallyHurtin | LNAM | @A1ALMMISC_LooseMod_Armor_CriticallyHurtin
 copy | @co_A1ALMOMOD_Legendary_Armor_CriticallyHurtin | co_A1ALMOMOD_Legendary_Armor_CriticallyHurtin_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_ReloadSpeed_50
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_ReloadSpeed_50 | FULL | CLM: Quick Hands (50%)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_ReloadSpeed_50 | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_ReloadSpeed_50 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_ReloadSpeed_50
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_ReloadSpeed_50 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_ReloadSpeed_50_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_AimStabilized_100P
 set | A1ALMMISC_LooseMod_Armor_PerkV_AimStabilized_100P | FULL | CLM: Aim Stabilized (100%)
 set | A1ALMMISC_LooseMod_Armor_PerkV_AimStabilized_100P | DATA\Value | 1500
@@ -1857,6 +1877,11 @@ set | A1ALMMISC_LooseMod_Weapon_LorenzosLegendary | FULL | CLM: Lorenzo's Legend
 set | A1ALMMISC_LooseMod_Weapon_LorenzosLegendary | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_LorenzosLegendary | LNAM | @A1ALMMISC_LooseMod_Weapon_LorenzosLegendary
 copy | @co_A1ALMOMOD_Legendary_Weapon_LorenzosLegendary | co_A1ALMOMOD_Legendary_Weapon_LorenzosLegendary_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Medics
+set | A1ALMMISC_LooseMod_Weapon_Medics | FULL | CLM: Medic's
+set | A1ALMMISC_LooseMod_Weapon_Medics | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Medics | LNAM | @A1ALMMISC_LooseMod_Weapon_Medics
+copy | @co_A1ALMOMOD_Legendary_Weapon_Medics | co_A1ALMOMOD_Legendary_Weapon_Medics_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_AngryNerds
 set | A1ALMMISC_LooseMod_Weapon_AngryNerds | FULL | CLM: Angry Nerd's
 set | A1ALMMISC_LooseMod_Weapon_AngryNerds | DATA\Value | 1500
@@ -2007,6 +2032,11 @@ set | A1ALMMISC_LooseMod_Weapon_ImprovedPlasmaIInfused | FULL | CLM: Improved Pl
 set | A1ALMMISC_LooseMod_Weapon_ImprovedPlasmaIInfused | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_ImprovedPlasmaIInfused | LNAM | @A1ALMMISC_LooseMod_Weapon_ImprovedPlasmaIInfused
 copy | @co_A1ALMOMOD_Legendary_Weapon_ImprovedPlasmaIInfused | co_A1ALMOMOD_Legendary_Weapon_ImprovedPlasmaIInfused_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Overcharging
+set | A1ALMMISC_LooseMod_Weapon_Overcharging | FULL | CLM: Overchargin'
+set | A1ALMMISC_LooseMod_Weapon_Overcharging | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Overcharging | LNAM | @A1ALMMISC_LooseMod_Weapon_Overcharging
+copy | @co_A1ALMOMOD_Legendary_Weapon_Overcharging | co_A1ALMOMOD_Legendary_Weapon_Overcharging_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Apotheistic
 set | A1ALMMISC_LooseMod_Weapon_Apotheistic | FULL | CLM: Apotheistic
 set | A1ALMMISC_LooseMod_Weapon_Apotheistic | DATA\Value | 1500
@@ -2042,6 +2072,11 @@ set | A1ALMMISC_LooseMod_Weapon_Cheaters | FULL | CLM: Cheater's
 set | A1ALMMISC_LooseMod_Weapon_Cheaters | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Weapon_Cheaters | LNAM | @A1ALMMISC_LooseMod_Weapon_Cheaters
 copy | @co_A1ALMOMOD_Legendary_Weapon_Cheaters | co_A1ALMOMOD_Legendary_Weapon_Cheaters_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_InstantKilling
+set | A1ALMMISC_LooseMod_Weapon_InstantKilling | FULL | CLM: Instant Killin'
+set | A1ALMMISC_LooseMod_Weapon_InstantKilling | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_InstantKilling | LNAM | @A1ALMMISC_LooseMod_Weapon_InstantKilling
+copy | @co_A1ALMOMOD_Legendary_Weapon_InstantKilling | co_A1ALMOMOD_Legendary_Weapon_InstantKilling_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Suicidal
 set | A1ALMMISC_LooseMod_Weapon_Suicidal | FULL | CLM: Suicidal
 set | A1ALMMISC_LooseMod_Weapon_Suicidal | DATA\Value | 1500
@@ -2207,6 +2242,11 @@ set | A1ALMMISC_LooseMod_Weapon_DamageBoost_2x | FULL | CLM: Hurtin' (200%)
 set | A1ALMMISC_LooseMod_Weapon_DamageBoost_2x | DATA\Value | 500
 set | A1ALMOMOD_Legendary_Weapon_DamageBoost_2x | LNAM | @A1ALMMISC_LooseMod_Weapon_DamageBoost_2x
 copy | @co_A1ALMOMOD_Legendary_Weapon_DamageBoost_2x | co_A1ALMOMOD_Legendary_Weapon_DamageBoost_2x_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_DamageBoost_10x
+set | A1ALMMISC_LooseMod_Weapon_DamageBoost_10x | FULL | CLM: Hurtin' (1000%)
+set | A1ALMMISC_LooseMod_Weapon_DamageBoost_10x | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_DamageBoost_10x | LNAM | @A1ALMMISC_LooseMod_Weapon_DamageBoost_10x
+copy | @co_A1ALMOMOD_Legendary_Weapon_DamageBoost_10x | co_A1ALMOMOD_Legendary_Weapon_DamageBoost_10x_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_DamageBoost_2_5x
 set | A1ALMMISC_LooseMod_Weapon_DamageBoost_2_5x | FULL | CLM: Hurtin' (250%)
 set | A1ALMMISC_LooseMod_Weapon_DamageBoost_2_5x | DATA\Value | 1500
@@ -2337,6 +2377,31 @@ set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Impact_Pulse | FULL | CLM: Lobbi
 set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Impact_Pulse | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Impact_Pulse | LNAM | @A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Impact_Pulse
 copy | @co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Impact_Pulse | co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Impact_Pulse_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Cryo
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Cryo | FULL | CLM: Lobbin' (Cryo Mine)
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Cryo | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Cryo | LNAM | @A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Cryo
+copy | @co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Cryo | co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Cryo_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Frag
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Frag | FULL | CLM: Lobbin' (Frag Mine)
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Frag | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Frag | LNAM | @A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Frag
+copy | @co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Frag | co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Frag_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Plasma
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Plasma | FULL | CLM: Lobbin' (Plasma Mine)
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Plasma | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Plasma | LNAM | @A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Plasma
+copy | @co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Plasma | co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Plasma_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Pulse
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Pulse | FULL | CLM: Lobbin' (Pulse Mine)
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Pulse | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Pulse | LNAM | @A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Pulse
+copy | @co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Pulse | co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Pulse_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Nuke
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Nuke | FULL | CLM: Lobbin' (Nuke Mine)
+set | A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Nuke | DATA\Value | 500
+set | A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Nuke | LNAM | @A1ALMMISC_LooseMod_Weapon_Lobbing_Variant_Mine_Nuke
+copy | @co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Nuke | co_A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Mine_Nuke_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_MajesticSwagger_Base
 set | A1ALMMISC_LooseMod_Weapon_MajesticSwagger_Base | FULL | CLM: Majestically Swaggering
 set | A1ALMMISC_LooseMod_Weapon_MajesticSwagger_Base | DATA\Value | 1500
@@ -2352,6 +2417,11 @@ set | A1ALMMISC_LooseMod_Weapon_Highlighting | FULL | CLM: Highlighting
 set | A1ALMMISC_LooseMod_Weapon_Highlighting | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_Highlighting | LNAM | @A1ALMMISC_LooseMod_Weapon_Highlighting
 copy | @co_A1ALMOMOD_Legendary_Weapon_Highlighting | co_A1ALMOMOD_Legendary_Weapon_Highlighting_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_VATSPenetrating
+set | A1ALMMISC_LooseMod_Weapon_VATSPenetrating | FULL | CLM: VATS Penetratin'
+set | A1ALMMISC_LooseMod_Weapon_VATSPenetrating | DATA\Value | 75
+set | A1ALMOMOD_Legendary_Weapon_VATSPenetrating | LNAM | @A1ALMMISC_LooseMod_Weapon_VATSPenetrating
+copy | @co_A1ALMOMOD_Legendary_Weapon_VATSPenetrating | co_A1ALMOMOD_Legendary_Weapon_VATSPenetrating_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_VATasticallyPenetrating
 set | A1ALMMISC_LooseMod_Weapon_VATasticallyPenetrating | FULL | CLM: Vatastically Penetrating
 set | A1ALMMISC_LooseMod_Weapon_VATasticallyPenetrating | DATA\Value | 75
@@ -2992,6 +3062,11 @@ set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_BloodbugLegendary | FULL
 set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_BloodbugLegendary | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_BloodbugLegendary | LNAM | @A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_BloodbugLegendary
 copy | @co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_BloodbugLegendary | co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_BloodbugLegendary_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_RadroachLegendary
+set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_RadroachLegendary | FULL | CLM: Custom Spawning: Creature/Hostile - Random Legendary Radroach
+set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_RadroachLegendary | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadroachLegendary | LNAM | @A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_RadroachLegendary
+copy | @co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadroachLegendary | co_A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadroachLegendary_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_StingwingLegendary
 set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_StingwingLegendary | FULL | CLM: Custom Spawning: Creature/Hostile - Random Legendary Stingwing
 set | A1ALMMISC_LooseMod_Weapon_Custom_Spawning_Hostile_StingwingLegendary | DATA\Value | 200

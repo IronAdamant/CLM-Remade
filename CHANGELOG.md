@@ -17,6 +17,18 @@
   **auto-stimpak** effects used Far Harbor scripts; they now use CLM's own copies, which behave identically.
 
 ### New
+- **15 new legendaries**, finished from pieces 1.09 built but never used:
+  - **Lobbin' (Frag / Cryo / Nuke / Plasma / Pulse Mine):** lobs live mines that arm where they land.
+  - **Hurtin' (1000%)** (OP): the top of the Hurtin' family.
+  - **Instant Killin'** (OP): game-breaking damage; almost anything dies in one hit.
+  - **Medic's:** your shots heal whoever they hit by 50 health, at half damage. Heal companions mid-fight.
+  - **Overchargin':** hits deal 50 extra energy damage.
+  - **VATS Penetratin':** target enemies behind cover in V.A.T.S., like the Penetrator perk.
+  - **Quick Hands (50%)** (armour): reload 50% faster.
+  - **Marathon Runnin'** (armour): sprinting uses 75% less Action Points.
+  - **Focused (Brief)** (armour): time slows for three seconds when you aim, with any weapon.
+  - **Stealth Boy'd** (armour, OP): a permanent Stealth Boy field.
+  - **Custom Spawning: Random Legendary Radroach:** the one insect that had no legendary version.
 - **Configuration holotape shows only real choices:** an option disappears while it is the active setting (e.g. "Set
   to 1" while already 1, Starting Configuration while everything is already at its starting values, the current
   loot drop rate), and comes back when you pick another one.
@@ -72,6 +84,7 @@
 - **Configuration holotape (Free version):** the Balanced page had its two options' labels swapped.
 
 ### Fixed: other
+- Removed 1.09 leftovers that nothing used (unfinished drafts, duplicates of existing effects, the CQC test). No legendary changed.
 - **Costly version:** Untouchable (Freeze), Concentratin' Intensely (and Brief), Slightly Freezing and Mr. Freeze's cost nothing to craft. They now cost the same as their closest sibling (Untouchable (Fire), Concentratin' Harder / (Brief), Chilling, Prometheus' Fiery).
 - The mod's archive no longer replaces 24 of the game's own scripts with old 2017 copies (one was F4SE's version,
   which could cause problems without F4SE, e.g. on Xbox).
