@@ -1,0 +1,10 @@
+Over 570 legendary effects for weapons and armour: craft them at the workbench or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, coloured lasers, movement and stealth effects, and some gloriously overpowered ones.
+
+2.0 is a full overhaul of the 2017 mod:
+- No DLC required. DLC legendaries are in optional add-ons (one per DLC).
+- Loot mode: legendaries drop from anything you kill; holotapes unlock whole families; OP legendaries need a rare Legendary Core. Drop rate Low, Standard or Higher.
+- 15 new legendaries, coloured lasers, dozens of fixes.
+
+The (CLM) Configuration Holotape arrives when you leave Vault 111. Pick Free, Costly or Loot, then Starting Configuration, and attach legendaries in the Legendary slot of a workbench.
+
+Upgrading from 1.09: gear with a DLC legendary loses it unless you install that add-on.
