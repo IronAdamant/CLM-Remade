@@ -5030,7 +5030,7 @@ AimModelRecoilArcRotateDeg MUL+ADD -0.500000 / 0.000000
 ```
 
 ### CLM: Medic's  `A1ALMOMOD_Legendary_Weapon_Medics`
-> Your shots heal whoever they hit by 50 health, but your weapon deals 50% less damage. Patch up your companions in the middle of a fight.
+> Your shots heal whoever they hit by 50 health. Your weapon deals 50% less damage, and none to your companions: patch them up in the middle of a fight.
 ```
 Keywords ADD A1ALMKW_WeaponPerk_Weapon_DecreaseDamage_50P [KYWD:084AC79D] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Beneficial_Heal "CLM: Heal targets" [ENCH:0842BFDE] / 431
@@ -5040,7 +5040,8 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Detrimental_Effect_Reduce_WeaponDamag
   ENCH A1ALMEnch_Constant_Effect_Detrimental_Effect_Reduce_WeaponDamage_50P (, )
     A1ALMMGEF_Detrimental_Effect_Perk_Reduce_WeaponDamage_50P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
-      values: -1.500000
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      values: 0.500000; 0.000000
 ```
 
 ### CLM: Sticky Frag Mine launchin'  `A1ALMOMOD_Legendary_Weapon_Mine_Base_Sticky_FragMine`
