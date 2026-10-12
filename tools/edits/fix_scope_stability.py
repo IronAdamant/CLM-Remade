@@ -5,10 +5,10 @@ percentage. CLM's perks instead added a flat 1000 (100% / "completely stable": A
 and Tracker's sights, Critically Hurtin', and the weapon copy) - far outside anything vanilla uses, the likely cause of
 scopes "going out of control" - and Aim Stabilized (50%) multiplied by 0.5, making aim less stable. Now 50% = x1.5
 and 100% = x2 (Multiply Value). In-game test (2026-10-12): x1.5 already stopped all sway (vanilla's Stabilized
-lining is only about x1.01 per arm piece), so 50% was lowered to x1.25 afterwards. x1.25 still stopped all sway; the
-author's own earlier testing found sway only returns below 1.0. x0.75 swayed a little, x0.5 (1.09's value) a bit more;
-the author chose x0.85 as what feels like "50% stabilized" (2026-10-12, edited raw). Below 1.0 this entry point leaves
-sway, so 1.09's x0.5 never made aim worse than without it.
+lining is only about x1.02 per arm piece), so 50% was lowered to x1.25 afterwards. x1.25 still stopped all sway.
+1.0 is the weapon's normal sway: below it sway grows (x0.25 "much worse"; the Fallout Wiki's entry point documentation:
+increasing the value decreases sway, decreasing it increases sway), above it sway shrinks fast. The author tested
+x0.85, x0.75, x0.5 and x0.25 (all worse than normal) and x1.10, and chose x1.10 for 50% (2026-10-12, edited raw).
 
 Usage: python fix_scope_stability.py <plugin.esp>   (edits in place; FO4Edit must not have it open)
 """
