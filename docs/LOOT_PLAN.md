@@ -5,7 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft.
 
-**581 legendaries in 112 families.** Tiers: common 129, uncommon 220, rare 47, OP 185.
+**586 legendaries in 112 families.** Tiers: common 130, uncommon 223, rare 47, OP 186.
 
 Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
 
@@ -36,7 +36,7 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Gunslingers | Generically 80s Action Hero's (uncommon); Gunslanger's (rare); Gunslinger's (OP) |
 | Havoc | Havoc (Blue Laser) (OP); Havoc (Blue Laser) (OP); Havoc (Bullets) (OP); Havoc (Bullets) (OP); Havoc (Plasma) (OP); Havoc (Plasma) (OP); Havoc (Red Laser) (OP); Havoc (Red Laser) (OP) |
 | Heavy hitters | Devastating (common); Commando's (uncommon); Lucky Drawin' (uncommon); Widowmakin' (uncommon); Roid Ragin' (OP); Suppressin' (OP) |
-| Hurtin' | Hurtin' (100%) (common); Hurtin' (150%) (uncommon); Hurtin' (200%) (rare); Hurtin' (1000%) (OP); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP) |
+| Hurtin' | Hurtin' (100%) (common); Hurtin' (150%) (uncommon); Hurtin' (200%) (rare); Hurtin' (1000%) (OP); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP); Rapid Hurtin' (OP) |
 | Hydra's Fang | Hydra's Bite (OP); Hydra's Fanged. (OP); Hydra's Serrated-fanged (OP); Hydra's Twin-fanged (OP) |
 | Keltas' Factorium | Keltas' Flawed Factorium (common); Keltas' Rapid Factorium (uncommon); Keltas' Specialised Factorium (uncommon); Keltas' Perfect Factorium (rare) |
 | Liberty Prime's | Liberty Prime's (OP); Liberty Prime's (Enraged mode) (OP) |
@@ -51,11 +51,11 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Operator's | Fiery Operator's (uncommon); Operator's Balanced (uncommon); Operator's Enhanced Arsenal (rare) |
 | Ordnance | Crazily Explosive (OP); Game Crashin' (OP); MIRV Converted (OP); Napalmin' (OP); Nukin' (OP) |
 | Paintball | Paintball (Blue) (common); Paintball (Green) (common); Paintball (Orange) (common); Paintball (Red) (common); Paintball (White) (common); Paintball (Yellow) (common) |
-| Performance tuning | Compacted (common); Crippingly Rapid (common); Prototype Optimized (common); Hustlin' (uncommon); Improved Performance Center (OP); Many Barreled Optimised (OP); Performance Center (OP) |
+| Performance tuning | Compacted (common); Crippingly Rapid (common); Prototype Optimized (common); Crippling (100%) (uncommon); Hustlin' (uncommon); Improved Performance Center (OP); Many Barreled Optimised (OP); Performance Center (OP) |
 | Poison and acid | Acidic (common); Greater Poisoning (common) |
 | Pushing | Pushing (Ranged) (common); Explosively Pushing (Ranged) (uncommon) |
 | Pyrotechnical | Pyrotechnical (Blue) (common); Pyrotechnical (Gold) (common); Pyrotechnical (Green) (common); Pyrotechnical (Minutemen Flare) (common); Pyrotechnical (Pink) (common); Pyrotechnical (Red) (common); Pyrotechnical (Silver) (common); Pyrotechnical (Yellow) (common); Pyrotechnical (Crackle) (OP) |
-| Quicker | Quicker (common); Quicker (25%) (common); Quicker (50%) (uncommon); Quicker (75%) (uncommon); Quicker (100%) (rare) |
+| Quicker | Quicker (common); Quicker (25%) (common); Quicker (50%) (uncommon); Quicker (75%) (uncommon); Rapid Fire (100%) (uncommon); Quicker (100%) (rare) |
 | Rainman's | Rainman's (uncommon); Rainman's (Cryo) (uncommon); Rainman's (Fire) (uncommon); Rainman's (Plasma) (uncommon); Rainman's (Pulse) (uncommon) |
 | Rebounding | Rebounding (Blue Laser) (uncommon); Rebounding (Bullet) (uncommon); Rebounding (Gauss) (uncommon); Rebounding (Red Laser) (uncommon) |
 | Recoilless | Bone Crushin' (common); Recoilless (common); Advanced Recoilless (uncommon); Convert Operator's (uncommon); Dangerously Recoilless (uncommon); Speedily Enhanced (uncommon); Almost Dangerously Accurate (OP); Deadly Accurate (OP); Nearly Recoilless (OP) |
@@ -115,7 +115,7 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Immunities | Cat Tailed (common); Waterbreathing (common); Biological Hazmat (OP); Hawkin's Experimental (OP); Immunity (Acid) (OP); Immunity (Electric) (OP); Immunity (Explosion) (OP); Immunity (Limb Damage) (OP); Immunity (Poison) (OP); Immunity (Radiation) (OP) |
 | Impact Landing | Impact Landing (Basic) (uncommon); Impact Landing (Cryo) (OP); Impact Landing (Fire) (OP); Impact Landing (Nuclear) (OP); Impact Landing (Plasma) (OP); Impact Landing (Pulse) (OP) |
 | Juggernaut | Alien Nano-Coated (OP); Alien Nano-Coated (OP); Brutal (OP); God's Armour (OP); Mightly Nearly Unbreakable (OP); Super-Tankin' (OP); True Synth (OP); Yamamoto's Mighty (OP) |
-| Jumpy and Flyin' | Jumpy (50%) (common); Jumpy (100%) (uncommon); Jumpy (150%) (rare); Flyin' (OP); Jumpy (200%) (OP); Jumpy (250%) (OP); Jumpy (300%) (OP) |
+| Jumpy and Flyin' | Jumpy (10%) (common); Jumpy (25%) (common); Jumpy (100%) (uncommon); Jumpy (50%) (uncommon); Jumpy (150%) (rare); Flyin' (OP); Jumpy (200%) (OP); Jumpy (250%) (OP); Jumpy (300%) (OP) |
 | Lucky Hittin' | Lucky Hittin' (10%) (uncommon); Lucky Hittin' (25%) (rare); Lucky Hittin' (100%) (OP); Lucky Hittin' (50%) (OP); Lucky Hittin' (75%) (OP) |
 | Murderous | Murderous (x3) (uncommon); Murderous (x5) (OP) |
 | Nimble | Nimble (50%) (common); Nimble (100%) (uncommon); Nimble (150%) (rare); Nimble (200%) (OP); Nimble (250%) (OP); Nimble (300%) (OP) |

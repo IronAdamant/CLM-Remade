@@ -29,6 +29,8 @@ Punch (fixed in 2.0).
 
 ## 1. Can be built now (records only: all platforms)
 
+Done: Jumpy (10%) / (25%) and the simple effects (`tools/edits/gen_req1_simple.py`).
+
 | Request (by) | What was asked | How | Check in the CK first |
 |---|---|---|---|
 | **Blitzkrieg** (FL4CKTROOPER) | +60% V.A.T.S. accuracy and range, 95% less AP in V.A.T.S., double crit damage, crit meter fills 2x faster | Weapon legendary: perk entry points for V.A.T.S. hit chance, crit damage and crit charge; the weapon's Action Point Cost property for the AP part | Which entry point gives V.A.T.S. accuracy (Concentrated Fire's) and range; whether AP cost x0.05 behaves |

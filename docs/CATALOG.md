@@ -1216,6 +1216,14 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance
       values: 75.000000
 ```
 
+### CLM: Jumpy (10%)  `A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_10`
+> This mod increases your Jump Height by 10%
+```
+Enchantments ADD A1ALMEnch_Fortify_Effect_JumpHeightMult_10 "CLM: Fortify Effect [10% Jump Height Boost]" [ENCH:084ACCE4] / 431
+  ENCH A1ALMEnch_Fortify_Effect_JumpHeightMult_10 (, )
+    A1ALMMGEF_Fortify_Effect_Movement_Jump_Height_Mult: Value Modifier JumpHeightMult, magnitude 1.100000, duration 0 (Constant Effect, Self)
+```
+
 ### CLM: Jumpy (100%)  `A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100`
 > This mod increases your Jump Height by 100%
 ```
@@ -1238,6 +1246,14 @@ Enchantments ADD A1ALMEnch_Fortify_Effect_JumpHeightMult_150 "CLM: Fortify Effec
 Enchantments ADD A1ALMEnch_Fortify_Effect_JumpHeightMult_200 "CLM: Fortify Effect [200% Jump Height Boost]" [ENCH:0808CE71] / 431
   ENCH A1ALMEnch_Fortify_Effect_JumpHeightMult_200 (, )
     A1ALMMGEF_Fortify_Effect_Movement_Jump_Height_Mult: Value Modifier JumpHeightMult, magnitude 3.000000, duration 0 (Constant Effect, Self)
+```
+
+### CLM: Jumpy (25%)  `A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_25`
+> This mod increases your Jump Height by 25%
+```
+Enchantments ADD A1ALMEnch_Fortify_Effect_JumpHeightMult_25 "CLM: Fortify Effect [25% Jump Height Boost]" [ENCH:084ACCE8] / 431
+  ENCH A1ALMEnch_Fortify_Effect_JumpHeightMult_25 (, )
+    A1ALMMGEF_Fortify_Effect_Movement_Jump_Height_Mult: Value Modifier JumpHeightMult, magnitude 1.250000, duration 0 (Constant Effect, Self)
 ```
 
 ### CLM: Jumpy (250%)  `A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250`
@@ -2720,6 +2736,15 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_50P "CLM: Cripple T
 ReloadSpeed MUL+ADD 0.200000 / 0.000000
 ```
 
+### CLM: Crippling (100%)  `A1ALMOMOD_Legendary_Weapon_Crippling_100P`
+> Every hit cripples the limb it hits. Nothing else.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_100P "CLM: Cripple Targets (100%)" [ENCH:08345521] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Cripple_100P (, )
+    A1ALMMGEF_Target_Effect_Hostile_Cripple_100p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
+      script LegendaryOnHitCrippleScript
+```
+
 ### CLM: Eagle Eyed  `A1ALMOMOD_Legendary_Weapon_Custom_EagleEyed`
 > Increases your weapon's range and VATS chance massively.
 ```
@@ -3774,6 +3799,21 @@ DamageTypeValues MUL+ADD dtPhysical [DMGT:00060A87] / 5.000000
 DamageTypeValues MUL+ADD dtPoison [DMGT:00060A84] / 5.000000
 DamageTypeValues MUL+ADD dtRadiationExposure [DMGT:00060A85] / 5.000000
 DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 5.000000
+```
+
+### CLM: Rapid Hurtin'  `A1ALMOMOD_Legendary_Weapon_DamageBoost_Rapid`
+> Ten times the damage, twice the fire rate. Nothing else.
+```
+Speed MUL+ADD 1.000000 / 0.000000
+AttackDamage MUL+ADD 9.000000 / 0.000000
+DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 9.000000
+DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 9.000000
+DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 9.000000
+DamageTypeValues MUL+ADD dtFire [DMGT:00060A82] / 9.000000
+DamageTypeValues MUL+ADD dtPhysical [DMGT:00060A87] / 9.000000
+DamageTypeValues MUL+ADD dtPoison [DMGT:00060A84] / 9.000000
+DamageTypeValues MUL+ADD dtRadiationExposure [DMGT:00060A85] / 9.000000
+DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 9.000000
 ```
 
 ### CLM: Destroyer's  `A1ALMOMOD_Legendary_Weapon_Destroyers_Base`
@@ -5817,6 +5857,12 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_RainMansMissiles_Seeker_Sp
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_RainMansMissiles_Seeker_SplitterSpawn_Pulse "CLM: Splitting Missile" [PROJ:082119E9] / 431
   PROJ type Missile, speed 2500.000000, gravity 0.000000
     explosion 1 (vanilla)
+```
+
+### CLM: Rapid Fire (100%)  `A1ALMOMOD_Legendary_Weapon_RapidFire_100P`
+> Your weapon fires twice as fast. Nothing else.
+```
+Speed MUL+ADD 1.000000 / 0.000000
 ```
 
 ### CLM: Ra's Spherical  `A1ALMOMOD_Legendary_Weapon_RasSpherical`

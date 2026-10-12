@@ -83,8 +83,10 @@ Juggernaut,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_A
 Juggernaut,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_SuperTanking,Super-Tankin',OP,Custom Legendary Modifications Remade.esp
 Juggernaut,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_TrueSynth,True Synth,OP,Custom Legendary Modifications Remade.esp
 Juggernaut,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_YamamotosMighty,Yamamoto's Mighty,OP,Custom Legendary Modifications Remade.esp
-Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50,Jumpy (50%),common,Custom Legendary Modifications Remade.esp
+Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_10,Jumpy (10%),common,Custom Legendary Modifications Remade.esp
+Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_25,Jumpy (25%),common,Custom Legendary Modifications Remade.esp
 Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100,Jumpy (100%),uncommon,Custom Legendary Modifications Remade.esp
+Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50,Jumpy (50%),uncommon,Custom Legendary Modifications Remade.esp
 Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150,Jumpy (150%),rare,Custom Legendary Modifications Remade.esp
 Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Flying,Flyin',OP,Custom Legendary Modifications Remade.esp
 Jumpy and Flyin',armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200,Jumpy (200%),OP,Custom Legendary Modifications Remade.esp
@@ -286,6 +288,7 @@ Hurtin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Wea
 Hurtin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_4_5x,Hurtin' (450%),OP,Custom Legendary Modifications Remade.esp
 Hurtin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_4x,Hurtin' (400%),OP,Custom Legendary Modifications Remade.esp
 Hurtin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_5x,Hurtin' (500%),OP,Custom Legendary Modifications Remade.esp
+Hurtin',weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_Rapid,Rapid Hurtin',OP,Custom Legendary Modifications Remade.esp
 Hydra's Fang,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_HydrasFang_Base,Hydra's Fanged.,OP,Custom Legendary Modifications Remade.esp
 Hydra's Fang,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantA,Hydra's Bite,OP,Custom Legendary Modifications Remade.esp
 Hydra's Fang,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_HydrasFang_VariantB,Hydra's Twin-fanged,OP,Custom Legendary Modifications Remade.esp
@@ -350,6 +353,7 @@ Paintball,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_W
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Compacted,Compacted,common,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Crippingly_Rapid,Crippingly Rapid,common,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_PrototypeOptimized,Prototype Optimized,common,Custom Legendary Modifications Remade.esp
+Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Crippling_100P,Crippling (100%),uncommon,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Hustling,Hustlin',uncommon,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_ImprovedPerformanceCenter,Improved Performance Center,OP,Custom Legendary Modifications Remade.esp
 Performance tuning,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_ManyBarrelledOptimized,Many Barreled Optimised,OP,Custom Legendary Modifications Remade.esp
@@ -371,6 +375,7 @@ Quicker,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Wea
 Quicker,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Quicker_Variant_25P,Quicker (25%),common,Custom Legendary Modifications Remade.esp
 Quicker,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Quicker_Variant_50P,Quicker (50%),uncommon,Custom Legendary Modifications Remade.esp
 Quicker,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Quicker_Variant_75P,Quicker (75%),uncommon,Custom Legendary Modifications Remade.esp
+Quicker,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RapidFire_100P,Rapid Fire (100%),uncommon,Custom Legendary Modifications Remade.esp
 Quicker,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Quicker_Variant_100P,Quicker (100%),rare,Custom Legendary Modifications Remade.esp
 Rainman's,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RainMan_Base_Explosion_Shell,Rainman's,uncommon,Custom Legendary Modifications Remade.esp
 Rainman's,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RainMan_Variant_Cryo,Rainman's (Cryo),uncommon,Custom Legendary Modifications Remade.esp

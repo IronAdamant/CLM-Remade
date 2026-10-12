@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.0 (in progress)
+
+The feature requests of 2016-17 that 1.09 left as "not possible" or "no time".
+
+### New
+- **Jumpy (10%)** and **Jumpy (25%)** (requested by Doom1993): smaller jump boosts below the 50% the family started at.
+- Plain effects without extras or long descriptions (requested by ViscousVitriol):
+  - **Rapid Fire (100%):** your weapon fires twice as fast, nothing else (a Quicker variant).
+  - **Rapid Hurtin'** (OP): ten times the damage and twice the fire rate.
+  - **Crippling (100%):** every hit cripples the limb it hits.
+  - "10x damage" alone is Hurtin' (1000%), added in 2.0.
+
 ## 2.0.0 (2026-10-12)
 
 ### Requirements

@@ -86,9 +86,11 @@ Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_IncreaseWeap
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_IncreaseWeaponDamage_500P,CLM: Fisto's (500%),armor,IncreaseWeaponDamage,1,6483,2,When you want to give your damage a little... boost.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_IncreaseWeaponDamage_50P,CLM: Fisto's (50%),armor,IncreaseWeaponDamage,0,21,2,When you want to give your damage a little... boost.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_JackOfAllTrades,CLM: Tradin' Jack's,armor,JackOfAllTrades,0,70,2,"5+ to all SPECIAL, +200 Rad resistance and 10+ to all resistances."
+Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_10,CLM: Jumpy (10%),armor,Jumpy,0,24,2,This mod increases your Jump Height by 10%
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100,CLM: Jumpy (100%),armor,Jumpy,0,50,2,This mod increases your Jump Height by 100%
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_150,CLM: Jumpy (150%),armor,Jumpy,0,105,2,This mod increases your Jump Height by 150%
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_200,CLM: Jumpy (200%),armor,Jumpy,1,130,2,This mod increases your Jump Height by 200%
+Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_25,CLM: Jumpy (25%),armor,Jumpy,0,24,2,This mod increases your Jump Height by 25%
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_250,CLM: Jumpy (250%),armor,Jumpy,1,160,2,This mod increases your Jump Height by 250%
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_300,CLM: Jumpy (300%),armor,Jumpy,1,205,2,This mod increases your Jump Height by 300%
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50,CLM: Jumpy (50%),armor,Jumpy,0,24,2,This mod increases your Jump Height by 50%
@@ -212,6 +214,7 @@ Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Contact_Dis
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple,CLM: Disintegratin' (Purple),weapon,Contact,0,11,2,"You turn your targets into ashes when not instantly killed. (This is the best I can do, sorry)"
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_CrazilyExplosive,CLM: Crazily Explosive,weapon,CrazilyExplosive,1,620,2,Your weapon turns into a grenade launcher in a crazy mode.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Crippingly_Rapid,CLM: Crippingly Rapid,weapon,Crippingly,0,30,2,"25% faster fire rate, 20% faster reload. Also 50% cripple."
+Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Crippling_100P,CLM: Crippling (100%),weapon,Crippling,0,30,2,Every hit cripples the limb it hits. Nothing else.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_10x,CLM: Hurtin' (1000%),weapon,DamageBoost,1,624,2,Your weapon's damage is boosted by 1000%.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_1_5x,CLM: Hurtin' (150%),weapon,DamageBoost,0,36,2,Your weapon's damage is boosted by 150%.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_1x,CLM: Hurtin' (100%),weapon,DamageBoost,0,31,2,Your weapon's damage is boosted by 100%. 
@@ -222,6 +225,7 @@ Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_4_5x,CLM: Hurtin' (450%),weapon,DamageBoost,1,316,2,Your weapon's damage is boosted by 450%.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_4x,CLM: Hurtin' (400%),weapon,DamageBoost,1,316,2,Your weapon's damage is boosted by 400%.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_5x,CLM: Hurtin' (500%),weapon,DamageBoost,1,624,2,Your weapon's damage is boosted by 500%.
+Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DamageBoost_Rapid,CLM: Rapid Hurtin',weapon,DamageBoost,1,624,2,"Ten times the damage, twice the fire rate. Nothing else."
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Destroyers_Base,CLM: Destroyer's,weapon,Destroyers,1,145,2,"Double Damage. 75% less recoil, Armour piercing. 50 Energy, Cryo, Radiation and Fire damage additional damage to your targets."
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x,CLM: Destroyer's (3x),weapon,Destroyers,1,290,2,"Triple Damage. 75% less recoil, Armour piercing. 50 Energy, Cryo, Radiation and Fire damage additional damage to your targets. "
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x,CLM: Destroyer's (4x),weapon,Destroyers,1,580,2,"Quadruple Damage. 75% less recoil, Armour piercing. 50 Energy, Cryo, Radiation and Fire damage additional damage to your targets. "
@@ -372,6 +376,7 @@ Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RainMan_Var
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RainMan_Variant_Fire,CLM: Rainman's (Fire),weapon,RainMan,0,50,2,Turns your weapon into a cluster missile launcher.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RainMan_Variant_Plasma,CLM: Rainman's (Plasma),weapon,RainMan,0,50,2,Turns your weapon into a cluster missile launcher.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RainMan_Variant_Pulse,CLM: Rainman's (Pulse),weapon,RainMan,0,50,2,Turns your weapon into a cluster missile launcher.
+Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RapidFire_100P,CLM: Rapid Fire (100%),weapon,RapidFire,0,182,2,Your weapon fires twice as fast. Nothing else.
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_RasSpherical,CLM: Ra's Spherical,weapon,RasSpherical,1,165,2,"1200 seconds of 10 rad damage, 4 fire damage, 4 electricity damage, and slows down your enemies. You will always cripple and demoralize your enemies."
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Raydens,CLM: Rayden's Fury,weapon,Raydens,0,30,2,"On the critical hits, you deal 25 shock damage to any targets."
 Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Rebounding_Variant_Bullet,CLM: Rebounding (Bullet),weapon,Rebounding,0,55,2,"Your projectiles will bounce from one enemy into another enemy, or from a wall to your enemy. "

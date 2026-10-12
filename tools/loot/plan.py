@@ -75,6 +75,7 @@ THEMES = {
     ('weapon', 'Overcharging'): 'Energy', ('weapon', 'VATSPenetrating'): 'Marksman',
     ('weapon', 'Cheaters'): 'Forbidden (weapon)', ('weapon', 'ZeusCrafted'): 'Forbidden (weapon)',
     ('weapon', 'Suicidal'): 'Forbidden (weapon)',
+    ('weapon', 'RapidFire'): 'Quicker', ('weapon', 'Crippling'): 'Performance tuning',   # 2.1 requests
     # --- armour ---
     ('armor', 'Immune'): 'Immunities', ('armor', 'BiologicalHazmat'): 'Immunities',
     ('armor', 'HawkinsExperimental'): 'Immunities', ('armor', 'CatTailed'): 'Immunities',

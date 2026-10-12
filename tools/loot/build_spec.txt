@@ -1333,16 +1333,26 @@ set | A1ALMMISC_LooseMod_Armor_YamamotosMighty | FULL | CLM: Yamamoto's Mighty
 set | A1ALMMISC_LooseMod_Armor_YamamotosMighty | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_YamamotosMighty | LNAM | @A1ALMMISC_LooseMod_Armor_YamamotosMighty
 copy | @co_A1ALMOMOD_Legendary_Armor_YamamotosMighty | co_A1ALMOMOD_Legendary_Armor_YamamotosMighty_Unlocked
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50
-set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50 | FULL | CLM: Jumpy (50%)
-set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50 | DATA\Value | 75
-set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50
-copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_10
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_10 | FULL | CLM: Jumpy (10%)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_10 | DATA\Value | 75
+set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_10 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_10
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_10 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_10_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_25
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_25 | FULL | CLM: Jumpy (25%)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_25 | DATA\Value | 75
+set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_25 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_25
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_25 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_25_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100 | FULL | CLM: Jumpy (100%)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100 | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_100
 copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_100_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50 | FULL | CLM: Jumpy (50%)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50 | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_50
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Jumpy_50_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_150
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_150 | FULL | CLM: Jumpy (150%)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Jumpy_150 | DATA\Value | 500
@@ -2348,6 +2358,11 @@ set | A1ALMMISC_LooseMod_Weapon_DamageBoost_5x | FULL | CLM: Hurtin' (500%)
 set | A1ALMMISC_LooseMod_Weapon_DamageBoost_5x | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Weapon_DamageBoost_5x | LNAM | @A1ALMMISC_LooseMod_Weapon_DamageBoost_5x
 copy | @co_A1ALMOMOD_Legendary_Weapon_DamageBoost_5x | co_A1ALMOMOD_Legendary_Weapon_DamageBoost_5x_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_DamageBoost_Rapid
+set | A1ALMMISC_LooseMod_Weapon_DamageBoost_Rapid | FULL | CLM: Rapid Hurtin'
+set | A1ALMMISC_LooseMod_Weapon_DamageBoost_Rapid | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_DamageBoost_Rapid | LNAM | @A1ALMMISC_LooseMod_Weapon_DamageBoost_Rapid
+copy | @co_A1ALMOMOD_Legendary_Weapon_DamageBoost_Rapid | co_A1ALMOMOD_Legendary_Weapon_DamageBoost_Rapid_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_HydrasFang_Base
 set | A1ALMMISC_LooseMod_Weapon_HydrasFang_Base | FULL | CLM: Hydra's Fanged.
 set | A1ALMMISC_LooseMod_Weapon_HydrasFang_Base | DATA\Value | 1500
@@ -2668,6 +2683,11 @@ set | A1ALMMISC_LooseMod_Weapon_PrototypeOptimized | FULL | CLM: Prototype Optim
 set | A1ALMMISC_LooseMod_Weapon_PrototypeOptimized | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_PrototypeOptimized | LNAM | @A1ALMMISC_LooseMod_Weapon_PrototypeOptimized
 copy | @co_A1ALMOMOD_Legendary_Weapon_PrototypeOptimized | co_A1ALMOMOD_Legendary_Weapon_PrototypeOptimized_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Crippling_100P
+set | A1ALMMISC_LooseMod_Weapon_Crippling_100P | FULL | CLM: Crippling (100%)
+set | A1ALMMISC_LooseMod_Weapon_Crippling_100P | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Crippling_100P | LNAM | @A1ALMMISC_LooseMod_Weapon_Crippling_100P
+copy | @co_A1ALMOMOD_Legendary_Weapon_Crippling_100P | co_A1ALMOMOD_Legendary_Weapon_Crippling_100P_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Hustling
 set | A1ALMMISC_LooseMod_Weapon_Hustling | FULL | CLM: Hustlin'
 set | A1ALMMISC_LooseMod_Weapon_Hustling | DATA\Value | 200
@@ -2773,6 +2793,11 @@ set | A1ALMMISC_LooseMod_Weapon_Quicker_Variant_75P | FULL | CLM: Quicker (75%)
 set | A1ALMMISC_LooseMod_Weapon_Quicker_Variant_75P | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Quicker_Variant_75P | LNAM | @A1ALMMISC_LooseMod_Weapon_Quicker_Variant_75P
 copy | @co_A1ALMOMOD_Legendary_Weapon_Quicker_Variant_75P | co_A1ALMOMOD_Legendary_Weapon_Quicker_Variant_75P_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_RapidFire_100P
+set | A1ALMMISC_LooseMod_Weapon_RapidFire_100P | FULL | CLM: Rapid Fire (100%)
+set | A1ALMMISC_LooseMod_Weapon_RapidFire_100P | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_RapidFire_100P | LNAM | @A1ALMMISC_LooseMod_Weapon_RapidFire_100P
+copy | @co_A1ALMOMOD_Legendary_Weapon_RapidFire_100P | co_A1ALMOMOD_Legendary_Weapon_RapidFire_100P_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Quicker_Variant_100P
 set | A1ALMMISC_LooseMod_Weapon_Quicker_Variant_100P | FULL | CLM: Quicker (100%)
 set | A1ALMMISC_LooseMod_Weapon_Quicker_Variant_100P | DATA\Value | 500
