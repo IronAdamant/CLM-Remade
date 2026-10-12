@@ -1693,6 +1693,11 @@ set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_300 | FULL | CLM: Speedy (300
 set | A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_300 | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Speed_300 | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Fortify_Speed_300
 copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Speed_300 | co_A1ALMOMOD_Legendary_Armor_PerkV_Fortify_Speed_300_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Staminator
+set | A1ALMMISC_LooseMod_Armor_Staminator | FULL | CLM: Staminator
+set | A1ALMMISC_LooseMod_Armor_Staminator | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Armor_Staminator | LNAM | @A1ALMMISC_LooseMod_Armor_Staminator
+copy | @co_A1ALMOMOD_Legendary_Armor_Staminator | co_A1ALMOMOD_Legendary_Armor_Staminator_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief
 set | A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief | FULL | CLM: Focused (Brief)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Focused_Brief | DATA\Value | 75
@@ -1723,6 +1728,11 @@ set | A1ALMMISC_LooseMod_Armor_PerkV_PinpointAccuracy | FULL | CLM: Pinpoint Acc
 set | A1ALMMISC_LooseMod_Armor_PerkV_PinpointAccuracy | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_PerkV_PinpointAccuracy | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_PinpointAccuracy
 copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_PinpointAccuracy | co_A1ALMOMOD_Legendary_Armor_PerkV_PinpointAccuracy_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_WeaponMastery
+set | A1ALMMISC_LooseMod_Armor_WeaponMastery | FULL | CLM: Weapon Mastery
+set | A1ALMMISC_LooseMod_Armor_WeaponMastery | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Armor_WeaponMastery | LNAM | @A1ALMMISC_LooseMod_Armor_WeaponMastery
+copy | @co_A1ALMOMOD_Legendary_Armor_WeaponMastery | co_A1ALMOMOD_Legendary_Armor_WeaponMastery_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Disarm
 set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Disarm | FULL | CLM: Untouchable (Disarm)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Disarm | DATA\Value | 200
@@ -2018,6 +2028,11 @@ set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple | FULL | C
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple
 copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_NaturesWrath
+set | A1ALMMISC_LooseMod_Weapon_NaturesWrath | FULL | CLM: Nature's Wrath
+set | A1ALMMISC_LooseMod_Weapon_NaturesWrath | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_NaturesWrath | LNAM | @A1ALMMISC_LooseMod_Weapon_NaturesWrath
+copy | @co_A1ALMOMOD_Legendary_Weapon_NaturesWrath | co_A1ALMOMOD_Legendary_Weapon_NaturesWrath_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Elements_Base_Fire
 set | A1ALMMISC_LooseMod_Weapon_Elements_Base_Fire | FULL | CLM: Prometheus' Fiery
 set | A1ALMMISC_LooseMod_Weapon_Elements_Base_Fire | DATA\Value | 1500
@@ -2283,6 +2298,11 @@ set | A1ALMMISC_LooseMod_Weapon_Devastating | FULL | CLM: Devastating
 set | A1ALMMISC_LooseMod_Weapon_Devastating | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_Devastating | LNAM | @A1ALMMISC_LooseMod_Weapon_Devastating
 copy | @co_A1ALMOMOD_Legendary_Weapon_Devastating | co_A1ALMOMOD_Legendary_Weapon_Devastating_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Bloodlust
+set | A1ALMMISC_LooseMod_Weapon_Bloodlust | FULL | CLM: Bloodlust
+set | A1ALMMISC_LooseMod_Weapon_Bloodlust | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Bloodlust | LNAM | @A1ALMMISC_LooseMod_Weapon_Bloodlust
+copy | @co_A1ALMOMOD_Legendary_Weapon_Bloodlust | co_A1ALMOMOD_Legendary_Weapon_Bloodlust_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Commandos
 set | A1ALMMISC_LooseMod_Weapon_Commandos | FULL | CLM: Commando's
 set | A1ALMMISC_LooseMod_Weapon_Commandos | DATA\Value | 200
@@ -2518,6 +2538,11 @@ set | A1ALMMISC_LooseMod_Weapon_HighVelocityFulllTitanium | FULL | CLM: High Vel
 set | A1ALMMISC_LooseMod_Weapon_HighVelocityFulllTitanium | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_HighVelocityFulllTitanium | LNAM | @A1ALMMISC_LooseMod_Weapon_HighVelocityFulllTitanium
 copy | @co_A1ALMOMOD_Legendary_Weapon_HighVelocityFulllTitanium | co_A1ALMOMOD_Legendary_Weapon_HighVelocityFulllTitanium_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Blitzkrieg
+set | A1ALMMISC_LooseMod_Weapon_Blitzkrieg | FULL | CLM: Blitzkrieg
+set | A1ALMMISC_LooseMod_Weapon_Blitzkrieg | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_Blitzkrieg | LNAM | @A1ALMMISC_LooseMod_Weapon_Blitzkrieg
+copy | @co_A1ALMOMOD_Legendary_Weapon_Blitzkrieg | co_A1ALMOMOD_Legendary_Weapon_Blitzkrieg_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Custom_EagleEyed
 set | A1ALMMISC_LooseMod_Weapon_Custom_EagleEyed | FULL | CLM: Eagle Eyed
 set | A1ALMMISC_LooseMod_Weapon_Custom_EagleEyed | DATA\Value | 1500

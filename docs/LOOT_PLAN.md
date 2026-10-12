@@ -5,7 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft.
 
-**586 legendaries in 112 families.** Tiers: common 130, uncommon 223, rare 47, OP 186.
+**591 legendaries in 112 families.** Tiers: common 130, uncommon 225, rare 47, OP 189.
 
 Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
 
@@ -24,7 +24,7 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Curios | Lorenzo's Legendary Artificial (uncommon); Medic's (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); Liar's Compedium (OP) |
 | Destroyer's | Destroyer's (OP); Destroyer's (3x) (OP); Destroyer's (4x) (OP); Destroyer's (5x) (OP) |
 | Disintegratin' | Disintegratin' (Blue) (uncommon); Disintegratin' (Deep Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Gold) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Orange) (uncommon); Disintegratin' (Pink) (uncommon); Disintegratin' (Purple) (uncommon); Disintegratin' (Red) (uncommon) |
-| Elemental | Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
+| Elemental | Nature's Wrath (uncommon); Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
 | Energized | Energized (Blue Laser) (common); Energized (Deep Blue Laser) (common); Energized (Gauss) (common); Energized (Gold Laser) (common); Energized (Green Laser) (common); Energized (Orange Laser) (common); Energized (Pink Laser) (common); Energized (Plasma) (common); Energized (Purple Laser) (common); Energized (Red Laser) (common) |
 | Energy | Improved Plasma Infused (common); Overchargin' (uncommon); Apotheistic (OP); Searing (OP) |
 | Fire | Burning (common); Incendiary Striking (common); Hinokagutsuchi (uncommon); Burning Hellish (OP) |
@@ -35,7 +35,7 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Gauss conversions | Compressed Vortex Synthesized. (OP); Explosively Striking (OP); Street Cleaner's (OP); True Seeker (OP) |
 | Gunslingers | Generically 80s Action Hero's (uncommon); Gunslanger's (rare); Gunslinger's (OP) |
 | Havoc | Havoc (Blue Laser) (OP); Havoc (Blue Laser) (OP); Havoc (Bullets) (OP); Havoc (Bullets) (OP); Havoc (Plasma) (OP); Havoc (Plasma) (OP); Havoc (Red Laser) (OP); Havoc (Red Laser) (OP) |
-| Heavy hitters | Devastating (common); Commando's (uncommon); Lucky Drawin' (uncommon); Widowmakin' (uncommon); Roid Ragin' (OP); Suppressin' (OP) |
+| Heavy hitters | Devastating (common); Bloodlust (uncommon); Commando's (uncommon); Lucky Drawin' (uncommon); Widowmakin' (uncommon); Roid Ragin' (OP); Suppressin' (OP) |
 | Hurtin' | Hurtin' (100%) (common); Hurtin' (150%) (uncommon); Hurtin' (200%) (rare); Hurtin' (1000%) (OP); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP); Rapid Hurtin' (OP) |
 | Hydra's Fang | Hydra's Bite (OP); Hydra's Fanged. (OP); Hydra's Serrated-fanged (OP); Hydra's Twin-fanged (OP) |
 | Keltas' Factorium | Keltas' Flawed Factorium (common); Keltas' Rapid Factorium (uncommon); Keltas' Specialised Factorium (uncommon); Keltas' Perfect Factorium (rare) |
@@ -43,7 +43,7 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Limb Breaker's | Limb Breaker's (25%) (common); Limb Breaker's (50%) (common); Limb Breaker's (75%) (uncommon); Limb Breaker's (100%) (rare) |
 | Lobbin' | Lobbin' (Cryo Grenade) (uncommon); Lobbin' (Cryo Mine) (uncommon); Lobbin' (Frag Grenade) (uncommon); Lobbin' (Frag Mine) (uncommon); Lobbin' (HalluciGen Grenade) (uncommon); Lobbin' (Molotov Cocktail) (uncommon); Lobbin' (Plasma Grenade) (uncommon); Lobbin' (Plasma Mine) (uncommon); Lobbin' (Pulse Grenade) (uncommon); Lobbin' (Pulse Mine) (uncommon); Lobbin' (Nuke Mine) (rare) |
 | Majestically Swaggering | Majestically Swaggering (OP); Majestically Swaggering (Dangerously) (OP) |
-| Marksman | Highlighting (common); VATS Penetratin' (common); Vatastically Penetrating (common); High Velocity Full Titanium (uncommon); Eagle Eyed (OP); Widowmaker's Sight (OP) |
+| Marksman | Highlighting (common); VATS Penetratin' (common); Vatastically Penetrating (common); High Velocity Full Titanium (uncommon); Blitzkrieg (OP); Eagle Eyed (OP); Widowmaker's Sight (OP) |
 | Mine launchin' | Sticky Cryo Mine launchin' (uncommon); Sticky Frag Mine launchin' (uncommon); Sticky Nuke Mine launchin' (uncommon); Sticky Plasma Mine launchin' (uncommon); Sticky Pulse Mine launchin' (uncommon) |
 | Moby-Dick's | Moby-Dick's (uncommon) |
 | Multi-shot | Bird Shootin' (uncommon); Carbonatin' (rare); Four Shot (rare); High Explosive (rare) |
@@ -127,6 +127,6 @@ Left out of loot: ALM: A - Test (test item, stays craftable), ALM: A - Test (tes
 | Shavka's Explosive Striking | Shavka's Explosive Striking (uncommon); Shavka's Explosive Striking (Cryo) (uncommon); Shavka's Explosive Striking (Fire) (uncommon); Shavka's Explosive Striking (Gauss) (uncommon); Shavka's Explosive Striking (Nuclear) (uncommon); Shavka's Explosive Striking (Plasma) (uncommon); Shavka's Explosive Striking (Pulse) (uncommon) |
 | Shields | Glow (uncommon); Shield (Constant) (OP); Shield (Emergency) (OP) |
 | Sight | Highlighting (common); Sensin' (common); Tactical Highlighting (uncommon); Tracker's Sight (uncommon); Tracker's Focused Sight (rare) |
-| Speedy | Speedy (50%) (common); Chronos' (uncommon); Marathon Runnin' (uncommon); Speedy (100%) (uncommon); Speedy (150%) (rare); Flash (OP); Speedy (200%) (OP); Speedy (250%) (OP); Speedy (300%) (OP) |
-| Steady aim | Focused (Brief) (common); Aim Stabilized (50%) (uncommon); Critically Hurtin' (uncommon); Quick Hands (50%) (uncommon); Aim Stabilized (100%) (OP); Pinpoint Accuracy (OP) |
+| Speedy | Speedy (50%) (common); Chronos' (uncommon); Marathon Runnin' (uncommon); Speedy (100%) (uncommon); Speedy (150%) (rare); Flash (OP); Speedy (200%) (OP); Speedy (250%) (OP); Speedy (300%) (OP); Staminator (OP) |
+| Steady aim | Focused (Brief) (common); Aim Stabilized (50%) (uncommon); Critically Hurtin' (uncommon); Quick Hands (50%) (uncommon); Aim Stabilized (100%) (OP); Pinpoint Accuracy (OP); Weapon Mastery (OP) |
 | Untouchable | Untouchable (Disarm) (uncommon); Untouchable (Fire) (uncommon); Untouchable (Freeze) (uncommon); Untouchable (Frenzy) (uncommon); Untouchable (Knockdown) (uncommon); Untouchable (Pacify) (uncommon); Untouchable (Paralyzed) (uncommon); Untouchable (Poison) (uncommon); Untouchable (Rad) (uncommon); Untouchable (Shock) (uncommon); Untouchable (Spook) (uncommon) |

@@ -29,7 +29,8 @@ Punch (fixed in 2.0).
 
 ## 1. Can be built now (records only: all platforms)
 
-Done: Jumpy (10%) / (25%) and the simple effects (`tools/edits/gen_req1_simple.py`).
+Done: Jumpy (10%) / (25%) and the simple effects (`tools/edits/gen_req1_simple.py`); Bloodlust, Blitzkrieg,
+Nature's Wrath, Staminator and OP Weapon Skills (as Weapon Mastery) (`tools/edits/gen_req2_perks.py`).
 
 | Request (by) | What was asked | How | Check in the CK first |
 |---|---|---|---|

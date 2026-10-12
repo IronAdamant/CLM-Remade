@@ -11,6 +11,17 @@ The feature requests of 2016-17 that 1.09 left as "not possible" or "no time".
   - **Rapid Hurtin'** (OP): ten times the damage and twice the fire rate.
   - **Crippling (100%):** every hit cripples the limb it hits.
   - "10x damage" alone is Hurtin' (1000%), added in 2.0.
+- **Bloodlust** (requested by FL4CKTROOPER): the lower your health, the harder you hit: +10 damage for every 10% of
+  health lost, up to +90.
+- **Blitzkrieg** (OP, requested by FL4CKTROOPER): +60% V.A.T.S. accuracy and range, V.A.T.S. attacks cost 95% less
+  Action Points, double critical damage, critical meter fills twice as fast.
+- **Nature's Wrath** (requested by Sereda Hawke): each hit has a 10% chance each of extra fire, cryo, poison and
+  electrical damage; fires 25% faster. 1.09 called it impossible: it needs no random projectile after all.
+- **Staminator** (armour, OP, requested by Wardogg83): sprinting, power attacks, holding your breath and reloading in
+  V.A.T.S. cost no Action Points, V.A.T.S. attacks almost none; breathe underwater.
+- **Weapon Mastery** (armour, OP, mademost's "OP weapon skills"): +20% critical chance, +100% critical damage, faster
+  critical meter, bash criticals, steady scopes, cheaper V.A.T.S. No damage bonus. Faster weapon draw and scope zoom
+  are not possible without scripts.
 
 ## 2.0.0 (2026-10-12)
 

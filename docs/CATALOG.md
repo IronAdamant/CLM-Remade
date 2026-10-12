@@ -1862,6 +1862,21 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Glowing "CLM: Glowing" 
     A1ALMMGEF_Constant_Effect_Fx_Glow: Light, magnitude 120.000000, duration 0 (Constant Effect, Self)
 ```
 
+### CLM: Staminator  `A1ALMOMOD_Legendary_Armor_Staminator`
+> Sprinting, power attacks, holding your breath with a scope and reloading in V.A.T.S. cost no Action Points, and V.A.T.S. attacks almost none. You can breathe underwater.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Staminator "CLM: Staminator" [ENCH:084ACD0F] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Staminator (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Staminator: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Power Attack Action Points / Set Value
+      entry point: Mod VATS Attack Action Points / Multiply Value
+      entry point: Mod Sprint AP Drain Rate / Set Value
+      entry point: Mod VATS Reload Action Points / Set Value
+      entry point: Mod Scope Hold Breath AP Drain Mult / Set Value
+      values: 0.000000; 0.010000; 0.000000; 0.000000; 0.000000
+Enchantments ADD EnchWaterBreathing "Water Breathing" [ENCH:00155868] / 431
+```
+
 ### CLM: Stealth  `A1ALMOMOD_Legendary_Armor_Stealth`
 > Combination of Quiet Armour, Shadow Armour and Stealth Move effects. They activate upon sneaking.
 ```
@@ -2052,6 +2067,21 @@ Health MUL+ADD 7.000000 / 0.000000
 > When attached to your armour, this mod will give you an ability to breathe underwater but it will not save you from it's environmental hazards.
 ```
 Enchantments ADD EnchWaterBreathing "Water Breathing" [ENCH:00155868] / 431
+```
+
+### CLM: Weapon Mastery  `A1ALMOMOD_Legendary_Armor_WeaponMastery`
+> +20% critical hit chance, +100% critical damage, your critical meter fills twice as fast, +20% bash critical chance, steady scopes and V.A.T.S. attacks cost 25% less Action Points. No weapon damage bonus.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_WeaponMastery "CLM: Weapon Mastery" [ENCH:084ACD15] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_WeaponMastery (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_WeaponMastery: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod My Critical Hit Chance / Add Value
+      entry point: Mod My Critical Hit Damage Mult / Add Value
+      entry point: Mod VATS Attack Action Points / Multiply Value
+      entry point: Mod Actor Scope Stability / Multiply Value
+      entry point: Mod VATS Critical Charge / Multiply Value
+      entry point: Mod Bash Critical Chance / Add Value
+      values: 20.000000; 1.000000; 0.750000; 1.250000; 2.000000; 20.000000
 ```
 
 ### CLM: Tracker's Sight  `A1ALMOMOD_Legendary_Armor_Widowmakers`
@@ -2423,6 +2453,40 @@ AimModelRecoilHipMult SET 7.500000 / 0.000000
 AimModelRecoilArcRotateDeg SET 7.500000 / 0.000000
 NumProjectiles ADD 9 / 0
 SoundLevel SET Very Loud / 00 00 00 00
+```
+
+### CLM: Blitzkrieg  `A1ALMOMOD_Legendary_Weapon_Blitzkrieg`
+> +60% V.A.T.S. accuracy and range, V.A.T.S. attacks cost 95% less Action Points, critical hits do double damage and your critical meter fills twice as fast.
+```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Blitzkrieg [KYWD:084ACD0C] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Blitzkrieg "CLM: Blitzkrieg" [ENCH:084ACD08] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Blitzkrieg (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Blitzkrieg: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod My Critical Hit Damage Mult / Multiply Value
+      entry point: Mod VATS Attack Action Points / Multiply Value
+      entry point: Mod VATS Critical Charge / Multiply Value
+      entry point: Mod VATS Hit Chance / Multiply Value
+      entry point: Mod Gun Range Mult / Multiply Value
+      values: 2.000000; 0.050000; 2.000000; 1.600000; 1.600000
+```
+
+### CLM: Bloodlust  `A1ALMOMOD_Legendary_Weapon_Bloodlust`
+> The lower your health, the harder you hit: +10 damage for every 10% of health you have lost, up to +90.
+```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Bloodlust [KYWD:084ACD05] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Bloodlust "CLM: Bloodlust" [ENCH:084ACD01] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Bloodlust (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bloodlust: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      entry point: Mod Weapon Attack Damage / Add Value
+      values: 10.000000; 10.000000; 10.000000; 10.000000; 10.000000; 10.000000
 ```
 
 ### CLM: Bloody Messy  `A1ALMOMOD_Legendary_Weapon_BloodyMessMaxed`
@@ -5509,6 +5573,22 @@ OverrideProjectile SET A1ALMPROJ_Napalming_Variant_Missile_Impact_Fire [PROJ:083
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Poison_NastierPoisoning "CLM: Nastier Poisoning" [ENCH:082E7350] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Poison_NastierPoisoning (, )
     A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 9.000000, duration 10 (Fire and Forget, Touch)
+```
+
+### CLM: Nature's Wrath  `A1ALMOMOD_Legendary_Weapon_NaturesWrath`
+> Each hit has a 10% chance each to deal 20 fire, cryo, poison and electrical damage over two seconds. Your weapon fires 25% faster.
+```
+Speed MUL+ADD 0.250000 / 0.000000
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath "CLM: Nature's Wrath" [ENCH:084ACD1A] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath (, )
+    A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_CryoDamage: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
 ```
 
 ### Not Legendary  `A1ALMOMOD_Legendary_Weapon_NotALegendary`

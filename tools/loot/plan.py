@@ -76,6 +76,8 @@ THEMES = {
     ('weapon', 'Cheaters'): 'Forbidden (weapon)', ('weapon', 'ZeusCrafted'): 'Forbidden (weapon)',
     ('weapon', 'Suicidal'): 'Forbidden (weapon)',
     ('weapon', 'RapidFire'): 'Quicker', ('weapon', 'Crippling'): 'Performance tuning',   # 2.1 requests
+    ('weapon', 'Bloodlust'): 'Heavy hitters', ('weapon', 'Blitzkrieg'): 'Marksman',
+    ('weapon', 'NaturesWrath'): 'Elements',
     # --- armour ---
     ('armor', 'Immune'): 'Immunities', ('armor', 'BiologicalHazmat'): 'Immunities',
     ('armor', 'HawkinsExperimental'): 'Immunities', ('armor', 'CatTailed'): 'Immunities',
@@ -103,6 +105,7 @@ THEMES = {
     ('armor', 'Brutal'): 'Juggernaut', ('armor', 'SuperTanking'): 'Juggernaut', ('armor', 'TrueSynth'): 'Juggernaut',
     ('armor', 'NanoCoated'): 'Juggernaut', ('armor', 'AlienNanoCoated'): 'Juggernaut',
     ('armor', 'GodsArmor'): 'Juggernaut', ('armor', 'YamamotosMighty'): 'Juggernaut', ('armor', 'NMU'): 'Juggernaut',
+    ('armor', 'Staminator'): 'Speed', ('armor', 'WeaponMastery'): 'Steady aim',   # 2.1 requests
     ('armor', 'Cheaters'): 'Forbidden (armour)', ('armor', 'GodFathers'): 'Forbidden (armour)',
 }
 
