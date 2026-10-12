@@ -1,7 +1,40 @@
-Over 540 legendary effects for weapons and armour: craft them at the workbench or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, movement and stealth effects, and some gloriously overpowered ones. Needs Automatron, Far Harbor, Contraptions Workshop and Nuka-World.
+CUSTOM LEGENDARY MODIFICATIONS REMADE 2.0 (PLAYSTATION)
 
-Settings: make "CLM Setting" items at any chemistry station (CLM Settings). Carry one = on, drop it = off. Picker mode shows only the families you pick there.
+Over 570 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, movement and stealth effects, and some gloriously overpowered ones.
 
-Loot mode: legendaries drop from enemies. Also make the CLM Loot Manual (CLM Settings) once; if nothing drops, drop it and pick it up.
+WHAT'S NEW IN 2.0
+CLM was last updated in 2017. 2.0 is a full overhaul, and the first version you can fully set up on PlayStation:
+- Settings work on PlayStation: they are made at the chemistry station.
+- Loot mode: legendaries drop from anything you kill. Holotapes unlock whole families for crafting, and OP legendaries need a rare Legendary Core. Drop rate: Low, Standard or Higher.
+- Legendary Picker: the workbench shows only the legendary families you pick.
+- 15 new legendaries and dozens of fixes.
 
-PlayStation version: no scripts or new assets allowed, so the new laser colours and the Kellogg spawn are left out, Untouchable and Shavka's Explosive Striking have no effect, and a few legendaries work slightly differently (see their descriptions).
+REQUIREMENTS
+Automatron, Far Harbor, Contraptions Workshop and Nuka-World. Wasteland Workshop and Vault-Tec Workshop are no longer needed.
+Why: most players own the DLC by now, and one plugin is much easier for me to keep updated.
+
+GETTING STARTED
+Nothing to set up. A new game starts with costly crafting and balanced legendaries (no OP ones).
+Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot, not clothing like the Vault suit.
+
+SETTINGS (please read)
+Settings are items, not menu switches:
+- Make them for free at any chemistry station, under "CLM Settings".
+- Carry a "CLM Setting" item = on. Drop, store or sell it = off.
+- After a change, leave the workbench and use it again.
+- Something missing? Check your Misc tab: Loot mode hides crafting, and Picker mode shows only your picks.
+
+LOOT MODE ON PLAYSTATION
+Also make the "CLM Loot Manual" once (CLM Settings) to start getting drops. If nothing drops, drop the manual and pick it up again.
+
+WHAT'S DIFFERENT ON PLAYSTATION
+PlayStation mods can't use scripts or new art, so:
+- No holotapes: use the chemistry station.
+- Left out: the new laser colours and the Kellogg spawn.
+- Vampiric and its family heal on every hit except killing blows.
+- Auto-Medical and Aid Patch regenerate health while you're low, instead of using stimpaks.
+- Face Bustin' doesn't blow targets apart.
+- Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin' and Sadistic Brawlers do nothing on PlayStation. A few others lose one part. Their descriptions say so.
+
+UPGRADING FROM 1.09
+Your gear keeps its legendaries.

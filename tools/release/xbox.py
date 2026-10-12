@@ -72,22 +72,27 @@ def cmd_achlist(data: Path) -> None:
 
 
 def cmd_unstage(data: Path) -> None:
-    if not STAGED.exists():
-        raise SystemExit('nothing staged')
-    rels = [r for r in STAGED.read_text(encoding='utf8').splitlines() if r]
-    for rel in rels:
-        (data / rel).unlink(missing_ok=True)
-    for rel in rels:                                    # drop folders the staging created and left empty
-        d = (data / rel).parent
-        while d != data and d.exists() and not any(d.iterdir()):
-            d.rmdir()
-            d = d.parent
-    STAGED.unlink()
-    print(f'{len(rels)} staged loose files removed from Data')
-    for name in XBOX_ARCHIVES:
+    if STAGED.exists():
+        rels = [r for r in STAGED.read_text(encoding='utf8').splitlines() if r]
+        for rel in rels:
+            (data / rel).unlink(missing_ok=True)
+        for rel in rels:                                # drop folders the staging created and left empty
+            d = (data / rel).parent
+            while d != data and d.exists() and not any(d.iterdir()):
+                d.rmdir()
+                d = d.parent
+        STAGED.unlink()
+        print(f'{len(rels)} staged loose files removed from Data')
+    else:
+        print('no staged loose files')
+    for name in XBOX_ARCHIVES:                          # can be run again for these alone
         if (data / name).exists():
             XBOX_KEEP.mkdir(parents=True, exist_ok=True)
-            shutil.move(data / name, XBOX_KEEP / name)
+            try:
+                shutil.copy2(data / name, XBOX_KEEP / name)
+                (data / name).unlink()
+            except PermissionError:
+                raise SystemExit(f'{name} is in use: close the Creation Kit, then run xbox.py unstage again')
             print(f'{name} moved to {XBOX_KEEP}')
 
 
