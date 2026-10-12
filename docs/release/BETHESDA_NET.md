@@ -12,7 +12,7 @@ One plugin; requirements on every platform: Automatron, Far Harbor, Contraptions
 
 Every upload goes through the Creation Kit: File > Data, tick only `Custom Legendary Modifications Remade.esp`, set
 it active, OK (never save); then File > Upload Plugin and Archive to Bethesda.net. Leave "Upload as Light Master"
-unticked. Text: `bethesda_net_description_1000.txt` (1,000 characters max), `bethesda_net_playstation_description.txt`
+unticked. Text: `bethesda_net_description.txt` (the CK allows about 3,000 characters), `bethesda_net_playstation_description.txt`
 for PlayStation.
 
 ## PC and Xbox
