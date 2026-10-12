@@ -87,7 +87,7 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
     settings = [
         {'text': "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and "
                  "\"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into "
-                 'these settings.)</font>', 'type': 'text'},
+                 'these settings.)</font>', 'type': 'text', 'html': True},
         {'text': 'Crafting', 'type': 'section'},
         {'text': 'Crafting mode', 'type': 'dropdown', 'id': 'iCrafting:Settings',
          'help': 'Costly: legendaries cost components. Free: they cost nothing. Loot mode: they drop from enemies '
@@ -114,7 +114,7 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
          'action': {'type': 'CallFunction', 'form': f'{ADDON}|{quest_id:X}', 'function': 'PrepareUninstall', 'params': []}},
     ]
     picker = [{'text': "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families "
-                       'turned on here. Your other settings still apply (OP, variants...).</font>', 'type': 'text'}]
+                       'turned on here. Your other settings still apply (OP, variants...).</font>', 'type': 'text', 'html': True}]
     for (kind, cat), names in CATEGORIES.items():
         picker.append({'text': f'CLM {cat}', 'type': 'section'})
         for n in names:
@@ -127,7 +127,7 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
              {'pageDisplayName': 'Legendary Picker', 'content': picker}]
     for page in PERK_TERMS.values():
         content = [{'text': "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without "
-                            'wearing the armour (the perk holotape\'s options).</font>', 'type': 'text'}]
+                            'wearing the armour (the perk holotape\'s options).</font>', 'type': 'text', 'html': True}]
         mine = [(i, name) for i, (pg, _, name) in enumerate(perks) if pg == page]
         groups: dict[str, list] = {}
         for i, name in mine:

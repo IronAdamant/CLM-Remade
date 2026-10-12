@@ -26,7 +26,8 @@
       "content": [
         {
           "text": "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and \"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into these settings.)</font>",
-          "type": "text"
+          "type": "text",
+          "html": true
         },
         {
           "text": "Crafting",
@@ -144,7 +145,8 @@
       "content": [
         {
           "text": "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families turned on here. Your other settings still apply (OP, variants...).</font>",
-          "type": "text"
+          "type": "text",
+          "html": true
         },
         {
           "text": "CLM Armour: Defence",
@@ -1229,7 +1231,8 @@
       "content": [
         {
           "text": "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without wearing the armour (the perk holotape's options).</font>",
-          "type": "text"
+          "type": "text",
+          "html": true
         },
         {
           "text": "Untouchable",
@@ -2245,7 +2248,8 @@
       "content": [
         {
           "text": "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without wearing the armour (the perk holotape's options).</font>",
-          "type": "text"
+          "type": "text",
+          "html": true
         },
         {
           "text": "Perks",
