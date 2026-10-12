@@ -1,8 +1,10 @@
 """Xbox archives: made by the Creation Kit's Generate, staged and checked here.
 
     python tools/release/xbox.py stage     copy CLM's loose files into the game's Data folder, for the CK
+    python tools/release/xbox.py achlist   write the file list to Import in the CK's Generate (work/CLM_xbox.achlist)
     python tools/release/xbox.py check     check the "- Main_xbox.ba2" / "- Textures_xbox.ba2" the CK wrote there
-    python tools/release/xbox.py unstage   take the staged loose files out of Data again
+    python tools/release/xbox.py unstage   take the staged loose files out of Data again, and move the _xbox
+                                           archives to work/xbox_upload (a PC game with them in Data can crash)
 
 Archive2's XBoxDDS format keeps the textures in the PC layout (tile mode 8): Sandbox Room 1.0.0 shipped such archives
 and Xbox players got pink textures. The Creation Kit's Generate ("Upload Plugin and Archive to Bethesda.net", Xbox)
@@ -10,10 +12,14 @@ tiles them for the console, but it builds the archives from loose files in Data,
 files are in Data as PC archives. `stage` copies the loose set (the same files as the PC archives and the Nexus
 "Loose" option) into Data, skipping files already there unchanged and stopping on a different one; it records what it
 added so `unstage` removes exactly those. Loose files override the PC archives, but they are the same files.
+
+Generate's own file list can be wrong (for Sandbox Room it added vanilla Form/ObjectReference/ScriptObject.pex and
+missed files only the add-ons use); `achlist` writes the right list, to Import in Generate's file list.
 """
 from __future__ import annotations
 
 import argparse
+import json
 import shutil
 import struct
 import sys
@@ -25,6 +31,9 @@ from package import STEM, stage  # noqa: E402
 
 REPO = Path(__file__).resolve().parents[2]
 STAGED = REPO / 'work' / 'xbox_staged.txt'
+ACHLIST = REPO / 'work' / 'CLM_xbox.achlist'
+XBOX_KEEP = REPO / 'work' / 'xbox_upload'
+XBOX_ARCHIVES = (f'{STEM} - Main_xbox.ba2', f'{STEM} - Textures_xbox.ba2')
 PC_TILE_MODE = 8           # what Archive2 writes for PC, and for XBoxDDS; the CK's Xbox textures have 13
 
 
@@ -50,6 +59,16 @@ def cmd_stage(data: Path) -> None:
     STAGED.write_text('\n'.join(added) + '\n', encoding='utf8')
     print(f'{len(added)} loose files copied into Data ({len(files) - len(added)} were already there). '
           'Now generate the Xbox archives in the Creation Kit, then run: xbox.py check')
+    cmd_achlist(data)
+
+
+def cmd_achlist(data: Path) -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        files = loose_files(stage(Path(tmp)))
+    rels = sorted(rel for rel in files if not rel.lower().startswith('scripts/source/'))
+    ACHLIST.parent.mkdir(parents=True, exist_ok=True)
+    ACHLIST.write_text(json.dumps(['Data\\' + rel.replace('/', '\\') for rel in rels], indent='\t'), encoding='utf8')
+    print(f"{ACHLIST}: {len(rels)} files, to Import in the Creation Kit's Generate")
 
 
 def cmd_unstage(data: Path) -> None:
@@ -65,6 +84,11 @@ def cmd_unstage(data: Path) -> None:
             d = d.parent
     STAGED.unlink()
     print(f'{len(rels)} staged loose files removed from Data')
+    for name in XBOX_ARCHIVES:
+        if (data / name).exists():
+            XBOX_KEEP.mkdir(parents=True, exist_ok=True)
+            shutil.move(data / name, XBOX_KEEP / name)
+            print(f'{name} moved to {XBOX_KEEP}')
 
 
 def read_ba2(path: Path) -> tuple[bytes, dict[str, int | None]]:
@@ -119,11 +143,11 @@ def cmd_check(data: Path) -> None:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('command', choices=('stage', 'check', 'unstage'))
+    ap.add_argument('command', choices=('stage', 'achlist', 'check', 'unstage'))
     ap.add_argument('--game', default='D:/Steam/steamapps/common/Fallout 4')
     a = ap.parse_args()
     data = Path(a.game) / 'Data'
-    {'stage': cmd_stage, 'check': cmd_check, 'unstage': cmd_unstage}[a.command](data)
+    {'stage': cmd_stage, 'achlist': cmd_achlist, 'check': cmd_check, 'unstage': cmd_unstage}[a.command](data)
 
 
 if __name__ == '__main__':
