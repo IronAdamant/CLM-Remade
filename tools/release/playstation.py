@@ -14,8 +14,10 @@ data/*.esp, written to dist/PlayStation/:
   CritPlasma); the Kellogg spawn (custom face files);
 - Vampiric, Raging, Annihilating, Reaper's Embrace, Reclaimer's: 1.09's Absorb Health (BloodDrain) instead of the
   scripted drain: heals on every hit except killing blows;
-- Auto-Medical / Aid Patch: instead of the scripted auto-stimpak, regenerate 6% of health per second (a stimpak's
-  rate: 30% over 5 s) while health is at or below 20% / 50%; no stimpak used, no cooldown;
+- Auto-Medical / Aid Patch: instead of the scripted auto-stimpak, regenerate about 6% of health per second (a
+  stimpak's rate: 30% over 5 s) while health is at or below 20% / 50%; no stimpak used, no cooldown. Vanilla's
+  RegenerateHealthAbility restores health directly (heal rate does nothing in combat: fCombatHealthRegenRateMult is
+  0); it restores a fixed amount per second, so the amount steps up with the player's level (HEAL_TIERS);
 - Face Bustin': the explode-after-death effect has no script, so targets are not blown apart (text says so);
 - the other legendaries whose effect is a CLM script stay, with a PlayStation note in their description;
 - loot mode: its drop perk was given by a scripted quest. Instead each plugin gets a "CLM Loot Manual" magazine
@@ -56,19 +58,21 @@ GREEN_SWAPS = {'A1ALMSPEL_CritLaserGreen': 0x00139F8C, 'A1ALMEFSH_CritLaserGreen
                'A1ALMACTI_AshPileGreen': 0x00139F8D}                                             # GooPile01
 DRAIN_TO_ABSORB = 'A1ALMMGEF_Target_Effect_Hostile_BloodDrain'
 STIM = {'A1ALMOMOD_Legendary_Armour_StimpakSelfHeal': (0.20, 'Auto-heals you whenever your health is at or below 20%: '
-                                                              'you regenerate 6% of your health per second (as fast as a stimpak), '
+                                                              'you regenerate about 6% of your health per second (as fast as a stimpak), '
                                                               'without using stimpaks. (PlayStation version.)'),
         'A1ALMOMOD_Legendary_Armour_StimpakSelfHeal_AidPatch': (0.50, 'Auto-heals you whenever your health is at or below 50%: '
-                                                                       'you regenerate 6% of your health per second (as fast as a '
+                                                                       'you regenerate about 6% of your health per second (as fast as a '
                                                                        'stimpak), without using stimpaks. (PlayStation version.)')}
-HEAL_RATE = 'A1ALMMGEF_Fortify_Effect_Heal_Rate'
+REGENERATE_HEALTH = 0x00102149           # RegenerateHealthAbility: constant restore health, per second
+# (from level, health per second): about 6% of a level-L player's health with Endurance 5 (105 + 5 x (L - 1))
+HEAL_TIERS = [(1, 7), (10, 11), (25, 17), (50, 25), (75, 32), (100, 40)]
 FACE_BUSTIN = 'A1ALMEnch_FaF_Contact_Effect_Target_Hostile_FaceBusting'
 NOTE_SCRIPT = ' (PlayStation: this effect needs a script, which PlayStation mods cannot have, so it does nothing there.)'
 NOTE_PART = ' (PlayStation: part of this effect needs a script, which PlayStation mods cannot have; that part does nothing there.)'
 NOTE_DRAIN = ' (PlayStation: heals on every hit except killing blows.)'
 NOTE_FACE = ' (PlayStation: targets are not blown apart.)'
 MAGAZINE = 'PerkMagLiveAndLove09'          # vanilla magazine used as the Loot Manual's template
-FN_HAS_PERK, FN_GET_HEALTH_PERCENTAGE, OP_LE = 448, 430, 5 << 5
+FN_HAS_PERK, FN_GET_HEALTH_PERCENTAGE, FN_GET_LEVEL, OP_GE, OP_LT, OP_LE = 448, 430, 80, 3 << 5, 4 << 5, 5 << 5
 BEFORE_BOOK = {'GMST', 'KYWD', 'LCRT', 'AACT', 'TRNS', 'CMPO', 'TXST', 'GLOB', 'DMGT', 'CLAS', 'FACT', 'HDPT', 'EYES',
                'RACE', 'SOUN', 'ASPC', 'MGEF', 'LTEX', 'ENCH', 'SPEL', 'ACTI', 'TACT', 'ARMO'}
 
@@ -224,18 +228,22 @@ def build(game: Path) -> None:
             r.mark_dirty()
             reverted.add(r.formid)
             report.append(f'absorb: {r.edid}')
-    # auto-stimpak: heal rate 6/s at or below the threshold
-    heal = fid(HEAL_RATE)
+    # auto-stimpak: restore about 6% of health per second at or below the threshold
     for omod, (threshold, text) in STIM.items():
         o = main.by_edid(omod)
         ench = next(r for r in main.records('ENCH') if main.is_own(r.formid) and struct.pack('<I', r.formid) in o.get('DATA').data)
         subs = [s for s in ench.subrecords if s.sig not in ('EFID', 'EFIT', 'CTDA', 'CIS1', 'CIS2')]
-        subs += [Subrecord('EFID', struct.pack('<I', heal)), Subrecord('EFIT', struct.pack('<fII', 6.0, 0, 0)),
-                 Subrecord('CTDA', ctda(OP_LE, threshold, FN_GET_HEALTH_PERCENTAGE, 0))]
+        for i, (level, amount) in enumerate(HEAL_TIERS):
+            subs += [Subrecord('EFID', struct.pack('<I', REGENERATE_HEALTH)),
+                     Subrecord('EFIT', struct.pack('<fII', float(amount), 0, 0)),
+                     Subrecord('CTDA', ctda(OP_LE, threshold, FN_GET_HEALTH_PERCENTAGE, 0)),
+                     Subrecord('CTDA', ctda(OP_GE, level, FN_GET_LEVEL, 0))]
+            if i + 1 < len(HEAL_TIERS):
+                subs.append(Subrecord('CTDA', ctda(OP_LT, HEAL_TIERS[i + 1][0], FN_GET_LEVEL, 0)))
         ench.subrecords[:] = subs
         ench.mark_dirty()
         o.set('DESC', zstr(text))
-        report.append(f'heal rate: {omod} via {ench.edid}')
+        report.append(f'regenerate: {omod} via {ench.edid}')
     # Disintegratin' (Green): back to vanilla plasma goo
     for edid in (DISINTEGRATIN_GREEN, 'A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green'):
         r = main.by_edid(edid)

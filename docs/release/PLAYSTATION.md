@@ -19,7 +19,7 @@ creation (requirements: CLM + its DLC). No archives.
 | Disintegratin' (Green) | Vanilla plasma "goo" again (the green ash is a new asset). |
 | Custom Spawning: Kellogg | Left out (custom face files). |
 | Vampiric, Raging, Annihilating, Reaper's Embrace, Reclaimer's | 1.09's version: heal on every hit except killing blows. |
-| Auto-Medical / Aid Patch | Regenerate 6% of health per second (a stimpak's rate) while at or below 20% / 50% health; no stimpak used, no cooldown. |
+| Auto-Medical / Aid Patch | Regenerate about 6% of health per second (a stimpak's rate; the amount steps up with your level, as a fixed amount is all a plugin can restore) while at or below 20% / 50% health; no stimpak used, no cooldown. Uses vanilla RegenerateHealthAbility: heal rate does nothing in combat. |
 | Face Bustin' | Cripples and speeds as before; targets are not blown apart. |
 | Untouchable (all), Shavka's Explosive Striking (all), Ridiculously Absorbin', Sadistic Brawlers | Kept, with a note: their effect is a script, so it does nothing on PlayStation. |
 | Brutish, Burning Rage, Constantly Flamin' Cloaked, One Punch Man's, God Father's, Generic 80s Action Hero's | Kept, with a note: one part of their effect is a script (e.g. the self-heal on hits of Full Invulnerability). |
