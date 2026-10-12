@@ -6,7 +6,8 @@ and Tracker's sights, Critically Hurtin', and the weapon copy) - far outside any
 scopes "going out of control" - and Aim Stabilized (50%) multiplied by 0.5, making aim less stable. Now 50% = x1.5
 and 100% = x2 (Multiply Value). In-game test (2026-10-12): x1.5 already stopped all sway (vanilla's Stabilized
 lining is only about x1.01 per arm piece), so 50% was lowered to x1.25 afterwards. x1.25 still stopped all sway; the
-author's own earlier testing found sway only returns below 1.0, so 50% is x0.75 (set 2026-10-12, edited raw).
+author's own earlier testing found sway only returns below 1.0. x0.75 swayed; the author then chose x0.5, 1.09's own
+value (2026-10-12, edited raw). So 1.09's 50% was right after all: below 1.0 this entry point leaves sway.
 
 Usage: python fix_scope_stability.py <plugin.esp>   (edits in place; FO4Edit must not have it open)
 """
