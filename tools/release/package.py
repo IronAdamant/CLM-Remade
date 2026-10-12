@@ -1,4 +1,4 @@
-"""Package a CLM release: BA2 archives for PC and Xbox, and the Nexus zip (a FOMOD installer).
+"""Package a CLM release: BA2 archives for PC, plugins for Xbox and PlayStation, and the Nexus zip (a FOMOD installer).
 
     python tools/release/package.py --version 2.0.0 [--game "D:/Steam/steamapps/common/Fallout 4"]
 
@@ -6,11 +6,13 @@ Fallout 4 loads "<plugin> - Main.ba2" and "<plugin> - Textures.ba2" beside a plu
 the mod needs goes into the main plugin's two archives (the DLC add-ons are plugins only):
     Custom Legendary Modifications Remade - Main.ba2      Scripts (compiled, plus their sources), meshes (General)
     Custom Legendary Modifications Remade - Textures.ba2  textures                                         (DDS)
-The Creation Kit's Bethesda.net upload looks for the Xbox versions as "- Main_xbox.ba2" and "- Textures_xbox.ba2"
-(XBoxDDS textures, Xbox compression). Output in dist/:
+No Xbox archives: Archive2's XBoxDDS format keeps the textures in the PC layout (tile mode 8; Sandbox Room 1.0.0
+shipped them so and Xbox players got pink textures). The Creation Kit's Generate ("Upload Plugin and Archive to
+Bethesda.net") tiles them for the console: tools/release/xbox.py stages the loose files in Data for it and checks the
+"- Main_xbox.ba2" / "- Textures_xbox.ba2" it writes. Output in dist/:
     PC/      the main plugin + PC archives, and the add-ons            (Bethesda.net PC uploads)
     PlayStation/  plugins only (tools/release/playstation.py)        (Bethesda.net PS4/PS5 uploads)
-    Xbox/    the main plugin + _xbox archives, and the add-ons         (Bethesda.net Xbox uploads)
+    Xbox/    the plugins; the archives come from the CK (xbox.py)    (Bethesda.net Xbox uploads)
     CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod as packed archives (BA2, default) or
                                loose files (for mod tools / players who prefer loose), ticks the add-ons for the
                                DLC the player has, and offers the optional F4SE menu (mcm/data: "CLM - MCM", needs F4SE and
@@ -21,7 +23,7 @@ The debug recorder (debug/) is a testing tool and never packaged.
 PC archives are stamped BA2 version 1. The Creation Kit's Archive2 (next-gen update, 2024) writes version 8, which
 game versions before that update (1.10.163 and older, still widely played) silently ignore - no scripts, no
 textures. Versions 1, 7 and 8 share the same layout for Fallout 4 (only the number differs) and the current game
-reads version 1, so v1 archives work on every PC version. Xbox archives stay as written (consoles are always current).
+reads version 1, so v1 archives work on every PC version.
 """
 from __future__ import annotations
 
@@ -164,15 +166,14 @@ def main():
         shutil.rmtree(DIST)
     tmp = DIST / '_stage'
     root = stage(tmp)
-    for platform, suffix, tex_fmt, comp in (('PC', '', 'DDS', 'Default'), ('Xbox', '_xbox', 'XBoxDDS', 'XBox')):
-        out = DIST / platform
-        archive2(game, root, ['Scripts', 'Meshes'], out / f'{STEM} - Main{suffix}.ba2', 'General', comp)
-        archive2(game, root, ['Textures'], out / f'{STEM} - Textures{suffix}.ba2', tex_fmt, comp)
-        if platform == 'PC':
-            for name in (f'{STEM} - Main.ba2', f'{STEM} - Textures.ba2'):
-                stamp_v1(out / name)
+    archive2(game, root, ['Scripts', 'Meshes'], DIST / 'PC' / f'{STEM} - Main.ba2', 'General', 'Default')
+    archive2(game, root, ['Textures'], DIST / 'PC' / f'{STEM} - Textures.ba2', 'DDS', 'Default')
+    for name in (f'{STEM} - Main.ba2', f'{STEM} - Textures.ba2'):
+        stamp_v1(DIST / 'PC' / name)
+    for platform in ('PC', 'Xbox'):
+        (DIST / platform).mkdir(parents=True, exist_ok=True)
         for plugin in [MAIN] + [p for p, _, _ in ADDONS]:
-            shutil.copy(DATA / plugin, out / plugin)
+            shutil.copy(DATA / plugin, DIST / platform / plugin)
     zpath = DIST / f'CLM Remade {a.version}.zip'
     info, config = fomod(a.version)
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED) as z:
