@@ -76,7 +76,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BrutalResist "CLM: Brut
     A1ALMMGEF_Fortify_Resistance_Poison: Value Modifier PoisonResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Radiation_Exposure: Value Modifier RadResistExposure, magnitude 1000.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Radiation_Ingestion: Value Modifier RadResistIngestion, magnitude 1000.000000, duration 0 (Constant Effect, Self)
-    A1ALMMGEF_Fortify_Effect_Heal_Rate: Value Modifier HealRate, magnitude 50.000000, duration 0 (Constant Effect, Self)
+    MGEF RegenerateHealthAbility (vanilla) magnitude 50.000000 duration 0
     A1ALMMGEF_Fortify_Effect_Action_Point_Regen: Value Modifier ActionPointsRate, magnitude 50.000000, duration 0 (Constant Effect, Self)
 ```
 
@@ -127,7 +127,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BurningRage "CLM: Burni
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_BurningRage (, )
     A1ALMMGEF_Constant_Effect_Fx_FireShield: Light, magnitude 1.000000, duration 0 (Constant Effect, Self)
       if GetHealthPercentage [10000000] 0.500000
-    A1ALMMGEF_Fortify_Effect_Heal_Rate: Value Modifier HealRate, magnitude 30.000000, duration 0 (Constant Effect, Self)
+    MGEF RegenerateHealthAbility (vanilla) magnitude 30.000000 duration 0
       if GetHealthPercentage [10000000] 0.500000
     A1ALMMGEF_Fortify_Resistance_Damage: Value Modifier DamageResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
       if GetHealthPercentage [10000000] 0.500000
@@ -459,7 +459,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Fiddling "CLM: Fiddlin'
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_ConstantFlamingCloaked "CLM: Constant Flamin' Cloaked" [ENCH:082FC97A] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_ConstantFlamingCloaked (, )
     A1ALMMGEF_Constant_Effect_Fx_FireShield: Light, magnitude 1.000000, duration 0 (Constant Effect, Self)
-    A1ALMMGEF_Fortify_Effect_Heal_Rate: Value Modifier HealRate, magnitude 30.000000, duration 0 (Constant Effect, Self)
+    MGEF RegenerateHealthAbility (vanilla) magnitude 30.000000 duration 0
     A1ALMMGEF_Fortify_Resistance_Damage: Value Modifier DamageResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Fire: Value Modifier FireResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Constant_Effect_OnMeleeHits_Fire: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -1881,7 +1881,7 @@ Enchantments ADD A1ALMEnch_Constant_effect_Custom_Effect_SuperTanking "CLM: Supe
     A1ALMMGEF_Fortify_Resistance_Poison: Value Modifier PoisonResist, magnitude 1000.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Radiation_Exposure: Value Modifier RadResistExposure, magnitude 1000.000000, duration 0 (Constant Effect, Self)
     A1ALMMGEF_Fortify_Resistance_Radiation_Ingestion: Value Modifier RadResistIngestion, magnitude 1000.000000, duration 0 (Constant Effect, Self)
-    A1ALMMGEF_Fortify_Effect_Heal_Rate: Value Modifier HealRate, magnitude 50.000000, duration 0 (Constant Effect, Self)
+    MGEF RegenerateHealthAbility (vanilla) magnitude 50.000000 duration 0
     A1ALMMGEF_Fortify_Effect_Action_Point_Regen: Value Modifier ActionPointsRate, magnitude 50.000000, duration 0 (Constant Effect, Self)
 ```
 
