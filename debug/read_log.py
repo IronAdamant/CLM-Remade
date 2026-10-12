@@ -14,8 +14,7 @@ import sys
 from pathlib import Path
 
 LOG_DIR = Path.home() / 'Documents' / 'My Games' / 'Fallout4' / 'Logs' / 'Script' / 'User'
-PLUGINS = ['Custom Legendary Modifications Remade.esp', 'CLM - Automatron.esp', 'CLM - Far Harbor.esp',
-           'CLM - Nuka-World.esp', 'CLM - Contraptions.esp']
+PLUGINS = ['Custom Legendary Modifications Remade.esp']   # the DLC add-ons were merged into it (2026-10-12)
 FORM = re.compile(r'\[(\w+) <[^>]*\(([0-9A-Fa-f]{8})\)>\]')
 
 

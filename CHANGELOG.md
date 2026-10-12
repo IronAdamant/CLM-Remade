@@ -3,16 +3,9 @@
 ## 2.0.0 (2026-10-12)
 
 ### Requirements
-- **The main mod no longer needs any DLC** - just Fallout 4. (1.09 needed all six.)
-- Legendaries that use a DLC's creatures, art or effects moved to optional add-ons, one per DLC. Install the ones for
-  the DLC you own; they are ESL-flagged (no load-order slot) and follow your settings like the rest:
-  - `CLM - Automatron.esp`: 13 robot spawns.
-  - `CLM - Far Harbor.esp`: 9 creature and Trapper spawns, Paintball x6, Trappin' x4, Moby-Dick's, Silenced Harpoon
-    Striker.
-  - `CLM - Nuka-World.esp`: 12 creature and raider spawns.
-  - `CLM - Contraptions.esp`: Pyrotechnical x9, Weather Altering x3.
-  - **Upgrading from 1.09:** gear that already has one of these legendaries attached loses it unless the matching
-    add-on is installed (then re-craft it). Take them off at a workbench before updating if unsure.
+- **Four DLC instead of six:** Automatron, Far Harbor, Contraptions Workshop and Nuka-World. Wasteland Workshop and
+  Vault-Tec Workshop are no longer needed. Still one plugin, so gear from 1.09 keeps its legendaries, DLC ones
+  included.
 - The **Untouchable** legendaries and perks (and Brutish, Burning Rage, Constantly Flamin' Cloaked) and the
   **auto-stimpak** effects used Far Harbor scripts; they now use CLM's own copies, which behave identically.
 
@@ -63,7 +56,6 @@
     Drop rate") change it. Rarity tiers (common,
     uncommon, rare, OP) are listed in docs/LOOT_PLAN.md. With Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1%
     per kill.
-  - DLC legendaries drop only with their add-on installed, without raising the overall drop rate.
   - To go back to crafting, drop the Loot mode setting (or pick Free or Costly on the holotape).
 - **Energized laser colours:** Green, Purple, Gold, Orange, Pink and Deep Blue, alongside the original Red and Blue.
   Beam, muzzle flash, sparks, impacts and light all match the chosen colour.

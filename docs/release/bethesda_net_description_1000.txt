@@ -1,10 +1,10 @@
 Over 570 legendary effects for weapons and armour: craft them at the workbench or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, coloured lasers, movement and stealth effects, and some gloriously overpowered ones.
 
 2.0 is a full overhaul of the 2017 mod:
-- No DLC required. DLC legendaries are in optional add-ons (one per DLC).
+- Needs Automatron, Far Harbor, Contraptions Workshop and Nuka-World (no longer all six DLC).
 - Loot mode: legendaries drop from anything you kill; holotapes unlock whole families; OP legendaries need a rare Legendary Core. Drop rate Low, Standard or Higher.
 - Legendary Picker, 15 new legendaries, coloured lasers, many fixes.
 
 Settings are items: make "CLM Setting" items at a chemistry station (CLM Settings). Carry one = on, drop it = off (or use the Configuration Holotape). Attach legendaries in a workbench's Legendary slot; armour ones need armour with a legendary slot.
 
-1.09 users: gear with a DLC legendary loses it unless you install that add-on.
+1.09 users: your gear keeps its legendaries.

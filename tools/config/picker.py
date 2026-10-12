@@ -36,7 +36,7 @@ from settings import (ITEMS, ctda, FN_GET_ITEM_COUNT, FN_GET_GLOBAL_VALUE, OP_EQ
                       MCM_GLOBAL, setting_global, on_conds, off_conds)
 
 MAIN = generate.MAIN
-PLUGINS = [MAIN, *generate.ADDONS]
+PLUGINS = [MAIN]   # the DLC add-ons were merged into it (2026-10-12)
 TEMPLATE_MISC = '@miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon'
 MODEL = 'Props\\Holotape_Prop.nif'
 OP_CATEGORY = 'OP'

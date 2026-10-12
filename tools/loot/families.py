@@ -18,8 +18,7 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-PLUGINS = ['Custom Legendary Modifications Remade.esp', 'CLM - Automatron.esp', 'CLM - Far Harbor.esp',
-           'CLM - Nuka-World.esp', 'CLM - Contraptions.esp']
+PLUGINS = ['Custom Legendary Modifications Remade.esp']   # the DLC add-ons were merged into it (2026-10-12)
 FN_GET_ITEM_COUNT = 47
 SKIP = {'A1ALMOMOD_Legendary_Weapon_NotALegendary', 'A1ALMOMOD_Legendary_Armor_NotALegendary'}
 
@@ -86,10 +85,7 @@ def main():
     for name in PLUGINS:
         p = Plugin.load(Path(a.data) / name)
         own = {r.formid: r for r in p.records() if p.is_own(r.formid)}
-        show_op = next((r.formid for r in own.values() if r.edid == 'A1ALMSET_ShowOP'), None)
-        if show_op is None:  # add-ons use the main plugin's setting item
-            main = Plugin.load(Path(a.data) / PLUGINS[0])
-            show_op = (main.by_edid('A1ALMSET_ShowOP').formid & 0xFFFFFF) | (p.masters.index(PLUGINS[0]) << 24)
+        show_op = p.by_edid('A1ALMSET_ShowOP').formid
         recipes = defaultdict(list)
         for r in own.values():
             if r.sig == 'COBJ' and r.get('CNAM'):

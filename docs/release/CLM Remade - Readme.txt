@@ -6,24 +6,17 @@ Everything is set up in game, at any chemistry station (or with the configuratio
 
 
 REQUIREMENTS
-- Fallout 4. The main mod needs no DLC and no script extender (F4SE). Works on every PC game version, the current
-  one and older ones (1.10.163 and earlier): its archives use the format both can read.
-- Optional add-ons, one per DLC, for the legendaries that use that DLC's creatures, art or effects:
-    CLM - Automatron.esp     Automatron: robot-spawning legendaries
-    CLM - Far Harbor.esp     Far Harbor: creature and Trapper spawns, Paintball, Trappin', Moby-Dick's,
-                             Silenced Harpoon Striker
-    CLM - Nuka-World.esp     Nuka-World: creature and raider spawns
-    CLM - Contraptions.esp   Contraptions Workshop: Pyrotechnical, Weather Altering
-  They are light plugins (ESL): they do not use a load-order slot. Load them after the main plugin.
+- Fallout 4 with four DLC: Automatron, Far Harbor, Contraptions Workshop and Nuka-World (1.09 needed all six).
+- No script extender (F4SE) needed. Works on every PC game version, the current one and older ones (1.10.163 and
+  earlier): its archives use the format both can read.
 
 
 INSTALLING
 Install with a mod manager (Vortex or Mod Organizer 2). The installer asks:
 - Files: packed archives (recommended; two BA2 files, any PC game version) or loose files (the same files
   unpacked, with the script sources).
-- DLC add-ons: it ticks the ones for the DLC you own.
 - F4SE menu (optional, PC): see F4SE MENU below. Skip it without F4SE and Mod Configuration Menu.
-By hand: copy the files into Fallout 4's Data folder and enable the plugins.
+By hand: copy the files into Fallout 4's Data folder and enable the plugin.
 
 
 GETTING STARTED
@@ -120,8 +113,7 @@ PlayStation mods cannot use scripts or new assets, so this version differs a lit
 
 
 UPGRADING FROM 1.09
-- The DLC legendaries moved to the add-ons: gear with one of them attached loses it unless you install the matching
-  add-on. If unsure, take them off at a workbench before updating.
+- Your gear keeps its legendaries, DLC ones included.
 - Your holotape settings are turned into setting items on the first load (PC and Xbox).
 - Some legendaries were fixed to do what their description says, and a few very strong ones are now marked OP.
   See the changelog on the mod page.

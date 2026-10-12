@@ -108,14 +108,17 @@ Two lessons from testing:
 - **Texture paths are case-insensitive.** Vanilla models mix `textures\Effects` and `textures\effects`, so path
   replacement must ignore case. The generator refuses to write a model that still points at a vanilla colour.
 
-## DLC add-ons (2.0)
+## DLC (2.0)
 
-The main plugin depends on Fallout4.esm only. Legendaries that use a DLC's creatures, art or effects live in
-ESL-flagged add-ons (`CLM - <DLC>.esp`), each with masters Fallout4.esm, its DLC and the main plugin. Their recipes reuse the main plugin's configuration globals, so
-the holotape controls them too. `tools/xedit/move_to_addon.pas` builds an add-on from a list in `tools/addons/`:
-it copies the records as new ones, re-points links between the copies, verifies no copy still points at an
-original, and only then deletes the originals. New files start their object IDs at 0x800 (IDs below 0x800 are
-reserved; an ESL must stay within 0x800-0xFFF).
+One plugin, with masters Fallout4.esm, DLCRobot.esm, DLCCoast.esm, DLCworkshop02.esm and DLCNukaWorld.esm.
+
+For a while during 2.0 the main plugin needed no DLC: the legendaries that use a DLC's creatures, art or effects were
+moved into ESL add-ons, one per DLC (`tools/xedit/move_to_addon.pas`, lists in `tools/addons/`). The author merged
+them back on 2026-10-12: most players own the DLC by now, and one plugin is easier to maintain.
+`tools/addons/merge_into_main.py` (with `tools/xedit/merge_addons.pas`) copied every add-on record into the main
+plugin except each add-on's own loot lists, quest and perk; `tools/loot/generate.py` then rebuilt the main drop
+lists with the DLC legendaries in them. The records that 1.09 had in its plugin got their 1.09 form IDs back, so
+1.09 saves keep them. Records made during 2.0 got new IDs.
 
 A legendary can depend on a DLC in two ways: a reference to a DLC record (visible as a master) or a model/texture
 path into a DLC archive (not visible as a master). Dependency checks must look at both.

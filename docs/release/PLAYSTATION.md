@@ -6,15 +6,15 @@ the author's decisions of 2026-10-12. Checked: no CLM script attached anywhere, 
 texture, FO4Edit: 0 errors in all five plugins.
 
 The chemistry station settings and the Legendary Picker are what make CLM work on PlayStation (and on Xbox, and on
-PC without F4SE): they need no scripts. Upload as for PC/Xbox: the main plugin, and each DLC add-on as its own
-creation (requirements: CLM + its DLC). No archives.
+PC without F4SE): they need no scripts. Upload as for PC/Xbox: the plugin only, no archives. Requirements:
+Automatron, Far Harbor, Contraptions Workshop and Nuka-World.
 
 ## What is different on PlayStation
 
 | Content | PlayStation |
 |---|---|
 | Configuration and perk holotapes | Not given, not craftable (a holotape runs scripts). Settings: chemistry station. |
-| Loot mode | Works. The drop perk comes from a "CLM Loot Manual" magazine (one per plugin), made once at the chemistry station (CLM Settings) while Loot mode is on. If nothing drops, drop the manual and pick it up again. |
+| Loot mode | Works. The drop perk comes from a "CLM Loot Manual" magazine, made once at the chemistry station (CLM Settings) while Loot mode is on. If nothing drops, drop the manual and pick it up again. |
 | Energized Green / Purple / Gold / Orange / Pink / Deep Blue, Disintegratin' Purple / Gold / Orange / Pink / Deep Blue | Left out (new textures and meshes). Energized Red, Blue, Plasma and Gauss stay. |
 | Disintegratin' (Green) | Vanilla plasma "goo" again (the green ash is a new asset). |
 | Custom Spawning: Kellogg | Left out (custom face files). |
@@ -23,7 +23,7 @@ creation (requirements: CLM + its DLC). No archives.
 | Face Bustin' | Cripples and speeds as before; targets are not blown apart. |
 | Untouchable (all), Shavka's Explosive Striking (all), Ridiculously Absorbin', Sadistic Brawlers | Kept, with a note: their effect is a script, so it does nothing on PlayStation. |
 | Brutish, Burning Rage, Constantly Flamin' Cloaked, One Punch Man's, God Father's, Generic 80s Action Hero's | Kept, with a note: one part of their effect is a script (e.g. the self-heal on hits of Full Invulnerability). |
-| Everything else (settings, picker, ~540 legendaries, DLC add-ons) | Same as PC and Xbox. |
+| Everything else (settings, picker, ~570 legendaries) | Same as PC and Xbox. |
 
 Re-run the build before every release (it starts from data/*.esp). Testing on PC:
 `python tools/release/playstation.py --test-install`, play (with CLM - MCM.esp unticked), then `--test-restore`.

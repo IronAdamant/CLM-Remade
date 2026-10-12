@@ -251,7 +251,7 @@ Function PrepareUninstall()
 	Debug.MessageBox("CLM: your settings and picks are items again (Misc), and the holotapes are back. You can now remove CLM - MCM.")
 EndFunction
 
-; pick item n (its plugin may be a DLC add-on that is not installed: then None)
+; pick item n
 Form Function PickItem(int aiIndex)
 	If aiIndex == 0
 		Return Game.GetFormFromFile(0x4AC80E, "Custom Legendary Modifications Remade.esp")
@@ -378,7 +378,7 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 61
 		Return Game.GetFormFromFile(0x4AC888, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 62
-		Return Game.GetFormFromFile(0x0008CF, "CLM - Far Harbor.esp")
+		Return Game.GetFormFromFile(0x4ACA10, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 63
 		Return Game.GetFormFromFile(0x4AC88A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 64
@@ -388,7 +388,7 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 66
 		Return Game.GetFormFromFile(0x4AC890, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 67
-		Return Game.GetFormFromFile(0x0008D1, "CLM - Far Harbor.esp")
+		Return Game.GetFormFromFile(0x4ACA11, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 68
 		Return Game.GetFormFromFile(0x4AC892, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 69
@@ -396,7 +396,7 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 70
 		Return Game.GetFormFromFile(0x4AC896, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 71
-		Return Game.GetFormFromFile(0x000884, "CLM - Contraptions.esp")
+		Return Game.GetFormFromFile(0x4ACAF8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 72
 		Return Game.GetFormFromFile(0x4AC898, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 73
@@ -428,11 +428,11 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 86
 		Return Game.GetFormFromFile(0x4AC8B4, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 87
-		Return Game.GetFormFromFile(0x000893, "CLM - Automatron.esp")
+		Return Game.GetFormFromFile(0x4AC9A0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 88
 		Return Game.GetFormFromFile(0x4AC8B6, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 89
-		Return Game.GetFormFromFile(0x0008D3, "CLM - Far Harbor.esp")
+		Return Game.GetFormFromFile(0x4ACA12, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 90
 		Return Game.GetFormFromFile(0x4AC8B8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 91
@@ -444,9 +444,9 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 94
 		Return Game.GetFormFromFile(0x4AC8C0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 95
-		Return Game.GetFormFromFile(0x00088D, "CLM - Nuka-World.esp")
+		Return Game.GetFormFromFile(0x4ACA9E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 96
-		Return Game.GetFormFromFile(0x00088F, "CLM - Nuka-World.esp")
+		Return Game.GetFormFromFile(0x4ACA9F, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 97
 		Return Game.GetFormFromFile(0x4AC8C2, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 98
@@ -468,7 +468,7 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 106
 		Return Game.GetFormFromFile(0x4AC8D4, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 107
-		Return Game.GetFormFromFile(0x0008D5, "CLM - Far Harbor.esp")
+		Return Game.GetFormFromFile(0x4ACA13, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 108
 		Return Game.GetFormFromFile(0x4AC8D6, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 109
@@ -476,7 +476,7 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 110
 		Return Game.GetFormFromFile(0x4AC8DA, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 111
-		Return Game.GetFormFromFile(0x000886, "CLM - Contraptions.esp")
+		Return Game.GetFormFromFile(0x4ACAF9, "Custom Legendary Modifications Remade.esp")
 	EndIf
 	Return None
 EndFunction

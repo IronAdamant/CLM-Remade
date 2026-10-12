@@ -46,8 +46,6 @@ GLOBAL = 'A1ALMHOLOTAPES'
 HOLOTAPES = ['A1ALMTAPE_Holotape_Config', 'A1ALMTAPE_Holotape_Perk']
 HOLOTAPE_RECIPES = ['co_A1ALMTAPE_Holotape_Config', 'co_A1ALMTAPE_Holotape_Perk', 'co_A1ALMTAPE_Holotape_PerkFREE']
 PERK_TERMS = {'A1ALMTERM_Holotape_Perk_Add_RM': 'CLM Perks', 'A1ALMTERM_Holotape_Perk_Cheat_RM': 'Cheat Perks'}
-ADDON_NAMES = {'CLM - Automatron.esp': 'Automatron', 'CLM - Far Harbor.esp': 'Far Harbor',
-               'CLM - Nuka-World.esp': 'Nuka-World', 'CLM - Contraptions.esp': 'Contraptions'}
 FRAGMENTS = REPO / 'source' / 'User' / 'Fragments' / 'Terminals'
 OUT = REPO / 'mcm'
 FN_GET_GLOBAL_VALUE = 74
@@ -123,8 +121,6 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
             i = picks.index((kind, n))
             f = fams[(kind, n)]
             label = n.removeprefix('Spawn: ')
-            if f['home'] in ADDON_NAMES:
-                label += f' ({ADDON_NAMES[f["home"]]} add-on)'
             picker.append(switch(label, f'bPick{i}:Picks', f'Show the {len(f["rows"])} {n} legendaries '
                                  f'({"weapon" if kind == "weapon" else "armour"}) while Picker mode is on.'))
     pages = [{'pageDisplayName': 'Settings', 'content': settings},
@@ -419,7 +415,7 @@ Function PrepareUninstall()
 	Debug.MessageBox("CLM: your settings and picks are items again (Misc), and the holotapes are back. You can now remove CLM - MCM.")
 EndFunction
 
-; pick item n (its plugin may be a DLC add-on that is not installed: then None)
+; pick item n
 Form Function PickItem(int aiIndex)
 {lookup}
 	EndIf
@@ -524,12 +520,8 @@ def main():
             p.by_edid('A1ALMTERM_Holotape_Perk_Add_RM').mark_dirty()
     p.save(data / MAIN)
 
-    # 3. scripts (pick items are found by plugin and local ID, so the add-on needs no DLC add-on as a master)
-    pick_items = []
-    for f in picks:
-        home = fams[f]['home']
-        r = (p if home == MAIN else Plugin.load(data / home)).by_edid(selector(*f))
-        pick_items.append((home, r.formid & 0xFFFFFF))
+    # 3. scripts (pick items are found by plugin and local ID)
+    pick_items = [(MAIN, p.by_edid(selector(*f)).formid & 0xFFFFFF) for f in picks]
     (REPO / 'source' / 'User' / 'A1ALMQuestConfigInit.psc').write_text(
         CONFIG_INIT.format(fid=glob.formid & 0xFFFFFF, main=MAIN), encoding='utf8')
     (OUT / 'source').mkdir(parents=True, exist_ok=True)

@@ -6,7 +6,7 @@
 
 PlayStation mods may not include scripts or assets: the upload is the plugins only. The settings and the Legendary
 Picker already work without scripts (chemistry station items). Author's decisions (2026-10-12), applied to copies of
-data/*.esp, written to dist/PlayStation/:
+data/, written to dist/PlayStation/:
 - every CLM script is detached (VMAD removed where all its scripts are CLM's; vanilla scripts stay);
 - the holotapes are never given or craftable (A1ALMHOLOTAPES = 0): playing one runs a script;
 - legendaries that need CLM assets are left out (recipes and loot drops removed): the six new laser colours
@@ -20,8 +20,8 @@ data/*.esp, written to dist/PlayStation/:
   0); it restores a fixed amount per second, so the amount steps up with the player's level (HEAL_TIERS);
 - Face Bustin': the explode-after-death effect has no script, so targets are not blown apart (text says so);
 - the other legendaries whose effect is a CLM script stay, with a PlayStation note in their description;
-- loot mode: its drop perk was given by a scripted quest. Instead each plugin gets a "CLM Loot Manual" magazine
-  (BOOK teaching that plugin's loot perk, as vanilla magazines teach perks), made once at the chemistry station
+- loot mode: its drop perk was given by a scripted quest. Instead a "CLM Loot Manual" magazine (BOOK teaching the
+  loot perk, as vanilla magazines teach perks) is made once at the chemistry station
   (CLM Settings) while Loot mode is on. The perk's own conditions still check the Loot mode setting.
 """
 from __future__ import annotations
@@ -42,10 +42,6 @@ from ack.plugin import Plugin, Record, Group, Subrecord  # noqa: E402
 from settings import ITEMS, setting_global, on_conds, ctda, OP_EQ, CATEGORY  # noqa: E402
 
 MAIN = 'Custom Legendary Modifications Remade.esp'
-ADDONS = {'CLM - Automatron.esp': 'Automatron', 'CLM - Far Harbor.esp': 'FarHarbor',
-          'CLM - Nuka-World.esp': 'NukaWorld', 'CLM - Contraptions.esp': 'Contraptions'}
-ADDON_NAMES = {'CLM - Automatron.esp': 'Automatron', 'CLM - Far Harbor.esp': 'Far Harbor',
-               'CLM - Nuka-World.esp': 'Nuka-World', 'CLM - Contraptions.esp': 'Contraptions'}
 OUT = REPO / 'dist' / 'PlayStation'
 SCRIPTS = REPO / 'data' / 'SCRIPTS'
 
@@ -192,16 +188,17 @@ def append_desc(r: Record, note: str) -> None:
 def build(game: Path) -> None:
     global VANILLA
     data = game / 'Data'
-    VANILLA = {p.stem.lower() for root in [data / 'Scripts/Source/Base'] +
-               [d for d in (data / 'Scripts/Source').iterdir() if d.is_dir()] for p in root.rglob('*.psc')}
     custom = custom_scripts()
+    # CLM's own sources can be in Scripts/Source/User too (loose installs, xbox.py stage): never vanilla
+    VANILLA = {p.stem.lower() for root in [data / 'Scripts/Source/Base'] +
+               [d for d in (data / 'Scripts/Source').iterdir() if d.is_dir()] for p in root.rglob('*.psc')} - custom
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
     fo = Plugin.load(data / 'Fallout4.esm')
     magazine = fo.by_edid(MAGAZINE)
     main = Plugin.load(REPO / 'data' / MAIN)
-    plugins = {MAIN: main} | {n: Plugin.load(REPO / 'data' / n) for n in ADDONS}
+    plugins = {MAIN: main}
     report = []
 
     m = Edit(main, main)
@@ -295,13 +292,13 @@ def build(game: Path) -> None:
     g = main.by_edid('A1ALMHOLOTAPES')
     g.set('FLTV', struct.pack('<f', 0.0))
 
-    # loot mode: a Loot Manual magazine per plugin, and the Loot mode setting's text
+    # loot mode: a Loot Manual magazine, and the Loot mode setting's text
     for name, p in plugins.items():
         e = m if p is main else Edit(p, main)
-        pre = 'A1ALM' if p is main else f'A1ALM{ADDONS[name]}'
+        pre = 'A1ALM'
         perk = p.by_edid(f'{pre}PERK_Loot')
         book = magazine.copy()
-        label = 'CLM Loot Manual' + (f' ({ADDON_NAMES[name]})' if p is not main else '')
+        label = 'CLM Loot Manual'
         book.subrecords[:] = [Subrecord('EDID', zstr(f'{pre}BOOK_LootManual'))] + [
             Subrecord(s.sig, {'FULL': zstr(label), 'DESC': b'\0', 'CNAM': b'\0',
                               'DNAM': s.data[:1] + struct.pack('<I', perk.formid) + s.data[5:]}.get(s.sig, s.data))
@@ -310,9 +307,8 @@ def build(game: Path) -> None:
         e.add(book)
         tmpl = main.by_edid('co_A1ALMSET_DropLow').copy()
         tmpl.subrecords[:] = [Subrecord('EDID', zstr(f'co_{pre}BOOK_LootManual')),
-                              Subrecord('DESC', zstr(f'Loot mode on PlayStation: read this once to start getting CLM loot '
-                                                     f'drops{" from " + ADDON_NAMES[name] + " legendaries" if p is not main else ""}. '
-                                                     'If nothing drops, drop the manual and pick it up again.')),
+                              Subrecord('DESC', zstr('Loot mode on PlayStation: read this once to start getting CLM loot '
+                                                     'drops. If nothing drops, drop the manual and pick it up again.')),
                               *[Subrecord('CTDA', d) for d in on_conds(e.see(ITEMS['loot'][0]), e.see(setting_global('loot')))],
                               Subrecord('CTDA', ctda(OP_EQ, 0.0, FN_HAS_PERK, perk.formid)),
                               Subrecord('CTDA', ctda(OP_EQ, 0.0, 47, book.formid)),
@@ -342,7 +338,7 @@ def test_swap(game: Path, install: bool) -> None:
     """PC test of the PlayStation build: swap the plugins in the game's Data folder (scripts and assets that are
     still there loose are not used: the PS plugins attach no CLM script and reach no CLM asset)."""
     data = game / 'Data'
-    names = [MAIN, *ADDONS]
+    names = [MAIN]
     if install:
         if TEST_BACKUP.exists() and any(TEST_BACKUP.iterdir()):
             raise SystemExit(f'{TEST_BACKUP} is not empty: restore first')

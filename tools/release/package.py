@@ -3,21 +3,22 @@
     python tools/release/package.py --version 2.0.0 [--game "D:/Steam/steamapps/common/Fallout 4"]
 
 Fallout 4 loads "<plugin> - Main.ba2" and "<plugin> - Textures.ba2" beside a plugin by itself, so every loose file
-the mod needs goes into the main plugin's two archives (the DLC add-ons are plugins only):
+the mod needs goes into the plugin's two archives. One plugin: it needs Automatron, Far Harbor, Contraptions
+Workshop and Nuka-World (the DLC add-ons were merged into it, 2026-10-12):
     Custom Legendary Modifications Remade - Main.ba2      Scripts (compiled, plus their sources), meshes (General)
     Custom Legendary Modifications Remade - Textures.ba2  textures                                         (DDS)
 No Xbox archives: Archive2's XBoxDDS format keeps the textures in the PC layout (tile mode 8; Sandbox Room 1.0.0
 shipped them so and Xbox players got pink textures). The Creation Kit's Generate ("Upload Plugin and Archive to
 Bethesda.net") tiles them for the console: tools/release/xbox.py stages the loose files in Data for it and checks the
 "- Main_xbox.ba2" / "- Textures_xbox.ba2" it writes. Output in dist/:
-    PC/      the main plugin + PC archives, and the add-ons            (Bethesda.net PC uploads)
-    PlayStation/  plugins only (tools/release/playstation.py)        (Bethesda.net PS4/PS5 uploads)
-    Xbox/    the plugins; the archives come from the CK (xbox.py)    (Bethesda.net Xbox uploads)
-    CLM Remade <version>.zip   for Nexus: a FOMOD that installs the main mod as packed archives (BA2, default) or
-                               loose files (for mod tools / players who prefer loose), ticks the add-ons for the
-                               DLC the player has, and offers the optional F4SE menu (mcm/data: "CLM - MCM", needs F4SE and
-                               Mod Configuration Menu; loose files, as MCM reads its menu from loose files). Nexus
-                               only: the Bethesda.net uploads (PC/, Xbox/) never include it.
+    PC/      the plugin + PC archives                                (Bethesda.net PC upload)
+    PlayStation/  the plugin only (tools/release/playstation.py)      (Bethesda.net PS4/PS5 upload)
+    Xbox/    the plugin; the archives come from the CK (xbox.py)     (Bethesda.net Xbox upload)
+    CLM Remade <version>.zip   for Nexus: a FOMOD that checks the four DLC are there, installs the mod as packed
+                               archives (BA2, default) or loose files (for mod tools / players who prefer loose), and
+                               offers the optional F4SE menu (mcm/data: "CLM - MCM", needs F4SE and Mod Configuration
+                               Menu; loose files, as MCM reads its menu from loose files). Nexus only: the Bethesda.net
+                               uploads (PC/, Xbox/) never include it.
 The debug recorder (debug/) is a testing tool and never packaged.
 
 PC archives are stamped BA2 version 1. The Creation Kit's Archive2 (next-gen update, 2024) writes version 8, which
@@ -38,13 +39,7 @@ DATA = REPO / 'data'
 DIST = REPO / 'dist'
 MAIN = 'Custom Legendary Modifications Remade.esp'
 STEM = MAIN.removesuffix('.esp')
-ADDONS = [  # (plugin, DLC master, what it adds)
-    ('CLM - Automatron.esp', 'DLCRobot.esm', 'the 13 robot-spawning legendaries'),
-    ('CLM - Far Harbor.esp', 'DLCCoast.esm',
-     "Far Harbor's creature and Trapper spawns, Paintball, Trappin', Moby-Dick's and the Silenced Harpoon Striker"),
-    ('CLM - Nuka-World.esp', 'DLCNukaWorld.esm', "Nuka-World's creature and raider spawns"),
-    ('CLM - Contraptions.esp', 'DLCworkshop02.esm', 'Pyrotechnical and Weather Altering'),
-]
+DLC = ['DLCRobot.esm', 'DLCCoast.esm', 'DLCworkshop02.esm', 'DLCNukaWorld.esm']   # the plugin's masters
 README = REPO / 'docs' / 'release' / 'CLM Remade - Readme.txt'
 MCM_DATA = REPO / 'mcm' / 'data'
 MCM_SOURCE = REPO / 'mcm' / 'source'
@@ -87,25 +82,13 @@ def fomod(version: str) -> tuple[str, str]:
   <Groups><element>Weapons</element><element>Armour</element><element>Gameplay</element></Groups>
 </fomod>
 """
-    plugins = []
-    for plugin, master, adds in ADDONS:
-        title = plugin.removesuffix('.esp')
-        plugins.append(f"""          <plugin name="{title}">
-            <description>Adds {adds}. Needs the {title.removeprefix('CLM - ')} DLC.</description>
-            <files><file source="Add-ons\\{plugin}" destination="{plugin}" priority="0"/></files>
-            <typeDescriptor>
-              <dependencyType>
-                <defaultType name="Optional"/>
-                <patterns>
-                  <pattern><dependencies operator="And"><fileDependency file="{master}" state="Active"/></dependencies><type name="Recommended"/></pattern>
-                  <pattern><dependencies operator="And"><fileDependency file="{master}" state="Missing"/></dependencies><type name="NotUsable"/></pattern>
-                </patterns>
-              </dependencyType>
-            </typeDescriptor>
-          </plugin>""")
+    needs = '\n'.join(f'    <fileDependency file="{m}" state="Active"/>' for m in DLC)
     config = f"""<?xml version="1.0" encoding="UTF-8"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://qconsulting.ca/fo3/ModConfig5.0.xsd">
   <moduleName>Custom Legendary Modifications Remade</moduleName>
+  <moduleDependencies operator="And">
+{needs}
+  </moduleDependencies>
   <requiredInstallFiles>
     <folder source="Core" destination=""/>
   </requiredInstallFiles>
@@ -124,15 +107,6 @@ def fomod(version: str) -> tuple[str, str]:
               <files><folder source="Loose" destination="" priority="0"/></files>
               <typeDescriptor><type name="Optional"/></typeDescriptor>
             </plugin>
-          </plugins>
-        </group>
-      </optionalFileGroups>
-    </installStep>
-    <installStep name="DLC add-ons">
-      <optionalFileGroups order="Explicit">
-        <group name="Add-ons for the DLC you own (each needs its DLC)" type="SelectAny">
-          <plugins order="Explicit">
-{chr(10).join(plugins)}
           </plugins>
         </group>
       </optionalFileGroups>
@@ -172,8 +146,7 @@ def main():
         stamp_v1(DIST / 'PC' / name)
     for platform in ('PC', 'Xbox'):
         (DIST / platform).mkdir(parents=True, exist_ok=True)
-        for plugin in [MAIN] + [p for p, _, _ in ADDONS]:
-            shutil.copy(DATA / plugin, DIST / platform / plugin)
+        shutil.copy(DATA / MAIN, DIST / platform / MAIN)
     zpath = DIST / f'CLM Remade {a.version}.zip'
     info, config = fomod(a.version)
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_DEFLATED) as z:
@@ -186,8 +159,6 @@ def main():
             if f.is_file():
                 z.write(f, f'Loose/{f.relative_to(root).as_posix()}')
         z.write(README, f'Core/{README.name}')
-        for plugin, _, _ in ADDONS:
-            z.write(DIST / 'PC' / plugin, f'Add-ons/{plugin}')
         for f in sorted(MCM_DATA.rglob('*')):        # the optional F4SE menu, loose
             if f.is_file():
                 z.write(f, f'F4SE Menu/{f.relative_to(MCM_DATA).as_posix()}')

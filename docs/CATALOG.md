@@ -2812,6 +2812,22 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Unknown_UnfriendlyFactio
     explosion pulseGrenadeExplosion (vanilla)
 ```
 
+### ZLM: Custom Spawning: Creature/Hostile - Random Angler  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Angler`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_AnglerRandom "CLM: Spawning Grenade" [PROJ:0803BA95] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion fragGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Legendary Angler  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_AnglerLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_AnglerLegendary "CLM: Spawning Grenade" [PROJ:0803BA94] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion fragGrenadeExplosion (vanilla)
+```
+
 ### ZLM: Custom Spawning: Artificial/Hostile - Legendary Assaultron  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_AssaultronLegendary`
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
@@ -2824,6 +2840,102 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFac
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
 OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_RobotAssaultronRandom "Electromagnetic Pulse Grenade" [PROJ:0803FF32] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Assaultron  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_Assaultron`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechAssaultron "Electromagnetic Pulse Grenade" [PROJ:0803FF26] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Legendary Assaultron  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_AssaultronLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechAssaultronLegendary "Electromagnetic Pulse Grenade" [PROJ:0803FF27] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Random Bot  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_BotRaider`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_BotRaider "Electromagnetic Pulse Grenade" [PROJ:0803FF25] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Mech Bot  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_MechBot`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechBot "Electromagnetic Pulse Grenade" [PROJ:0803FF28] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Mr. Handy  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_MrHandy`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechMrHandy "Electromagnetic Pulse Grenade" [PROJ:0803FF29] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Legendary Mr. Handy  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_MrHandyLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechMrHandyLegendary "Electromagnetic Pulse Grenade" [PROJ:0803FF2A] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Protectron  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_Protectron`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechProtectron "Electromagnetic Pulse Grenade" [PROJ:0803FF2B] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Legendary Protectron  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_ProtectronLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechProtectronLegendary "Electromagnetic Pulse Grenade" [PROJ:0803FF2C] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / RoboBrain  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_RoboBrain`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechRoboBrain "Electromagnetic Pulse Grenade" [PROJ:0803FF2D] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Legendary RoboBrain  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_RoboBrainLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechRoboBrainLegendary "Electromagnetic Pulse Grenade" [PROJ:0803FF2E] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Sentry Bot  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_SentryBot`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechSentryBot "Electromagnetic Pulse Grenade" [PROJ:0803FF2F] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Artificial/Hostile - Automatron / Legendary Sentry Bot  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Automatron_SentryBotLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFaction_MechSentryBotLegendary "Electromagnetic Pulse Grenade" [PROJ:0803FF30] / 431
   PROJ type Lobber, speed 1400.000000, gravity 0.500000
     explosion pulseGrenadeExplosion (vanilla)
 ```
@@ -2900,6 +3012,22 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFacti
     explosion fragGrenadeExplosion (vanilla)
 ```
 
+### ZLM: Custom Spawning: Creature/Hostile - Random Legendary Fog Crawler  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_FogCrawlerLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_FogCrawlerLegendary "CLM: Spawning Grenade" [PROJ:0803BA97] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion fragGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Fog Crawler  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_FogCrawlerRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_FogCrawlerRandom "CLM: Spawning Grenade" [PROJ:0803BA96] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion fragGrenadeExplosion (vanilla)
+```
+
 ### ZLM: Custom Spawning: Human/Hostile - Random Forged Raider  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_ForgedRaider`
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
@@ -2916,6 +3044,22 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_
     explosion cryoGrenadeExplosion (vanilla)
 ```
 
+### ZLM: Custom Spawning: Creature/Hostile - Random Gatorclaw  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_GatorClaw`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_GatorClaw "Nuka Grenade" [PROJ:0803FF15] / 431
+  PROJ type Lobber, speed 1200.000000, gravity 3.500000
+    explosion nukaGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Ghoulrilla  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_Ghoulrilla`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_GhoulrillaRandom "Nuka Grenade" [PROJ:0803FF10] / 431
+  PROJ type Lobber, speed 1200.000000, gravity 3.500000
+    explosion nukaGrenadeExplosion (vanilla)
+```
+
 ### ZLM: Custom Spawning: Creature/Hostile - Random Glowing One  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_GlowingOne`
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
@@ -2928,6 +3072,22 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFacti
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
 OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_FeralGhoulGlowingOneLegendary "NUka Quantum Grenade" [PROJ:0803BAA0] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion fragGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Legendary Gulper  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_GulperLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_GulperLegendary "CLM: Spawning Grenade" [PROJ:0803BA98] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion fragGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Gulper  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_GulperRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_GulperRandom "CLM: Spawning Grenade" [PROJ:0803BA99] / 431
   PROJ type Lobber, speed 1400.000000, gravity 0.500000
     explosion fragGrenadeExplosion (vanilla)
 ```
@@ -2954,6 +3114,14 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_
 OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_GunnerRandom "Cryogenic Grenade" [PROJ:0803FF48] / 431
   PROJ type Lobber, speed 1400.000000, gravity 0.500000
     explosion cryoGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Hermit Crab  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_HermitCrab`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_HermitCrab [PROJ:0803BA9A] / 431
+  PROJ type Lobber, speed 500.000000, gravity 0.600000
+    explosion MirelurkEggExplosion (vanilla)
 ```
 
 ### ZLM: Custom Spawning: Creature/Hostile - Random Mirelurk Crab  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_MirelurkCrab`
@@ -3052,6 +3220,46 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFac
     explosion pulseGrenadeExplosion (vanilla)
 ```
 
+### ZLM: Custom Spawning: Creature/Hostile - Random Nukalurk  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_NukaLurk`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_Nukalurk [PROJ:0803BA9B] / 431
+  PROJ type Lobber, speed 500.000000, gravity 0.600000
+    explosion MirelurkEggExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Legendary RadAnt(Large)  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadAntLargeLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_RadAntLegendaryLarge [PROJ:0803BAA6] / 431
+  PROJ type Lobber, speed 500.000000, gravity 0.600000
+    explosion MirelurkEggExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random RadAnt  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadAntRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_RadAntRandom [PROJ:0803BAA5] / 431
+  PROJ type Lobber, speed 500.000000, gravity 0.600000
+    explosion MirelurkEggExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Legendary RadRat(Large)  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadRatLargeLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_RadRatLegendaryLarge "Nuka Grenade" [PROJ:0803FF11] / 431
+  PROJ type Lobber, speed 1200.000000, gravity 3.500000
+    explosion nukaGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random RadRat  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadRatRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_RadRatRandom "Nuka Grenade" [PROJ:0803FF12] / 431
+  PROJ type Lobber, speed 1200.000000, gravity 3.500000
+    explosion nukaGrenadeExplosion (vanilla)
+```
+
 ### ZLM: Custom Spawning: Creature/Hostile - Random Glowing Radroach  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RadRoachGlowing`
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
@@ -3148,6 +3356,14 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_UnfriendlyFac
     explosion pulseGrenadeExplosion (vanilla)
 ```
 
+### ZLM: Custom Spawning: Human/Hostile - Random Rust Devil Raider  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_RandomRustDevil`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_RustDevilRandom "Cryogenic Grenade" [PROJ:0803FF4C] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion cryoGrenadeExplosion (vanilla)
+```
+
 ### ZLM: Custom Spawning: Artificial/Hostile - Random Legendary Sentry Bot  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_SentryBotLegendary`
 > On the point of impact, it will spawn the relevant NPC, relevant to the item name.
 ```
@@ -3234,6 +3450,38 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFacti
 OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_SupermutantSuicider "Nuka Grenade" [PROJ:0803FF1C] / 431
   PROJ type Lobber, speed 1200.000000, gravity 3.500000
     explosion nukaGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Legendary Swarm  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_SwarmLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_SwarmLegendary [PROJ:0803BAAF] / 431
+  PROJ type Lobber, speed 500.000000, gravity 0.600000
+    explosion MirelurkEggExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Creature/Hostile - Random Swarm  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_SwarmRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Creature_UnfriendlyFaction_SwarmRandom [PROJ:0803BAAE] / 431
+  PROJ type Lobber, speed 500.000000, gravity 0.600000
+    explosion MirelurkEggExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Human/Hostile - Random Legendary Trapper  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_TrapperLegendary`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_TrapperLegendary "Cryogenic Grenade" [PROJ:0803FF4D] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion cryoGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Human/Hostile - Random Trapper  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_TrapperRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_UnfriendlyFaction_TrapperRandom "Cryogenic Grenade" [PROJ:0803FF4E] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion cryoGrenadeExplosion (vanilla)
 ```
 
 ### ZLM: Custom Spawning: Human/Hostile - Random Legendary Triggerman  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_Hostile_TriggerManLegendary`
@@ -3354,6 +3602,30 @@ OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_NeutralFactio
 OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Artificial_NeutralFaction_RobotProtectronRandom "Electromagnetic Pulse Grenade" [PROJ:0803FF20] / 431
   PROJ type Lobber, speed 1400.000000, gravity 0.500000
     explosion pulseGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Human/Nuka Gang(Disciple) - Random Raider NPC  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_NukaGang_Disciple_DiscipleRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name. Depending on your standing with this Nuka Gang, they will either be friendly to you or hostile to you.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_NukaGang_Disciple_DiscipleRandom "Cryogenic Grenade" [PROJ:0803FF3F] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion cryoGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Human/Nuka Gang(Operator) - Random Raider NPC  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_NukaGang_Operator_OperatorRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name. Depending on your standing with this Nuka Gang, they will either be friendly to you or hostile to you.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_NukaGang_Operator_OperatorRandom "Cryogenic Grenade" [PROJ:0803FF40] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion cryoGrenadeExplosion (vanilla)
+```
+
+### ZLM: Custom Spawning: Human/Nuka Gang(Pack) - Random Raider NPC  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_NukaGang_Pack_PackRandom`
+> On the point of impact, it will spawn the relevant NPC, relevant to the item name. Depending on your standing with this Nuka Gang, they will either be friendly to you or hostile to you.
+```
+OverrideProjectile SET A1ALMPROJ_Custom_Spawning_Effect_Human_NukaGang_Pack_PackRandom "Cryogenic Grenade" [PROJ:0803FF41] / 431
+  PROJ type Lobber, speed 1400.000000, gravity 0.500000
+    explosion cryoGrenadeExplosion (vanilla)
 ```
 
 ### ZLM: Custom Spawning: Human/Railroad - Random Railroad Agent  `A1ALMOMOD_Legendary_Weapon_Custom_Spawning_RailRoad_RailroadAgent`
@@ -4001,6 +4273,78 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_FaceBusting "CLM: F
       script A1ALMMGEF_ExplodeAfterDeathScript
     A1ALMMGEF_Target_Effect_Hostile_Cripple_100p: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
       script LegendaryOnHitCrippleScript
+```
+
+### CLM: Pyrotechnical (Minutemen Flare)  `A1ALMOMOD_Legendary_Weapon_Firework_Base_MinutemenFlare`
+> Converts your weapons into a Minutemen flare.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_MinutemenFlare [PROJ:0833CC59] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Blue)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Blue`
+> Converts your weapons into a weaponized firework launcher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PeonyBlue [PROJ:0833CC5C] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Crackle)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Crackle`
+> Converts your weapons into a weaponized firework launcher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_Crackle [PROJ:0833CC58] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Gold)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Gold`
+> Converts your weapons into a weaponized firework laucher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PalmGold [PROJ:0833CC5A] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Green)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Green`
+> Converts your weapons into a weaponized firework launcher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PeonyGreen [PROJ:0833CC5D] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Pink)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Pink`
+> Converts your weapons into a weaponized firework launcher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PeonyPink [PROJ:0833CC5E] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Red)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Red`
+> Converts your weapons into a weaponized firework laucher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PeonyRed [PROJ:0833CC5F] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Silver)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Silver`
+> Converts your weapons into a weaponized firework laucher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PalmSilver [PROJ:0833CC5B] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Pyrotechnical (Yellow)  `A1ALMOMOD_Legendary_Weapon_Firework_Variant_Yellow`
+> Converts your weapons into a weaponized firework laucher.
+```
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PeonyYellow [PROJ:0833CC60] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
 ```
 
 ### CLM: Forcible  `A1ALMOMOD_Legendary_Weapon_Forcible_Base_Basic`
@@ -5084,6 +5428,23 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Arrow_PulseMine "CLM: Pulse Mine" 
     explosion pulseGrenadeExplosion (vanilla)
 ```
 
+### CLM: Moby-Dick's  `A1ALMOMOD_Legendary_Weapon_MobyDicks`
+> Your ammo is transformed into a harpoon, increasing your damage.
+```
+AttackDamage MUL+ADD 1.500000 / 0.000000
+DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 1.500000
+DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 1.500000
+DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 1.500000
+DamageTypeValues MUL+ADD dtFire [DMGT:00060A82] / 1.500000
+DamageTypeValues MUL+ADD dtPhysical [DMGT:00060A87] / 1.500000
+DamageTypeValues MUL+ADD dtPoison [DMGT:00060A84] / 1.500000
+DamageTypeValues MUL+ADD dtRadiationExposure [DMGT:00060A85] / 1.500000
+DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 1.500000
+OverrideProjectile SET A1ALMPROJ_Variant_Type_MobyDicks_Arrow_Harpoon_Base "CLM: Harpoon" [PROJ:08327621] / 431
+  PROJ type Arrow, speed 16000.000000, gravity 0.300000
+    explosion ExplosionRailwayRifleStaggerSmall (vanilla)
+```
+
 ### CLM: Mr. Freeze's  `A1ALMOMOD_Legendary_Weapon_MrFreezes`
 > 60 points of freezing damage.
 ```
@@ -5218,6 +5579,72 @@ DamageTypeValues MUL+ADD dtRadiationExposure [DMGT:00060A85] / 0.500000
 DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.500000
 OverrideProjectile SET A1ALMPROJ_PaddleBall_Variant_Projectile_Quantum_Quantum [PROJ:08489FA8] / 431
   PROJ type Lobber, speed 2500.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Paintball (Blue)  `A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Blue`
+> This converts your weapon into a paintball gun with interesting effects.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Blue "CLM: Paintball (Cold)" [ENCH:08244E09] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Blue (, )
+    A1ALMMGEF_Target_Effect_Hostile_Cold: Value Modifier AnimationMult, magnitude 5.000000, duration 3 (Fire and Forget, Touch)
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Paintball_PaintballProjectile_Blue [PROJ:082409AD] / 431
+  PROJ type Missile, speed 600.000000, gravity 0.050000
+    explosion DLC03ExplosionPaintballProjectileBlue (vanilla)
+```
+
+### CLM: Paintball (Green)  `A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Green`
+> This converts your weapon into a paintball gun with interesting effects.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Green "CLM: Paintball (Green)" [ENCH:08244E05] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Green (, )
+    A1ALMMGEF_Target_Effect_Hostile_Rad: Value Modifier Rads, magnitude 5.000000, duration 3 (Fire and Forget, Touch)
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Paintball_PaintballProjectile_Green [PROJ:082409AC] / 431
+  PROJ type Missile, speed 600.000000, gravity 0.050000
+    explosion 1 (vanilla)
+```
+
+### CLM: Paintball (Orange)  `A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Orange`
+> This converts your weapon into a paintball gun with interesting effects.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Orange "CLM: Paintball (Orange)" [ENCH:08244DFE] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Orange (, )
+    A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 5.000000, duration 3 (Fire and Forget, Touch)
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Paintball_PaintballProjectile_Orange [PROJ:082409AB] / 431
+  PROJ type Missile, speed 600.000000, gravity 0.050000
+    explosion 1 (vanilla)
+```
+
+### CLM: Paintball (Red)  `A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Red`
+> This converts your weapon into a paintball gun with interesting effects.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Red "CLM: Paintball (Red)" [ENCH:08244E03] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Red (, )
+    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 5.000000, duration 3 (Fire and Forget, Touch)
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Paintball_PaintballProjectile_Red [PROJ:082409AA] / 431
+  PROJ type Missile, speed 600.000000, gravity 0.050000
+    explosion 1 (vanilla)
+```
+
+### CLM: Paintball (White)  `A1ALMOMOD_Legendary_Weapon_Paintball_Variant_White`
+> This converts your weapon into a paintball gun with interesting effects.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_White "CLM: Paintball (White)" [ENCH:08244E01] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_White (, )
+    A1ALMMGEF_Target_Effect_Hostile_Frenzy: Frenzy, magnitude 1000.000000, duration 3 (Fire and Forget, Touch)
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Paintball_PaintballProjectile_White [PROJ:082409A9] / 431
+  PROJ type Missile, speed 600.000000, gravity 0.050000
+    explosion 1 (vanilla)
+```
+
+### CLM: Paintball (Yellow)  `A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Yellow`
+> This converts your weapon into a paintball gun with interesting effects.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Yellow "CLM: Paintball (Yellow)" [ENCH:08244DFF] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Paintball_Yellow (, )
+    A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 5.000000, duration 3 (Fire and Forget, Touch)
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Missile_Paintball_PaintballProjectile_Yellow [PROJ:082409A8] / 431
+  PROJ type Missile, speed 600.000000, gravity 0.050000
     explosion 1 (vanilla)
 ```
 
@@ -5862,6 +6289,52 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 1.000000
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Gauss [PROJ:0824929A] / 431
   PROJ type Beam, speed 1000.000000, gravity 0.000000
     explosion 1 (vanilla)
+```
+
+### CLM: Silenced Harpoon Striker  `A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_Harpoon_Striker`
+> Your weapon is converted into 4-shot silenced electrical weapon with 100% accuracy outside of VATS (with 95% VATS accuracy). 100% critical, no recoil, 2x damage and firerate, 5x increased stealth damage. 4 shot.
+```
+Speed MUL+ADD 1.000000 / 0.000000
+AttackDamage MUL+ADD 1.000000 / 0.000000
+Keywords ADD HasSilencer [KYWD:001E05D6] / 431
+Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
+AimModelMinConeDegrees SET 0.000000 / 0.000000
+AimModelMaxConeDegrees SET 0.000000 / 0.000000
+AimModelConeIncreasePerShot SET 0.000000 / 0.000000
+AimModelRecoilMaxDegPerShot SET 0.000000 / 0.000000
+AimModelRecoilMinDegPerShot SET 0.000000 / 0.000000
+AimModelRecoilHipMult SET 0.000000 / 0.000000
+AimModelRecoilArcDeg SET 0.000000 / 0.000000
+AimModelRecoilArcRotateDeg SET 0.000000 / 0.000000
+AimModelConeIronSightsMultiplier SET 0.000000 / 0.000000
+NumProjectiles ADD 3 / 0
+SoundLevel SET Silent / 00 00 00 00
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P "CLM: Fortify Crit Chance (100%)" [ENCH:08416A11] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_FortifryCritChance_100P (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyCritChance_100P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod My Critical Hit Chance / Add Value
+      values: 1000.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x "CLM Perk: Murderous (5x)" [ENCH:081A28D6] / 431
+  ENCH A1ALMEnch_Constant_Effect_Sneak_Attack_Mult_5x (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Sneak_Attack_Mult_5x: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Sneak Attack Mult / Multiply Value
+      values: 5.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P "CLM: Great Sight" [ENCH:081AB18D] / 431
+  ENCH A1ALMEnch_Constant_Effect_FortifyVATSHit_Chance_100P (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FortifyVATSChanceMax: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod VATS Hit Chance / Add Value
+      values: 1000.000000
+DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 1.000000
+DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 1.000000
+DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 1.000000
+DamageTypeValues MUL+ADD dtFire [DMGT:00060A82] / 1.000000
+DamageTypeValues MUL+ADD dtPhysical [DMGT:00060A87] / 1.000000
+DamageTypeValues MUL+ADD dtPoison [DMGT:00060A84] / 1.000000
+DamageTypeValues MUL+ADD dtRadiationExposure [DMGT:00060A85] / 1.000000
+DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 1.000000
+OverrideProjectile SET A1ALMPROJ_Variant_Type_Striking_Harpoon "Harpoon" [PROJ:0841F2E6] / 431
+  PROJ type Arrow, speed 16000.000000, gravity 0.000000
+    explosion ExplosionRailwayRifleStaggerSmall (vanilla)
 ```
 
 ### CLM: Murderously Silenced  `A1ALMOMOD_Legendary_Weapon_Recoilless_Variant_MurderouslySilenced`
@@ -6808,6 +7281,38 @@ Keywords ADD A1ALMKW_WeaponPerk_Armor_TitansWrath [KYWD:084AC79A] / 431
 Health MUL+ADD 5.000000 / 0.000000
 ```
 
+### CLM: Trappin' (Bear Trap)  `A1ALMOMOD_Legendary_Weapon_Trapping_Base_Bear_Trap`
+> Your weapon is converted into a trap thrower.
+```
+OverrideProjectile SET A1ALMPROJ_Thrown_Trap_BearTrap_Explosion "Bear Trap" [PROJ:0830DB10] / 431
+  PROJ type Missile, speed 400.000000, gravity 1.000000
+    explosion BottleCapMineExplosion (vanilla)
+```
+
+### CLM: Trappin' (Caltrop)  `A1ALMOMOD_Legendary_Weapon_Trapping_Base_Caltrop`
+> Your weapon is converted into a trap thrower.
+```
+OverrideProjectile SET A1ALMPROJ_Thrown_Trap_Caltrop "Caltrop" [PROJ:0830DB12] / 431
+  PROJ type Lobber, speed 600.000000, gravity 1.000000
+    explosion rl_SparksExplosion_LitBulb (vanilla)
+```
+
+### CLM: Trappin' (Bear Trap - Bleeding)  `A1ALMOMOD_Legendary_Weapon_Trapping_Variant_Bear_Trap_Bleeding`
+> Your weapon is converted into a trap thrower.
+```
+OverrideProjectile SET A1ALMPROJ_Thrown_Trap_BearTrap_Explosion_Bleeding "Bear Trap" [PROJ:0830DB11] / 431
+  PROJ type Missile, speed 400.000000, gravity 1.000000
+    explosion BottleCapMineExplosion (vanilla)
+```
+
+### CLM: Trappin' (Caltrop - Poisoned)  `A1ALMOMOD_Legendary_Weapon_Trapping_Variant_Caltrop_Poisoned`
+> Your weapon is converted into a trap thrower.
+```
+OverrideProjectile SET A1ALMPROJ_Thrown_Trap_Caltrop_Poisoned "Caltrop" [PROJ:0830DB13] / 431
+  PROJ type Lobber, speed 600.000000, gravity 1.000000
+    explosion rl_SparksExplosion_LitBulb (vanilla)
+```
+
 ### CLM: True Seeker  `A1ALMOMOD_Legendary_Weapon_TrueSeekerSilenced`
 > Four shot, silenced. Your projectiles are turned into seeking missile version of Gauss projectiles.
 ```
@@ -6913,6 +7418,30 @@ DamageTypeValues MUL+ADD dtPhysical [DMGT:00060A87] / 0.500000
 DamageTypeValues MUL+ADD dtPoison [DMGT:00060A84] / 0.500000
 DamageTypeValues MUL+ADD dtRadiationExposure [DMGT:00060A85] / 0.500000
 DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.500000
+```
+
+### CLM: Weather Altering (Clear)  `A1ALMOMOD_Legendary_Weapon_WeatherAlter_Clear`
+> Alters the weather accordingly.
+```
+OverrideProjectile SET A1ALMPROJ_WeatherAlter_Variant_ClearSky [PROJ:0831ED35] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Weather Altering (RadStorm)  `A1ALMOMOD_Legendary_Weapon_WeatherAlter_RadStorm`
+> Alters the weather accordingly.
+```
+OverrideProjectile SET A1ALMPROJ_WeatherAlter_Variant_RadStorm [PROJ:0831ED34] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
+```
+
+### CLM: Weather Altering (Rain)  `A1ALMOMOD_Legendary_Weapon_WeatherAlter_Rain`
+> Alters the weather accordingly.
+```
+OverrideProjectile SET A1ALMPROJ_WeatherAlter_Variant_Rain [PROJ:0831ED36] / 431
+  PROJ type Missile, speed 1000.000000, gravity 0.000000
+    explosion 1 (vanilla)
 ```
 
 ### CLM: Widowmaker's Sight  `A1ALMOMOD_Legendary_Weapon_WidowMakers_Tactical`

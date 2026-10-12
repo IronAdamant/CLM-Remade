@@ -785,7 +785,7 @@
           "type": "section"
         },
         {
-          "text": "Paintball (Far Harbor add-on)",
+          "text": "Paintball",
           "type": "switcher",
           "id": "bPick67:Picks",
           "help": "Show the 6 Paintball legendaries (weapon) while Picker mode is on.",
@@ -794,7 +794,7 @@
           }
         },
         {
-          "text": "Pyrotechnical (Contraptions add-on)",
+          "text": "Pyrotechnical",
           "type": "switcher",
           "id": "bPick71:Picks",
           "help": "Show the 9 Pyrotechnical legendaries (weapon) while Picker mode is on.",
@@ -803,7 +803,7 @@
           }
         },
         {
-          "text": "Trappin' (Far Harbor add-on)",
+          "text": "Trappin'",
           "type": "switcher",
           "id": "bPick107:Picks",
           "help": "Show the 4 Trappin' legendaries (weapon) while Picker mode is on.",
@@ -812,7 +812,7 @@
           }
         },
         {
-          "text": "Weather Altering (Contraptions add-on)",
+          "text": "Weather Altering",
           "type": "switcher",
           "id": "bPick111:Picks",
           "help": "Show the 3 Weather Altering legendaries (weapon) while Picker mode is on.",
@@ -821,7 +821,7 @@
           }
         },
         {
-          "text": "Moby-Dick's (Far Harbor add-on)",
+          "text": "Moby-Dick's",
           "type": "switcher",
           "id": "bPick62:Picks",
           "help": "Show the 1 Moby-Dick's legendaries (weapon) while Picker mode is on.",
@@ -1084,7 +1084,7 @@
           }
         },
         {
-          "text": "Far Harbor creatures (Far Harbor add-on)",
+          "text": "Far Harbor creatures",
           "type": "switcher",
           "id": "bPick89:Picks",
           "help": "Show the 9 Spawn: Far Harbor creatures legendaries (weapon) while Picker mode is on.",
@@ -1120,7 +1120,7 @@
           }
         },
         {
-          "text": "Nuka-World creatures (Nuka-World add-on)",
+          "text": "Nuka-World creatures",
           "type": "switcher",
           "id": "bPick95:Picks",
           "help": "Show the 3 Spawn: Nuka-World creatures legendaries (weapon) while Picker mode is on.",
@@ -1151,7 +1151,7 @@
           "type": "section"
         },
         {
-          "text": "Automatron robots (Automatron add-on)",
+          "text": "Automatron robots",
           "type": "switcher",
           "id": "bPick87:Picks",
           "help": "Show the 13 Spawn: Automatron robots legendaries (weapon) while Picker mode is on.",
@@ -1187,7 +1187,7 @@
           }
         },
         {
-          "text": "Nuka-World gangs (Nuka-World add-on)",
+          "text": "Nuka-World gangs",
           "type": "switcher",
           "id": "bPick96:Picks",
           "help": "Show the 3 Spawn: Nuka-World gangs legendaries (weapon) while Picker mode is on.",

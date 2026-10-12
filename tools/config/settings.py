@@ -28,7 +28,6 @@ REPO = HERE.parents[1]
 sys.path.insert(0, str(REPO / 'tools' / 'loot'))
 from generate import rate_welcome  # noqa: E402  (the drop-rate page describes loot mode's RATES)
 MAIN = 'Custom Legendary Modifications Remade.esp'
-ADDONS = ['CLM - Automatron.esp', 'CLM - Far Harbor.esp', 'CLM - Nuka-World.esp', 'CLM - Contraptions.esp']
 TEMPLATE_MISC = '@miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon'
 MODEL = 'Props\\Holotape_Prop.nif'
 CATEGORY = ('A1ALMKW_RecipeFilter_Settings', 'CLM Settings')
@@ -277,7 +276,7 @@ def cmd_conditions(ack: Path, game: Path) -> None:
     data = game / 'Data'
     main = Plugin.load(data / MAIN)
     old = {main.by_edid(g).formid & 0xFFFFFF: g for g in OLD}
-    for name in [MAIN] + ADDONS:
+    for name in [MAIN]:
         p = main if name == MAIN else Plugin.load(data / name)
         idx = len(p.masters) if p is main else p.masters.index(MAIN)
         item = lambda key: (idx << 24) | (main.by_edid(ITEMS[key][0]).formid & 0xFFFFFF)
@@ -363,7 +362,7 @@ def cmd_globals(ack: Path, game: Path) -> None:
         if r.get('FLTV') is None:   # new: 0 (an existing one keeps its value)
             r.subrecords[:] = [r.subrecords[0], Subrecord('FNAM', b'f'), Subrecord('FLTV', struct.pack('<f', 0.0))]
             r.mark_dirty()
-    for name in [MAIN] + ADDONS:
+    for name in [MAIN]:
         p = main_p if name == MAIN else Plugin.load(data / name)
         idx = len(p.masters) if p is main_p else p.masters.index(MAIN)
         see = lambda edid: (idx << 24) | (main_p.by_edid(edid).formid & 0xFFFFFF)

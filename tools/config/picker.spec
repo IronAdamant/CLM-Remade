@@ -594,6 +594,15 @@ remove | A1ALMPICK_Weapon_MineLaunchin | KSIZ
 set | A1ALMPICK_Weapon_MineLaunchin | DATA\Weight | 0
 set | A1ALMPICK_Weapon_MineLaunchin | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_MineLaunchin
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_MobyDickS
+set | A1ALMPICK_Weapon_MobyDickS | FULL | CLM Pick: Moby-Dick's (Weapon)
+set | A1ALMPICK_Weapon_MobyDickS | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_MobyDickS | Model\MODT
+remove | A1ALMPICK_Weapon_MobyDickS | KWDA
+remove | A1ALMPICK_Weapon_MobyDickS | KSIZ
+set | A1ALMPICK_Weapon_MobyDickS | DATA\Weight | 0
+set | A1ALMPICK_Weapon_MobyDickS | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_MobyDickS
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_MultiShot
 set | A1ALMPICK_Weapon_MultiShot | FULL | CLM Pick: Multi-shot (Weapon)
 set | A1ALMPICK_Weapon_MultiShot | Model\MODL | Props\Holotape_Prop.nif
@@ -630,6 +639,15 @@ remove | A1ALMPICK_Weapon_Ordnance | KSIZ
 set | A1ALMPICK_Weapon_Ordnance | DATA\Weight | 0
 set | A1ALMPICK_Weapon_Ordnance | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_Ordnance
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Paintball
+set | A1ALMPICK_Weapon_Paintball | FULL | CLM Pick: Paintball (Weapon)
+set | A1ALMPICK_Weapon_Paintball | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_Paintball | Model\MODT
+remove | A1ALMPICK_Weapon_Paintball | KWDA
+remove | A1ALMPICK_Weapon_Paintball | KSIZ
+set | A1ALMPICK_Weapon_Paintball | DATA\Weight | 0
+set | A1ALMPICK_Weapon_Paintball | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_Paintball
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_PerformanceTuning
 set | A1ALMPICK_Weapon_PerformanceTuning | FULL | CLM Pick: Performance tuning (Weapon)
 set | A1ALMPICK_Weapon_PerformanceTuning | Model\MODL | Props\Holotape_Prop.nif
@@ -657,6 +675,15 @@ remove | A1ALMPICK_Weapon_Pushing | KSIZ
 set | A1ALMPICK_Weapon_Pushing | DATA\Weight | 0
 set | A1ALMPICK_Weapon_Pushing | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_Pushing
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Pyrotechnical
+set | A1ALMPICK_Weapon_Pyrotechnical | FULL | CLM Pick: Pyrotechnical (Weapon)
+set | A1ALMPICK_Weapon_Pyrotechnical | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_Pyrotechnical | Model\MODT
+remove | A1ALMPICK_Weapon_Pyrotechnical | KWDA
+remove | A1ALMPICK_Weapon_Pyrotechnical | KSIZ
+set | A1ALMPICK_Weapon_Pyrotechnical | DATA\Weight | 0
+set | A1ALMPICK_Weapon_Pyrotechnical | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_Pyrotechnical
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Quicker
 set | A1ALMPICK_Weapon_Quicker | FULL | CLM Pick: Quicker (Weapon)
 set | A1ALMPICK_Weapon_Quicker | Model\MODL | Props\Holotape_Prop.nif
@@ -792,6 +819,15 @@ remove | A1ALMPICK_Weapon_SpawnAliens | KSIZ
 set | A1ALMPICK_Weapon_SpawnAliens | DATA\Weight | 0
 set | A1ALMPICK_Weapon_SpawnAliens | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_SpawnAliens
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnAutomatronRobots
+set | A1ALMPICK_Weapon_SpawnAutomatronRobots | FULL | CLM Pick: Automatron robots (Spawning)
+set | A1ALMPICK_Weapon_SpawnAutomatronRobots | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_SpawnAutomatronRobots | Model\MODT
+remove | A1ALMPICK_Weapon_SpawnAutomatronRobots | KWDA
+remove | A1ALMPICK_Weapon_SpawnAutomatronRobots | KSIZ
+set | A1ALMPICK_Weapon_SpawnAutomatronRobots | DATA\Weight | 0
+set | A1ALMPICK_Weapon_SpawnAutomatronRobots | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_SpawnAutomatronRobots
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel
 set | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | FULL | CLM Pick: Brotherhood of Steel (Spawning)
 set | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | Model\MODL | Props\Holotape_Prop.nif
@@ -801,6 +837,15 @@ remove | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | KSIZ
 set | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | DATA\Weight | 0
 set | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnFarHarborCreatures
+set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | FULL | CLM Pick: Far Harbor creatures (Spawning)
+set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_SpawnFarHarborCreatures | Model\MODT
+remove | A1ALMPICK_Weapon_SpawnFarHarborCreatures | KWDA
+remove | A1ALMPICK_Weapon_SpawnFarHarborCreatures | KSIZ
+set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | DATA\Weight | 0
+set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_SpawnFarHarborCreatures
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnFriendlyRobots
 set | A1ALMPICK_Weapon_SpawnFriendlyRobots | FULL | CLM Pick: Friendly robots (Spawning)
 set | A1ALMPICK_Weapon_SpawnFriendlyRobots | Model\MODL | Props\Holotape_Prop.nif
@@ -846,6 +891,24 @@ remove | A1ALMPICK_Weapon_SpawnMirelurks | KSIZ
 set | A1ALMPICK_Weapon_SpawnMirelurks | DATA\Weight | 0
 set | A1ALMPICK_Weapon_SpawnMirelurks | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_SpawnMirelurks
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnNukaWorldCreatures
+set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | FULL | CLM Pick: Nuka-World creatures (Spawning)
+set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | Model\MODT
+remove | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | KWDA
+remove | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | KSIZ
+set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | DATA\Weight | 0
+set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_SpawnNukaWorldCreatures
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnNukaWorldGangs
+set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | FULL | CLM Pick: Nuka-World gangs (Spawning)
+set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_SpawnNukaWorldGangs | Model\MODT
+remove | A1ALMPICK_Weapon_SpawnNukaWorldGangs | KWDA
+remove | A1ALMPICK_Weapon_SpawnNukaWorldGangs | KSIZ
+set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | DATA\Weight | 0
+set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_SpawnNukaWorldGangs
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnRaidersAndGangs
 set | A1ALMPICK_Weapon_SpawnRaidersAndGangs | FULL | CLM Pick: Raiders and gangs (Spawning)
 set | A1ALMPICK_Weapon_SpawnRaidersAndGangs | Model\MODL | Props\Holotape_Prop.nif
@@ -936,6 +999,15 @@ remove | A1ALMPICK_Weapon_Thumpin | KSIZ
 set | A1ALMPICK_Weapon_Thumpin | DATA\Weight | 0
 set | A1ALMPICK_Weapon_Thumpin | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_Thumpin
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Trappin
+set | A1ALMPICK_Weapon_Trappin | FULL | CLM Pick: Trappin' (Weapon)
+set | A1ALMPICK_Weapon_Trappin | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_Trappin | Model\MODT
+remove | A1ALMPICK_Weapon_Trappin | KWDA
+remove | A1ALMPICK_Weapon_Trappin | KSIZ
+set | A1ALMPICK_Weapon_Trappin | DATA\Weight | 0
+set | A1ALMPICK_Weapon_Trappin | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_Trappin
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_UltimaHecateS
 set | A1ALMPICK_Weapon_UltimaHecateS | FULL | CLM Pick: Ultima Hecate's (Weapon)
 set | A1ALMPICK_Weapon_UltimaHecateS | Model\MODL | Props\Holotape_Prop.nif
@@ -963,90 +1035,6 @@ remove | A1ALMPICK_Weapon_Vampiric | KSIZ
 set | A1ALMPICK_Weapon_Vampiric | DATA\Weight | 0
 set | A1ALMPICK_Weapon_Vampiric | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_Vampiric
-prunerecords | A1ALMPICK_
-prunerecords | co_A1ALMPICK_
-file | CLM - Automatron.esp
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnAutomatronRobots
-set | A1ALMPICK_Weapon_SpawnAutomatronRobots | FULL | CLM Pick: Automatron robots (Spawning)
-set | A1ALMPICK_Weapon_SpawnAutomatronRobots | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_SpawnAutomatronRobots | Model\MODT
-remove | A1ALMPICK_Weapon_SpawnAutomatronRobots | KWDA
-remove | A1ALMPICK_Weapon_SpawnAutomatronRobots | KSIZ
-set | A1ALMPICK_Weapon_SpawnAutomatronRobots | DATA\Weight | 0
-set | A1ALMPICK_Weapon_SpawnAutomatronRobots | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_SpawnAutomatronRobots
-prunerecords | A1ALMPICK_
-prunerecords | co_A1ALMPICK_
-file | CLM - Far Harbor.esp
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_MobyDickS
-set | A1ALMPICK_Weapon_MobyDickS | FULL | CLM Pick: Moby-Dick's (Weapon)
-set | A1ALMPICK_Weapon_MobyDickS | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_MobyDickS | Model\MODT
-remove | A1ALMPICK_Weapon_MobyDickS | KWDA
-remove | A1ALMPICK_Weapon_MobyDickS | KSIZ
-set | A1ALMPICK_Weapon_MobyDickS | DATA\Weight | 0
-set | A1ALMPICK_Weapon_MobyDickS | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_MobyDickS
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Paintball
-set | A1ALMPICK_Weapon_Paintball | FULL | CLM Pick: Paintball (Weapon)
-set | A1ALMPICK_Weapon_Paintball | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_Paintball | Model\MODT
-remove | A1ALMPICK_Weapon_Paintball | KWDA
-remove | A1ALMPICK_Weapon_Paintball | KSIZ
-set | A1ALMPICK_Weapon_Paintball | DATA\Weight | 0
-set | A1ALMPICK_Weapon_Paintball | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_Paintball
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnFarHarborCreatures
-set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | FULL | CLM Pick: Far Harbor creatures (Spawning)
-set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_SpawnFarHarborCreatures | Model\MODT
-remove | A1ALMPICK_Weapon_SpawnFarHarborCreatures | KWDA
-remove | A1ALMPICK_Weapon_SpawnFarHarborCreatures | KSIZ
-set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | DATA\Weight | 0
-set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_SpawnFarHarborCreatures
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Trappin
-set | A1ALMPICK_Weapon_Trappin | FULL | CLM Pick: Trappin' (Weapon)
-set | A1ALMPICK_Weapon_Trappin | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_Trappin | Model\MODT
-remove | A1ALMPICK_Weapon_Trappin | KWDA
-remove | A1ALMPICK_Weapon_Trappin | KSIZ
-set | A1ALMPICK_Weapon_Trappin | DATA\Weight | 0
-set | A1ALMPICK_Weapon_Trappin | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_Trappin
-prunerecords | A1ALMPICK_
-prunerecords | co_A1ALMPICK_
-file | CLM - Nuka-World.esp
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnNukaWorldCreatures
-set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | FULL | CLM Pick: Nuka-World creatures (Spawning)
-set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | Model\MODT
-remove | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | KWDA
-remove | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | KSIZ
-set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | DATA\Weight | 0
-set | A1ALMPICK_Weapon_SpawnNukaWorldCreatures | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_SpawnNukaWorldCreatures
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnNukaWorldGangs
-set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | FULL | CLM Pick: Nuka-World gangs (Spawning)
-set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_SpawnNukaWorldGangs | Model\MODT
-remove | A1ALMPICK_Weapon_SpawnNukaWorldGangs | KWDA
-remove | A1ALMPICK_Weapon_SpawnNukaWorldGangs | KSIZ
-set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | DATA\Weight | 0
-set | A1ALMPICK_Weapon_SpawnNukaWorldGangs | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_SpawnNukaWorldGangs
-prunerecords | A1ALMPICK_
-prunerecords | co_A1ALMPICK_
-file | CLM - Contraptions.esp
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_Pyrotechnical
-set | A1ALMPICK_Weapon_Pyrotechnical | FULL | CLM Pick: Pyrotechnical (Weapon)
-set | A1ALMPICK_Weapon_Pyrotechnical | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMPICK_Weapon_Pyrotechnical | Model\MODT
-remove | A1ALMPICK_Weapon_Pyrotechnical | KWDA
-remove | A1ALMPICK_Weapon_Pyrotechnical | KSIZ
-set | A1ALMPICK_Weapon_Pyrotechnical | DATA\Weight | 0
-set | A1ALMPICK_Weapon_Pyrotechnical | DATA\Value | 0
-new | COBJ | co_A1ALMPICK_Weapon_Pyrotechnical
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_WeatherAltering
 set | A1ALMPICK_Weapon_WeatherAltering | FULL | CLM Pick: Weather Altering (Weapon)
 set | A1ALMPICK_Weapon_WeatherAltering | Model\MODL | Props\Holotape_Prop.nif
