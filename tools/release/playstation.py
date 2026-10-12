@@ -18,6 +18,8 @@ data/*.esp, written to dist/PlayStation/:
   stimpak's rate: 30% over 5 s) while health is at or below 20% / 50%; no stimpak used, no cooldown. Vanilla's
   RegenerateHealthAbility restores health directly (heal rate does nothing in combat: fCombatHealthRegenRateMult is
   0); it restores a fixed amount per second, so the amount steps up with the player's level (HEAL_TIERS);
+- the heal rate of Brutal, Supertankin', Burning Rage and Constantly Flamin' Cloaked (health per second, e.g. "50 hp
+  regeneration") becomes RegenerateHealthAbility with the same amount, so it also heals in combat;
 - Face Bustin': the explode-after-death effect has no script, so targets are not blown apart (text says so);
 - the other legendaries whose effect is a CLM script stay, with a PlayStation note in their description;
 - loot mode: its drop perk was given by a scripted quest. Instead each plugin gets a "CLM Loot Manual" magazine
@@ -63,6 +65,7 @@ STIM = {'A1ALMOMOD_Legendary_Armour_StimpakSelfHeal': (0.20, 'Auto-heals you whe
         'A1ALMOMOD_Legendary_Armour_StimpakSelfHeal_AidPatch': (0.50, 'Auto-heals you whenever your health is at or below 50%: '
                                                                        'you regenerate about 6% of your health per second (as fast as a '
                                                                        'stimpak), without using stimpaks. (PlayStation version.)')}
+HEAL_RATE = 'A1ALMMGEF_Fortify_Effect_Heal_Rate'
 REGENERATE_HEALTH = 0x00102149           # RegenerateHealthAbility: constant restore health, per second
 # (from level, health per second): about 6% of a level-L player's health with Endurance 5 (105 + 5 x (L - 1))
 HEAL_TIERS = [(1, 7), (10, 11), (25, 17), (50, 25), (75, 32), (100, 40)]
@@ -244,6 +247,17 @@ def build(game: Path) -> None:
         ench.mark_dirty()
         o.set('DESC', zstr(text))
         report.append(f'regenerate: {omod} via {ench.edid}')
+    # heal rate (out of combat only) -> restore health per second (also in combat), same amount
+    heal_rate = struct.pack('<I', fid(HEAL_RATE))
+    for r in main.records('ENCH'):
+        if not main.is_own(r.formid) or r.edid in reverted:
+            continue
+        hits = [s for s in r.subrecords if s.sig == 'EFID' and s.data == heal_rate]
+        for s in hits:
+            s.data = struct.pack('<I', REGENERATE_HEALTH)
+        if hits:
+            r.mark_dirty()
+            report.append(f'regenerate: {r.edid}')
     # Disintegratin' (Green): back to vanilla plasma goo
     for edid in (DISINTEGRATIN_GREEN, 'A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green'):
         r = main.by_edid(edid)
