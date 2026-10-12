@@ -1053,7 +1053,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_50P "CLM
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_50P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_50P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Actor Scope Stability / Multiply Value
-      values: 0.500000
+      values: 0.850000
 ```
 
 ### CLM: Constant Bouncing  `A1ALMOMOD_Legendary_Armor_PerkV_Bouncing`
