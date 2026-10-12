@@ -12,7 +12,7 @@ game's Data folder for testing:
     MCM/Config/CLM/settings.ini         its defaults
 Every setting and every pick is also a global in the main plugin (tools/config/settings.py: a recipe accepts the item
 OR the global). The menu sets the globals, so F4SE players carry no setting or pick items: when it starts, and
-whenever the pause menu opens, any such items the player carries (made earlier at a chemistry station, or given by
+on every save load, any such items the player carries (made earlier at a chemistry station, or given by
 the holotape) become their globals. A1ALMMCM = 1 hides the chemistry station's settings and picks meanwhile. The
 "Before removing this add-on" button turns everything back into items and A1ALMMCM to 0, so a save stays usable
 without the add-on. The perk pages add and remove the 110 perks of the perk holotape (found from its fragments).
@@ -186,6 +186,8 @@ GlobalVariable Property {MCM_GLOBAL} Auto Const Mandatory
 string Property ModName = "{MOD}" AutoReadOnly
 
 bool initialised
+; the player's changes in the menu: a Sync running meanwhile stops, so it never writes an old value back
+int changes
 
 Event OnInit()
 	If initialised
@@ -194,32 +196,32 @@ Event OnInit()
 	initialised = true
 	{MCM_GLOBAL}.SetValue(1)
 	SetHolotapes(false)
-	Absorb()
 	Setup()
+	Sync()
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
 	Setup()
+	Sync()
 EndEvent
 
+; Sync never runs while the menu is open: it takes a few seconds (hundreds of calls), and a change made meanwhile
+; would be overwritten by the old value (it used to run whenever the pause menu opened)
 Function Setup()
 	RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
 	RegisterForExternalEvent("OnMCMSettingChange|" + ModName, "OnMCMSettingChange")
-	RegisterForExternalEvent("OnMCMMenuOpen|" + ModName, "OnMCMMenuOpen")
-	RegisterForMenuOpenCloseEvent("PauseMenu")
+	UnregisterForExternalEvent("OnMCMMenuOpen|" + ModName)
+	UnregisterForMenuOpenCloseEvent("PauseMenu")
+	RegisterForMenuOpenCloseEvent("TerminalMenu")
+	RegisterForMenuOpenCloseEvent("TerminalHolotapeMenu")
 EndFunction
 
+; the holotapes (when turned back on) change settings and perks too
 Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
-	If abOpening
+	If !abOpening && {GLOBAL}.GetValue() != 0
 		Sync()
 	EndIf
 EndEvent
-
-; MCM sends this event without arguments
-Function OnMCMMenuOpen()
-	Sync()
-	MCM.RefreshMenu()
-EndFunction
 
 ; setting and pick items the player carries (made at a chemistry station before, or from the holotape) -> globals
 Function Absorb()
@@ -250,43 +252,61 @@ Function Absorb()
 	EndWhile
 EndFunction
 
-; the menu shows the real state
+; the menu shows the real state (globals and perks belong to the save; the menu's values are shared by all saves)
 Function Sync()
 	Absorb()
+	int start = changes
 	int crafting = 0
 	If On({k("loot")})
 		crafting = 2
 	ElseIf On({k("free")})
 		crafting = 1
 	EndIf
-	MCM.SetModSettingInt(ModName, "iCrafting:Settings", crafting)
+	PutInt("iCrafting:Settings", crafting, start)
 	int rate = 1
 	If On({k("low")})
 		rate = 0
 	ElseIf On({k("high")})
 		rate = 2
 	EndIf
-	MCM.SetModSettingInt(ModName, "iDropRate:Settings", rate)
-	MCM.SetModSettingBool(ModName, "bShowOP:Settings", On({k("op")}))
-	MCM.SetModSettingBool(ModName, "bShowVariants:Settings", On({k("variants")}))
-	MCM.SetModSettingBool(ModName, "bHidePerk:Settings", On({k("noperk")}))
-	MCM.SetModSettingBool(ModName, "bHideSpawn:Settings", On({k("nospawn")}))
-	MCM.SetModSettingBool(ModName, "bPicker:Settings", On({k("picker")}))
-	MCM.SetModSettingBool(ModName, "bHolotapes:Settings", {GLOBAL}.GetValue() != 0)
+	PutInt("iDropRate:Settings", rate, start)
+	Put("bShowOP:Settings", On({k("op")}), start)
+	Put("bShowVariants:Settings", On({k("variants")}), start)
+	Put("bHidePerk:Settings", On({k("noperk")}), start)
+	Put("bHideSpawn:Settings", On({k("nospawn")}), start)
+	Put("bPicker:Settings", On({k("picker")}), start)
+	Put("bHolotapes:Settings", {GLOBAL}.GetValue() != 0, start)
 	int i = 0
-	While i < PickGlobals.Length
-		MCM.SetModSettingBool(ModName, "bPick" + i + ":Picks", PickGlobals[i].GetValue() == 1)
+	While i < PickGlobals.Length && changes == start
+		Put("bPick" + i + ":Picks", PickGlobals[i].GetValue() == 1, start)
 		i += 1
 	EndWhile
 	Actor player = Game.GetPlayer()
 	i = 0
-	While i < Perks.Length
-		MCM.SetModSettingBool(ModName, "bPerk" + i + ":Perks", player.HasPerk(Perks[i]))
+	While i < Perks.Length && changes == start
+		Put("bPerk" + i + ":Perks", player.HasPerk(Perks[i]), start)
 		i += 1
 	EndWhile
+	If changes == start
+		MCM.RefreshMenu()
+	EndIf
+EndFunction
+
+; writes a value unless the player changed something since the Sync began
+Function Put(string asID, bool abOn, int aiStart)
+	If changes == aiStart
+		MCM.SetModSettingBool(ModName, asID, abOn)
+	EndIf
+EndFunction
+
+Function PutInt(string asID, int aiValue, int aiStart)
+	If changes == aiStart
+		MCM.SetModSettingInt(ModName, asID, aiValue)
+	EndIf
 EndFunction
 
 Function OnMCMSettingChange(string asModName, string asID)
+	changes += 1
 	{MCM_GLOBAL}.SetValue(1)
 	If asID == "iCrafting:Settings"
 		int v = MCM.GetModSettingInt(ModName, asID)

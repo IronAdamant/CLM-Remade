@@ -22,6 +22,8 @@ GlobalVariable Property A1ALMMCM Auto Const Mandatory
 string Property ModName = "CLM" AutoReadOnly
 
 bool initialised
+; the player's changes in the menu: a Sync running meanwhile stops, so it never writes an old value back
+int changes
 
 Event OnInit()
 	If initialised
@@ -30,32 +32,32 @@ Event OnInit()
 	initialised = true
 	A1ALMMCM.SetValue(1)
 	SetHolotapes(false)
-	Absorb()
 	Setup()
+	Sync()
 EndEvent
 
 Event Actor.OnPlayerLoadGame(Actor akSender)
 	Setup()
+	Sync()
 EndEvent
 
+; Sync never runs while the menu is open: it takes a few seconds (hundreds of calls), and a change made meanwhile
+; would be overwritten by the old value (it used to run whenever the pause menu opened)
 Function Setup()
 	RegisterForRemoteEvent(Game.GetPlayer(), "OnPlayerLoadGame")
 	RegisterForExternalEvent("OnMCMSettingChange|" + ModName, "OnMCMSettingChange")
-	RegisterForExternalEvent("OnMCMMenuOpen|" + ModName, "OnMCMMenuOpen")
-	RegisterForMenuOpenCloseEvent("PauseMenu")
+	UnregisterForExternalEvent("OnMCMMenuOpen|" + ModName)
+	UnregisterForMenuOpenCloseEvent("PauseMenu")
+	RegisterForMenuOpenCloseEvent("TerminalMenu")
+	RegisterForMenuOpenCloseEvent("TerminalHolotapeMenu")
 EndFunction
 
+; the holotapes (when turned back on) change settings and perks too
 Event OnMenuOpenCloseEvent(string asMenuName, bool abOpening)
-	If abOpening
+	If !abOpening && A1ALMHOLOTAPES.GetValue() != 0
 		Sync()
 	EndIf
 EndEvent
-
-; MCM sends this event without arguments
-Function OnMCMMenuOpen()
-	Sync()
-	MCM.RefreshMenu()
-EndFunction
 
 ; setting and pick items the player carries (made at a chemistry station before, or from the holotape) -> globals
 Function Absorb()
@@ -86,43 +88,61 @@ Function Absorb()
 	EndWhile
 EndFunction
 
-; the menu shows the real state
+; the menu shows the real state (globals and perks belong to the save; the menu's values are shared by all saves)
 Function Sync()
 	Absorb()
+	int start = changes
 	int crafting = 0
 	If On(1)
 		crafting = 2
 	ElseIf On(0)
 		crafting = 1
 	EndIf
-	MCM.SetModSettingInt(ModName, "iCrafting:Settings", crafting)
+	PutInt("iCrafting:Settings", crafting, start)
 	int rate = 1
 	If On(6)
 		rate = 0
 	ElseIf On(7)
 		rate = 2
 	EndIf
-	MCM.SetModSettingInt(ModName, "iDropRate:Settings", rate)
-	MCM.SetModSettingBool(ModName, "bShowOP:Settings", On(2))
-	MCM.SetModSettingBool(ModName, "bShowVariants:Settings", On(3))
-	MCM.SetModSettingBool(ModName, "bHidePerk:Settings", On(4))
-	MCM.SetModSettingBool(ModName, "bHideSpawn:Settings", On(5))
-	MCM.SetModSettingBool(ModName, "bPicker:Settings", On(8))
-	MCM.SetModSettingBool(ModName, "bHolotapes:Settings", A1ALMHOLOTAPES.GetValue() != 0)
+	PutInt("iDropRate:Settings", rate, start)
+	Put("bShowOP:Settings", On(2), start)
+	Put("bShowVariants:Settings", On(3), start)
+	Put("bHidePerk:Settings", On(4), start)
+	Put("bHideSpawn:Settings", On(5), start)
+	Put("bPicker:Settings", On(8), start)
+	Put("bHolotapes:Settings", A1ALMHOLOTAPES.GetValue() != 0, start)
 	int i = 0
-	While i < PickGlobals.Length
-		MCM.SetModSettingBool(ModName, "bPick" + i + ":Picks", PickGlobals[i].GetValue() == 1)
+	While i < PickGlobals.Length && changes == start
+		Put("bPick" + i + ":Picks", PickGlobals[i].GetValue() == 1, start)
 		i += 1
 	EndWhile
 	Actor player = Game.GetPlayer()
 	i = 0
-	While i < Perks.Length
-		MCM.SetModSettingBool(ModName, "bPerk" + i + ":Perks", player.HasPerk(Perks[i]))
+	While i < Perks.Length && changes == start
+		Put("bPerk" + i + ":Perks", player.HasPerk(Perks[i]), start)
 		i += 1
 	EndWhile
+	If changes == start
+		MCM.RefreshMenu()
+	EndIf
+EndFunction
+
+; writes a value unless the player changed something since the Sync began
+Function Put(string asID, bool abOn, int aiStart)
+	If changes == aiStart
+		MCM.SetModSettingBool(ModName, asID, abOn)
+	EndIf
+EndFunction
+
+Function PutInt(string asID, int aiValue, int aiStart)
+	If changes == aiStart
+		MCM.SetModSettingInt(ModName, asID, aiValue)
+	EndIf
 EndFunction
 
 Function OnMCMSettingChange(string asModName, string asID)
+	changes += 1
 	A1ALMMCM.SetValue(1)
 	If asID == "iCrafting:Settings"
 		int v = MCM.GetModSettingInt(ModName, asID)
