@@ -59,10 +59,11 @@ switches (with F4SE, the optional menu does all this for you instead: see F4SE M
 
 
 THE CONCISE VIEW (NEW IN 2.1)
-Many legendaries feel alike, so the workbench shows one balanced legendary per group of similar effects: 41
+Many legendaries feel alike, so the workbench shows one balanced legendary per group of similar effects: 33
 groups, such as "More damage" (Hurtin' (50%) shows; Hurtin' (25%), Hurtin' (100%), Devastating and Beginner are in
-the group) or "Grenades and mines". Spawns show each creature's plain Random spawn; the Legendary and Boss spawns
-are a group of their own.
+the group) or "Grenades and mines". Where no single legendary stood for its group, a new balanced one does:
+Opportunist's, Elemental Strikin', Double Tappin', Resistance (All), Vitality, Untouchable (Elements) and Radiatin'
+(Elements). Spawns show each creature's plain Random spawn; the Legendary and Boss spawns are a group of their own.
 - Nothing is removed: gear that has a hidden legendary keeps it.
 - "CLM Setting: Show all legendaries" shows every legendary again, as before 2.1.
 - A "CLM Group: ..." item (chemistry station, category "CLM Groups") shows one whole group; its description lists

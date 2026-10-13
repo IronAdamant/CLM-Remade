@@ -162,6 +162,10 @@ def write_raw(data: Path, ack: Path) -> None:
     loot_item, loot_glob = fid(ITEMS['loothidden'][0]), fid(setting_global('loothidden'))
     mine = {all_item, all_glob, loot_item, loot_glob} | {fid(item(k, g)) for k, g in groups()} | \
         {fid(glob(k, g)) for k, g in groups()}
+    # items and globals of groups that were renamed or merged away (pruned by the build): drop their conditions too
+    own = len(p.masters)
+    exists = {r.formid for r in p.records()}
+    gone = lambda param: (param >> 24) == own and param not in exists
 
     members = hidden(p)
     count = {kg: 0 for kg in groups()}
@@ -173,7 +177,8 @@ def write_raw(data: Path, ack: Path) -> None:
         cn = c.get('CNAM')
         if not cn or not p.is_own(c.formid) or c.edid.startswith(('co_A1ALMSET', 'co_A1ALMPICK', 'co_A1ALMGRP')):
             continue            # chemistry station recipes check these items for their own reasons
-        subs = [s for s in c.subrecords if not (s.sig == 'CTDA' and struct.unpack_from('<I', s.data, 12)[0] in mine)]
+        subs = [s for s in c.subrecords if not (s.sig == 'CTDA' and (struct.unpack_from('<I', s.data, 12)[0] in mine or
+                                                                     gone(struct.unpack_from('<I', s.data, 12)[0])))]
         kg = omod_of.get(struct.unpack('<I', cn.data)[0])
         if kg is not None:
             pairs = [(FN_GET_ITEM_COUNT, all_item), (FN_GET_GLOBAL_VALUE, all_glob),

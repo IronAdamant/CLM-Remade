@@ -5,7 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft.
 
-**660 legendaries in 118 families.** Tiers: common 137, uncommon 227, rare 40, OP 256.
+**667 legendaries in 118 families.** Tiers: common 137, uncommon 234, rare 40, OP 256.
 
 Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (Crouch) (duplicate, hidden in 2.1), ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
 
@@ -24,7 +24,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Curios | Healing Beam (uncommon); Lorenzo's Legendary Artificial (uncommon); Medic's (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); God Creator (OP); Liar's Compendium (OP) |
 | Destroyer's | Destroyer's (OP); Destroyer's (3x) (OP); Destroyer's (4x) (OP); Destroyer's (5x) (OP) |
 | Disintegratin' | Disintegratin' (Blue) (uncommon); Disintegratin' (Deep Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Gold) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Orange) (uncommon); Disintegratin' (Pink) (uncommon); Disintegratin' (Purple) (uncommon); Disintegratin' (Red) (uncommon) |
-| Elemental | Nature's Wrath (uncommon); Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (Limited) (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
+| Elemental | Elemental Strikin' (uncommon); Nature's Wrath (uncommon); Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (Limited) (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
 | Energized | Energized (Blue Laser) (common); Energized (Deep Blue Laser) (common); Energized (Gauss) (common); Energized (Gold Laser) (common); Energized (Green Laser) (common); Energized (Orange Laser) (common); Energized (Pink Laser) (common); Energized (Plasma) (common); Energized (Purple Laser) (common); Energized (Red Laser) (common) |
 | Energy | Improved Plasma Infused (common); Apotheistic (OP); Overchargin' (OP); Searing (OP) |
 | Fire | Burning (common); Incendiary Striking (common); Flamin' (uncommon); Hinokagutsuchi (uncommon); Burning Hellish (OP) |
@@ -35,7 +35,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Gauss conversions | Compressed Vortex Synthesized (OP); Explosively Striking (OP); Street Cleaner's (OP); True Seeker (OP) |
 | Gunslingers | Generically 80s Action Hero's (uncommon); Gunslanger's (OP); Gunslinger's (OP) |
 | Havoc | Havoc (Blue Laser) (OP); Havoc (Blue Laser, Limited) (OP); Havoc (Bullets) (OP); Havoc (Bullets, Limited) (OP); Havoc (Plasma) (OP); Havoc (Plasma, Limited) (OP); Havoc (Red Laser) (OP); Havoc (Red Laser, Limited) (OP) |
-| Heavy hitters | Devastating (common); Bloodlust (uncommon); Commando's (uncommon); Lucky Drawin' (uncommon); Widowmakin' (uncommon); Decimatin' (OP); Roid Ragin' (OP); Suppressin' (OP) |
+| Heavy hitters | Devastating (common); Bloodlust (uncommon); Commando's (uncommon); Lucky Drawin' (uncommon); Opportunist's (uncommon); Widowmakin' (uncommon); Decimatin' (OP); Roid Ragin' (OP); Suppressin' (OP) |
 | Hurtin' | Hurtin' (25%) (common); Hurtin' (50%) (uncommon); Hurtin' (100%) (rare); Hurtin' (1000%) (OP); Hurtin' (150%) (OP); Hurtin' (200%) (OP); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP); Rapid Hurtin' (OP) |
 | Hydra's Fang | Hydra's Bite (OP); Hydra's Fanged (OP); Hydra's Serrated-fanged (OP); Hydra's Twin-fanged (OP) |
 | Keltas' Factorium | Keltas' Flawed Factorium (common); Keltas' Quick Draw Factorium (common); Keltas' Rapid Factorium (uncommon); Keltas' Specialised Factorium (uncommon); Keltas' Perfect Factorium (OP) |
@@ -46,7 +46,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Marksman | Highlighting (common); VATS Penetratin' (common); Vatastically Penetrating (common); High Velocity Full Titanium (uncommon); Blitzkrieg (OP); Eagle Eyed (OP); Widowmaker's Sight (OP) |
 | Mine launchin' | Sticky Bottlecap Mine launchin' (uncommon); Sticky Cryo Mine launchin' (uncommon); Sticky Frag Mine launchin' (uncommon); Sticky Plasma Mine launchin' (uncommon); Sticky Pulse Mine launchin' (uncommon); Sticky Nuke Mine launchin' (OP) |
 | Moby-Dick's | Moby-Dick's (uncommon) |
-| Multi-shot | Carbonatin' (rare); Bird Shootin' (OP); Four Shot (OP); High Explosive (OP) |
+| Multi-shot | Double Tappin' (uncommon); Carbonatin' (rare); Bird Shootin' (OP); Four Shot (OP); High Explosive (OP) |
 | Nuka-Infused | Nuka-Infused (OP); Nuka-Infused (Cherry) (OP); Nuka-Infused (Cola) (OP); Nuka-Infused (Quantum) (OP) |
 | Operator's | Fiery Operator's (uncommon); Operator's Balanced (uncommon); Operator's Enhanced Arsenal (rare) |
 | Ordnance | Crazily Explosive (OP); Game Crashin' (OP); MIRV Converted (OP); MIRV's Impactin' (OP); Napalmin' (OP); Nukin' (OP) |
@@ -115,8 +115,8 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Ghostly and Camouflaged | Escapist's (uncommon); Stealth (uncommon); Camouflaged (Always) (OP); Camouflaged (Crouch) (OP); Ghostly (Always) (OP); Ghostly (Crouch) (OP); Resistively Ghostly (OP); Stealth Boy'd (OP); Stealthy (OP) |
 | Grit | Glass Cannon (uncommon); Glowing Heart (uncommon); Ironclad (uncommon); Underdog's (rare) |
 | Handiwork | Fiddlin' (common); Gheed's Fortunate (common); Scavenger's (common); Devil's Due (OP); Handy (OP); Hello Neighbour! (OP); Silver-Tongued Businessman (OP) |
-| Healing | Aid Patch (common); Regenerative (Slow) (common); Auto-Medical (uncommon); Bloodthirsty (uncommon); Phoenix (rare); Long Livin' (OP); Regenerative (OP); Ridiculously Absorbin' (OP) |
-| Immunities | Cat Tailed (common); Waterbreathing (common); Resistance (Acid) (uncommon); Resistance (Electric) (uncommon); Resistance (Explosion) (uncommon); Resistance (Limb Damage) (uncommon); Resistance (Poison) (uncommon); Resistance (Radiation) (uncommon); Biological Hazmat (OP); Hawkin's Experimental (OP); Immunity (Acid) (OP); Immunity (Electric) (OP); Immunity (Explosion) (OP); Immunity (Limb Damage) (OP); Immunity (Poison) (OP); Immunity (Radiation) (OP) |
+| Healing | Aid Patch (common); Regenerative (Slow) (common); Auto-Medical (uncommon); Bloodthirsty (uncommon); Vitality (uncommon); Phoenix (rare); Long Livin' (OP); Regenerative (OP); Ridiculously Absorbin' (OP) |
+| Immunities | Cat Tailed (common); Waterbreathing (common); Resistance (Acid) (uncommon); Resistance (All) (uncommon); Resistance (Electric) (uncommon); Resistance (Explosion) (uncommon); Resistance (Limb Damage) (uncommon); Resistance (Poison) (uncommon); Resistance (Radiation) (uncommon); Biological Hazmat (OP); Hawkin's Experimental (OP); Immunity (Acid) (OP); Immunity (Electric) (OP); Immunity (Explosion) (OP); Immunity (Limb Damage) (OP); Immunity (Poison) (OP); Immunity (Radiation) (OP) |
 | Impact Landing | Impact Landing (Basic) (uncommon); Impact Landing (Cryo) (OP); Impact Landing (Fire) (OP); Impact Landing (Nuclear) (OP); Impact Landing (Plasma) (OP); Impact Landing (Pulse) (OP) |
 | Juggernaut | Alien Enhanced Nano-Coated (OP); Alien Nano-Coated (OP); Brutal (OP); God's Armour (OP); Mighty Nearly Unbreakable (OP); Super-Tankin' (OP); True Synth (OP); Yamamoto's Mighty (OP) |
 | Jumpy and Flyin' | Jumpy (10%) (common); Jumpy (25%) (common); Jumper's (uncommon); Jumpy (50%) (uncommon); Jumpy (100%) (rare); Flyin' (OP); Jumpy (150%) (OP); Jumpy (200%) (OP); Jumpy (250%) (OP); Jumpy (300%) (OP) |
@@ -127,7 +127,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Plating | Ballistic Protection (Basic) (common); Ballistic Protection (Light) (common); Titanium (common); Admantium (OP); Advanced Titanium (OP); Ballistic Protection (Advanced) (OP); Ballistic Protection (Master-crafted) (OP); Plated Titanium (OP); Spooky (OP) |
 | Power armour | Battery Regeneratin' (Slow) (common); Damage Conversion (Power Armor) (uncommon); Overcharged (uncommon); Battery Regeneratin' (Extreme) (OP); Battery Regeneratin' (Normal) (OP); Enduring (OP) |
 | Punching | Punching (Disarm) (uncommon); Punching (Electrical) (uncommon); Punching (Fire) (uncommon); Punching (Freeze) (uncommon); Punching (Frenzy) (uncommon); Punching (Poison) (uncommon); Punching (Push) (uncommon); Punching (Radiation) (uncommon); Punching (Spook) (uncommon); Punching (Paralyze) (OP) |
-| Radiatin' | Radiatin' (Cryo) (uncommon); Radiatin' (Fire) (uncommon); Radiatin' (Rads) (uncommon); Radiatin' (Shock) (uncommon); Radiatin' (Healing) (rare); Radiatin' (Inferno) (OP) |
+| Radiatin' | Radiatin' (Cryo) (uncommon); Radiatin' (Elements) (uncommon); Radiatin' (Fire) (uncommon); Radiatin' (Rads) (uncommon); Radiatin' (Shock) (uncommon); Radiatin' (Healing) (rare); Radiatin' (Inferno) (OP) |
 | Refilling | Refilling (10%) (uncommon); Refilling (100%) (OP); Refilling (50%) (OP) |
 | Shavka's Explosive Striking | Shavka's Explosive Striking (uncommon); Shavka's Explosive Striking (Cryo) (uncommon); Shavka's Explosive Striking (Fire) (uncommon); Shavka's Explosive Striking (Gauss) (uncommon); Shavka's Explosive Striking (Plasma) (uncommon); Shavka's Explosive Striking (Pulse) (uncommon); Shavka's Explosive Striking (Nuclear) (OP) |
 | Shields | Glow (uncommon); Shield (Constant) (OP); Shield (Emergency) (OP) |
@@ -135,4 +135,4 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Speedy | Chronos' (uncommon); Marathon Runnin' (uncommon); Momentum (uncommon); Speedy (10%) (uncommon); Speedy (25%) (rare); Flash (OP); Speedy (100%) (OP); Speedy (150%) (OP); Speedy (200%) (OP); Speedy (250%) (OP); Speedy (300%) (OP); Speedy (50%) (OP); Staminator (OP) |
 | Steady aim | Focused (Brief) (common); Aim Stabilized (50%) (uncommon); Critically Hurtin' (uncommon); Quick Hands (50%) (uncommon); Aim Stabilized (100%) (rare); Pinpoint Accuracy (OP); Weapon Mastery (OP) |
 | Surroundings | Home Turf (common); Night Owl's (common); Storm Chasin' (common); Sun-Kissed (common); Amphibious (uncommon); Entrenched (uncommon); Shadow Dwellin' (uncommon) |
-| Untouchable | Static Charged (uncommon); Untouchable (Disarm) (uncommon); Untouchable (Fire) (uncommon); Untouchable (Freeze) (uncommon); Untouchable (Frenzy) (uncommon); Untouchable (Knockdown) (uncommon); Untouchable (Poison) (uncommon); Untouchable (Rad) (uncommon); Untouchable (Shock) (uncommon); Untouchable (Spook) (uncommon); Untouchable (Pacify) (OP); Untouchable (Paralyzed) (OP) |
+| Untouchable | Static Charged (uncommon); Untouchable (Disarm) (uncommon); Untouchable (Elements) (uncommon); Untouchable (Fire) (uncommon); Untouchable (Freeze) (uncommon); Untouchable (Frenzy) (uncommon); Untouchable (Knockdown) (uncommon); Untouchable (Poison) (uncommon); Untouchable (Rad) (uncommon); Untouchable (Shock) (uncommon); Untouchable (Spook) (uncommon); Untouchable (Pacify) (OP); Untouchable (Paralyzed) (OP) |

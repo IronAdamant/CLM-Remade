@@ -122,6 +122,9 @@ THEMES = {
     ('armor', 'NoBraking'): 'Brawlers', ('armor', 'Enraged'): 'Flaming', ('weapon', 'HealingBeam'): 'Curios',
     ('weapon', 'GodCreator'): 'Curios', ('weapon', 'CinematicExcellence'): 'Utility', ('weapon', 'CQC'): 'Automatic',
     ('weapon', 'DragonBlade'): 'Brawn', ('weapon', 'Decimating'): 'Heavy hitters',
+    # 2.1 concise view mascots (tools/edits/gen_mascots_21.py)
+    ('weapon', 'Opportunists'): 'Heavy hitters', ('weapon', 'ElementalStriking'): 'Elements',
+    ('weapon', 'DoubleTapping'): 'Multi-shot', ('armor', 'Vitality'): 'Healing',
     ('armor', 'Cheaters'): 'Forbidden (armour)', ('armor', 'GodFathers'): 'Forbidden (armour)',
 }
 

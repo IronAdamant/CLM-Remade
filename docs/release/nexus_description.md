@@ -62,7 +62,7 @@ Good to know:
 
 ## The concise view
 
-Many legendaries feel alike, so the workbench shows **one balanced legendary per group of similar effects** - 41 groups, such as "More damage" (Hurtin' (50%) shows; Hurtin' (25%), Hurtin' (100%), Devastating and Beginner wait in the group) or "Grenades and mines". Spawns show each creature's plain Random spawn; the Legendary and Boss spawns are a group of their own.
+Many legendaries feel alike, so the workbench shows **one balanced legendary per group of similar effects** - 33 groups, such as "More damage" (Hurtin' (50%) shows; Hurtin' (25%), Hurtin' (100%), Devastating and Beginner wait in the group) or "Grenades and mines". Where no single legendary stood for its group, a new one does: Opportunist's, Elemental Strikin', Double Tappin', Resistance (All), Vitality, Untouchable (Elements), Radiatin' (Elements). Spawns show each creature's plain Random spawn; the Legendary and Boss spawns are a group of their own.
 
 - **Nothing is removed.** Gear that has a hidden legendary keeps it.
 - Make **"CLM Setting: Show all legendaries"** to see every legendary again, or a **"CLM Group"** item (chemistry station, category CLM Groups) to see one whole group. Each group item lists what it adds.

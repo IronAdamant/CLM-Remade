@@ -1331,6 +1331,11 @@ set | A1ALMMISC_LooseMod_Armour_StimpakSelfHeal | FULL | CLM: Auto-Medical
 set | A1ALMMISC_LooseMod_Armour_StimpakSelfHeal | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armour_StimpakSelfHeal | LNAM | @A1ALMMISC_LooseMod_Armour_StimpakSelfHeal
 copy | @co_A1ALMOMOD_Legendary_Armour_StimpakSelfHeal | co_A1ALMOMOD_Legendary_Armour_StimpakSelfHeal_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armour_Vitality
+set | A1ALMMISC_LooseMod_Armour_Vitality | FULL | CLM: Vitality
+set | A1ALMMISC_LooseMod_Armour_Vitality | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armour_Vitality | LNAM | @A1ALMMISC_LooseMod_Armour_Vitality
+copy | @co_A1ALMOMOD_Legendary_Armour_Vitality | co_A1ALMOMOD_Legendary_Armour_Vitality_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Phoenix
 set | A1ALMMISC_LooseMod_Armor_Phoenix | FULL | CLM: Phoenix
 set | A1ALMMISC_LooseMod_Armor_Phoenix | DATA\Value | 500
@@ -1366,6 +1371,11 @@ set | A1ALMMISC_LooseMod_Armor_Resistance_Acid | FULL | CLM: Resistance (Acid)
 set | A1ALMMISC_LooseMod_Armor_Resistance_Acid | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_Resistance_Acid | LNAM | @A1ALMMISC_LooseMod_Armor_Resistance_Acid
 copy | @co_A1ALMOMOD_Legendary_Armor_Resistance_Acid | co_A1ALMOMOD_Legendary_Armor_Resistance_Acid_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Resistance_All
+set | A1ALMMISC_LooseMod_Armor_Resistance_All | FULL | CLM: Resistance (All)
+set | A1ALMMISC_LooseMod_Armor_Resistance_All | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_Resistance_All | LNAM | @A1ALMMISC_LooseMod_Armor_Resistance_All
+copy | @co_A1ALMOMOD_Legendary_Armor_Resistance_All | co_A1ALMOMOD_Legendary_Armor_Resistance_All_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Resistance_Electric
 set | A1ALMMISC_LooseMod_Armor_Resistance_Electric | FULL | CLM: Resistance (Electric)
 set | A1ALMMISC_LooseMod_Armor_Resistance_Electric | DATA\Value | 200
@@ -1756,6 +1766,11 @@ set | A1ALMMISC_LooseMod_Armor_Radiating_Cryo | FULL | CLM: Radiatin' (Cryo)
 set | A1ALMMISC_LooseMod_Armor_Radiating_Cryo | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_Radiating_Cryo | LNAM | @A1ALMMISC_LooseMod_Armor_Radiating_Cryo
 copy | @co_A1ALMOMOD_Legendary_Armor_Radiating_Cryo | co_A1ALMOMOD_Legendary_Armor_Radiating_Cryo_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Radiating_Elements
+set | A1ALMMISC_LooseMod_Armor_Radiating_Elements | FULL | CLM: Radiatin' (Elements)
+set | A1ALMMISC_LooseMod_Armor_Radiating_Elements | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_Radiating_Elements | LNAM | @A1ALMMISC_LooseMod_Armor_Radiating_Elements
+copy | @co_A1ALMOMOD_Legendary_Armor_Radiating_Elements | co_A1ALMOMOD_Legendary_Armor_Radiating_Elements_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Radiating_Fire
 set | A1ALMMISC_LooseMod_Armor_Radiating_Fire | FULL | CLM: Radiatin' (Fire)
 set | A1ALMMISC_LooseMod_Armor_Radiating_Fire | DATA\Value | 200
@@ -2021,6 +2036,11 @@ set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Electrified | FULL | CLM: Untou
 set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Electrified | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Electrified | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Electrified
 copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Electrified | co_A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Electrified_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Elements
+set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Elements | FULL | CLM: Untouchable (Elements)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Elements | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Elements | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Elements
+copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Elements | co_A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Elements_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Fire
 set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Fire | FULL | CLM: Untouchable (Fire)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Untouchable_Fire | DATA\Value | 200
@@ -2336,6 +2356,11 @@ set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple | FULL | C
 set | A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple | LNAM | @A1ALMMISC_LooseMod_Weapon_Contact_Disintegration_Variant_Purple
 copy | @co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple | co_A1ALMOMOD_Legendary_Weapon_Contact_Disintegration_Variant_Purple_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_ElementalStriking
+set | A1ALMMISC_LooseMod_Weapon_ElementalStriking | FULL | CLM: Elemental Strikin'
+set | A1ALMMISC_LooseMod_Weapon_ElementalStriking | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_ElementalStriking | LNAM | @A1ALMMISC_LooseMod_Weapon_ElementalStriking
+copy | @co_A1ALMOMOD_Legendary_Weapon_ElementalStriking | co_A1ALMOMOD_Legendary_Weapon_ElementalStriking_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_NaturesWrath
 set | A1ALMMISC_LooseMod_Weapon_NaturesWrath | FULL | CLM: Nature's Wrath
 set | A1ALMMISC_LooseMod_Weapon_NaturesWrath | DATA\Value | 200
@@ -2631,6 +2656,11 @@ set | A1ALMMISC_LooseMod_Weapon_LucksDrawing | FULL | CLM: Lucky Drawin'
 set | A1ALMMISC_LooseMod_Weapon_LucksDrawing | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_LucksDrawing | LNAM | @A1ALMMISC_LooseMod_Weapon_LucksDrawing
 copy | @co_A1ALMOMOD_Legendary_Weapon_LucksDrawing | co_A1ALMOMOD_Legendary_Weapon_LucksDrawing_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Opportunists
+set | A1ALMMISC_LooseMod_Weapon_Opportunists | FULL | CLM: Opportunist's
+set | A1ALMMISC_LooseMod_Weapon_Opportunists | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Opportunists | LNAM | @A1ALMMISC_LooseMod_Weapon_Opportunists
+copy | @co_A1ALMOMOD_Legendary_Weapon_Opportunists | co_A1ALMOMOD_Legendary_Weapon_Opportunists_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_WidowMaking
 set | A1ALMMISC_LooseMod_Weapon_WidowMaking | FULL | CLM: Widowmakin'
 set | A1ALMMISC_LooseMod_Weapon_WidowMaking | DATA\Value | 200
@@ -2931,6 +2961,11 @@ set | A1ALMMISC_LooseMod_Weapon_MobyDicks | FULL | CLM: Moby-Dick's
 set | A1ALMMISC_LooseMod_Weapon_MobyDicks | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_MobyDicks | LNAM | @A1ALMMISC_LooseMod_Weapon_MobyDicks
 copy | @co_A1ALMOMOD_Legendary_Weapon_MobyDicks | co_A1ALMOMOD_Legendary_Weapon_MobyDicks_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_DoubleTapping
+set | A1ALMMISC_LooseMod_Weapon_DoubleTapping | FULL | CLM: Double Tappin'
+set | A1ALMMISC_LooseMod_Weapon_DoubleTapping | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_DoubleTapping | LNAM | @A1ALMMISC_LooseMod_Weapon_DoubleTapping
+copy | @co_A1ALMOMOD_Legendary_Weapon_DoubleTapping | co_A1ALMOMOD_Legendary_Weapon_DoubleTapping_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Carbonatin
 set | A1ALMMISC_LooseMod_Weapon_Carbonatin | FULL | CLM: Carbonatin'
 set | A1ALMMISC_LooseMod_Weapon_Carbonatin | DATA\Value | 500

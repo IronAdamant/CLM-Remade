@@ -22,46 +22,16 @@ set | A1ALMGRP_Weapon_SituationalDamage | DATA\Weight | 0
 set | A1ALMGRP_Weapon_SituationalDamage | DATA\Value | 0
 new | COBJ | co_A1ALMGRP_Weapon_SituationalDamage
 new | GLOB | A1ALMGRPG_Weapon_SituationalDamage
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_Bleeding
-set | A1ALMGRP_Weapon_Bleeding | FULL | CLM Group: Bleeding (Weapon)
-set | A1ALMGRP_Weapon_Bleeding | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Weapon_Bleeding | Model\MODT
-remove | A1ALMGRP_Weapon_Bleeding | KWDA
-remove | A1ALMGRP_Weapon_Bleeding | KSIZ
-set | A1ALMGRP_Weapon_Bleeding | DATA\Weight | 0
-set | A1ALMGRP_Weapon_Bleeding | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Weapon_Bleeding
-new | GLOB | A1ALMGRPG_Weapon_Bleeding
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_PoisonAndAcid
-set | A1ALMGRP_Weapon_PoisonAndAcid | FULL | CLM Group: Poison and acid (Weapon)
-set | A1ALMGRP_Weapon_PoisonAndAcid | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Weapon_PoisonAndAcid | Model\MODT
-remove | A1ALMGRP_Weapon_PoisonAndAcid | KWDA
-remove | A1ALMGRP_Weapon_PoisonAndAcid | KSIZ
-set | A1ALMGRP_Weapon_PoisonAndAcid | DATA\Weight | 0
-set | A1ALMGRP_Weapon_PoisonAndAcid | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Weapon_PoisonAndAcid
-new | GLOB | A1ALMGRPG_Weapon_PoisonAndAcid
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_FireOnHit
-set | A1ALMGRP_Weapon_FireOnHit | FULL | CLM Group: Fire on hit (Weapon)
-set | A1ALMGRP_Weapon_FireOnHit | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Weapon_FireOnHit | Model\MODT
-remove | A1ALMGRP_Weapon_FireOnHit | KWDA
-remove | A1ALMGRP_Weapon_FireOnHit | KSIZ
-set | A1ALMGRP_Weapon_FireOnHit | DATA\Weight | 0
-set | A1ALMGRP_Weapon_FireOnHit | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Weapon_FireOnHit
-new | GLOB | A1ALMGRPG_Weapon_FireOnHit
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_Cold
-set | A1ALMGRP_Weapon_Cold | FULL | CLM Group: Cold (Weapon)
-set | A1ALMGRP_Weapon_Cold | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Weapon_Cold | Model\MODT
-remove | A1ALMGRP_Weapon_Cold | KWDA
-remove | A1ALMGRP_Weapon_Cold | KSIZ
-set | A1ALMGRP_Weapon_Cold | DATA\Weight | 0
-set | A1ALMGRP_Weapon_Cold | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Weapon_Cold
-new | GLOB | A1ALMGRPG_Weapon_Cold
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_ElementalHits
+set | A1ALMGRP_Weapon_ElementalHits | FULL | CLM Group: Elemental hits (Weapon)
+set | A1ALMGRP_Weapon_ElementalHits | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMGRP_Weapon_ElementalHits | Model\MODT
+remove | A1ALMGRP_Weapon_ElementalHits | KWDA
+remove | A1ALMGRP_Weapon_ElementalHits | KSIZ
+set | A1ALMGRP_Weapon_ElementalHits | DATA\Weight | 0
+set | A1ALMGRP_Weapon_ElementalHits | DATA\Value | 0
+new | COBJ | co_A1ALMGRP_Weapon_ElementalHits
+new | GLOB | A1ALMGRPG_Weapon_ElementalHits
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_LightningGuns
 set | A1ALMGRP_Weapon_LightningGuns | FULL | CLM Group: Lightning guns (Weapon)
 set | A1ALMGRP_Weapon_LightningGuns | Model\MODL | Props\Holotape_Prop.nif
@@ -72,26 +42,6 @@ set | A1ALMGRP_Weapon_LightningGuns | DATA\Weight | 0
 set | A1ALMGRP_Weapon_LightningGuns | DATA\Value | 0
 new | COBJ | co_A1ALMGRP_Weapon_LightningGuns
 new | GLOB | A1ALMGRPG_Weapon_LightningGuns
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_EnergyDamage
-set | A1ALMGRP_Weapon_EnergyDamage | FULL | CLM Group: Energy damage (Weapon)
-set | A1ALMGRP_Weapon_EnergyDamage | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Weapon_EnergyDamage | Model\MODT
-remove | A1ALMGRP_Weapon_EnergyDamage | KWDA
-remove | A1ALMGRP_Weapon_EnergyDamage | KSIZ
-set | A1ALMGRP_Weapon_EnergyDamage | DATA\Weight | 0
-set | A1ALMGRP_Weapon_EnergyDamage | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Weapon_EnergyDamage
-new | GLOB | A1ALMGRPG_Weapon_EnergyDamage
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_Crippling
-set | A1ALMGRP_Weapon_Crippling | FULL | CLM Group: Crippling (Weapon)
-set | A1ALMGRP_Weapon_Crippling | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Weapon_Crippling | Model\MODT
-remove | A1ALMGRP_Weapon_Crippling | KWDA
-remove | A1ALMGRP_Weapon_Crippling | KSIZ
-set | A1ALMGRP_Weapon_Crippling | DATA\Weight | 0
-set | A1ALMGRP_Weapon_Crippling | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Weapon_Crippling
-new | GLOB | A1ALMGRPG_Weapon_Crippling
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Weapon_Handling
 set | A1ALMGRP_Weapon_Handling | FULL | CLM Group: Handling (Weapon)
 set | A1ALMGRP_Weapon_Handling | Model\MODL | Props\Holotape_Prop.nif
@@ -242,26 +192,16 @@ set | A1ALMGRP_Armor_DamageResistance | DATA\Weight | 0
 set | A1ALMGRP_Armor_DamageResistance | DATA\Value | 0
 new | COBJ | co_A1ALMGRP_Armor_DamageResistance
 new | GLOB | A1ALMGRPG_Armor_DamageResistance
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_SteadyHealing
-set | A1ALMGRP_Armor_SteadyHealing | FULL | CLM Group: Steady healing (Armour)
-set | A1ALMGRP_Armor_SteadyHealing | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Armor_SteadyHealing | Model\MODT
-remove | A1ALMGRP_Armor_SteadyHealing | KWDA
-remove | A1ALMGRP_Armor_SteadyHealing | KSIZ
-set | A1ALMGRP_Armor_SteadyHealing | DATA\Weight | 0
-set | A1ALMGRP_Armor_SteadyHealing | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Armor_SteadyHealing
-new | GLOB | A1ALMGRPG_Armor_SteadyHealing
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_EmergencyHealing
-set | A1ALMGRP_Armor_EmergencyHealing | FULL | CLM Group: Emergency healing (Armour)
-set | A1ALMGRP_Armor_EmergencyHealing | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Armor_EmergencyHealing | Model\MODT
-remove | A1ALMGRP_Armor_EmergencyHealing | KWDA
-remove | A1ALMGRP_Armor_EmergencyHealing | KSIZ
-set | A1ALMGRP_Armor_EmergencyHealing | DATA\Weight | 0
-set | A1ALMGRP_Armor_EmergencyHealing | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Armor_EmergencyHealing
-new | GLOB | A1ALMGRPG_Armor_EmergencyHealing
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_Healing
+set | A1ALMGRP_Armor_Healing | FULL | CLM Group: Healing (Armour)
+set | A1ALMGRP_Armor_Healing | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMGRP_Armor_Healing | Model\MODT
+remove | A1ALMGRP_Armor_Healing | KWDA
+remove | A1ALMGRP_Armor_Healing | KSIZ
+set | A1ALMGRP_Armor_Healing | DATA\Weight | 0
+set | A1ALMGRP_Armor_Healing | DATA\Value | 0
+new | COBJ | co_A1ALMGRP_Armor_Healing
+new | GLOB | A1ALMGRPG_Armor_Healing
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_HealingOnAKill
 set | A1ALMGRP_Armor_HealingOnAKill | FULL | CLM Group: Healing on a kill (Armour)
 set | A1ALMGRP_Armor_HealingOnAKill | Model\MODL | Props\Holotape_Prop.nif
@@ -282,36 +222,16 @@ set | A1ALMGRP_Armor_Resistances | DATA\Weight | 0
 set | A1ALMGRP_Armor_Resistances | DATA\Value | 0
 new | COBJ | co_A1ALMGRP_Armor_Resistances
 new | GLOB | A1ALMGRPG_Armor_Resistances
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_Speed
-set | A1ALMGRP_Armor_Speed | FULL | CLM Group: Speed (Armour)
-set | A1ALMGRP_Armor_Speed | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Armor_Speed | Model\MODT
-remove | A1ALMGRP_Armor_Speed | KWDA
-remove | A1ALMGRP_Armor_Speed | KSIZ
-set | A1ALMGRP_Armor_Speed | DATA\Weight | 0
-set | A1ALMGRP_Armor_Speed | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Armor_Speed
-new | GLOB | A1ALMGRPG_Armor_Speed
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_MovingWhileAiming
-set | A1ALMGRP_Armor_MovingWhileAiming | FULL | CLM Group: Moving while aiming (Armour)
-set | A1ALMGRP_Armor_MovingWhileAiming | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Armor_MovingWhileAiming | Model\MODT
-remove | A1ALMGRP_Armor_MovingWhileAiming | KWDA
-remove | A1ALMGRP_Armor_MovingWhileAiming | KSIZ
-set | A1ALMGRP_Armor_MovingWhileAiming | DATA\Weight | 0
-set | A1ALMGRP_Armor_MovingWhileAiming | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Armor_MovingWhileAiming
-new | GLOB | A1ALMGRPG_Armor_MovingWhileAiming
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_Jumping
-set | A1ALMGRP_Armor_Jumping | FULL | CLM Group: Jumping (Armour)
-set | A1ALMGRP_Armor_Jumping | Model\MODL | Props\Holotape_Prop.nif
-remove | A1ALMGRP_Armor_Jumping | Model\MODT
-remove | A1ALMGRP_Armor_Jumping | KWDA
-remove | A1ALMGRP_Armor_Jumping | KSIZ
-set | A1ALMGRP_Armor_Jumping | DATA\Weight | 0
-set | A1ALMGRP_Armor_Jumping | DATA\Value | 0
-new | COBJ | co_A1ALMGRP_Armor_Jumping
-new | GLOB | A1ALMGRPG_Armor_Jumping
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_Movement
+set | A1ALMGRP_Armor_Movement | FULL | CLM Group: Movement (Armour)
+set | A1ALMGRP_Armor_Movement | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMGRP_Armor_Movement | Model\MODT
+remove | A1ALMGRP_Armor_Movement | KWDA
+remove | A1ALMGRP_Armor_Movement | KSIZ
+set | A1ALMGRP_Armor_Movement | DATA\Weight | 0
+set | A1ALMGRP_Armor_Movement | DATA\Value | 0
+new | COBJ | co_A1ALMGRP_Armor_Movement
+new | GLOB | A1ALMGRPG_Armor_Movement
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMGRP_Armor_SlowTime
 set | A1ALMGRP_Armor_SlowTime | FULL | CLM Group: Slow time (Armour)
 set | A1ALMGRP_Armor_SlowTime | Model\MODL | Props\Holotape_Prop.nif

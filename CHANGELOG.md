@@ -7,9 +7,15 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
 
 ### Changed
 - **Concise view: one legendary per group of similar effects.** Too many legendaries felt alike, so the workbench
-  now shows one balanced legendary per group (41 groups: "More damage", "Bleeding", "Grenades and mines", "Melee
-  reactions"...) and hides the rest of each group: 103 legendaries, plus the Legendary and Boss tiers of the spawns
-  (48). Nothing is removed and gear you own keeps working.
+  now shows one balanced legendary per group (33 groups: "More damage", "Elemental hits", "Grenades and mines",
+  "Melee reactions"...) and hides the rest of each group: 120 legendaries, plus the Legendary and Boss tiers of the
+  spawns (48). A new game shows 139 legendaries instead of 306. Nothing is removed and gear you own keeps working.
+  - Where no single legendary stood for its group, a new balanced one does (records only unless noted):
+    **Opportunist's** (+40% damage on a sneak attack, against a full-health target or below half health, one at a
+    time), **Elemental Strikin'** (Nature's Wrath's elements without its fire rate), **Double Tappin'** (the base
+    game's Two Shot), **Resistance (All)** (25% less from all six damage types), **Vitality** (1 health a second, 3
+    below 25% health), **Untouchable (Elements)** (melee attackers: 20% each to freeze, burn, shock; PC and Xbox, like
+    the other Untouchables), **Radiatin' (Elements)** (a little of each aura).
   - **CLM Setting: Show all legendaries** shows everything, as before 2.1. **Saves made before 2.1 get it
     automatically** (PC and Xbox); on PlayStation, craft it at the chemistry station to keep the full list.
   - **CLM Group** items (chemistry station, category CLM Groups) show one whole group; the F4SE menu has a switch per

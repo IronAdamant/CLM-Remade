@@ -124,6 +124,15 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Picker mode** still works on top (a family picked shows only its concise members unless Show all / its group is on).
 - [ ] An item already carrying a hidden legendary keeps it.
 
+### Mascots (the shown legendary of their group)
+- [ ] **Opportunist's** (Balanced): +40% on a sneak attack, on a full-health target, or below half health; never more than +40% when two apply.
+- [ ] **Elemental Strikin'** (Balanced): random fire / cryo / poison / electrical bursts, no fire-rate change.
+- [ ] **Double Tappin'** (Balanced): two projectiles per shot, about double damage, wider spread.
+- [ ] **Resistance (All)** (Balanced): 25% less acid, electrical, explosion, poison, radiation and limb damage.
+- [ ] **Vitality** (Balanced): 1 health a second, 3 below 25% health.
+- [ ] **Untouchable (Elements)** (Balanced, PC/Xbox): melee attackers sometimes frozen, burned or shocked.
+- [ ] **Radiatin' (Elements)** (Balanced): nearby enemies take a little fire, shock and rads and slow down.
+
 ## Changed existing legendaries
 
 ### Moved to OP: recipe hidden without Show OP, visible with it, owned gear still works

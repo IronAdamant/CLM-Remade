@@ -23,7 +23,7 @@ Settings are free "CLM Setting" items made at any chemistry station (CLM Setting
 After a change, leave the workbench and use it again. Something missing? Check your Misc tab.
 
 CONCISE VIEW (NEW IN 2.1)
-The workbench shows one balanced legendary per group of similar effects (41 groups). Nothing is removed. "Show all legendaries" shows everything; a "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1: make "Show all legendaries" to keep everything shown.
+The workbench shows one balanced legendary per group of similar effects (33 groups). Nothing is removed. "Show all legendaries" shows everything; a "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1: make "Show all legendaries" to keep everything shown.
 
 LOOT MODE ON PLAYSTATION
 Also make the "CLM Loot Manual" once (CLM Settings) to start getting drops. If nothing drops, drop the manual and pick it up again.

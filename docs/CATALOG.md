@@ -1896,6 +1896,19 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Untouchable_Electrified "CLM: Untouch
       script A1ALMMGEF_OnMeleeEffect
 ```
 
+### CLM: Untouchable (Elements)  `A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Elements`
+> When hostiles attack you in melee, they have a 20% chance each to be frozen, set on fire and shocked.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Untouchable_Elements "CLM: Untouchable (Elements)" [ENCH:084AD039] / 431
+  ENCH A1ALMEnch_Constant_Effect_Untouchable_Elements (, )
+    A1ALMMGEF_Constant_Effect_OnMeleeHits_CryoFreeze_20P: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_OnMeleeEffect
+    A1ALMMGEF_Constant_Effect_OnMeleeHits_Fire_20P: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_OnMeleeEffect
+    A1ALMMGEF_Constant_Effect_OnMeleeHits_Electrified_20P: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_OnMeleeEffect
+```
+
 ### CLM: Untouchable (Fire)  `A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Fire`
 > When hostiles attack you through melee, they will always be set on fire.
 ```
@@ -2121,6 +2134,14 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Cryo "CLM: Ra
     A1ALMMGEF_Cloak_Radiating_Cryo: Cloak, magnitude 10.000000, duration 0 (Constant Effect, Self)
 ```
 
+### CLM: Radiatin' (Elements)  `A1ALMOMOD_Legendary_Armor_Radiating_Elements`
+> Enemies near you burn, are shocked (2 damage a second each) and irradiated (3 rads a second), and move 15% slower.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Elements "CLM: Radiatin' (Elements)" [ENCH:084AD042] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Elements (, )
+    A1ALMMGEF_Cloak_Radiating_Elements: Cloak, magnitude 10.000000, duration 0 (Constant Effect, Self)
+```
+
 ### CLM: Radiatin' (Fire)  `A1ALMOMOD_Legendary_Armor_Radiating_Fire`
 > Enemies near you burn: 5 fire damage per second.
 ```
@@ -2170,6 +2191,24 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Resistance_Acid "CLM: R
       entry point: Mod Incoming Weapon Damage / Set Value
       entry point: Mod Incoming Spell Magnitude / Set Value
       values: 0.500000; 0.500000
+```
+
+### CLM: Resistance (All)  `A1ALMOMOD_Legendary_Armor_Resistance_All`
+> You take 25% less acid, electrical, explosion, poison and radiation damage, and your limbs take 25% less damage.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Resistance_All "CLM: Resistance (All)" [ENCH:084AD035] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Resistance_All (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Resistance_All: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Incoming Limb Damage / Multiply Value
+      entry point: Mod Incoming Weapon Damage / Set Value
+      entry point: Mod Incoming Weapon Damage / Set Value
+      entry point: Mod Incoming Spell Magnitude / Set Value
+      entry point: Mod Incoming Spell Magnitude / Set Value
+      entry point: Mod Incoming Spell Magnitude / Set Value
+      entry point: Mod Incoming Spell Magnitude / Set Value
+      entry point: Mod Rads for Rad Health Max / Set Value
+      entry point: Mod Incoming Explosion Damage / Set Value
+      values: 0.750000; 0.750000; 0.750000; 0.750000; 0.750000; 0.750000
 ```
 
 ### CLM: Resistance (Electric)  `A1ALMOMOD_Legendary_Armor_Resistance_Electric`
@@ -2763,6 +2802,16 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_StimpackSelfHeal_Balanc
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_StimpackSelfHeal_Balanced (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_HealLikeStimpak_Balanced: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
       script A1ALMMGEF_OnHealthUseStim
+```
+
+### CLM: Vitality  `A1ALMOMOD_Legendary_Armour_Vitality`
+> You heal 1 health per second, and 3 per second while your health is below 25%.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Vitality "CLM: Vitality" [ENCH:084AD049] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Vitality (, )
+    A1ALMMGEF_Fortify_Effect_Health_Regen: Value Modifier Health, magnitude 1.000000, duration 0 (Constant Effect, Self)
+    A1ALMMGEF_Fortify_Effect_Health_Regen: Value Modifier Health, magnitude 2.000000, duration 0 (Constant Effect, Self)
+      if GetHealthPercentage [00100000] 0.250000
 ```
 
 ### CLM: Acidic  `A1ALMOMOD_Legendary_Weapon_Acidic`
@@ -4691,11 +4740,36 @@ Value SET 666 / 0
 DamageTypeValues SET dtEnergy [DMGT:00060A81] / 666.000000
 ```
 
+### CLM: Double Tappin'  `A1ALMOMOD_Legendary_Weapon_DoubleTapping`
+> Your weapon fires one more projectile, each at full damage, with a 30% wider spread (like the base game's Two Shot).
+```
+AttackDamage MUL+ADD 1.000000 / 0.000000
+AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
+AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
+AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
+NumProjectiles ADD 1 / 0
+```
+
 ### CLM: DragonBlade  `A1ALMOMOD_Legendary_Weapon_DragonBlade`
 > Genji's dragonblade: +200 damage per hit. When you swing at an enemy you are facing up to 20 metres away, you dash to it (at most every 2 seconds), and ranged attacks ricochet back while you block or sprint. (Papyrus cannot read the crosshair, so the dash goes to the nearest enemy ahead of you.)
 ```
 Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade "CLM: DragonBlade" [ENCH:084ACF2D] / 431
 Speed ADD 200.000000 / 0.000000
+```
+
+### CLM: Elemental Strikin'  `A1ALMOMOD_Legendary_Weapon_ElementalStriking`
+> Each hit has a 10% chance each to deal 20 fire, cryo, poison and electrical damage over two seconds.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath "CLM: Nature's Wrath" [ENCH:084ACD1A] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath (, )
+    A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_CryoDamage: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
+      if GetRandomPercent [00100000] 10.000000
 ```
 
 ### CLM: Prometheus' Fiery  `A1ALMOMOD_Legendary_Weapon_Elements_Base_Fire`
@@ -6377,6 +6451,19 @@ MinRange MUL+ADD 100.000000 / 0.000000
 MaxRange MUL+ADD 150.000000 / 0.000000
 AmmoCapacity MUL+ADD 0.500000 / 0.000000
 ReloadSpeed MUL+ADD 1.000000 / 0.000000
+```
+
+### CLM: Opportunist's  `A1ALMOMOD_Legendary_Weapon_Opportunists`
+> +40% damage on a sneak attack, against a target at full health, or while you are below half health. Only one of them counts at a time.
+```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Opportunists [KYWD:084AD02C] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Opportunists "CLM: Opportunist's" [ENCH:084AD02F] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Opportunists (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Opportunists: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      values: 1.400000; 1.400000; 1.400000
 ```
 
 ### CLM: Overchargin'  `A1ALMOMOD_Legendary_Weapon_Overcharging`
