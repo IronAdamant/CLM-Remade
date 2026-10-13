@@ -14,19 +14,20 @@ Automatron, Far Harbor, Contraptions Workshop and Nuka-World. Wasteland Workshop
 Why: most players own the DLC by now, and one plugin is much easier for me to keep updated.
 
 GETTING STARTED
-Nothing to set up. A new game starts with costly crafting and balanced legendaries (no OP ones).
+Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones), the main variants and the concise view.
 Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot, not clothing like the Vault suit.
 
 SETTINGS (please read)
-Settings are items, not menu switches:
-- Make them for free at any chemistry station, under "CLM Settings".
-- Carry a "CLM Setting" item = on. Drop, store or sell it = off.
-- Or use the Configuration Holotape, given when you leave Vault 111.
-- After a change, leave the workbench and use it again.
-- Something missing? Check your Misc tab: Loot mode hides crafting, and Picker mode shows only your picks.
+Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off; carry none = the defaults. Or use the Configuration Holotape, given when you leave Vault 111.
+- How you get legendaries: Free crafting, Loot mode, Low / Higher drop rate, Hidden legendaries drop too.
+- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style / spawning legendaries, Picker mode.
+After a change, leave the workbench and use it again. Something missing? Check your Misc tab.
 
-UPGRADING FROM 1.09
-Your gear keeps its legendaries, and your holotape settings become setting items on the first load.
+CONCISE VIEW (NEW IN 2.1)
+The workbench shows one balanced legendary per group of similar effects (41 groups). Nothing is removed. "Show all legendaries" shows everything; a "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1 get "Show all legendaries" automatically.
+
+UPGRADING
+Your gear keeps its legendaries, and your holotape settings become setting items on the first load. Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them.
 
 COMPATIBILITY
 CLM changes no vanilla records, so it works alongside most mods, including Legendary Effect Overhaul (LEO).

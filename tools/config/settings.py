@@ -36,25 +36,33 @@ TERM_SCRIPT, MIGRATE_SCRIPT, MIGRATE_QUEST = 'A1ALMSettingsTerminalScript', 'A1A
 
 # key -> (editor ID, item name, chem station recipe text)
 ITEMS = {
-    'free':     ('A1ALMSET_ModeFree', 'CLM Setting: Free crafting', 'Legendaries cost nothing to craft.'),
-    'loot':     ('A1ALMSET_ModeLoot', 'CLM Setting: Loot mode', 'Legendaries drop from enemies instead of being crafted.'),
-    'op':       ('A1ALMSET_ShowOP', 'CLM Setting: Show OP legendaries', 'Also show the overpowered legendaries.'),
-    'variants': ('A1ALMSET_ShowVariants', 'CLM Setting: Show variants', 'Show every variant of each legendary.'),
+    'free':     ('A1ALMSET_ModeFree', 'CLM Setting: Free crafting',
+                 'Legendaries cost nothing to craft. Without it: they cost components (Costly). Replaces Loot mode.'),
+    'loot':     ('A1ALMSET_ModeLoot', 'CLM Setting: Loot mode',
+                 'Legendaries drop from the enemies you kill instead of being crafted. A dropped CLM holotape unlocks '
+                 'its whole family; OP legendaries also need a Legendary Core. Replaces Free crafting.'),
+    'op':       ('A1ALMSET_ShowOP', 'CLM Setting: Show OP legendaries',
+                 'Also show the overpowered (OP) legendaries. Without it: balanced legendaries only.'),
+    'variants': ('A1ALMSET_ShowVariants', 'CLM Setting: Show variants',
+                 'Show every strength and variant of each legendary (Jumpy 10% to 300%...). Without it: the main ones.'),
     'noperk':   ('A1ALMSET_HidePerk', 'CLM Setting: Hide perk-style legendaries',
-                 'Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...).'),
+                 'Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...). Without it: shown.'),
     'nospawn':  ('A1ALMSET_HideSpawn', 'CLM Setting: Hide spawning legendaries',
-                 'Hide the legendaries that spawn creatures and people.'),
-    'low':      ('A1ALMSET_DropLow', 'CLM Setting: Low drop rate', 'Loot mode: legendaries drop extremely rarely.'),
-    'high':     ('A1ALMSET_DropHigh', 'CLM Setting: Higher drop rate', 'Loot mode: legendaries drop generously.'),
+                 'Hide the legendaries that spawn creatures and people. Without it: shown.'),
+    'low':      ('A1ALMSET_DropLow', 'CLM Setting: Low drop rate',
+                 'Loot mode: legendaries drop very rarely. With neither drop rate: Standard. Replaces Higher drop rate.'),
+    'high':     ('A1ALMSET_DropHigh', 'CLM Setting: Higher drop rate',
+                 'Loot mode: legendaries drop generously. With neither drop rate: Standard. Replaces Low drop rate.'),
     'picker':   ('A1ALMSET_PickerMode', 'CLM Setting: Picker mode',
-                 'The workbench shows only the legendary families you pick here, under the CLM Armour, Spawns and '
-                 'Weapon categories (tools/config/picker.py).'),
+                 'The workbench shows only the families you pick: make their "CLM Pick" items here, under the CLM '
+                 'Armour, CLM Spawns and CLM Weapon categories. Without it: every family (tools/config/picker.py).'),
     # 2.1 concise view (tools/config/concise.py): appended, so the earlier keys keep their array positions
     'all':      ('A1ALMSET_ShowAll', 'CLM Setting: Show all legendaries',
-                 'Show every legendary, as before 2.1. Without it the workbench shows one legendary per group of similar '
-                 'effects; craft a "CLM Group" item (category CLM Groups) to show one whole group.'),
+                 'Show every legendary, as before 2.1. Without it, the concise view: one legendary per group of similar '
+                 'effects. To show just one group, make its "CLM Group" item (category CLM Groups).'),
     'loothidden': ('A1ALMSET_LootHidden', 'CLM Setting: Hidden legendaries drop too',
-                   'Loot mode: the legendaries the concise view hides can drop and be crafted too.'),
+                   'Loot mode: the legendaries the concise view hides drop and unlock too. Without it (and without Show '
+                   "all legendaries): only the concise view's legendaries."),
 }
 # mutually exclusive settings: crafting one takes the other back
 EXCLUSIVE = {'free': 'loot', 'loot': 'free', 'low': 'high', 'high': 'low'}
@@ -63,37 +71,37 @@ OLD = {'A1ALMAFREE', 'A1ALMAPERK', 'A1ALMASPAWN', 'A1ALMAVAR', 'A1ALMABALANCED',
 
 # holotape: (item ID, text, action [(key, add?)], shown when [(key, carried?)] - any one true)
 CONFIG_MENU = [
-    (1, 'Crafting: Free', [('free', True), ('loot', False)], [('free', False)]),
-    (2, 'Crafting: Costly', [('free', False), ('loot', False)], [('free', True), ('loot', True)]),
-    (3, 'Loot version - Hunt for legendaries', [('loot', True), ('free', False)], [('loot', False)]),
+    (1, 'Crafting: Free - legendaries cost nothing', [('free', True), ('loot', False)], [('free', False)]),
+    (2, 'Crafting: Costly - legendaries cost components (default)', [('free', False), ('loot', False)],
+     [('free', True), ('loot', True)]),
+    (3, 'Crafting: Loot mode - hunt for legendaries', [('loot', True), ('free', False)], [('loot', False)]),
     (4, 'Show OP legendaries', [('op', True)], [('op', False)]),
-    (5, 'Balanced only - hide OP legendaries', [('op', False)], [('op', True)]),
+    (5, 'Hide OP legendaries - balanced only (default)', [('op', False)], [('op', True)]),
     (6, 'Show every variant', [('variants', True)], [('variants', False)]),
-    (7, 'Hide variants', [('variants', False)], [('variants', True)]),
+    (7, 'Hide variants - the main ones only (default)', [('variants', False)], [('variants', True)]),
     (8, 'Hide perk-style legendaries', [('noperk', True)], [('noperk', False)]),
-    (9, 'Show perk-style legendaries', [('noperk', False)], [('noperk', True)]),
+    (9, 'Show perk-style legendaries (default)', [('noperk', False)], [('noperk', True)]),
     (10, 'Hide spawning legendaries', [('nospawn', True)], [('nospawn', False)]),
-    (11, 'Show spawning legendaries', [('nospawn', False)], [('nospawn', True)]),
+    (11, 'Show spawning legendaries (default)', [('nospawn', False)], [('nospawn', True)]),
     (13, 'Picker mode - show only the families picked at a chemistry station', [('picker', True)], [('picker', False)]),
-    (14, 'Picker mode off - show every family', [('picker', False)], [('picker', True)]),
+    (14, 'Picker mode off - show every family (default)', [('picker', False)], [('picker', True)]),
     (15, 'Show all legendaries (as before 2.1)', [('all', True)], [('all', False)]),
-    (16, 'Concise view - one legendary per group of similar effects', [('all', False)], [('all', True)]),
+    (16, 'Concise view - one legendary per group of similar effects (default)', [('all', False)], [('all', True)]),
 ]
 RATE_MENU = [
-    (1, 'Low - extremely rare drops', [('low', True), ('high', False)], [('low', False)]),
-    (2, 'Standard - the intended rate', [('low', False), ('high', False)], [('low', True), ('high', True)]),
-    (3, 'Higher - generous drops', [('high', True), ('low', False)], [('high', False)]),
+    (1, 'Drop rate: Low - very rare drops', [('low', True), ('high', False)], [('low', False)]),
+    (2, 'Drop rate: Standard (default)', [('low', False), ('high', False)], [('low', True), ('high', True)]),
+    (3, 'Drop rate: Higher - generous drops', [('high', True), ('low', False)], [('high', False)]),
     (4, 'Hidden legendaries drop too', [('loothidden', True)], [('loothidden', False)]),
-    (5, 'Only the concise view drops', [('loothidden', False)], [('loothidden', True)]),
+    (5, "Only the concise view's legendaries drop (default)", [('loothidden', False)], [('loothidden', True)]),
 ]
 SUBMENU_SHOWN = {(CONFIG_TERM, 12): [('loot', True)]}   # the drop-rate page: only in loot mode
-CONFIG_WELCOME = ('Welcome to the CLM Config Holotape! Settings are items you carry (weightless, under Misc): this '
-                  'holotape gives and takes them for you, or craft them at any chemistry station under "CLM Settings". '
-                  'With none, you get Costly crafting, Balanced (no OP legendaries) and no variants. In Loot mode '
-                  'legendaries drop from enemies (starred ones drop far more); carry a CLM holotape to craft its '
-                  'family; OP legendaries need a Legendary Core. The workbench shows one legendary per group of similar '
-                  'effects (the concise view): "Show all legendaries" shows every one, as before 2.1, and "CLM Group" '
-                  'items (chemistry station, CLM Groups) show one whole group.')
+CONFIG_WELCOME = ('CLM settings are weightless items in your Misc tab: carry one and it is on, drop it and it is off. '
+                  'This holotape gives and takes them; you can also make them at any chemistry station (CLM Settings). '
+                  'With none you get the defaults: costly crafting, balanced legendaries (no OP), the main variants, '
+                  'and the concise view (one legendary per group of similar effects: "Show all legendaries" shows every '
+                  'one, a "CLM Group" item from the chemistry station shows one group). The workbench updates when you '
+                  'leave it and use it again.')
 ITEM_SIGS = {'ITXT', 'RNAM', 'ANAM', 'ITID', 'TNAM', 'UNAM', 'VNAM', 'CTDA', 'CIS1', 'CIS2', 'INAM', 'SNAM', 'BSIZ'}
 FN_GET_ITEM_COUNT, FN_GET_GLOBAL_VALUE = 47, 74
 OP_EQ, OP_GE, FLAG_OR = 0, 3 << 5, 1
@@ -234,7 +242,7 @@ def cmd_items(ack: Path, game: Path) -> None:
               f'prop | {term} | {TERM_SCRIPT} | Settings | Array of Object | {item_list}',
               f'prop | {term} | {TERM_SCRIPT} | Page | Int32 | {page}']
     s += [f'set | {CONFIG_TERM} | WNAM | {CONFIG_WELCOME}',
-          f'menu | {CONFIG_TERM} | 12 | Loot version - Drop rate | @{RATE_TERM} | -',
+          f'menu | {CONFIG_TERM} | 12 | Loot mode - drop settings | @{RATE_TERM} | -',
           f'new | QUST | {MIGRATE_QUEST}', f'set | {MIGRATE_QUEST} | FULL | CLM Settings Migration',
           f'set | {MIGRATE_QUEST} | DNAM\\Flags | 1', f'script | {MIGRATE_QUEST} | {MIGRATE_SCRIPT}',
           f'prop | {MIGRATE_QUEST} | {MIGRATE_SCRIPT} | Settings | Array of Object | {item_list}']

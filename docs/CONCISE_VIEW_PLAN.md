@@ -85,7 +85,7 @@ enemies group, so 151 legendaries are hidden in all (53 weapon, 50 armour, 48 sp
 
 ## Still to do
 
-- Rewrite the settings texts (holotape, chemistry station, MCM, Nexus and Bethesda.net descriptions) so the layers
-  read as one system: crafting mode, Show OP, Show variants, Show all / groups, Picker, loot drop settings.
+- Settings texts: rewritten 2026-10-14 as one system, "how you get legendaries" and "what the workbench shows",
+  each setting saying what you get without it (chemistry station, holotape, MCM, Nexus, Bethesda.net, readme).
 - In-game test: `docs/TEST_CHECKLIST_2.1.md`, "Concise view".
 - Requester spelling ggg3336 / gggg336: not found online; kept as ggg3336 in the credits.

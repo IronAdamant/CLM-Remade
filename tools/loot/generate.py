@@ -86,12 +86,14 @@ def pct(outer: int, inner: int) -> str:
 
 
 def rate_welcome() -> str:
-    lines = [f'How often CLM loot drops from each enemy you kill (starred legendary enemies roll {LEGENDARY_ROLLS} '
-             'times).']
+    lines = [f'Loot mode drop settings. How often CLM loot drops from each enemy you kill (starred legendary enemies '
+             f'roll {LEGENDARY_ROLLS} times):']
     for name in RATE_LIST:
         r = RATES[name]
         lines.append(f'{name}: common {pct(*r["Common"])}, uncommon {pct(*r["Uncommon"])}, rare {pct(*r["Rare"])}, '
                      f'OP {pct(*r["OP"])}, holotape {pct(*r["Holotape"])}, Legendary Core {pct(*r["Catalyst"])}.')
+    lines.append('"Hidden legendaries drop too": the legendaries the concise view hides can drop and be crafted as well '
+                 '(always, with "Show all legendaries").')
     return ' '.join(lines)
 
 

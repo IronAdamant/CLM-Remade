@@ -11,30 +11,29 @@ CLM was last updated in 2017. 2.0 is a full overhaul, and the first version you 
 
 REQUIREMENTS
 Automatron, Far Harbor, Contraptions Workshop and Nuka-World. Wasteland Workshop and Vault-Tec Workshop are no longer needed.
-Why: most players own the DLC by now, and one plugin is much easier for me to keep updated.
 
 GETTING STARTED
-Nothing to set up. A new game starts with costly crafting and balanced legendaries (no OP ones).
+Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones), the main variants and the concise view.
 Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot, not clothing like the Vault suit.
 
 SETTINGS (please read)
-Settings are items, not menu switches:
-- Make them for free at any chemistry station, under "CLM Settings".
-- Carry a "CLM Setting" item = on. Drop, store or sell it = off.
-- After a change, leave the workbench and use it again.
-- Something missing? Check your Misc tab: Loot mode hides crafting, and Picker mode shows only your picks.
+Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off; carry none = the defaults.
+- How you get legendaries: Free crafting, Loot mode, Low / Higher drop rate, Hidden legendaries drop too.
+- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style / spawning legendaries, Picker mode.
+After a change, leave the workbench and use it again. Something missing? Check your Misc tab.
+
+CONCISE VIEW (NEW IN 2.1)
+The workbench shows one balanced legendary per group of similar effects (41 groups). Nothing is removed. "Show all legendaries" shows everything; a "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1: make "Show all legendaries" to keep everything shown.
 
 LOOT MODE ON PLAYSTATION
 Also make the "CLM Loot Manual" once (CLM Settings) to start getting drops. If nothing drops, drop the manual and pick it up again.
 
 WHAT'S DIFFERENT ON PLAYSTATION
 PlayStation mods can't use scripts or new art, so:
-- No holotapes: use the chemistry station.
+- No holotapes. CLM's perks are "CLM Perk" magazines at the chemistry station (CLM Perks).
 - Left out: the new laser colours and the Kellogg spawn.
-- Vampiric and its family heal on every hit except killing blows.
-- Auto-Medical and Aid Patch regenerate health while you're low, instead of using stimpaks.
-- Face Bustin' doesn't blow targets apart.
-- Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin' and Sadistic Brawlers do nothing on PlayStation. A few others lose one part. Their descriptions say so.
+- Vampiric's family heals on every hit except killing blows; Auto-Medical and Aid Patch regenerate health instead of using stimpaks; Face Bustin' doesn't blow targets apart.
+- Effects that need a script (Untouchable, Phoenix, CQC...) do nothing or lose a part; their descriptions say so.
 
-UPGRADING FROM 1.09
-Your gear keeps its legendaries.
+UPGRADING
+Your gear keeps its legendaries. Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them.

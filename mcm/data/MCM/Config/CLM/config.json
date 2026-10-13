@@ -8,7 +8,7 @@
       "type": "section"
     },
     {
-      "text": "Settings: crafting mode, OP legendaries, variants, Picker mode, loot drop rate.",
+      "text": "Settings: how you get legendaries (crafting mode, loot drops) and what the workbench shows (all or concise, OP, variants, Picker mode).",
       "type": "text"
     },
     {
@@ -29,19 +29,19 @@
       "pageDisplayName": "Settings",
       "content": [
         {
-          "text": "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and \"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into these settings.)</font>",
+          "text": "<font color='#AAAAAA'>CLM's settings live here instead of on the holotape and the chemistry station's \"CLM Setting\" items: nothing to carry. (Items you already had become these settings.) Each option says what you get with it off; with everything off you get the defaults.</font>",
           "type": "text",
           "html": true
         },
         {
-          "text": "Crafting",
+          "text": "How you get legendaries",
           "type": "section"
         },
         {
           "text": "Crafting mode",
           "type": "dropdown",
           "id": "iCrafting:Settings",
-          "help": "Costly: legendaries cost components. Free: they cost nothing. Loot mode: they drop from enemies instead (carry a CLM holotape to craft its family; OP ones need a Legendary Core).",
+          "help": "Costly (default): legendaries cost components. Free: they cost nothing. Loot mode: they drop from the enemies you kill instead; a dropped CLM holotape unlocks its whole family, and OP legendaries also need a Legendary Core.",
           "valueOptions": {
             "options": [
               "Costly",
@@ -55,7 +55,7 @@
           "text": "Loot mode drop rate",
           "type": "dropdown",
           "id": "iDropRate:Settings",
-          "help": "How often loot mode drops legendaries. Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1% per kill.",
+          "help": "How often loot mode drops legendaries. Standard (default): common 3%, uncommon 1%, rare 0.3%, OP 0.1% per kill; starred legendary enemies roll ten times.",
           "valueOptions": {
             "options": [
               "Low",
@@ -69,7 +69,7 @@
           "text": "Hidden legendaries drop too",
           "type": "switcher",
           "id": "bLootHidden:Settings",
-          "help": "Loot mode: the legendaries the concise view hides can drop and be crafted too.",
+          "help": "Loot mode: the legendaries the concise view hides drop and unlock too. Off (default): only the legendaries the concise view shows (all of them with Show all legendaries on).",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -82,7 +82,7 @@
           "text": "Show all legendaries",
           "type": "switcher",
           "id": "bShowAll:Settings",
-          "help": "Show every legendary, as before 2.1. Off: the concise view, one legendary per group of similar effects (turn on single groups in the Concise view page).",
+          "help": "On: every legendary, as before 2.1. Off (default): the concise view, one legendary per group of similar effects; turn on single groups in the Concise view page.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -91,7 +91,7 @@
           "text": "Show OP legendaries",
           "type": "switcher",
           "id": "bShowOP:Settings",
-          "help": "Also show the overpowered legendaries.",
+          "help": "Also show the overpowered (OP) legendaries. Off (default): balanced legendaries only.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -100,7 +100,7 @@
           "text": "Show variants",
           "type": "switcher",
           "id": "bShowVariants:Settings",
-          "help": "Show every strength and variant of each legendary.",
+          "help": "Show every strength and variant of each legendary (Jumpy 10% to 300%...). Off (default): the main ones.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -109,7 +109,7 @@
           "text": "Hide perk-style legendaries",
           "type": "switcher",
           "id": "bHidePerk:Settings",
-          "help": "Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...).",
+          "help": "Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...). Off (default): shown.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -118,7 +118,7 @@
           "text": "Hide spawning legendaries",
           "type": "switcher",
           "id": "bHideSpawn:Settings",
-          "help": "Hide the legendaries that spawn creatures and people.",
+          "help": "Hide the legendaries that spawn creatures and people. Off (default): shown.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -127,7 +127,7 @@
           "text": "Picker mode",
           "type": "switcher",
           "id": "bPicker:Settings",
-          "help": "The workbench shows only the families turned on in the Legendary Picker page.",
+          "help": "Show only the families turned on in the Legendary Picker page. Off (default): every family.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -152,7 +152,7 @@
         {
           "text": "Turn settings and picks back into items",
           "type": "button",
-          "help": "Use this before uninstalling CLM - MCM: your settings and picks become \"CLM Setting\" / \"CLM Pick\" items again (as without F4SE), the chemistry station shows them again and the holotapes come back. Changing any option here afterwards switches the menu back on.",
+          "help": "Use this before uninstalling CLM - MCM: your settings, picks and groups become \"CLM Setting\", \"CLM Pick\" and \"CLM Group\" items again (as without F4SE), the chemistry station shows them again and the holotapes come back. Changing any option here afterwards switches the menu back on.",
           "action": {
             "type": "CallFunction",
             "form": "CLM - MCM.esp|800",
@@ -166,7 +166,7 @@
       "pageDisplayName": "Legendary Picker",
       "content": [
         {
-          "text": "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families turned on here. Your other settings still apply (OP, variants...).</font>",
+          "text": "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families turned on here. The other settings still apply on top (OP, variants, the concise view).</font>",
           "type": "text",
           "html": true
         },
@@ -1306,7 +1306,7 @@
       "pageDisplayName": "Concise view",
       "content": [
         {
-          "text": "<font color='#AAAAAA'>The workbench shows one legendary per group of similar effects. Turn a group on to show all of it, or turn on Show all legendaries (Settings page) for everything.</font>",
+          "text": "<font color='#AAAAAA'>The concise view: the workbench shows one legendary per group of similar effects. Turn a group on to show all of it, or turn on Show all legendaries (Settings page) for everything. Nothing is removed: gear that has a hidden legendary keeps it.</font>",
           "type": "text",
           "html": true
         },
@@ -1318,7 +1318,7 @@
           "text": "More damage (Weapon)",
           "type": "switcher",
           "id": "bPick118:Picks",
-          "help": "Show the whole \"More damage\" group.",
+          "help": "Show the whole \"More damage\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1327,7 +1327,7 @@
           "text": "Situational damage (Weapon)",
           "type": "switcher",
           "id": "bPick119:Picks",
-          "help": "Show the whole \"Situational damage\" group.",
+          "help": "Show the whole \"Situational damage\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1336,7 +1336,7 @@
           "text": "Bleeding (Weapon)",
           "type": "switcher",
           "id": "bPick120:Picks",
-          "help": "Show the whole \"Bleeding\" group.",
+          "help": "Show the whole \"Bleeding\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1345,7 +1345,7 @@
           "text": "Poison and acid (Weapon)",
           "type": "switcher",
           "id": "bPick121:Picks",
-          "help": "Show the whole \"Poison and acid\" group.",
+          "help": "Show the whole \"Poison and acid\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1354,7 +1354,7 @@
           "text": "Fire on hit (Weapon)",
           "type": "switcher",
           "id": "bPick122:Picks",
-          "help": "Show the whole \"Fire on hit\" group.",
+          "help": "Show the whole \"Fire on hit\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1363,7 +1363,7 @@
           "text": "Cold (Weapon)",
           "type": "switcher",
           "id": "bPick123:Picks",
-          "help": "Show the whole \"Cold\" group.",
+          "help": "Show the whole \"Cold\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1372,7 +1372,7 @@
           "text": "Lightning guns (Weapon)",
           "type": "switcher",
           "id": "bPick124:Picks",
-          "help": "Show the whole \"Lightning guns\" group.",
+          "help": "Show the whole \"Lightning guns\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1381,7 +1381,7 @@
           "text": "Energy damage (Weapon)",
           "type": "switcher",
           "id": "bPick125:Picks",
-          "help": "Show the whole \"Energy damage\" group.",
+          "help": "Show the whole \"Energy damage\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1390,7 +1390,7 @@
           "text": "Crippling (Weapon)",
           "type": "switcher",
           "id": "bPick126:Picks",
-          "help": "Show the whole \"Crippling\" group.",
+          "help": "Show the whole \"Crippling\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1399,7 +1399,7 @@
           "text": "Handling (Weapon)",
           "type": "switcher",
           "id": "bPick127:Picks",
-          "help": "Show the whole \"Handling\" group.",
+          "help": "Show the whole \"Handling\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1408,7 +1408,7 @@
           "text": "Recoil and range (Weapon)",
           "type": "switcher",
           "id": "bPick128:Picks",
-          "help": "Show the whole \"Recoil and range\" group.",
+          "help": "Show the whole \"Recoil and range\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1417,7 +1417,7 @@
           "text": "Armour piercing (Weapon)",
           "type": "switcher",
           "id": "bPick129:Picks",
-          "help": "Show the whole \"Armour piercing\" group.",
+          "help": "Show the whole \"Armour piercing\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1426,7 +1426,7 @@
           "text": "Extra projectiles (Weapon)",
           "type": "switcher",
           "id": "bPick130:Picks",
-          "help": "Show the whole \"Extra projectiles\" group.",
+          "help": "Show the whole \"Extra projectiles\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1435,7 +1435,7 @@
           "text": "Self-loading ammo (Weapon)",
           "type": "switcher",
           "id": "bPick131:Picks",
-          "help": "Show the whole \"Self-loading ammo\" group.",
+          "help": "Show the whole \"Self-loading ammo\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1444,7 +1444,7 @@
           "text": "Explosive rounds (Weapon)",
           "type": "switcher",
           "id": "bPick132:Picks",
-          "help": "Show the whole \"Explosive rounds\" group.",
+          "help": "Show the whole \"Explosive rounds\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1453,7 +1453,7 @@
           "text": "Missiles (Weapon)",
           "type": "switcher",
           "id": "bPick133:Picks",
-          "help": "Show the whole \"Missiles\" group.",
+          "help": "Show the whole \"Missiles\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1462,7 +1462,7 @@
           "text": "Grenades and mines (Weapon)",
           "type": "switcher",
           "id": "bPick134:Picks",
-          "help": "Show the whole \"Grenades and mines\" group.",
+          "help": "Show the whole \"Grenades and mines\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1471,7 +1471,7 @@
           "text": "Traps (Weapon)",
           "type": "switcher",
           "id": "bPick135:Picks",
-          "help": "Show the whole \"Traps\" group.",
+          "help": "Show the whole \"Traps\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1480,7 +1480,7 @@
           "text": "Laser conversions (Weapon)",
           "type": "switcher",
           "id": "bPick136:Picks",
-          "help": "Show the whole \"Laser conversions\" group.",
+          "help": "Show the whole \"Laser conversions\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1489,7 +1489,7 @@
           "text": "Weather (Weapon)",
           "type": "switcher",
           "id": "bPick137:Picks",
-          "help": "Show the whole \"Weather\" group.",
+          "help": "Show the whole \"Weather\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1498,7 +1498,7 @@
           "text": "Frenzy (Weapon)",
           "type": "switcher",
           "id": "bPick138:Picks",
-          "help": "Show the whole \"Frenzy\" group.",
+          "help": "Show the whole \"Frenzy\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1507,7 +1507,7 @@
           "text": "Knockback (Weapon)",
           "type": "switcher",
           "id": "bPick139:Picks",
-          "help": "Show the whole \"Knockback\" group.",
+          "help": "Show the whole \"Knockback\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1516,7 +1516,7 @@
           "text": "Healing others (Weapon)",
           "type": "switcher",
           "id": "bPick140:Picks",
-          "help": "Show the whole \"Healing others\" group.",
+          "help": "Show the whole \"Healing others\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1525,7 +1525,7 @@
           "text": "Legendary and boss spawns",
           "type": "switcher",
           "id": "bPick158:Picks",
-          "help": "Show the whole \"Legendary and boss spawns\" group.",
+          "help": "Show the whole \"Legendary and boss spawns\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1538,7 +1538,7 @@
           "text": "Damage resistance (Armour)",
           "type": "switcher",
           "id": "bPick141:Picks",
-          "help": "Show the whole \"Damage resistance\" group.",
+          "help": "Show the whole \"Damage resistance\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1547,7 +1547,7 @@
           "text": "Steady healing (Armour)",
           "type": "switcher",
           "id": "bPick142:Picks",
-          "help": "Show the whole \"Steady healing\" group.",
+          "help": "Show the whole \"Steady healing\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1556,7 +1556,7 @@
           "text": "Emergency healing (Armour)",
           "type": "switcher",
           "id": "bPick143:Picks",
-          "help": "Show the whole \"Emergency healing\" group.",
+          "help": "Show the whole \"Emergency healing\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1565,7 +1565,7 @@
           "text": "Healing on a kill (Armour)",
           "type": "switcher",
           "id": "bPick144:Picks",
-          "help": "Show the whole \"Healing on a kill\" group.",
+          "help": "Show the whole \"Healing on a kill\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1574,7 +1574,7 @@
           "text": "Resistances (Armour)",
           "type": "switcher",
           "id": "bPick145:Picks",
-          "help": "Show the whole \"Resistances\" group.",
+          "help": "Show the whole \"Resistances\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1583,7 +1583,7 @@
           "text": "Speed (Armour)",
           "type": "switcher",
           "id": "bPick146:Picks",
-          "help": "Show the whole \"Speed\" group.",
+          "help": "Show the whole \"Speed\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1592,7 +1592,7 @@
           "text": "Moving while aiming (Armour)",
           "type": "switcher",
           "id": "bPick147:Picks",
-          "help": "Show the whole \"Moving while aiming\" group.",
+          "help": "Show the whole \"Moving while aiming\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1601,7 +1601,7 @@
           "text": "Jumping (Armour)",
           "type": "switcher",
           "id": "bPick148:Picks",
-          "help": "Show the whole \"Jumping\" group.",
+          "help": "Show the whole \"Jumping\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1610,7 +1610,7 @@
           "text": "Slow time (Armour)",
           "type": "switcher",
           "id": "bPick149:Picks",
-          "help": "Show the whole \"Slow time\" group.",
+          "help": "Show the whole \"Slow time\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1619,7 +1619,7 @@
           "text": "Steady aim (Armour)",
           "type": "switcher",
           "id": "bPick150:Picks",
-          "help": "Show the whole \"Steady aim\" group.",
+          "help": "Show the whole \"Steady aim\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1628,7 +1628,7 @@
           "text": "Damage (armour) (Armour)",
           "type": "switcher",
           "id": "bPick151:Picks",
-          "help": "Show the whole \"Damage (armour)\" group.",
+          "help": "Show the whole \"Damage (armour)\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1637,7 +1637,7 @@
           "text": "Stealth (Armour)",
           "type": "switcher",
           "id": "bPick152:Picks",
-          "help": "Show the whole \"Stealth\" group.",
+          "help": "Show the whole \"Stealth\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1646,7 +1646,7 @@
           "text": "Seeing enemies (Armour)",
           "type": "switcher",
           "id": "bPick153:Picks",
-          "help": "Show the whole \"Seeing enemies\" group.",
+          "help": "Show the whole \"Seeing enemies\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1655,7 +1655,7 @@
           "text": "Melee reactions (Armour)",
           "type": "switcher",
           "id": "bPick154:Picks",
-          "help": "Show the whole \"Melee reactions\" group.",
+          "help": "Show the whole \"Melee reactions\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1664,7 +1664,7 @@
           "text": "Avoiding hits (Armour)",
           "type": "switcher",
           "id": "bPick155:Picks",
-          "help": "Show the whole \"Avoiding hits\" group.",
+          "help": "Show the whole \"Avoiding hits\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1673,7 +1673,7 @@
           "text": "Damaging auras (Armour)",
           "type": "switcher",
           "id": "bPick156:Picks",
-          "help": "Show the whole \"Damaging auras\" group.",
+          "help": "Show the whole \"Damaging auras\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1682,7 +1682,7 @@
           "text": "Exploding kills (Armour)",
           "type": "switcher",
           "id": "bPick157:Picks",
-          "help": "Show the whole \"Exploding kills\" group.",
+          "help": "Show the whole \"Exploding kills\" group. Off (default): only its main legendary.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }

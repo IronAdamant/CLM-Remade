@@ -357,8 +357,14 @@ def build(game: Path) -> None:
     report.append(f'perks: {len(perks)} perk magazines (category CLM Perks)')
 
     for r in (main.by_edid('co_A1ALMSET_ModeLoot'), main.by_edid('co_A1ALMSET_ModeLoot_Switch')):
-        r.set('DESC', zstr('Legendaries drop from enemies instead of being crafted. On PlayStation, also make the '
-                           'CLM Loot Manual (CLM Settings) once to start getting drops.'))
+        r.set('DESC', zstr('Legendaries drop from the enemies you kill instead of being crafted. A dropped CLM holotape '
+                           'unlocks its whole family; OP legendaries also need a Legendary Core. Replaces Free crafting. '
+                           'On PlayStation, also make the CLM Loot Manual (CLM Settings) once to start getting drops.'))
+    # the 2.1 concise view: saves from before 2.1 get "Show all" from a script elsewhere, not on PlayStation
+    r = main.by_edid('co_A1ALMSET_ShowAll')
+    r.set('DESC', zstr('Show every legendary, as before 2.1. Without it, the concise view: one legendary per group of '
+                       'similar effects; to show just one group, make its "CLM Group" item (category CLM Groups). '
+                       'PlayStation: a save from before 2.1 needs this to keep every legendary shown.'))
 
     for name, p in plugins.items():
         p.save(OUT / name)

@@ -108,8 +108,9 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   - **PlayStation perks** (the author's note): the perk holotape needs scripts, so on PlayStation every CLM perk is a
     "CLM Perk" magazine made at the chemistry station (category CLM Perks). Reading it adds the perk; removing one
     is not possible there.
-  - Not built: real flight (it needs F4SE, which CLM does not use; Flyin' stays), and second and third legendary
-    slots: Legendary Effect Overhaul (LEO) already does that and works with CLM.
+  - Not built: real flight (it needs F4SE, which CLM does not use; Flyin' stays), and second and third CLM
+    legendary slots (they would mean editing every weapon and armour record; LEO's extra slots hold LEO's own
+    effects).
 - **23 new armour legendaries**, CLM's own: effects the base game does not have, sized against its legendaries
   (Sentinel's, Bolstering, Unyielding...). Balanced unless marked. Value effects (resistances, SPECIAL, speed,
   healing) add up per piece as the base game's do; the perk-based parts count once however many pieces carry them.

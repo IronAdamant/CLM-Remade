@@ -20,33 +20,56 @@ By hand: copy the files into Fallout 4's Data folder and enable the plugin.
 
 
 GETTING STARTED
-Nothing to set up: a new game starts with Costly crafting and balanced legendaries (no OP ones, no variants).
+Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones), the main variants,
+and the concise view (one legendary per group of similar effects: see THE CONCISE VIEW).
 Legendaries are attached at a weapons or armour workbench, in the "Legendary" slot.
 
 
-SETTINGS AND THE CHEMISTRY STATION - PLEASE READ
-CLM's settings are items, not menu switches. This is new in 2.0 and it is not obvious, so (with F4SE, the
-optional menu does all this for you instead: see F4SE MENU):
+SETTINGS - PLEASE READ
+Settings decide two things: HOW YOU GET legendaries and WHAT THE WORKBENCH SHOWS. They are items, not menu
+switches (with F4SE, the optional menu does all this for you instead: see F4SE MENU):
 - Every setting is a weightless "CLM Setting: ..." item in the Misc tab of your Pip-Boy.
   CARRY IT = the setting is on. DROP IT (or store or sell it) = the setting is off. Carry none = the defaults.
-- Make them for free at any chemistry station, in the "CLM Settings" category:
-    Free crafting            legendaries cost nothing
-    Loot mode                legendaries drop from enemies instead of being crafted (see LOOT MODE)
-    Show OP legendaries      also show the overpowered ones
-    Show variants            show every strength and variant of each legendary
-    Hide perk-style / Hide spawning legendaries
-    Picker mode              see LEGENDARY PICKER
-    Low / Higher drop rate   loot mode only
+- Make them for free at any chemistry station, in the "CLM Settings" category.
+- PC and Xbox: the (CLM) Configuration Holotape (you get it when you leave Vault 111) gives and takes the same
+  setting items from your Pip-Boy. Use whichever you like.
+
+  How you get legendaries
+    Free crafting                 legendaries cost nothing. Without it: they cost components (costly).
+    Loot mode                     legendaries drop from enemies instead (see LOOT MODE).
+    Low / Higher drop rate        loot mode only. With neither: Standard.
+    Hidden legendaries drop too   loot mode: the concise view's hidden legendaries drop too.
+
+  What the workbench shows
+    Show all legendaries          every legendary. Without it: the concise view (see THE CONCISE VIEW).
+    Show OP legendaries           the overpowered ones too. Without it: balanced legendaries only.
+    Show variants                 every strength (Jumpy 10% to 300%...). Without it: the main ones.
+    Hide perk-style legendaries   hides them. Without it: shown.
+    Hide spawning legendaries     hides them. Without it: shown.
+    Picker mode                   only the families you pick. Without it: every family (see LEGENDARY PICKER).
+
 - A setting you already carry is not offered again. Free crafting and Loot mode replace each other: making one
   takes the other back (the same for the two drop rates).
-- PC and Xbox: the (CLM) Configuration Holotape (you get it when you leave Vault 111) does the same from your
-  Pip-Boy: it gives and takes the setting items for you. Use whichever you like.
 - The chemistry station and the workbench do not refresh while you are using them. After making or dropping a
   setting, leave the station and use it again to see the change (until then, things may show greyed out).
-- If a category or recipe seems to be missing, check your Misc tab: you may be carrying a setting that hides it
-  (Loot mode hides crafting and the picker), or already carry the item it makes.
+- If a category or recipe seems to be missing, check your Misc tab: you may be carrying a setting that hides it,
+  or already carry the item it makes.
 - Armour legendaries are at the ARMOUR workbench, on pieces that have a legendary slot (armour pieces, not
   clothing such as the Vault suit).
+
+
+THE CONCISE VIEW (NEW IN 2.1)
+Many legendaries feel alike, so the workbench shows one balanced legendary per group of similar effects: 41
+groups, such as "More damage" (Hurtin' (50%) shows; Hurtin' (25%), Hurtin' (100%), Devastating and Beginner are in
+the group) or "Grenades and mines". Spawns show each creature's plain Random spawn; the Legendary and Boss spawns
+are a group of their own.
+- Nothing is removed: gear that has a hidden legendary keeps it.
+- "CLM Setting: Show all legendaries" shows every legendary again, as before 2.1.
+- A "CLM Group: ..." item (chemistry station, category "CLM Groups") shows one whole group; its description lists
+  what it adds. Drop it to hide the group again.
+- Variants and OP legendaries are not part of it: Show variants and Show OP legendaries handle those.
+- Saves made before 2.1 keep everything shown: they get "Show all legendaries" when loaded (PC and Xbox). On
+  PlayStation, make it at the chemistry station.
 
 
 LEGENDARY PICKER
@@ -55,20 +78,23 @@ families of legendaries you pick:
 - At the chemistry station, open a "CLM Armour: ...", "CLM Spawns: ..." or "CLM Weapon: ..." category and make
   the pick you want, e.g. CLM Weapon: Damage > "CLM Pick: Hurtin' (Weapon)". The workbench now shows Hurtin'.
 - Picks are weightless items too: drop one to hide its family again. Carry as many as you like.
-- Your other settings still apply: without Show OP, OP-only families cannot be picked; without Show variants you
-  see each family's main strengths. Families that are entirely OP are also gathered under "CLM OP".
-- Drop Picker mode to see everything again.
+- The other settings still apply on top: without Show OP, OP-only families cannot be picked; without Show
+  variants you see each family's main strengths; the concise view still hides the rest of each group. Families
+  that are entirely OP are also gathered under "CLM OP".
+- Drop Picker mode to see every family again.
 
 
 F4SE MENU (OPTIONAL, PC ONLY)
 With F4SE and Mod Configuration Menu (MCM) installed, add the optional "CLM - MCM" download: everything is set
 from the pause menu (Mod Config > Custom Legendary Modifications) instead of holotapes.
-- Settings page: crafting mode (Costly / Free / Loot), drop rate, Show OP, Show variants, Hide perk-style /
-  spawning legendaries, Picker mode.
+- Settings page: how you get legendaries (crafting mode Costly / Free / Loot, drop rate, hidden legendaries drop
+  too) and what the workbench shows (Show all legendaries, Show OP, Show variants, Hide perk-style / spawning
+  legendaries, Picker mode). Each option says what you get with it off.
 - Legendary Picker page: switch on the families the workbench shows in Picker mode.
+- Concise view page: switch on whole groups.
 - CLM Perks / Cheat Perks pages: add or remove any of the perk holotape's 110 perks.
-- Nothing to carry: no "CLM Setting" or "CLM Pick" items (any you already have are turned into menu settings), and
-  the chemistry station no longer lists them.
+- Nothing to carry: no "CLM Setting", "CLM Pick" or "CLM Group" items (any you already have are turned into menu
+  settings), and the chemistry station no longer lists them.
 - The holotapes are no longer given or craftable (and are taken back if you have them); turn "Holotapes" on in the
   menu to have them anyway.
 - Removing the add-on later? First press "Turn settings and picks back into items" (Settings page): everything goes
@@ -78,7 +104,7 @@ from the pause menu (Mod Config > Custom Legendary Modifications) instead of hol
 WHY THE CHEMISTRY STATION?
 In 1.09 the settings were menus on the holotape, run by scripts. PlayStation mods are not allowed custom scripts,
 so on PS4 the holotape did nothing and part of the mod could not be set up. Settings as items crafted at a
-chemistry station need no scripts at all, so in 2.0 they work the same on PC, Xbox and PlayStation. The chemistry
+chemistry station need no scripts at all, so they work the same on PC, Xbox and PlayStation. The chemistry
 station is the way for everyone without a script extender: Xbox and PlayStation players, and PC players who do not
 use F4SE. PC players with F4SE can use a menu instead: see F4SE MENU above.
 
@@ -91,6 +117,8 @@ LOOT MODE
 - Standard drop rate, per kill: common 3%, uncommon 1%, rare 0.3%, OP 0.1%.
 - Turn it on with "CLM Setting: Loot mode"; drop it (or make Free crafting) to go back to crafting.
 - Drop rate: carry "Low drop rate" or "Higher drop rate"; with neither, Standard.
+- The legendaries the concise view hides do not drop or unlock unless you carry "Hidden legendaries drop too" (or
+  "Show all legendaries").
 
 
 NOTES
@@ -101,7 +129,9 @@ NOTES
 
 PLAYSTATION VERSION
 PlayStation mods cannot use scripts or new assets, so this version differs a little:
-- Settings are made at any chemistry station (CLM Settings); there are no holotapes.
+- Settings are made at any chemistry station (CLM Settings); there are no holotapes. CLM's perks are "CLM Perk"
+  magazines there (category CLM Perks): reading one adds the perk (removing it is not possible there).
+- Saves made before 2.1: make "Show all legendaries" to keep every legendary shown.
 - Loot mode: also make the CLM Loot Manual (CLM Settings) once to start getting drops. If nothing drops, drop the
   manual and pick it up again.
 - Left out: the new laser colours (Energized and Disintegratin' Green, Purple, Gold, Orange, Pink, Deep Blue) and
@@ -112,11 +142,12 @@ PlayStation mods cannot use scripts or new assets, so this version differs a lit
   (their effect is a script); a few others lose one scripted part. Their descriptions say so.
 
 
-UPGRADING FROM 1.09
+UPGRADING
 - Your gear keeps its legendaries, DLC ones included.
-- Your holotape settings are turned into setting items on the first load (PC and Xbox).
-- Some legendaries were fixed to do what their description says, and a few very strong ones are now marked OP.
-  See the changelog on the mod page.
+- From 1.09: your holotape settings are turned into setting items on the first load (PC and Xbox).
+- From 2.0: everything stays shown (the save gets "Show all legendaries"; on PlayStation, make it yourself).
+  Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them. See the
+  changelog.
 
 
 COMPATIBILITY

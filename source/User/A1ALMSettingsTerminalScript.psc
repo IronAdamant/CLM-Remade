@@ -12,71 +12,71 @@ Event OnMenuItemRun(int auiMenuItemID, ObjectReference akTerminalRef)
 		If auiMenuItemID == 1
 			SetSetting(0, true)
 			SetSetting(1, false)
-			Debug.Notification("CLM: Crafting: Free")
+			Debug.Notification("CLM: Crafting: Free - legendaries cost nothing")
 		ElseIf auiMenuItemID == 2
 			SetSetting(0, false)
 			SetSetting(1, false)
-			Debug.Notification("CLM: Crafting: Costly")
+			Debug.Notification("CLM: Crafting: Costly - legendaries cost components (default)")
 		ElseIf auiMenuItemID == 3
 			SetSetting(1, true)
 			SetSetting(0, false)
-			Debug.Notification("CLM: Loot version - Hunt for legendaries")
+			Debug.Notification("CLM: Crafting: Loot mode - hunt for legendaries")
 		ElseIf auiMenuItemID == 4
 			SetSetting(2, true)
 			Debug.Notification("CLM: Show OP legendaries")
 		ElseIf auiMenuItemID == 5
 			SetSetting(2, false)
-			Debug.Notification("CLM: Balanced only - hide OP legendaries")
+			Debug.Notification("CLM: Hide OP legendaries - balanced only (default)")
 		ElseIf auiMenuItemID == 6
 			SetSetting(3, true)
 			Debug.Notification("CLM: Show every variant")
 		ElseIf auiMenuItemID == 7
 			SetSetting(3, false)
-			Debug.Notification("CLM: Hide variants")
+			Debug.Notification("CLM: Hide variants - the main ones only (default)")
 		ElseIf auiMenuItemID == 8
 			SetSetting(4, true)
 			Debug.Notification("CLM: Hide perk-style legendaries")
 		ElseIf auiMenuItemID == 9
 			SetSetting(4, false)
-			Debug.Notification("CLM: Show perk-style legendaries")
+			Debug.Notification("CLM: Show perk-style legendaries (default)")
 		ElseIf auiMenuItemID == 10
 			SetSetting(5, true)
 			Debug.Notification("CLM: Hide spawning legendaries")
 		ElseIf auiMenuItemID == 11
 			SetSetting(5, false)
-			Debug.Notification("CLM: Show spawning legendaries")
+			Debug.Notification("CLM: Show spawning legendaries (default)")
 		ElseIf auiMenuItemID == 13
 			SetSetting(8, true)
 			Debug.Notification("CLM: Picker mode - show only the families picked at a chemistry station")
 		ElseIf auiMenuItemID == 14
 			SetSetting(8, false)
-			Debug.Notification("CLM: Picker mode off - show every family")
+			Debug.Notification("CLM: Picker mode off - show every family (default)")
 		ElseIf auiMenuItemID == 15
 			SetSetting(9, true)
 			Debug.Notification("CLM: Show all legendaries (as before 2.1)")
 		ElseIf auiMenuItemID == 16
 			SetSetting(9, false)
-			Debug.Notification("CLM: Concise view - one legendary per group of similar effects")
+			Debug.Notification("CLM: Concise view - one legendary per group of similar effects (default)")
 		EndIf
 	ElseIf Page == 1
 		If auiMenuItemID == 1
 			SetSetting(6, true)
 			SetSetting(7, false)
-			Debug.Notification("CLM: Low - extremely rare drops")
+			Debug.Notification("CLM: Drop rate: Low - very rare drops")
 		ElseIf auiMenuItemID == 2
 			SetSetting(6, false)
 			SetSetting(7, false)
-			Debug.Notification("CLM: Standard - the intended rate")
+			Debug.Notification("CLM: Drop rate: Standard (default)")
 		ElseIf auiMenuItemID == 3
 			SetSetting(7, true)
 			SetSetting(6, false)
-			Debug.Notification("CLM: Higher - generous drops")
+			Debug.Notification("CLM: Drop rate: Higher - generous drops")
 		ElseIf auiMenuItemID == 4
 			SetSetting(10, true)
 			Debug.Notification("CLM: Hidden legendaries drop too")
 		ElseIf auiMenuItemID == 5
 			SetSetting(10, false)
-			Debug.Notification("CLM: Only the concise view drops")
+			Debug.Notification("CLM: Only the concise view's legendaries drop (default)")
 		EndIf
 	EndIf
 EndEvent

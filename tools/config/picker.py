@@ -227,9 +227,9 @@ def write_raw(fams: dict, data: Path, ack: Path) -> None:
             if n and needs[(kind, family)][(key, op >> 5)] == n:
                 conds += setting(key, op == OP_GE)
         cats = [keyword(f['category'])] + ([keyword(OP_CATEGORY)] if all_op else [])
-        text = (f'Show the {family.removeprefix("Spawn: ")} {"spawning " if family.startswith("Spawn: ") else ""}'
-                f'legendaries ({len(f["rows"])}) at the {"weapons" if kind == "weapon" else "armour"} workbench '
-                'while Picker mode is on. Drop this to hide them again.')
+        text = (f'Picker mode: show the {family.removeprefix("Spawn: ")} {"spawning " if family.startswith("Spawn: ") else ""}'
+                f'legendaries ({len(f["rows"])}) at the {"weapons" if kind == "weapon" else "armour"} workbench. Carry it '
+                'to show them, drop it to hide them again. Without Picker mode every family shows anyway.')
         r.subrecords[:] = [r.subrecords[0], Subrecord('DESC', text.encode('cp1252') + b'\0'),
                            *[Subrecord('CTDA', d) for d in conds],
                            Subrecord('CNAM', struct.pack('<I', item)),

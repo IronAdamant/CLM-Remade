@@ -86,40 +86,48 @@ def switch(text, sid, help_):
 
 def config_json(perks, picks, fams, quest_id: int, groups=()) -> dict:
     settings = [
-        {'text': "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and "
-                 "\"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into "
-                 'these settings.)</font>', 'type': 'text', 'html': True},
-        {'text': 'Crafting', 'type': 'section'},
+        {'text': "<font color='#AAAAAA'>CLM's settings live here instead of on the holotape and the chemistry station's "
+                 '"CLM Setting" items: nothing to carry. (Items you already had become these settings.) Each option '
+                 'says what you get with it off; with everything off you get the defaults.</font>', 'type': 'text', 'html': True},
+        {'text': 'How you get legendaries', 'type': 'section'},
         {'text': 'Crafting mode', 'type': 'dropdown', 'id': 'iCrafting:Settings',
-         'help': 'Costly: legendaries cost components. Free: they cost nothing. Loot mode: they drop from enemies '
-                 'instead (carry a CLM holotape to craft its family; OP ones need a Legendary Core).',
+         'help': 'Costly (default): legendaries cost components. Free: they cost nothing. Loot mode: they drop from the '
+                 'enemies you kill instead; a dropped CLM holotape unlocks its whole family, and OP legendaries also '
+                 'need a Legendary Core.',
          'valueOptions': {'options': ['Costly', 'Free', 'Loot mode'], 'sourceType': 'ModSettingInt'}},
         {'text': 'Loot mode drop rate', 'type': 'dropdown', 'id': 'iDropRate:Settings',
-         'help': 'How often loot mode drops legendaries. Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1% per kill.',
+         'help': 'How often loot mode drops legendaries. Standard (default): common 3%, uncommon 1%, rare 0.3%, OP 0.1% '
+                 'per kill; starred legendary enemies roll ten times.',
          'valueOptions': {'options': ['Low', 'Standard', 'Higher'], 'sourceType': 'ModSettingInt'}},
-        switch('Hidden legendaries drop too', 'bLootHidden:Settings', 'Loot mode: the legendaries the concise view '
-               'hides can drop and be crafted too.'),
+        switch('Hidden legendaries drop too', 'bLootHidden:Settings', 'Loot mode: the legendaries the concise view hides '
+               'drop and unlock too. Off (default): only the legendaries the concise view shows (all of them with Show all '
+               'legendaries on).'),
         {'text': 'What the workbench shows', 'type': 'section'},
-        switch('Show all legendaries', 'bShowAll:Settings', 'Show every legendary, as before 2.1. Off: the concise '
-               'view, one legendary per group of similar effects (turn on single groups in the Concise view page).'),
-        switch('Show OP legendaries', 'bShowOP:Settings', 'Also show the overpowered legendaries.'),
-        switch('Show variants', 'bShowVariants:Settings', 'Show every strength and variant of each legendary.'),
-        switch('Hide perk-style legendaries', 'bHidePerk:Settings', 'Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...).'),
-        switch('Hide spawning legendaries', 'bHideSpawn:Settings', 'Hide the legendaries that spawn creatures and people.'),
-        switch('Picker mode', 'bPicker:Settings', 'The workbench shows only the families turned on in the Legendary '
-               'Picker page.'),
+        switch('Show all legendaries', 'bShowAll:Settings', 'On: every legendary, as before 2.1. Off (default): the '
+               'concise view, one legendary per group of similar effects; turn on single groups in the Concise view page.'),
+        switch('Show OP legendaries', 'bShowOP:Settings', 'Also show the overpowered (OP) legendaries. Off (default): '
+               'balanced legendaries only.'),
+        switch('Show variants', 'bShowVariants:Settings', 'Show every strength and variant of each legendary (Jumpy 10% to '
+               '300%...). Off (default): the main ones.'),
+        switch('Hide perk-style legendaries', 'bHidePerk:Settings', 'Hide the legendaries that work like perks (Jumpy, '
+               'Speedy, Nimble...). Off (default): shown.'),
+        switch('Hide spawning legendaries', 'bHideSpawn:Settings', 'Hide the legendaries that spawn creatures and people. '
+               'Off (default): shown.'),
+        switch('Picker mode', 'bPicker:Settings', 'Show only the families turned on in the Legendary Picker page. Off '
+               '(default): every family.'),
         {'text': 'Holotapes', 'type': 'section'},
         switch('Holotapes', 'bHolotapes:Settings', 'This menu replaces the configuration and perk holotapes. Turn this on '
                'to get both holotapes (and their recipes) back anyway.'),
         {'text': 'Before removing this add-on', 'type': 'section'},
         {'text': 'Turn settings and picks back into items', 'type': 'button',
-         'help': 'Use this before uninstalling CLM - MCM: your settings and picks become "CLM Setting" / "CLM Pick" '
-                 'items again (as without F4SE), the chemistry station shows them again and the holotapes come back. '
-                 'Changing any option here afterwards switches the menu back on.',
+         'help': 'Use this before uninstalling CLM - MCM: your settings, picks and groups become "CLM Setting", "CLM '
+                 'Pick" and "CLM Group" items again (as without F4SE), the chemistry station shows them again and the '
+                 'holotapes come back. Changing any option here afterwards switches the menu back on.',
          'action': {'type': 'CallFunction', 'form': f'{ADDON}|{quest_id:X}', 'function': 'PrepareUninstall', 'params': []}},
     ]
     picker = [{'text': "<font color='#AAAAAA'>With Picker mode on (Settings page), the workbench shows only the families "
-                       'turned on here. Your other settings still apply (OP, variants...).</font>', 'type': 'text', 'html': True}]
+                       'turned on here. The other settings still apply on top (OP, variants, the concise view).</font>',
+               'type': 'text', 'html': True}]
     for (kind, cat), names in CATEGORIES.items():
         picker.append({'text': f'CLM {cat}', 'type': 'section'})
         for n in names:
@@ -128,15 +136,16 @@ def config_json(perks, picks, fams, quest_id: int, groups=()) -> dict:
             label = n.removeprefix('Spawn: ')
             picker.append(switch(label, f'bPick{i}:Picks', f'Show the {len(f["rows"])} {n} legendaries '
                                  f'({"weapon" if kind == "weapon" else "armour"}) while Picker mode is on.'))
-    view = [{'text': "<font color='#AAAAAA'>The workbench shows one legendary per group of similar effects. Turn a group "
-                     'on to show all of it, or turn on Show all legendaries (Settings page) for everything.</font>',
+    view = [{'text': "<font color='#AAAAAA'>The concise view: the workbench shows one legendary per group of similar "
+                     'effects. Turn a group on to show all of it, or turn on Show all legendaries (Settings page) for '
+                     'everything. Nothing is removed: gear that has a hidden legendary keeps it.</font>',
              'type': 'text', 'html': True}]
     for kind in ('weapon', 'armor'):
         mine = [(i, g) for i, (k, g) in enumerate(groups) if k == kind]
         if mine:
             view.append({'text': 'Weapon groups' if kind == 'weapon' else 'Armour groups', 'type': 'section'})
             view += [switch(concise.label(kind, g).removeprefix('CLM Group: '), f'bPick{len(picks) + i}:Picks',
-                            f'Show the whole "{g}" group.') for i, g in mine]
+                            f'Show the whole "{g}" group. Off (default): only its main legendary.') for i, g in mine]
     pages = [{'pageDisplayName': 'Settings', 'content': settings},
              {'pageDisplayName': 'Legendary Picker', 'content': picker},
              {'pageDisplayName': 'Concise view', 'content': view}]
@@ -158,8 +167,8 @@ def config_json(perks, picks, fams, quest_id: int, groups=()) -> dict:
         pages.append({'pageDisplayName': page, 'content': content})
     return {'modName': MOD, 'displayName': 'Custom Legendary Modifications', 'minMcmVersion': 2,
             'content': [{'text': 'Custom Legendary Modifications Remade', 'type': 'section'},
-                        {'text': 'Settings: crafting mode, OP legendaries, variants, Picker mode, loot drop rate.',
-                         'type': 'text'},
+                        {'text': 'Settings: how you get legendaries (crafting mode, loot drops) and what the workbench '
+                                 'shows (all or concise, OP, variants, Picker mode).', 'type': 'text'},
                         {'text': 'Legendary Picker: the families the workbench shows in Picker mode.', 'type': 'text'},
                         {'text': 'Concise view: show whole groups of similar legendaries.', 'type': 'text'},
                         {'text': 'CLM Perks / Cheat Perks: add or remove the perks of the perk holotape.', 'type': 'text'}],

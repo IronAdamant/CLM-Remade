@@ -201,8 +201,9 @@ def write_raw(data: Path, ack: Path) -> None:
             conds.append(ctda(OP_EQ, 0.0, FN_GET_GLOBAL_VALUE, mcm.formid))
         names = sorted(re.sub(r'^[CZ]LM: ', '', p.by_edid(m).get('FULL').zstring) for m, x in members.items() if x == (k, g))
         shown = '' if (k, g) == SPAWNS else next(t[2] for t in (WEAPON if k == 'weapon' else ARMOUR) if t[0] == g)
-        text = (f'Show the whole "{g}" group at the workbench: ' + (f'{shown} is always shown; this adds ' if shown else '')
-                + ', '.join(names) + '. Drop the item to hide them again.')
+        text = (f'Concise view: show the whole "{g}" group at the workbench. ' +
+                (f'{shown} always shows; carrying this adds ' if shown else 'Carrying this adds ') + ', '.join(names) +
+                '. Drop it to hide them again. Not needed with "Show all legendaries".')
         if len(text) > 900:
             text = text[:897] + '...'
         r.subrecords[:] = [r.subrecords[0], Subrecord('DESC', text.encode('cp1252') + b'\0'),

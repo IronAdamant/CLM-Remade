@@ -56,7 +56,10 @@ Punch (fixed in 2.0).
 - Concise view (2026-10-14, `docs/CONCISE_VIEW_PLAN.md`, `tools/config/concise.py`): one balanced legendary per
   group of similar effects; Show all, group items, hidden-loot setting, existing saves keep everything (PC/Xbox).
   Fixed on the way: CQC, DragonBlade and Cinematic Excellence were built as armour mods (their template, Critically
-  Concentratin', is one); they are weapon mods now. Settings texts still to rewrite.
+  Concentratin', is one); they are weapon mods now.
+- Settings texts rewritten as one system (2026-10-14): chemistry station, holotape, MCM, Nexus (HTML and BBCode now
+  generated: `tools/release/description.py`), Bethesda.net, readme. The release texts still describe 2.0's "What's
+  new" and counts; update them at release.
 
 Author's decisions (2026-10-13): explosive conversions keep their fire rate (no halving); the Fisto's stacking fix
 goes ahead; the OP list is accepted, measured against the base game (below); CLM may design and build its own
@@ -293,7 +296,7 @@ Gas and Backstabbing have no infinite ammo, so they already are the 2016 "(Limit
 | **DragonBlade** (AgentSmithGSOM) | DragonBlade | +200 damage; Jedi Reflexible Sprint ricochet; script: swing -> MoveTo the nearest hostile ahead within 15 m (2 s cooldown). No crosshair reference without F4SE | OP |
 | **No Brakin'** (H3xx) | No Brakin' | Pain Train's cloak and its top-rank knockback (75 damage) with the power armour and perk conditions removed; sprinting only | OP |
 | **Enraged** (author) | Enraged | +15% speed and +20% AnimationMult in combat; below 50% health a cloak burns (10/s) and frightens (Demoralize) nearby enemies | OP |
-| **2LM / 3LM** (matzman666, Marelo) | README points to LEO | - | - |
+| **2LM / 3LM** (matzman666, Marelo) | Not built | New attach points on every weapon and armour record (vanilla edits CLM avoids). LEO is compatible, but its extra slots hold LEO's own effects | - |
 
 Requests the author refused on purpose stay refused (GigaByteWide's Demon of the Divide set, "not in the spirit of
 the mod").
