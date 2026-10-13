@@ -6,6 +6,15 @@ A balance pass measured against the base game's own legendaries, new armour, the
 missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or "no time".
 
 ### Changed
+- **Concise view: one legendary per group of similar effects.** Too many legendaries felt alike, so the workbench
+  now shows one balanced legendary per group (41 groups: "More damage", "Bleeding", "Grenades and mines", "Melee
+  reactions"...) and hides the rest of each group: 103 legendaries, plus the Legendary and Boss tiers of the spawns
+  (48). Nothing is removed and gear you own keeps working.
+  - **CLM Setting: Show all legendaries** shows everything, as before 2.1. **Saves made before 2.1 get it
+    automatically** (PC and Xbox); on PlayStation, craft it at the chemistry station to keep the full list.
+  - **CLM Group** items (chemistry station, category CLM Groups) show one whole group; the F4SE menu has a switch per
+    group (page "Concise view").
+  - Loot mode: hidden legendaries do not drop unless **CLM Setting: Hidden legendaries drop too** (or Show all) is on.
 - **Balanced now means "no stronger than the base game's strongest of its kind"** (Two Shot's damage, Rapid's fire
   rate, Sentinel's and Bolstering on armour). 56 legendaries above that moved to **OP**; with "Show OP" off their
   recipes are hidden. **Gear you already own keeps working.** To craft them again, carry the Show OP setting.

@@ -16,6 +16,10 @@
       "type": "text"
     },
     {
+      "text": "Concise view: show whole groups of similar legendaries.",
+      "type": "text"
+    },
+    {
       "text": "CLM Perks / Cheat Perks: add or remove the perks of the perk holotape.",
       "type": "text"
     }
@@ -62,8 +66,26 @@
           }
         },
         {
+          "text": "Hidden legendaries drop too",
+          "type": "switcher",
+          "id": "bLootHidden:Settings",
+          "help": "Loot mode: the legendaries the concise view hides can drop and be crafted too.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
           "text": "What the workbench shows",
           "type": "section"
+        },
+        {
+          "text": "Show all legendaries",
+          "type": "switcher",
+          "id": "bShowAll:Settings",
+          "help": "Show every legendary, as before 2.1. Off: the concise view, one legendary per group of similar effects (turn on single groups in the Concise view page).",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
         },
         {
           "text": "Show OP legendaries",
@@ -1274,6 +1296,393 @@
           "type": "switcher",
           "id": "bPick93:Picks",
           "help": "Show the 1 Spawn: Children of Atom legendaries (weapon) while Picker mode is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        }
+      ]
+    },
+    {
+      "pageDisplayName": "Concise view",
+      "content": [
+        {
+          "text": "<font color='#AAAAAA'>The workbench shows one legendary per group of similar effects. Turn a group on to show all of it, or turn on Show all legendaries (Settings page) for everything.</font>",
+          "type": "text",
+          "html": true
+        },
+        {
+          "text": "Weapon groups",
+          "type": "section"
+        },
+        {
+          "text": "More damage (Weapon)",
+          "type": "switcher",
+          "id": "bPick118:Picks",
+          "help": "Show the whole \"More damage\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Situational damage (Weapon)",
+          "type": "switcher",
+          "id": "bPick119:Picks",
+          "help": "Show the whole \"Situational damage\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Bleeding (Weapon)",
+          "type": "switcher",
+          "id": "bPick120:Picks",
+          "help": "Show the whole \"Bleeding\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Poison and acid (Weapon)",
+          "type": "switcher",
+          "id": "bPick121:Picks",
+          "help": "Show the whole \"Poison and acid\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Fire on hit (Weapon)",
+          "type": "switcher",
+          "id": "bPick122:Picks",
+          "help": "Show the whole \"Fire on hit\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Cold (Weapon)",
+          "type": "switcher",
+          "id": "bPick123:Picks",
+          "help": "Show the whole \"Cold\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Lightning guns (Weapon)",
+          "type": "switcher",
+          "id": "bPick124:Picks",
+          "help": "Show the whole \"Lightning guns\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Energy damage (Weapon)",
+          "type": "switcher",
+          "id": "bPick125:Picks",
+          "help": "Show the whole \"Energy damage\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Crippling (Weapon)",
+          "type": "switcher",
+          "id": "bPick126:Picks",
+          "help": "Show the whole \"Crippling\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Handling (Weapon)",
+          "type": "switcher",
+          "id": "bPick127:Picks",
+          "help": "Show the whole \"Handling\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Recoil and range (Weapon)",
+          "type": "switcher",
+          "id": "bPick128:Picks",
+          "help": "Show the whole \"Recoil and range\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Armour piercing (Weapon)",
+          "type": "switcher",
+          "id": "bPick129:Picks",
+          "help": "Show the whole \"Armour piercing\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Extra projectiles (Weapon)",
+          "type": "switcher",
+          "id": "bPick130:Picks",
+          "help": "Show the whole \"Extra projectiles\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Self-loading ammo (Weapon)",
+          "type": "switcher",
+          "id": "bPick131:Picks",
+          "help": "Show the whole \"Self-loading ammo\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Explosive rounds (Weapon)",
+          "type": "switcher",
+          "id": "bPick132:Picks",
+          "help": "Show the whole \"Explosive rounds\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Missiles (Weapon)",
+          "type": "switcher",
+          "id": "bPick133:Picks",
+          "help": "Show the whole \"Missiles\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Grenades and mines (Weapon)",
+          "type": "switcher",
+          "id": "bPick134:Picks",
+          "help": "Show the whole \"Grenades and mines\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Traps (Weapon)",
+          "type": "switcher",
+          "id": "bPick135:Picks",
+          "help": "Show the whole \"Traps\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Laser conversions (Weapon)",
+          "type": "switcher",
+          "id": "bPick136:Picks",
+          "help": "Show the whole \"Laser conversions\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Weather (Weapon)",
+          "type": "switcher",
+          "id": "bPick137:Picks",
+          "help": "Show the whole \"Weather\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Frenzy (Weapon)",
+          "type": "switcher",
+          "id": "bPick138:Picks",
+          "help": "Show the whole \"Frenzy\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Knockback (Weapon)",
+          "type": "switcher",
+          "id": "bPick139:Picks",
+          "help": "Show the whole \"Knockback\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Healing others (Weapon)",
+          "type": "switcher",
+          "id": "bPick140:Picks",
+          "help": "Show the whole \"Healing others\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Legendary and boss spawns",
+          "type": "switcher",
+          "id": "bPick158:Picks",
+          "help": "Show the whole \"Legendary and boss spawns\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Armour groups",
+          "type": "section"
+        },
+        {
+          "text": "Damage resistance (Armour)",
+          "type": "switcher",
+          "id": "bPick141:Picks",
+          "help": "Show the whole \"Damage resistance\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Steady healing (Armour)",
+          "type": "switcher",
+          "id": "bPick142:Picks",
+          "help": "Show the whole \"Steady healing\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Emergency healing (Armour)",
+          "type": "switcher",
+          "id": "bPick143:Picks",
+          "help": "Show the whole \"Emergency healing\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Healing on a kill (Armour)",
+          "type": "switcher",
+          "id": "bPick144:Picks",
+          "help": "Show the whole \"Healing on a kill\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Resistances (Armour)",
+          "type": "switcher",
+          "id": "bPick145:Picks",
+          "help": "Show the whole \"Resistances\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Speed (Armour)",
+          "type": "switcher",
+          "id": "bPick146:Picks",
+          "help": "Show the whole \"Speed\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Moving while aiming (Armour)",
+          "type": "switcher",
+          "id": "bPick147:Picks",
+          "help": "Show the whole \"Moving while aiming\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Jumping (Armour)",
+          "type": "switcher",
+          "id": "bPick148:Picks",
+          "help": "Show the whole \"Jumping\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Slow time (Armour)",
+          "type": "switcher",
+          "id": "bPick149:Picks",
+          "help": "Show the whole \"Slow time\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Steady aim (Armour)",
+          "type": "switcher",
+          "id": "bPick150:Picks",
+          "help": "Show the whole \"Steady aim\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Damage (armour) (Armour)",
+          "type": "switcher",
+          "id": "bPick151:Picks",
+          "help": "Show the whole \"Damage (armour)\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Stealth (Armour)",
+          "type": "switcher",
+          "id": "bPick152:Picks",
+          "help": "Show the whole \"Stealth\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Seeing enemies (Armour)",
+          "type": "switcher",
+          "id": "bPick153:Picks",
+          "help": "Show the whole \"Seeing enemies\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Melee reactions (Armour)",
+          "type": "switcher",
+          "id": "bPick154:Picks",
+          "help": "Show the whole \"Melee reactions\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Avoiding hits (Armour)",
+          "type": "switcher",
+          "id": "bPick155:Picks",
+          "help": "Show the whole \"Avoiding hits\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Damaging auras (Armour)",
+          "type": "switcher",
+          "id": "bPick156:Picks",
+          "help": "Show the whole \"Damaging auras\" group.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Exploding kills (Armour)",
+          "type": "switcher",
+          "id": "bPick157:Picks",
+          "help": "Show the whole \"Exploding kills\" group.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }

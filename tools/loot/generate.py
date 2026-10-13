@@ -128,15 +128,17 @@ def write_spec(plan: list[dict], data: Path, ack: Path) -> Path:
               f'set | {e} | DATA\\Value | {LOOSE_VALUE[r["tier"]]}',
               f'set | {r["edid"]} | LNAM | @{e}',
               f'copy | @{costly[r["edid"]]} | co_{r["edid"]}_Unlocked']
-    sizes = pool_sizes(plan)
-    for kind in KINDS:
-        s.append(f'new | LVLI | {PRE}LL_Pool_{kind}')
-        s += [f'new | LVLI | {PRE}LL_Pool_{kind}_Part{i + 1}' for i in range(pool_parts(sizes[kind]))
-              if pool_parts(sizes[kind]) > 1]
+    hide = concise_hidden(p)
+    for chain in CHAINS:
+        sizes = pool_sizes([r for r in plan if chain or r['edid'] not in hide], plan)
+        for kind in KINDS:
+            s.append(f'new | LVLI | {PRE}LL_Pool_{kind}{chain}')
+            s += [f'new | LVLI | {PRE}LL_Pool_{kind}{chain}_Part{i + 1}' for i in range(pool_parts(sizes[kind]))
+                  if pool_parts(sizes[kind]) > 1]
+            for rate in RATE_LIST:
+                s += [f'new | LVLI | {PRE}LL_Gate_{kind}_{rate}{chain}', f'new | LVLI | {PRE}LL_Drop_{kind}_{rate}{chain}']
         for rate in RATE_LIST:
-            s += [f'new | LVLI | {PRE}LL_Gate_{kind}_{rate}', f'new | LVLI | {PRE}LL_Drop_{kind}_{rate}']
-    for rate in RATE_LIST:
-        s += [f'new | LVLI | {PRE}LL_Drop_Normal_{rate}', f'new | LVLI | {PRE}LL_Drop_Legendary_{rate}']
+            s += [f'new | LVLI | {PRE}LL_Drop_Normal_{rate}{chain}', f'new | LVLI | {PRE}LL_Drop_Legendary_{rate}{chain}']
     s += [f'prunerecords | {PRE}LL_',          # the single-rate lists from before drop rates became setting items
           f'new | PERK | {PRE}PERK_Loot',
           f'new | QUST | {PRE}QUST_Loot', f'set | {PRE}QUST_Loot | FULL | CLM Loot ({MAIN})',
@@ -163,6 +165,16 @@ def run_build(spec: Path, data: Path, ack: Path) -> None:
 
 
 MAX_LIST = 255     # a leveled list holds at most 255 entries (one-byte count)
+# Two drop chains (2.1 concise view): '' leaves out the legendaries the concise view hides, '_All' has every one; the
+# loot perk uses '_All' while the "Hidden legendaries drop too" setting is on.
+CHAINS = ('', '_All')
+
+
+def concise_hidden(p) -> set[str]:
+    sys.path.insert(0, str(REPO / 'tools' / 'config'))
+    import concise                     # not at import time: concise imports this module
+    return set(concise.hidden(p)) if p.by_edid('A1ALMSET_ShowAll') is not None else set()
+
 
 
 def pool_parts(n: int) -> int:
@@ -171,9 +183,10 @@ def pool_parts(n: int) -> int:
     return max(1, -(-n // MAX_LIST))
 
 
-def pool_sizes(plan: list[dict]) -> dict:
+def pool_sizes(rows: list[dict], plan: list[dict]) -> dict:
+    """rows: the legendaries that drop in this chain; plan: all of them (every family keeps its holotape)."""
     sizes = defaultdict(int)
-    for r in plan:
+    for r in rows:
         sizes[{'common': 'Common', 'uncommon': 'Uncommon', 'rare': 'Rare', 'OP': 'OP'}[r['tier']]] += 1
     sizes['Holotape'] = len({(r['kind'], r['family']) for r in plan})
     sizes['Catalyst'] = len(CATALYSTS)
@@ -238,50 +251,66 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
                 fv.data += struct.pack('<II', cat, 1)
         rec.subrecords[:] = subs
         rec.mark_dirty()
-    # pools
-    pools = {'Common': [], 'Uncommon': [], 'Rare': [], 'OP': [], 'Holotape': [], 'Catalyst': []}
-    for r in plan:
-        pools[{'common': 'Common', 'uncommon': 'Uncommon', 'rare': 'Rare', 'OP': 'OP'}[r['tier']]].append(
-            (ref(loose_edid(r['edid'])), 1))
-    for kind, fam in sorted({(r['kind'], r['family']) for r in plan}):
-        pools['Holotape'].append((ref(holotape_edid(kind, fam)), 1))
-    pools['Catalyst'] = [(ref(e), 1) for e, _, _ in CATALYSTS.values()]
-    drops = defaultdict(list)   # rate -> drop lists
-    for kind, items in pools.items():
-        n = pool_parts(len(items))
-        if n > 1:
-            parts = [f'{PRE}LL_Pool_{kind}_Part{i + 1}' for i in range(n)]
-            for i, part in enumerate(parts):
-                set_subs(p.by_edid(part), lvli(Subrecord, items[i::n], LVLF_ALL_LEVELS))
-            items = [(ref(part), 1) for part in parts]
-        set_subs(p.by_edid(f'{PRE}LL_Pool_{kind}'), lvli(Subrecord, items, LVLF_ALL_LEVELS))
+    # pools, per chain
+    hide = concise_hidden(p)
+    drops = defaultdict(list)   # (rate, chain) -> drop lists
+    for chain in CHAINS:
+        pools = {'Common': [], 'Uncommon': [], 'Rare': [], 'OP': [], 'Holotape': [], 'Catalyst': []}
+        for r in plan:
+            if chain or r['edid'] not in hide:
+                pools[{'common': 'Common', 'uncommon': 'Uncommon', 'rare': 'Rare', 'OP': 'OP'}[r['tier']]].append(
+                    (ref(loose_edid(r['edid'])), 1))
+        for kind, fam in sorted({(r['kind'], r['family']) for r in plan}):
+            pools['Holotape'].append((ref(holotape_edid(kind, fam)), 1))
+        pools['Catalyst'] = [(ref(e), 1) for e, _, _ in CATALYSTS.values()]
+        for kind, items in pools.items():
+            n = pool_parts(len(items))
+            if n > 1:
+                parts = [f'{PRE}LL_Pool_{kind}{chain}_Part{i + 1}' for i in range(n)]
+                for i, part in enumerate(parts):
+                    set_subs(p.by_edid(part), lvli(Subrecord, items[i::n], LVLF_ALL_LEVELS))
+                items = [(ref(part), 1) for part in parts]
+            set_subs(p.by_edid(f'{PRE}LL_Pool_{kind}{chain}'), lvli(Subrecord, items, LVLF_ALL_LEVELS))
+            for rate in RATE_LIST:
+                outer, inner = RATES[rate][kind]
+                gate, drop = f'{PRE}LL_Gate_{kind}_{rate}{chain}', f'{PRE}LL_Drop_{kind}_{rate}{chain}'
+                set_subs(p.by_edid(gate), lvli(Subrecord, [(ref(f'{PRE}LL_Pool_{kind}{chain}'), 1)], LVLF_ALL_LEVELS,
+                                               chance_none=inner))
+                set_subs(p.by_edid(drop), lvli(Subrecord, [(ref(gate), 1)], LVLF_ALL_LEVELS, chance_none=outer))
+                drops[(rate, chain)].append(ref(drop))
         for rate in RATE_LIST:
-            outer, inner = RATES[rate][kind]
-            gate, drop = f'{PRE}LL_Gate_{kind}_{rate}', f'{PRE}LL_Drop_{kind}_{rate}'
-            set_subs(p.by_edid(gate), lvli(Subrecord, [(ref(f'{PRE}LL_Pool_{kind}'), 1)], LVLF_ALL_LEVELS,
-                                           chance_none=inner))
-            set_subs(p.by_edid(drop), lvli(Subrecord, [(ref(gate), 1)], LVLF_ALL_LEVELS, chance_none=outer))
-            drops[rate].append(ref(drop))
-    for rate in RATE_LIST:
-        set_subs(p.by_edid(f'{PRE}LL_Drop_Normal_{rate}'),
-                 lvli(Subrecord, [(d, 1) for d in drops[rate]], LVLF_ALL_LEVELS | LVLF_USE_ALL))
-        set_subs(p.by_edid(f'{PRE}LL_Drop_Legendary_{rate}'),
-                 lvli(Subrecord, [(d, LEGENDARY_ROLLS) for d in drops[rate]],
-                      LVLF_ALL_LEVELS | LVLF_USE_ALL | LVLF_EACH_IN_COUNT))
-    # perk: hidden, one rank; per drop rate two "Add Leveled List On Death" entries (normal, legendary target)
+            set_subs(p.by_edid(f'{PRE}LL_Drop_Normal_{rate}{chain}'),
+                     lvli(Subrecord, [(d, 1) for d in drops[(rate, chain)]], LVLF_ALL_LEVELS | LVLF_USE_ALL))
+            set_subs(p.by_edid(f'{PRE}LL_Drop_Legendary_{rate}{chain}'),
+                     lvli(Subrecord, [(d, LEGENDARY_ROLLS) for d in drops[(rate, chain)]],
+                          LVLF_ALL_LEVELS | LVLF_USE_ALL | LVLF_EACH_IN_COUNT))
+    # perk: hidden, one rank; per chain and drop rate two "Add Leveled List On Death" entries (normal, legendary)
     rate_conds = {'Low': setting('low', True),
                   'Standard': setting('low', False) + setting('high', False),
                   'Higher': setting('low', False) + setting('high', True)}
     subs = [Subrecord('FULL', f'CLM Loot ({MAIN})'.encode('cp1252') + b'\0'), Subrecord('DESC', b'\0'),
             Subrecord('DATA', bytes([0, 0, 1, 0, 1]))]  # trait, level, ranks, playable, hidden
-    entries = [(rate, legendary, f'{PRE}LL_Drop_{"Legendary" if legendary else "Normal"}_{rate}')
-               for rate in RATE_LIST for legendary in (0, 1)]
-    for entry_id, (rate, legendary, drop) in enumerate(entries):
+    entries = [(rate, legendary, chain, f'{PRE}LL_Drop_{"Legendary" if legendary else "Normal"}_{rate}{chain}')
+               for chain in CHAINS for rate in RATE_LIST for legendary in (0, 1)]
+    hidden_on = 'loothidden' in ITEMS
+
+    def chain_conds(everything: bool) -> list[bytes]:
+        """The full chain while "Hidden legendaries drop too" or "Show all legendaries" is on (as before 2.1)."""
+        keys = ('loothidden', 'all')
+        if not everything:
+            return [c for k in keys for c in setting(k, False)]
+        pairs = [(FN_GET_ITEM_COUNT, ref(ITEMS[k][0])) for k in keys] + [(74, ref(setting_global(k))) for k in keys]
+        return [ctda((OP_GE if fn == FN_GET_ITEM_COUNT else OP_EQ) | (FLAG_OR if i < len(pairs) - 1 else 0), 1.0, fn, x)
+                for i, (fn, x) in enumerate(pairs)]
+    for entry_id, (rate, legendary, chain, drop) in enumerate(entries):
+        if chain and not hidden_on:
+            continue
         subs += [Subrecord('PRKE', bytes([2, 0, 0])),           # entry point, rank 0, priority 0
                  Subrecord('DATA', bytes([9, 8, 2])),           # Add Leveled List On Death, Add Leveled List, 2 tabs
                  Subrecord('PRKC', b'\0'),                      # tab 0: perk owner (the player)
                  *[Subrecord('CTDA', c) for c in setting('loot', True)],
                  *[Subrecord('CTDA', c) for c in rate_conds[rate]],
+                 *[Subrecord('CTDA', c) for c in (chain_conds(bool(chain)) if hidden_on else [])],
                  Subrecord('PRKC', b'\1'),                      # tab 1: the target
                  Subrecord('CTDA', ctda(OP_EQ, float(legendary), FN_HAS_KEYWORD, ENC_TYPE_LEGENDARY)),
                  Subrecord('EPFT', b'\3'), Subrecord('EPFB', struct.pack('<H', entry_id)),

@@ -9,6 +9,8 @@ new | GLOB | A1ALMSETG_HideSpawn
 new | GLOB | A1ALMSETG_DropLow
 new | GLOB | A1ALMSETG_DropHigh
 new | GLOB | A1ALMSETG_PickerMode
+new | GLOB | A1ALMSETG_ShowAll
+new | GLOB | A1ALMSETG_LootHidden
 new | GLOB | A1ALMPICKG_Armor_BouncingAndJedi
 new | GLOB | A1ALMPICKG_Armor_Brawlers
 new | GLOB | A1ALMPICKG_Armor_CapShowerin

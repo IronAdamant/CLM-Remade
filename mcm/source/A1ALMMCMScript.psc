@@ -5,7 +5,7 @@ sets the globals, and turns any setting / pick items the player carries into the
 PrepareUninstall turns everything back into items before the add-on is removed.}
 
 MiscObject[] Property SettingItems Auto Const Mandatory
-{In the order: free, loot, op, variants, noperk, nospawn, low, high, picker}
+{In the order: free, loot, op, variants, noperk, nospawn, low, high, picker, all, loothidden}
 GlobalVariable[] Property SettingGlobals Auto Const Mandatory
 {Same order}
 GlobalVariable[] Property PickGlobals Auto Const Mandatory
@@ -111,6 +111,8 @@ Function Sync()
 	Put("bHidePerk:Settings", On(4), start)
 	Put("bHideSpawn:Settings", On(5), start)
 	Put("bPicker:Settings", On(8), start)
+	Put("bShowAll:Settings", On(9), start)
+	Put("bLootHidden:Settings", On(10), start)
 	Put("bHolotapes:Settings", A1ALMHOLOTAPES.GetValue() != 0, start)
 	int i = 0
 	While i < PickGlobals.Length && changes == start
@@ -162,6 +164,10 @@ Function OnMCMSettingChange(string asModName, string asID)
 		SetSetting(5, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bPicker:Settings"
 		SetSetting(8, MCM.GetModSettingBool(ModName, asID))
+	ElseIf asID == "bShowAll:Settings"
+		SetSetting(9, MCM.GetModSettingBool(ModName, asID))
+	ElseIf asID == "bLootHidden:Settings"
+		SetSetting(10, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHolotapes:Settings"
 		SetHolotapes(MCM.GetModSettingBool(ModName, asID))
 	Else
@@ -509,6 +515,88 @@ Form Function PickItem(int aiIndex)
 		Return Game.GetFormFromFile(0x4AC8DA, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 117
 		Return Game.GetFormFromFile(0x4ACAF9, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 118
+		Return Game.GetFormFromFile(0x4ACF7B, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 119
+		Return Game.GetFormFromFile(0x4ACF7E, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 120
+		Return Game.GetFormFromFile(0x4ACF81, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 121
+		Return Game.GetFormFromFile(0x4ACF84, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 122
+		Return Game.GetFormFromFile(0x4ACF87, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 123
+		Return Game.GetFormFromFile(0x4ACF8A, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 124
+		Return Game.GetFormFromFile(0x4ACF8D, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 125
+		Return Game.GetFormFromFile(0x4ACF90, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 126
+		Return Game.GetFormFromFile(0x4ACF93, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 127
+		Return Game.GetFormFromFile(0x4ACF96, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 128
+		Return Game.GetFormFromFile(0x4ACF99, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 129
+		Return Game.GetFormFromFile(0x4ACF9C, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 130
+		Return Game.GetFormFromFile(0x4ACF9F, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 131
+		Return Game.GetFormFromFile(0x4ACFA2, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 132
+		Return Game.GetFormFromFile(0x4ACFA5, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 133
+		Return Game.GetFormFromFile(0x4ACFA8, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 134
+		Return Game.GetFormFromFile(0x4ACFAB, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 135
+		Return Game.GetFormFromFile(0x4ACFAE, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 136
+		Return Game.GetFormFromFile(0x4ACFB1, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 137
+		Return Game.GetFormFromFile(0x4ACFB4, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 138
+		Return Game.GetFormFromFile(0x4ACFB7, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 139
+		Return Game.GetFormFromFile(0x4ACFBA, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 140
+		Return Game.GetFormFromFile(0x4ACFBD, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 141
+		Return Game.GetFormFromFile(0x4ACFC0, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 142
+		Return Game.GetFormFromFile(0x4ACFC3, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 143
+		Return Game.GetFormFromFile(0x4ACFC6, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 144
+		Return Game.GetFormFromFile(0x4ACFC9, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 145
+		Return Game.GetFormFromFile(0x4ACFCC, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 146
+		Return Game.GetFormFromFile(0x4ACFCF, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 147
+		Return Game.GetFormFromFile(0x4ACFD2, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 148
+		Return Game.GetFormFromFile(0x4ACFD5, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 149
+		Return Game.GetFormFromFile(0x4ACFD8, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 150
+		Return Game.GetFormFromFile(0x4ACFDB, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 151
+		Return Game.GetFormFromFile(0x4ACFDE, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 152
+		Return Game.GetFormFromFile(0x4ACFE1, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 153
+		Return Game.GetFormFromFile(0x4ACFE7, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 154
+		Return Game.GetFormFromFile(0x4ACFEA, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 155
+		Return Game.GetFormFromFile(0x4ACFED, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 156
+		Return Game.GetFormFromFile(0x4ACFF0, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 157
+		Return Game.GetFormFromFile(0x4ACFF3, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 158
+		Return Game.GetFormFromFile(0x4ACFF6, "Custom Legendary Modifications Remade.esp")
 	EndIf
 	Return None
 EndFunction

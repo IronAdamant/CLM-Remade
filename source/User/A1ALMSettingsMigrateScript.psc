@@ -3,7 +3,7 @@ Scriptname A1ALMSettingsMigrateScript extends Quest
 into setting items, once. New games start with the globals at -1 ("never configured") and get nothing.}
 
 MiscObject[] Property Settings Auto Const Mandatory
-{In the order: free, loot, op, variants, noperk, nospawn, low, high, picker}
+{In the order: free, loot, op, variants, noperk, nospawn, low, high, picker, all, loothidden}
 GlobalVariable Property A1ALMAFREE Auto Const Mandatory
 GlobalVariable Property A1ALMABALANCED Auto Const Mandatory
 GlobalVariable Property A1ALMAVAR Auto Const Mandatory

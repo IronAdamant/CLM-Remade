@@ -3108,10 +3108,7 @@ DamageTypeValues ADD dtFire [DMGT:00060A82] / 1.000000
 ### CLM: CQC  `A1ALMOMOD_Legendary_Weapon_CQC`
 > Every shot becomes a three-round burst: two more rounds follow, each using one round of your ammo. The extra rounds fire the gun's plain projectile, without its mods or legendary effect.
 ```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_CQC "CLM: CQC" [ENCH:084ACF28] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_CQC (, )
-    A1ALMMGEF_Constant_Effect_Weapon_CQC: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      script A1ALMMGEF_BurstFireEffect
+Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_CQC "CLM: CQC" [ENCH:084ACF28] / 431
 ```
 
 ### CLM: Carbonatin'  `A1ALMOMOD_Legendary_Weapon_Carbonatin`
@@ -3176,10 +3173,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Chillling "CLM: Chi
 ### CLM: Cinematic Excellence  `A1ALMOMOD_Legendary_Weapon_CinematicExcellence`
 > One kill in ten plays out in slow motion, seen from the third-person camera for two seconds before it returns to first person. (Fallout 4 cannot start a real kill camera outside V.A.T.S.; this is the closest.)
 ```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence "CLM: Cinematic Excellence" [ENCH:084ACF23] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence (, )
-    A1ALMMGEF_Constant_Effect_Weapon_CinematicExcellence: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      script A1ALMMGEF_OnKillArmourEffect
+Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence "CLM: Cinematic Excellence" [ENCH:084ACF23] / 431
 ```
 
 ### CLM: Commando's  `A1ALMOMOD_Legendary_Weapon_Commandos`
@@ -4700,14 +4694,8 @@ DamageTypeValues SET dtEnergy [DMGT:00060A81] / 666.000000
 ### CLM: DragonBlade  `A1ALMOMOD_Legendary_Weapon_DragonBlade`
 > Genji's dragonblade: +200 damage per hit. When you swing at an enemy you are facing up to 20 metres away, you dash to it (at most every 2 seconds), and ranged attacks ricochet back while you block or sprint. (Papyrus cannot read the crosshair, so the dash goes to the nearest enemy ahead of you.)
 ```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade "CLM: DragonBlade" [ENCH:084ACF2D] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade (, )
-    A1ALMMGEF_Constant_Effect_Weapon_DragonBlade: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      script A1ALMMGEF_DragonDashEffect
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bouncing_BlocknSprint: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Mod Ricochet Chance / Set Value
-      values: 100.000000
-Enchantments ADD 200.000000 / 0.000000
+Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade "CLM: DragonBlade" [ENCH:084ACF2D] / 431
+Speed ADD 200.000000 / 0.000000
 ```
 
 ### CLM: Prometheus' Fiery  `A1ALMOMOD_Legendary_Weapon_Elements_Base_Fire`

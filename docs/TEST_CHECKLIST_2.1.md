@@ -112,6 +112,18 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Advanced Titanium** (changed; FL4CKTROOPER): reflects 5% of melee damage, on top of the 5% damage cut.
 - [ ] **PlayStation perk magazines** (PlayStation build only): `python tools/release/playstation.py --test-install`, then chemistry station > CLM Perks: make a magazine, read it, the perk is added; the recipe disappears once you have it. Restore with `--test-restore`.
 
+## Concise view
+
+- [ ] **New game**: the workbench shows one legendary per group (e.g. Hurtin' (50%) but not Hurtin' (25%) / (100%); Lobbin' (Frag Grenade) but no mines). The plain Random spawns show, Legendary/Boss spawns do not.
+- [ ] **CLM Setting: Show all legendaries** (chemistry station, CLM Settings): everything is back; drop it and the concise view returns.
+- [ ] **Old save** (made with 2.0): after loading, "Show all legendaries" is in the inventory and nothing disappeared (PC/Xbox).
+- [ ] **CLM Group** item (chemistry station, CLM Groups), e.g. "Grenades and mines (Weapon)": the whole group shows; its description lists what it adds. The group items are not offered while Show all is carried.
+- [ ] **Holotape** (PC/Xbox): "Show all legendaries" / "Concise view" entries switch it; loot page: "Hidden legendaries drop too" / "Only the concise view drops".
+- [ ] **F4SE menu**: Settings page "Show all legendaries" and "Hidden legendaries drop too"; "Concise view" page with a switch per group; switches survive a save/load.
+- [ ] **Loot mode, default**: hidden legendaries never drop and their holotape does not unlock them; with "Hidden legendaries drop too" (or Show all) they drop and unlock.
+- [ ] **Picker mode** still works on top (a family picked shows only its concise members unless Show all / its group is on).
+- [ ] An item already carrying a hidden legendary keeps it.
+
 ## Changed existing legendaries
 
 ### Moved to OP: recipe hidden without Show OP, visible with it, owned gear still works

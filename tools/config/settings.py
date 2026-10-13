@@ -49,10 +49,16 @@ ITEMS = {
     'picker':   ('A1ALMSET_PickerMode', 'CLM Setting: Picker mode',
                  'The workbench shows only the legendary families you pick here, under the CLM Armour, Spawns and '
                  'Weapon categories (tools/config/picker.py).'),
+    # 2.1 concise view (tools/config/concise.py): appended, so the earlier keys keep their array positions
+    'all':      ('A1ALMSET_ShowAll', 'CLM Setting: Show all legendaries',
+                 'Show every legendary, as before 2.1. Without it the workbench shows one legendary per group of similar '
+                 'effects; craft a "CLM Group" item (category CLM Groups) to show one whole group.'),
+    'loothidden': ('A1ALMSET_LootHidden', 'CLM Setting: Hidden legendaries drop too',
+                   'Loot mode: the legendaries the concise view hides can drop and be crafted too.'),
 }
 # mutually exclusive settings: crafting one takes the other back
 EXCLUSIVE = {'free': 'loot', 'loot': 'free', 'low': 'high', 'high': 'low'}
-NEEDS = {'low': 'loot', 'high': 'loot'}   # offered at the chemistry station only with this setting carried
+NEEDS = {'low': 'loot', 'high': 'loot', 'loothidden': 'loot'}   # offered at the chemistry station only with this setting carried
 OLD = {'A1ALMAFREE', 'A1ALMAPERK', 'A1ALMASPAWN', 'A1ALMAVAR', 'A1ALMABALANCED', 'A1ALMAWPN'}
 
 # holotape: (item ID, text, action [(key, add?)], shown when [(key, carried?)] - any one true)
@@ -70,18 +76,24 @@ CONFIG_MENU = [
     (11, 'Show spawning legendaries', [('nospawn', False)], [('nospawn', True)]),
     (13, 'Picker mode - show only the families picked at a chemistry station', [('picker', True)], [('picker', False)]),
     (14, 'Picker mode off - show every family', [('picker', False)], [('picker', True)]),
+    (15, 'Show all legendaries (as before 2.1)', [('all', True)], [('all', False)]),
+    (16, 'Concise view - one legendary per group of similar effects', [('all', False)], [('all', True)]),
 ]
 RATE_MENU = [
     (1, 'Low - extremely rare drops', [('low', True), ('high', False)], [('low', False)]),
     (2, 'Standard - the intended rate', [('low', False), ('high', False)], [('low', True), ('high', True)]),
     (3, 'Higher - generous drops', [('high', True), ('low', False)], [('high', False)]),
+    (4, 'Hidden legendaries drop too', [('loothidden', True)], [('loothidden', False)]),
+    (5, 'Only the concise view drops', [('loothidden', False)], [('loothidden', True)]),
 ]
 SUBMENU_SHOWN = {(CONFIG_TERM, 12): [('loot', True)]}   # the drop-rate page: only in loot mode
 CONFIG_WELCOME = ('Welcome to the CLM Config Holotape! Settings are items you carry (weightless, under Misc): this '
                   'holotape gives and takes them for you, or craft them at any chemistry station under "CLM Settings". '
                   'With none, you get Costly crafting, Balanced (no OP legendaries) and no variants. In Loot mode '
                   'legendaries drop from enemies (starred ones drop far more); carry a CLM holotape to craft its '
-                  'family; OP legendaries need a Legendary Core.')
+                  'family; OP legendaries need a Legendary Core. The workbench shows one legendary per group of similar '
+                  'effects (the concise view): "Show all legendaries" shows every one, as before 2.1, and "CLM Group" '
+                  'items (chemistry station, CLM Groups) show one whole group.')
 ITEM_SIGS = {'ITXT', 'RNAM', 'ANAM', 'ITID', 'TNAM', 'UNAM', 'VNAM', 'CTDA', 'CIS1', 'CIS2', 'INAM', 'SNAM', 'BSIZ'}
 FN_GET_ITEM_COUNT, FN_GET_GLOBAL_VALUE = 47, 74
 OP_EQ, OP_GE, FLAG_OR = 0, 3 << 5, 1

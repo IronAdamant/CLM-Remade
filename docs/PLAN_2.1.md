@@ -53,6 +53,10 @@ Punch (fixed in 2.0).
   PlayStation perk magazines. Plugin now 660 legendaries in 118 families; FO4Edit 0 errors. Loot pools over 255
   entries are now split into equal parts (`tools/loot/generate.py`; the OP pool reached 256).
 - In-game test checklist: `docs/TEST_CHECKLIST_2.1.md`.
+- Concise view (2026-10-14, `docs/CONCISE_VIEW_PLAN.md`, `tools/config/concise.py`): one balanced legendary per
+  group of similar effects; Show all, group items, hidden-loot setting, existing saves keep everything (PC/Xbox).
+  Fixed on the way: CQC, DragonBlade and Cinematic Excellence were built as armour mods (their template, Critically
+  Concentratin', is one); they are weapon mods now. Settings texts still to rewrite.
 
 Author's decisions (2026-10-13): explosive conversions keep their fire rate (no halving); the Fisto's stacking fix
 goes ahead; the OP list is accepted, measured against the base game (below); CLM may design and build its own

@@ -37,6 +37,7 @@ REPO = HERE.parents[1]
 sys.path.insert(0, str(HERE))
 from settings import ITEMS, ctda, OP_EQ, MCM_GLOBAL, setting_global  # noqa: E402
 from picker import CATEGORIES, load_families, selector, pick_global  # noqa: E402
+import concise  # noqa: E402
 
 MAIN = 'Custom Legendary Modifications Remade.esp'
 ADDON = 'CLM - MCM.esp'
@@ -83,7 +84,7 @@ def switch(text, sid, help_):
     return {'text': text, 'type': 'switcher', 'id': sid, 'help': help_, 'valueOptions': {'sourceType': 'ModSettingBool'}}
 
 
-def config_json(perks, picks, fams, quest_id: int) -> dict:
+def config_json(perks, picks, fams, quest_id: int, groups=()) -> dict:
     settings = [
         {'text': "<font color='#AAAAAA'>CLM's settings and Legendary Picker live here instead of on holotapes and "
                  "\"CLM Setting\" / \"CLM Pick\" items: nothing to carry. (Items you already had are turned into "
@@ -96,7 +97,11 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
         {'text': 'Loot mode drop rate', 'type': 'dropdown', 'id': 'iDropRate:Settings',
          'help': 'How often loot mode drops legendaries. Standard: common 3%, uncommon 1%, rare 0.3%, OP 0.1% per kill.',
          'valueOptions': {'options': ['Low', 'Standard', 'Higher'], 'sourceType': 'ModSettingInt'}},
+        switch('Hidden legendaries drop too', 'bLootHidden:Settings', 'Loot mode: the legendaries the concise view '
+               'hides can drop and be crafted too.'),
         {'text': 'What the workbench shows', 'type': 'section'},
+        switch('Show all legendaries', 'bShowAll:Settings', 'Show every legendary, as before 2.1. Off: the concise '
+               'view, one legendary per group of similar effects (turn on single groups in the Concise view page).'),
         switch('Show OP legendaries', 'bShowOP:Settings', 'Also show the overpowered legendaries.'),
         switch('Show variants', 'bShowVariants:Settings', 'Show every strength and variant of each legendary.'),
         switch('Hide perk-style legendaries', 'bHidePerk:Settings', 'Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...).'),
@@ -123,8 +128,18 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
             label = n.removeprefix('Spawn: ')
             picker.append(switch(label, f'bPick{i}:Picks', f'Show the {len(f["rows"])} {n} legendaries '
                                  f'({"weapon" if kind == "weapon" else "armour"}) while Picker mode is on.'))
+    view = [{'text': "<font color='#AAAAAA'>The workbench shows one legendary per group of similar effects. Turn a group "
+                     'on to show all of it, or turn on Show all legendaries (Settings page) for everything.</font>',
+             'type': 'text', 'html': True}]
+    for kind in ('weapon', 'armor'):
+        mine = [(i, g) for i, (k, g) in enumerate(groups) if k == kind]
+        if mine:
+            view.append({'text': 'Weapon groups' if kind == 'weapon' else 'Armour groups', 'type': 'section'})
+            view += [switch(concise.label(kind, g).removeprefix('CLM Group: '), f'bPick{len(picks) + i}:Picks',
+                            f'Show the whole "{g}" group.') for i, g in mine]
     pages = [{'pageDisplayName': 'Settings', 'content': settings},
-             {'pageDisplayName': 'Legendary Picker', 'content': picker}]
+             {'pageDisplayName': 'Legendary Picker', 'content': picker},
+             {'pageDisplayName': 'Concise view', 'content': view}]
     for page in PERK_TERMS.values():
         content = [{'text': "<font color='#AAAAAA'>Add or remove the perks of CLM's legendaries directly, without "
                             'wearing the armour (the perk holotape\'s options).</font>', 'type': 'text', 'html': True}]
@@ -146,13 +161,14 @@ def config_json(perks, picks, fams, quest_id: int) -> dict:
                         {'text': 'Settings: crafting mode, OP legendaries, variants, Picker mode, loot drop rate.',
                          'type': 'text'},
                         {'text': 'Legendary Picker: the families the workbench shows in Picker mode.', 'type': 'text'},
+                        {'text': 'Concise view: show whole groups of similar legendaries.', 'type': 'text'},
                         {'text': 'CLM Perks / Cheat Perks: add or remove the perks of the perk holotape.', 'type': 'text'}],
             'pages': pages}
 
 
 def settings_ini(perks, picks) -> str:
     lines = ['[Settings]', 'iCrafting=0', 'iDropRate=1', 'bShowOP=0', 'bShowVariants=0', 'bHidePerk=0', 'bHideSpawn=0',
-             'bPicker=0', 'bHolotapes=0', '', '[Picks]'] + [f'bPick{i}=0' for i in range(len(picks))] + \
+             'bPicker=0', 'bHolotapes=0', 'bShowAll=0', 'bLootHidden=0', '', '[Picks]'] + [f'bPick{i}=0' for i in range(len(picks))] + \
         ['', '[Perks]'] + [f'bPerk{i}=0' for i in range(len(perks))]
     return '\n'.join(lines) + '\n'
 
@@ -275,6 +291,8 @@ Function Sync()
 	Put("bHidePerk:Settings", On({k("noperk")}), start)
 	Put("bHideSpawn:Settings", On({k("nospawn")}), start)
 	Put("bPicker:Settings", On({k("picker")}), start)
+	Put("bShowAll:Settings", On({k("all")}), start)
+	Put("bLootHidden:Settings", On({k("loothidden")}), start)
 	Put("bHolotapes:Settings", {GLOBAL}.GetValue() != 0, start)
 	int i = 0
 	While i < PickGlobals.Length && changes == start
@@ -326,6 +344,10 @@ Function OnMCMSettingChange(string asModName, string asID)
 		SetSetting({k("nospawn")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bPicker:Settings"
 		SetSetting({k("picker")}, MCM.GetModSettingBool(ModName, asID))
+	ElseIf asID == "bShowAll:Settings"
+		SetSetting({k("all")}, MCM.GetModSettingBool(ModName, asID))
+	ElseIf asID == "bLootHidden:Settings"
+		SetSetting({k("loothidden")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHolotapes:Settings"
 		SetHolotapes(MCM.GetModSettingBool(ModName, asID))
 	Else
@@ -492,7 +514,8 @@ def main():
     perks = perk_list(Plugin.load(data / MAIN))
     fams = load_families()
     picks = sorted(fams)
-    print(f'{len(perks)} perks, {len(picks)} picks')
+    groups = concise.groups()      # after the picks: bPick<len(picks) + i> are the concise view's groups
+    print(f'{len(perks)} perks, {len(picks)} picks, {len(groups)} groups')
 
     # 1. records: the holotape switch in the main plugin, the add-on's quest
     obj = lambda edids: ','.join('@' + e for e in edids)
@@ -503,7 +526,8 @@ def main():
          f'propremove | {QUEST} | {SCRIPT} | Settings',
          f'prop | {QUEST} | {SCRIPT} | SettingItems | Array of Object | {obj(ITEMS[k][0] for k in KEYS)}',
          f'prop | {QUEST} | {SCRIPT} | SettingGlobals | Array of Object | {obj(setting_global(k) for k in KEYS)}',
-         f'prop | {QUEST} | {SCRIPT} | PickGlobals | Array of Object | {obj(pick_global(*f) for f in picks)}',
+         f'prop | {QUEST} | {SCRIPT} | PickGlobals | Array of Object | '
+         f'{obj([pick_global(*f) for f in picks] + [concise.glob(*g) for g in groups])}',
          f'prop | {QUEST} | {SCRIPT} | Perks | Array of Object | {obj(e for _, e, _ in perks)}',
          f'prop | {QUEST} | {SCRIPT} | Holotapes | Array of Object | {obj(HOLOTAPES)}',
          f'prop | {QUEST} | {SCRIPT} | {GLOBAL} | Object | @{GLOBAL}',
@@ -541,7 +565,7 @@ def main():
     p.save(data / MAIN)
 
     # 3. scripts (pick items are found by plugin and local ID)
-    pick_items = [(MAIN, p.by_edid(selector(*f)).formid & 0xFFFFFF) for f in picks]
+    pick_items = [(MAIN, p.by_edid(selector(*f)).formid & 0xFFFFFF) for f in picks] +         [(MAIN, p.by_edid(concise.item(*g)).formid & 0xFFFFFF) for g in groups]
     (REPO / 'source' / 'User' / 'A1ALMQuestConfigInit.psc').write_text(
         CONFIG_INIT.format(fid=glob.formid & 0xFFFFFF, main=MAIN), encoding='utf8')
     (OUT / 'source').mkdir(parents=True, exist_ok=True)
@@ -556,16 +580,16 @@ def main():
     quest_id = Plugin.load(data / ADDON).by_edid(QUEST).formid & 0xFFF
     cfg = OUT / 'data' / 'MCM' / 'Config' / MOD
     cfg.mkdir(parents=True, exist_ok=True)
-    (cfg / 'config.json').write_text(json.dumps(config_json(perks, picks, fams, quest_id), indent=2, ensure_ascii=False),
+    (cfg / 'config.json').write_text(json.dumps(config_json(perks, picks, fams, quest_id, groups), indent=2, ensure_ascii=False),
                                      encoding='utf8')
-    (cfg / 'settings.ini').write_text(settings_ini(perks, picks), encoding='utf8')
+    (cfg / 'settings.ini').write_text(settings_ini(perks, picks + groups), encoding='utf8')
     shutil.copy(data / ADDON, OUT / 'data' / ADDON)
     for f in (OUT / 'data').rglob('*'):
         if f.is_file() and f.name != ADDON:
             dest = data / f.relative_to(OUT / 'data')
             dest.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy(f, dest)
-    print(f'{ADDON}: menu with {len(perks)} perks and {len(picks)} picks written to mcm/data and {data}')
+    print(f'{ADDON}: menu with {len(perks)} perks, {len(picks)} picks and {len(groups)} groups written to mcm/data and {data}')
 
 
 if __name__ == '__main__':
