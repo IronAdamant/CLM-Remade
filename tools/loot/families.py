@@ -47,6 +47,9 @@ SPAWN_CLASS = {
     'HermitCrab': 'Far Harbor creatures', 'Trapper': 'Far Harbor creatures',
     'GatorClaw': 'Nuka-World creatures', 'Ghoulrilla': 'Nuka-World creatures', 'NukaLurk': 'Nuka-World creatures',
     'RandomRustDevil': 'Automatron robots',
+    # 2.1: the 2016 spawns that went missing
+    'Spawning_Minutemen': 'Minutemen', 'Spawning_ChildrenOfAtom': 'Children of Atom', 'RoboBrain': 'Robots',
+    'RustDevil': 'Automatron robots',
 }
 
 

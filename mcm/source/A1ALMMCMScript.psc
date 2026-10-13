@@ -278,224 +278,236 @@ Form Function PickItem(int aiIndex)
 	ElseIf aiIndex == 1
 		Return Game.GetFormFromFile(0x4AC810, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 2
-		Return Game.GetFormFromFile(0x4AC812, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACF70, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 3
-		Return Game.GetFormFromFile(0x4AC814, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC812, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 4
-		Return Game.GetFormFromFile(0x4AC816, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC814, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 5
-		Return Game.GetFormFromFile(0x4AC818, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC816, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 6
-		Return Game.GetFormFromFile(0x4AC81A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC818, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 7
-		Return Game.GetFormFromFile(0x4AC81C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC81A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 8
-		Return Game.GetFormFromFile(0x4AC81E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC81C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 9
-		Return Game.GetFormFromFile(0x4AC820, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC81E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 10
-		Return Game.GetFormFromFile(0x4AC822, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC820, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 11
-		Return Game.GetFormFromFile(0x4AC824, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACDEB, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 12
-		Return Game.GetFormFromFile(0x4AC826, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC822, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 13
-		Return Game.GetFormFromFile(0x4AC828, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC824, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 14
-		Return Game.GetFormFromFile(0x4AC82A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC826, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 15
-		Return Game.GetFormFromFile(0x4AC82C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC828, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 16
-		Return Game.GetFormFromFile(0x4AC82E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC82A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 17
-		Return Game.GetFormFromFile(0x4AC830, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC82C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 18
-		Return Game.GetFormFromFile(0x4AC832, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC82E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 19
-		Return Game.GetFormFromFile(0x4AC834, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC830, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 20
-		Return Game.GetFormFromFile(0x4AC836, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC832, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 21
-		Return Game.GetFormFromFile(0x4AC838, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC834, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 22
-		Return Game.GetFormFromFile(0x4AC83A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC836, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 23
-		Return Game.GetFormFromFile(0x4AC83C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC838, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 24
-		Return Game.GetFormFromFile(0x4AC83E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC83A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 25
-		Return Game.GetFormFromFile(0x4AC840, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACDED, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 26
-		Return Game.GetFormFromFile(0x4AC842, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC83C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 27
-		Return Game.GetFormFromFile(0x4AC844, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC83E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 28
-		Return Game.GetFormFromFile(0x4AC846, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC840, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 29
-		Return Game.GetFormFromFile(0x4AC848, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC842, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 30
-		Return Game.GetFormFromFile(0x4AC84A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC844, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 31
-		Return Game.GetFormFromFile(0x4AC84C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC846, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 32
-		Return Game.GetFormFromFile(0x4AC84E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACDEF, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 33
-		Return Game.GetFormFromFile(0x4AC850, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC848, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 34
-		Return Game.GetFormFromFile(0x4AC852, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC84A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 35
-		Return Game.GetFormFromFile(0x4AC854, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC84C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 36
-		Return Game.GetFormFromFile(0x4AC856, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC84E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 37
-		Return Game.GetFormFromFile(0x4AC858, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC850, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 38
-		Return Game.GetFormFromFile(0x4AC85A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC852, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 39
-		Return Game.GetFormFromFile(0x4AC85C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC854, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 40
-		Return Game.GetFormFromFile(0x4AC85E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC856, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 41
-		Return Game.GetFormFromFile(0x4AC860, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC858, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 42
-		Return Game.GetFormFromFile(0x4AC862, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC85A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 43
-		Return Game.GetFormFromFile(0x4AC864, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC85C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 44
-		Return Game.GetFormFromFile(0x4AC866, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC85E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 45
-		Return Game.GetFormFromFile(0x4AC868, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC860, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 46
-		Return Game.GetFormFromFile(0x4AC86A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC862, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 47
-		Return Game.GetFormFromFile(0x4AC86C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC864, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 48
-		Return Game.GetFormFromFile(0x4AC86E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC866, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 49
-		Return Game.GetFormFromFile(0x4AC870, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC868, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 50
-		Return Game.GetFormFromFile(0x4AC872, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC86A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 51
-		Return Game.GetFormFromFile(0x4AC874, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC86C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 52
-		Return Game.GetFormFromFile(0x4AC876, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC86E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 53
-		Return Game.GetFormFromFile(0x4AC878, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC870, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 54
-		Return Game.GetFormFromFile(0x4AC87A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC872, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 55
-		Return Game.GetFormFromFile(0x4AC87C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC874, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 56
-		Return Game.GetFormFromFile(0x4AC87E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC876, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 57
-		Return Game.GetFormFromFile(0x4AC880, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC878, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 58
-		Return Game.GetFormFromFile(0x4AC882, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC87A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 59
-		Return Game.GetFormFromFile(0x4AC884, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC87C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 60
-		Return Game.GetFormFromFile(0x4AC886, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC87E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 61
-		Return Game.GetFormFromFile(0x4AC888, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC880, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 62
-		Return Game.GetFormFromFile(0x4ACA10, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC882, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 63
-		Return Game.GetFormFromFile(0x4AC88A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC884, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 64
-		Return Game.GetFormFromFile(0x4AC88C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC886, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 65
-		Return Game.GetFormFromFile(0x4AC88E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC888, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 66
-		Return Game.GetFormFromFile(0x4AC890, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACA10, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 67
-		Return Game.GetFormFromFile(0x4ACA11, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC88A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 68
-		Return Game.GetFormFromFile(0x4AC892, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC88C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 69
-		Return Game.GetFormFromFile(0x4AC894, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC88E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 70
-		Return Game.GetFormFromFile(0x4AC896, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC890, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 71
-		Return Game.GetFormFromFile(0x4ACAF8, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACA11, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 72
-		Return Game.GetFormFromFile(0x4AC898, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC892, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 73
-		Return Game.GetFormFromFile(0x4AC89A, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC894, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 74
-		Return Game.GetFormFromFile(0x4AC89C, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC896, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 75
-		Return Game.GetFormFromFile(0x4AC89E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACAF8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 76
-		Return Game.GetFormFromFile(0x4AC8A0, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC898, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 77
-		Return Game.GetFormFromFile(0x4AC8A2, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC89A, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 78
-		Return Game.GetFormFromFile(0x4AC8A4, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC89C, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 79
-		Return Game.GetFormFromFile(0x4AC8A6, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC89E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 80
-		Return Game.GetFormFromFile(0x4AC8A8, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8A0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 81
-		Return Game.GetFormFromFile(0x4AC8AA, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8A2, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 82
-		Return Game.GetFormFromFile(0x4AC8AC, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8A4, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 83
-		Return Game.GetFormFromFile(0x4AC8AE, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8A6, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 84
-		Return Game.GetFormFromFile(0x4AC8B0, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8A8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 85
-		Return Game.GetFormFromFile(0x4AC8B2, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8AA, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 86
-		Return Game.GetFormFromFile(0x4AC8B4, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8AC, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 87
-		Return Game.GetFormFromFile(0x4AC9A0, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8AE, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 88
-		Return Game.GetFormFromFile(0x4AC8B6, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8B0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 89
-		Return Game.GetFormFromFile(0x4ACA12, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8B2, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 90
-		Return Game.GetFormFromFile(0x4AC8B8, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8B4, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 91
-		Return Game.GetFormFromFile(0x4AC8BA, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC9A0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 92
-		Return Game.GetFormFromFile(0x4AC8BC, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8B6, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 93
-		Return Game.GetFormFromFile(0x4AC8BE, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACEC6, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 94
-		Return Game.GetFormFromFile(0x4AC8C0, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACA12, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 95
-		Return Game.GetFormFromFile(0x4ACA9E, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8B8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 96
-		Return Game.GetFormFromFile(0x4ACA9F, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8BA, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 97
-		Return Game.GetFormFromFile(0x4AC8C2, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8BC, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 98
-		Return Game.GetFormFromFile(0x4AC8C4, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8BE, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 99
-		Return Game.GetFormFromFile(0x4AC8C6, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACEC8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 100
-		Return Game.GetFormFromFile(0x4AC8C8, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8C0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 101
-		Return Game.GetFormFromFile(0x4AC8CA, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACA9E, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 102
-		Return Game.GetFormFromFile(0x4AC8CC, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4ACA9F, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 103
-		Return Game.GetFormFromFile(0x4AC8CE, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8C2, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 104
-		Return Game.GetFormFromFile(0x4AC8D0, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8C4, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 105
-		Return Game.GetFormFromFile(0x4AC8D2, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8C6, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 106
-		Return Game.GetFormFromFile(0x4AC8D4, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8C8, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 107
-		Return Game.GetFormFromFile(0x4ACA13, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8CA, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 108
-		Return Game.GetFormFromFile(0x4AC8D6, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8CC, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 109
-		Return Game.GetFormFromFile(0x4AC8D8, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8CE, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 110
-		Return Game.GetFormFromFile(0x4AC8DA, "Custom Legendary Modifications Remade.esp")
+		Return Game.GetFormFromFile(0x4AC8D0, "Custom Legendary Modifications Remade.esp")
 	ElseIf aiIndex == 111
+		Return Game.GetFormFromFile(0x4AC8D2, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 112
+		Return Game.GetFormFromFile(0x4AC8D4, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 113
+		Return Game.GetFormFromFile(0x4ACA13, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 114
+		Return Game.GetFormFromFile(0x4AC8D6, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 115
+		Return Game.GetFormFromFile(0x4AC8D8, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 116
+		Return Game.GetFormFromFile(0x4AC8DA, "Custom Legendary Modifications Remade.esp")
+	ElseIf aiIndex == 117
 		Return Game.GetFormFromFile(0x4ACAF9, "Custom Legendary Modifications Remade.esp")
 	EndIf
 	Return None

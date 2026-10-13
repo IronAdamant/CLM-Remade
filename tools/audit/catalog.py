@@ -128,8 +128,9 @@ class Catalog:
                 if pb:
                     out.append(f'  PROJ type {field(pb, "Type")}, speed {field(pb, "Speed")}, gravity '
                                f'{field(pb, "Gravity")}')
-                    ex = edid_of(re.search(r'\n\s+Explosion = (\S+ ?.*)', pb).group(1)) if re.search(
-                        r'\n\s+Explosion = (?!1|0)\S', pb) else ''
+                    # the impact explosion is DNAM's (4-space indent); deeper ones belong to destruction stages
+                    m = re.search(r'\n    Explosion = (?!1\b|0\b)(\S+)', pb)
+                    ex = m.group(1) if m else ''
                     if ex and ex != 'NULL':
                         out += self.explosion(ex, 2)
         out.append('```')

@@ -72,6 +72,22 @@ an in-game test.)*
   helmet and breaks the Pip-Boy.
 - **Rainman's (splitting missiles):** untick "Always Uses World Orientation" on the explosions that spawn the missiles.
 - **Regeneration effects:** tick "Power Affects Magnitude" (Spellmaking) so the enchantment's magnitude applies.
+- **Stacking across armour pieces (2.1):** value effects in an enchantment (resistances, SPECIAL, speed, healing) add
+  up per piece. A perk applies once however many pieces add it, so perk entry points do not stack, and different
+  tiers are different perks that *do* multiply (Fisto's). The base game stacks on purpose through actor values
+  (`LGND_LessDmgStandStill` etc.: each piece adds 15, one perk multiplies by the total).
+- **Effects that must not stack, with a script (2.1):** put the scripted magic effect in an *ability* spell that a
+  hidden perk gives (perk effect type Ability). Five pieces still give one ability, so one script instance (Phoenix,
+  Static Charged, Bloodthirsty, Momentum).
+- **Auras without scripts (2.1):** a Cloak magic effect on the wearer (magnitude = radius) casts its associated spell
+  on everyone nearby about once a second. Copied from Nuka-World's Overboss tesla coils: the spell is Concentration /
+  Touch; its effect uses the Damage archetype with the damage type (DMGT) as associated item, or Value Modifier for
+  slowing and healing. Conditions on the effect (`IsHostileToActor(PlayerRef)`) decide who is affected.
+- **Conditions that read the world (2.1):** time of day is `GetGlobalValue(GameHour)` (as vanilla Solar Powered does),
+  darkness `GetLightLevel < 50` (vanilla's own threshold, PlayerPerk), weather `IsRaining` and
+  `GetIsCurrentWeather(CommonwealthGSRadstorm)`, settlements `LocationHasPlayerOwnedWorkshop`, enemy level
+  `LevelMinusPCLevel` (on the attacker / target perk tab). Condition function and entry point numbers were read from
+  the official masters with FO4Edit (`tools/edits/gen_armour_set.py` lists the ones it uses).
 
 ## Things that were not possible in 2017
 

@@ -54,6 +54,15 @@ remove | A1ALMPICK_Armor_Brawlers | KSIZ
 set | A1ALMPICK_Armor_Brawlers | DATA\Weight | 0
 set | A1ALMPICK_Armor_Brawlers | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Armor_Brawlers
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_CapShowerin
+set | A1ALMPICK_Armor_CapShowerin | FULL | CLM Pick: Cap Showerin' (Armour)
+set | A1ALMPICK_Armor_CapShowerin | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Armor_CapShowerin | Model\MODT
+remove | A1ALMPICK_Armor_CapShowerin | KWDA
+remove | A1ALMPICK_Armor_CapShowerin | KSIZ
+set | A1ALMPICK_Armor_CapShowerin | DATA\Weight | 0
+set | A1ALMPICK_Armor_CapShowerin | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Armor_CapShowerin
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Carrying
 set | A1ALMPICK_Armor_Carrying | FULL | CLM Pick: Carrying (Armour)
 set | A1ALMPICK_Armor_Carrying | Model\MODL | Props\Holotape_Prop.nif
@@ -126,6 +135,15 @@ remove | A1ALMPICK_Armor_GhostlyAndCamouflaged | KSIZ
 set | A1ALMPICK_Armor_GhostlyAndCamouflaged | DATA\Weight | 0
 set | A1ALMPICK_Armor_GhostlyAndCamouflaged | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Armor_GhostlyAndCamouflaged
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Grit
+set | A1ALMPICK_Armor_Grit | FULL | CLM Pick: Grit (Armour)
+set | A1ALMPICK_Armor_Grit | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Armor_Grit | Model\MODT
+remove | A1ALMPICK_Armor_Grit | KWDA
+remove | A1ALMPICK_Armor_Grit | KSIZ
+set | A1ALMPICK_Armor_Grit | DATA\Weight | 0
+set | A1ALMPICK_Armor_Grit | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Armor_Grit
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Handiwork
 set | A1ALMPICK_Armor_Handiwork | FULL | CLM Pick: Handiwork (Armour)
 set | A1ALMPICK_Armor_Handiwork | Model\MODL | Props\Holotape_Prop.nif
@@ -243,6 +261,15 @@ remove | A1ALMPICK_Armor_Punching | KSIZ
 set | A1ALMPICK_Armor_Punching | DATA\Weight | 0
 set | A1ALMPICK_Armor_Punching | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Armor_Punching
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Radiatin
+set | A1ALMPICK_Armor_Radiatin | FULL | CLM Pick: Radiatin' (Armour)
+set | A1ALMPICK_Armor_Radiatin | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Armor_Radiatin | Model\MODT
+remove | A1ALMPICK_Armor_Radiatin | KWDA
+remove | A1ALMPICK_Armor_Radiatin | KSIZ
+set | A1ALMPICK_Armor_Radiatin | DATA\Weight | 0
+set | A1ALMPICK_Armor_Radiatin | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Armor_Radiatin
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Refilling
 set | A1ALMPICK_Armor_Refilling | FULL | CLM Pick: Refilling (Armour)
 set | A1ALMPICK_Armor_Refilling | Model\MODL | Props\Holotape_Prop.nif
@@ -297,6 +324,15 @@ remove | A1ALMPICK_Armor_SteadyAim | KSIZ
 set | A1ALMPICK_Armor_SteadyAim | DATA\Weight | 0
 set | A1ALMPICK_Armor_SteadyAim | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Armor_SteadyAim
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Surroundings
+set | A1ALMPICK_Armor_Surroundings | FULL | CLM Pick: Surroundings (Armour)
+set | A1ALMPICK_Armor_Surroundings | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Armor_Surroundings | Model\MODT
+remove | A1ALMPICK_Armor_Surroundings | KWDA
+remove | A1ALMPICK_Armor_Surroundings | KSIZ
+set | A1ALMPICK_Armor_Surroundings | DATA\Weight | 0
+set | A1ALMPICK_Armor_Surroundings | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Armor_Surroundings
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Armor_Untouchable
 set | A1ALMPICK_Armor_Untouchable | FULL | CLM Pick: Untouchable (Armour)
 set | A1ALMPICK_Armor_Untouchable | Model\MODL | Props\Holotape_Prop.nif
@@ -837,6 +873,15 @@ remove | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | KSIZ
 set | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | DATA\Weight | 0
 set | A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_SpawnBrotherhoodOfSteel
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnChildrenOfAtom
+set | A1ALMPICK_Weapon_SpawnChildrenOfAtom | FULL | CLM Pick: Children of Atom (Spawning)
+set | A1ALMPICK_Weapon_SpawnChildrenOfAtom | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_SpawnChildrenOfAtom | Model\MODT
+remove | A1ALMPICK_Weapon_SpawnChildrenOfAtom | KWDA
+remove | A1ALMPICK_Weapon_SpawnChildrenOfAtom | KSIZ
+set | A1ALMPICK_Weapon_SpawnChildrenOfAtom | DATA\Weight | 0
+set | A1ALMPICK_Weapon_SpawnChildrenOfAtom | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_SpawnChildrenOfAtom
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnFarHarborCreatures
 set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | FULL | CLM Pick: Far Harbor creatures (Spawning)
 set | A1ALMPICK_Weapon_SpawnFarHarborCreatures | Model\MODL | Props\Holotape_Prop.nif
@@ -882,6 +927,15 @@ remove | A1ALMPICK_Weapon_SpawnInstitute | KSIZ
 set | A1ALMPICK_Weapon_SpawnInstitute | DATA\Weight | 0
 set | A1ALMPICK_Weapon_SpawnInstitute | DATA\Value | 0
 new | COBJ | co_A1ALMPICK_Weapon_SpawnInstitute
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnMinutemen
+set | A1ALMPICK_Weapon_SpawnMinutemen | FULL | CLM Pick: Minutemen (Spawning)
+set | A1ALMPICK_Weapon_SpawnMinutemen | Model\MODL | Props\Holotape_Prop.nif
+remove | A1ALMPICK_Weapon_SpawnMinutemen | Model\MODT
+remove | A1ALMPICK_Weapon_SpawnMinutemen | KWDA
+remove | A1ALMPICK_Weapon_SpawnMinutemen | KSIZ
+set | A1ALMPICK_Weapon_SpawnMinutemen | DATA\Weight | 0
+set | A1ALMPICK_Weapon_SpawnMinutemen | DATA\Value | 0
+new | COBJ | co_A1ALMPICK_Weapon_SpawnMinutemen
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMPICK_Weapon_SpawnMirelurks
 set | A1ALMPICK_Weapon_SpawnMirelurks | FULL | CLM Pick: Mirelurks (Spawning)
 set | A1ALMPICK_Weapon_SpawnMirelurks | Model\MODL | Props\Holotape_Prop.nif

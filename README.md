@@ -29,6 +29,12 @@ Harbor, Contraptions Workshop and Nuka-World** (1.09 needed all six). Their crea
 the DLC legendaries: the Automatron, Far Harbor and Nuka-World spawns, Paintball, Trappin', Moby-Dick's, the
 Silenced Harpoon Striker, Pyrotechnical and Weather Altering.
 
+## More than one legendary per item
+
+CLM gives every weapon and armour piece one legendary slot. For a second and third slot (the author's old "2LM /
+3LM" plan, with thanks to matzman666 and Marelo), use **Legendary Effect Overhaul (LEO)**, which is compatible with
+CLM (DankRafft's patches).
+
 ## License
 
 [CC BY 4.0](LICENSE): use, change and redistribute it, including parts of it in your own mods, as long as you credit the

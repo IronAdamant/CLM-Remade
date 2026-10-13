@@ -8,7 +8,9 @@ PlayStation mods may not include scripts or assets: the upload is the plugins on
 Picker already work without scripts (chemistry station items). Author's decisions (2026-10-12), applied to copies of
 data/, written to dist/PlayStation/:
 - every CLM script is detached (VMAD removed where all its scripts are CLM's; vanilla scripts stay);
-- the holotapes are never given or craftable (A1ALMHOLOTAPES = 0): playing one runs a script;
+- the holotapes are never given or craftable (A1ALMHOLOTAPES = 0): playing one runs a script; the perk holotape's
+  perks become "CLM Perk" magazines made at the chemistry station (category CLM Perks): reading one adds the perk
+  (adding only: removing a perk needs a script);
 - legendaries that need CLM assets are left out (recipes and loot drops removed): the six new laser colours
   (Energized) and the five new Disintegratin' colours; Disintegratin' (Green) goes back to the plasma "goo" (vanilla
   CritPlasma); the Kellogg spawn (custom face files);
@@ -202,6 +204,8 @@ def build(game: Path) -> None:
     report = []
 
     m = Edit(main, main)
+    from mcm import perk_list
+    perks = perk_list(main)            # from the perk holotape's fragments, before its scripts are detached
     fid = lambda edid: main.by_edid(edid).formid
     # scripted effects that get a PlayStation stand-in (so their users are not "script-only")
     fallback_mgefs = {r.formid for r in main.records('MGEF') if main.is_own(r.formid) and
@@ -321,6 +325,37 @@ def build(game: Path) -> None:
         report.append(f'{name}: {book.edid}')
         detached = detach_scripts(e, custom)
         report.append(f'{name}: scripts detached from {len(detached)} records')
+    # CLM perks: the perk holotape is a script, so each perk becomes a magazine made at the chemistry station (category
+    # "CLM Perks"); reading it adds the perk, as vanilla perk magazines do. Without scripts a perk cannot be removed.
+    cat = main.by_edid(CATEGORY[0]).copy()
+    cat.subrecords[:] = [Subrecord('EDID', zstr('A1ALMKW_RecipeFilter_Perks'))] + [
+        Subrecord(s.sig, zstr('CLM Perks') if s.sig == 'FULL' else s.data) for s in cat.subrecords if s.sig != 'EDID']
+    cat.mark_dirty()
+    m.add(cat)
+    for page, edid, name in perks:
+        perk = main.by_edid(edid)
+        book_id = f'A1ALMBOOK_Perk_{edid.removeprefix("A1ALMPERK_")}'
+        book = magazine.copy()
+        book.subrecords[:] = [Subrecord('EDID', zstr(book_id))] + [
+            Subrecord(s.sig, {'FULL': zstr(f'CLM Perk: {name}'), 'DESC': b'\0', 'CNAM': b'\0',
+                              'DNAM': s.data[:1] + struct.pack('<I', perk.formid) + s.data[5:]}.get(s.sig, s.data))
+            for s in book.subrecords if s.sig != 'EDID']
+        book.mark_dirty()
+        m.add(book)
+        tmpl = main.by_edid('co_A1ALMSET_DropLow').copy()
+        tmpl.subrecords[:] = [Subrecord('EDID', zstr(f'co_{book_id}')),
+                              Subrecord('DESC', zstr(f'{page}: read this to gain the perk {name}. On PlayStation a perk '
+                                                     'cannot be removed again (the perk holotape needs scripts).')),
+                              Subrecord('CTDA', ctda(OP_EQ, 0.0, FN_HAS_PERK, perk.formid)),
+                              Subrecord('CTDA', ctda(OP_EQ, 0.0, 47, book.formid)),
+                              Subrecord('CNAM', struct.pack('<I', book.formid)),
+                              tmpl.get('BNAM'),
+                              Subrecord('FNAM', struct.pack('<I', cat.formid)),
+                              Subrecord('INTV', struct.pack('<HH', 1, 0))]
+        tmpl.mark_dirty()
+        m.add(tmpl)
+    report.append(f'perks: {len(perks)} perk magazines (category CLM Perks)')
+
     for r in (main.by_edid('co_A1ALMSET_ModeLoot'), main.by_edid('co_A1ALMSET_ModeLoot_Switch')):
         r.set('DESC', zstr('Legendaries drop from enemies instead of being crafted. On PlayStation, also make the '
                            'CLM Loot Manual (CLM Settings) once to start getting drops.'))

@@ -11,6 +11,7 @@ new | GLOB | A1ALMSETG_DropHigh
 new | GLOB | A1ALMSETG_PickerMode
 new | GLOB | A1ALMPICKG_Armor_BouncingAndJedi
 new | GLOB | A1ALMPICKG_Armor_Brawlers
+new | GLOB | A1ALMPICKG_Armor_CapShowerin
 new | GLOB | A1ALMPICKG_Armor_Carrying
 new | GLOB | A1ALMPICKG_Armor_CombinedSpeedAndJump
 new | GLOB | A1ALMPICKG_Armor_Enlightenment
@@ -19,6 +20,7 @@ new | GLOB | A1ALMPICKG_Armor_FistoS
 new | GLOB | A1ALMPICKG_Armor_Flaming
 new | GLOB | A1ALMPICKG_Armor_ForbiddenArmour
 new | GLOB | A1ALMPICKG_Armor_GhostlyAndCamouflaged
+new | GLOB | A1ALMPICKG_Armor_Grit
 new | GLOB | A1ALMPICKG_Armor_Handiwork
 new | GLOB | A1ALMPICKG_Armor_Healing
 new | GLOB | A1ALMPICKG_Armor_Immunities
@@ -32,12 +34,14 @@ new | GLOB | A1ALMPICKG_Armor_OnePunchManS
 new | GLOB | A1ALMPICKG_Armor_Plating
 new | GLOB | A1ALMPICKG_Armor_PowerArmour
 new | GLOB | A1ALMPICKG_Armor_Punching
+new | GLOB | A1ALMPICKG_Armor_Radiatin
 new | GLOB | A1ALMPICKG_Armor_Refilling
 new | GLOB | A1ALMPICKG_Armor_ShavkaSExplosiveStriking
 new | GLOB | A1ALMPICKG_Armor_Shields
 new | GLOB | A1ALMPICKG_Armor_Sight
 new | GLOB | A1ALMPICKG_Armor_Speedy
 new | GLOB | A1ALMPICKG_Armor_SteadyAim
+new | GLOB | A1ALMPICKG_Armor_Surroundings
 new | GLOB | A1ALMPICKG_Armor_Untouchable
 new | GLOB | A1ALMPICKG_Weapon_AlienTech
 new | GLOB | A1ALMPICKG_Weapon_Automatic
@@ -98,11 +102,13 @@ new | GLOB | A1ALMPICKG_Weapon_SlayerS
 new | GLOB | A1ALMPICKG_Weapon_SpawnAliens
 new | GLOB | A1ALMPICKG_Weapon_SpawnAutomatronRobots
 new | GLOB | A1ALMPICKG_Weapon_SpawnBrotherhoodOfSteel
+new | GLOB | A1ALMPICKG_Weapon_SpawnChildrenOfAtom
 new | GLOB | A1ALMPICKG_Weapon_SpawnFarHarborCreatures
 new | GLOB | A1ALMPICKG_Weapon_SpawnFriendlyRobots
 new | GLOB | A1ALMPICKG_Weapon_SpawnGhouls
 new | GLOB | A1ALMPICKG_Weapon_SpawnInsects
 new | GLOB | A1ALMPICKG_Weapon_SpawnInstitute
+new | GLOB | A1ALMPICKG_Weapon_SpawnMinutemen
 new | GLOB | A1ALMPICKG_Weapon_SpawnMirelurks
 new | GLOB | A1ALMPICKG_Weapon_SpawnNukaWorldCreatures
 new | GLOB | A1ALMPICKG_Weapon_SpawnNukaWorldGangs

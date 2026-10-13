@@ -106,6 +106,22 @@ THEMES = {
     ('armor', 'NanoCoated'): 'Juggernaut', ('armor', 'AlienNanoCoated'): 'Juggernaut',
     ('armor', 'GodsArmor'): 'Juggernaut', ('armor', 'YamamotosMighty'): 'Juggernaut', ('armor', 'NMU'): 'Juggernaut',
     ('armor', 'Staminator'): 'Speed', ('armor', 'WeaponMastery'): 'Steady aim',   # 2.1 requests
+    # 2.1's own armour (tools/edits/gen_armour_set.py)
+    ('armor', 'NightOwls'): 'Surroundings', ('armor', 'SunKissed'): 'Surroundings',
+    ('armor', 'StormChasing'): 'Surroundings', ('armor', 'ShadowDwelling'): 'Surroundings',
+    ('armor', 'Amphibious'): 'Surroundings', ('armor', 'Entrenched'): 'Surroundings', ('armor', 'HomeTurf'): 'Surroundings',
+    ('armor', 'Underdogs'): 'Grit', ('armor', 'GlassCannon'): 'Grit', ('armor', 'Ironclad'): 'Grit',
+    ('armor', 'GlowingHeart'): 'Grit', ('armor', 'Overcharged'): 'Power armour', ('armor', 'Scavengers'): 'Handiwork',
+    ('armor', 'Phoenix'): 'Healing', ('armor', 'Bloodthirsty'): 'Healing', ('armor', 'Momentum'): 'Speed',
+    ('armor', 'StaticCharged'): 'Untouchable',
+    # 2.1 counterparts and the 2016 legendaries that went missing (tools/edits/gen_restore_21.py)
+    ('armor', 'Resistance'): 'Immunities', ('armor', 'GheedsFortunate'): 'Handiwork',
+    ('weapon', 'PoisonersNimble'): 'Poison and acid', ('weapon', 'OneManPunching'): 'Brawn', ('weapon', 'Flaming'): 'Fire',
+    # 2.1: the old requests (tools/edits/gen_requests_21.py)
+    ('armor', 'Stealthy'): 'Undetectable', ('armor', 'Jumpers'): 'Jumpy', ('armor', 'HelloNeighbour'): 'Handiwork',
+    ('armor', 'NoBraking'): 'Brawlers', ('armor', 'Enraged'): 'Flaming', ('weapon', 'HealingBeam'): 'Curios',
+    ('weapon', 'GodCreator'): 'Curios', ('weapon', 'CinematicExcellence'): 'Utility', ('weapon', 'CQC'): 'Automatic',
+    ('weapon', 'DragonBlade'): 'Brawn', ('weapon', 'Decimating'): 'Heavy hitters',
     ('armor', 'Cheaters'): 'Forbidden (armour)', ('armor', 'GodFathers'): 'Forbidden (armour)',
 }
 
@@ -117,6 +133,9 @@ EDID_THEMES = [
     ('Recoilless_Variant_DeathlySilence', 'Savage'), ('Recoilless_Variant_MurderouslySil', 'Savage'),
     ('Recoilless_Variant_SpecialOps', 'Savage'),
 ]
+
+# Duplicates whose recipes 2.1 removed (tools/edits/balance_21.py); the legendaries stay for existing gear.
+HIDDEN = {'A1ALMOMOD_Legendary_Armor_Camouflaged_All', 'A1ALMOMOD_Legendary_Armor_Camouflaged_Crouch'}
 
 # Display names for families kept from editor IDs, where the ID is not the in-game name.
 DISPLAY = {
@@ -135,7 +154,7 @@ DISPLAY = {
     'Untouchable': 'Untouchable', 'Punching': 'Punching', 'Bouncing': 'Bouncing and Jedi', 'Murderous': 'Murderous',
     'Refilling': 'Refilling', 'OnePunchMans': "One Punch Man's", 'Shield': 'Shields', 'Undetectable': 'Ghostly and Camouflaged',
     'Immune': 'Immunities',
-    'Jumpy': 'Jumpy and Flyin\'',
+    'Jumpy': 'Jumpy and Flyin\'', 'Radiating': "Radiatin'", 'CapShowering': "Cap Showerin'",
 }
 
 # Tiers for non-OP legendaries outside numbered variant families, by in-game name (without "CLM: ").
@@ -178,6 +197,14 @@ TIER = {
     "Concentratin' (Brief)": 'common', "Time Father's Bashful (Brief)": 'common',
     # built from 1.09's unused pieces (2026-10-11)
     "Lobbin' (Nuke Mine)": 'rare', 'Focused (Brief)': 'common', "VATS Penetratin'": 'common',
+    # 2.1's own armour: the everyday conditions common, the strongest rare
+    "Night Owl's": 'common', 'Sun-Kissed': 'common', "Storm Chasin'": 'common', 'Home Turf': 'common',
+    "Scavenger's": 'common', 'Phoenix': 'rare', "Underdog's": 'rare', "Radiatin' (Healing)": 'rare',
+    # 2.1 counterparts and restorations
+    'Ballistic Protection (Light)': 'common', 'Regenerative (Slow)': 'common', "Shotgun Surgeon's (Trainee)": 'common',
+    "Gheed's Fortunate": 'common', "Keltas' Quick Draw Factorium": 'common', "Poisoner's Nimble": 'uncommon',
+    "Cap Showerin' (Frag)": 'rare', "Cap Showerin' (Fire)": 'rare', "Cap Showerin' (Cryo)": 'rare',
+    "Cap Showerin' (Plasma)": 'rare', 'Healing Beam': 'uncommon', 'Cinematic Excellence': 'common',
 }
 TIERS = ('common', 'uncommon', 'rare')
 RARE_SPAWN = re.compile(r'Boss|Behemoth|Queen|King|Kellog|Courser|Ghoulrilla|PALegendary|Glowing One', re.I)
@@ -256,7 +283,7 @@ def main():
         f'**{len(rows)} legendaries in {len(members)} families.** Tiers: ' +
         ', '.join(f'{t} {counts[t]}' for t in TIERS + ('OP',)) + '.',
         '',
-        'Left out of loot: ' + ', '.join(f"{clean(r['name'])} ({'test item, stays craftable' if r['family'] == 'Test' else 'unfinished draft, no recipe'})"
+        'Left out of loot: ' + ', '.join(f"{clean(r['name'])} ({'test item, stays craftable' if r['family'] == 'Test' else 'duplicate, hidden in 2.1' if r['edid'] in HIDDEN else 'unfinished draft, no recipe'})"
                                           for r in excluded) + '.',
         '',
     ]

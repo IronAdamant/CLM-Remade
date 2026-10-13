@@ -2,7 +2,40 @@
 
 ## 2.1.0 (in progress)
 
-The feature requests of 2016-17 that 1.09 left as "not possible" or "no time".
+A balance pass measured against the base game's own legendaries, new armour, the 2016 legendaries that went
+missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or "no time".
+
+### Changed
+- **Balanced now means "no stronger than the base game's strongest of its kind"** (Two Shot's damage, Rapid's fire
+  rate, Sentinel's and Bolstering on armour). 56 legendaries above that moved to **OP**; with "Show OP" off their
+  recipes are hidden. **Gear you already own keeps working.** To craft them again, carry the Show OP setting.
+  - Weapons: Hurtin' (150%), (200%); Devil's Due; Hustlin'; Rapid Fire (100%); Quicker (75%), (100%); Gunslanger's;
+    Four Shot; High Explosive; Slayer's; Silent Slayer's; Bird Shootin'; all eight Shotgun Surgeon's and Shockgun
+    Surgeon's; Thor Blessed; Overchargin'; Alien-Tech'd; Keltas' Perfect Factorium; Synthesised Rapid, Specialised
+    and Perfect Factorium; the nuclear ones: Lobbin' (Nuke Mine), Sticky Nuke Mine launchin', BioReactive Explosive
+    (Nuclear), Shavka's Explosive Striking (Nuclear).
+  - Armour: Fisto's (100%), (150%); Ballistic Protection (Advanced), (Master-crafted); Advanced Titanium; Tradin'
+    Jack's; Regenerative; Speedy (50-150%); Combined Speed and Jump Boosts (50-150%); Nimble (100%), (150%); Jumpy
+    (150%); Lucky Hittin' (25%); Sadistic Brawlers; Untouchable (Paralyzed), (Pacify); Punching (Paralyze); Devil's
+    Due; Shavka's Explosive Striking (Nuclear).
+  - Back to balanced: **Majestically Swaggering** and **Aim Stabilized (100%)**.
+  - Each family that lost its balanced members got smaller balanced tiers (see New).
+- **Fisto's no longer multiplies across armour pieces:** only your best Fisto's piece counts. Before, different
+  tiers on different pieces multiplied ((20%) to (150%) on five pieces was about 11 times the damage).
+- **Camouflaged (Always) and (Crouch)** appeared twice at the workbench under the same names; the duplicate pair's
+  recipes are gone (the legendaries stay, so existing gear keeps working).
+- **Names:** legendaries that shared a name with another now differ: Havoc (Bullets / Plasma / Blue Laser / Red Laser,
+  Limited), Prometheus' Fiery (Limited), Alien Enhanced Nano-Coated (the +500 one, its 2016 name). Typos fixed: Yao
+  Guai, Silenced Electrical Striker, Mighty Nearly Unbreakable, Liar's Compendium, and the stray ":" or "." after
+  Reaper's Embrace, Hydra's Fanged and Compressed Vortex Synthesized.
+- **Brutish** (FL4CKTROOPER's fix): its punches burned for 100 fire damage at 80% health or less, plus 100 on anyone
+  who hit it in melee. Now, as FL4CKTROOPER asked, its hits do 5 fire damage, and only below half health, when the
+  Burning Rage effect kicks in. The rest of Brutish is unchanged.
+- **Advanced Titanium** now also reflects 5% of melee damage, as FL4CKTROOPER originally asked (1.09 shipped it with the
+  5% damage cut only).
+- **Descriptions** now say what the legendary does: Fisto's (the number, all weapons, best piece only), Nimble and
+  Combined Speed and Jump Boosts (the numbers; Combined mentioned only jumping), Santa Prisca's (+75 carry weight,
+  not 75%), plus typos and stray commas.
 
 ### New
 - **Jumpy (10%)** and **Jumpy (25%)** (requested by Doom1993): smaller jump boosts below the 50% the family started at.
@@ -22,6 +55,73 @@ The feature requests of 2016-17 that 1.09 left as "not possible" or "no time".
 - **Weapon Mastery** (armour, OP, mademost's "OP weapon skills"): +20% critical chance, +100% critical damage, faster
   critical meter, bash criticals, steady scopes, cheaper V.A.T.S. No damage bonus. Faster weapon draw and scope zoom
   are not possible without scripts.
+- **Balanced tiers** for the families that moved to OP: **Hurtin' (25%)**, **(50%)**; **Speedy (10%)**, **(25%)**
+  (Leylanee's 2016 Speedy); **Combined Speed and Jump Boosts (10%)**, **(25%)** (Leylanee's Speedily Jumpy);
+  **Nimble (25%)**; **Ballistic Protection (Light)** (+25); **Regenerative (Slow)** (1 health a second, 2 out of
+  combat); **Resistance (Acid / Electric / Explosion / Limb Damage / Poison / Radiation)**: 50% less, where the
+  Immunities are 100%; **Gheed's Fortunate** (forgrif's 2016 request: buy 20% cheaper, sell 20% higher);
+  **Shotgun Surgeon's (Trainee)** (+3 pellets); **Keltas' Quick Draw Factorium** (one empty magazine in four refills
+  itself).
+- **The 2016 legendaries that went missing before 1.09**, back:
+  - **Poisoner's Nimble** (Erierth): move 75% faster while aiming; hits poison for 25 damage over 5 seconds.
+  - **Zeus Crafted (Limited)** (OP; thobro2015, Cidion77): Zeus Crafted with +50 ammo capacity instead of never-ending.
+  - **Shockingly Lobbin'**: a lightning grenade launcher; the grenade bursts into Automatron's chain lightning.
+  - **MIRV's Impactin'** (OP; DavidH): a MIRV that bursts on impact instead of in mid-air.
+  - **Sticky Bottlecap Mine launchin'** (the 2016 "(Bottlecap) Mine layin'").
+  - **One Man Punchin'** (OP; OnePunchMonk): fists and melee weapons do 50 times the damage and enemies burst apart.
+  - **Flamin'**: your weapon shoots a flamer stream.
+  - **Concentratin' (Constant)** (OP; the 2016 "Constant Slow Time"): time slows for as long as you aim.
+  - Spawns (Maiqtheliar84): **Random Minuteman** and **Random Children of Atom cultist** (friendly or hostile by your
+    standing), **Random Robobrain**, **Rust Devil Boss**. (The base game has no boss Assaultron to spawn: the
+    Legendary Assaultron spawn is the nearest.)
+  - **Plated Titanium** (OP; FL4CKTROOPER): 8 times power armour health, heals 1 health a second out of combat and
+    removes 1 rad a second.
+  - Joker's Gas and Backstabbing already are the 2016 "(Limited)" versions. Highly / Insanely Speedy are covered by
+    Speedy (50-150%).
+- **The 2016-17 requests 1.09 called impossible**, sized against the base game (balanced unless marked OP):
+  - **Friendly Mirelurk Queen** spawn (OP; LandH): a Mirelurk Queen that fights on your side (no hatchlings).
+  - **Stealthy** (OP; Doom1993): crouch and you are muffled, shadowed and cloaked; +50 Perception, Luck, Agility and
+    Endurance; power armour targeting; every pickpocket succeeds. (+5000 stats and pickpocketing from 1000 feet are not
+    possible.)
+  - **Cap Showerin' (Frag / Fire / Cryo / Plasma; Nuclear is OP)** (the author's idea): 15% of your kills burst into a
+    Fortune Finder shower of caps that is also a real explosion.
+  - **Healing Beam** (Heavy & Ze Medic): shots heal 10, up to 80 the more hurt the patient is, and hurt no one.
+    **God Creator** (OP): the same, plus 10 seconds of near-invulnerability for whoever you heal.
+  - **Jumper's** (Heavy & Ze Medic): 50% less explosion damage, no fall damage; your own explosions give you a
+    huge jump for 3 seconds, so you can rocket-jump (the jump is PC and Xbox only).
+  - **No Brakin'** (OP; H3xx): Pain Train's top rank without power armour.
+  - **Enraged** (OP; the author's idea): faster in combat; below half health, nearby enemies burn and flee in fear.
+  - PC and Xbox only (scripts): **Decimatin'** (OP; ViscousVitriol): each hit takes 10% of the target's health.
+    **Hello Neighbour!** (OP; stephen4000): Gunners are not hostile while you wear it. **CQC** (OP; DarkArcher045):
+    three-round bursts. **DragonBlade** (OP; AgentSmithGSOM): +200 damage, dash to the enemy ahead when you swing,
+    ricochet bullets while blocking or sprinting. **Cinematic Excellence** (Tjonbrown24): one kill in ten in slow
+    motion from the third-person camera (a real kill camera outside V.A.T.S. is not possible).
+  - **PlayStation perks** (the author's note): the perk holotape needs scripts, so on PlayStation every CLM perk is a
+    "CLM Perk" magazine made at the chemistry station (category CLM Perks). Reading it adds the perk; removing one
+    is not possible there.
+  - Not built: real flight (it needs F4SE, which CLM does not use; Flyin' stays), and second and third legendary
+    slots: Legendary Effect Overhaul (LEO) already does that and works with CLM.
+- **23 new armour legendaries**, CLM's own: effects the base game does not have, sized against its legendaries
+  (Sentinel's, Bolstering, Unyielding...). Balanced unless marked. Value effects (resistances, SPECIAL, speed,
+  healing) add up per piece as the base game's do; the perk-based parts count once however many pieces carry them.
+  - **Surroundings:** **Night Owl's** (8pm-6am: +1 Perception and Agility, +10 damage and energy resistance),
+    **Sun-Kissed** (outdoors by day, dry weather: heal 1 health and lose 1 rad a second), **Storm Chasin'** (rain or
+    radstorm: +20 energy and radiation resistance, 5% faster), **Shadow Dwellin'** (in the dark: +1 Agility and Luck,
+    25% harder to see), **Amphibious** (breathe underwater; in water 10% faster and 25% less damage),
+    **Entrenched** (crouched and still: +25 damage and energy resistance, steady aim), **Home Turf** (in your own
+    settlements: +25 damage and energy resistance, +1 Charisma).
+  - **Grit:** **Underdog's** (enemies above your level deal 25% less and take 25% more), **Glass Cannon** (25% more
+    damage dealt and taken), **Ironclad** (cannot be staggered, half limb damage, 5% slower per piece), **Glowing
+    Heart** (+5 damage and energy resistance per 100 rads, up to +30).
+  - **Radiatin' (Fire / Shock / Rads / Cryo / Healing):** an aura: enemies near you burn, are shocked (5 a second),
+    irradiated (10 rads a second) or slowed by 30%; or your companions and allies heal 3 health a second while they
+    fight beside you. **Radiatin' (Inferno)** (OP): 30 fire damage a second in twice the radius.
+  - **Overcharged** (power armour: +2 Strength, +25 damage and energy resistance, faster fusion core drain) and
+    **Scavenger's** (enemies you kill carry extra ammo and caps).
+  - PC and Xbox only (they need a script): **Phoenix** (once every 3 minutes, hit at 15% health or less: heal 40%
+    and set the attacker on fire), **Bloodthirsty** (every kill heals 10%), **Momentum** (every kill: 20% faster and
+    faster Action Points for 10 seconds), **Static Charged** (anything that hits you has a 20% chance of being
+    shocked for 40 electrical damage, at most every 5 seconds).
 
 ## 2.0.0 (2026-10-12)
 

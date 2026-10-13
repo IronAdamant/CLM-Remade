@@ -128,8 +128,11 @@ def write_spec(plan: list[dict], data: Path, ack: Path) -> Path:
               f'set | {e} | DATA\\Value | {LOOSE_VALUE[r["tier"]]}',
               f'set | {r["edid"]} | LNAM | @{e}',
               f'copy | @{costly[r["edid"]]} | co_{r["edid"]}_Unlocked']
+    sizes = pool_sizes(plan)
     for kind in KINDS:
         s.append(f'new | LVLI | {PRE}LL_Pool_{kind}')
+        s += [f'new | LVLI | {PRE}LL_Pool_{kind}_Part{i + 1}' for i in range(pool_parts(sizes[kind]))
+              if pool_parts(sizes[kind]) > 1]
         for rate in RATE_LIST:
             s += [f'new | LVLI | {PRE}LL_Gate_{kind}_{rate}', f'new | LVLI | {PRE}LL_Drop_{kind}_{rate}']
     for rate in RATE_LIST:
@@ -157,6 +160,24 @@ def run_build(spec: Path, data: Path, ack: Path) -> None:
     print(result.splitlines()[0])
     if ' 0 errors' not in result.splitlines()[0]:
         raise SystemExit('\n'.join(l for l in result.splitlines() if 'ERROR' in l)[:4000])
+
+
+MAX_LIST = 255     # a leveled list holds at most 255 entries (one-byte count)
+
+
+def pool_parts(n: int) -> int:
+    """Pools bigger than a leveled list are split into this many equal parts under the pool, so every legendary
+    keeps the same chance (the pool picks a part, the part picks a legendary)."""
+    return max(1, -(-n // MAX_LIST))
+
+
+def pool_sizes(plan: list[dict]) -> dict:
+    sizes = defaultdict(int)
+    for r in plan:
+        sizes[{'common': 'Common', 'uncommon': 'Uncommon', 'rare': 'Rare', 'OP': 'OP'}[r['tier']]] += 1
+    sizes['Holotape'] = len({(r['kind'], r['family']) for r in plan})
+    sizes['Catalyst'] = len(CATALYSTS)
+    return sizes
 
 
 # ------------------------------------------------------------------------------------------ step 2: raw parts
@@ -227,6 +248,12 @@ def write_raw(plan: list[dict], data: Path, ack: Path) -> None:
     pools['Catalyst'] = [(ref(e), 1) for e, _, _ in CATALYSTS.values()]
     drops = defaultdict(list)   # rate -> drop lists
     for kind, items in pools.items():
+        n = pool_parts(len(items))
+        if n > 1:
+            parts = [f'{PRE}LL_Pool_{kind}_Part{i + 1}' for i in range(n)]
+            for i, part in enumerate(parts):
+                set_subs(p.by_edid(part), lvli(Subrecord, items[i::n], LVLF_ALL_LEVELS))
+            items = [(ref(part), 1) for part in parts]
         set_subs(p.by_edid(f'{PRE}LL_Pool_{kind}'), lvli(Subrecord, items, LVLF_ALL_LEVELS))
         for rate in RATE_LIST:
             outer, inner = RATES[rate][kind]

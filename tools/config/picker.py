@@ -45,12 +45,14 @@ OP_CATEGORY = 'OP'
 CATEGORIES = {
     ('armor', 'Armour: Defence'): ['Plating', 'Juggernaut', 'Shields', 'Immunities', 'Bouncing and Jedi',
                                    'Forbidden (armour)'],
-    ('armor', 'Armour: Retaliation'): ['Untouchable', 'Punching', "Shavka's Explosive Striking", 'Flaming',
+    ('armor', 'Armour: Retaliation'): ['Untouchable', 'Punching', "Shavka's Explosive Striking", 'Flaming', "Radiatin'",
                                        'Brawlers', 'Impact Landing'],
     ('armor', 'Armour: Movement'): ["Jumpy and Flyin'", 'Speedy', 'Nimble', 'Combined Speed and Jump'],
     ('armor', 'Armour: Stealth and Sight'): ['Ghostly and Camouflaged', 'Sight', 'Steady aim'],
-    ('armor', 'Armour: Combat'): ["Fisto's", "Lucky Hittin'", 'Murderous', 'Factional Damaging', "One Punch Man's"],
-    ('armor', 'Armour: Survival'): ['Healing', 'Carrying', 'Enlightenment', 'Handiwork', 'Power armour', 'Refilling'],
+    ('armor', 'Armour: Combat'): ["Fisto's", "Lucky Hittin'", 'Murderous', 'Factional Damaging', "One Punch Man's",
+                                  'Grit', "Cap Showerin'"],
+    ('armor', 'Armour: Survival'): ['Healing', 'Carrying', 'Enlightenment', 'Handiwork', 'Power armour', 'Refilling',
+                                    'Surroundings'],
     ('weapon', 'Weapon: Damage'): ["Hurtin'", 'Heavy hitters', "Destroyer's", 'Savage', 'Forcible', 'Fury',
                                    "Slayer's", 'Backstabbing', "Limb Breaker's", 'Relentless', 'Forbidden (weapon)',
                                    'RoomClearing'],
@@ -75,7 +77,8 @@ CATEGORIES = {
                                       'Spawn: Super mutants', 'Spawn: Wasteland beasts'],
     ('weapon', 'Spawns: People and Robots'): ['Spawn: Automatron robots', 'Spawn: Brotherhood of Steel',
                                               'Spawn: Friendly robots', 'Spawn: Institute', 'Spawn: Nuka-World gangs',
-                                              'Spawn: Raiders and gangs', 'Spawn: Railroad', 'Spawn: Robots'],
+                                              'Spawn: Raiders and gangs', 'Spawn: Railroad', 'Spawn: Robots',
+                                              'Spawn: Minutemen', 'Spawn: Children of Atom'],
 }
 
 
