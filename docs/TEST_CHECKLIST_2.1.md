@@ -8,6 +8,15 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - Carry the settings items from the chemistry station (CLM Settings): **Free crafting**, **Show OP**, **Show
   variants**. Spawning and perk-style legendaries show by default. Leave **Picker mode** off.
 - PC/Xbox only = needs a script; on PlayStation it shows a "needs a script" note and does nothing.
+- **Debug recorder** (so Claude can read what happened): Papyrus logging is on; tick **CLM - Debug Recorder.esp**
+  (after the main plugin). The log is `Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log` (the session
+  before: CLM.1.log). When reporting a problem, say roughly what you did and when.
+  - [ ] After loading, the log has "recorder started" and lists the settings; equipping a scripted legendary (e.g.
+    Phoenix) adds a "started" line.
+- **When done:** `python debug/build_recorder.py --game "D:/Steam/steamapps/common/Fallout 4" --remove` (normal scripts
+  back, recorder gone), then `python -m ack papyrus-log off` (in AgentCreationKit), and untick the recorder.
+- **Riskiest first:** Energizin', Singularity, Rallyin', Breakin' and Enterin' (Variety); Shockingly Lobbin',
+  Flamin', Concentratin' (Constant), Enraged, Storm Chasin' in a radstorm, the friendly Mirelurk Queen.
 - Handy console commands: `set gamehour to 22` (night) / `to 12` (day); `fw 1c3d5e` (radstorm; for rain,
   `help rain 4` lists the rain weathers to `fw`); `player.modav rads 300` / `player.restoreav rads 1000`;
   `player.damageav health 300`; `tgm` off while testing damage; `coc SanctuaryExt` (Home Turf);
@@ -141,6 +150,8 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Picker mode** still works on top (a family picked shows only its concise members unless Show all / its group is on).
 - [ ] An item already carrying a hidden legendary keeps it.
 
+- [ ] **Merged groups**: "Elemental hits" (CLM Group) brings back all bleed, poison, acid, fire, cold, energy and crippling weapons and Nature's Wrath / Rayden's Fury; "Movement" brings back Speedy, Jumpy, Nimble and Combined; "Healing" brings back Regenerative, Sun-Kissed, Auto-Medical, Aid Patch, Phoenix and Field Medic's.
+
 ### Mascots (the shown legendary of their group)
 - [ ] **Opportunist's** (Balanced): +40% on a sneak attack, on a full-health target, or below half health; never more than +40% when two apply.
 - [ ] **Elemental Strikin'** (Balanced): random fire / cryo / poison / electrical bursts, no fire-rate change.
@@ -177,3 +188,17 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Loot mode**: OP drops still come (the OP pool is now two halves of 128 under one list); new legendaries can drop as loose mods.
 - [ ] **Picker / MCM**: new families Surroundings, Grit, Radiatin', Cap Showerin', Spawn: Minutemen, Spawn: Children of Atom have selectors and MCM switches.
 - [ ] Speedy and Combined Speed and Jump reset speed and jump when unequipped (decides whether Resettin' comes back).
+- [ ] **"ALM: A - Test"** (weapon and armour) no longer appears at the workbench (removed).
+
+## PlayStation build, tried on PC (optional)
+
+`python tools/release/playstation.py --test-install` puts the PlayStation plugins in Data (turn the debug recorder
+off first); `--test-restore` puts the PC ones back. Your spreadsheet's "Platforms" tab lists what differs.
+- [ ] Settings and Picker work from the chemistry station; no holotape is given.
+- [ ] **CLM Perk** magazines (chemistry station, CLM Perks): reading one adds the perk.
+- [ ] Loot mode: the **CLM Loot Manual** magazine teaches the drop perk; legendaries drop.
+- [ ] **Midas'**: kills turn to ordinary ash (not gold); extra caps still drop; its description says so.
+- [ ] **Auto-Medical / Aid Patch**: health regenerates while low; no stimpak used.
+- [ ] **Vampiric**: heals on hits (not on killing blows).
+- [ ] The new laser and disintegration colours and the Kellogg spawn are not at the workbench.
+- [ ] A "needs a script" legendary (e.g. Phoenix) shows the PlayStation note and does nothing, without errors.
