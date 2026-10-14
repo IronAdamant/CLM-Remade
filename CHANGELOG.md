@@ -52,6 +52,9 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   Combined Speed and Jump Boosts (the numbers; Combined mentioned only jumping), Santa Prisca's (+75 carry weight,
   not 75%), plus typos and stray commas.
 
+- **Removed the two "ALM: A - Test" slots** (weapon and armour): the author's 1.09-era scratch legendaries for trying
+  effects out, never meant for players.
+
 ### New
 - **Jumpy (10%)** and **Jumpy (25%)** (requested by Doom1993): smaller jump boosts below the 50% the family started at.
 - Plain effects without extras or long descriptions (requested by ViscousVitriol):
@@ -125,7 +128,8 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   - **Cleavin'** (PC and Xbox): melee and unarmed hits also strike every other enemy within 3 metres for 40 damage.
   - **Disarmin'**: 10% chance a hit knocks the target's weapon out of its hands.
   - **Terrifyin'**: enemies 5+ levels below you flee for 10 seconds when hit.
-  - **Midas'**: kills turn to gold dust (as Disintegratin' (Gold)) and carry a handful of extra caps.
+  - **Midas'**: kills turn to gold dust (as Disintegratin' (Gold); ordinary ash on PlayStation) and carry a handful of
+    extra caps.
   - **Rallyin'** (armour): companions and allies near you get +15 damage and energy resistance and +10% damage.
   - **Intimidatin'** (armour): enemies 10+ levels below you flee instead of fighting.
   - **Field Medic's** (armour): stimpaks and RadAway work 30% better; counts once.

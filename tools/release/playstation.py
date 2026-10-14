@@ -14,6 +14,7 @@ data/, written to dist/PlayStation/:
 - legendaries that need CLM assets are left out (recipes and loot drops removed): the six new laser colours
   (Energized) and the five new Disintegratin' colours; Disintegratin' (Green) goes back to the plasma "goo" (vanilla
   CritPlasma); the Kellogg spawn (custom face files);
+- Midas' borrows Disintegratin' (Gold)'s gold dust (CLM art): vanilla red ash instead, caps unchanged;
 - Vampiric, Raging, Annihilating, Reaper's Embrace, Reclaimer's: 1.09's Absorb Health (BloodDrain) instead of the
   scripted drain: heals on every hit except killing blows;
 - Auto-Medical / Aid Patch: instead of the scripted auto-stimpak, regenerate about 6% of health per second (a
@@ -29,6 +30,7 @@ data/, written to dist/PlayStation/:
 from __future__ import annotations
 
 import argparse
+import csv
 import re
 import shutil
 import struct
@@ -69,6 +71,8 @@ NOTE_SCRIPT = ' (PlayStation: this effect needs a script, which PlayStation mods
 NOTE_PART = ' (PlayStation: part of this effect needs a script, which PlayStation mods cannot have; that part does nothing there.)'
 NOTE_DRAIN = ' (PlayStation: heals on every hit except killing blows.)'
 NOTE_FACE = ' (PlayStation: targets are not blown apart.)'
+NOTE_MIDAS = ' (PlayStation: they turn to ordinary ash, not gold dust.)'
+MIDAS, CRIT_LASER = 'A1ALMOMOD_Legendary_Weapon_Midas', 0x000731B2      # vanilla CritLaser (red ash)
 MAGAZINE = 'PerkMagLiveAndLove09'          # vanilla magazine used as the Loot Manual's template
 FN_HAS_PERK, FN_GET_HEALTH_PERCENTAGE, FN_GET_LEVEL, OP_GE, OP_LT, OP_LE = 448, 430, 80, 3 << 5, 4 << 5, 5 << 5
 BEFORE_BOOK = {'GMST', 'KYWD', 'LCRT', 'AACT', 'TRNS', 'CMPO', 'TXST', 'GLOB', 'DMGT', 'CLAS', 'FACT', 'HDPT', 'EYES',
@@ -204,6 +208,7 @@ def build(game: Path) -> None:
     report = []
 
     m = Edit(main, main)
+    platforms = {}     # legendary editor ID -> (status, PlayStation detail), for platforms.csv
     from mcm import perk_list
     perks = perk_list(main)            # from the perk holotape's fragments, before its scripts are detached
     fid = lambda edid: main.by_edid(edid).formid
@@ -245,6 +250,7 @@ def build(game: Path) -> None:
         ench.mark_dirty()
         o.set('DESC', zstr(text))
         report.append(f'regenerate: {omod} via {ench.edid}')
+        platforms[omod] = ('PlayStation: changed', 'regenerates health while low instead of using a stimpak')
     # Disintegratin' (Green): back to vanilla plasma goo
     for edid in (DISINTEGRATIN_GREEN, 'A1ALMMGEF_Target_Effect_Hostile_Disintegration_Green'):
         r = main.by_edid(edid)
@@ -252,6 +258,18 @@ def build(game: Path) -> None:
             for old, new in GREEN_SWAPS.items():
                 s.data = s.data.replace(struct.pack('<I', fid(old)), struct.pack('<I', new))
         r.mark_dirty()
+
+    # Midas': its gold dust is Disintegratin' (Gold)'s CLM art; vanilla ash instead (its caps need no art)
+    r = main.by_edid(MIDAS)
+    for s in r.subrecords:
+        for old, new in ((fid('A1ALMSPEL_CritLaserGold'), CRIT_LASER),
+                         (fid('A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Gold'),
+                          fid('A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Red'))):
+            s.data = s.data.replace(struct.pack('<I', old), struct.pack('<I', new))
+    append_desc(r, NOTE_MIDAS)
+    r.mark_dirty()
+    report.append(f'midas note: {r.get("FULL").zstring}')
+    platforms[MIDAS] = ('PlayStation: changed', "ordinary ash instead of gold dust (the gold is CLM's own art)")
 
     graph = reference_graph(m)
     face = fid(FACE_BUSTIN)
@@ -266,12 +284,20 @@ def build(game: Path) -> None:
             whole = effects and all(x in script_mgefs or reaches(graph, x, script_mgefs, set()) for x in effects)
             append_desc(r, NOTE_SCRIPT if whole else NOTE_PART)
             report.append(f'{"script" if whole else "part-script"} note: {r.get("FULL").zstring}')
+            if whole:
+                platforms[r.edid] = ('PC and Xbox only', 'needs a script: does nothing on PlayStation')
+            else:
+                parts = sorted({(m.own[x].get('FULL').zstring if m.own[x].get('FULL') else m.own[x].edid)
+                                for x in effects if x in script_mgefs or reaches(graph, x, script_mgefs, set())})
+                platforms[r.edid] = ('PlayStation: partly', 'does nothing there: ' + '; '.join(parts))
         elif face in graph[r.formid]:
             append_desc(r, NOTE_FACE)
             report.append(f'face note: {r.get("FULL").zstring}')
+            platforms[r.edid] = ('PlayStation: changed', 'targets are not blown apart')
         elif graph[r.formid] & reverted:
             append_desc(r, NOTE_DRAIN)
             report.append(f'drain note: {r.get("FULL").zstring}')
+            platforms[r.edid] = ('PlayStation: changed', 'heals on every hit except killing blows')
 
     # left out: recipes and loot drops
     gone = {fid(e) for e in LEFT_OUT}
@@ -369,7 +395,15 @@ def build(game: Path) -> None:
     for name, p in plugins.items():
         p.save(OUT / name)
     (OUT / 'build_report.txt').write_text('\n'.join(report) + '\n', encoding='utf8')
-    print(f'PlayStation plugins in {OUT} ({len(report)} changes, see build_report.txt)')
+    for e in LEFT_OUT:
+        platforms[e] = ('PC and Xbox only', 'left out on PlayStation: needs ' + (
+            "Kellogg's custom face files" if 'Kellog' in e else "CLM's own art (PlayStation mods cannot have assets)"))
+    platforms[DISINTEGRATIN_GREEN] = ('PlayStation: changed', "vanilla plasma goo instead of CLM's green ash")
+    with open(OUT / 'platforms.csv', 'w', encoding='utf8', newline='') as f:   # for the private tracking sheet
+        w = csv.writer(f)
+        w.writerow(['editor_id', 'status', 'playstation'])
+        w.writerows([e, *v] for e, v in sorted(platforms.items()))
+    print(f'PlayStation plugins in {OUT} ({len(report)} changes, see build_report.txt; platforms.csv)')
 
 
 TEST_BACKUP = REPO / 'work' / 'pc_plugins_during_ps_test'

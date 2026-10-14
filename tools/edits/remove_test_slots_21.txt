@@ -1,0 +1,7 @@
+# 2.1: the author's "ALM: A - Test" slots (1.09-era experiments), removed at the author's request (2026-10-14).
+# Apply with: python -m ack xedit run apply_edits "Custom Legendary Modifications Remade.esp" --save --param EDITS=<this file>
+rec.delete | co_A1ALMOMOD_Legendary_Armor_TestFREE
+rec.delete | co_A1ALMOMOD_Legendary_Weapon_TestFREE
+rec.delete | A1ALMOMOD_Legendary_Armor_Test
+rec.delete | A1ALMOMOD_Legendary_Weapon_Test
+rec.delete | A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target

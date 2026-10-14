@@ -7,7 +7,7 @@ armour to craft.
 
 **682 legendaries in 118 families.** Tiers: common 137, uncommon 245, rare 40, OP 260.
 
-Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (Crouch) (duplicate, hidden in 2.1), ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
+Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (Crouch) (duplicate, hidden in 2.1).
 
 ## Weapon families
 

@@ -2525,19 +2525,6 @@ Enchantments ADD A1ALMEnch_Constant_effect_Custom_Effect_SuperTanking "CLM: Supe
     A1ALMMGEF_Fortify_Effect_Action_Point_Regen: Value Modifier ActionPointsRate, magnitude 50.000000, duration 0 (Constant Effect, Self)
 ```
 
-### ALM: A - Test  `A1ALMOMOD_Legendary_Armor_Test`
-> Armor test. This is for mod author's experiments without affecting all custom legendary effects. Do not use this as they will not change anything for you. This is purely for his experiments.
-```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_ShavkasStriking_Base "CLM: Shavka's Striking" [ENCH:08485B2D] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Perk_ShavkasStriking_Base (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_ShavkasStriking_Base: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Apply Combat Hit Spell / Select Spell
-      values: A1ALMSPAB_Contact_Effect_Target_ExplodeOnContact_Melee_Targe
-      spell A1ALMSPAB_Contact_Effect_Target_ExplodeOnContact_Melee_Target_Base_Explosive
-        A1ALMMGEF_Target_Effect_Hostile_Explosion_Melee_Base_Explosive: Script, magnitude 1.000000, duration 0 (Fire and Forget, Touch)
-          script A1ALMMGEF_OnMeleeHitCLMEffect
-```
-
 ### CLM: Titanium  `A1ALMOMOD_Legendary_Armor_Titanium`
 > Your power armor health is increased by 75%. Stacks with Titanium lining.
 ```
@@ -8305,15 +8292,6 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Terrifying "CLM: Terrifyin
   ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Terrifying (, )
     A1ALMMGEF_Target_Effect_Demoralize: Demoralize, magnitude 9999.000000, duration 10 (Fire and Forget, Touch)
       if LevelMinusPCLevel [10100000] -5.000000
-```
-
-### ALM: A - Test  `A1ALMOMOD_Legendary_Weapon_Test`
-> Weapon test. This is for mod author's experiments without affecting all custom legendary effects. Do not use this as they will not change anything for you. This is purely for his experiments.
-```
-Enchantments ADD A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target "CLM: Explodin' (Nuclear)" [ENCH:0847D23E] / 431
-  ENCH A1ALMEnch_Contact_Effect_Target_ExplodeOnContact_Melee_Target (, )
-    A1ALMMGEF_Target_Effect_Hostile_Explosion_Melee_Variant_Cryo: Script, magnitude 1.000000, duration 2 (Fire and Forget, Touch)
-      script A1ALMMGEF_OnMeleeHitCLMEffect
 ```
 
 ### CLM: Thor Blessed  `A1ALMOMOD_Legendary_Weapon_ThorBlessed`
