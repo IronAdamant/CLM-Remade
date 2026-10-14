@@ -441,7 +441,7 @@
           "text": "Healing",
           "type": "switcher",
           "id": "bPick13:Picks",
-          "help": "Show the 9 Healing legendaries (armour) while Picker mode is on.",
+          "help": "Show the 10 Healing legendaries (armour) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -468,7 +468,7 @@
           "text": "Handiwork",
           "type": "switcher",
           "id": "bPick12:Picks",
-          "help": "Show the 7 Handiwork legendaries (armour) while Picker mode is on.",
+          "help": "Show the 8 Handiwork legendaries (armour) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -495,7 +495,7 @@
           "text": "Surroundings",
           "type": "switcher",
           "id": "bPick32:Picks",
-          "help": "Show the 7 Surroundings legendaries (armour) while Picker mode is on.",
+          "help": "Show the 9 Surroundings legendaries (armour) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -517,7 +517,7 @@
           "text": "Heavy hitters",
           "type": "switcher",
           "id": "bPick56:Picks",
-          "help": "Show the 9 Heavy hitters legendaries (weapon) while Picker mode is on.",
+          "help": "Show the 10 Heavy hitters legendaries (weapon) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -817,7 +817,7 @@
           "text": "Ordnance",
           "type": "switcher",
           "id": "bPick70:Picks",
-          "help": "Show the 6 Ordnance legendaries (weapon) while Picker mode is on.",
+          "help": "Show the 7 Ordnance legendaries (weapon) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -942,7 +942,7 @@
           "text": "Curios",
           "type": "switcher",
           "id": "bPick42:Picks",
-          "help": "Show the 7 Curios legendaries (weapon) while Picker mode is on.",
+          "help": "Show the 11 Curios legendaries (weapon) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1076,7 +1076,7 @@
           "text": "Utility",
           "type": "switcher",
           "id": "bPick115:Picks",
-          "help": "Show the 5 Utility legendaries (weapon) while Picker mode is on.",
+          "help": "Show the 9 Utility legendaries (weapon) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }
@@ -1107,7 +1107,7 @@
           "text": "Brawn",
           "type": "switcher",
           "id": "bPick39:Picks",
-          "help": "Show the 5 Brawn legendaries (weapon) while Picker mode is on.",
+          "help": "Show the 6 Brawn legendaries (weapon) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }

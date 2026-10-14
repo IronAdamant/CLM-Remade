@@ -112,6 +112,23 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Advanced Titanium** (changed; FL4CKTROOPER): reflects 5% of melee damage, on top of the 5% damage cut.
 - [ ] **PlayStation perk magazines** (PlayStation build only): `python tools/release/playstation.py --test-install`, then chemistry station > CLM Perks: make a magazine, read it, the perk is added; the recipe disappears once you have it. Restore with `--test-restore`.
 
+## Variety: new kinds of effect (15)
+- [ ] **Disheartenin'** (Balanced): hit enemies deal about 25% less damage for 5 seconds.
+- [ ] **Energizin'** (Balanced): your AP goes up 3 per hit. If it does not, tell me (the effect may need a script).
+- [ ] **Capitalist's** (Balanced): more damage with more caps (+10% per 1,000, up to +50% at 5,000).
+- [ ] **Cleavin'** (Balanced, PC/Xbox): melee hits also damage enemies around the target; never you or companions; guns do nothing extra.
+- [ ] **Disarmin'** (Balanced): enemies sometimes drop their weapon.
+- [ ] **Terrifyin'** (Balanced): enemies 5+ levels below you run away when hit; equal or stronger ones keep fighting.
+- [ ] **Midas'** (Balanced): enemies hit before they die turn to gold dust; kills carry extra caps.
+- [ ] **Rallyin'** (Balanced): companion's resistances go up near you. Check it does not multiply with several pieces.
+- [ ] **Intimidatin'** (Balanced): weak enemies (10+ levels below you) flee when near you.
+- [ ] **Field Medic's** (Balanced): stimpaks heal more, RadAway removes more.
+- [ ] **Breakin' and Enterin'** (Balanced): without Locksmith you can pick Advanced locks; without Hacker, hack Advanced terminals. With rank 1, Expert. Check it never lowers what your own perks allow.
+- [ ] **Necromancer's** (OP, PC/Xbox): kills rise ~1.5 s later, fight on your side for 60 s, then drop dead. Named characters stay dead.
+- [ ] **Radroachin'** (OP, PC/Xbox): sometimes a target becomes a radroach; killing the roach gives the target's loot. Named characters unaffected.
+- [ ] **Shrinkin'** (OP): targets shrink to half size for 10 s and hit softer, then grow back to their normal size (not smaller).
+- [ ] **Singularity** (OP, experimental): hits pull nearby enemies towards the target. If they are pushed away instead, tell me.
+
 ## Concise view
 
 - [ ] **New game**: the workbench shows one legendary per group (e.g. Hurtin' (50%) but not Hurtin' (25%) / (100%); Lobbin' (Frag Grenade) but no mines). The plain Random spawns show, Legendary/Boss spawns do not.

@@ -40,7 +40,8 @@ VALUES = ['JumpHeightMult', 'SpeedMult', 'Strength', 'DamageResist', 'EnergyResi
 TRACED = ['A1ALMMGEF_BurstFireEffect', 'A1ALMMGEF_CinematicCameraEffect', 'A1ALMMGEF_DragonDashEffect',
           'A1ALMMGEF_DrainOnHitScript', 'A1ALMMGEF_ExplodeAfterDeathScript', 'A1ALMMGEF_FactionFriendEffect',
           'A1ALMMGEF_OnHealthUseStim', 'A1ALMMGEF_OnHitArmourEffect', 'A1ALMMGEF_OnKillArmourEffect',
-          'A1ALMMGEF_OnMeleeEffect', 'A1ALMMGEF_PercentDamageEffect']
+          'A1ALMMGEF_OnMeleeEffect', 'A1ALMMGEF_PercentDamageEffect', 'A1ALMMGEF_CleaveEffect',
+          'A1ALMMGEF_NecromancerEffect', 'A1ALMMGEF_RisenEffect', 'A1ALMMGEF_PolymorphEffect', 'A1ALMMGEF_ShrinkEffect']
 
 
 def watch_lists(main_path: Path, ack: Path) -> tuple[list[str], list[str], list[str]]:

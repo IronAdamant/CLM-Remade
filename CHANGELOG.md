@@ -9,7 +9,7 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
 - **Concise view: one legendary per group of similar effects.** Too many legendaries felt alike, so the workbench
   now shows one balanced legendary per group (33 groups: "More damage", "Elemental hits", "Grenades and mines",
   "Melee reactions"...) and hides the rest of each group: 120 legendaries, plus the Legendary and Boss tiers of the
-  spawns (48). A new game shows 139 legendaries instead of 306. Nothing is removed and gear you own keeps working.
+  spawns (48). A new game shows 149 legendaries instead of 317. Nothing is removed and gear you own keeps working.
   - Where no single legendary stood for its group, a new balanced one does (records only unless noted):
     **Opportunist's** (+40% damage on a sneak attack, against a full-health target or below half health, one at a
     time), **Elemental Strikin'** (Nature's Wrath's elements without its fire rate), **Double Tappin'** (the base
@@ -117,6 +117,23 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   - Not built: real flight (it needs F4SE, which CLM does not use; Flyin' stays), and second and third CLM
     legendary slots (they would mean editing every weapon and armour record; LEO's extra slots hold LEO's own
     effects).
+- **15 legendaries for kinds of effect CLM lacked** (weakening and controlling enemies, backing companions, utility;
+  `tools/edits/gen_variety_21.py`). Balanced, every platform unless marked:
+  - **Disheartenin'**: enemies you hit deal 25% less damage for 5 seconds.
+  - **Energizin'**: each hit drains 3 Action Points from the target and gives them to you.
+  - **Capitalist's**: +10% damage per 1,000 caps you carry, up to +50%.
+  - **Cleavin'** (PC and Xbox): melee and unarmed hits also strike every other enemy within 3 metres for 40 damage.
+  - **Disarmin'**: 10% chance a hit knocks the target's weapon out of its hands.
+  - **Terrifyin'**: enemies 5+ levels below you flee for 10 seconds when hit.
+  - **Midas'**: kills turn to gold dust (as Disintegratin' (Gold)) and carry a handful of extra caps.
+  - **Rallyin'** (armour): companions and allies near you get +15 damage and energy resistance and +10% damage.
+  - **Intimidatin'** (armour): enemies 10+ levels below you flee instead of fighting.
+  - **Field Medic's** (armour): stimpaks and RadAway work 30% better; counts once.
+  - **Breakin' and Enterin'** (armour): pick locks and hack terminals one level above your perks; counts once.
+  - OP: **Necromancer's** (PC and Xbox: kills rise and fight for you for 60 seconds), **Radroachin'** (PC and Xbox:
+    10% chance a hit turns the target into a radroach carrying its loot), **Shrinkin'** (targets shrink to half size
+    and deal half damage for 10 seconds; the shrinking is PC and Xbox), **Singularity** (hits implode, pulling
+    enemies in; experimental).
 - **23 new armour legendaries**, CLM's own: effects the base game does not have, sized against its legendaries
   (Sentinel's, Bolstering, Unyielding...). Balanced unless marked. Value effects (resistances, SPECIAL, speed,
   healing) add up per piece as the base game's do; the perk-based parts count once however many pieces carry them.

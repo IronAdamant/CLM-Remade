@@ -92,6 +92,21 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Bloodthirsty "CLM: Bloo
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bloodthirsty: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
 ```
 
+### CLM: Breakin' and Enterin'  `A1ALMOMOD_Legendary_Armor_BreakingAndEntering`
+> You can pick locks and hack terminals one level above what your Locksmith and Hacker perks allow. Counts once, however many pieces have it.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BreakingAndEntering "CLM: Breakin' and Enterin'" [ENCH:084AD0A7] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_BreakingAndEntering (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_BreakingAndEntering: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Set Player Gate Lockpick / Set Value
+      entry point: Set Player Gate Lockpick / Set Value
+      entry point: Set Player Gate Lockpick / Set Value
+      entry point: Set Player Gate Hacking / Set Value
+      entry point: Set Player Gate Hacking / Set Value
+      entry point: Set Player Gate Hacking / Set Value
+      values: 1.000000; 2.000000; 3.000000; 1.000000; 2.000000; 3.000000
+```
+
 ### CLM: Brutal  `A1ALMOMOD_Legendary_Armor_Brutal`
 > 1000 to all resistance. 50 hp regeneration, 50 AP Regeneration.
 ```
@@ -572,6 +587,17 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Fiddling "CLM: Fiddlin'
       values: 5.000000
 ```
 
+### CLM: Field Medic's  `A1ALMOMOD_Legendary_Armor_FieldMedics`
+> Stimpaks and RadAway work 30% better on you (on top of the Medic perk). Counts once, however many pieces have it.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_FieldMedics "CLM: Field Medic's" [ENCH:084AD0A1] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_FieldMedics (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_FieldMedics: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Spell Magnitude / Multiply Value
+      entry point: Mod Spell Magnitude / Multiply Value
+      values: 1.300000; 1.300000
+```
+
 ### CLM: Constantly Flamin' Cloaked  `A1ALMOMOD_Legendary_Armor_FlamingCloaked_Constant`
 > Weapons and armor become hot as Magma. 25+ fire damage.
 ```
@@ -964,6 +990,14 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Beneficial_Increase_WeaponDamage_50P 
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Fortify_WeaponDamage_50P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Weapon Attack Damage / Multiply Value
       values: 1.500000
+```
+
+### CLM: Intimidatin'  `A1ALMOMOD_Legendary_Armor_Intimidating`
+> Enemies 10 or more levels below you will not fight you: near you, they flee in fear.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Intimidating "CLM: Intimidatin'" [ENCH:084AD09B] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Intimidating (, )
+    A1ALMMGEF_Cloak_Intimidating: Cloak, magnitude 15.000000, duration 0 (Constant Effect, Self)
 ```
 
 ### CLM: Ironclad  `A1ALMOMOD_Legendary_Armor_Ironclad`
@@ -2182,6 +2216,14 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Shock "CLM: R
     A1ALMMGEF_Cloak_Radiating_Shock: Cloak, magnitude 10.000000, duration 0 (Constant Effect, Self)
 ```
 
+### CLM: Rallyin'  `A1ALMOMOD_Legendary_Armor_Rallying`
+> Your companions and anyone else on your side near you get +15 damage and energy resistance and deal 10% more damage.
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Rallying "CLM: Rallyin'" [ENCH:084AD095] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Rallying (, )
+    A1ALMMGEF_Cloak_Rallying: Cloak, magnitude 10.000000, duration 0 (Constant Effect, Self)
+```
+
 ### CLM: Resistance (Acid)  `A1ALMOMOD_Legendary_Armor_Resistance_Acid`
 > You take 50% less acid damage.
 ```
@@ -3160,6 +3202,21 @@ DamageTypeValues ADD dtFire [DMGT:00060A82] / 1.000000
 Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_CQC "CLM: CQC" [ENCH:084ACF28] / 431
 ```
 
+### CLM: Capitalist's  `A1ALMOMOD_Legendary_Weapon_Capitalists`
+> +10% damage for every 1,000 caps you carry, up to +50% at 5,000 caps.
+```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Capitalists [KYWD:084AD074] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Capitalists "CLM: Capitalist's" [ENCH:084AD077] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Capitalists (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Capitalists: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      entry point: Mod Weapon Attack Damage / Multiply Value
+      values: 1.100000; 1.200000; 1.300000; 1.400000; 1.500000
+```
+
 ### CLM: Carbonatin'  `A1ALMOMOD_Legendary_Weapon_Carbonatin`
 > Adds an extra projectile to every shot. You will also have a chance to witness caps explode out of your enemies through critical shots.
 ```
@@ -3223,6 +3280,15 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Chillling "CLM: Chi
 > One kill in ten plays out in slow motion, seen from the third-person camera for two seconds before it returns to first person. (Fallout 4 cannot start a real kill camera outside V.A.T.S.; this is the closest.)
 ```
 Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence "CLM: Cinematic Excellence" [ENCH:084ACF23] / 431
+```
+
+### CLM: Cleavin'  `A1ALMOMOD_Legendary_Weapon_Cleaving`
+> Melee and unarmed hits also strike every other enemy within 3 metres of your target for 40 damage. (PC and Xbox.)
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Cleaving "CLM: Cleavin'" [ENCH:084AD07D] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Cleaving (, )
+    A1ALMMGEF_Target_Effect_Hostile_Cleave: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_CleaveEffect
 ```
 
 ### CLM: Commando's  `A1ALMOMOD_Legendary_Weapon_Commandos`
@@ -4740,6 +4806,23 @@ Value SET 666 / 0
 DamageTypeValues SET dtEnergy [DMGT:00060A81] / 666.000000
 ```
 
+### CLM: Disarmin'  `A1ALMOMOD_Legendary_Weapon_Disarming`
+> Each hit has a 10% chance to knock the weapon out of your target's hands.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Disarming "CLM: Disarmin'" [ENCH:084AD081] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Disarming (, )
+    MGEF ModDisarmEffect (vanilla) magnitude 9999.000000 duration 2
+      if GetRandomPercent [00100000] 10.000000
+```
+
+### CLM: Disheartenin'  `A1ALMOMOD_Legendary_Weapon_Disheartening`
+> Enemies you hit deal 25% less damage for 5 seconds.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Disheartening "CLM: Disheartenin'" [ENCH:084AD06B] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Disheartening (, )
+    A1ALMMGEF_Target_Effect_Hostile_Dishearten: Peak Value Modifier AttackDamageMult, magnitude 0.250000, duration 5 (Fire and Forget, Touch)
+```
+
 ### CLM: Double Tappin'  `A1ALMOMOD_Legendary_Weapon_DoubleTapping`
 > Your weapon fires one more projectile, each at full damage, with a 30% wider spread (like the base game's Two Shot).
 ```
@@ -5027,6 +5110,14 @@ Ammo SET AmmoPlasmaCartridge "Plasma Cartridge" [AMMO:0001DBB7] / 431
 OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Plasma [PROJ:08249299] / 431
   PROJ type Missile, speed 12000.000000, gravity 0.000000
     explosion ExplosionMissileShell (vanilla)
+```
+
+### CLM: Energizin'  `A1ALMOMOD_Legendary_Weapon_Energizing`
+> Each hit drains 3 Action Points from the target and gives them to you.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Energizing "CLM: Energizin'" [ENCH:084AD070] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Energizing (, )
+    A1ALMMGEF_Target_Effect_Hostile_AbsorbActionPoints: Absorb ActionPoints, magnitude 3.000000, duration 0 (Fire and Forget, Touch)
 ```
 
 ### CLM: Shavka's Explosive Striking  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Base_Explosive`
@@ -6303,6 +6394,22 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Detrimental_Effect_Reduce_WeaponDamag
       values: 0.500000; 0.000000
 ```
 
+### CLM: Midas'  `A1ALMOMOD_Legendary_Weapon_Midas`
+> Enemies you hit turn to gold dust when they die (unless killed in one hit), and everyone you kill while wielding it carries a handful of extra caps.
+```
+Keywords ADD A1ALMKW_WeaponPerk_Weapon_Midas [KYWD:084AD089] / 431
+CritEffect SET A1ALMSPEL_CritLaserGold [SPEL:084AC8E7] / 431
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Gold "CLM: Disintegration (Gold)" [ENCH:084AC8FA] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Gold (, )
+    A1ALMMGEF_Target_Effect_Hostile_Disintegration_Gold: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script AttachAshPile
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Midas "CLM: Midas'" [ENCH:084AD08C] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Midas (, )
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Midas: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Add Leveled List On Death / Add Leveled List
+      values: LLE_Perk_FortuneFinder_Large [LVLI:000585A7]
+```
+
 ### CLM: Sticky Frag Mine launchin'  `A1ALMOMOD_Legendary_Weapon_Mine_Base_Sticky_FragMine`
 > Turns your weapon into a sticky mine launcher. The mines will stick to any hard surface. (May not work on ceilings).
 ```
@@ -6408,6 +6515,15 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath
       if GetRandomPercent [00100000] 10.000000
     A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
       if GetRandomPercent [00100000] 10.000000
+```
+
+### CLM: Necromancer's  `A1ALMOMOD_Legendary_Weapon_Necromancers`
+> Enemies you kill rise again a moment later and fight for you for 60 seconds, then fall dead. Unique and essential characters stay dead. (PC and Xbox.)
+```
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Necromancers "CLM: Necromancer's" [ENCH:084AD0AE] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Necromancers (, )
+    A1ALMMGEF_Constant_Effect_Weapon_Necromancers: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_NecromancerEffect
 ```
 
 ### Not Legendary  `A1ALMOMOD_Legendary_Weapon_NotALegendary`
@@ -6729,6 +6845,16 @@ ReloadSpeed MUL+ADD 0.500000 / 0.000000
 ```
 Speed MUL+ADD 0.750000 / 0.000000
 ReloadSpeed MUL+ADD 0.750000 / 0.000000
+```
+
+### CLM: Radroachin'  `A1ALMOMOD_Legendary_Weapon_Radroaching`
+> Each hit has a 10% chance to turn your target into a radroach, which carries everything the target had. Unique and essential characters are not affected. (PC and Xbox.)
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Radroaching "CLM: Radroachin'" [ENCH:084AD0B3] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Radroaching (, )
+    A1ALMMGEF_Target_Effect_Hostile_Radroach: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
+      script A1ALMMGEF_PolymorphEffect
+      if GetRandomPercent [00100000] 10.000000
 ```
 
 ### CLM: Raging  `A1ALMOMOD_Legendary_Weapon_Raging`
@@ -7879,12 +8005,33 @@ AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
 NumProjectiles ADD 3 / 0
 ```
 
+### CLM: Shrinkin'  `A1ALMOMOD_Legendary_Weapon_Shrinking`
+> Your targets shrink to half their size for 10 seconds and deal half damage while small. (The shrinking is PC and Xbox only.)
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Shrinking "CLM: Shrinkin'" [ENCH:084AD0B8] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Shrinking (, )
+    A1ALMMGEF_Target_Effect_Hostile_Shrink: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
+      script A1ALMMGEF_ShrinkEffect
+      if HasMagicEffect(A1ALMMGEF_Target_Effect_Hostile_Shrink) [10000000] 0.000000
+    A1ALMMGEF_Target_Effect_Hostile_Dishearten: Peak Value Modifier AttackDamageMult, magnitude 0.500000, duration 10 (Fire and Forget, Touch)
+      if HasMagicEffect(A1ALMMGEF_Target_Effect_Hostile_Shrink) [10000000] 0.000000
+```
+
 ### CLM: Pre-Suppressed  `A1ALMOMOD_Legendary_Weapon_Silenced`
 > Your weapon is now silenced.
 ```
 Keywords ADD s_20_Silenced [KYWD:00054A67] / 431
 Keywords ADD HasSilencer [KYWD:001E05D6] / 431
 SoundLevel SET Silent / 00 00 00 00
+```
+
+### CLM: Singularity  `A1ALMOMOD_Legendary_Weapon_Singularity`
+> Hits collapse into a small singularity: an implosion that pulls nearby enemies towards the target and deals 60 damage.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity "CLM: Singularity" [ENCH:084AD0BE] / 431
+  ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity (, )
+    A1ALMMGEF_Target_Effect_Hostile_Explosion_Singularity: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
+      script FortuneFinderCapsScript
 ```
 
 ### CLM: Slayer's  `A1ALMOMOD_Legendary_Weapon_Slayer_Base`
@@ -8149,6 +8296,15 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_100P_W "CLM: Refilling
       entry point: Mod Scrounger Fill Ammo Chance / Set Value
       values: 100.000000
 ReloadSpeed MUL+ADD 0.500000 / 0.000000
+```
+
+### CLM: Terrifyin'  `A1ALMOMOD_Legendary_Weapon_Terrifying`
+> Enemies 5 or more levels below you flee in terror for 10 seconds when you hit them.
+```
+Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Terrifying "CLM: Terrifyin'" [ENCH:084AD085] / 431
+  ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Terrifying (, )
+    A1ALMMGEF_Target_Effect_Demoralize: Demoralize, magnitude 9999.000000, duration 10 (Fire and Forget, Touch)
+      if LevelMinusPCLevel [10100000] -5.000000
 ```
 
 ### ALM: A - Test  `A1ALMOMOD_Legendary_Weapon_Test`

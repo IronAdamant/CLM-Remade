@@ -125,6 +125,13 @@ THEMES = {
     # 2.1 concise view mascots (tools/edits/gen_mascots_21.py)
     ('weapon', 'Opportunists'): 'Heavy hitters', ('weapon', 'ElementalStriking'): 'Elements',
     ('weapon', 'DoubleTapping'): 'Multi-shot', ('armor', 'Vitality'): 'Healing',
+    # 2.1 variety (tools/edits/gen_variety_21.py)
+    ('weapon', 'Disheartening'): 'Utility', ('weapon', 'Energizing'): 'Utility', ('weapon', 'Capitalists'): 'Heavy hitters',
+    ('weapon', 'Cleaving'): 'Brawn', ('weapon', 'Disarming'): 'Utility', ('weapon', 'Terrifying'): 'Utility',
+    ('weapon', 'Midas'): 'Curios', ('armor', 'Rallying'): 'Surroundings', ('armor', 'Intimidating'): 'Surroundings',
+    ('armor', 'FieldMedics'): 'Healing', ('armor', 'BreakingAndEntering'): 'Handiwork',
+    ('weapon', 'Necromancers'): 'Curios', ('weapon', 'Radroaching'): 'Curios', ('weapon', 'Shrinking'): 'Curios',
+    ('weapon', 'Singularity'): 'Ordnance',
     ('armor', 'Cheaters'): 'Forbidden (armour)', ('armor', 'GodFathers'): 'Forbidden (armour)',
 }
 

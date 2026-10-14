@@ -45,7 +45,7 @@ Merged: Bleeding, Poison and acid, Fire on hit, Cold, Energy damage and Cripplin
 Moving while aiming and Jumping into Movement (shown: Combined Speed and Jump Boosts (25%)); Steady and Emergency
 healing into Healing.
 
-Counts (new game, balanced, main variants): 139 shown (31 weapon, 42 armour, 66 spawns) against 306 with Show all.
+Counts (new game, balanced, main variants): 149 shown (38 weapon, 45 armour, 66 spawns) against 317 with Show all.
 
 ## Weapons: 31 shown, 63 hidden
 
@@ -93,8 +93,8 @@ Always shown (nothing similar among the balanced ones): Automatic (Furious), For
 
 Always shown (nothing similar among the balanced ones): Santa Prisca's, Enlightened, Fiddlin', Gheed's Fortunate, Scavenger's, Cat Tailed, Waterbreathing, Impact Landing (Basic), Lucky Hittin' (10%), Murderous (x3), Marathon Runnin', Quick Hands (50%), Refilling (10%), Titanium, Battery Regeneratin' (Slow), Overcharged, Punching (Radiation), Shavka's Explosive Striking, Radiatin' (Healing), Glow, Amphibious, Entrenched, Home Turf, Night Owl's, Storm Chasin', Glowing Heart, Ironclad, Underdog's.
 
-Two armour records are both called "Highlighting"; both are in the Seeing enemies group, so 168 legendaries are
-hidden in all (33 groups: 120 weapon and armour, 48 spawns).
+Two armour records are both called "Highlighting"; both are in the Seeing enemies group, so 169 legendaries are
+hidden in all (33 groups: 121 weapon and armour, 48 spawns).
 
 ## Still to do
 

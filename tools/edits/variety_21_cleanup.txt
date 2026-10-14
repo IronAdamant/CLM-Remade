@@ -1,0 +1,3 @@
+rec.delete | A1ALMPERK_Temp_Medic01
+rec.delete | A1ALMPERK_Temp_Locksmith01
+rec.delete | A1ALMPERK_Temp_Hacker01

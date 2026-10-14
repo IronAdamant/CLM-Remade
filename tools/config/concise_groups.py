@@ -39,7 +39,7 @@ WEAPON = [
 ARMOUR = [
     ('Damage resistance', 'flat damage resistance', 'Ballistic Protection (Basic)', ['Ballistic Protection (Light)']),
     ('Healing', 'health over time, faster or automatic when it runs low', 'Vitality',
-     ['Regenerative (Slow)', 'Sun-Kissed', 'Auto-Medical', 'Aid Patch', 'Phoenix']),
+     ['Regenerative (Slow)', 'Sun-Kissed', 'Auto-Medical', 'Aid Patch', 'Phoenix', "Field Medic's"]),
     ('Healing on a kill', 'kills heal or speed you up', 'Bloodthirsty', ['Momentum']),
     ('Resistances', 'less damage from one damage type', 'Resistance (All)',
      ['Resistance (Acid)', 'Resistance (Electric)', 'Resistance (Explosion)', 'Resistance (Limb Damage)',
@@ -69,9 +69,11 @@ ARMOUR = [
 # shown in the concise view as they are (nothing similar enough among the balanced ones)
 WEAPON_SOLO = ['Automatic (Furious)', "Forcible", 'Rebounding (Bullet)', 'Vampiric', 'Pre-Suppressed', 'Bloody Messy',
                'Cinematic Excellence', "Lorenzo's Legendary Artificial", "Salvaged Assaultron's Beaming", "Moby-Dick's",
-               'Heavily Ordnanced', 'Pyrotechnical (Minutemen Flare)', "Shavka's Explosive Striking"]
+               'Heavily Ordnanced', 'Pyrotechnical (Minutemen Flare)', "Shavka's Explosive Striking",
+               "Disheartenin'", "Energizin'", "Capitalist's", "Cleavin'", "Disarmin'", "Terrifyin'", "Midas'"]
 ARMOUR_SOLO = ['Santa Prisca\'s', 'Enlightened', 'Fiddlin\'', "Gheed's Fortunate", "Scavenger's", 'Cat Tailed',
                'Waterbreathing', 'Impact Landing (Basic)', "Lucky Hittin' (10%)", 'Murderous (x3)', "Marathon Runnin'",
                'Quick Hands (50%)', 'Refilling (10%)', 'Titanium', "Battery Regeneratin' (Slow)", 'Overcharged', 'Punching (Radiation)',
                "Shavka's Explosive Striking", "Radiatin' (Healing)", 'Glow', 'Amphibious', 'Entrenched', 'Home Turf', "Night Owl's",
-               "Storm Chasin'", 'Glowing Heart', 'Ironclad', "Underdog's"]
+               "Storm Chasin'", 'Glowing Heart', 'Ironclad', "Underdog's", "Rallyin'", "Intimidatin'",
+               "Breakin' and Enterin'"]

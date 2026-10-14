@@ -1291,6 +1291,11 @@ set | A1ALMMISC_LooseMod_Armor_Scavengers | FULL | CLM: Scavenger's
 set | A1ALMMISC_LooseMod_Armor_Scavengers | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Armor_Scavengers | LNAM | @A1ALMMISC_LooseMod_Armor_Scavengers
 copy | @co_A1ALMOMOD_Legendary_Armor_Scavengers | co_A1ALMOMOD_Legendary_Armor_Scavengers_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_BreakingAndEntering
+set | A1ALMMISC_LooseMod_Armor_BreakingAndEntering | FULL | CLM: Breakin' and Enterin'
+set | A1ALMMISC_LooseMod_Armor_BreakingAndEntering | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_BreakingAndEntering | LNAM | @A1ALMMISC_LooseMod_Armor_BreakingAndEntering
+copy | @co_A1ALMOMOD_Legendary_Armor_BreakingAndEntering | co_A1ALMOMOD_Legendary_Armor_BreakingAndEntering_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_DevilsDue
 set | A1ALMMISC_LooseMod_Armor_DevilsDue | FULL | CLM: Devil's Due
 set | A1ALMMISC_LooseMod_Armor_DevilsDue | DATA\Value | 1500
@@ -1326,6 +1331,11 @@ set | A1ALMMISC_LooseMod_Armor_Bloodthirsty | FULL | CLM: Bloodthirsty
 set | A1ALMMISC_LooseMod_Armor_Bloodthirsty | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_Bloodthirsty | LNAM | @A1ALMMISC_LooseMod_Armor_Bloodthirsty
 copy | @co_A1ALMOMOD_Legendary_Armor_Bloodthirsty | co_A1ALMOMOD_Legendary_Armor_Bloodthirsty_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_FieldMedics
+set | A1ALMMISC_LooseMod_Armor_FieldMedics | FULL | CLM: Field Medic's
+set | A1ALMMISC_LooseMod_Armor_FieldMedics | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_FieldMedics | LNAM | @A1ALMMISC_LooseMod_Armor_FieldMedics
+copy | @co_A1ALMOMOD_Legendary_Armor_FieldMedics | co_A1ALMOMOD_Legendary_Armor_FieldMedics_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armour_StimpakSelfHeal
 set | A1ALMMISC_LooseMod_Armour_StimpakSelfHeal | FULL | CLM: Auto-Medical
 set | A1ALMMISC_LooseMod_Armour_StimpakSelfHeal | DATA\Value | 200
@@ -2016,6 +2026,16 @@ set | A1ALMMISC_LooseMod_Armor_Entrenched | FULL | CLM: Entrenched
 set | A1ALMMISC_LooseMod_Armor_Entrenched | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_Entrenched | LNAM | @A1ALMMISC_LooseMod_Armor_Entrenched
 copy | @co_A1ALMOMOD_Legendary_Armor_Entrenched | co_A1ALMOMOD_Legendary_Armor_Entrenched_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Intimidating
+set | A1ALMMISC_LooseMod_Armor_Intimidating | FULL | CLM: Intimidatin'
+set | A1ALMMISC_LooseMod_Armor_Intimidating | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_Intimidating | LNAM | @A1ALMMISC_LooseMod_Armor_Intimidating
+copy | @co_A1ALMOMOD_Legendary_Armor_Intimidating | co_A1ALMOMOD_Legendary_Armor_Intimidating_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_Rallying
+set | A1ALMMISC_LooseMod_Armor_Rallying | FULL | CLM: Rallyin'
+set | A1ALMMISC_LooseMod_Armor_Rallying | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Armor_Rallying | LNAM | @A1ALMMISC_LooseMod_Armor_Rallying
+copy | @co_A1ALMOMOD_Legendary_Armor_Rallying | co_A1ALMOMOD_Legendary_Armor_Rallying_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_ShadowDwelling
 set | A1ALMMISC_LooseMod_Armor_ShadowDwelling | FULL | CLM: Shadow Dwellin'
 set | A1ALMMISC_LooseMod_Armor_ShadowDwelling | DATA\Value | 200
@@ -2171,6 +2191,11 @@ set | A1ALMMISC_LooseMod_Weapon_WoundinglyInstigating | FULL | CLM: Woundingly I
 set | A1ALMMISC_LooseMod_Weapon_WoundinglyInstigating | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_WoundinglyInstigating | LNAM | @A1ALMMISC_LooseMod_Weapon_WoundinglyInstigating
 copy | @co_A1ALMOMOD_Legendary_Weapon_WoundinglyInstigating | co_A1ALMOMOD_Legendary_Weapon_WoundinglyInstigating_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Cleaving
+set | A1ALMMISC_LooseMod_Weapon_Cleaving | FULL | CLM: Cleavin'
+set | A1ALMMISC_LooseMod_Weapon_Cleaving | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Cleaving | LNAM | @A1ALMMISC_LooseMod_Weapon_Cleaving
+copy | @co_A1ALMOMOD_Legendary_Weapon_Cleaving | co_A1ALMOMOD_Legendary_Weapon_Cleaving_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_DragonBlade
 set | A1ALMMISC_LooseMod_Weapon_DragonBlade | FULL | CLM: DragonBlade
 set | A1ALMMISC_LooseMod_Weapon_DragonBlade | DATA\Value | 1500
@@ -2271,6 +2296,11 @@ set | A1ALMMISC_LooseMod_Weapon_Medics | FULL | CLM: Medic's
 set | A1ALMMISC_LooseMod_Weapon_Medics | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Medics | LNAM | @A1ALMMISC_LooseMod_Weapon_Medics
 copy | @co_A1ALMOMOD_Legendary_Weapon_Medics | co_A1ALMOMOD_Legendary_Weapon_Medics_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Midas
+set | A1ALMMISC_LooseMod_Weapon_Midas | FULL | CLM: Midas'
+set | A1ALMMISC_LooseMod_Weapon_Midas | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Midas | LNAM | @A1ALMMISC_LooseMod_Weapon_Midas
+copy | @co_A1ALMOMOD_Legendary_Weapon_Midas | co_A1ALMOMOD_Legendary_Weapon_Midas_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_AngryNerds
 set | A1ALMMISC_LooseMod_Weapon_AngryNerds | FULL | CLM: Angry Nerd's
 set | A1ALMMISC_LooseMod_Weapon_AngryNerds | DATA\Value | 1500
@@ -2286,6 +2316,21 @@ set | A1ALMMISC_LooseMod_Weapon_LiarsCompedium | FULL | CLM: Liar's Compendium
 set | A1ALMMISC_LooseMod_Weapon_LiarsCompedium | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Weapon_LiarsCompedium | LNAM | @A1ALMMISC_LooseMod_Weapon_LiarsCompedium
 copy | @co_A1ALMOMOD_Legendary_Weapon_LiarsCompedium | co_A1ALMOMOD_Legendary_Weapon_LiarsCompedium_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Necromancers
+set | A1ALMMISC_LooseMod_Weapon_Necromancers | FULL | CLM: Necromancer's
+set | A1ALMMISC_LooseMod_Weapon_Necromancers | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_Necromancers | LNAM | @A1ALMMISC_LooseMod_Weapon_Necromancers
+copy | @co_A1ALMOMOD_Legendary_Weapon_Necromancers | co_A1ALMOMOD_Legendary_Weapon_Necromancers_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Radroaching
+set | A1ALMMISC_LooseMod_Weapon_Radroaching | FULL | CLM: Radroachin'
+set | A1ALMMISC_LooseMod_Weapon_Radroaching | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_Radroaching | LNAM | @A1ALMMISC_LooseMod_Weapon_Radroaching
+copy | @co_A1ALMOMOD_Legendary_Weapon_Radroaching | co_A1ALMOMOD_Legendary_Weapon_Radroaching_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Shrinking
+set | A1ALMMISC_LooseMod_Weapon_Shrinking | FULL | CLM: Shrinkin'
+set | A1ALMMISC_LooseMod_Weapon_Shrinking | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_Shrinking | LNAM | @A1ALMMISC_LooseMod_Weapon_Shrinking
+copy | @co_A1ALMOMOD_Legendary_Weapon_Shrinking | co_A1ALMOMOD_Legendary_Weapon_Shrinking_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Destroyers_Base
 set | A1ALMMISC_LooseMod_Weapon_Destroyers_Base | FULL | CLM: Destroyer's
 set | A1ALMMISC_LooseMod_Weapon_Destroyers_Base | DATA\Value | 1500
@@ -2646,6 +2691,11 @@ set | A1ALMMISC_LooseMod_Weapon_Bloodlust | FULL | CLM: Bloodlust
 set | A1ALMMISC_LooseMod_Weapon_Bloodlust | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Weapon_Bloodlust | LNAM | @A1ALMMISC_LooseMod_Weapon_Bloodlust
 copy | @co_A1ALMOMOD_Legendary_Weapon_Bloodlust | co_A1ALMOMOD_Legendary_Weapon_Bloodlust_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Capitalists
+set | A1ALMMISC_LooseMod_Weapon_Capitalists | FULL | CLM: Capitalist's
+set | A1ALMMISC_LooseMod_Weapon_Capitalists | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Capitalists | LNAM | @A1ALMMISC_LooseMod_Weapon_Capitalists
+copy | @co_A1ALMOMOD_Legendary_Weapon_Capitalists | co_A1ALMOMOD_Legendary_Weapon_Capitalists_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Commandos
 set | A1ALMMISC_LooseMod_Weapon_Commandos | FULL | CLM: Commando's
 set | A1ALMMISC_LooseMod_Weapon_Commandos | DATA\Value | 200
@@ -3051,6 +3101,11 @@ set | A1ALMMISC_LooseMod_Weapon_Override_Explosive_Nuke | FULL | CLM: Nukin'
 set | A1ALMMISC_LooseMod_Weapon_Override_Explosive_Nuke | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Weapon_Override_Explosive_Nuke | LNAM | @A1ALMMISC_LooseMod_Weapon_Override_Explosive_Nuke
 copy | @co_A1ALMOMOD_Legendary_Weapon_Override_Explosive_Nuke | co_A1ALMOMOD_Legendary_Weapon_Override_Explosive_Nuke_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Singularity
+set | A1ALMMISC_LooseMod_Weapon_Singularity | FULL | CLM: Singularity
+set | A1ALMMISC_LooseMod_Weapon_Singularity | DATA\Value | 1500
+set | A1ALMOMOD_Legendary_Weapon_Singularity | LNAM | @A1ALMMISC_LooseMod_Weapon_Singularity
+copy | @co_A1ALMOMOD_Legendary_Weapon_Singularity | co_A1ALMOMOD_Legendary_Weapon_Singularity_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Paintball_Variant_Blue
 set | A1ALMMISC_LooseMod_Weapon_Paintball_Variant_Blue | FULL | CLM: Paintball (Blue)
 set | A1ALMMISC_LooseMod_Weapon_Paintball_Variant_Blue | DATA\Value | 75
@@ -4256,6 +4311,26 @@ set | A1ALMMISC_LooseMod_Weapon_Silenced | FULL | CLM: Pre-Suppressed
 set | A1ALMMISC_LooseMod_Weapon_Silenced | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_Silenced | LNAM | @A1ALMMISC_LooseMod_Weapon_Silenced
 copy | @co_A1ALMOMOD_Legendary_Weapon_Silenced | co_A1ALMOMOD_Legendary_Weapon_Silenced_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Disarming
+set | A1ALMMISC_LooseMod_Weapon_Disarming | FULL | CLM: Disarmin'
+set | A1ALMMISC_LooseMod_Weapon_Disarming | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Disarming | LNAM | @A1ALMMISC_LooseMod_Weapon_Disarming
+copy | @co_A1ALMOMOD_Legendary_Weapon_Disarming | co_A1ALMOMOD_Legendary_Weapon_Disarming_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Disheartening
+set | A1ALMMISC_LooseMod_Weapon_Disheartening | FULL | CLM: Disheartenin'
+set | A1ALMMISC_LooseMod_Weapon_Disheartening | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Disheartening | LNAM | @A1ALMMISC_LooseMod_Weapon_Disheartening
+copy | @co_A1ALMOMOD_Legendary_Weapon_Disheartening | co_A1ALMOMOD_Legendary_Weapon_Disheartening_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Energizing
+set | A1ALMMISC_LooseMod_Weapon_Energizing | FULL | CLM: Energizin'
+set | A1ALMMISC_LooseMod_Weapon_Energizing | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Energizing | LNAM | @A1ALMMISC_LooseMod_Weapon_Energizing
+copy | @co_A1ALMOMOD_Legendary_Weapon_Energizing | co_A1ALMOMOD_Legendary_Weapon_Energizing_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Terrifying
+set | A1ALMMISC_LooseMod_Weapon_Terrifying | FULL | CLM: Terrifyin'
+set | A1ALMMISC_LooseMod_Weapon_Terrifying | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_Terrifying | LNAM | @A1ALMMISC_LooseMod_Weapon_Terrifying
+copy | @co_A1ALMOMOD_Legendary_Weapon_Terrifying | co_A1ALMOMOD_Legendary_Weapon_Terrifying_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_DevilsDue
 set | A1ALMMISC_LooseMod_Weapon_DevilsDue | FULL | CLM: Devil's Due
 set | A1ALMMISC_LooseMod_Weapon_DevilsDue | DATA\Value | 1500

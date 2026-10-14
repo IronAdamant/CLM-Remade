@@ -65,6 +65,7 @@ Grit,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_U
 Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Fiddling,Fiddlin',common,Custom Legendary Modifications Remade.esp
 Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_GheedsFortunate,Gheed's Fortunate,common,Custom Legendary Modifications Remade.esp
 Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Scavengers,Scavenger's,common,Custom Legendary Modifications Remade.esp
+Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_BreakingAndEntering,Breakin' and Enterin',uncommon,Custom Legendary Modifications Remade.esp
 Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_DevilsDue,Devil's Due,OP,Custom Legendary Modifications Remade.esp
 Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Handy,Handy,OP,Custom Legendary Modifications Remade.esp
 Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_HelloNeighbour,Hello Neighbour!,OP,Custom Legendary Modifications Remade.esp
@@ -72,6 +73,7 @@ Handiwork,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Ar
 Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armour_Regenerative_Slow,Regenerative (Slow),common,Custom Legendary Modifications Remade.esp
 Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armour_StimpakSelfHeal_AidPatch,Aid Patch,common,Custom Legendary Modifications Remade.esp
 Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Bloodthirsty,Bloodthirsty,uncommon,Custom Legendary Modifications Remade.esp
+Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_FieldMedics,Field Medic's,uncommon,Custom Legendary Modifications Remade.esp
 Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armour_StimpakSelfHeal,Auto-Medical,uncommon,Custom Legendary Modifications Remade.esp
 Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armour_Vitality,Vitality,uncommon,Custom Legendary Modifications Remade.esp
 Healing,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Phoenix,Phoenix,rare,Custom Legendary Modifications Remade.esp
@@ -210,6 +212,8 @@ Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary
 Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_SunKissed,Sun-Kissed,common,Custom Legendary Modifications Remade.esp
 Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Amphibious,Amphibious,uncommon,Custom Legendary Modifications Remade.esp
 Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Entrenched,Entrenched,uncommon,Custom Legendary Modifications Remade.esp
+Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Intimidating,Intimidatin',uncommon,Custom Legendary Modifications Remade.esp
+Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_Rallying,Rallyin',uncommon,Custom Legendary Modifications Remade.esp
 Surroundings,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_ShadowDwelling,Shadow Dwellin',uncommon,Custom Legendary Modifications Remade.esp
 Untouchable,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_StaticCharged,Static Charged,uncommon,Custom Legendary Modifications Remade.esp
 Untouchable,armor,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Disarm,Untouchable (Disarm),uncommon,Custom Legendary Modifications Remade.esp
@@ -241,6 +245,7 @@ Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_We
 Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_GreaterBleeding,Greater Bleeding,uncommon,Custom Legendary Modifications Remade.esp
 Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_WoundinglyEnraging,Woundingly Enraging,uncommon,Custom Legendary Modifications Remade.esp
 Bleeding,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_WoundinglyInstigating,Woundingly Instigating,uncommon,Custom Legendary Modifications Remade.esp
+Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Cleaving,Cleavin',uncommon,Custom Legendary Modifications Remade.esp
 Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DragonBlade,DragonBlade,OP,Custom Legendary Modifications Remade.esp
 Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_FaceBusting,Face Bustin',OP,Custom Legendary Modifications Remade.esp
 Brawn,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_GrandSlam,Grand Slam (Melee),OP,Custom Legendary Modifications Remade.esp
@@ -261,9 +266,13 @@ Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weap
 Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_HealingBeam,Healing Beam,uncommon,Custom Legendary Modifications Remade.esp
 Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_LorenzosLegendary,Lorenzo's Legendary Artificial,uncommon,Custom Legendary Modifications Remade.esp
 Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Medics,Medic's,uncommon,Custom Legendary Modifications Remade.esp
+Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Midas,Midas',uncommon,Custom Legendary Modifications Remade.esp
 Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_AngryNerds,Angry Nerd's,OP,Custom Legendary Modifications Remade.esp
 Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_GodCreator,God Creator,OP,Custom Legendary Modifications Remade.esp
 Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_LiarsCompedium,Liar's Compendium,OP,Custom Legendary Modifications Remade.esp
+Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Necromancers,Necromancer's,OP,Custom Legendary Modifications Remade.esp
+Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Radroaching,Radroachin',OP,Custom Legendary Modifications Remade.esp
+Curios,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Shrinking,Shrinkin',OP,Custom Legendary Modifications Remade.esp
 Destroyer's,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Destroyers_Base,Destroyer's,OP,Custom Legendary Modifications Remade.esp
 Destroyer's,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_2x,Destroyer's (3x),OP,Custom Legendary Modifications Remade.esp
 Destroyer's,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Destroyers_Variant_3x,Destroyer's (4x),OP,Custom Legendary Modifications Remade.esp
@@ -336,6 +345,7 @@ Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapo
 Havoc,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Havoc_Variant_RedLaser_Limited,"Havoc (Red Laser, Limited)",OP,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Devastating,Devastating,common,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Bloodlust,Bloodlust,uncommon,Custom Legendary Modifications Remade.esp
+Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Capitalists,Capitalist's,uncommon,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Commandos,Commando's,uncommon,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_LucksDrawing,Lucky Drawin',uncommon,Custom Legendary Modifications Remade.esp
 Heavy hitters,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Opportunists,Opportunist's,uncommon,Custom Legendary Modifications Remade.esp
@@ -417,6 +427,7 @@ Ordnance,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_We
 Ordnance,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_MIRV_Impacting,MIRV's Impactin',OP,Custom Legendary Modifications Remade.esp
 Ordnance,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Napalming,Napalmin',OP,Custom Legendary Modifications Remade.esp
 Ordnance,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Override_Explosive_Nuke,Nukin',OP,Custom Legendary Modifications Remade.esp
+Ordnance,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Singularity,Singularity,OP,Custom Legendary Modifications Remade.esp
 Paintball,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Blue,Paintball (Blue),common,Custom Legendary Modifications Remade.esp
 Paintball,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Green,Paintball (Green),common,Custom Legendary Modifications Remade.esp
 Paintball,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Paintball_Variant_Orange,Paintball (Orange),common,Custom Legendary Modifications Remade.esp
@@ -658,6 +669,10 @@ Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Wea
 Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_BloodyMessMaxed,Bloody Messy,common,Custom Legendary Modifications Remade.esp
 Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_CinematicExcellence,Cinematic Excellence,common,Custom Legendary Modifications Remade.esp
 Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Silenced,Pre-Suppressed,common,Custom Legendary Modifications Remade.esp
+Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Disarming,Disarmin',uncommon,Custom Legendary Modifications Remade.esp
+Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Disheartening,Disheartenin',uncommon,Custom Legendary Modifications Remade.esp
+Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Energizing,Energizin',uncommon,Custom Legendary Modifications Remade.esp
+Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Terrifying,Terrifyin',uncommon,Custom Legendary Modifications Remade.esp
 Utility,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_DevilsDue,Devil's Due,OP,Custom Legendary Modifications Remade.esp
 Vampiric,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Vampiric,Vampiric,uncommon,Custom Legendary Modifications Remade.esp
 Vampiric,weapon,Custom Legendary Modifications Remade.esp,A1ALMOMOD_Legendary_Weapon_Vampiric_Variant_ReapersEmbrace,Reaper's Embrace,uncommon,Custom Legendary Modifications Remade.esp

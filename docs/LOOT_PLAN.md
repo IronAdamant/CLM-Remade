@@ -5,7 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft.
 
-**667 legendaries in 118 families.** Tiers: common 137, uncommon 234, rare 40, OP 256.
+**682 legendaries in 118 families.** Tiers: common 137, uncommon 245, rare 40, OP 260.
 
 Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (Crouch) (duplicate, hidden in 2.1), ALM: A - Test (test item, stays craftable), ALM: A - Test (test item, stays craftable).
 
@@ -18,10 +18,10 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Backstabbing | Backstabbing (uncommon); Joker's Gas (uncommon) |
 | BioReactive Explosive | BioReactive Explosive (Cryo) (uncommon); BioReactive Explosive (Explosive) (uncommon); BioReactive Explosive (Fire) (uncommon); BioReactive Explosive (Plasma) (uncommon); BioReactive Explosive (Pulse) (uncommon); BioReactive Explosive (Nuclear) (OP) |
 | Bleeding | Lesser Bleeding (common); Greater Bleeding (uncommon); Woundingly Enraging (uncommon); Woundingly Instigating (uncommon) |
-| Brawn | DragonBlade (OP); Face Bustin' (OP); Grand Slam (Melee) (OP); One Man Punchin' (OP); Titan's Wrath (OP) |
+| Brawn | Cleavin' (uncommon); DragonBlade (OP); Face Bustin' (OP); Grand Slam (Melee) (OP); One Man Punchin' (OP); Titan's Wrath (OP) |
 | Cold | Slightly Freezing (common); Chilling (uncommon); Mr. Freeze's (OP) |
 | Concentratin' | Concentratin' (Brief) (common); Time Father's Bashful (Brief) (common); Concentratin' Intensely (Brief) (uncommon); Critically Concentratin' (uncommon); Concentratin' (Constant) (OP); Concentratin' Harder (OP); Concentratin' Intensely (OP); Time Father's Bashful (OP) |
-| Curios | Healing Beam (uncommon); Lorenzo's Legendary Artificial (uncommon); Medic's (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); God Creator (OP); Liar's Compendium (OP) |
+| Curios | Healing Beam (uncommon); Lorenzo's Legendary Artificial (uncommon); Medic's (uncommon); Midas' (uncommon); Salvaged Assaultron's Beaming (uncommon); Angry Nerd's (OP); God Creator (OP); Liar's Compendium (OP); Necromancer's (OP); Radroachin' (OP); Shrinkin' (OP) |
 | Destroyer's | Destroyer's (OP); Destroyer's (3x) (OP); Destroyer's (4x) (OP); Destroyer's (5x) (OP) |
 | Disintegratin' | Disintegratin' (Blue) (uncommon); Disintegratin' (Deep Blue) (uncommon); Disintegratin' (Fire) (uncommon); Disintegratin' (Gold) (uncommon); Disintegratin' (Green) (uncommon); Disintegratin' (Meltin') (uncommon); Disintegratin' (Orange) (uncommon); Disintegratin' (Pink) (uncommon); Disintegratin' (Purple) (uncommon); Disintegratin' (Red) (uncommon) |
 | Elemental | Elemental Strikin' (uncommon); Nature's Wrath (uncommon); Achlys' Poisoning (OP); Achlys' Poisoning (Limited) (OP); Harshly Radioactive (OP); Harshly Radioactive (Limited) (OP); Prometheus' Fiery (OP); Prometheus' Fiery (Limited) (OP); Zeus' Shocking (OP); Zeus' Shocking (Limited) (OP) |
@@ -35,7 +35,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Gauss conversions | Compressed Vortex Synthesized (OP); Explosively Striking (OP); Street Cleaner's (OP); True Seeker (OP) |
 | Gunslingers | Generically 80s Action Hero's (uncommon); Gunslanger's (OP); Gunslinger's (OP) |
 | Havoc | Havoc (Blue Laser) (OP); Havoc (Blue Laser, Limited) (OP); Havoc (Bullets) (OP); Havoc (Bullets, Limited) (OP); Havoc (Plasma) (OP); Havoc (Plasma, Limited) (OP); Havoc (Red Laser) (OP); Havoc (Red Laser, Limited) (OP) |
-| Heavy hitters | Devastating (common); Bloodlust (uncommon); Commando's (uncommon); Lucky Drawin' (uncommon); Opportunist's (uncommon); Widowmakin' (uncommon); Decimatin' (OP); Roid Ragin' (OP); Suppressin' (OP) |
+| Heavy hitters | Devastating (common); Bloodlust (uncommon); Capitalist's (uncommon); Commando's (uncommon); Lucky Drawin' (uncommon); Opportunist's (uncommon); Widowmakin' (uncommon); Decimatin' (OP); Roid Ragin' (OP); Suppressin' (OP) |
 | Hurtin' | Hurtin' (25%) (common); Hurtin' (50%) (uncommon); Hurtin' (100%) (rare); Hurtin' (1000%) (OP); Hurtin' (150%) (OP); Hurtin' (200%) (OP); Hurtin' (250%) (OP); Hurtin' (300%) (OP); Hurtin' (350%) (OP); Hurtin' (400%) (OP); Hurtin' (450%) (OP); Hurtin' (500%) (OP); Rapid Hurtin' (OP) |
 | Hydra's Fang | Hydra's Bite (OP); Hydra's Fanged (OP); Hydra's Serrated-fanged (OP); Hydra's Twin-fanged (OP) |
 | Keltas' Factorium | Keltas' Flawed Factorium (common); Keltas' Quick Draw Factorium (common); Keltas' Rapid Factorium (uncommon); Keltas' Specialised Factorium (uncommon); Keltas' Perfect Factorium (OP) |
@@ -49,7 +49,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Multi-shot | Double Tappin' (uncommon); Carbonatin' (rare); Bird Shootin' (OP); Four Shot (OP); High Explosive (OP) |
 | Nuka-Infused | Nuka-Infused (OP); Nuka-Infused (Cherry) (OP); Nuka-Infused (Cola) (OP); Nuka-Infused (Quantum) (OP) |
 | Operator's | Fiery Operator's (uncommon); Operator's Balanced (uncommon); Operator's Enhanced Arsenal (rare) |
-| Ordnance | Crazily Explosive (OP); Game Crashin' (OP); MIRV Converted (OP); MIRV's Impactin' (OP); Napalmin' (OP); Nukin' (OP) |
+| Ordnance | Crazily Explosive (OP); Game Crashin' (OP); MIRV Converted (OP); MIRV's Impactin' (OP); Napalmin' (OP); Nukin' (OP); Singularity (OP) |
 | Paintball | Paintball (Blue) (common); Paintball (Green) (common); Paintball (Orange) (common); Paintball (Red) (common); Paintball (White) (common); Paintball (Yellow) (common) |
 | Performance tuning | Compacted (common); Crippingly Rapid (common); Prototype Optimized (common); Crippling (100%) (uncommon); Hustlin' (OP); Improved Performance Center (OP); Many Barreled Optimised (OP); Performance Center (OP) |
 | Poison and acid | Acidic (common); Greater Poisoning (common); Poisoner's Nimble (uncommon) |
@@ -94,7 +94,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Thumpin' | Thumpin' (uncommon); Viciously Thumpin' (rare) |
 | Trappin' | Trappin' (Bear Trap - Bleeding) (uncommon); Trappin' (Bear Trap) (uncommon); Trappin' (Caltrop - Poisoned) (uncommon); Trappin' (Caltrop) (uncommon) |
 | Ultima Hecate's | Ultima Hecate's (OP); Ultima Hecate's (Limited) (OP) |
-| Utility | Beginner (common); Bloody Messy (common); Cinematic Excellence (common); Pre-Suppressed (common); Devil's Due (OP) |
+| Utility | Beginner (common); Bloody Messy (common); Cinematic Excellence (common); Pre-Suppressed (common); Disarmin' (uncommon); Disheartenin' (uncommon); Energizin' (uncommon); Terrifyin' (uncommon); Devil's Due (OP) |
 | Vampiric | Reaper's Embrace (uncommon); Vampiric (uncommon); Annihilating (OP); Reclaimer's (OP) |
 | Weather Altering | Weather Altering (Clear) (uncommon); Weather Altering (RadStorm) (uncommon); Weather Altering (Rain) (uncommon) |
 
@@ -114,8 +114,8 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Forbidden (armour) | Cheater's (OP); God Father's (OP) |
 | Ghostly and Camouflaged | Escapist's (uncommon); Stealth (uncommon); Camouflaged (Always) (OP); Camouflaged (Crouch) (OP); Ghostly (Always) (OP); Ghostly (Crouch) (OP); Resistively Ghostly (OP); Stealth Boy'd (OP); Stealthy (OP) |
 | Grit | Glass Cannon (uncommon); Glowing Heart (uncommon); Ironclad (uncommon); Underdog's (rare) |
-| Handiwork | Fiddlin' (common); Gheed's Fortunate (common); Scavenger's (common); Devil's Due (OP); Handy (OP); Hello Neighbour! (OP); Silver-Tongued Businessman (OP) |
-| Healing | Aid Patch (common); Regenerative (Slow) (common); Auto-Medical (uncommon); Bloodthirsty (uncommon); Vitality (uncommon); Phoenix (rare); Long Livin' (OP); Regenerative (OP); Ridiculously Absorbin' (OP) |
+| Handiwork | Fiddlin' (common); Gheed's Fortunate (common); Scavenger's (common); Breakin' and Enterin' (uncommon); Devil's Due (OP); Handy (OP); Hello Neighbour! (OP); Silver-Tongued Businessman (OP) |
+| Healing | Aid Patch (common); Regenerative (Slow) (common); Auto-Medical (uncommon); Bloodthirsty (uncommon); Field Medic's (uncommon); Vitality (uncommon); Phoenix (rare); Long Livin' (OP); Regenerative (OP); Ridiculously Absorbin' (OP) |
 | Immunities | Cat Tailed (common); Waterbreathing (common); Resistance (Acid) (uncommon); Resistance (All) (uncommon); Resistance (Electric) (uncommon); Resistance (Explosion) (uncommon); Resistance (Limb Damage) (uncommon); Resistance (Poison) (uncommon); Resistance (Radiation) (uncommon); Biological Hazmat (OP); Hawkin's Experimental (OP); Immunity (Acid) (OP); Immunity (Electric) (OP); Immunity (Explosion) (OP); Immunity (Limb Damage) (OP); Immunity (Poison) (OP); Immunity (Radiation) (OP) |
 | Impact Landing | Impact Landing (Basic) (uncommon); Impact Landing (Cryo) (OP); Impact Landing (Fire) (OP); Impact Landing (Nuclear) (OP); Impact Landing (Plasma) (OP); Impact Landing (Pulse) (OP) |
 | Juggernaut | Alien Enhanced Nano-Coated (OP); Alien Nano-Coated (OP); Brutal (OP); God's Armour (OP); Mighty Nearly Unbreakable (OP); Super-Tankin' (OP); True Synth (OP); Yamamoto's Mighty (OP) |
@@ -134,5 +134,5 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Sight | Highlighting (common); Sensin' (common); Tactical Highlighting (uncommon); Tracker's Sight (uncommon); Tracker's Focused Sight (rare) |
 | Speedy | Chronos' (uncommon); Marathon Runnin' (uncommon); Momentum (uncommon); Speedy (10%) (uncommon); Speedy (25%) (rare); Flash (OP); Speedy (100%) (OP); Speedy (150%) (OP); Speedy (200%) (OP); Speedy (250%) (OP); Speedy (300%) (OP); Speedy (50%) (OP); Staminator (OP) |
 | Steady aim | Focused (Brief) (common); Aim Stabilized (50%) (uncommon); Critically Hurtin' (uncommon); Quick Hands (50%) (uncommon); Aim Stabilized (100%) (rare); Pinpoint Accuracy (OP); Weapon Mastery (OP) |
-| Surroundings | Home Turf (common); Night Owl's (common); Storm Chasin' (common); Sun-Kissed (common); Amphibious (uncommon); Entrenched (uncommon); Shadow Dwellin' (uncommon) |
+| Surroundings | Home Turf (common); Night Owl's (common); Storm Chasin' (common); Sun-Kissed (common); Amphibious (uncommon); Entrenched (uncommon); Intimidatin' (uncommon); Rallyin' (uncommon); Shadow Dwellin' (uncommon) |
 | Untouchable | Static Charged (uncommon); Untouchable (Disarm) (uncommon); Untouchable (Elements) (uncommon); Untouchable (Fire) (uncommon); Untouchable (Freeze) (uncommon); Untouchable (Frenzy) (uncommon); Untouchable (Knockdown) (uncommon); Untouchable (Poison) (uncommon); Untouchable (Rad) (uncommon); Untouchable (Shock) (uncommon); Untouchable (Spook) (uncommon); Untouchable (Pacify) (OP); Untouchable (Paralyzed) (OP) |

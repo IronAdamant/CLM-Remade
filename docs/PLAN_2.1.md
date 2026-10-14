@@ -60,6 +60,8 @@ Punch (fixed in 2.0).
 - Concise view mascots (2026-10-14, `tools/edits/gen_mascots_21.py`): Opportunist's, Elemental Strikin', Double
   Tappin', Resistance (All), Vitality, Untouchable (Elements), Radiatin' (Elements); groups merged to 33. A new game
   shows 139 legendaries instead of 306.
+- Variety (2026-10-14, `tools/edits/gen_variety_21.py`): 11 balanced and 4 OP legendaries for kinds of effect CLM
+  lacked (debuffs, crowd control, companions, utility, rule-breakers). A new game now shows 149 of 317.
 - Settings texts rewritten as one system (2026-10-14): chemistry station, holotape, MCM, Nexus (HTML and BBCode now
   generated: `tools/release/description.py`), Bethesda.net, readme. The release texts still describe 2.0's "What's
   new" and counts; update them at release.
