@@ -18,11 +18,22 @@ bool                OnCooldown           = false
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterForHitEvent(akTarget)
+	Log("started")
+EndEvent
+
+Event OnEffectFinish(Actor akTarget, Actor akCaster)
+	Log("finished")
 EndEvent
 
 Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial)
 	Actor wearer = akTarget as Actor
-	if (!OnCooldown && wearer && (akAggressor == akTarget) == OnlyOwnAttacks && wearer.GetValuePercentage(Health) <= LowHealthPercentage && ChanceToCast >= Utility.RandomFloat(0.0, 1.0))
+	bool ready = !OnCooldown && wearer && (akAggressor == akTarget) == OnlyOwnAttacks && wearer.GetValuePercentage(Health) <= LowHealthPercentage
+	bool lucky = ready && ChanceToCast >= Utility.RandomFloat(0.0, 1.0)
+	if (ready && !lucky)
+		Log("hit by " + akAggressor + " with " + akSource + ": " + ChanceToCast * 100.0 + "% roll failed")
+	endif
+	if (lucky)
+		Log("hit by " + akAggressor + " with " + akSource + " at " + wearer.GetValuePercentage(Health) * 100.0 + "% health: heals " + RestoreHealthPercent * 100.0 + "%, casts " + SelfSpell + " on self, " + AttackerSpell + " on attacker")
 		if (RestoreHealthPercent > 0.0)
 			wearer.RestoreValue(Health, wearer.GetBaseValue(Health) * RestoreHealthPercent)
 		endif
@@ -44,3 +55,8 @@ Event OnTimer(int aiTimerID)
 		OnCooldown = false
 	EndIf
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction

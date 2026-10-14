@@ -10,16 +10,20 @@ float      Property ChanceToCast         = 1.0     const auto
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	RegisterForRemoteEvent(akTarget, "OnKill")
+	Log("started")
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
 	UnregisterForRemoteEvent(akTarget, "OnKill")
+	Log("finished")
 EndEvent
 
 Event Actor.OnKill(Actor akSender, Actor akVictim)
 	if (ChanceToCast < Utility.RandomFloat(0.0, 1.0))
+		Log("killed " + akVictim + ": " + ChanceToCast * 100.0 + "% roll failed")
 		return
 	endif
+	Log("killed " + akVictim + ": heals " + RestoreHealthPercent * 100.0 + "%, casts " + SelfSpell)
 	if (RestoreHealthPercent > 0.0)
 		akSender.RestoreValue(Health, akSender.GetBaseValue(Health) * RestoreHealthPercent)
 	endif
@@ -27,3 +31,8 @@ Event Actor.OnKill(Actor akSender, Actor akVictim)
 		SelfSpell.Cast(akSender, akSender)
 	endif
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction

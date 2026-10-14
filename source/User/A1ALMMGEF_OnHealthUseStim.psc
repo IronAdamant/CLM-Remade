@@ -1,6 +1,6 @@
 Scriptname A1ALMMGEF_OnHealthUseStim extends ActiveMagicEffect
 {CLM copy of Far Harbor's DLC03:dlc03_Legendary_OnHealthUseStim (Bethesda, shipped with the Creation Kit sources),
-with identical code, so CLM's auto-stimpak effects no longer require the Far Harbor DLC.
+with identical code (plus testing traces that release builds strip), so CLM's auto-stimpak effects no longer require the Far Harbor DLC.
 When the wearer is hit at or below LowHealthPercentage health and carries a Stimpak, casts StimpakSpell on them
 and uses up one Stimpak, then waits Cooldown seconds.}
 
@@ -16,12 +16,14 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 	; Register for a hit event.
 	RegisterForHitEvent(akTarget)
 	; Debug.Trace("ON INIT!")
+	Log("started")
 EndEvent
 
 Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial)
 	; If we're not on cooldown, our health is low enough and we have a stimpak we are GO!
 	if (!OnCooldown && (akTarget.GetValuePercentage(Health) <= LowHealthPercentage) && akTarget.GetItemCount(Stimpak))
 		; Fake the stimpak using a spell to avoid the animation as your armor injects it.
+		Log("used a stimpak at " + akTarget.GetValuePercentage(Health) * 100.0 + "% health")
 		StimpakSpell.cast(akTarget, akTarget)
 		; It does actually use a Stimpak though.
 		aktarget.removeitem(Stimpak)
@@ -39,3 +41,8 @@ Event OnTimer(int aiTimerID)
 		OnCooldown= false
 	EndIf
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction

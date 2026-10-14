@@ -11,10 +11,12 @@ bool  Busy = false
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	Shooter = akTarget
 	RegisterForAnimationEvent(akTarget, "weaponFire")
+	Log("started")
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
 	UnregisterForAnimationEvent(akTarget, "weaponFire")
+	Log("finished")
 EndEvent
 
 Event OnAnimationEvent(ObjectReference akSource, string asEventName)
@@ -32,6 +34,12 @@ Event OnAnimationEvent(ObjectReference akSource, string asEventName)
 			Shooter.RemoveItem(rounds, 1, true)
 			i += 1
 		endwhile
+		Log("shot " + gun + ": " + i + " extra rounds of " + rounds + " fired")
 		Busy = false
 	endif
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction

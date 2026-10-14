@@ -10,6 +10,7 @@ magic effect with this set.)}
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	float heal = Amount
+	Log("drained " + heal + " health for " + akCaster)
 	If akCaster
 		akCaster.RestoreValue(Health, heal)
 	EndIf
@@ -17,3 +18,8 @@ Event OnEffectStart(Actor akTarget, Actor akCaster)
 		akTarget.DamageValue(Health, heal)
 	EndIf
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction

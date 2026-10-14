@@ -1,6 +1,6 @@
 Scriptname A1ALMMGEF_OnMeleeEffect extends ActiveMagicEffect
 {CLM copy of Far Harbor's DLC03:dlc03_Legendary_OnMeleeEffect (Bethesda, shipped with the Creation Kit sources),
-with identical code, so CLM's "Untouchable" style effects no longer require the Far Harbor DLC.
+with identical code (plus testing traces that release builds strip), so CLM's "Untouchable" style effects no longer require the Far Harbor DLC.
 Casts SpellToCast on whoever hits the wearer with a melee or unarmed attack (or on the wearer if IsSelfCast),
 with a ChanceToCast roll and a Cooldown in seconds.}
 
@@ -18,12 +18,15 @@ bool             OnCooldown           = false
 Event OnEffectStart(Actor akTarget, Actor akCaster)
 	; Register for a hit event on successful melee.
 	RegisterForHitEvent(akTarget)
+	Log("started")
 EndEvent
 
 Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource, Projectile akProjectile, bool abPowerAttack, bool abSneakAttack, bool abBashAttack, bool abHitBlocked, string apMaterial)
 	; If we are not on cooldown and this is a melee, we are GO!
 	if (!OnCooldown && (akSource.haskeyword(WeaponTypeHandtoHand) || akSource.haskeyword(WeaponTypeUnarmed)  || akSource.haskeyword(WeaponTypeMelee1H) || akSource.haskeyword(WeaponTypeMelee2H)))
-		if (ChanceToCast >= Utility.randomfloat(0.0, 1.0))
+		float roll = Utility.randomfloat(0.0, 1.0)
+		Log("melee hit by " + akAggressor + " with " + akSource + ": " + ChanceToCast * 100.0 + "% roll " + (ChanceToCast >= roll) + ", casts " + SpellToCast)
+		if (ChanceToCast >= roll)
 			if !IsSelfCast
 				; Onto my attacker...
 				SpellToCast.cast(akTarget, akAggressor)
@@ -44,3 +47,8 @@ Event OnTimer(int aiTimerID)
 		OnCooldown = false
 	EndIf
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction

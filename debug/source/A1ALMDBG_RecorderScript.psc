@@ -19,7 +19,11 @@ float Property Interval = 0.5 Auto Const
 
 string LogName = "CLM"
 bool[] perkStates
-float[] globalValues
+; The last value of each watched global. Arrays made in a script hold at most 128 entries, and there are more
+; globals than that (182 in 2.1), so the values are kept in chunks of 128: GlobalValue(i) / SetGlobalValue(i, v).
+float[] globalValues0
+float[] globalValues1
+float[] globalValues2
 float[] actorValues
 bool started
 Keyword legendaryKeyword
@@ -99,8 +103,13 @@ EndEvent
 Function Snapshot()
 	Actor player = Game.GetPlayer()
 	perkStates = new bool[0]
-	globalValues = new float[0]
+	globalValues0 = new float[0]
+	globalValues1 = new float[0]
+	globalValues2 = new float[0]
 	actorValues = new float[0]
+	If WatchGlobals.Length > 384 || WatchPerks.Length > 128 || WatchValues.Length > 128
+		Log("WARNING: more watched globals (" + WatchGlobals.Length + "), perks (" + WatchPerks.Length + ") or values (" + WatchValues.Length + ") than the recorder can track")
+	EndIf
 	int i = 0
 	While i < WatchItems.Length
 		int n = player.GetItemCount(WatchItems[i])
@@ -121,7 +130,13 @@ Function Snapshot()
 	i = 0
 	While i < WatchGlobals.Length
 		float v = WatchGlobals[i].GetValue()
-		globalValues.Add(v)
+		If i < 128
+			globalValues0.Add(v)
+		ElseIf i < 256
+			globalValues1.Add(v)
+		ElseIf i < 384
+			globalValues2.Add(v)
+		EndIf
 		Log("  global " + WatchGlobals[i] + " = " + v)
 		i += 1
 	EndWhile
@@ -154,11 +169,12 @@ Function Check()
 		i += 1
 	EndWhile
 	i = 0
-	While i < WatchGlobals.Length
+	While i < WatchGlobals.Length && i < 384
 		float v = WatchGlobals[i].GetValue()
-		If v != globalValues[i]
-			Log("global " + WatchGlobals[i] + ": " + globalValues[i] + " -> " + v)
-			globalValues[i] = v
+		float was = GlobalValue(i)
+		If v != was
+			Log("global " + WatchGlobals[i] + ": " + was + " -> " + v)
+			SetGlobalValue(i, v)
 		EndIf
 		i += 1
 	EndWhile
@@ -171,6 +187,25 @@ Function Check()
 		EndIf
 		i += 1
 	EndWhile
+EndFunction
+
+float Function GlobalValue(int i)
+	If i < 128
+		Return globalValues0[i]
+	ElseIf i < 256
+		Return globalValues1[i - 128]
+	EndIf
+	Return globalValues2[i - 256]
+EndFunction
+
+Function SetGlobalValue(int i, float v)
+	If i < 128
+		globalValues0[i] = v
+	ElseIf i < 256
+		globalValues1[i - 128] = v
+	Else
+		globalValues2[i - 256] = v
+	EndIf
 EndFunction
 
 Function Log(string asText)

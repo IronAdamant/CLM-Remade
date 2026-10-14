@@ -12,6 +12,14 @@ re-run this after adding loose mods, unlock holotapes, unlock perks or configura
 Then compiles the script (debug build, traces kept), installs the .pex into Data/Scripts, and keeps copies of the
 plugin and .pex in debug/. Turn Papyrus logging on with `python -m ack papyrus-log on`; read the log with
 debug/read_log.py.
+
+It also installs debug builds of CLM's effect scripts (TRACED) over the release ones in Data/Scripts. Their Log()
+lines (DebugOnly, so release builds strip them) say what each scripted legendary did: started, triggered, a failed
+chance roll, who it hit. They write to the recorder's log only, so without the recorder they do nothing.
+
+    python debug/build_recorder.py --game "..." --remove
+
+puts the release scripts back (from data/SCRIPTS) and deletes the recorder plugin and script from Data.
 """
 from __future__ import annotations
 
@@ -29,6 +37,10 @@ QUEST = 'A1ALMDBG_Recorder'
 SCRIPT = 'A1ALMDBG_RecorderScript'
 VALUES = ['JumpHeightMult', 'SpeedMult', 'Strength', 'DamageResist', 'EnergyResist', 'RadResistExposure',
           'CarryWeight']  # not Health/ActionPoints: they change constantly in play
+TRACED = ['A1ALMMGEF_BurstFireEffect', 'A1ALMMGEF_CinematicCameraEffect', 'A1ALMMGEF_DragonDashEffect',
+          'A1ALMMGEF_DrainOnHitScript', 'A1ALMMGEF_ExplodeAfterDeathScript', 'A1ALMMGEF_FactionFriendEffect',
+          'A1ALMMGEF_OnHealthUseStim', 'A1ALMMGEF_OnHitArmourEffect', 'A1ALMMGEF_OnKillArmourEffect',
+          'A1ALMMGEF_OnMeleeEffect', 'A1ALMMGEF_PercentDamageEffect']
 
 
 def watch_lists(main_path: Path, ack: Path) -> tuple[list[str], list[str], list[str]]:
@@ -68,10 +80,21 @@ def spec(items: list[str], perks: list[str], globs: list[str]) -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--ack', required=True, help='AgentCreationKit checkout')
+    ap.add_argument('--ack', help='AgentCreationKit checkout (not needed with --remove)')
     ap.add_argument('--game', required=True, help='Fallout 4 folder')
+    ap.add_argument('--remove', action='store_true', help='uninstall: release scripts back, recorder deleted')
     a = ap.parse_args()
-    ack, data = Path(a.ack), Path(a.game) / 'Data'
+    data = Path(a.game) / 'Data'
+    if a.remove:
+        for name in TRACED:
+            shutil.copy(REPO / 'data' / 'SCRIPTS' / f'{name}.pex', data / 'Scripts' / f'{name}.pex')
+        for f in (data / RECORDER, data / 'Scripts' / f'{SCRIPT}.pex'):
+            f.unlink(missing_ok=True)
+        print(f'release scripts restored ({len(TRACED)}); {RECORDER} and its script removed from {data}')
+        return
+    if not a.ack:
+        ap.error('--ack is required')
+    ack = Path(a.ack)
 
     items, perks, globs = watch_lists(data / MAIN, ack)
     print(f'watching {len(items)} items, {len(perks)} perks, {len(globs)} globals')
@@ -91,11 +114,11 @@ def main():
         raise SystemExit(result or r.stderr)
 
     subprocess.run([sys.executable, str(REPO / 'tools' / 'papyrus' / 'compile.py'), '--game', a.game, '--debug',
-                    SCRIPT], check=True)
-    pex = HERE / 'SCRIPTS' / f'{SCRIPT}.pex'
-    shutil.copy(pex, data / 'Scripts' / pex.name)
+                    SCRIPT] + TRACED, check=True, stdout=subprocess.DEVNULL)
+    for name in [SCRIPT] + TRACED:
+        shutil.copy(HERE / 'SCRIPTS' / f'{name}.pex', data / 'Scripts' / f'{name}.pex')
     shutil.copy(data / RECORDER, HERE / RECORDER)
-    print(f'installed {RECORDER} and Scripts/{pex.name} into {data}')
+    print(f'installed {RECORDER}, Scripts/{SCRIPT}.pex and {len(TRACED)} traced effect scripts into {data}')
 
 
 if __name__ == '__main__':

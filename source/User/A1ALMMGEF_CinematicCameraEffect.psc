@@ -5,9 +5,16 @@ players are left alone. Fallout 4 has no way to start a kill camera outside V.A.
 in the same spell stand in for it.}
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
+	Log("third person")
 	Game.ForceThirdPerson()
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
+	Log("back to first person")
 	Game.ForceFirstPerson()
 EndEvent
+
+; testing traces for the debug recorder (debug/build_recorder.py); release builds strip them with their calls
+Function Log(string asText) DebugOnly
+	Debug.TraceUser("CLM", GetBaseObject() + " on " + GetTargetActor() + ": " + asText)
+EndFunction
