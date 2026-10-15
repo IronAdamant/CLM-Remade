@@ -3034,7 +3034,7 @@ DamageTypeValues MUL+ADD dtRadiationIngestion [DMGT:00060A86] / 0.020000
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_MissileExplosion "CLM: Missile Explosion" [ENCH:08445A00] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_MissileExplosion (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Base_MissileExplosion: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: BioReactive Explosive (Cryo)  `A1ALMOMOD_Legendary_Weapon_BioReactive_Variant_Cryo`
@@ -3043,7 +3043,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Missile
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Cryo "CLM: Cryo Explosion" [ENCH:08445A01] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Cryo (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Variant_Cryo: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: BioReactive Explosive (Fire)  `A1ALMOMOD_Legendary_Weapon_BioReactive_Variant_Fire`
@@ -3052,7 +3052,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Cryo "C
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Fire "CLM: Fire Explosion" [ENCH:08445A03] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Fire (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Variant_Fire: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: BioReactive Explosive (Nuclear)  `A1ALMOMOD_Legendary_Weapon_BioReactive_Variant_Nuclear`
@@ -3061,7 +3061,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Fire "C
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_FatmanExplosion "CLM: Fatman Explosion" [ENCH:0844158B] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_FatmanExplosion (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Variant_FatmanExplosion: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: BioReactive Explosive (Plasma)  `A1ALMOMOD_Legendary_Weapon_BioReactive_Variant_Plasma`
@@ -3070,7 +3070,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_FatmanE
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Plasma "CLM: Plasma Explosion" [ENCH:08445A05] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Plasma (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Variant_Plasma: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: BioReactive Explosive (Pulse)  `A1ALMOMOD_Legendary_Weapon_BioReactive_Variant_Pulse`
@@ -3079,7 +3079,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Plasma 
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Pulse "CLM: Pulse Explosion" [ENCH:08445A07] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_Pulse (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Variant_Pulse: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: Bird Shootin'  `A1ALMOMOD_Legendary_Weapon_BirdShootin`
@@ -8018,7 +8018,7 @@ SoundLevel SET Silent / 00 00 00 00
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity "CLM: Singularity" [ENCH:084AD0BE] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_Singularity: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script FortuneFinderCapsScript
+      script A1ALMMGEF_ExplodeOnHitEffect
 ```
 
 ### CLM: Slayer's  `A1ALMOMOD_Legendary_Weapon_Slayer_Base`

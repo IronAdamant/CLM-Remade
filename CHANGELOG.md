@@ -52,6 +52,11 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   Combined Speed and Jump Boosts (the numbers; Combined mentioned only jumping), Santa Prisca's (+75 carry weight,
   not 75%), plus typos and stray commas.
 
+- **BioReactive Explosive (all six) now explodes on every hit** (reported on Nexus): it ran vanilla Fortune Finder's
+  script, which only sets off its explosion if the target is already dead, so since 1.09 it exploded on killing hits
+  only. A CLM script now explodes on every hit that lands on an actor (still never on walls or water). Singularity had
+  the same problem and the same fix. PC and Xbox; on PlayStation they still explode on killing hits only (noted in
+  their descriptions).
 - **Removed the two "ALM: A - Test" slots** (weapon and armour): the author's 1.09-era scratch legendaries for trying
   effects out, never meant for players.
 

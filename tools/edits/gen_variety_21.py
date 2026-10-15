@@ -11,7 +11,8 @@ Works on the main plugin in the game's Data folder (FO4Edit must not have it ope
 
 Balanced, records only (every platform): Disheartenin', Energizin', Capitalist's, Disarmin', Terrifyin', Midas',
 Rallyin', Intimidatin', Field Medic's, Breakin' and Enterin'. Balanced, scripted (PC and Xbox): Cleavin'.
-OP: Singularity (vanilla Fortune Finder script, every platform); Necromancer's, Radroachin', Shrinkin' (scripted).
+OP: Singularity (A1ALMMGEF_ExplodeOnHitEffect; vanilla Fortune Finder, kills only, on PlayStation); Necromancer's,
+Radroachin', Shrinkin' (scripted).
 Run tools/config/concise.py afterwards (Field Medic's joins the Healing group).
 """
 from __future__ import annotations
@@ -289,7 +290,7 @@ def edits() -> list[str]:
               f'field.set | {x} | DATA\\Outer Radius | 500',
               f'rec.copy | A1ALMMGEF_Target_Effect_Hostile_Explosion_BioReactive_Base_MissileExplosion | {m}',
               f'text.set | {m} | FULL | CLM: Singularity']
-    RAW.append(('vmad_swap', m, ('A1ALMEXP_BioReactive_Base_MissileExplosion', x)))
+    RAW.append(('vmad', m, ('A1ALMMGEF_ExplodeOnHitEffect', [('Blast', 'form', x)])))   # every hit (fix_bioreactive_21.py)
     e = 'A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity'
     enchantment(e, 'CLM: Singularity', [(m, 0)],
                 template='A1ALMEnch_FaF_Contact_Effect_Target_Hostile_BioReactive_MissileExplosion')

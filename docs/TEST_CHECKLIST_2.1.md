@@ -136,7 +136,7 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Necromancer's** (OP, PC/Xbox): kills rise ~1.5 s later, fight on your side for 60 s, then drop dead. Named characters stay dead.
 - [ ] **Radroachin'** (OP, PC/Xbox): sometimes a target becomes a radroach; killing the roach gives the target's loot. Named characters unaffected.
 - [ ] **Shrinkin'** (OP): targets shrink to half size for 10 s and hit softer, then grow back to their normal size (not smaller).
-- [ ] **Singularity** (OP, experimental): hits pull nearby enemies towards the target. If they are pushed away instead, tell me.
+- [ ] **Singularity** (OP, experimental): every hit (not only kills) pulls nearby enemies towards the target. If they are pushed away instead, tell me.
 
 ## Concise view
 
@@ -188,6 +188,7 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Loot mode**: OP drops still come (the OP pool is now two halves of 128 under one list); new legendaries can drop as loose mods.
 - [ ] **Picker / MCM**: new families Surroundings, Grit, Radiatin', Cap Showerin', Spawn: Minutemen, Spawn: Children of Atom have selectors and MCM switches.
 - [ ] Speedy and Combined Speed and Jump reset speed and jump when unequipped (decides whether Resettin' comes back).
+- [ ] **BioReactive Explosive** (any of the six): explodes on every hit on an enemy, not only on kills; never on walls or water. (The log shows "exploded" per hit.)
 - [ ] **"ALM: A - Test"** (weapon and armour) no longer appears at the workbench (removed).
 
 ## PlayStation build, tried on PC (optional)
@@ -197,6 +198,7 @@ off first); `--test-restore` puts the PC ones back. Your spreadsheet's "Platform
 - [ ] Settings and Picker work from the chemistry station; no holotape is given.
 - [ ] **CLM Perk** magazines (chemistry station, CLM Perks): reading one adds the perk.
 - [ ] Loot mode: the **CLM Loot Manual** magazine teaches the drop perk; legendaries drop.
+- [ ] **BioReactive / Singularity**: explode only on killing hits; their descriptions say so.
 - [ ] **Midas'**: kills turn to ordinary ash (not gold); extra caps still drop; its description says so.
 - [ ] **Auto-Medical / Aid Patch**: health regenerates while low; no stimpak used.
 - [ ] **Vampiric**: heals on hits (not on killing blows).

@@ -15,6 +15,8 @@ data/, written to dist/PlayStation/:
   (Energized) and the five new Disintegratin' colours; Disintegratin' (Green) goes back to the plasma "goo" (vanilla
   CritPlasma); the Kellogg spawn (custom face files);
 - Midas' borrows Disintegratin' (Gold)'s gold dust (CLM art): vanilla red ash instead, caps unchanged;
+- BioReactive (all) and Singularity: vanilla Fortune Finder's script instead of CLM's on-hit one: they explode on
+  killing hits only;
 - Vampiric, Raging, Annihilating, Reaper's Embrace, Reclaimer's: 1.09's Absorb Health (BloodDrain) instead of the
   scripted drain: heals on every hit except killing blows;
 - Auto-Medical / Aid Patch: instead of the scripted auto-stimpak, regenerate about 6% of health per second (a
@@ -71,7 +73,8 @@ NOTE_SCRIPT = ' (PlayStation: this effect needs a script, which PlayStation mods
 NOTE_PART = ' (PlayStation: part of this effect needs a script, which PlayStation mods cannot have; that part does nothing there.)'
 NOTE_DRAIN = ' (PlayStation: heals on every hit except killing blows.)'
 NOTE_FACE = ' (PlayStation: targets are not blown apart.)'
-NOTE_MIDAS = ' (PlayStation: they turn to ordinary ash, not gold dust.)'
+NOTE_KILL_ONLY = ' (PlayStation: explodes only on killing hits.)'
+NOTE_MIDAS =' (PlayStation: they turn to ordinary ash, not gold dust.)'
 MIDAS, CRIT_LASER = 'A1ALMOMOD_Legendary_Weapon_Midas', 0x000731B2      # vanilla CritLaser (red ash)
 MAGAZINE = 'PerkMagLiveAndLove09'          # vanilla magazine used as the Loot Manual's template
 FN_HAS_PERK, FN_GET_HEALTH_PERCENTAGE, FN_GET_LEVEL, OP_GE, OP_LT, OP_LE = 448, 430, 80, 3 << 5, 4 << 5, 5 << 5
@@ -212,8 +215,20 @@ def build(game: Path) -> None:
     from mcm import perk_list
     perks = perk_list(main)            # from the perk holotape's fragments, before its scripts are detached
     fid = lambda edid: main.by_edid(edid).formid
+    # BioReactive / Singularity: back to vanilla Fortune Finder's script, which explodes on killing hits only
+    explode_on_kill = set()
+    for r in main.records('MGEF'):
+        v = r.get('VMAD').data if main.is_own(r.formid) and r.get('VMAD') is not None else b''
+        if b'A1ALMMGEF_ExplodeOnHitEffect' in v:
+            blast = struct.unpack_from('<I', v, len(v) - 4)[0]        # its one property, the explosion
+            w = lambda s: struct.pack('<H', len(s)) + s.encode('ascii')
+            r.set('VMAD', struct.pack('<hhH', 6, 2, 1) + w('FortuneFinderCapsScript') + b'\0' + struct.pack('<H', 1) +
+                  w('PerkExplosionMoneyShotFortuneFinder') + b'\x01\x01' + struct.pack('<HhI', 0, -1, blast))
+            r.mark_dirty()
+            explode_on_kill.add(r.formid)
+            report.append(f'kill-only explosion: {r.edid}')
     # scripted effects that get a PlayStation stand-in (so their users are not "script-only")
-    fallback_mgefs = {r.formid for r in main.records('MGEF') if main.is_own(r.formid) and
+    fallback_mgefs ={r.formid for r in main.records('MGEF') if main.is_own(r.formid) and
                       re.search(r'DrainOnHit|ExplodeAfterDeath|HealLikeStimpak', r.edid)}
     script_mgefs = {f for f, r in m.own.items() if r.sig == 'MGEF' and r.get('VMAD') is not None and
                     vmad_scripts(r.get('VMAD').data, custom)[0]} - fallback_mgefs
@@ -294,6 +309,10 @@ def build(game: Path) -> None:
             append_desc(r, NOTE_FACE)
             report.append(f'face note: {r.get("FULL").zstring}')
             platforms[r.edid] = ('PlayStation: changed', 'targets are not blown apart')
+        elif reaches(graph, r.formid, explode_on_kill, set()):
+            append_desc(r, NOTE_KILL_ONLY)
+            report.append(f'kill-only note: {r.get("FULL").zstring}')
+            platforms[r.edid] = ('PlayStation: changed', 'explodes only on killing hits (the every-hit version needs a script)')
         elif graph[r.formid] & reverted:
             append_desc(r, NOTE_DRAIN)
             report.append(f'drain note: {r.get("FULL").zstring}')
