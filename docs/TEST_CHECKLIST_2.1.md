@@ -1,225 +1,114 @@
-# CLM 2.1 in-game test checklist
+# CLM 2.1 in-game test checklist (remaining)
 
-Everything 2.1 added or changed, for in-game testing. Tick each box once it works; write what went wrong under any
-that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
+What is left to test in 2.1: new or changed things only, one item per family (a family's other variants share its
+records, so one working means all work). Tick each box once it works; write what went wrong under any that do not.
+(Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 
 ## Setup
 
-- **First, on a new game with no setting items**, do the "New game" checks under Concise view and Spawning
-  legendaries (the 83-legendary default).
-- **Then, for the item-by-item tests**, carry these from the chemistry station (CLM Settings): **Free crafting**,
-  **Show OP**, **Show variants**, **Show all legendaries** (the concise view hides most group members otherwise) and
-  **Show spawning legendaries** (hidden by default since 2.1). Leave **Picker mode** off.
+- **Load again first:** the plugin was fixed after the last session (merged-group fix), so restart the game.
+- Carry from the chemistry station (CLM Settings): **Free crafting**, **Show OP**, **Show variants**, **Show all
+  legendaries** and **Show spawning legendaries**. Leave **Picker mode** off.
 - PC/Xbox only = needs a script; on PlayStation it shows a "needs a script" note and does nothing.
-- **Debug recorder** (so Claude can read what happened): Papyrus logging is on; tick **CLM - Debug Recorder.esp**
-  (after the main plugin). The log is `Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log` (the session
-  before: CLM.1.log). When reporting a problem, say roughly what you did and when.
-  - [ ] After loading, the log has "recorder started" and lists the settings; equipping a scripted legendary (e.g.
-    Phoenix) adds a "started" line.
-- **When done:** `python debug/build_recorder.py --game "D:/Steam/steamapps/common/Fallout 4" --remove` (normal scripts
-  back, recorder gone), then `python -m ack papyrus-log off` (in AgentCreationKit), and untick the recorder.
-- **Riskiest first:** Energizin', Singularity, Rallyin', Breakin' and Enterin' (Variety); Shockingly Lobbin',
-  Flamin', Concentratin' (Constant), Enraged, Storm Chasin' in a radstorm, the friendly Mirelurk Queen.
-- Handy console commands: `set gamehour to 22` (night) / `to 12` (day); `fw 1c3d5e` (radstorm; for rain,
-  `help rain 4` lists the rain weathers to `fw`); `player.modav rads 300` / `player.restoreav rads 1000`;
-  `player.damageav health 300`; `tgm` off while testing damage; `coc SanctuaryExt` (Home Turf);
-  `player.setlevel 5` (Underdog's; undo with your old level).
+- **Debug recorder** is on (log: `Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log`). When reporting a
+  problem, say roughly what you did and when.
+- **When done:** `python debug/build_recorder.py --game "D:/Steam/steamapps/common/Fallout 4" --remove`, then
+  `python -m ack papyrus-log off` (in AgentCreationKit), and untick the recorder.
+- Console: `set gamehour to 12` (day); `player.damageav health 300`; `tgm` off while testing damage;
+  `player.setlevel 5` / back (Terrifyin', Intimidatin').
 
-## New armour: CLM's own (23)
+## 1. The merged-group fix (found in testing)
 
-### Surroundings
-- [ ] **Night Owl's** (Balanced): 8pm-6am +1 Perception, +1 Agility, +10 DR/ER; nothing by day (`set gamehour`).
-- [ ] **Sun-Kissed** (Balanced): outdoors, 6am-8pm, dry weather: +1 health and -1 rad a second. Indoors / night / rain: nothing.
-- [ ] **Storm Chasin'** (Balanced): in rain AND in a radstorm: +20 energy and radiation resistance, 5% faster. Check that the radstorm counts.
-- [ ] **Shadow Dwellin'** (Balanced): in the dark: +1 Agility, +1 Luck, harder to spot. Lit area: nothing.
-- [ ] **Amphibious** (Balanced): breathe underwater; in water 10% faster, 25% less damage. Does wading count, or only swimming?
-- [ ] **Entrenched** (Balanced): crouched and still: +25 DR/ER, steady scope. Moving: nothing.
-- [ ] **Home Turf** (Balanced): in a settlement you own (Sanctuary): +25 DR/ER, +1 Charisma. Diamond City / unowned settlement: nothing.
+- [ ] **Sun-Kissed** (Balanced) now at the armour workbench: outdoors, 6am-8pm, dry weather: +1 health and -1 rad a second; indoors / night / rain: nothing.
+- [ ] One more from a merged group shows with Show all: e.g. **Jumpy (50%)** or **Greater Bleeding**.
 
-### Grit
-- [ ] **Underdog's** (Balanced): enemies above your level deal 25% less and take 25% more. Same-level enemies: normal.
-- [ ] **Glass Cannon** (Balanced): +25% damage dealt and taken. Two pieces = still 25%.
-- [ ] **Ironclad** (Balanced): no stagger, half limb damage; 5% slower per piece. Do knockdowns still happen?
-- [ ] **Glowing Heart** (Balanced): +5 DR/ER per 100 rads, up to +30 at 600 (`player.modav rads`).
+## 2. Scripted armour (PC/Xbox), one per script
 
-### Radiatin' (auras)
-- [ ] **Radiatin' (Fire)** (Balanced): enemies near you burn, 5 a second. Companions, settlers and neutrals untouched.
-- [ ] **Radiatin' (Shock)** (Balanced): 5 electrical a second to nearby enemies.
-- [ ] **Radiatin' (Rads)** (Balanced): 10 rads a second to nearby enemies.
-- [ ] **Radiatin' (Cryo)** (Balanced): nearby enemies 30% slower.
-- [ ] **Radiatin' (Healing)** (Balanced): companions and allies heal 3 a second while fighting near you; enemies are not healed.
-- [ ] **Radiatin' (Inferno)** (OP): 30 fire a second, twice the radius.
-- [ ] Aura radius feels right (about 10 ft; Inferno 20).
+- [ ] **Phoenix** (on-hit script; Static Charged shares it): hit at 15% health or less: heal 40%, attacker set on fire; then nothing for 3 minutes.
+- [ ] **Bloodthirsty** (on-kill script; Momentum shares it): every kill heals 10%.
 
-### Power armour and scavenging
-- [ ] **Overcharged** (Balanced): in power armour +2 Strength, +25 DR/ER; fusion core drains faster. Is the drain sensible? Out of power armour: nothing.
-- [ ] **Scavenger's** (Balanced): killed enemies carry extra ammo and a few caps.
+## 3. Variety: new kinds of effect (15)
 
-### PC/Xbox only
-- [ ] **Phoenix** (Balanced): hit at 15% health or less: heal 40%, attacker set on fire (50); then nothing for 3 minutes. Two pieces still trigger once.
-- [ ] **Static Charged** (Balanced): hits on you have a 20% chance to shock the attacker for 40, at most every 5 s; works on ranged attackers too.
-- [ ] **Bloodthirsty** (Balanced): every kill heals 10%.
-- [ ] **Momentum** (Balanced): every kill: 20% faster and faster AP regeneration for 10 s.
-
-## Balanced counterparts (18)
-
-- [ ] **Hurtin' (25%)** (Balanced): +25% damage.
-- [ ] **Hurtin' (50%)** (Balanced): +50% damage.
-- [ ] **Speedy (10%)** (Balanced): +10% speed; resets when taken off.
-- [ ] **Speedy (25%)** (Balanced): +25% speed; resets when taken off.
-- [ ] **Combined Speed and Jump Boosts (10%)** (Balanced): +10% speed and jump; resets when taken off.
-- [ ] **Combined Speed and Jump Boosts (25%)** (Balanced): +25% speed and jump; resets when taken off.
-- [ ] **Nimble (25%)** (Balanced): 25% faster while aiming.
-- [ ] **Ballistic Protection (Light)** (Balanced): +25 damage resistance.
-- [ ] **Regenerative (Slow)** (Balanced): 1 health a second, 2 out of combat.
-- [ ] **Resistance (Acid)** (Balanced): 50% less acid damage.
-- [ ] **Resistance (Electric)** (Balanced): 50% less electrical damage.
-- [ ] **Resistance (Explosion)** (Balanced): 50% less explosion damage.
-- [ ] **Resistance (Limb Damage)** (Balanced): 50% less limb damage.
-- [ ] **Resistance (Poison)** (Balanced): 50% less poison damage.
-- [ ] **Resistance (Radiation)** (Balanced): 50% less radiation.
-- [ ] **Gheed's Fortunate** (Balanced): buy 20% cheaper, sell 20% higher.
-- [ ] **Shotgun Surgeon's (Trainee)** (Balanced): +3 pellets and +50% damage in all, 30% wider spread; no knock-back or armour piercing.
-- [ ] **Keltas' Quick Draw Factorium** (Balanced): about one empty magazine in four refills itself (not with Scrounger rank 4).
-
-## The 2016 legendaries, restored (16)
-
-- [ ] **Poisoner's Nimble** (Balanced; Erierth): 75% faster while aiming; hits poison for 25 over 5 s.
-- [ ] **Zeus Crafted (Limited)** (OP): Zeus Crafted with +50 ammo capacity instead of never-ending.
-- [ ] **Shockingly Lobbin'** (Balanced): lobbed grenade bursts into chain lightning. Does the Automatron lightning explosion work from a grenade?
-- [ ] **MIRV's Impactin'** (OP; DavidH): MIRV bursts on impact, not mid-air. Safe at range?
-- [ ] **Sticky Bottlecap Mine launchin'** (Balanced): sticky bottlecap mines, bottlecap model and explosion.
-- [ ] **One Man Punchin'** (OP; OnePunchMonk): fists and melee x50 damage, enemies burst; guns unaffected.
-- [ ] **Flamin'** (Balanced): your weapon shoots a flamer stream. Does the stream work on other weapons?
-- [ ] **Concentratin' (Constant)** (OP): time slows while aiming, returns when you stop. Does a constant slow-time effect work?
-- [ ] **Spawn: Random Minuteman** (Maiqtheliar84): friendly or hostile by your Minutemen standing.
-- [ ] **Spawn: Random Children of Atom cultist** (Maiqtheliar84): friendly or hostile by standing.
-- [ ] **Spawn: Random Robobrain** (Maiqtheliar84): a regular, non-Automatron robobrain, hostile.
-- [ ] **Spawn: Rust Devil Boss** (Maiqtheliar84): hostile Rust Devil boss.
-- [ ] **Plated Titanium** (OP; FL4CKTROOPER): 8x power armour health; out of combat +1 health a second; -1 rad a second.
-- [ ] **Speedy (25%)** / **Combined Speed and Jump Boosts (25%)** (Leylanee's): same items as in the counterparts above.
-- [ ] **Gheed's Fortunate** (forgrif's): same item as in the counterparts above.
-- [ ] Joker's Gas and Backstabbing still work (they are the 2016 "(Limited)" versions).
-
-## The old requests (17 new, 2 changed)
-
-- [ ] **Spawn: Friendly Mirelurk Queen** (OP; LandH): spawns a Queen that fights for you and ignores you and your companions; no hatchlings.
-- [ ] **Stealthy** (OP; Doom1993): crouched you are cloaked, quiet and unseen even moving; +50 PER/LCK/AGI/END; enemies highlighted; every pickpocket succeeds.
-- [ ] **Cap Showerin' (Frag)** (Balanced): about 15% of kills burst into caps with a frag explosion (150).
-- [ ] **Cap Showerin' (Fire)** (Balanced): caps and a fire burst (60, sets alight).
-- [ ] **Cap Showerin' (Cryo)** (Balanced): caps and a freezing burst (50).
-- [ ] **Cap Showerin' (Plasma)** (Balanced): caps and a plasma burst (100).
-- [ ] **Cap Showerin' (Nuclear)** (OP): caps and a nuclear burst (700). Keep your distance.
-- [ ] **Healing Beam** (Balanced; Heavy & Ze Medic): heals 10, more the more hurt the target is (up to 80); no damage to anyone. Do companions mind being shot?
-- [ ] **God Creator** (OP; Heavy & Ze Medic): Healing Beam plus 10 s of near-invulnerability on the target.
-- [ ] **Jumper's** (Balanced; Heavy & Ze Medic): 50% less explosion damage, no fall damage; PC/Xbox: after your own explosion hits you, a 4x jump for 3 s.
-- [ ] **No Brakin'** (OP; H3xx): out of power armour, sprinting into enemies knocks them down and deals 75. Allies untouched.
-- [ ] **Enraged** (OP): faster in combat; below half health nearby enemies burn and flee. Does the AnimationMult speed-up feel right, or is it too much?
-- [ ] **Decimatin'** (OP, PC/Xbox; ViscousVitriol): each hit takes 10% of the target's full health (try it on a minigun and a Deathclaw).
-- [ ] **Hello Neighbour!** (OP, PC/Xbox; stephen4000): Gunners neutral while worn, hostile again when removed.
-- [ ] **CQC** (OP, PC/Xbox; DarkArcher045): each shot followed by two more; one round of ammo each. In V.A.T.S. too?
-- [ ] **DragonBlade** (OP, PC/Xbox; AgentSmithGSOM): +200 damage; swinging at an enemy ahead (up to ~15 m) dashes you to it, at most every 2 s; ricochet while blocking or sprinting. No dash through walls?
-- [ ] **Cinematic Excellence** (Balanced, PC/Xbox; Tjonbrown24): about 1 kill in 10: slow motion and third person for 2 s, then back to first person. Third-person players: no camera switch.
-- [ ] **Brutish** (changed; FL4CKTROOPER): no fire on hits above half health; below half, 5 fire damage per hit; no more 100-point burns on melee attackers; self-heal and resistances unchanged.
-- [ ] **Advanced Titanium** (changed; FL4CKTROOPER): reflects 5% of melee damage, on top of the 5% damage cut.
-- [ ] **PlayStation perk magazines** (PlayStation build only): `python tools/release/playstation.py --test-install`, then chemistry station > CLM Perks: make a magazine, read it, the perk is added; the recipe disappears once you have it. Restore with `--test-restore`.
-
-## Variety: new kinds of effect (15)
-- [ ] **Disheartenin'** (Balanced): hit enemies deal about 25% less damage for 5 seconds.
-- [ ] **Energizin'** (Balanced): your AP goes up 3 per hit. If it does not, tell me (the effect may need a script).
-- [ ] **Capitalist's** (Balanced): more damage with more caps (+10% per 1,000, up to +50% at 5,000).
-- [ ] **Cleavin'** (Balanced, PC/Xbox): melee hits also damage enemies around the target; never you or companions; guns do nothing extra.
+- [ ] **Energizin'** (Balanced): your AP goes up 3 per hit. If it does not, tell me (it may need a script).
+- [ ] **Singularity** (OP, experimental): every hit pulls nearby enemies towards the target. If they are pushed away instead, tell me.
+- [ ] **Rallyin'** (Balanced): a companion's resistances go up near you (`getav damageresist` on them). Does it multiply with several pieces?
+- [ ] **Breakin' and Enterin'** (Balanced): without Locksmith you can pick Advanced locks; without Hacker, hack Advanced terminals. It never lowers what your own perks allow.
+- [ ] **Disheartenin'** (Balanced): hit enemies deal about 25% less damage for 5 s.
+- [ ] **Capitalist's** (Balanced): more damage the more caps you carry (+10% per 1,000, up to +50%).
+- [ ] **Cleavin'** (Balanced, PC/Xbox): melee hits also hurt enemies around the target (40); never you or companions; guns: nothing extra.
 - [ ] **Disarmin'** (Balanced): enemies sometimes drop their weapon.
 - [ ] **Terrifyin'** (Balanced): enemies 5+ levels below you run away when hit; equal or stronger ones keep fighting.
 - [ ] **Midas'** (Balanced): enemies hit before they die turn to gold dust; kills carry extra caps.
-- [ ] **Rallyin'** (Balanced): companion's resistances go up near you. Check it does not multiply with several pieces.
-- [ ] **Intimidatin'** (Balanced): weak enemies (10+ levels below you) flee when near you.
+- [ ] **Intimidatin'** (Balanced): enemies 10+ levels below you flee when near you.
 - [ ] **Field Medic's** (Balanced): stimpaks heal more, RadAway removes more.
-- [ ] **Breakin' and Enterin'** (Balanced): without Locksmith you can pick Advanced locks; without Hacker, hack Advanced terminals. With rank 1, Expert. Check it never lowers what your own perks allow.
-- [ ] **Necromancer's** (OP, PC/Xbox): kills rise ~1.5 s later, fight on your side for 60 s, then drop dead. Named characters stay dead.
-- [ ] **Radroachin'** (OP, PC/Xbox): sometimes a target becomes a radroach; killing the roach gives the target's loot. Named characters unaffected.
-- [ ] **Shrinkin'** (OP): targets shrink to half size for 10 s and hit softer, then grow back to their normal size (not smaller).
-- [ ] **Singularity** (OP, experimental): every hit (not only kills) pulls nearby enemies towards the target. If they are pushed away instead, tell me.
+- [ ] **Necromancer's** (OP, PC/Xbox): kills rise ~1.5 s later, fight for you for 60 s, then drop dead; named characters stay dead.
+- [ ] **Radroachin'** (OP, PC/Xbox): sometimes a target becomes a radroach carrying its loot; named characters unaffected.
+- [ ] **Shrinkin'** (OP): targets shrink to half size for 10 s and hit softer, then grow back to normal (not smaller).
 
-## Concise view
+## 4. Mascots (7)
 
-- [ ] **New game, no setting items**: about 83 legendaries in all (38 weapon, 45 armour): one per group (e.g. Hurtin' (50%) but not Hurtin' (25%) / (100%); Lobbin' (Frag Grenade) but no mines) plus the standalone ones; no OP, no variants, no spawning legendaries.
-- [ ] **CLM Setting: Show all legendaries** (chemistry station, CLM Settings): everything is back; drop it and the concise view returns.
-- [ ] **Old save** (made with 2.0): after loading, "Show all legendaries" is in the inventory and nothing disappeared (PC/Xbox).
-- [ ] **CLM Group** item (chemistry station, CLM Groups), e.g. "Grenades and mines (Weapon)": the whole group shows; its description lists what it adds. The group items are not offered while Show all is carried.
-- [ ] **Holotape** (PC/Xbox): "Show all legendaries" / "Concise view" entries switch it; loot page: "Hidden legendaries drop too" / "Only the concise view drops".
-- [ ] **F4SE menu**: Settings page "Show all legendaries" and "Hidden legendaries drop too"; "Concise view" page with a switch per group; switches survive a save/load.
-- [ ] **Loot mode, default**: hidden legendaries never drop and their holotape does not unlock them; with "Hidden legendaries drop too" (or Show all) they drop and unlock.
-- [ ] **Picker mode** still works on top (a family picked shows only its concise members unless Show all / its group is on).
-- [ ] An item already carrying a hidden legendary keeps it.
-- [ ] **Merged groups**: "Elemental hits" (CLM Group) brings back all bleed, poison, acid, fire, cold, energy and crippling weapons and Nature's Wrath / Rayden's Fury; "Movement" brings back Speedy, Jumpy, Nimble and Combined; "Healing" brings back Regenerative, Sun-Kissed, Auto-Medical, Aid Patch, Phoenix and Field Medic's.
+- [ ] **Opportunist's** (weapon): +60% on a sneak attack, a full-health target, or below half health; never more than +60%.
+- [ ] **Elemental Strikin'** (weapon): 25% chance each of fire / cryo / poison / electrical bursts.
+- [ ] **Double Tappin'** (weapon): two projectiles per shot, about double damage, wider spread.
+- [ ] **Resistance (All)** (armour): 25% less acid, electrical, explosion, poison, radiation and limb damage.
+- [ ] **Vitality** (armour): 1 health a second, 3 below 25% health.
+- [ ] **Untouchable (Elements)** (armour, PC/Xbox): melee attackers 33% each frozen, burned or shocked.
+- [ ] **Radiatin' (Elements)** (armour): nearby enemies take a little fire, shock and rads and slow down.
 
-### Mascots (the shown legendary of their group)
-- [ ] **Opportunist's** (Balanced): +60% on a sneak attack, on a full-health target, or below half health; never more than +60% when two apply.
-- [ ] **Elemental Strikin'** (Balanced): 25% chance each of fire / cryo / poison / electrical bursts (20 over 2 s), no fire-rate change.
-- [ ] **Double Tappin'** (Balanced): two projectiles per shot, about double damage, wider spread.
-- [ ] **Resistance (All)** (Balanced): 25% less acid, electrical, explosion, poison, radiation and limb damage.
-- [ ] **Vitality** (Balanced): 1 health a second, 3 below 25% health.
-- [ ] **Untouchable (Elements)** (Balanced, PC/Xbox): melee attackers have a 33% chance each to be frozen, burned or shocked (about one effect per hit).
-- [ ] **Radiatin' (Elements)** (Balanced): nearby enemies take a little fire, shock and rads and slow down.
+## 5. Today's fixes
 
-## Spawning legendaries: hidden by default
+- [ ] **BioReactive Explosive (Explosive)** (one of six): explodes on every hit on an enemy, not only on kills; never on walls or water (the log shows "exploded" per hit).
+- [ ] **Scattering (Red Laser)** (one of the extra-projectile fixes): clearly harder hits than the plain weapon.
+- [ ] **Thumpin'**: full fire rate, small explosions on impact.
+- [ ] **Burning**: every hit sets the target alight.
+- [ ] **Escapist's**: below 30% health, sprinting makes you invisible.
+- [ ] **Bullet Escapist**: sprinting at full health, some shots bounce off.
+- [ ] **Aim Stabilized (50%)**: scope sway clearly less than without it.
+- [ ] **Refilling (25%)** shows under its new name.
 
-- [ ] **New game**: no spawning legendaries at the workbench, and no "CLM Spawns" picks at the chemistry station in Picker mode.
-- [ ] **CLM Setting: Show spawning legendaries** (chemistry station, CLM Settings): each creature's plain Random spawn appears (66); Legendary/Boss spawns still do not. Drop it: they go again.
-- [ ] **CLM Group: Legendary and boss spawns**: all spawns show (Random, Legendary and Boss), even without Show spawning legendaries.
-- [ ] **Show all legendaries** alone also shows every spawn (that is how saves from before 2.1 keep them).
-- [ ] **Hide spawning legendaries** hides them even with Show all or Show spawning carried.
-- [ ] **Holotape** (PC/Xbox): "Show spawning legendaries" / "Hide spawning legendaries (default)" switch them.
-- [ ] **F4SE menu**: Settings page "Show spawning legendaries" and "Never show spawning legendaries"; both survive a save/load.
-- [ ] **Old save** (2.0): spawns still at the workbench after loading (via Show all, PC/Xbox).
-- [ ] **Loot mode**: a spawn found as loot (its holotape or loose mod) can be used without Show spawning legendaries.
-- [ ] **Picker mode** with Show spawning legendaries: the CLM Spawns selectors appear and work.
+## 6. Restored 2016 legendaries and old requests, one per family
 
-## Changed existing legendaries
+- [ ] **Shockingly Lobbin'**: the lobbed grenade bursts into chain lightning (the Lobbin' family's riskiest one).
+- [ ] **Flamin'**: your weapon shoots a flamer stream.
+- [ ] **Concentratin' (Constant)** (OP): time slows while aiming, returns when you stop.
+- [ ] **One Man Punchin'** (OP): fists and melee x50, enemies burst; guns unaffected.
+- [ ] **MIRV's Impactin'** (OP): bursts on impact, not mid-air.
+- [ ] **Sticky Bottlecap Mine launchin'**: sticky bottlecap mines.
+- [ ] **Spawn: Random Minuteman** (one of the four new spawns): friendly or hostile by your Minutemen standing.
+- [ ] **Spawn: Friendly Mirelurk Queen** (OP): fights for you, ignores you and companions; no hatchlings.
+- [ ] **Plated Titanium** (OP): 8x power armour health; +1 health and -1 rad a second out of combat.
+- [ ] **Stealthy** (OP): crouched you are cloaked and unseen even moving; every pickpocket succeeds.
+- [ ] **Cap Showerin' (Frag)** (one of five): about 15% of kills burst into caps and a frag explosion.
+- [ ] **Healing Beam**: heals instead of hurting, more the more hurt the target is.
+- [ ] **Jumper's**: 50% less explosion damage, no fall damage; your own blast at your feet gives a 4x jump (PC/Xbox).
+- [ ] **No Brakin'** (OP): sprinting into enemies out of power armour knocks them down (75 damage).
+- [ ] **Enraged** (OP): faster in combat; below half health nearby enemies burn and flee. Speed-up too much?
+- [ ] **Decimatin'** (OP, PC/Xbox): each hit takes 10% of the target's full health.
+- [ ] **Hello Neighbour!** (OP, PC/Xbox): Gunners neutral while worn, hostile again when removed.
+- [ ] **CQC** (OP, PC/Xbox): three-round bursts, one round of ammo each.
+- [ ] **DragonBlade** (OP, PC/Xbox): swinging at an enemy ahead dashes you to it, at most every 2 s.
+- [ ] **Cinematic Excellence** (PC/Xbox): about 1 kill in 10 in slow motion and third person for 2 s.
+- [ ] **Brutish** (changed): no fire above half health; below half, 5 fire per hit.
+- [ ] **Fisto's stacking** (changed): Fisto's (20%) and (50%) on two pieces give +50%, not x1.8.
 
-### Moved to OP: recipe hidden without Show OP, visible with it, owned gear still works
-- [ ] Spot check: drop the **Show OP** item; the legendaries below disappear from the workbench; carry it again and they come back.
-- [ ] Weapons: Hurtin' (150%), Hurtin' (200%), Devil's Due, Hustlin', Rapid Fire (100%), Quicker (75%), Quicker (100%), Gunslanger's
-- [ ] Weapons: Four Shot, High Explosive, Slayer's, Silent Slayer's, Bird Shootin'
-- [ ] Weapons: Shotgun Surgeon's I and II (Basic, Institute, Laser, Plasma: all 8), Shockgun Surgeon's
-- [ ] Weapons: Thor Blessed, Overchargin', Alien-Tech'd, Keltas' Perfect Factorium, Synthesised Rapid / Specialised / Perfect Factorium
-- [ ] Weapons: Lobbin' (Nuke Mine), Sticky Nuke Mine launchin', BioReactive Explosive (Nuclear), Shavka's Explosive Striking (Nuclear)
-- [ ] Armour: Fisto's (100%), Fisto's (150%), Ballistic Protection (Advanced), (Master-crafted), Advanced Titanium, Tradin' Jack's, Regenerative
-- [ ] Armour: Speedy (50%), (100%), (150%); Combined Speed and Jump Boosts (50%), (100%), (150%); Nimble (100%), (150%); Jumpy (150%)
-- [ ] Armour: Lucky Hittin' (25%), Sadistic Brawlers, Untouchable (Paralyzed), Untouchable (Pacify), Punching (Paralyze), Devil's Due, Shavka's Explosive Striking (Nuclear)
-- [ ] An item already carrying one of these keeps working after loading a save.
+## 7. Settings still to check
 
-### Back to balanced
-- [ ] **Majestically Swaggering**: shows without Show OP.
-- [ ] **Aim Stabilized (100%)**: shows without Show OP.
+- [ ] **Holotape** (PC/Xbox): "Show all legendaries" / "Concise view" switch it; loot page: "Hidden legendaries drop too".
+- [ ] **F4SE menu**: "Concise view" page has a switch per group; switches survive a save/load.
+- [ ] **Loot mode, default**: hidden legendaries do not drop; with "Hidden legendaries drop too" they do. OP drops still come.
 
-### Other changes
-- [ ] **Fisto's stacking**: wear Fisto's (20%) and (50%) on two pieces: damage is +50%, not x1.8. One piece alone still works.
-- [ ] **Factional Damaging** (BoS / Institute / Minutemen / Railroad) still +25% (they share Fisto's (25%) perk).
-- [ ] **Camouflaged (Always) / (Crouch)**: only one of each at the workbench now; an item that has the hidden duplicate still works.
-- [ ] **Renamed**: Havoc (Bullets / Plasma / Blue Laser / Red Laser, Limited), Prometheus' Fiery (Limited), Alien Enhanced Nano-Coated (+500), Random (Legendary) Yao Guai spawns, Silenced Electrical Striker, Mighty Nearly Unbreakable, Liar's Compendium, Reaper's Embrace, Hydra's Fanged, Compressed Vortex Synthesized.
-- [ ] **Descriptions**: Fisto's, Nimble, Combined Speed and Jump Boosts, Santa Prisca's (+75 carry weight) read right.
-- [ ] **Loot mode**: OP drops still come (the OP pool is now two halves of 128 under one list); new legendaries can drop as loose mods.
-- [ ] **Picker / MCM**: new families Surroundings, Grit, Radiatin', Cap Showerin', Spawn: Minutemen, Spawn: Children of Atom have selectors and MCM switches.
-- [ ] Speedy and Combined Speed and Jump reset speed and jump when unequipped (decides whether Resettin' comes back).
-- [ ] **BioReactive Explosive** (any of the six): explodes on every hit on an enemy, not only on kills; never on walls or water. (The log shows "exploded" per hit.)
-- [ ] **Weak legendaries buffed**: Scattering / Carbonatin' / Shotgun Surgeon's (Trainee) / Generically 80s Action Hero's hit noticeably harder than plain; Thumpin' fires at full speed; Burning sets every target alight.
-- [ ] **Escapist's**: below 30% health, sprinting makes you invisible. **Bullet Escapist**: sprinting at full health, some shots bounce off.
-- [ ] **Aim Stabilized (50%)**: clearly steadier scope sway than none (between none and the 100% version).
-- [ ] **Refilling (25%)** shows under its new name; old gear with Refilling (10%) shows the new name too.
-- [ ] **"ALM: A - Test"** (weapon and armour) no longer appears at the workbench (removed).
+## PlayStation build on PC (optional)
 
-## PlayStation build, tried on PC (optional)
-
-`python tools/release/playstation.py --test-install` puts the PlayStation plugins in Data (turn the debug recorder
-off first); `--test-restore` puts the PC ones back. Your spreadsheet's "Platforms" tab lists what differs.
-- [ ] Settings and Picker work from the chemistry station; no holotape is given.
-- [ ] **CLM Perk** magazines (chemistry station, CLM Perks): reading one adds the perk.
-- [ ] Loot mode: the **CLM Loot Manual** magazine teaches the drop perk; legendaries drop.
-- [ ] **BioReactive / Singularity**: explode only on killing hits; their descriptions say so.
-- [ ] **Midas'**: kills turn to ordinary ash (not gold); extra caps still drop; its description says so.
-- [ ] **Auto-Medical / Aid Patch**: health regenerates while low; no stimpak used.
-- [ ] **Vampiric**: heals on hits (not on killing blows).
-- [ ] The new laser and disintegration colours and the Kellogg spawn are not at the workbench.
+`python tools/release/playstation.py --test-install` (recorder off first); `--test-restore` puts the PC plugins back.
+- [ ] Settings, Picker and the CLM Perk / CLM Loot Manual magazines work from the chemistry station; no holotape.
+- [ ] **BioReactive** explodes on killing hits only; **Midas'** leaves ordinary ash; descriptions say so.
 - [ ] A "needs a script" legendary (e.g. Phoenix) shows the PlayStation note and does nothing, without errors.
+
+## Passed so far
+
+- Recorder log works. Concise view: new game (83), Show all, old 2.0 save, CLM Group items. All 10 spawning-default
+  checks. Moved-to-OP spot check; owned gear keeps working.
+- New armour: Night Owl's, Storm Chasin' (radstorm counts), Shadow Dwellin', Amphibious (wading and swimming both
+  count), Entrenched, Home Turf, Underdog's, Glass Cannon, Ironclad, Glowing Heart, all six Radiatin' (Healing heals
+  companions, not enemies), aura radius, Overcharged, Scavenger's.
+- Skipped as tested before 2.1: the balanced counterparts, the moved-to-OP lists, renames and descriptions.
