@@ -5,7 +5,7 @@ sets the globals, and turns any setting / pick items the player carries into the
 PrepareUninstall turns everything back into items before the add-on is removed.}
 
 MiscObject[] Property SettingItems Auto Const Mandatory
-{In the order: free, loot, op, variants, noperk, nospawn, low, high, picker, all, loothidden}
+{In the order: free, loot, op, variants, noperk, nospawn, low, high, picker, all, loothidden, spawn}
 GlobalVariable[] Property SettingGlobals Auto Const Mandatory
 {Same order}
 GlobalVariable[] Property PickGlobals Auto Const Mandatory
@@ -113,6 +113,7 @@ Function Sync()
 	Put("bPicker:Settings", On(8), start)
 	Put("bShowAll:Settings", On(9), start)
 	Put("bLootHidden:Settings", On(10), start)
+	Put("bShowSpawn:Settings", On(11), start)
 	Put("bHolotapes:Settings", A1ALMHOLOTAPES.GetValue() != 0, start)
 	int i = 0
 	While i < PickGlobals.Length && changes == start
@@ -168,6 +169,8 @@ Function OnMCMSettingChange(string asModName, string asID)
 		SetSetting(9, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bLootHidden:Settings"
 		SetSetting(10, MCM.GetModSettingBool(ModName, asID))
+	ElseIf asID == "bShowSpawn:Settings"
+		SetSetting(11, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHolotapes:Settings"
 		SetHolotapes(MCM.GetModSettingBool(ModName, asID))
 	Else

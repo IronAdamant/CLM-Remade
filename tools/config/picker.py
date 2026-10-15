@@ -226,6 +226,11 @@ def write_raw(fams: dict, data: Path, ack: Path) -> None:
         for key, op in (('op', OP_GE), ('noperk', OP_EQ), ('nospawn', OP_EQ)):
             if n and needs[(kind, family)][(key, op >> 5)] == n:
                 conds += setting(key, op == OP_GE)
+        if family.startswith('Spawn: '):     # spawns hidden by default (2.1): picks only once they can show
+            either = [(FN_GET_ITEM_COUNT, ITEMS['spawn'][0]), (FN_GET_GLOBAL_VALUE, setting_global('spawn')),
+                      (FN_GET_ITEM_COUNT, ITEMS['all'][0]), (FN_GET_GLOBAL_VALUE, setting_global('all'))]
+            conds += [ctda((OP_GE if fn == FN_GET_ITEM_COUNT else OP_EQ) | (FLAG_OR if i < 3 else 0), 1.0, fn,
+                           ref(home, e)) for i, (fn, e) in enumerate(either)]
         cats = [keyword(f['category'])] + ([keyword(OP_CATEGORY)] if all_op else [])
         text = (f'Picker mode: show the {family.removeprefix("Spawn: ")} {"spawning " if family.startswith("Spawn: ") else ""}'
                 f'legendaries ({len(f["rows"])}) at the {"weapons" if kind == "weapon" else "armour"} workbench. Carry it '

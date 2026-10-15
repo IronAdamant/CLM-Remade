@@ -6,7 +6,8 @@
 
 PlayStation mods cannot run custom scripts, so 1.09's holotape (script fragments setting globals) did nothing there.
 Settings are now weightless items: carrying one turns a setting on, dropping it turns it off. A player carrying none
-gets the defaults: Costly crafting, Balanced (OP hidden), variants hidden, perk-style and spawning legendaries shown,
+gets the defaults: Costly crafting, Balanced (OP hidden), variants hidden, perk-style legendaries shown, spawning
+legendaries hidden (2.1; "Show spawning legendaries" or "Show all legendaries" shows them),
 Standard loot drop rate. Settings are crafted at the chemistry station (category "CLM Settings"); on PC and Xbox the
 configuration holotape is a front end that gives and removes the same items. A one-time quest converts the old global
 settings of existing saves into items (PC/Xbox).
@@ -48,7 +49,8 @@ ITEMS = {
     'noperk':   ('A1ALMSET_HidePerk', 'CLM Setting: Hide perk-style legendaries',
                  'Hide the legendaries that work like perks (Jumpy, Speedy, Nimble...). Without it: shown.'),
     'nospawn':  ('A1ALMSET_HideSpawn', 'CLM Setting: Hide spawning legendaries',
-                 'Hide the legendaries that spawn creatures and people. Without it: shown.'),
+                 'Hide the legendaries that spawn creatures and people, even with "Show spawning legendaries" or "Show '
+                 'all legendaries" carried. (Since 2.1 they are hidden anyway unless one of those is carried.)'),
     'low':      ('A1ALMSET_DropLow', 'CLM Setting: Low drop rate',
                  'Loot mode: legendaries drop very rarely. With neither drop rate: Standard. Replaces Higher drop rate.'),
     'high':     ('A1ALMSET_DropHigh', 'CLM Setting: Higher drop rate',
@@ -63,6 +65,11 @@ ITEMS = {
     'loothidden': ('A1ALMSET_LootHidden', 'CLM Setting: Hidden legendaries drop too',
                    'Loot mode: the legendaries the concise view hides drop and unlock too. Without it (and without Show '
                    "all legendaries): only the concise view's legendaries."),
+    # 2.1: spawning legendaries hidden by default (author's decision 2026-10-15)
+    'spawn':    ('A1ALMSET_ShowSpawn', 'CLM Setting: Show spawning legendaries',
+                 "Show the legendaries that spawn creatures and people: each creature's plain Random spawn (its "
+                 '"CLM Group: Legendary and boss spawns" item adds the rest). Without it (and without "Show all '
+                 'legendaries"): hidden.'),
 }
 # mutually exclusive settings: crafting one takes the other back
 EXCLUSIVE = {'free': 'loot', 'loot': 'free', 'low': 'high', 'high': 'low'}
@@ -81,8 +88,8 @@ CONFIG_MENU = [
     (7, 'Hide variants - the main ones only (default)', [('variants', False)], [('variants', True)]),
     (8, 'Hide perk-style legendaries', [('noperk', True)], [('noperk', False)]),
     (9, 'Show perk-style legendaries (default)', [('noperk', False)], [('noperk', True)]),
-    (10, 'Hide spawning legendaries', [('nospawn', True)], [('nospawn', False)]),
-    (11, 'Show spawning legendaries (default)', [('nospawn', False)], [('nospawn', True)]),
+    (10, 'Show spawning legendaries', [('spawn', True), ('nospawn', False)], [('spawn', False)]),
+    (11, 'Hide spawning legendaries (default)', [('spawn', False)], [('spawn', True)]),
     (13, 'Picker mode - show only the families picked at a chemistry station', [('picker', True)], [('picker', False)]),
     (14, 'Picker mode off - show every family (default)', [('picker', False)], [('picker', True)]),
     (15, 'Show all legendaries (as before 2.1)', [('all', True)], [('all', False)]),
@@ -98,7 +105,8 @@ RATE_MENU = [
 SUBMENU_SHOWN = {(CONFIG_TERM, 12): [('loot', True)]}   # the drop-rate page: only in loot mode
 CONFIG_WELCOME = ('CLM settings are weightless items in your Misc tab: carry one and it is on, drop it and it is off. '
                   'This holotape gives and takes them; you can also make them at any chemistry station (CLM Settings). '
-                  'With none you get the defaults: costly crafting, balanced legendaries (no OP), the main variants, '
+                  'With none you get the defaults: costly crafting, balanced legendaries (no OP), the main variants, no '
+                  'spawning legendaries, '
                   'and the concise view (one legendary per group of similar effects: "Show all legendaries" shows every '
                   'one, a "CLM Group" item from the chemistry station shows one group). The workbench updates when you '
                   'leave it and use it again.')
@@ -204,7 +212,8 @@ def migrate_script() -> str:
         f'\tIf A1ALMABALANCED.GetValue() == 1\n\t\tGive(player, {keys.index("op")})\n\tEndIf',
         f'\tIf A1ALMAVAR.GetValue() == 1\n\t\tGive(player, {keys.index("variants")})\n\tEndIf',
         f'\tIf A1ALMAPERK.GetValue() == 0\n\t\tGive(player, {keys.index("noperk")})\n\tEndIf',
-        f'\tIf A1ALMASPAWN.GetValue() == 0\n\t\tGive(player, {keys.index("nospawn")})\n\tEndIf',
+        f'\tIf A1ALMASPAWN.GetValue() == 0\n\t\tGive(player, {keys.index("nospawn")})\n\tElse\n'
+        f'\t\tGive(player, {keys.index("spawn")})  ; 1.09 showed them; since 2.1 that takes a setting\n\tEndIf',
         '\tA1ALMAFREE.SetValue(-1)',
         'EndEvent', '',
         'Function Give(Actor akPlayer, int aiIndex)',

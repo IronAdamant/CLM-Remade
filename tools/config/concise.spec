@@ -334,6 +334,7 @@ new | COBJ | co_A1ALMGRP_Weapon_LegendaryAndBossSpawns
 new | GLOB | A1ALMGRPG_Weapon_LegendaryAndBossSpawns
 prunerecords | A1ALMGRP_
 prunerecords | co_A1ALMGRP_
+prunerecords | A1ALMGRPG_
 new | QUST | A1ALMQUST_ConciseMigrate
 set | A1ALMQUST_ConciseMigrate | FULL | CLM Concise View Migration
 set | A1ALMQUST_ConciseMigrate | DNAM\Flags | 1

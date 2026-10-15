@@ -20,7 +20,7 @@ Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Arm
 SETTINGS (please read)
 Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off; carry none = the defaults. Or use the Configuration Holotape, given when you leave Vault 111.
 - How you get legendaries: Free crafting, Loot mode, Low / Higher drop rate, Hidden legendaries drop too.
-- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style / spawning legendaries, Picker mode.
+- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style legendaries, Show spawning legendaries (hidden by default), Picker mode.
 After a change, leave the workbench and use it again. Something missing? Check your Misc tab.
 
 CONCISE VIEW (NEW IN 2.1)

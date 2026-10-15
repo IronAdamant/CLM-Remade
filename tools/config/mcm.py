@@ -111,8 +111,11 @@ def config_json(perks, picks, fams, quest_id: int, groups=()) -> dict:
                '300%...). Off (default): the main ones.'),
         switch('Hide perk-style legendaries', 'bHidePerk:Settings', 'Hide the legendaries that work like perks (Jumpy, '
                'Speedy, Nimble...). Off (default): shown.'),
-        switch('Hide spawning legendaries', 'bHideSpawn:Settings', 'Hide the legendaries that spawn creatures and people. '
-               'Off (default): shown.'),
+        switch('Show spawning legendaries', 'bShowSpawn:Settings', 'Show the legendaries that spawn creatures and '
+               "people (each creature's plain Random spawn; the Concise view page's Legendary and boss spawns adds the "
+               'rest). Off (default): hidden, unless Show all legendaries is on.'),
+        switch('Never show spawning legendaries', 'bHideSpawn:Settings', 'Hide the legendaries that spawn creatures and '
+               'people even with Show spawning legendaries or Show all legendaries on. Off (default).'),
         switch('Picker mode', 'bPicker:Settings', 'Show only the families turned on in the Legendary Picker page. Off '
                '(default): every family.'),
         {'text': 'Holotapes', 'type': 'section'},
@@ -177,7 +180,7 @@ def config_json(perks, picks, fams, quest_id: int, groups=()) -> dict:
 
 def settings_ini(perks, picks) -> str:
     lines = ['[Settings]', 'iCrafting=0', 'iDropRate=1', 'bShowOP=0', 'bShowVariants=0', 'bHidePerk=0', 'bHideSpawn=0',
-             'bPicker=0', 'bHolotapes=0', 'bShowAll=0', 'bLootHidden=0', '', '[Picks]'] + [f'bPick{i}=0' for i in range(len(picks))] + \
+             'bPicker=0', 'bHolotapes=0', 'bShowAll=0', 'bLootHidden=0', 'bShowSpawn=0', '', '[Picks]'] + [f'bPick{i}=0' for i in range(len(picks))] + \
         ['', '[Perks]'] + [f'bPerk{i}=0' for i in range(len(perks))]
     return '\n'.join(lines) + '\n'
 
@@ -302,6 +305,7 @@ Function Sync()
 	Put("bPicker:Settings", On({k("picker")}), start)
 	Put("bShowAll:Settings", On({k("all")}), start)
 	Put("bLootHidden:Settings", On({k("loothidden")}), start)
+	Put("bShowSpawn:Settings", On({k("spawn")}), start)
 	Put("bHolotapes:Settings", {GLOBAL}.GetValue() != 0, start)
 	int i = 0
 	While i < PickGlobals.Length && changes == start
@@ -357,6 +361,8 @@ Function OnMCMSettingChange(string asModName, string asID)
 		SetSetting({k("all")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bLootHidden:Settings"
 		SetSetting({k("loothidden")}, MCM.GetModSettingBool(ModName, asID))
+	ElseIf asID == "bShowSpawn:Settings"
+		SetSetting({k("spawn")}, MCM.GetModSettingBool(ModName, asID))
 	ElseIf asID == "bHolotapes:Settings"
 		SetHolotapes(MCM.GetModSettingBool(ModName, asID))
 	Else

@@ -115,10 +115,19 @@
           }
         },
         {
-          "text": "Hide spawning legendaries",
+          "text": "Show spawning legendaries",
+          "type": "switcher",
+          "id": "bShowSpawn:Settings",
+          "help": "Show the legendaries that spawn creatures and people (each creature's plain Random spawn; the Concise view page's Legendary and boss spawns adds the rest). Off (default): hidden, unless Show all legendaries is on.",
+          "valueOptions": {
+            "sourceType": "ModSettingBool"
+          }
+        },
+        {
+          "text": "Never show spawning legendaries",
           "type": "switcher",
           "id": "bHideSpawn:Settings",
-          "help": "Hide the legendaries that spawn creatures and people. Off (default): shown.",
+          "help": "Hide the legendaries that spawn creatures and people even with Show spawning legendaries or Show all legendaries on. Off (default).",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }

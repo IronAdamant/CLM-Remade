@@ -24,7 +24,8 @@ existing saves keep everything shown, as before; loot mode gets an option for th
   all legendaries" to keep the full list (say so in the PlayStation description).
 - **Loot mode**: two drop chains. The concise chain leaves out the hidden legendaries; the full chain (as before) is
   used while "Hidden legendaries drop too" or "Show all legendaries" is on. Drop rates per kill are the same.
-- **Spawns**: each creature's Legendary and Boss spawns form one group (48 spawns); the plain Random spawns stay.
+- **Spawns**: hidden by default since 2.1 ("Show spawning legendaries" or "Show all legendaries" shows them). Each
+  creature's Legendary and Boss spawns form one group (48 spawns); with spawns shown, the plain Random spawns stay.
 
 ## Mascots
 
@@ -45,7 +46,8 @@ Merged: Bleeding, Poison and acid, Fire on hit, Cold, Energy damage and Cripplin
 Moving while aiming and Jumping into Movement (shown: Combined Speed and Jump Boosts (25%)); Steady and Emergency
 healing into Healing.
 
-Counts (new game, balanced, main variants): 149 shown (38 weapon, 45 armour, 66 spawns) against 317 with Show all.
+Counts (new game, balanced, main variants): 83 shown (38 weapon, 45 armour; spawns hidden) against 317 with Show
+all. With "Show spawning legendaries": 149 (66 Random spawns).
 
 ## Weapons: 31 shown, 63 hidden
 

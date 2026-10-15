@@ -45,7 +45,8 @@ switches (with F4SE, the optional menu does all this for you instead: see F4SE M
     Show OP legendaries           the overpowered ones too. Without it: balanced legendaries only.
     Show variants                 every strength (Jumpy 10% to 300%...). Without it: the main ones.
     Hide perk-style legendaries   hides them. Without it: shown.
-    Hide spawning legendaries     hides them. Without it: shown.
+    Show spawning legendaries     the creature and people spawns. Without it (and without Show all): hidden.
+    Hide spawning legendaries     hides them even with Show spawning / Show all legendaries.
     Picker mode                   only the families you pick. Without it: every family (see LEGENDARY PICKER).
 
 - A setting you already carry is not offered again. Free crafting and Loot mode replace each other: making one
@@ -63,7 +64,8 @@ Many legendaries feel alike, so the workbench shows one balanced legendary per g
 groups, such as "More damage" (Hurtin' (50%) shows; Hurtin' (25%), Hurtin' (100%), Devastating and Beginner are in
 the group) or "Grenades and mines". Where no single legendary stood for its group, a new balanced one does:
 Opportunist's, Elemental Strikin', Double Tappin', Resistance (All), Vitality, Untouchable (Elements) and Radiatin'
-(Elements). Spawns show each creature's plain Random spawn; the Legendary and Boss spawns are a group of their own.
+(Elements). Spawning legendaries are hidden unless you make "Show spawning legendaries" (or Show all): then each creature's
+plain Random spawn shows; the Legendary and Boss spawns are a group of their own.
 - Nothing is removed: gear that has a hidden legendary keeps it.
 - "CLM Setting: Show all legendaries" shows every legendary again, as before 2.1.
 - A "CLM Group: ..." item (chemistry station, category "CLM Groups") shows one whole group; its description lists
@@ -89,8 +91,8 @@ F4SE MENU (OPTIONAL, PC ONLY)
 With F4SE and Mod Configuration Menu (MCM) installed, add the optional "CLM - MCM" download: everything is set
 from the pause menu (Mod Config > Custom Legendary Modifications) instead of holotapes.
 - Settings page: how you get legendaries (crafting mode Costly / Free / Loot, drop rate, hidden legendaries drop
-  too) and what the workbench shows (Show all legendaries, Show OP, Show variants, Hide perk-style / spawning
-  legendaries, Picker mode). Each option says what you get with it off.
+  too) and what the workbench shows (Show all legendaries, Show OP, Show variants, Hide perk-style legendaries,
+  Show spawning legendaries, Picker mode). Each option says what you get with it off.
 - Legendary Picker page: switch on the families the workbench shows in Picker mode.
 - Concise view page: switch on whole groups.
 - CLM Perks / Cheat Perks pages: add or remove any of the perk holotape's 110 perks.

@@ -409,7 +409,7 @@ def build(game: Path) -> None:
     r = main.by_edid('co_A1ALMSET_ShowAll')
     r.set('DESC', zstr('Show every legendary, as before 2.1. Without it, the concise view: one legendary per group of '
                        'similar effects; to show just one group, make its "CLM Group" item (category CLM Groups). '
-                       'PlayStation: a save from before 2.1 needs this to keep every legendary shown.'))
+                       'PlayStation: a save from before 2.1 needs this to keep every legendary shown (spawning ones included).'))
 
     for name, p in plugins.items():
         p.save(OUT / name)

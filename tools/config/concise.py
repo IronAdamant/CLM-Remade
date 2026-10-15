@@ -10,7 +10,9 @@ Run after tools/config/settings.py (the "Show all" and "Hidden legendaries drop 
 - A hidden legendary's costly and FREE recipes also need one of: "Show all legendaries" (setting item or global), or
   its group's "CLM Group" item (or global, from the F4SE menu). Loot recipes (_Unlocked) also accept "Hidden
   legendaries drop too". Records only, so PlayStation works the same (items at the chemistry station).
-- Spawns: each creature's Legendary and Boss spawns form one group; the plain Random spawns stay.
+- Spawns: each creature's Legendary and Boss spawns form one group; the plain Random spawns stay. Since 2.1 every
+  spawn's costly and FREE recipes also need "Show spawning legendaries", "Show all legendaries" or that group
+  (hidden by default; author's decision 2026-10-15). Loot recipes do not: a spawn found in loot mode shows.
 - Existing saves keep everything shown, as before 2.1: a start-game quest (PC/Xbox) gives "Show all legendaries" to
   a save that is past the Vault 111 exit (MQ102 stage 6). New games start with the concise view. PlayStation saves
   cannot run it: players there craft "Show all legendaries" if they want the full list back.
@@ -103,7 +105,7 @@ def write_spec() -> Path:
         s += [f'copy | {TEMPLATE_MISC} | {e}', f'set | {e} | FULL | {label(k, g)}', f'set | {e} | Model\\MODL | {MODEL}',
               f'remove | {e} | Model\\MODT', f'remove | {e} | KWDA', f'remove | {e} | KSIZ',
               f'set | {e} | DATA\\Weight | 0', f'set | {e} | DATA\\Value | 0', f'new | COBJ | co_{e}', f'new | GLOB | {glob(k, g)}']
-    s += ['prunerecords | A1ALMGRP_', 'prunerecords | co_A1ALMGRP_',
+    s += ['prunerecords | A1ALMGRP_', 'prunerecords | co_A1ALMGRP_', 'prunerecords | A1ALMGRPG_',
           f'new | QUST | {QUEST}', f'set | {QUEST} | FULL | CLM Concise View Migration',
           f'set | {QUEST} | DNAM\\Flags | 1',  # start game enabled: also starts once in saves made before 2.1
           f'script | {QUEST} | {SCRIPT}',
@@ -160,12 +162,17 @@ def write_raw(data: Path, ack: Path) -> None:
             r.mark_dirty()
     all_item, all_glob = fid(ITEMS['all'][0]), fid(setting_global('all'))
     loot_item, loot_glob = fid(ITEMS['loothidden'][0]), fid(setting_global('loothidden'))
-    mine = {all_item, all_glob, loot_item, loot_glob} | {fid(item(k, g)) for k, g in groups()} | \
+    spawn_item, spawn_glob = fid(ITEMS['spawn'][0]), fid(setting_global('spawn'))
+    spawns = {r.formid for r in p.records('OMOD') if p.is_own(r.formid) and '_Custom_Spawning_' in (r.edid or '')}
+    mine = {all_item, all_glob, loot_item, loot_glob, spawn_item, spawn_glob} | {fid(item(k, g)) for k, g in groups()} | \
         {fid(glob(k, g)) for k, g in groups()}
     # items and globals of groups that were renamed or merged away (pruned by the build): drop their conditions too
     own = len(p.masters)
     exists = {r.formid for r in p.records()}
-    gone = lambda param: (param >> 24) == own and param not in exists
+    current = {item(k, g) for k, g in groups()} | {glob(k, g) for k, g in groups()}
+    stale = {r.formid for r in p.records() if p.is_own(r.formid) and (r.edid or '').startswith(('A1ALMGRP_', 'A1ALMGRPG_'))
+             and r.edid not in current}       # a merged group's global left behind blocked its members (2.1 fix)
+    gone = lambda param: ((param >> 24) == own and param not in exists) or param in stale
 
     members = hidden(p)
     count = {kg: 0 for kg in groups()}
@@ -190,6 +197,14 @@ def write_raw(data: Path, ack: Path) -> None:
                      for i, (fn, param) in enumerate(pairs)]
             at = next(i for i, s in enumerate(subs) if s.sig == 'CNAM')
             subs[at:at] = conds
+        if struct.unpack('<I', cn.data)[0] in spawns and not c.edid.endswith('_Unlocked'):
+            pairs = [(FN_GET_ITEM_COUNT, spawn_item), (FN_GET_GLOBAL_VALUE, spawn_glob), (FN_GET_ITEM_COUNT, all_item),
+                     (FN_GET_GLOBAL_VALUE, all_glob), (FN_GET_ITEM_COUNT, fid(item(*SPAWNS))),
+                     (FN_GET_GLOBAL_VALUE, fid(glob(*SPAWNS)))]
+            at = next(i for i, s in enumerate(subs) if s.sig == 'CNAM')
+            subs[at:at] = [Subrecord('CTDA', ctda((OP_GE if fn == FN_GET_ITEM_COUNT else OP_EQ) |
+                                                  (FLAG_OR if i < len(pairs) - 1 else 0), 1.0, fn, param))
+                           for i, (fn, param) in enumerate(pairs)]
         if [s.data for s in subs] != [s.data for s in c.subrecords]:
             c.subrecords[:] = subs
             c.mark_dirty()

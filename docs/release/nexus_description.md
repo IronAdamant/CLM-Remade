@@ -51,7 +51,8 @@ Settings decide two things: **how you get legendaries** and **what the workbench
 - **CLM Group: ...** (category **CLM Groups**): shows one whole group of the concise view.
 - **Show OP legendaries:** the overpowered ones too. Without it: balanced only.
 - **Show variants:** every strength of each legendary (Jumpy 10% to 300%...). Without it: the main ones.
-- **Hide perk-style legendaries / Hide spawning legendaries:** without them, both are shown.
+- **Hide perk-style legendaries:** without it, they are shown.
+- **Show spawning legendaries:** the legendaries that spawn creatures and people. Without it (and without Show all legendaries) they are hidden, so a new game starts with weapons and armour only. ("Hide spawning legendaries" still hides them even with Show all.)
 - **Picker mode:** only the families you pick (see Legendary Picker below). Without it: every family.
 
 Good to know:

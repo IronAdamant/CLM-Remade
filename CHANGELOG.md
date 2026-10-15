@@ -9,7 +9,7 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
 - **Concise view: one legendary per group of similar effects.** Too many legendaries felt alike, so the workbench
   now shows one balanced legendary per group (33 groups: "More damage", "Elemental hits", "Grenades and mines",
   "Melee reactions"...) and hides the rest of each group: 120 legendaries, plus the Legendary and Boss tiers of the
-  spawns (48). A new game shows 149 legendaries instead of 317. Nothing is removed and gear you own keeps working.
+  spawns (48). A new game shows 83 legendaries instead of 317. Nothing is removed and gear you own keeps working.
   - Where no single legendary stood for its group, a new balanced one does (records only unless noted):
     **Opportunist's** (+60% damage on a sneak attack, against a full-health target or below half health, one at a
     time), **Elemental Strikin'** (Nature's Wrath's elements without its fire rate), **Double Tappin'** (the base
@@ -77,6 +77,13 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   only. A CLM script now explodes on every hit that lands on an actor (still never on walls or water). Singularity had
   the same problem and the same fix. PC and Xbox; on PlayStation they still explode on killing hits only (noted in
   their descriptions).
+- **Fixed (during 2.1 testing):** merging the concise-view groups left the old groups' globals behind, and 23
+  legendaries (Sun-Kissed, Jumpy, Nimble, the bleed/poison/fire/cold ones...) could not show even with Show all.
+  tools/config/concise.py now prunes them and drops any condition on a group that no longer exists.
+- **Spawning legendaries are hidden by default** (new setting **CLM Setting: Show spawning legendaries**): a new
+  game starts with weapons and armour only. "Show all legendaries" shows them too, so saves from before 2.1
+  (which get it on PC and Xbox) keep them; "Hide spawning legendaries" still hides them in every case. Loot
+  mode is unchanged: a spawn found as loot can be used. Picker mode's spawn families appear once spawns show.
 - **Removed the two "ALM: A - Test" slots** (weapon and armour): the author's 1.09-era scratch legendaries for trying
   effects out, never meant for players.
 

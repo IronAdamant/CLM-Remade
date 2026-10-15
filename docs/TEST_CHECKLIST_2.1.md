@@ -5,8 +5,11 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 
 ## Setup
 
-- Carry the settings items from the chemistry station (CLM Settings): **Free crafting**, **Show OP**, **Show
-  variants**. Spawning and perk-style legendaries show by default. Leave **Picker mode** off.
+- **First, on a new game with no setting items**, do the "New game" checks under Concise view and Spawning
+  legendaries (the 83-legendary default).
+- **Then, for the item-by-item tests**, carry these from the chemistry station (CLM Settings): **Free crafting**,
+  **Show OP**, **Show variants**, **Show all legendaries** (the concise view hides most group members otherwise) and
+  **Show spawning legendaries** (hidden by default since 2.1). Leave **Picker mode** off.
 - PC/Xbox only = needs a script; on PlayStation it shows a "needs a script" note and does nothing.
 - **Debug recorder** (so Claude can read what happened): Papyrus logging is on; tick **CLM - Debug Recorder.esp**
   (after the main plugin). The log is `Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log` (the session
@@ -76,7 +79,7 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Resistance (Poison)** (Balanced): 50% less poison damage.
 - [ ] **Resistance (Radiation)** (Balanced): 50% less radiation.
 - [ ] **Gheed's Fortunate** (Balanced): buy 20% cheaper, sell 20% higher.
-- [ ] **Shotgun Surgeon's (Trainee)** (Balanced): +3 pellets, 30% wider spread; no knock-back or armour piercing.
+- [ ] **Shotgun Surgeon's (Trainee)** (Balanced): +3 pellets and +50% damage in all, 30% wider spread; no knock-back or armour piercing.
 - [ ] **Keltas' Quick Draw Factorium** (Balanced): about one empty magazine in four refills itself (not with Scrounger rank 4).
 
 ## The 2016 legendaries, restored (16)
@@ -140,7 +143,7 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 
 ## Concise view
 
-- [ ] **New game**: the workbench shows one legendary per group (e.g. Hurtin' (50%) but not Hurtin' (25%) / (100%); Lobbin' (Frag Grenade) but no mines). The plain Random spawns show, Legendary/Boss spawns do not.
+- [ ] **New game, no setting items**: about 83 legendaries in all (38 weapon, 45 armour): one per group (e.g. Hurtin' (50%) but not Hurtin' (25%) / (100%); Lobbin' (Frag Grenade) but no mines) plus the standalone ones; no OP, no variants, no spawning legendaries.
 - [ ] **CLM Setting: Show all legendaries** (chemistry station, CLM Settings): everything is back; drop it and the concise view returns.
 - [ ] **Old save** (made with 2.0): after loading, "Show all legendaries" is in the inventory and nothing disappeared (PC/Xbox).
 - [ ] **CLM Group** item (chemistry station, CLM Groups), e.g. "Grenades and mines (Weapon)": the whole group shows; its description lists what it adds. The group items are not offered while Show all is carried.
@@ -149,17 +152,29 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Loot mode, default**: hidden legendaries never drop and their holotape does not unlock them; with "Hidden legendaries drop too" (or Show all) they drop and unlock.
 - [ ] **Picker mode** still works on top (a family picked shows only its concise members unless Show all / its group is on).
 - [ ] An item already carrying a hidden legendary keeps it.
-
 - [ ] **Merged groups**: "Elemental hits" (CLM Group) brings back all bleed, poison, acid, fire, cold, energy and crippling weapons and Nature's Wrath / Rayden's Fury; "Movement" brings back Speedy, Jumpy, Nimble and Combined; "Healing" brings back Regenerative, Sun-Kissed, Auto-Medical, Aid Patch, Phoenix and Field Medic's.
 
 ### Mascots (the shown legendary of their group)
 - [ ] **Opportunist's** (Balanced): +60% on a sneak attack, on a full-health target, or below half health; never more than +60% when two apply.
-- [ ] **Elemental Strikin'** (Balanced): random fire / cryo / poison / electrical bursts, no fire-rate change.
+- [ ] **Elemental Strikin'** (Balanced): 25% chance each of fire / cryo / poison / electrical bursts (20 over 2 s), no fire-rate change.
 - [ ] **Double Tappin'** (Balanced): two projectiles per shot, about double damage, wider spread.
 - [ ] **Resistance (All)** (Balanced): 25% less acid, electrical, explosion, poison, radiation and limb damage.
 - [ ] **Vitality** (Balanced): 1 health a second, 3 below 25% health.
-- [ ] **Untouchable (Elements)** (Balanced, PC/Xbox): melee attackers sometimes frozen, burned or shocked.
+- [ ] **Untouchable (Elements)** (Balanced, PC/Xbox): melee attackers have a 33% chance each to be frozen, burned or shocked (about one effect per hit).
 - [ ] **Radiatin' (Elements)** (Balanced): nearby enemies take a little fire, shock and rads and slow down.
+
+## Spawning legendaries: hidden by default
+
+- [ ] **New game**: no spawning legendaries at the workbench, and no "CLM Spawns" picks at the chemistry station in Picker mode.
+- [ ] **CLM Setting: Show spawning legendaries** (chemistry station, CLM Settings): each creature's plain Random spawn appears (66); Legendary/Boss spawns still do not. Drop it: they go again.
+- [ ] **CLM Group: Legendary and boss spawns**: all spawns show (Random, Legendary and Boss), even without Show spawning legendaries.
+- [ ] **Show all legendaries** alone also shows every spawn (that is how saves from before 2.1 keep them).
+- [ ] **Hide spawning legendaries** hides them even with Show all or Show spawning carried.
+- [ ] **Holotape** (PC/Xbox): "Show spawning legendaries" / "Hide spawning legendaries (default)" switch them.
+- [ ] **F4SE menu**: Settings page "Show spawning legendaries" and "Never show spawning legendaries"; both survive a save/load.
+- [ ] **Old save** (2.0): spawns still at the workbench after loading (via Show all, PC/Xbox).
+- [ ] **Loot mode**: a spawn found as loot (its holotape or loose mod) can be used without Show spawning legendaries.
+- [ ] **Picker mode** with Show spawning legendaries: the CLM Spawns selectors appear and work.
 
 ## Changed existing legendaries
 
