@@ -413,7 +413,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Entrenched "CLM: Entren
 ```
 
 ### CLM: Escapist's  `A1ALMOMOD_Legendary_Armor_Escapist`
-> When your health goes down below 15%. You will become invisible at the moment you sprint. When you stop, you lose invisibility or when your health recovers.
+> Below 30% health you turn invisible while you sprint; it ends when you stop or your health recovers.
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Escapist "CLM: Escapist" [ENCH:083387E7] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Escapist (, )
@@ -421,7 +421,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Escapist "CLM: Escapist
       entry point: Mod Detection Movement / Multiply Value
       entry point: Mod Detection Sneak Skill / Add Value
       values: 0.500000; 50.000000
-      if GetHealthPercentage [10000000] 0.150000
+      if GetHealthPercentage [10100000] 0.300000
       if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Undetectable_Ghostly_All: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Ignore Running During Detection / Set Value
@@ -429,16 +429,16 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Escapist "CLM: Escapist
       entry point: Mod Detection Sneak Skill / Set Value
       entry point: Set Undetectable / Set Value
       values: 1.000000; 0.000000; 0.000000; 1.000000
-      if GetHealthPercentage [10000000] 0.150000
+      if GetHealthPercentage [10100000] 0.300000
       if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Fortify_Effect_Movement_Speed_Mult: Value Modifier SpeedMult, magnitude 5.000000, duration 0 (Constant Effect, Self)
-      if GetHealthPercentage [10000000] 0.150000
+      if GetHealthPercentage [10100000] 0.300000
       if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ShadowArmorEffect: Value Modifier ArmorShadowHide, magnitude 15.000000, duration 0 (Constant Effect, Self)
-      if GetHealthPercentage [10000000] 0.150000
+      if GetHealthPercentage [10100000] 0.300000
       if IsSprinting [10000000] 1.000000
     A1ALMMGEF_Constant_Effect_Custom_Effect_ArmorQuietEffect: Value Modifier ArmorQuietMod, magnitude 10.000000, duration 0 (Constant Effect, Self)
-      if GetHealthPercentage [10000000] 0.150000
+      if GetHealthPercentage [10100000] 0.300000
       if IsSprinting [10000000] 1.000000
 ```
 
@@ -1366,7 +1366,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_50P "CLM
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Aim_Stabilized_50P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Aim_Stabilized_50P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Actor Scope Stability / Multiply Value
-      values: 1.100000
+      values: 1.500000
 ```
 
 ### CLM: Constant Bouncing  `A1ALMOMOD_Legendary_Armor_PerkV_Bouncing`
@@ -1400,7 +1400,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Bouncing_BlocknSprint "
 ```
 
 ### CLM: Bullet Escapist  `A1ALMOMOD_Legendary_Armor_PerkV_Bouncing_Sprint30P`
-> You have 30% to reflect projectiles coming at you, and it only activates when you sprint when your health is at 30% and below.
+> While you sprint, 30% of the projectiles coming at you bounce off.
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Bouncing_Sprint30P "CLM: Bullet Escapist" [ENCH:081BC2FE] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Bouncing_Sprint30P (, )
@@ -1871,14 +1871,14 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Perk_PinpointAccuracy "
       values: 0.000000
 ```
 
-### CLM: Refilling (10%)  `A1ALMOMOD_Legendary_Armor_PerkV_Refilling_Base_10P`
-> Refills your ammo after firing the last round in your clip. (I recommend not using 4th perk scrounger as it conflicts with this mod. This works with most weapons)
+### CLM: Refilling (25%)  `A1ALMOMOD_Legendary_Armor_PerkV_Refilling_Base_10P`
+> When you fire the last round in your magazine, there is a 25% chance it refills by itself, as with the Scrounger perk's top rank. (Scrounger rank 4 uses the same chance, so the two do not add up.)
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Perk_Refilling_10P "CLM: Refilling 10%" [ENCH:08334367] / 431
   ENCH A1ALMEnch_Constant_Effect_Perk_Refilling_10P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Refilling_10P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Scrounger Fill Ammo Chance / Set Value
-      values: 10.000000
+      values: 25.000000
 ```
 
 ### CLM: Refilling (100%)  `A1ALMOMOD_Legendary_Armor_PerkV_Refilling_Variant_100P`
@@ -1931,7 +1931,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Untouchable_Electrified "CLM: Untouch
 ```
 
 ### CLM: Untouchable (Elements)  `A1ALMOMOD_Legendary_Armor_PerkV_Untouchable_Elements`
-> When hostiles attack you in melee, they have a 20% chance each to be frozen, set on fire and shocked.
+> When hostiles attack you in melee, they have a 33% chance each to be frozen, set on fire and shocked.
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Untouchable_Elements "CLM: Untouchable (Elements)" [ENCH:084AD039] / 431
   ENCH A1ALMEnch_Constant_Effect_Untouchable_Elements (, )
@@ -2844,11 +2844,11 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Vitality "CLM: Vitality
 ```
 
 ### CLM: Acidic  `A1ALMOMOD_Legendary_Weapon_Acidic`
-> Your weapon gains acidic properties.
+> Your hits burn with acid: 30 acid damage over 5 seconds.
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Target_Acid_Acidic "CLM: Acidic" [ENCH:082E7333] / 431
   ENCH A1ALMEnch_FaF_Contact_Target_Acid_Acidic (, )
-    A1ALMMGEF_Target_Effect_Hostile_Acid: Value Modifier Health, magnitude 2.000000, duration 5 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Acid: Value Modifier Health, magnitude 6.000000, duration 5 (Fire and Forget, Touch)
     A1ALMMGEF_Target_Effect_Hostile_Critical_Acid: Script, magnitude 2.000000, duration 5 (Fire and Forget, Touch)
       script FXCastSpellOnDeath
 ```
@@ -2862,7 +2862,7 @@ MaxRange MUL+ADD 150.000000 / 0.000000
 Keywords ADD A1ALMKW_WeaponPerk_Weapon_Penetration_50P [KYWD:084AC7A6] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Incendiary_15DT "CLM: 15 fire damage over time" [ENCH:08449E72] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Incendiary_15DT (, )
-    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 15.000000, duration 10 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 3.000000, duration 5 (Fire and Forget, Touch)
 Enchantments ADD A1ALMEnch_Constant_Effect_Penetrating_50P "CLM: Penetrating (50%)" [ENCH:0823C557] / 431
   ENCH A1ALMEnch_Constant_Effect_Penetrating_50P (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Penetrating_50P: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
@@ -3009,15 +3009,15 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Jokers_Arrow_Type_Syringe_FrenzyEx
 ```
 
 ### CLM: Beginner  `A1ALMOMOD_Legendary_Weapon_Beginner`
-> Your starting weapon legendary effect! 2% to Reload, Fire Rate, Damage, Accuracy.
+> Your starting weapon legendary effect! 10% more damage, fire rate and reload speed, and 10% less recoil.
 ```
-Speed MUL+ADD 0.020000 / 0.000000
-AttackDamage MUL+ADD 0.020000 / 0.000000
-AimModelRecoilMaxDegPerShot MUL+ADD 0.020000 / 0.000000
-AimModelRecoilMinDegPerShot MUL+ADD 0.020000 / 0.000000
-AimModelRecoilArcDeg MUL+ADD 0.020000 / 0.000000
-AimModelRecoilArcRotateDeg MUL+ADD 0.020000 / 0.000000
-ReloadSpeed MUL+ADD 0.020000 / 0.000000
+Speed MUL+ADD 0.100000 / 0.000000
+AttackDamage MUL+ADD 0.100000 / 0.000000
+AimModelRecoilMaxDegPerShot MUL+ADD -0.100000 / 0.000000
+AimModelRecoilMinDegPerShot MUL+ADD -0.100000 / 0.000000
+AimModelRecoilArcDeg MUL+ADD -0.100000 / 0.000000
+AimModelRecoilArcRotateDeg MUL+ADD -0.100000 / 0.000000
+ReloadSpeed MUL+ADD 0.100000 / 0.000000
 DamageTypeValues MUL+ADD dtCryo [DMGT:00060A83] / 0.020000
 DamageTypeValues MUL+ADD dtElectrical [DMGT:00060A80] / 0.020000
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 0.020000
@@ -3140,12 +3140,11 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_BloodyMessMaxCombined "CLM
 ```
 
 ### CLM: Burning  `A1ALMOMOD_Legendary_Weapon_Burning`
-> 10% of setting enemy on fire, giving them 5 points of fire damage per second..
+> Sets your targets on fire for 15 damage over 3 seconds, like Incendiary. One hit in ten burns hotter, for 25 more, and can turn them to ash.
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Weapon_Burning "CLM: Burning" [ENCH:08316434] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Weapon_Burning (, )
-    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 5.000000, duration 5 (Fire and Forget, Touch)
-      if GetRandomPercent [00100000] 10.000000
+    A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 5.000000, duration 3 (Fire and Forget, Touch)
     A1ALMMGEF_Target_Effect_Hostile_Disintegration_Fire: Script, magnitude 0.000000, duration 5 (Fire and Forget, Touch)
       script AttachAshPile
       if GetRandomPercent [00100000] 10.000000
@@ -3205,8 +3204,9 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Capitalists "CLM: Capit
 ```
 
 ### CLM: Carbonatin'  `A1ALMOMOD_Legendary_Weapon_Carbonatin`
-> Adds an extra projectile to every shot. You will also have a chance to witness caps explode out of your enemies through critical shots.
+> Fires one more projectile with every shot (+50% damage in all). Critical kills can burst into a shower of caps.
 ```
+AttackDamage MUL+ADD 0.500000 / 0.000000
 NumProjectiles ADD 1 / 0
 Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Explosion_Variant_Caps "CLM: Carbonatin'" [ENCH:0831ED24] / 431
   ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Explosion_Variant_Caps (, )
@@ -3335,9 +3335,9 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_InverseHealth_Base "CLM
 ```
 
 ### CLM: Compacted  `A1ALMOMOD_Legendary_Weapon_Compacted`
-> 20% greater ammo capacity
+> 50% greater ammo capacity.
 ```
-AmmoCapacity MUL+ADD 0.200000 / 0.000000
+AmmoCapacity MUL+ADD 0.500000 / 0.000000
 ```
 
 ### CLM: Compressed Vortex Synthesized  `A1ALMOMOD_Legendary_Weapon_CompressedVortexSynthesized`
@@ -4828,18 +4828,18 @@ Speed ADD 200.000000 / 0.000000
 ```
 
 ### CLM: Elemental Strikin'  `A1ALMOMOD_Legendary_Weapon_ElementalStriking`
-> Each hit has a 10% chance each to deal 20 fire, cryo, poison and electrical damage over two seconds.
+> Each hit has a 25% chance each to deal 20 fire, cryo, poison and electrical damage over two seconds.
 ```
-Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath "CLM: Nature's Wrath" [ENCH:084ACD1A] / 431
-  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath (, )
+Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_ElementalStriking "CLM: Elemental Strikin'" [ENCH:084AD0E0] / 431
+  ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_ElementalStriking (, )
     A1ALMMGEF_Target_Effect_Hostile_Poison: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
-      if GetRandomPercent [00100000] 10.000000
+      if GetRandomPercent [00100000] 25.000000
     A1ALMMGEF_Target_Effect_Hostile_CryoDamage: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
-      if GetRandomPercent [00100000] 10.000000
+      if GetRandomPercent [00100000] 25.000000
     A1ALMMGEF_Target_Effect_Hostile_Fire: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
-      if GetRandomPercent [00100000] 10.000000
+      if GetRandomPercent [00100000] 25.000000
     A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 10.000000, duration 2 (Fire and Forget, Touch)
-      if GetRandomPercent [00100000] 10.000000
+      if GetRandomPercent [00100000] 25.000000
 ```
 
 ### CLM: Prometheus' Fiery  `A1ALMOMOD_Legendary_Weapon_Elements_Base_Fire`
@@ -5444,10 +5444,11 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Garm_Laser_LtBlue [PROJ:082FC
 ```
 
 ### CLM: Generically 80s Action Hero's  `A1ALMOMOD_Legendary_Weapon_Generically80sActionHero`
-> Four shot. -30% fire rate, 50% magazine size, -30% recoil, 30% received damage reduction when standing. -25% accurate.
+> Four shot (+100% damage in all). -30% fire rate, 50% magazine size, -30% recoil, -25% accuracy. While you stand still you take 30% less damage.
 ```
 Speed MUL+ADD -0.300000 / 0.000000
 AmmoCapacity MUL+ADD 0.500000 / 0.000000
+AttackDamage MUL+ADD 1.000000 / 0.000000
 Keywords ADD A1ALMKW_WeaponPerk_Armor_NegateDamageWhileNotMoving30P [KYWD:084AC78F] / 431
 AimModelMinConeDegrees MUL+ADD 0.250000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.250000 / 0.000000
@@ -5462,7 +5463,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Generically80sActionHer
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Generically80sActionHero_Weapon (, )
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_NegateDamageNoMove_30P_W: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Incoming Weapon Damage / Set Value
-      values: 0.300000
+      values: 0.700000
 ```
 
 ### CLM: God Creator  `A1ALMOMOD_Legendary_Weapon_GodCreator`
@@ -5814,7 +5815,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Highlighting "CLM: High
 ```
 
 ### CLM: Hinokagutsuchi  `A1ALMOMOD_Legendary_Weapon_Hinokagutsuchi`
-> Your weapon has combined effects of Sishkebab with Grogank's Axe legendary effects.
+> Shishkebab meets Grognak's Axe: hits deal 25 extra damage over 5 seconds and stagger, and burning targets can turn to ash.
 ```
 CritEffect SET CritFire [SPEL:001478EC] / 431
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Fire "CLM: Disintegration (Fire)" [ENCH:082D1D6C] / 431
@@ -5824,7 +5825,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Fire "CLM: D
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Hinokagutsuchi "CLM: Hinokagutsuchi" [ENCH:08423738] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Hinokagutsuchi (, )
     A1ALMMGEF_Target_Effect_Hostile_Stagger: Stagger, magnitude 0.500000, duration 0 (Fire and Forget, Touch)
-    A1ALMMGEF_Target_Hostile_Effect_Damage_HealthOnContact: Value Modifier Health, magnitude 2.000000, duration 5 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Hostile_Effect_Damage_HealthOnContact: Value Modifier Health, magnitude 5.000000, duration 5 (Fire and Forget, Touch)
 DamageTypeValues MUL+ADD dtEnergy [DMGT:00060A81] / 1.000000
 ```
 
@@ -6100,11 +6101,11 @@ ReloadSpeed MUL+ADD 0.500000 / 0.000000
 ```
 
 ### CLM: Lesser Bleeding  `A1ALMOMOD_Legendary_Weapon_LesserBleed`
-> Targets bleed for 12 points of additional damage.
+> Targets bleed for 20 points of additional damage over 5 seconds.
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_LesserBleeding "CLM: Lesser Bleeding" [ENCH:083387E2] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Bleed_LesserBleeding (, )
-    A1ALMMGEF_Target_Effect_Hostile_Bleed: Value Modifier Health, magnitude 3.000000, duration 4 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Bleed: Value Modifier Health, magnitude 4.000000, duration 5 (Fire and Forget, Touch)
 ```
 
 ### CLM: Liar's Compendium  `A1ALMOMOD_Legendary_Weapon_LiarsCompedium`
@@ -6481,7 +6482,7 @@ OverrideProjectile SET A1ALMPROJ_Napalming_Variant_Missile_Impact_Fire [PROJ:083
 ```
 
 ### CLM: Greater Poisoning  `A1ALMOMOD_Legendary_Weapon_NastierPoisoning`
-> 9 points of poison damage oer 10 seconds. Nastier version of Poisoner's.
+> 90 points of poison damage over 10 seconds: a nastier Poisoner's (30).
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Poison_NastierPoisoning "CLM: Nastier Poisoning" [ENCH:082E7350] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Poison_NastierPoisoning (, )
@@ -6557,7 +6558,7 @@ ReloadSpeed MUL+ADD 1.000000 / 0.000000
 ```
 
 ### CLM: Opportunist's  `A1ALMOMOD_Legendary_Weapon_Opportunists`
-> +40% damage on a sneak attack, against a target at full health, or while you are below half health. Only one of them counts at a time.
+> +60% damage on a sneak attack, against a target at full health, or while you are below half health. Only one of them counts at a time.
 ```
 Keywords ADD A1ALMKW_WeaponPerk_Weapon_Opportunists [KYWD:084AD02C] / 431
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Opportunists "CLM: Opportunist's" [ENCH:084AD02F] / 431
@@ -6566,7 +6567,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Opportunists "CLM: Oppo
       entry point: Mod Weapon Attack Damage / Multiply Value
       entry point: Mod Weapon Attack Damage / Multiply Value
       entry point: Mod Weapon Attack Damage / Multiply Value
-      values: 1.400000; 1.400000; 1.400000
+      values: 1.600000; 1.600000; 1.600000
 ```
 
 ### CLM: Overchargin'  `A1ALMOMOD_Legendary_Weapon_Overcharging`
@@ -6934,11 +6935,11 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_RasSpherical_Missile_Base [PROJ:08
 ```
 
 ### CLM: Rayden's Fury  `A1ALMOMOD_Legendary_Weapon_Raydens`
-> On the critical hits, you deal 25 shock damage to any targets.
+> Critical hits deal 75 extra shock damage.
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Electrical_Raydens "CLM: Rayden's" [ENCH:082FC976] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Electrical_Raydens (, )
-    A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 25.000000, duration 0 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Electrical: Value Modifier Health, magnitude 75.000000, duration 0 (Fire and Forget, Touch)
       if GetLastHitCritical [10000000] 1.000000
 ```
 
@@ -7691,6 +7692,7 @@ OverrideProjectile SET A1ALMPROJ_Custom_TracerBeam_ExplodeOnImpact_MissileShellE
 ### CLM: Scattering (Red Laser)  `A1ALMOMOD_Legendary_Weapon_Scattering_Base_RedLaser`
 > Two shot. Will disintegrate your targets when not killed in one hit. Your weapon becomes energised, causing your projectiles to change..
 ```
+AttackDamage MUL+ADD 1.000000 / 0.000000
 NumProjectiles ADD 1 / 0
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Red "CLM: Disintegration (Red)" [ENCH:082E2EB0] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Red (, )
@@ -7704,6 +7706,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_Red [PROJ:082
 ### CLM: Scattering (Blue Laser)  `A1ALMOMOD_Legendary_Weapon_Scattering_Variant_LtBlueLaser`
 > Two shot. Will disintegrate your targets when not killed in one hit. Your weapon becomes energised, causing your projectiles to change..
 ```
+AttackDamage MUL+ADD 1.000000 / 0.000000
 NumProjectiles ADD 1 / 0
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Blue "CLM: Disintegration (Blue)" [ENCH:0824929B] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Blue (, )
@@ -7718,6 +7721,7 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Laser_LtBlue [PROJ:
 ### CLM: Scattering (Plasma)  `A1ALMOMOD_Legendary_Weapon_Scattering_Variant_Plasma`
 > Two shot. Will disintegrate your targets when not killed in one hit. Your weapon becomes energised, causing your projectiles to change..
 ```
+AttackDamage MUL+ADD 1.000000 / 0.000000
 NumProjectiles ADD 1 / 0
 Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green "CLM: Disintegration (Green)" [ENCH:082E2EAD] / 431
   ENCH A1ALMEnch_FaF_Contact_Custom_Effect_Disintegration_Green (, )
@@ -7984,8 +7988,9 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_ShotgunSurgeon_Beam_Red [PROJ:082C
 ```
 
 ### CLM: Shotgun Surgeon's (Trainee)  `A1ALMOMOD_Legendary_Weapon_ShotgunSurgeons_Trainee`
-> Your weapon fires 3 more pellets, with a 30% wider spread.
+> Your weapon fires 3 more pellets (+50% damage in all), with a 30% wider spread.
 ```
+AttackDamage MUL+ADD 0.500000 / 0.000000
 AimModelMinConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelMaxConeDegrees MUL+ADD 0.300000 / 0.000000
 AimModelConeIncreasePerShot MUL+ADD 0.300000 / 0.000000
@@ -8304,9 +8309,8 @@ DamageTypeValues ADD dtEnergy [DMGT:00060A81] / 90.000000
 ```
 
 ### CLM: Thumpin'  `A1ALMOMOD_Legendary_Weapon_Thumping_Base`
-> Halved fire rate but turns your rounds into explosives with massively increased range.
+> Turns your rounds into explosives (15 extra damage around the impact, like the base game's Explosive) with massively increased range.
 ```
-Speed MUL+ADD -0.500000 / 0.000000
 MinRange MUL+ADD 7.000000 / 0.000000
 MaxRange MUL+ADD 10.000000 / 0.000000
 OverrideProjectile SET A1ALMPROJ_Custom_TracerBeam_ExplodeOnImpact_MissileShellExplosion [PROJ:082FC952] / 431

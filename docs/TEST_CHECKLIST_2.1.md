@@ -153,7 +153,7 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Merged groups**: "Elemental hits" (CLM Group) brings back all bleed, poison, acid, fire, cold, energy and crippling weapons and Nature's Wrath / Rayden's Fury; "Movement" brings back Speedy, Jumpy, Nimble and Combined; "Healing" brings back Regenerative, Sun-Kissed, Auto-Medical, Aid Patch, Phoenix and Field Medic's.
 
 ### Mascots (the shown legendary of their group)
-- [ ] **Opportunist's** (Balanced): +40% on a sneak attack, on a full-health target, or below half health; never more than +40% when two apply.
+- [ ] **Opportunist's** (Balanced): +60% on a sneak attack, on a full-health target, or below half health; never more than +60% when two apply.
 - [ ] **Elemental Strikin'** (Balanced): random fire / cryo / poison / electrical bursts, no fire-rate change.
 - [ ] **Double Tappin'** (Balanced): two projectiles per shot, about double damage, wider spread.
 - [ ] **Resistance (All)** (Balanced): 25% less acid, electrical, explosion, poison, radiation and limb damage.
@@ -189,6 +189,10 @@ that do not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 - [ ] **Picker / MCM**: new families Surroundings, Grit, Radiatin', Cap Showerin', Spawn: Minutemen, Spawn: Children of Atom have selectors and MCM switches.
 - [ ] Speedy and Combined Speed and Jump reset speed and jump when unequipped (decides whether Resettin' comes back).
 - [ ] **BioReactive Explosive** (any of the six): explodes on every hit on an enemy, not only on kills; never on walls or water. (The log shows "exploded" per hit.)
+- [ ] **Weak legendaries buffed**: Scattering / Carbonatin' / Shotgun Surgeon's (Trainee) / Generically 80s Action Hero's hit noticeably harder than plain; Thumpin' fires at full speed; Burning sets every target alight.
+- [ ] **Escapist's**: below 30% health, sprinting makes you invisible. **Bullet Escapist**: sprinting at full health, some shots bounce off.
+- [ ] **Aim Stabilized (50%)**: clearly steadier scope sway than none (between none and the 100% version).
+- [ ] **Refilling (25%)** shows under its new name; old gear with Refilling (10%) shows the new name too.
 - [ ] **"ALM: A - Test"** (weapon and armour) no longer appears at the workbench (removed).
 
 ## PlayStation build, tried on PC (optional)

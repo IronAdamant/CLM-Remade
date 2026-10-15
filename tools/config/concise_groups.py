@@ -73,7 +73,7 @@ WEAPON_SOLO = ['Automatic (Furious)', "Forcible", 'Rebounding (Bullet)', 'Vampir
                "Disheartenin'", "Energizin'", "Capitalist's", "Cleavin'", "Disarmin'", "Terrifyin'", "Midas'"]
 ARMOUR_SOLO = ['Santa Prisca\'s', 'Enlightened', 'Fiddlin\'', "Gheed's Fortunate", "Scavenger's", 'Cat Tailed',
                'Waterbreathing', 'Impact Landing (Basic)', "Lucky Hittin' (10%)", 'Murderous (x3)', "Marathon Runnin'",
-               'Quick Hands (50%)', 'Refilling (10%)', 'Titanium', "Battery Regeneratin' (Slow)", 'Overcharged', 'Punching (Radiation)',
+               'Quick Hands (50%)', 'Refilling (25%)', 'Titanium', "Battery Regeneratin' (Slow)", 'Overcharged', 'Punching (Radiation)',
                "Shavka's Explosive Striking", "Radiatin' (Healing)", 'Glow', 'Amphibious', 'Entrenched', 'Home Turf', "Night Owl's",
                "Storm Chasin'", 'Glowing Heart', 'Ironclad', "Underdog's", "Rallyin'", "Intimidatin'",
                "Breakin' and Enterin'"]

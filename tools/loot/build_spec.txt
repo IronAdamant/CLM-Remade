@@ -1807,7 +1807,7 @@ set | A1ALMMISC_LooseMod_Armor_Radiating_Inferno | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_Radiating_Inferno | LNAM | @A1ALMMISC_LooseMod_Armor_Radiating_Inferno
 copy | @co_A1ALMOMOD_Legendary_Armor_Radiating_Inferno | co_A1ALMOMOD_Legendary_Armor_Radiating_Inferno_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_Refilling_Base_10P
-set | A1ALMMISC_LooseMod_Armor_PerkV_Refilling_Base_10P | FULL | CLM: Refilling (10%)
+set | A1ALMMISC_LooseMod_Armor_PerkV_Refilling_Base_10P | FULL | CLM: Refilling (25%)
 set | A1ALMMISC_LooseMod_Armor_PerkV_Refilling_Base_10P | DATA\Value | 200
 set | A1ALMOMOD_Legendary_Armor_PerkV_Refilling_Base_10P | LNAM | @A1ALMMISC_LooseMod_Armor_PerkV_Refilling_Base_10P
 copy | @co_A1ALMOMOD_Legendary_Armor_PerkV_Refilling_Base_10P | co_A1ALMOMOD_Legendary_Armor_PerkV_Refilling_Base_10P_Unlocked

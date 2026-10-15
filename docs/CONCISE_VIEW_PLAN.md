@@ -33,12 +33,12 @@ that triggers on several conditions is on more often than a member that needs on
 
 | Mascot | Group | Effect |
 |---|---|---|
-| **Opportunist's** | Situational damage | +40% damage on a sneak attack, against a full-health target, or below half health; one at a time |
-| **Elemental Strikin'** | Elemental hits | 10% each for 20 fire, cryo, poison and electrical damage over 2 s (Nature's Wrath without its fire rate) |
+| **Opportunist's** | Situational damage | +60% damage on a sneak attack, against a full-health target, or below half health; one at a time |
+| **Elemental Strikin'** | Elemental hits | 25% each for 20 fire, cryo, poison and electrical damage over 2 s (Nature's Wrath without its fire rate) |
 | **Double Tappin'** | Extra projectiles | +1 projectile at full damage, 30% wider spread (the base game's Two Shot) |
 | **Resistance (All)** | Resistances | 25% less from all six damage types (the single ones: 50%) |
 | **Vitality** | Healing | 1 health a second, 3 below 25% health |
-| **Untouchable (Elements)** | Melee reactions | Melee attackers: 20% each to be frozen, burned, shocked (PC and Xbox, like every Untouchable) |
+| **Untouchable (Elements)** | Melee reactions | Melee attackers: 33% each to be frozen, burned, shocked (PC and Xbox, like every Untouchable) |
 | **Radiatin' (Elements)** | Damaging auras | 2 fire and 2 shock a second, 3 rads a second, 15% slower |
 
 Merged: Bleeding, Poison and acid, Fire on hit, Cold, Energy damage and Crippling into Elemental hits; Speed,
@@ -91,7 +91,7 @@ Always shown (nothing similar among the balanced ones): Automatic (Furious), For
 | Damaging auras | enemies near you take damage or slow down | **Radiatin' (Elements)** | Radiatin' (Fire), Radiatin' (Cryo), Radiatin' (Rads), Radiatin' (Shock) |
 | Exploding kills | kills burst into caps and an explosion | **Cap Showerin' (Frag)** | Cap Showerin' (Cryo), Cap Showerin' (Fire), Cap Showerin' (Plasma) |
 
-Always shown (nothing similar among the balanced ones): Santa Prisca's, Enlightened, Fiddlin', Gheed's Fortunate, Scavenger's, Cat Tailed, Waterbreathing, Impact Landing (Basic), Lucky Hittin' (10%), Murderous (x3), Marathon Runnin', Quick Hands (50%), Refilling (10%), Titanium, Battery Regeneratin' (Slow), Overcharged, Punching (Radiation), Shavka's Explosive Striking, Radiatin' (Healing), Glow, Amphibious, Entrenched, Home Turf, Night Owl's, Storm Chasin', Glowing Heart, Ironclad, Underdog's.
+Always shown (nothing similar among the balanced ones): Santa Prisca's, Enlightened, Fiddlin', Gheed's Fortunate, Scavenger's, Cat Tailed, Waterbreathing, Impact Landing (Basic), Lucky Hittin' (10%), Murderous (x3), Marathon Runnin', Quick Hands (50%), Refilling (25%), Titanium, Battery Regeneratin' (Slow), Overcharged, Punching (Radiation), Shavka's Explosive Striking, Radiatin' (Healing), Glow, Amphibious, Entrenched, Home Turf, Night Owl's, Storm Chasin', Glowing Heart, Ironclad, Underdog's.
 
 Two armour records are both called "Highlighting"; both are in the Seeing enemies group, so 169 legendaries are
 hidden in all (33 groups: 121 weapon and armour, 48 spawns).

@@ -128,7 +128,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Power armour | Battery Regeneratin' (Slow) (common); Damage Conversion (Power Armor) (uncommon); Overcharged (uncommon); Battery Regeneratin' (Extreme) (OP); Battery Regeneratin' (Normal) (OP); Enduring (OP) |
 | Punching | Punching (Disarm) (uncommon); Punching (Electrical) (uncommon); Punching (Fire) (uncommon); Punching (Freeze) (uncommon); Punching (Frenzy) (uncommon); Punching (Poison) (uncommon); Punching (Push) (uncommon); Punching (Radiation) (uncommon); Punching (Spook) (uncommon); Punching (Paralyze) (OP) |
 | Radiatin' | Radiatin' (Cryo) (uncommon); Radiatin' (Elements) (uncommon); Radiatin' (Fire) (uncommon); Radiatin' (Rads) (uncommon); Radiatin' (Shock) (uncommon); Radiatin' (Healing) (rare); Radiatin' (Inferno) (OP) |
-| Refilling | Refilling (10%) (uncommon); Refilling (100%) (OP); Refilling (50%) (OP) |
+| Refilling | Refilling (25%) (uncommon); Refilling (100%) (OP); Refilling (50%) (OP) |
 | Shavka's Explosive Striking | Shavka's Explosive Striking (uncommon); Shavka's Explosive Striking (Cryo) (uncommon); Shavka's Explosive Striking (Fire) (uncommon); Shavka's Explosive Striking (Gauss) (uncommon); Shavka's Explosive Striking (Plasma) (uncommon); Shavka's Explosive Striking (Pulse) (uncommon); Shavka's Explosive Striking (Nuclear) (OP) |
 | Shields | Glow (uncommon); Shield (Constant) (OP); Shield (Emergency) (OP) |
 | Sight | Highlighting (common); Sensin' (common); Tactical Highlighting (uncommon); Tracker's Sight (uncommon); Tracker's Focused Sight (rare) |

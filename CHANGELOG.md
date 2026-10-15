@@ -11,10 +11,10 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   "Melee reactions"...) and hides the rest of each group: 120 legendaries, plus the Legendary and Boss tiers of the
   spawns (48). A new game shows 149 legendaries instead of 317. Nothing is removed and gear you own keeps working.
   - Where no single legendary stood for its group, a new balanced one does (records only unless noted):
-    **Opportunist's** (+40% damage on a sneak attack, against a full-health target or below half health, one at a
+    **Opportunist's** (+60% damage on a sneak attack, against a full-health target or below half health, one at a
     time), **Elemental Strikin'** (Nature's Wrath's elements without its fire rate), **Double Tappin'** (the base
     game's Two Shot), **Resistance (All)** (25% less from all six damage types), **Vitality** (1 health a second, 3
-    below 25% health), **Untouchable (Elements)** (melee attackers: 20% each to freeze, burn, shock; PC and Xbox, like
+    below 25% health), **Untouchable (Elements)** (melee attackers: 33% each to freeze, burn, shock; PC and Xbox, like
     the other Untouchables), **Radiatin' (Elements)** (a little of each aura).
   - **CLM Setting: Show all legendaries** shows everything, as before 2.1. **Saves made before 2.1 get it
     automatically** (PC and Xbox); on PlayStation, craft it at the chemistry station to keep the full list.
@@ -52,6 +52,26 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   Combined Speed and Jump Boosts (the numbers; Combined mentioned only jumping), Santa Prisca's (+75 carry weight,
   not 75%), plus typos and stray commas.
 
+- **Weak and broken balanced legendaries brought up to the base game's** (reported on Nexus; baselines per hit:
+  Wounding 25 bleed, Incendiary 15 fire, Poisoner's 30 poison, Explosive +15 splash, Two Shot +100% damage with its
+  extra projectile, since an extra projectile alone only splits the same damage):
+  - Extra projectiles that added no damage: **Scattering** (all three) +100% like Two Shot; **Carbonatin'** and
+    **Shotgun Surgeon's (Trainee)** +50%; **Generically 80s Action Hero's** (four shot) +100%.
+  - **Thumpin'** no longer halves the fire rate (it was the base game's Explosive at half speed).
+  - **Aim Stabilized (50%)** was only 10% (x1.1): now 50%.
+  - **Escapist's** only worked at exactly 15% health (practically never): now below 30%. **Bullet Escapist**
+    worked above 30% health, the opposite of its text: now whenever you sprint.
+  - Damage over time: **Burning** always burns for 15 (was a 10% chance), the hotter burn and ash stay one hit in
+    ten; **Acidic** 10 -> 30 acid; **Lesser Bleeding** 12 -> 20; **Hinokagutsuchi** 10 -> 25; **Rayden's Fury** 25
+    -> 75 on critical hits; **Elemental Strikin'** 10% -> 20% per element (Nature's Wrath keeps 10%, with its
+    faster fire rate).
+  - Concise-view mascots raised to their group to match: **Elemental Strikin'** 25% per element, **Untouchable
+    (Elements)** 33% per element, **Opportunist's** +60%.
+  - **Compacted** +20% -> +50% magazine; **Refilling** 10% -> 25%, now named Refilling (25%); **Beginner** 2% ->
+    10% (its recoil part made recoil worse; now less).
+  - Stronger than their text said: **Fiery Operator's** burned for 150, now the 15 it promises; **Generically 80s
+    Action Hero's** (weapon) cut damage taken standing still by 70%, now the 30% it promises. **Greater Poisoning**
+    keeps its 90 poison over 10 seconds; its text said 9.
 - **BioReactive Explosive (all six) now explodes on every hit** (reported on Nexus): it ran vanilla Fortune Finder's
   script, which only sets off its explosion if the target is already dead, so since 1.09 it exploded on killing hits
   only. A CLM script now explodes on every hit that lands on an actor (still never on walls or water). Singularity had
