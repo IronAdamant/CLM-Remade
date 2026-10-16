@@ -3160,7 +3160,7 @@ DamageTypeValues ADD dtFire [DMGT:00060A82] / 1.000000
 ```
 
 ### CLM: CQC  `A1ALMOMOD_Legendary_Weapon_CQC`
-> Every shot becomes a three-round burst: two more rounds follow, each using one round of your ammo. The extra rounds fire the gun's plain projectile, without its mods or legendary effect.
+> Every shot becomes a three-round burst: your gun fires twice more on its own, with its mods and your ammo. (PC and Xbox.)
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_CQC "CLM: CQC" [ENCH:084ACF28] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_CQC (, )
@@ -6498,7 +6498,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Custom_Effect_Target_Hostile_NaturesWrath
 ```
 
 ### CLM: Necromancer's  `A1ALMOMOD_Legendary_Weapon_Necromancers`
-> Enemies you kill rise again a moment later and fight for you for 60 seconds, then fall dead. Unique and essential characters stay dead. (PC and Xbox.)
+> Enemies you kill crumble to ash (their loot stays in the ash pile) and rise again in their place, fighting for you for 60 seconds before they crumble too. Each body rises once; unique and essential characters stay dead. (PC and Xbox.)
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Necromancers "CLM: Necromancer's" [ENCH:084AD0AE] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Necromancers (, )

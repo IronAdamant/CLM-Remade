@@ -77,6 +77,8 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   only. A CLM script now explodes on every hit that lands on an actor (still never on walls or water). Singularity had
   the same problem and the same fix. PC and Xbox; on PlayStation they still explode on killing hits only (noted in
   their descriptions).
+- **Necromancer's** (2.1 testing): no limit on how many risen stand at once (author's decision: it is OP); each
+  body still rises only once.
 - **Fixed (during 2.1 testing, round 6):** Necromancer's: resurrected bodies came back with their combat AI not
   working and stood still. Now the body crumbles to ash (its loot stays in the ash pile, as with a laser kill) and a
   fresh copy rises in its place (appearing already on your side), fights for you for 60 seconds, then crumbles to an
@@ -102,8 +104,7 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   (fix_testing3_21.py).
 - **Fixed (during 2.1 testing):** Rallyin' and Disheartenin' (and Shrinkin's weaker hits) did nothing: they now
   change the value while the effect lasts and give it back after (Rallyin's aura now refreshes a 3-second
-  effect). Necromancer's risen now join your side, go for the nearest enemy, and at most three stand at once
-  (the game counts their kills as yours, so they kept raising more). Breakin' and Enterin' was cut: the lock and
+  effect). Necromancer's risen now join your side, go for the nearest enemy, and no limit on how many stand at once (an OP legendary; the game counts their kills as yours, so they raise more). Breakin' and Enterin' was cut: the lock and
   terminal levels come from the Locksmith and Hacker perks themselves (fix_testing2_21.py). Singularity's pull did nothing (an explosion cannot pull): a script now pulls nearby enemies in (PC and
   Xbox). tools/edits/fix_testing_21.py.
 - **Fixed (during 2.1 testing):** merging the concise-view groups left the old groups' globals behind, and 23

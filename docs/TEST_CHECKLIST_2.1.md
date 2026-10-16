@@ -18,8 +18,7 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 
 ## 1. Re-test
 
-- [ ] **Necromancer's** (the copy now spawns invisible, joins your side, then fades in): it is never hostile, not even for a moment.
-- [ ] **Loot mode, default**: in the F4SE menu, turn **Show all legendaries OFF** (it was on during the last test, and it lets hidden legendaries drop on purpose). Then, with loot mode on and "Hidden legendaries drop too" off, loot a few legendary enemies: no hidden legendaries (tell me which ones you pick up; the log lists them). Turn "Hidden legendaries drop too" on: they can drop.
+- [ ] **Necromancer's** (optional quick look): no limit on how many risen stand at once now; each body still rises only once.
 
 ## PlayStation build on PC (optional)
 
@@ -46,6 +45,7 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 
 ## Passed so far
 
+- Round 7: Necromancer's copy appears already on your side (never hostile); loot mode with Show all off (hidden legendaries do not drop; with "Hidden legendaries drop too" they do).
 - Round 6: Necromancer's ash copies fight (apart from the hostile moment, fixed above), Jumper's ends after 3 s, Momentum (+20% speed on a kill, seen in the log), DragonBlade slides without a loading screen.
 - Round 5: CQC fires real bursts, Cinematic Excellence back to 1 in 10, holotape and F4SE menu settings.
 - Round 4: CQC bursts fire (see the open question), DragonBlade dashes (loading screen fixed above), Cinematic
