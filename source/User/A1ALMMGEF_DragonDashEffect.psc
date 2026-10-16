@@ -8,6 +8,8 @@ float Property Range    = 1500.0 const auto
 float Property MaxAngle = 30.0   const auto
 float Property Reach    = 200.0  const auto
 float Property Cooldown = 2.0    const auto
+float Property DashSpeed = 4000.0 const auto
+{Units a second (about 57 m/s).}
 Keyword[] Property ActorTypes   const auto mandatory
 {Actor type keywords searched for the enemy ahead (Game.FindClosestActorFromRef returned the wielder itself).}
 int            TimerID  = 1      const
@@ -58,7 +60,10 @@ Event OnAnimationEvent(ObjectReference akSource, string asEventName)
 		float dy = Wielder.GetPositionY() - foe.GetPositionY()
 		float d2 = Math.sqrt(dx * dx + dy * dy)
 		Log("swing: dashed " + best + " units to " + foe)
-		Wielder.MoveTo(foe, dx / d2 * 100.0, dy / d2 * 100.0, 0.0, false)
+		; TranslateTo slides the wielder there; MoveTo and SetPosition on the player both put up a loading screen
+		; (2.1 testing)
+		float face = Wielder.GetAngleZ() + Wielder.GetHeadingAngle(foe)
+		Wielder.TranslateTo(foe.GetPositionX() + dx / d2 * 100.0, foe.GetPositionY() + dy / d2 * 100.0, foe.GetPositionZ(), 0.0, 0.0, face, DashSpeed)
 		OnCooldown = true
 		StartTimer(Cooldown, TimerID)
 	endif

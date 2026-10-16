@@ -3243,7 +3243,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Chillling "CLM: Chi
     A1ALMMGEF_Target_Effect_Hostile_Cold: Value Modifier AnimationMult, magnitude 1.000000, duration 5 (Fire and Forget, Touch)
 ```
 
-### CLM: Cinematic Excellence (CE Test)  `A1ALMOMOD_Legendary_Weapon_CinematicExcellence`
+### CLM: Cinematic Excellence  `A1ALMOMOD_Legendary_Weapon_CinematicExcellence`
 > One kill in ten plays out in slow motion, seen from the third-person camera for two seconds before it returns to first person. (Fallout 4 cannot start a real kill camera outside V.A.T.S.; this is the closest.)
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence "CLM: Cinematic Excellence" [ENCH:084ACF23] / 431

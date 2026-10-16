@@ -24,7 +24,7 @@ MAIN = 'Custom Legendary Modifications Remade.esp'
 OM = 'A1ALMOMOD_Legendary_'
 PLAYER_FACTION, AGGRESSION, CONFIDENCE = 0x1C21C, 0x2BC, 0x2BD
 ACTOR_TYPES = [0x13794, 0x13795, 0x13798, 0x2CB73, 0x6D7B6, 0xEAFB7, 0xB2BF3, 0x2CB71, 0x10C3CE, 0x317AA]
-CE_TEST = True       # Cinematic Excellence on every kill while the author tests it
+CE_TEST = False      # the CE Test is over (fix_testing5_21.py set it back)
 CUT = ['co_A1ALMOMOD_Legendary_Armor_HelloNeighbour', 'co_A1ALMOMOD_Legendary_Armor_HelloNeighbourFREE',
        'co_A1ALMOMOD_Legendary_Armor_HelloNeighbour_Unlocked', 'A1ALMOMOD_Legendary_Armor_HelloNeighbour',
        'A1ALMMISC_LooseMod_Armor_HelloNeighbour', 'A1ALMEnch_Constant_Effect_Custom_Effect_HelloNeighbour',

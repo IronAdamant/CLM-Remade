@@ -8,8 +8,8 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 ## Setup
 
 - **Restart the game first:** the plugin was fixed again after the last session.
-- **Test on ordinary enemies, not the arena:** the arena's holograms dispel effects and die on their own.
-- To read a target's health: open the console, click the target, then `getav health` (without `player.`).
+- **Test in the open world, not the arena or a test cell:** a room without a navmesh leaves NPCs unable to walk (the
+  risen stood still and "hunted" one target on a rock for a minute), and the arena's holograms dispel effects.
 - Carry from the chemistry station (CLM Settings): **Free crafting**, **Show OP**, **Show variants**, **Show all
   legendaries** and **Show spawning legendaries**. Leave **Picker mode** off.
 - **Debug recorder** is on (log: `Documents\My Games\Fallout4\Logs\Script\User\CLM.0.log`).
@@ -18,24 +18,14 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 
 ## 1. Re-test: fixed again
 
-- [ ] **CQC** (it listened for the wrong event name): every shot is followed by two more, one round of ammo each (the log shows "extra rounds ... fired").
-- [ ] **DragonBlade** (its enemy search found you yourself): swinging at an enemy ahead, 2-20 m away, dashes you to it, at most every 2 s (the log shows "swing: dashed").
-- [ ] **Cinematic Excellence (CE Test)**: now on EVERY kill for this test: slow motion and third person for 2 s, then back to first person. It goes back to 1 kill in 10 before release.
-- [ ] **Necromancer's**: the risen now walk to the nearest enemy and charge in (the log shows "hunting ..."); at most three; each body rises once.
-- [ ] **Flamin'**: hold for the stream; targets now catch fire like the Incendiary legendary.
-- [ ] **Resistance (All)**: "doesn't show": at the armour workbench, or no visible effect? It is in the plugin with working recipes. Its effect is a hidden perk, so nothing shows in the Pip-Boy; check it by taking poison or radiation with and without it.
+- [ ] **Necromancer's** (reworked): a killed enemy crumbles to ash (loot in the ash pile) and a copy rises in its place, attacks enemies on its own (it should move to them), and after 60 s (or when it dies) crumbles to an empty ash pile. At most three at once.
+- [ ] **Jumper's**: the 4x jump now ends after 3 s (unequip and re-equip the armour once first, or load a save where it was not worn).
+- [ ] **Momentum**: every kill makes you 20% faster with faster AP regeneration for 10 s, then it ends.
+- [ ] **DragonBlade**: the dash now slides you to the enemy (no loading screen). If nothing moves at all, tell me (the player may not accept a slide). Also check the weapon's damage in the Pip-Boy: it should read 200 more than the same weapon without DragonBlade.
 
-## 2. Not tested yet
+## 2. Settings still to check
 
-- [ ] **Cap Showerin' (Frag)** (one of five): about 15% of kills burst into caps and a frag explosion.
-- [ ] **Jumper's** (PC/Xbox part): your own blast at your feet gives a 4x jump for 3 s.
-- [ ] **No Brakin'** (OP): sprinting into enemies out of power armour knocks them down (75 damage).
-
-## 3. Settings still to check
-
-- [ ] **Holotape** (PC/Xbox): "Show all legendaries" / "Concise view" switch it; loot page: "Hidden legendaries drop too".
-- [ ] **F4SE menu**: "Concise view" page has a switch per group; switches survive a save/load.
-- [ ] **Loot mode, default**: hidden legendaries do not drop; with "Hidden legendaries drop too" they do.
+- [ ] **Loot mode, default**: drop "Show all legendaries" first (it makes hidden legendaries drop too, by design). Then hidden legendaries do not drop; with "Hidden legendaries drop too" they do.
 
 ## PlayStation build on PC (optional)
 
@@ -62,9 +52,12 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 
 ## Passed so far
 
+- Round 5: CQC fires real bursts, Cinematic Excellence back to 1 in 10, holotape and F4SE menu settings.
+- Round 4: CQC bursts fire (see the open question), DragonBlade dashes (loading screen fixed above), Cinematic
+  Excellence (CE Test), Flamin' (stream and burning), Resistance (All), Cap Showerin', No Brakin'.
 - Fixed and re-tested: Rallyin' (works, now out of combat too), Decimatin' (10% of full health per hit), Shockingly
   Lobbin' (electrical blast), Radiatin' (Elements), Energizin' (5% full AP refill), Singularity (implosion pulls),
-  Disheartenin'. Cinematic Excellence's 10% roll was seen working in the log (9 misses, 1 hit).
+  Disheartenin'.
 - New mechanics: BioReactive (consistent explosions every hit), Concentratin' (Constant), Friendly Mirelurk Queen,
   Enraged.
 - Mascots: Opportunist's, Vitality, Untouchable (Elements).
@@ -75,7 +68,3 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 - New armour: Night Owl's, Storm Chasin' (radstorm counts), Shadow Dwellin', Amphibious (wading and swimming both
   count), Entrenched, Home Turf, Underdog's, Glass Cannon, Ironclad, Glowing Heart, all six Radiatin' (Healing heals
   companions, not enemies), aura radius, Overcharged, Scavenger's.
-
-## Before release
-
-- Revert the CE Test: Cinematic Excellence back to 1 kill in 10 and its normal name (docs/PLAN_2.1.md).

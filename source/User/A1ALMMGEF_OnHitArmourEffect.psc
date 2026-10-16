@@ -3,7 +3,9 @@ Scriptname A1ALMMGEF_OnHitArmourEffect extends ActiveMagicEffect
 explosion (or, with OnlyOwnAttacks, only by their own attacks, such as their own explosions).
 Only at or below LowHealthPercentage health (1.0 = any health), with a ChanceToCast roll, then waits Cooldown seconds:
 heals the wearer RestoreHealthPercent of their health and casts SelfSpell on the wearer and AttackerSpell on the
-attacker (each optional). Runs from a perk's ability, so wearing several pieces with it still gives one effect.}
+attacker (each optional). Runs from a perk's ability, so wearing several pieces with it still gives one effect.
+SelfAbility (optional) is added to the wearer for AbilitySeconds instead: a timed spell cast on oneself did not
+change jump height or speed in game (2.1 testing), an ability does.}
 
 ActorValue Property Health                         const auto mandatory
 Spell      Property SelfSpell                      const auto
@@ -13,15 +15,24 @@ float      Property LowHealthPercentage  = 1.0     const auto
 float      Property RestoreHealthPercent = 0.0     const auto
 float      Property Cooldown             = 5.0     const auto
 bool       Property OnlyOwnAttacks       = false   const auto
+Spell      Property SelfAbility                    const auto
+float      Property AbilitySeconds       = 3.0     const auto
 int                 TimerID              = 1       const
+int                 AbilityTimerID       = 2       const
+Actor               Owner
 bool                OnCooldown           = false
 
 Event OnEffectStart(Actor akTarget, Actor akCaster)
+	Owner = akTarget
 	RegisterForHitEvent(akTarget)
 	Log("started")
 EndEvent
 
 Event OnEffectFinish(Actor akTarget, Actor akCaster)
+	if (SelfAbility)
+		CancelTimer(AbilityTimerID)
+		akTarget.RemoveSpell(SelfAbility)
+	endif
 	Log("finished")
 EndEvent
 
@@ -40,6 +51,10 @@ Event OnHit(ObjectReference akTarget, ObjectReference akAggressor, Form akSource
 		if (SelfSpell)
 			SelfSpell.Cast(wearer, wearer)
 		endif
+		if (SelfAbility)
+			wearer.AddSpell(SelfAbility, false)
+			StartTimer(AbilitySeconds, AbilityTimerID)
+		endif
 		Actor attacker = akAggressor as Actor
 		if (AttackerSpell && attacker && !attacker.IsDead())
 			AttackerSpell.Cast(wearer, attacker)
@@ -53,6 +68,14 @@ EndEvent
 Event OnTimer(int aiTimerID)
 	If aiTimerID == TimerID
 		OnCooldown = false
+	ElseIf aiTimerID == AbilityTimerID && SelfAbility
+		Actor who = GetTargetActor()     ; not a variable: an effect already running in an older save never set it
+		if (!who)
+			who = Owner
+		endif
+		if (who)
+			who.RemoveSpell(SelfAbility)
+		endif
 	EndIf
 EndEvent
 

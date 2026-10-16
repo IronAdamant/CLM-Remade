@@ -362,10 +362,7 @@ PlayStation), Nexus zip. Every new legendary gets a catalog entry, a loot pool (
 family if it starts a new one, its requester in the changelog, and an in-game test checklist before release. The
 changelog lists every legendary that moved to OP, and says how to get them back (carry the "Show OP" setting).
 
-## Before release: revert the CE Test
+## CE Test (done)
 
-- Cinematic Excellence is set to **every kill** for the author's in-game test (tools/edits/fix_testing4_21.py,
-  `CE_TEST = True`), and its name says "(CE Test)". Before release: set `CE_TEST = False` and run that script's
-  write_raw step (ChanceToCast back to 0.1), and set the name back with apply_edits:
-  `text.set | A1ALMOMOD_Legendary_Weapon_CinematicExcellence | FULL | CLM: Cinematic Excellence`.
-
+- Cinematic Excellence ran on every kill for the author's in-game test (fix_testing4_21.py) and went back to 1 kill in
+  10, with its normal name, afterwards (fix_testing5_21.py).

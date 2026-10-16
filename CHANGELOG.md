@@ -77,6 +77,16 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   only. A CLM script now explodes on every hit that lands on an actor (still never on walls or water). Singularity had
   the same problem and the same fix. PC and Xbox; on PlayStation they still explode on killing hits only (noted in
   their descriptions).
+- **Fixed (during 2.1 testing, round 6):** Necromancer's: resurrected bodies came back with their combat AI not
+  working and stood still. Now the body crumbles to ash (its loot stays in the ash pile, as with a laser kill) and a
+  fresh copy rises in its place, fights for you for 60 seconds, then crumbles to an empty ash pile. Jumper's and
+  Momentum no longer leave their boost on in a save where the armour was already worn. DragonBlade's dash slides you
+  there instead of teleporting (fix_testing6_21.py).
+- **Fixed (during 2.1 testing, round 5):** Jumper's jump and Momentum's rush never applied: the timed spell they cast
+  on you changed nothing (the debug recorder showed the jump height untouched). They now give you an ability for 3 /
+  10 seconds instead, the same effects Jumpy and Speedy use. DragonBlade's dash no longer shows a loading screen.
+  CQC's extra rounds were the gun's plain projectile; the burst now makes you fire the gun itself (the AI's fire
+  action), so they are the real, modded shot (fix_testing5_21.py).
 - **Fixed (during 2.1 testing, round 4):** CQC listened for "weaponFire", but the event is "WeaponFire" (names are
   case-sensitive), so no burst ever fired. DragonBlade's enemy search returned you yourself; it now looks for enemies
   ahead by type, as Cleavin' does. Necromancer's risen walk to their target and charge in. Flamin' now burns its
