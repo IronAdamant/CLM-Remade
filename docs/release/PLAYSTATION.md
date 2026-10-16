@@ -32,7 +32,7 @@ Re-run the build before every release (it starts from data/*.esp). Testing on PC
 
 ## Copy-paste: Bethesda.net PlayStation description
 
-See `bethesda_net_playstation_description.txt` (the CK allows about 3,000 characters).
+See `bethesda_net_playstation_description.txt` (Bethesda.net allows 1,988 characters).
 
 ## Copy-paste: readme (plain text)
 

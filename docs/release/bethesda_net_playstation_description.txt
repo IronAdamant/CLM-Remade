@@ -1,38 +1,32 @@
 CUSTOM LEGENDARY MODIFICATIONS REMADE 2.1 (PLAYSTATION)
 
-Over 600 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, movement and stealth effects, and some gloriously overpowered ones.
+Over 600 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot.
 
 WHAT'S NEW IN 2.1
-- Concise view: the workbench shows one balanced legendary per group of similar effects (33 groups), 82 instead of 316. Nothing is removed.
-- Over 70 new legendaries: new armour effects (Night Owl's, Glass Cannon, Radiatin' auras...) and the 2016 legendaries that went missing.
-- Balance: 56 very strong legendaries moved to OP; weak ones were brought up.
-- Spawning legendaries are hidden by default. Fixed: reading a CLM Perk magazine no longer crashes.
+- Concise view: the workbench shows one balanced legendary per group of similar effects (82 instead of 316). Nothing is removed.
+- Over 70 new legendaries, new armour effects among them.
+- Rebalanced: 56 very strong legendaries moved to OP; weak ones were brought up.
+- Spawning legendaries are hidden by default. Reading a CLM Perk magazine no longer crashes.
 
 REQUIREMENTS
 Automatron, Far Harbor, Contraptions Workshop and Nuka-World.
 
 GETTING STARTED
-Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones) and the concise view.
-Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot.
+Nothing to set up. Attach legendaries in the "Legendary" slot of a weapons or armour workbench (armour with a legendary slot).
 
 SETTINGS (please read)
-Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off; carry none = the defaults.
-- How you get legendaries: Free crafting, Loot mode, Low / Higher drop rate, Hidden legendaries drop too.
-- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style legendaries, Show spawning legendaries, Picker mode.
+Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off.
+- How you get legendaries: Free crafting, Loot mode, drop rates.
+- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Show spawning legendaries, Picker mode and more.
 After a change, leave the workbench and use it again.
+Loot mode: also make and read the "CLM Loot Manual" once.
 
-CONCISE VIEW
-"Show all legendaries" shows everything. A "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1: make "Show all legendaries" to keep everything shown.
-
-LOOT MODE
-Also make the "CLM Loot Manual" once (CLM Settings) and read it. If nothing drops, drop the manual and pick it up again.
-
-WHAT'S DIFFERENT ON PLAYSTATION
+PLAYSTATION DIFFERENCES
 PlayStation mods can't use scripts or new art, so:
-- No holotapes. CLM's perks are "CLM Perk" magazines (chemistry station, CLM Perks).
-- Left out: the new laser and Disintegratin' colours, the Kellogg spawn.
-- Changed: Vampiric's family heals on every hit except killing blows; Auto-Medical and Aid Patch regenerate health; BioReactive and Singularity explode on kills only; Midas' leaves ordinary ash.
-- Effects that need a script (Untouchable, Phoenix, CQC, Necromancer's...) do nothing or lose a part. Their descriptions say so.
+- No holotapes. CLM perks are "CLM Perk" magazines (chemistry station).
+- Left out: the new laser colours and the Kellogg spawn.
+- Changed: Vampiric's family heals on hits but not kills; Auto-Medical and Aid Patch regenerate health; BioReactive explodes on kills only; Midas' leaves ordinary ash.
+- Some effects that need a script do nothing or lose a part. Their descriptions say so.
 
 UPGRADING
-Your gear keeps its legendaries. Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them.
+Your gear keeps its legendaries. Saves from before 2.1: make "Show all legendaries" to keep everything shown, and "Show OP legendaries" to keep crafting those now OP.

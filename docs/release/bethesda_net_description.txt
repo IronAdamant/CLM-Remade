@@ -1,32 +1,27 @@
 CUSTOM LEGENDARY MODIFICATIONS REMADE 2.1
 
-Over 650 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, coloured lasers, movement and stealth effects, and some gloriously overpowered ones.
+Over 650 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot.
 
 WHAT'S NEW IN 2.1
-- Concise view: the workbench shows one balanced legendary per group of similar effects (33 groups), 82 instead of 316. Nothing is removed.
-- About 90 new legendaries: 23 new armour effects (Night Owl's, Glass Cannon, Radiatin' auras...), the 2016 legendaries that went missing, and old requests once called impossible (CQC bursts, DragonBlade, Necromancer's, Healing Beam...).
-- Balance: balanced means no stronger than the base game's best of its kind. 56 legendaries moved to OP; weak ones were brought up.
-- Fixes: BioReactive Explosive explodes on every hit, Fisto's no longer multiplies across armour pieces, and more.
-- Spawning legendaries are hidden by default.
+- Concise view: the workbench shows one balanced legendary per group of similar effects (82 instead of 316). Nothing is removed.
+- About 90 new legendaries: new armour effects, the lost 2016 legendaries, and requests once called impossible (CQC, DragonBlade, Necromancer's...).
+- Rebalanced: 56 very strong legendaries moved to OP; weak ones were brought up.
+- Many fixes. Spawning legendaries are hidden by default.
 
 REQUIREMENTS
 Automatron, Far Harbor, Contraptions Workshop and Nuka-World.
 
 GETTING STARTED
-Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones) and the concise view.
-Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot, not clothing like the Vault suit.
+Nothing to set up. Attach legendaries in the "Legendary" slot of a weapons or armour workbench (armour with a legendary slot, not clothing).
 
 SETTINGS (please read)
-Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off; carry none = the defaults. Or use the Configuration Holotape, given when you leave Vault 111.
-- How you get legendaries: Free crafting, Loot mode, Low / Higher drop rate, Hidden legendaries drop too.
-- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style legendaries, Show spawning legendaries, Picker mode.
+Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off. Or use the Configuration Holotape, given when you leave Vault 111.
+- How you get legendaries: Free crafting, Loot mode, drop rates.
+- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Show spawning legendaries, Picker mode and more.
 After a change, leave the workbench and use it again. Something missing? Check your Misc tab.
 
-CONCISE VIEW
-"Show all legendaries" shows everything, as before 2.1. A "CLM Group" item (chemistry station, CLM Groups) shows one whole group.
-
 UPGRADING
-Your gear keeps its legendaries. Saves from before 2.1 get "Show all legendaries" on loading, so nothing disappears. Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them.
+Your gear keeps its legendaries. Saves from before 2.1 get "Show all legendaries", so nothing disappears. To keep crafting the legendaries now OP, make "Show OP legendaries".
 
 COMPATIBILITY
-CLM changes no vanilla records, so it works alongside most mods, including Legendary Effect Overhaul (LEO).
+CLM changes no vanilla records: it works with most mods, including Legendary Effect Overhaul (LEO).
