@@ -8,6 +8,8 @@ float Property Range    = 1500.0 const auto
 float Property MaxAngle = 30.0   const auto
 float Property Reach    = 200.0  const auto
 float Property Cooldown = 2.0    const auto
+Keyword[] Property ActorTypes   const auto mandatory
+{Actor type keywords searched for the enemy ahead (Game.FindClosestActorFromRef returned the wielder itself).}
 int            TimerID  = 1      const
 Actor Wielder
 bool  OnCooldown = false
@@ -28,21 +30,37 @@ Event OnAnimationEvent(ObjectReference akSource, string asEventName)
 		Log("swing: on cooldown")
 		return
 	endif
-	Actor foe = Game.FindClosestActorFromRef(Wielder, Range)
-	if (foe && foe != Wielder && !foe.IsDead() && foe.IsHostileToActor(Wielder) && Math.abs(Wielder.GetHeadingAngle(foe)) <= MaxAngle)
+	Actor foe = None
+	float best = Range
+	int k = 0
+	while (k < ActorTypes.Length)
+		ObjectReference[] near = Wielder.FindAllReferencesWithKeyword(ActorTypes[k], Range)
+		int i = 0
+		while (i < near.Length)
+			Actor a = near[i] as Actor
+			if (a && a != Wielder && !a.IsDead() && a.IsHostileToActor(Wielder) && Math.abs(Wielder.GetHeadingAngle(a)) <= MaxAngle)
+				float d = Wielder.GetDistance(a)
+				if (d < best)
+					foe = a
+					best = d
+				endif
+			endif
+			i += 1
+		endwhile
+		k += 1
+	endwhile
+	if (!foe)
+		Log("swing: no hostile ahead within range")
+	elseif (best <= Reach)
+		Log("swing: " + foe + " already within reach")
+	else
 		float dx = Wielder.GetPositionX() - foe.GetPositionX()
 		float dy = Wielder.GetPositionY() - foe.GetPositionY()
-		float d = Math.sqrt(dx * dx + dy * dy)
-		if (d > Reach)
-			Log("swing: dashed " + d + " units to " + foe)
-			Wielder.MoveTo(foe, dx / d * 100.0, dy / d * 100.0, 0.0, false)
-			OnCooldown = true
-			StartTimer(Cooldown, TimerID)
-		else
-			Log("swing: " + foe + " already within reach")
-		endif
-	else
-		Log("swing: no hostile ahead within range (closest: " + foe + ")")
+		float d2 = Math.sqrt(dx * dx + dy * dy)
+		Log("swing: dashed " + best + " units to " + foe)
+		Wielder.MoveTo(foe, dx / d2 * 100.0, dy / d2 * 100.0, 0.0, false)
+		OnCooldown = true
+		StartTimer(Cooldown, TimerID)
 	endif
 EndEvent
 

@@ -477,7 +477,7 @@
           "text": "Handiwork",
           "type": "switcher",
           "id": "bPick12:Picks",
-          "help": "Show the 8 Handiwork legendaries (armour) while Picker mode is on.",
+          "help": "Show the 6 Handiwork legendaries (armour) while Picker mode is on.",
           "valueOptions": {
             "sourceType": "ModSettingBool"
           }

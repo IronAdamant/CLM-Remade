@@ -63,7 +63,7 @@ Punch (fixed in 2.0).
 - Variety (2026-10-14, `tools/edits/gen_variety_21.py`): 11 balanced and 4 OP legendaries for kinds of effect CLM
   lacked (debuffs, crowd control, companions, utility, rule-breakers). A new game now shows 149 of 317.
 - Spawning legendaries hidden by default (2026-10-15): new "Show spawning legendaries" setting; a new game shows
-  83 of 317.
+  83 of 317 (82 of 316 after Breakin' and Enterin' was cut in testing).
 - Settings texts rewritten as one system (2026-10-14): chemistry station, holotape, MCM, Nexus (HTML and BBCode now
   generated: `tools/release/description.py`), Bethesda.net, readme. The release texts still describe 2.0's "What's
   new" and counts; update them at release.
@@ -361,3 +361,11 @@ Same pipeline as 2.0 (`docs/release/BETHESDA_NET.md`): `package.py --version 2.1
 PlayStation), Nexus zip. Every new legendary gets a catalog entry, a loot pool (`tools/loot/plan.py`), a picker
 family if it starts a new one, its requester in the changelog, and an in-game test checklist before release. The
 changelog lists every legendary that moved to OP, and says how to get them back (carry the "Show OP" setting).
+
+## Before release: revert the CE Test
+
+- Cinematic Excellence is set to **every kill** for the author's in-game test (tools/edits/fix_testing4_21.py,
+  `CE_TEST = True`), and its name says "(CE Test)". Before release: set `CE_TEST = False` and run that script's
+  write_raw step (ChanceToCast back to 0.1), and set the name back with apply_edits:
+  `text.set | A1ALMOMOD_Legendary_Weapon_CinematicExcellence | FULL | CLM: Cinematic Excellence`.
+

@@ -15,7 +15,7 @@ data/, written to dist/PlayStation/:
   (Energized) and the five new Disintegratin' colours; Disintegratin' (Green) goes back to the plasma "goo" (vanilla
   CritPlasma); the Kellogg spawn (custom face files);
 - Midas' borrows Disintegratin' (Gold)'s gold dust (CLM art): vanilla red ash instead, caps unchanged;
-- BioReactive (all) and Singularity: vanilla Fortune Finder's script instead of CLM's on-hit one: they explode on
+- BioReactive (all) and Singularity: vanilla Fortune Finder's script instead of CLM's on-hit ones: they explode on
   killing hits only;
 - Vampiric, Raging, Annihilating, Reaper's Embrace, Reclaimer's: 1.09's Absorb Health (BloodDrain) instead of the
   scripted drain: heals on every hit except killing blows;
@@ -219,8 +219,11 @@ def build(game: Path) -> None:
     explode_on_kill = set()
     for r in main.records('MGEF'):
         v = r.get('VMAD').data if main.is_own(r.formid) and r.get('VMAD') is not None else b''
-        if b'A1ALMMGEF_ExplodeOnHitEffect' in v:
-            blast = struct.unpack_from('<I', v, len(v) - 4)[0]        # its one property, the explosion
+        if b'A1ALMMGEF_ExplodeOnHitEffect' in v or b'A1ALMMGEF_ImplodeEffect' in v:
+            blasts = {x.formid for x in main.records('EXPL') if main.is_own(x.formid)}
+            found = {struct.unpack_from('<I', v, i)[0] for i in range(len(v) - 3)} & blasts
+            assert len(found) == 1, r.edid
+            blast = found.pop()                                       # its explosion
             w = lambda s: struct.pack('<H', len(s)) + s.encode('ascii')
             r.set('VMAD', struct.pack('<hhH', 6, 2, 1) + w('FortuneFinderCapsScript') + b'\0' + struct.pack('<H', 1) +
                   w('PerkExplosionMoneyShotFortuneFinder') + b'\x01\x01' + struct.pack('<HhI', 0, -1, blast))

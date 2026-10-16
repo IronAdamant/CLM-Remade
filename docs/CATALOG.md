@@ -92,21 +92,6 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Bloodthirsty "CLM: Bloo
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bloodthirsty: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
 ```
 
-### CLM: Breakin' and Enterin'  `A1ALMOMOD_Legendary_Armor_BreakingAndEntering`
-> You can pick locks and hack terminals one level above what your Locksmith and Hacker perks allow. Counts once, however many pieces have it.
-```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_BreakingAndEntering "CLM: Breakin' and Enterin'" [ENCH:084AD0A7] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_BreakingAndEntering (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_BreakingAndEntering: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
-      entry point: Set Player Gate Lockpick / Set Value
-      entry point: Set Player Gate Lockpick / Set Value
-      entry point: Set Player Gate Lockpick / Set Value
-      entry point: Set Player Gate Hacking / Set Value
-      entry point: Set Player Gate Hacking / Set Value
-      entry point: Set Player Gate Hacking / Set Value
-      values: 1.000000; 2.000000; 3.000000; 1.000000; 2.000000; 3.000000
-```
-
 ### CLM: Brutal  `A1ALMOMOD_Legendary_Armor_Brutal`
 > 1000 to all resistance. 50 hp regeneration, 50 AP Regeneration.
 ```
@@ -849,14 +834,6 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_HawkinsExperiment "CLM:
     A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_NoFallDamage: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
       entry point: Mod Falling Damage / Multiply Value
       values: 0.000000
-```
-
-### CLM: Hello Neighbour!  `A1ALMOMOD_Legendary_Armor_HelloNeighbour`
-> Gunners are not your enemies while you wear it; they turn hostile again when you take it off. Quests that send you against Gunners may not work while it is on.
-```
-Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_HelloNeighbour "CLM: Hello Neighbour!" [ENCH:084ACF3A] / 431
-  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_HelloNeighbour (, )
-    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_HelloNeighbour: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
 ```
 
 ### CLM: Home Turf  `A1ALMOMOD_Legendary_Armor_HomeTurf`
@@ -2169,7 +2146,7 @@ Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Cryo "CLM: Ra
 ```
 
 ### CLM: Radiatin' (Elements)  `A1ALMOMOD_Legendary_Armor_Radiating_Elements`
-> Enemies near you burn, are shocked (2 damage a second each) and irradiated (3 rads a second), and move 15% slower.
+> Enemies near you burn and are shocked (3 damage a second each), are irradiated (5 rads a second) and move 20% slower.
 ```
 Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Elements "CLM: Radiatin' (Elements)" [ENCH:084AD042] / 431
   ENCH A1ALMEnch_Constant_Effect_Custom_Effect_Radiating_Elements (, )
@@ -3185,7 +3162,10 @@ DamageTypeValues ADD dtFire [DMGT:00060A82] / 1.000000
 ### CLM: CQC  `A1ALMOMOD_Legendary_Weapon_CQC`
 > Every shot becomes a three-round burst: two more rounds follow, each using one round of your ammo. The extra rounds fire the gun's plain projectile, without its mods or legendary effect.
 ```
-Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_CQC "CLM: CQC" [ENCH:084ACF28] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_CQC "CLM: CQC" [ENCH:084ACF28] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_CQC (, )
+    A1ALMMGEF_Constant_Effect_Weapon_CQC: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_BurstFireEffect
 ```
 
 ### CLM: Capitalist's  `A1ALMOMOD_Legendary_Weapon_Capitalists`
@@ -3263,10 +3243,13 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Chillling "CLM: Chi
     A1ALMMGEF_Target_Effect_Hostile_Cold: Value Modifier AnimationMult, magnitude 1.000000, duration 5 (Fire and Forget, Touch)
 ```
 
-### CLM: Cinematic Excellence  `A1ALMOMOD_Legendary_Weapon_CinematicExcellence`
+### CLM: Cinematic Excellence (CE Test)  `A1ALMOMOD_Legendary_Weapon_CinematicExcellence`
 > One kill in ten plays out in slow motion, seen from the third-person camera for two seconds before it returns to first person. (Fallout 4 cannot start a real kill camera outside V.A.T.S.; this is the closest.)
 ```
-Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence "CLM: Cinematic Excellence" [ENCH:084ACF23] / 431
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence "CLM: Cinematic Excellence" [ENCH:084ACF23] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_CinematicExcellence (, )
+    A1ALMMGEF_Constant_Effect_Weapon_CinematicExcellence: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_OnKillArmourEffect
 ```
 
 ### CLM: Cleavin'  `A1ALMOMOD_Legendary_Weapon_Cleaving`
@@ -4807,7 +4790,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Disarming "CLM: Disarmin'"
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Disheartening "CLM: Disheartenin'" [ENCH:084AD06B] / 431
   ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Disheartening (, )
-    A1ALMMGEF_Target_Effect_Hostile_Dishearten: Peak Value Modifier AttackDamageMult, magnitude 0.250000, duration 5 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Dishearten: Value Modifier AttackDamageMult, magnitude 0.250000, duration 5 (Fire and Forget, Touch)
 ```
 
 ### CLM: Double Tappin'  `A1ALMOMOD_Legendary_Weapon_DoubleTapping`
@@ -4823,8 +4806,14 @@ NumProjectiles ADD 1 / 0
 ### CLM: DragonBlade  `A1ALMOMOD_Legendary_Weapon_DragonBlade`
 > Genji's dragonblade: +200 damage per hit. When you swing at an enemy you are facing up to 20 metres away, you dash to it (at most every 2 seconds), and ranged attacks ricochet back while you block or sprint. (Papyrus cannot read the crosshair, so the dash goes to the nearest enemy ahead of you.)
 ```
-Speed ADD A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade "CLM: DragonBlade" [ENCH:084ACF2D] / 431
-Speed ADD 200.000000 / 0.000000
+AttackDamage ADD 200.000000 / 0.000000
+Enchantments ADD A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade "CLM: DragonBlade" [ENCH:084ACF2D] / 431
+  ENCH A1ALMEnch_Constant_Effect_Custom_Effect_DragonBlade (, )
+    A1ALMMGEF_Constant_Effect_Weapon_DragonBlade: Unknown 36, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      script A1ALMMGEF_DragonDashEffect
+    A1ALMMGEF_Constant_Effect_Custom_Effect_Perk_Bouncing_BlocknSprint: Script, magnitude 0.000000, duration 0 (Constant Effect, Self)
+      entry point: Mod Ricochet Chance / Set Value
+      values: 100.000000
 ```
 
 ### CLM: Elemental Strikin'  `A1ALMOMOD_Legendary_Weapon_ElementalStriking`
@@ -5100,11 +5089,12 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Beam_Energized_Plasma [PROJ:082492
 ```
 
 ### CLM: Energizin'  `A1ALMOMOD_Legendary_Weapon_Energizing`
-> Each hit drains 3 Action Points from the target and gives them to you.
+> Each hit has a 5% chance to refill your Action Points completely (as the base game's legendary does on critical hits).
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Energizing "CLM: Energizin'" [ENCH:084AD070] / 431
   ENCH A1ALMEnch_FaF_Contact_Target_Hostile_Energizing (, )
-    A1ALMMGEF_Target_Effect_Hostile_AbsorbActionPoints: Absorb ActionPoints, magnitude 3.000000, duration 0 (Fire and Forget, Touch)
+    MGEF ModLegendaryOnCritHitEffect_RefillAP (vanilla) magnitude 0.000000 duration 0
+      if GetRandomPercent [00100000] 5.000000
 ```
 
 ### CLM: Shavka's Explosive Striking  `A1ALMOMOD_Legendary_Weapon_ExplosiveMelee_Base_Explosive`
@@ -5263,8 +5253,10 @@ OverrideProjectile SET A1ALMPROJ_Variant_Type_Firework_Variant_PeonyYellow [PROJ
 ```
 
 ### CLM: Flamin'  `A1ALMOMOD_Legendary_Weapon_Flaming`
-> This mod turns your weapon into one of the favourite tools in the pyromaniac's arsenal: it shoots a flamer stream. Your ammo does not change.
+> This mod turns your weapon into one of the favourite tools in the pyromaniac's arsenal: it shoots a flamer stream, fully automatic, so hold the trigger, and sets targets on fire like the Incendiary legendary. Your ammo does not change.
 ```
+IsAutomatic SET True / True
+Enchantments ADD dtFireEnchFlameChanceAlways "Fire Damage" [ENCH:0003F488] / 431
 OverrideProjectile SET FlamerProjectileStreamMedium [PROJ:001C5AB6] / 431
 ```
 
@@ -6222,11 +6214,11 @@ OverrideProjectile SET A1ALMPROJ_Lobbing_Variant_Lobber_Impact_FrenzyGas "DLC04 
 ```
 
 ### CLM: Shockingly Lobbin'  `A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Impact_Lightning`
-> Your weapon is converted into a lightning grenade launcher: the grenade bursts into chain lightning that arcs between enemies. Your ammo does not change. A positively shocking experience for your enemies.
+> Your weapon is converted into a shock grenade launcher: the grenade bursts in an electrical blast (100 damage) that also scrambles robots, like a pulse grenade. Your ammo does not change.
 ```
 OverrideProjectile SET A1ALMPROJ_Lobbing_Variant_Lobber_Impact_Lightning "Electromagnetic Pulse Grenade" [PROJ:084ACE52] / 431
   PROJ type Lobber, speed 1400.000000, gravity 0.500000
-    explosion DLC01ChainLightningExplosion (vanilla)
+    explosion A1ALMEXP_Lobbing_Variant_Lobber_Impact_Lightning: damage 100.000000, radius 500.000000
 ```
 
 ### CLM: Lobbin' (Plasma Grenade)  `A1ALMOMOD_Legendary_Weapon_Lobbing_Variant_Impact_Plasma`
@@ -8005,7 +7997,7 @@ Enchantments ADD A1ALMEnch_FaF_Contact_Target_Hostile_Shrinking "CLM: Shrinkin'"
     A1ALMMGEF_Target_Effect_Hostile_Shrink: Script, magnitude 0.000000, duration 10 (Fire and Forget, Touch)
       script A1ALMMGEF_ShrinkEffect
       if HasMagicEffect(A1ALMMGEF_Target_Effect_Hostile_Shrink) [10000000] 0.000000
-    A1ALMMGEF_Target_Effect_Hostile_Dishearten: Peak Value Modifier AttackDamageMult, magnitude 0.500000, duration 10 (Fire and Forget, Touch)
+    A1ALMMGEF_Target_Effect_Hostile_Dishearten: Value Modifier AttackDamageMult, magnitude 0.500000, duration 10 (Fire and Forget, Touch)
       if HasMagicEffect(A1ALMMGEF_Target_Effect_Hostile_Shrink) [10000000] 0.000000
 ```
 
@@ -8018,12 +8010,12 @@ SoundLevel SET Silent / 00 00 00 00
 ```
 
 ### CLM: Singularity  `A1ALMOMOD_Legendary_Weapon_Singularity`
-> Hits collapse into a small singularity: an implosion that pulls nearby enemies towards the target and deals 60 damage.
+> Hits implode: enemies within 7 metres are pulled towards the target and knocked down, and the implosion deals 60 damage. (The pull is PC and Xbox only.)
 ```
 Enchantments ADD A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity "CLM: Singularity" [ENCH:084AD0BE] / 431
   ENCH A1ALMEnch_FaF_Contact_Effect_Target_Hostile_Singularity (, )
     A1ALMMGEF_Target_Effect_Hostile_Explosion_Singularity: Script, magnitude 0.000000, duration 0 (Fire and Forget, Touch)
-      script A1ALMMGEF_ExplodeOnHitEffect
+      script A1ALMMGEF_ImplodeEffect
 ```
 
 ### CLM: Slayer's  `A1ALMOMOD_Legendary_Weapon_Slayer_Base`

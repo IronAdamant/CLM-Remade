@@ -75,5 +75,4 @@ ARMOUR_SOLO = ['Santa Prisca\'s', 'Enlightened', 'Fiddlin\'', "Gheed's Fortunate
                'Waterbreathing', 'Impact Landing (Basic)', "Lucky Hittin' (10%)", 'Murderous (x3)', "Marathon Runnin'",
                'Quick Hands (50%)', 'Refilling (25%)', 'Titanium', "Battery Regeneratin' (Slow)", 'Overcharged', 'Punching (Radiation)',
                "Shavka's Explosive Striking", "Radiatin' (Healing)", 'Glow', 'Amphibious', 'Entrenched', 'Home Turf', "Night Owl's",
-               "Storm Chasin'", 'Glowing Heart', 'Ironclad', "Underdog's", "Rallyin'", "Intimidatin'",
-               "Breakin' and Enterin'"]
+               "Storm Chasin'", 'Glowing Heart', 'Ironclad', "Underdog's", "Rallyin'", "Intimidatin'"]

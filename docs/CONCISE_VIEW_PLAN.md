@@ -46,8 +46,8 @@ Merged: Bleeding, Poison and acid, Fire on hit, Cold, Energy damage and Cripplin
 Moving while aiming and Jumping into Movement (shown: Combined Speed and Jump Boosts (25%)); Steady and Emergency
 healing into Healing.
 
-Counts (new game, balanced, main variants): 83 shown (38 weapon, 45 armour; spawns hidden) against 317 with Show
-all. With "Show spawning legendaries": 149 (66 Random spawns).
+Counts (new game, balanced, main variants): 82 shown (38 weapon, 44 armour; spawns hidden) against 316 with Show
+all. With "Show spawning legendaries": 148 (66 Random spawns).
 
 ## Weapons: 31 shown, 63 hidden
 

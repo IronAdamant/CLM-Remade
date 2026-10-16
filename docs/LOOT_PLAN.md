@@ -5,7 +5,7 @@ it shows that family's recipes at the workbench. Each legendary can also drop as
 how often it drops (common / uncommon / rare); **OP** legendaries also need the unique OP item for weapons or
 armour to craft.
 
-**682 legendaries in 118 families.** Tiers: common 137, uncommon 245, rare 40, OP 260.
+**680 legendaries in 118 families.** Tiers: common 136, uncommon 245, rare 40, OP 259.
 
 Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (Crouch) (duplicate, hidden in 2.1).
 
@@ -94,7 +94,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Thumpin' | Thumpin' (uncommon); Viciously Thumpin' (rare) |
 | Trappin' | Trappin' (Bear Trap - Bleeding) (uncommon); Trappin' (Bear Trap) (uncommon); Trappin' (Caltrop - Poisoned) (uncommon); Trappin' (Caltrop) (uncommon) |
 | Ultima Hecate's | Ultima Hecate's (OP); Ultima Hecate's (Limited) (OP) |
-| Utility | Beginner (common); Bloody Messy (common); Cinematic Excellence (common); Pre-Suppressed (common); Disarmin' (uncommon); Disheartenin' (uncommon); Energizin' (uncommon); Terrifyin' (uncommon); Devil's Due (OP) |
+| Utility | Beginner (common); Bloody Messy (common); Pre-Suppressed (common); Cinematic Excellence (CE Test) (uncommon); Disarmin' (uncommon); Disheartenin' (uncommon); Energizin' (uncommon); Terrifyin' (uncommon); Devil's Due (OP) |
 | Vampiric | Reaper's Embrace (uncommon); Vampiric (uncommon); Annihilating (OP); Reclaimer's (OP) |
 | Weather Altering | Weather Altering (Clear) (uncommon); Weather Altering (RadStorm) (uncommon); Weather Altering (Rain) (uncommon) |
 
@@ -114,7 +114,7 @@ Left out of loot: Camouflaged (Always) (duplicate, hidden in 2.1), Camouflaged (
 | Forbidden (armour) | Cheater's (OP); God Father's (OP) |
 | Ghostly and Camouflaged | Escapist's (uncommon); Stealth (uncommon); Camouflaged (Always) (OP); Camouflaged (Crouch) (OP); Ghostly (Always) (OP); Ghostly (Crouch) (OP); Resistively Ghostly (OP); Stealth Boy'd (OP); Stealthy (OP) |
 | Grit | Glass Cannon (uncommon); Glowing Heart (uncommon); Ironclad (uncommon); Underdog's (rare) |
-| Handiwork | Fiddlin' (common); Gheed's Fortunate (common); Scavenger's (common); Breakin' and Enterin' (uncommon); Devil's Due (OP); Handy (OP); Hello Neighbour! (OP); Silver-Tongued Businessman (OP) |
+| Handiwork | Fiddlin' (common); Gheed's Fortunate (common); Scavenger's (common); Devil's Due (OP); Handy (OP); Silver-Tongued Businessman (OP) |
 | Healing | Aid Patch (common); Regenerative (Slow) (common); Auto-Medical (uncommon); Bloodthirsty (uncommon); Field Medic's (uncommon); Vitality (uncommon); Phoenix (rare); Long Livin' (OP); Regenerative (OP); Ridiculously Absorbin' (OP) |
 | Immunities | Cat Tailed (common); Waterbreathing (common); Resistance (Acid) (uncommon); Resistance (All) (uncommon); Resistance (Electric) (uncommon); Resistance (Explosion) (uncommon); Resistance (Limb Damage) (uncommon); Resistance (Poison) (uncommon); Resistance (Radiation) (uncommon); Biological Hazmat (OP); Hawkin's Experimental (OP); Immunity (Acid) (OP); Immunity (Electric) (OP); Immunity (Explosion) (OP); Immunity (Limb Damage) (OP); Immunity (Poison) (OP); Immunity (Radiation) (OP) |
 | Impact Landing | Impact Landing (Basic) (uncommon); Impact Landing (Cryo) (OP); Impact Landing (Fire) (OP); Impact Landing (Nuclear) (OP); Impact Landing (Plasma) (OP); Impact Landing (Pulse) (OP) |

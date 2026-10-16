@@ -1291,11 +1291,6 @@ set | A1ALMMISC_LooseMod_Armor_Scavengers | FULL | CLM: Scavenger's
 set | A1ALMMISC_LooseMod_Armor_Scavengers | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Armor_Scavengers | LNAM | @A1ALMMISC_LooseMod_Armor_Scavengers
 copy | @co_A1ALMOMOD_Legendary_Armor_Scavengers | co_A1ALMOMOD_Legendary_Armor_Scavengers_Unlocked
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_BreakingAndEntering
-set | A1ALMMISC_LooseMod_Armor_BreakingAndEntering | FULL | CLM: Breakin' and Enterin'
-set | A1ALMMISC_LooseMod_Armor_BreakingAndEntering | DATA\Value | 200
-set | A1ALMOMOD_Legendary_Armor_BreakingAndEntering | LNAM | @A1ALMMISC_LooseMod_Armor_BreakingAndEntering
-copy | @co_A1ALMOMOD_Legendary_Armor_BreakingAndEntering | co_A1ALMOMOD_Legendary_Armor_BreakingAndEntering_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_DevilsDue
 set | A1ALMMISC_LooseMod_Armor_DevilsDue | FULL | CLM: Devil's Due
 set | A1ALMMISC_LooseMod_Armor_DevilsDue | DATA\Value | 1500
@@ -1306,11 +1301,6 @@ set | A1ALMMISC_LooseMod_Armor_Handy | FULL | CLM: Handy
 set | A1ALMMISC_LooseMod_Armor_Handy | DATA\Value | 1500
 set | A1ALMOMOD_Legendary_Armor_Handy | LNAM | @A1ALMMISC_LooseMod_Armor_Handy
 copy | @co_A1ALMOMOD_Legendary_Armor_Handy | co_A1ALMOMOD_Legendary_Armor_Handy_Unlocked
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_HelloNeighbour
-set | A1ALMMISC_LooseMod_Armor_HelloNeighbour | FULL | CLM: Hello Neighbour!
-set | A1ALMMISC_LooseMod_Armor_HelloNeighbour | DATA\Value | 1500
-set | A1ALMOMOD_Legendary_Armor_HelloNeighbour | LNAM | @A1ALMMISC_LooseMod_Armor_HelloNeighbour
-copy | @co_A1ALMOMOD_Legendary_Armor_HelloNeighbour | co_A1ALMOMOD_Legendary_Armor_HelloNeighbour_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Armor_PerkV_SilverTonguedBusinessMan
 set | A1ALMMISC_LooseMod_Armor_PerkV_SilverTonguedBusinessMan | FULL | CLM: Silver-Tongued Businessman
 set | A1ALMMISC_LooseMod_Armor_PerkV_SilverTonguedBusinessMan | DATA\Value | 1500
@@ -4301,16 +4291,16 @@ set | A1ALMMISC_LooseMod_Weapon_BloodyMessMaxed | FULL | CLM: Bloody Messy
 set | A1ALMMISC_LooseMod_Weapon_BloodyMessMaxed | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_BloodyMessMaxed | LNAM | @A1ALMMISC_LooseMod_Weapon_BloodyMessMaxed
 copy | @co_A1ALMOMOD_Legendary_Weapon_BloodyMessMaxed | co_A1ALMOMOD_Legendary_Weapon_BloodyMessMaxed_Unlocked
-copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_CinematicExcellence
-set | A1ALMMISC_LooseMod_Weapon_CinematicExcellence | FULL | CLM: Cinematic Excellence
-set | A1ALMMISC_LooseMod_Weapon_CinematicExcellence | DATA\Value | 75
-set | A1ALMOMOD_Legendary_Weapon_CinematicExcellence | LNAM | @A1ALMMISC_LooseMod_Weapon_CinematicExcellence
-copy | @co_A1ALMOMOD_Legendary_Weapon_CinematicExcellence | co_A1ALMOMOD_Legendary_Weapon_CinematicExcellence_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Silenced
 set | A1ALMMISC_LooseMod_Weapon_Silenced | FULL | CLM: Pre-Suppressed
 set | A1ALMMISC_LooseMod_Weapon_Silenced | DATA\Value | 75
 set | A1ALMOMOD_Legendary_Weapon_Silenced | LNAM | @A1ALMMISC_LooseMod_Weapon_Silenced
 copy | @co_A1ALMOMOD_Legendary_Weapon_Silenced | co_A1ALMOMOD_Legendary_Weapon_Silenced_Unlocked
+copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_CinematicExcellence
+set | A1ALMMISC_LooseMod_Weapon_CinematicExcellence | FULL | CLM: Cinematic Excellence (CE Test)
+set | A1ALMMISC_LooseMod_Weapon_CinematicExcellence | DATA\Value | 200
+set | A1ALMOMOD_Legendary_Weapon_CinematicExcellence | LNAM | @A1ALMMISC_LooseMod_Weapon_CinematicExcellence
+copy | @co_A1ALMOMOD_Legendary_Weapon_CinematicExcellence | co_A1ALMOMOD_Legendary_Weapon_CinematicExcellence_Unlocked
 copy | @miscmod_mod_RailwayRifle_Scope_ScopeShort_Recon | A1ALMMISC_LooseMod_Weapon_Disarming
 set | A1ALMMISC_LooseMod_Weapon_Disarming | FULL | CLM: Disarmin'
 set | A1ALMMISC_LooseMod_Weapon_Disarming | DATA\Value | 200

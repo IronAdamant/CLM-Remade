@@ -9,7 +9,7 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
 - **Concise view: one legendary per group of similar effects.** Too many legendaries felt alike, so the workbench
   now shows one balanced legendary per group (33 groups: "More damage", "Elemental hits", "Grenades and mines",
   "Melee reactions"...) and hides the rest of each group: 120 legendaries, plus the Legendary and Boss tiers of the
-  spawns (48). A new game shows 83 legendaries instead of 317. Nothing is removed and gear you own keeps working.
+  spawns (48). A new game shows 82 legendaries instead of 316. Nothing is removed and gear you own keeps working.
   - Where no single legendary stood for its group, a new balanced one does (records only unless noted):
     **Opportunist's** (+60% damage on a sneak attack, against a full-health target or below half health, one at a
     time), **Elemental Strikin'** (Nature's Wrath's elements without its fire rate), **Double Tappin'** (the base
@@ -77,6 +77,24 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   only. A CLM script now explodes on every hit that lands on an actor (still never on walls or water). Singularity had
   the same problem and the same fix. PC and Xbox; on PlayStation they still explode on killing hits only (noted in
   their descriptions).
+- **Fixed (during 2.1 testing, round 4):** CQC listened for "weaponFire", but the event is "WeaponFire" (names are
+  case-sensitive), so no burst ever fired. DragonBlade's enemy search returned you yourself; it now looks for enemies
+  ahead by type, as Cleavin' does. Necromancer's risen walk to their target and charge in. Flamin' now burns its
+  targets (the base game's Incendiary). **Hello Neighbour!** was cut: Gunners kept attacking even made neutral to
+  your faction (fix_testing4_21.py).
+- **Fixed (during 2.1 testing, round 3):** CQC, DragonBlade and Cinematic Excellence did nothing: copied from an
+  armour-type mod and turned into weapon mods, their enchantment had become a "Speed" property (and DragonBlade's
+  +200 damage too). Hello Neighbour! now also makes Gunners neutral to the player's faction. Flamin' is fully
+  automatic (hold for the stream). Shockingly Lobbin' bursts for 100 damage (the Lightning Gun's chain explosion did
+  nothing from a grenade). Radiatin' (Elements) raised to 3 fire / 3 shock / 5 rads a second, 20% slower.
+  Necromancer's raises each body once. Rallyin' only worked on allies in combat; now whenever they are near you
+  (fix_testing3_21.py).
+- **Fixed (during 2.1 testing):** Rallyin' and Disheartenin' (and Shrinkin's weaker hits) did nothing: they now
+  change the value while the effect lasts and give it back after (Rallyin's aura now refreshes a 3-second
+  effect). Necromancer's risen now join your side, go for the nearest enemy, and at most three stand at once
+  (the game counts their kills as yours, so they kept raising more). Breakin' and Enterin' was cut: the lock and
+  terminal levels come from the Locksmith and Hacker perks themselves (fix_testing2_21.py). Singularity's pull did nothing (an explosion cannot pull): a script now pulls nearby enemies in (PC and
+  Xbox). tools/edits/fix_testing_21.py.
 - **Fixed (during 2.1 testing):** merging the concise-view groups left the old groups' globals behind, and 23
   legendaries (Sun-Kissed, Jumpy, Nimble, the bleed/poison/fire/cold ones...) could not show even with Show all.
   tools/config/concise.py now prunes them and drops any condition on a group that no longer exists.
@@ -152,10 +170,11 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   - Not built: real flight (it needs F4SE, which CLM does not use; Flyin' stays), and second and third CLM
     legendary slots (they would mean editing every weapon and armour record; LEO's extra slots hold LEO's own
     effects).
-- **15 legendaries for kinds of effect CLM lacked** (weakening and controlling enemies, backing companions, utility;
+- **14 legendaries for kinds of effect CLM lacked** (weakening and controlling enemies, backing companions, utility;
   `tools/edits/gen_variety_21.py`). Balanced, every platform unless marked:
   - **Disheartenin'**: enemies you hit deal 25% less damage for 5 seconds.
-  - **Energizin'**: each hit drains 3 Action Points from the target and gives them to you.
+  - **Energizin'**: 5% of hits refill your Action Points completely (the base game's own refill effect, so it works
+    on PlayStation too; a fixed amount per hit would need a script).
   - **Capitalist's**: +10% damage per 1,000 caps you carry, up to +50%.
   - **Cleavin'** (PC and Xbox): melee and unarmed hits also strike every other enemy within 3 metres for 40 damage.
   - **Disarmin'**: 10% chance a hit knocks the target's weapon out of its hands.
@@ -165,7 +184,6 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   - **Rallyin'** (armour): companions and allies near you get +15 damage and energy resistance and +10% damage.
   - **Intimidatin'** (armour): enemies 10+ levels below you flee instead of fighting.
   - **Field Medic's** (armour): stimpaks and RadAway work 30% better; counts once.
-  - **Breakin' and Enterin'** (armour): pick locks and hack terminals one level above your perks; counts once.
   - OP: **Necromancer's** (PC and Xbox: kills rise and fight for you for 60 seconds), **Radroachin'** (PC and Xbox:
     10% chance a hit turns the target into a radroach carrying its loot), **Shrinkin'** (targets shrink to half size
     and deal half damage for 10 seconds; the shrinking is PC and Xbox), **Singularity** (hits implode, pulling

@@ -118,7 +118,7 @@ THEMES = {
     ('armor', 'Resistance'): 'Immunities', ('armor', 'GheedsFortunate'): 'Handiwork',
     ('weapon', 'PoisonersNimble'): 'Poison and acid', ('weapon', 'OneManPunching'): 'Brawn', ('weapon', 'Flaming'): 'Fire',
     # 2.1: the old requests (tools/edits/gen_requests_21.py)
-    ('armor', 'Stealthy'): 'Undetectable', ('armor', 'Jumpers'): 'Jumpy', ('armor', 'HelloNeighbour'): 'Handiwork',
+    ('armor', 'Stealthy'): 'Undetectable', ('armor', 'Jumpers'): 'Jumpy',
     ('armor', 'NoBraking'): 'Brawlers', ('armor', 'Enraged'): 'Flaming', ('weapon', 'HealingBeam'): 'Curios',
     ('weapon', 'GodCreator'): 'Curios', ('weapon', 'CinematicExcellence'): 'Utility', ('weapon', 'CQC'): 'Automatic',
     ('weapon', 'DragonBlade'): 'Brawn', ('weapon', 'Decimating'): 'Heavy hitters',
@@ -129,7 +129,7 @@ THEMES = {
     ('weapon', 'Disheartening'): 'Utility', ('weapon', 'Energizing'): 'Utility', ('weapon', 'Capitalists'): 'Heavy hitters',
     ('weapon', 'Cleaving'): 'Brawn', ('weapon', 'Disarming'): 'Utility', ('weapon', 'Terrifying'): 'Utility',
     ('weapon', 'Midas'): 'Curios', ('armor', 'Rallying'): 'Surroundings', ('armor', 'Intimidating'): 'Surroundings',
-    ('armor', 'FieldMedics'): 'Healing', ('armor', 'BreakingAndEntering'): 'Handiwork',
+    ('armor', 'FieldMedics'): 'Healing',
     ('weapon', 'Necromancers'): 'Curios', ('weapon', 'Radroaching'): 'Curios', ('weapon', 'Shrinking'): 'Curios',
     ('weapon', 'Singularity'): 'Ordnance',
     ('armor', 'Cheaters'): 'Forbidden (armour)', ('armor', 'GodFathers'): 'Forbidden (armour)',
