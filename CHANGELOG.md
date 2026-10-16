@@ -178,7 +178,9 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
     motion from the third-person camera (a real kill camera outside V.A.T.S. is not possible).
   - **PlayStation perks** (the author's note): the perk holotape needs scripts, so on PlayStation every CLM perk is a
     "CLM Perk" magazine made at the chemistry station (category CLM Perks). Reading it adds the perk; removing one
-    is not possible there.
+    is not possible there. Fixed in testing: reading one (or the CLM Loot Manual) crashed the game; their perks are
+    now made like vanilla magazine perks (non-playable, with the Wasteland Survival Guide animation), and picking
+    one up no longer shows Live & Love's message.
   - Not built: real flight (it needs F4SE, which CLM does not use; Flyin' stays), and second and third CLM
     legendary slots (they would mean editing every weapon and armour record; LEO's extra slots hold LEO's own
     effects).

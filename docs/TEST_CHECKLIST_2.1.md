@@ -8,7 +8,7 @@ not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 
 - [ ] **Necromancer's**: no limit on how many risen stand at once now; each body still rises only once.
 
-## 2. PlayStation build, tried on PC
+## 2. PlayStation build, tried on PC: passed (2026-10-17)
 
 PlayStation mods may not have scripts or assets, so the PlayStation plugin differs (your spreadsheet's "Platforms" tab
 lists every difference).
@@ -20,13 +20,13 @@ lists every difference).
 4. Start the game the normal way (not through F4SE). A save from this session is fine.
 
 **Checks**
-- [ ] **No holotapes**: none in the inventory, none to craft. Settings are made at the chemistry station (CLM Settings) and work as on PC.
-- [ ] **CLM Perk magazines** (chemistry station, CLM Perks): make one and read it; the perk is added and its recipe disappears.
-- [ ] **Loot mode**: with "Loot mode" carried, make the **CLM Loot Manual** (CLM Settings) and read it; legendary enemies then drop CLM legendaries.
-- [ ] **Left out**: the six new laser colours, the five new Disintegratin' colours and the Kellogg spawn are not at the workbench.
-- [ ] **Changed**: Midas' leaves ordinary ash (not gold); BioReactive explodes on killing hits only; Vampiric heals on hits but not on killing blows; Auto-Medical / Aid Patch regenerate health while low without using a stimpak. Their descriptions say so.
-- [ ] **Needs a script** (e.g. Phoenix, Necromancer's, CQC): the description carries the PlayStation note and the legendary does nothing, without errors or crashes.
-- [ ] **Concise view and spawns** work as on PC: one legendary per group, spawns hidden until "Show spawning legendaries".
+- [x] **No holotapes**: none in the inventory, none to craft. Settings are made at the chemistry station (CLM Settings) and work as on PC.
+- [x] **CLM Perk magazines** (chemistry station, CLM Perks): make one and read it; the perk is added (the Wasteland Survival Guide Vault Boy plays) and its recipe disappears. Fixed: reading one crashed the game (the perks were not made like vanilla magazine perks). Make a new one: one made before the fix may still crash.
+- [x] **Loot mode**: with "Loot mode" carried, make the **CLM Loot Manual** (CLM Settings) and read it; legendary enemies then drop CLM legendaries.
+- [x] **Left out**: the six new laser colours, the five new Disintegratin' colours and the Kellogg spawn are not at the workbench.
+- [x] **Changed**: Midas' leaves ordinary ash (not gold); BioReactive explodes on killing hits only; Vampiric heals on hits but not on killing blows; Auto-Medical / Aid Patch regenerate health while low without using a stimpak. Their descriptions say so.
+- [x] **Needs a script** (e.g. Phoenix, Necromancer's, CQC): the description carries the PlayStation note and the legendary does nothing, without errors or crashes.
+- [x] **Concise view and spawns** work as on PC: one legendary per group, spawns hidden until "Show spawning legendaries".
 
 **When done**
 1. `python tools/release/playstation.py --test-restore` (puts the PC plugin back).

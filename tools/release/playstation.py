@@ -77,6 +77,8 @@ NOTE_KILL_ONLY = ' (PlayStation: explodes only on killing hits.)'
 NOTE_MIDAS =' (PlayStation: they turn to ordinary ash, not gold dust.)'
 MIDAS, CRIT_LASER = 'A1ALMOMOD_Legendary_Weapon_Midas', 0x000731B2      # vanilla CritLaser (red ash)
 MAGAZINE = 'PerkMagLiveAndLove09'          # vanilla magazine used as the Loot Manual's template
+FEATURED_ITEM = 0x001B3FAC                 # its FeaturedItem keyword (with FIMD: Live & Love's own pickup message)
+MAG_SWF = 'Components\\Magazine perks\\MP_Wasteland Survival Guide.swf'   # the HUD plays it on reading
 FN_HAS_PERK, FN_GET_HEALTH_PERCENTAGE, FN_GET_LEVEL, OP_GE, OP_LT, OP_LE = 448, 430, 80, 3 << 5, 4 << 5, 5 << 5
 BEFORE_BOOK = {'GMST', 'KYWD', 'LCRT', 'AACT', 'TRNS', 'CMPO', 'TXST', 'GLOB', 'DMGT', 'CLAS', 'FACT', 'HDPT', 'EYES',
                'RACE', 'SOUN', 'ASPC', 'MGEF', 'LTEX', 'ENCH', 'SPEL', 'ACTI', 'TACT', 'ARMO'}
@@ -124,6 +126,33 @@ class Edit:
         group.children.append(rec)
         self.own[rec.formid] = rec
         return rec
+
+
+def magazine_for(magazine: Record, edid: str, label: str, perk: Record) -> Record:
+    """a copy of the vanilla magazine that teaches perk, and perk made like the perks vanilla magazines teach:
+    non-playable (DATA and record flag 0x4), not hidden, with an animation (FNAM), which the HUD plays on reading (2.1 testing:
+    reading a CLM Perk magazine crashed the game; all 110 vanilla perk magazines teach perks made that way). Live &
+    Love's FeaturedItem keyword and FIMD message are dropped, or picking one up showed Live & Love's own message."""
+    book = magazine.copy()
+    kwda = book.get('KWDA').data
+    kw = [k for k in struct.unpack(f'<{len(kwda) // 4}I', kwda) if k != FEATURED_ITEM]
+    book.subrecords[:] = [Subrecord('EDID', zstr(edid))] + [
+        Subrecord(s.sig, {'FULL': zstr(label), 'DESC': b'\0', 'CNAM': b'\0', 'KSIZ': struct.pack('<I', len(kw)),
+                          'KWDA': struct.pack(f'<{len(kw)}I', *kw),
+                          'DNAM': s.data[:1] + struct.pack('<I', perk.formid) + s.data[5:]}.get(s.sig, s.data))
+        for s in book.subrecords if s.sig not in ('EDID', 'FIMD')]    # keeps PerkMagKeyword and the vanilla script
+    book.mark_dirty()
+    data = perk.get('DATA')
+    perk.set('DATA', data.data[:3] + b'\0\0' + data.data[5:])
+    perk.flags |= 0x4
+    subs = [s for s in perk.subrecords if s.sig != 'FNAM']
+    at = next(i for i, s in enumerate(subs) if s.sig == 'DATA') + 1
+    if at < len(subs) and subs[at].sig == 'NNAM':
+        at += 1
+    subs.insert(at, Subrecord('FNAM', zstr(MAG_SWF)))
+    perk.subrecords[:] = subs
+    perk.mark_dirty()
+    return book
 
 
 def custom_scripts() -> set[str]:
@@ -349,13 +378,7 @@ def build(game: Path) -> None:
         e = m if p is main else Edit(p, main)
         pre = 'A1ALM'
         perk = p.by_edid(f'{pre}PERK_Loot')
-        book = magazine.copy()
-        label = 'CLM Loot Manual'
-        book.subrecords[:] = [Subrecord('EDID', zstr(f'{pre}BOOK_LootManual'))] + [
-            Subrecord(s.sig, {'FULL': zstr(label), 'DESC': b'\0', 'CNAM': b'\0',
-                              'DNAM': s.data[:1] + struct.pack('<I', perk.formid) + s.data[5:]}.get(s.sig, s.data))
-            for s in book.subrecords if s.sig != 'EDID']    # keeps the magazine keywords and vanilla script
-        book.mark_dirty()
+        book = magazine_for(magazine, f'{pre}BOOK_LootManual', 'CLM Loot Manual', perk)
         e.add(book)
         tmpl = main.by_edid('co_A1ALMSET_DropLow').copy()
         tmpl.subrecords[:] = [Subrecord('EDID', zstr(f'co_{pre}BOOK_LootManual')),
@@ -383,12 +406,7 @@ def build(game: Path) -> None:
     for page, edid, name in perks:
         perk = main.by_edid(edid)
         book_id = f'A1ALMBOOK_Perk_{edid.removeprefix("A1ALMPERK_")}'
-        book = magazine.copy()
-        book.subrecords[:] = [Subrecord('EDID', zstr(book_id))] + [
-            Subrecord(s.sig, {'FULL': zstr(f'CLM Perk: {name}'), 'DESC': b'\0', 'CNAM': b'\0',
-                              'DNAM': s.data[:1] + struct.pack('<I', perk.formid) + s.data[5:]}.get(s.sig, s.data))
-            for s in book.subrecords if s.sig != 'EDID']
-        book.mark_dirty()
+        book = magazine_for(magazine, book_id, f'CLM Perk: {name}', perk)
         m.add(book)
         tmpl = main.by_edid('co_A1ALMSET_DropLow').copy()
         tmpl.subrecords[:] = [Subrecord('EDID', zstr(f'co_{book_id}')),
