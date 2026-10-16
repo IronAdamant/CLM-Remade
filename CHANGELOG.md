@@ -79,7 +79,8 @@ missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or
   their descriptions).
 - **Fixed (during 2.1 testing, round 6):** Necromancer's: resurrected bodies came back with their combat AI not
   working and stood still. Now the body crumbles to ash (its loot stays in the ash pile, as with a laser kill) and a
-  fresh copy rises in its place, fights for you for 60 seconds, then crumbles to an empty ash pile. Jumper's and
+  fresh copy rises in its place (appearing already on your side), fights for you for 60 seconds, then crumbles to an
+  empty ash pile. Jumper's and
   Momentum no longer leave their boost on in a save where the armour was already worn. DragonBlade's dash slides you
   there instead of teleporting (fix_testing6_21.py).
 - **Fixed (during 2.1 testing, round 5):** Jumper's jump and Momentum's rush never applied: the timed spell they cast

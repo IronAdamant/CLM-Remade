@@ -4,7 +4,8 @@
 
 - Necromancer's: resurrected bodies came back with their combat AI not working (they stood still in the open world
   too, video). The body now turns to ash with its loot in the pile, and a fresh copy of it fights for the player, then
-  crumbles to an empty ash pile (its own gear removed). Author's design, 2026-10-16.
+  crumbles to an empty ash pile (its own gear removed). Author's design, 2026-10-16. The copy is spawned disabled,
+  joins the player's faction, then fades in, so it is never briefly hostile (2026-10-17).
 - Jumper's / Momentum (scripts only): the ability stayed on in a save where the armour was already worn (the timer
   used a variable such effects never set); they now remove it from GetTargetActor().
 - DragonBlade (script only): SetPosition also put up a loading screen; the dash is a TranslateTo now.
@@ -44,6 +45,7 @@ def main():
     r = p.by_edid('A1ALMMGEF_Constant_Effect_Weapon_Necromancers')
     r.set('VMAD', vmad('A1ALMMGEF_NecromancerEffect', [
         ('RisenSpell', obj(p.by_edid('A1ALMSPEL_Weapon_Necromancers_Risen').formid)),
+        ('AllyFaction', obj(PLAYER_FACTION)),          # the copy is spawned disabled and joins it first
         ('AshPile', obj(ASH_PILE)), ('AshShader', obj(ASH_SHADER))]))
     r.mark_dirty()
     r = p.by_edid('A1ALMMGEF_Target_Effect_Risen')

@@ -16,16 +16,10 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 - **When done:** `python debug/build_recorder.py --game "D:/Steam/steamapps/common/Fallout 4" --remove`, then
   `python -m ack papyrus-log off` (in AgentCreationKit), and untick the recorder.
 
-## 1. Re-test: fixed again
+## 1. Re-test
 
-- [ ] **Necromancer's** (reworked): a killed enemy crumbles to ash (loot in the ash pile) and a copy rises in its place, attacks enemies on its own (it should move to them), and after 60 s (or when it dies) crumbles to an empty ash pile. At most three at once.
-- [ ] **Jumper's**: the 4x jump now ends after 3 s (unequip and re-equip the armour once first, or load a save where it was not worn).
-- [ ] **Momentum**: every kill makes you 20% faster with faster AP regeneration for 10 s, then it ends.
-- [ ] **DragonBlade**: the dash now slides you to the enemy (no loading screen). If nothing moves at all, tell me (the player may not accept a slide). Also check the weapon's damage in the Pip-Boy: it should read 200 more than the same weapon without DragonBlade.
-
-## 2. Settings still to check
-
-- [ ] **Loot mode, default**: drop "Show all legendaries" first (it makes hidden legendaries drop too, by design). Then hidden legendaries do not drop; with "Hidden legendaries drop too" they do.
+- [ ] **Necromancer's** (the copy now spawns invisible, joins your side, then fades in): it is never hostile, not even for a moment.
+- [ ] **Loot mode, default**: in the F4SE menu, turn **Show all legendaries OFF** (it was on during the last test, and it lets hidden legendaries drop on purpose). Then, with loot mode on and "Hidden legendaries drop too" off, loot a few legendary enemies: no hidden legendaries (tell me which ones you pick up; the log lists them). Turn "Hidden legendaries drop too" on: they can drop.
 
 ## PlayStation build on PC (optional)
 
@@ -52,6 +46,7 @@ listed at the end as low risk, not needed. Tick each box once it works; write wh
 
 ## Passed so far
 
+- Round 6: Necromancer's ash copies fight (apart from the hostile moment, fixed above), Jumper's ends after 3 s, Momentum (+20% speed on a kill, seen in the log), DragonBlade slides without a loading screen.
 - Round 5: CQC fires real bursts, Cinematic Excellence back to 1 in 10, holotape and F4SE menu settings.
 - Round 4: CQC bursts fire (see the open question), DragonBlade dashes (loading screen fixed above), Cinematic
   Excellence (CE Test), Flamin' (stream and burning), Resistance (All), Cap Showerin', No Brakin'.

@@ -8,6 +8,8 @@ MaxRisen at once (the game counts teammates' kills as the player's, so the risen
 otherwise snowball), and each body or copy rises once.}
 
 Spell        Property RisenSpell         const auto mandatory
+Faction      Property AllyFaction        const auto mandatory
+{The player's faction: the copy joins it before it appears, so it is never hostile, not even for a moment.}
 Activator    Property AshPile            const auto mandatory
 EffectShader Property AshShader          const auto
 float        Property Delay      = 1.0   const auto
@@ -44,11 +46,19 @@ Event Actor.OnKill(Actor akSender, Actor akVictim)
 		Log("killed " + akVictim + ": body gone, not raised")
 		return
 	endif
-	Actor copy = akVictim.PlaceActorAtMe(base)
+	; spawned disabled and switched to the player's side while invisible, then faded in (2.1 testing: an enabled
+	; copy was hostile for the moment until RisenSpell took hold)
+	Actor copy = akVictim.PlaceAtMe(base, 1, false, true) as Actor
 	Remember(akVictim)
 	Remember(copy)
+	if (copy)
+		copy.RemoveFromAllFactions()
+		copy.AddToFaction(AllyFaction)
+		copy.SetPlayerTeammate(true, false)
+	endif
 	Ash(akVictim)
 	if (copy)
+		copy.Enable(true)
 		RisenSpell.Cast(akSender, copy)
 		risen.Add(copy)
 		Log("raised " + akVictim + " as " + copy)
