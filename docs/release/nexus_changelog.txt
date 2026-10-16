@@ -1,0 +1,23 @@
+Concise view: the workbench shows one balanced legendary per group of similar effects (33 groups, 82 instead of 316 in a new game). Nothing is removed; gear you own keeps working.
+"CLM Setting: Show all legendaries" shows everything, as before. Saves from before 2.1 get it automatically (PC and Xbox).
+"CLM Group" items (chemistry station, CLM Groups) and the F4SE menu's Concise view page show whole groups.
+New group mascots: Opportunist's, Elemental Strikin', Double Tappin', Resistance (All), Vitality, Untouchable (Elements), Radiatin' (Elements).
+Spawning legendaries are hidden by default: new setting "Show spawning legendaries".
+Loot mode: hidden legendaries drop only with the new setting "Hidden legendaries drop too" (or Show all).
+23 new armour legendaries: Night Owl's, Sun-Kissed, Storm Chasin', Shadow Dwellin', Amphibious, Entrenched, Home Turf, Underdog's, Glass Cannon, Ironclad, Glowing Heart, Overcharged, Scavenger's, six Radiatin' auras...
+More new armour (PC and Xbox): Phoenix, Bloodthirsty, Momentum, Static Charged.
+New kinds of legendary: Disheartenin', Energizin', Capitalist's, Cleavin', Disarmin', Terrifyin', Midas', Rallyin', Intimidatin', Field Medic's; OP: Necromancer's, Radroachin', Shrinkin', Singularity.
+The 2016 legendaries that went missing: Poisoner's Nimble, Zeus Crafted (Limited), Shockingly Lobbin', MIRV's Impactin', Sticky Bottlecap Mine launchin', One Man Punchin', Flamin', Concentratin' (Constant), Plated Titanium, four new spawns.
+2016-17 requests once called impossible: Friendly Mirelurk Queen, Stealthy, Cap Showerin', Healing Beam, God Creator, Jumper's, No Brakin', Enraged, Decimatin', CQC, DragonBlade, Cinematic Excellence.
+More requests: Jumpy (10%) and (25%), Rapid Fire (100%), Rapid Hurtin', Crippling (100%), Bloodlust, Blitzkrieg, Nature's Wrath, Staminator, Weapon Mastery.
+Balanced tiers for families that moved to OP: Hurtin' (25%) and (50%), Speedy (10%) and (25%), Nimble (25%), Regenerative (Slow), Resistance (six kinds), Gheed's Fortunate and more.
+Balance: balanced now means no stronger than the base game's strongest of its kind. 56 legendaries moved to OP (carry "Show OP legendaries" to craft them).
+Weak legendaries brought up to the base game's: Scattering, Carbonatin', Generically 80s Action Hero's, Thumpin', Burning, Acidic, Lesser Bleeding, Hinokagutsuchi, Rayden's Fury, Compacted, Refilling, Beginner.
+Aim Stabilized (50%) was only 10%; Escapist's worked only at exactly 15% health (now below 30%); Bullet Escapist worked the wrong way round.
+Fiery Operator's and Generically 80s Action Hero's were stronger than their text; they now do what they say.
+Fisto's counts only your best armour piece; before, tiers on different pieces multiplied (up to 11 times the damage).
+BioReactive Explosive (all six) explodes on every hit, not only on killing hits as since 1.09 (PC and Xbox).
+Brutish and Advanced Titanium reworked as FL4CKTROOPER asked.
+Duplicate names, typos and the duplicate Camouflaged recipes fixed; descriptions match what legendaries do.
+PlayStation: reading a CLM Perk magazine or the CLM Loot Manual no longer crashes the game.
+Removed: the two "ALM: A - Test" slots (the author's old test legendaries).
