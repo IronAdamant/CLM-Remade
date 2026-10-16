@@ -1,0 +1,24 @@
+2.1.0
+
+NEW
+- Concise view: the workbench shows one balanced legendary per group of similar effects (33 groups, 82 legendaries instead of 316). "Show all legendaries" shows everything; a "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1 get "Show all legendaries" automatically.
+- About 90 new legendaries:
+  - 23 armour effects: Night Owl's, Sun-Kissed, Storm Chasin', Amphibious, Glass Cannon, Ironclad, Underdog's, the Radiatin' auras, Phoenix, Momentum...
+  - New kinds: Disheartenin', Disarmin', Terrifyin', Rallyin', Midas', Cleavin', Necromancer's, Radroachin', Shrinkin', Singularity...
+  - The lost 2016 legendaries: Flamin', Shockingly Lobbin', One Man Punchin', MIRV's Impactin', Plated Titanium...
+  - Old requests: CQC, DragonBlade, Cinematic Excellence, Healing Beam, Cap Showerin', Stealthy, Blitzkrieg, Nature's Wrath, Staminator, Bloodlust...
+  - Smaller balanced tiers: Hurtin' (25%), Speedy (10%), Jumpy (10%)...
+- New settings: Show spawning legendaries (spawns are hidden by default), Hidden legendaries drop too (loot mode).
+
+CHANGED
+- Balanced now means no stronger than the base game's best of its kind. 56 legendaries moved to OP; gear you own keeps them.
+- Weak legendaries brought up: Scattering, Carbonatin', Thumpin', Burning, Acidic, Lesser Bleeding, Compacted, Refilling, Aim Stabilized (50%)...
+- Fisto's counts only your best armour piece (it multiplied across pieces).
+
+FIXED
+- BioReactive Explosive explodes on every hit, not only on kills.
+- Escapist's, Bullet Escapist, Fiery Operator's and Generically 80s Action Hero's do what they say.
+- Duplicate names, typos and duplicate Camouflaged recipes.
+
+REMOVED
+- The two "ALM: A - Test" slots (the author's old test legendaries).
