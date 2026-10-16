@@ -6,7 +6,7 @@ not. (Obsidian task list: `- [ ]` unticked, `- [x]` ticked.)
 
 ## 1. PC: optional quick look
 
-- [ ] **Necromancer's**: no limit on how many risen stand at once now; each body still rises only once.
+- [x] **Necromancer's**: no limit on how many risen stand at once now; each body still rises only once.
 
 ## 2. PlayStation build, tried on PC: passed (2026-10-17)
 

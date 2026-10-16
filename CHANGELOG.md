@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0 (in progress)
+## 2.1.0 (2026-10-17)
 
 A balance pass measured against the base game's own legendaries, new armour, the 2016 legendaries that went
 missing, and the feature requests of 2016-17 that 1.09 left as "not possible" or "no time".

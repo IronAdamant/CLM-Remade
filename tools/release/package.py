@@ -78,7 +78,7 @@ def fomod(version: str) -> tuple[str, str]:
   <Name>Custom Legendary Modifications Remade</Name>
   <Author>Deadmansprice</Author>
   <Version>{version}</Version>
-  <Description>Over 570 legendary effects to craft at the workbench, or to hunt for as loot. Set up at any chemistry station, with a holotape, or (optional, F4SE) from the pause menu.</Description>
+  <Description>Over 650 legendary effects to craft at the workbench, or to hunt for as loot. Set up at any chemistry station, with a holotape, or (optional, F4SE) from the pause menu.</Description>
   <Groups><element>Weapons</element><element>Armour</element><element>Gameplay</element></Groups>
 </fomod>
 """

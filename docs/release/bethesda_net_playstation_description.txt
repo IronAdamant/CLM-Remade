@@ -1,39 +1,38 @@
-CUSTOM LEGENDARY MODIFICATIONS REMADE 2.0 (PLAYSTATION)
+CUSTOM LEGENDARY MODIFICATIONS REMADE 2.1 (PLAYSTATION)
 
-Over 570 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, movement and stealth effects, and some gloriously overpowered ones.
+Over 600 legendary effects for weapons and armour. Craft them at the workbench, or hunt for them as loot. Elemental hits, spawned allies and enemies, grenade and mine launchers, movement and stealth effects, and some gloriously overpowered ones.
 
-WHAT'S NEW IN 2.0
-CLM was last updated in 2017. 2.0 is a full overhaul, and the first version you can fully set up on PlayStation:
-- Settings work on PlayStation: they are made at the chemistry station.
-- Loot mode: legendaries drop from anything you kill. Holotapes unlock whole families for crafting, and OP legendaries need a rare Legendary Core. Drop rate: Low, Standard or Higher.
-- Legendary Picker: the workbench shows only the legendary families you pick.
-- 15 new legendaries and dozens of fixes.
+WHAT'S NEW IN 2.1
+- Concise view: the workbench shows one balanced legendary per group of similar effects (33 groups), 82 instead of 316. Nothing is removed.
+- Over 70 new legendaries: new armour effects (Night Owl's, Glass Cannon, Radiatin' auras...) and the 2016 legendaries that went missing.
+- Balance: 56 very strong legendaries moved to OP; weak ones were brought up.
+- Spawning legendaries are hidden by default. Fixed: reading a CLM Perk magazine no longer crashes.
 
 REQUIREMENTS
-Automatron, Far Harbor, Contraptions Workshop and Nuka-World. Wasteland Workshop and Vault-Tec Workshop are no longer needed.
+Automatron, Far Harbor, Contraptions Workshop and Nuka-World.
 
 GETTING STARTED
-Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones), the main variants and the concise view.
-Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot, not clothing like the Vault suit.
+Nothing to set up. A new game starts with costly crafting, balanced legendaries (no OP ones) and the concise view.
+Attach legendaries in the "Legendary" slot of a weapons or armour workbench. Armour legendaries need armour with a legendary slot.
 
 SETTINGS (please read)
 Settings are free "CLM Setting" items made at any chemistry station (CLM Settings). Carry one = on; drop, store or sell it = off; carry none = the defaults.
 - How you get legendaries: Free crafting, Loot mode, Low / Higher drop rate, Hidden legendaries drop too.
-- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style legendaries, Show spawning legendaries (hidden by default), Picker mode.
-After a change, leave the workbench and use it again. Something missing? Check your Misc tab.
+- What the workbench shows: Show all legendaries, Show OP legendaries, Show variants, Hide perk-style legendaries, Show spawning legendaries, Picker mode.
+After a change, leave the workbench and use it again.
 
-CONCISE VIEW (NEW IN 2.1)
-The workbench shows one balanced legendary per group of similar effects (33 groups). Nothing is removed. "Show all legendaries" shows everything; a "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1: make "Show all legendaries" to keep everything shown.
+CONCISE VIEW
+"Show all legendaries" shows everything. A "CLM Group" item (CLM Groups) shows one group. Saves from before 2.1: make "Show all legendaries" to keep everything shown.
 
-LOOT MODE ON PLAYSTATION
-Also make the "CLM Loot Manual" once (CLM Settings) to start getting drops. If nothing drops, drop the manual and pick it up again.
+LOOT MODE
+Also make the "CLM Loot Manual" once (CLM Settings) and read it. If nothing drops, drop the manual and pick it up again.
 
 WHAT'S DIFFERENT ON PLAYSTATION
 PlayStation mods can't use scripts or new art, so:
-- No holotapes. CLM's perks are "CLM Perk" magazines at the chemistry station (CLM Perks).
-- Left out: the new laser colours and the Kellogg spawn.
-- Vampiric's family heals on every hit except killing blows; Auto-Medical and Aid Patch regenerate health instead of using stimpaks; Face Bustin' doesn't blow targets apart.
-- Effects that need a script (Untouchable, Phoenix, CQC...) do nothing or lose a part; their descriptions say so.
+- No holotapes. CLM's perks are "CLM Perk" magazines (chemistry station, CLM Perks).
+- Left out: the new laser and Disintegratin' colours, the Kellogg spawn.
+- Changed: Vampiric's family heals on every hit except killing blows; Auto-Medical and Aid Patch regenerate health; BioReactive and Singularity explode on kills only; Midas' leaves ordinary ash.
+- Effects that need a script (Untouchable, Phoenix, CQC, Necromancer's...) do nothing or lose a part. Their descriptions say so.
 
 UPGRADING
 Your gear keeps its legendaries. Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them.

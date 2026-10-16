@@ -1,12 +1,22 @@
-# Custom Legendary Modifications Remade 2.0
+# Custom Legendary Modifications Remade 2.1
 
-*Over 570 legendary effects for weapons and armour - craft them, or hunt for them.*
+*Over 650 legendary effects for weapons and armour - craft them, or hunt for them.*
 
 ## What it is
 
 CLM adds hundreds of legendary modifications you attach at a weapons or armour workbench: elemental hits, spawned allies and enemies, grenade and mine launchers, coloured lasers, movement and stealth effects, and some that are gloriously overpowered. Simple settings decide what you get: everything free, a costly crafting game, balanced legendaries only, or a loot hunt - and a picker to show only the legendaries you want.
 
-## What's new in 2.0
+## What's new in 2.1
+
+- **The concise view:** too many legendaries felt alike, so the workbench now shows one balanced legendary per group of similar effects - 82 instead of 316 in a new game. Nothing is removed, and gear you own keeps working.
+- **About 90 new legendaries:** 23 new armour effects (Night Owl's, Sun-Kissed, Storm Chasin', Glass Cannon, Ironclad, the Radiatin' auras...); effects CLM lacked (Disheartenin', Disarmin', Rallyin', Terrifyin', Midas'...); the 2016 legendaries that went missing before 1.09; and the 2016-17 requests 1.09 called impossible - CQC's three-round bursts, DragonBlade, Necromancer's, Healing Beam, Cap Showerin', Stealthy, Blitzkrieg, Nature's Wrath and more. Thanks to everyone who asked for them.
+- **Balance:** balanced now means no stronger than the base game's strongest of its kind (Two Shot, Rapid, Sentinel's). 56 legendaries above that moved to OP; weak ones were brought up to the base game's (Scattering, Burning, Acidic, Escapist's...).
+- **Fixes:** BioReactive Explosive explodes on every hit (since 1.09 it only did on kills), Fisto's no longer multiplies across armour pieces, descriptions match what legendaries do, duplicate names and typos fixed.
+- **Spawning legendaries are hidden by default** - make "Show spawning legendaries" to see them.
+
+The full list is in the changelog.
+
+## What was new in 2.0
 
 CLM was last updated in 2017. 2.0 is a full overhaul:
 
@@ -87,17 +97,17 @@ Have **F4SE** and **Mod Configuration Menu**? Tick **CLM - MCM** in the installe
 
 ## Why the chemistry station?
 
-In 1.09 the settings were holotape menus run by scripts. PlayStation mods can't use custom scripts, so on PS4 part of the mod couldn't be set up at all. Settings crafted at a chemistry station need no scripts, so 2.0 works the same on PC, Xbox and PlayStation. The chemistry station is the way for everyone without a script extender - Xbox and PlayStation players, and PC players who don't use F4SE. PC players with F4SE can use the optional menu instead (above).
+In 1.09 the settings were holotape menus run by scripts. PlayStation mods can't use custom scripts, so on PS4 part of the mod couldn't be set up at all. Settings crafted at a chemistry station need no scripts, so CLM works the same on PC, Xbox and PlayStation. The chemistry station is the way for everyone without a script extender - Xbox and PlayStation players, and PC players who don't use F4SE. PC players with F4SE can use the optional menu instead (above).
 
 ## PlayStation version
 
-CLM 2.0 is also on Bethesda.net for PS4/PS5. PlayStation mods cannot use scripts or new assets, so there:
+CLM is also on Bethesda.net for PS4/PS5. PlayStation mods cannot use scripts or new assets, so there:
 
 - Settings are made at the chemistry station (no holotapes); loot mode also needs the CLM Loot Manual, made once there. CLM's perks are "CLM Perk" magazines there too (category CLM Perks): reading one adds the perk.
 - Saves made before 2.1: make "CLM Setting: Show all legendaries" to keep every legendary shown.
 - The new laser colours and the Kellogg spawn are left out.
-- Vampiric and its family heal on every hit except killing blows; Auto-Medical and Aid Patch regenerate health instead of using stimpaks; Face Bustin' does not blow targets apart.
-- Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin' and Sadistic Brawlers do nothing there; a few others lose one scripted part.
+- Vampiric and its family heal on every hit except killing blows; Auto-Medical and Aid Patch regenerate health instead of using stimpaks; Face Bustin' does not blow targets apart; BioReactive Explosive and Singularity explode on killing hits only; Midas' leaves ordinary ash.
+- Effects that are scripts do nothing there: Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin', Sadistic Brawlers, Phoenix, Bloodthirsty, Momentum, Static Charged, CQC, Cinematic Excellence, Cleavin', Decimatin', Necromancer's, Radroachin'. A few others lose one scripted part. Their descriptions say so.
 
 ## Compatibility
 
@@ -108,11 +118,11 @@ CLM changes no vanilla records, so it works alongside most mods; loot mode works
 
 ## Upgrading
 
-Your gear keeps its legendaries, DLC ones included, and your holotape settings are turned into setting items on the first load. From 2.0: everything stays shown (you get "Show all legendaries"); some very strong legendaries are now OP, so make "Show OP legendaries" to keep crafting them.
+Your gear keeps its legendaries, DLC ones included, and your holotape settings are turned into setting items on the first load. From 2.0 or 1.09: everything stays shown (you get "Show all legendaries"); some very strong legendaries are now OP, so make "Show OP legendaries" to keep crafting them.
 
 ## Open source
 
-The whole mod - plugin, script sources and the tools used to build 2.0 - is on GitHub with its full history, starting from 1.09 exactly as released. Licence: CC BY 4.0 - use it in your own mods, just credit the original author.
+The whole mod - plugin, script sources and the tools used to build it - is on GitHub with its full history, starting from 1.09 exactly as released. Licence: CC BY 4.0 - use it in your own mods, just credit the original author.
 
 ## Credits
 

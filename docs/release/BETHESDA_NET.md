@@ -23,7 +23,7 @@ for PlayStation.
 3. In the upload dialog, PC: Include Archives ticked, the existing `- Main.ba2` / `- Textures.ba2`. Do not
    Generate for PC: it would replace the version-1 archives.
 4. Xbox: **always Generate**, never Archive2's XBoxDDS (it keeps the PC texture layout: pink textures on Xbox).
-   In Generate's file list, Import `work/CLM_xbox.achlist` (111 files), so no vanilla scripts get in and nothing
+   In Generate's file list, Import `work/CLM_xbox.achlist` (125 files in 2.1), so no vanilla scripts get in and nothing
    is missed.
 5. Before uploading: `python tools/release/xbox.py check`. Upload only when it prints "Xbox archives OK".
 6. After uploading: `python tools/release/xbox.py unstage` (removes the staged files and moves the `_xbox`

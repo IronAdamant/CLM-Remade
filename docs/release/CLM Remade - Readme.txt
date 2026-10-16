@@ -1,8 +1,23 @@
-CUSTOM LEGENDARY MODIFICATIONS REMADE 2.0
+CUSTOM LEGENDARY MODIFICATIONS REMADE 2.1
 by Deadmansprice
 
-Over 570 legendary effects for weapons and armour: craft them at the workbench, or hunt for them as loot.
+Over 650 legendary effects for weapons and armour: craft them at the workbench, or hunt for them as loot.
 Everything is set up in game, at any chemistry station (or with the configuration holotape on PC and Xbox).
+
+
+WHAT'S NEW IN 2.1
+- The concise view: the workbench shows one balanced legendary per group of similar effects, 82 instead of 316
+  (see THE CONCISE VIEW). Nothing is removed.
+- About 90 new legendaries: 23 new armour effects (Night Owl's, Sun-Kissed, Glass Cannon, Ironclad, the Radiatin'
+  auras...), effects CLM lacked (Disheartenin', Disarmin', Rallyin', Midas'...), the 2016 legendaries that went
+  missing, and 2016-17 requests once called impossible (CQC, DragonBlade, Necromancer's, Healing Beam, Cap
+  Showerin', Stealthy...).
+- Balance: balanced now means no stronger than the base game's strongest of its kind. 56 legendaries moved to OP
+  (gear you own keeps them); weak ones were brought up (Scattering, Burning, Acidic, Escapist's...).
+- Fixes: BioReactive Explosive explodes on every hit, not only on kills; Fisto's no longer multiplies across armour
+  pieces; descriptions match what legendaries do.
+- Spawning legendaries are hidden by default ("CLM Setting: Show spawning legendaries").
+The full list is in the changelog.
 
 
 REQUIREMENTS
@@ -59,7 +74,7 @@ switches (with F4SE, the optional menu does all this for you instead: see F4SE M
   clothing such as the Vault suit).
 
 
-THE CONCISE VIEW (NEW IN 2.1)
+THE CONCISE VIEW
 Many legendaries feel alike, so the workbench shows one balanced legendary per group of similar effects: 33
 groups, such as "More damage" (Hurtin' (50%) shows; Hurtin' (25%), Hurtin' (100%), Devastating and Beginner are in
 the group) or "Grenades and mines". Where no single legendary stood for its group, a new balanced one does:
@@ -140,16 +155,19 @@ PlayStation mods cannot use scripts or new assets, so this version differs a lit
 - Left out: the new laser colours (Energized and Disintegratin' Green, Purple, Gold, Orange, Pink, Deep Blue) and
   the Kellogg spawn.
 - Vampiric and its family heal on every hit except killing blows. Auto-Medical and Aid Patch regenerate health
-  quickly while you are low instead of using stimpaks. Face Bustin' does not blow targets apart.
-- Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin' and Sadistic Brawlers do nothing on PlayStation
-  (their effect is a script); a few others lose one scripted part. Their descriptions say so.
+  quickly while you are low instead of using stimpaks. Face Bustin' does not blow targets apart. BioReactive
+  Explosive and Singularity explode on killing hits only. Midas' leaves ordinary ash, not gold dust.
+- Untouchable, Shavka's Explosive Striking, Ridiculously Absorbin', Sadistic Brawlers, Phoenix, Bloodthirsty,
+  Momentum, Static Charged, CQC, Cinematic Excellence, Cleavin', Decimatin', Necromancer's and Radroachin' do nothing
+  on PlayStation (their effect is a script); a few others (Jumper's jump, DragonBlade's dash, Shrinkin's shrinking)
+  lose one scripted part. Their descriptions say so.
 
 
 UPGRADING
 - Your gear keeps its legendaries, DLC ones included.
 - From 1.09: your holotape settings are turned into setting items on the first load (PC and Xbox).
-- From 2.0: everything stays shown (the save gets "Show all legendaries"; on PlayStation, make it yourself).
-  Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them. See the
+- From 2.0 or 1.09: everything stays shown (the save gets "Show all legendaries"; on PlayStation, make it
+  yourself). Some very strong legendaries are now OP: make "Show OP legendaries" to keep crafting them. See the
   changelog.
 
 
